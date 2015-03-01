@@ -1,0 +1,522 @@
+.bold {
+    font-weight: bold;
+}
+/* --------------- header --------------*/
+header{
+    width: 100%;
+    height: 100px;
+    background: rgb(96,169,212);
+}
+.head {
+    width: 960px;
+    margin: auto
+}
+.logos {
+    float: left;
+}
+.firstLogo{
+    background: url(../img/logo1.png);
+    width: 251px;
+    height: 65px;
+    margin-top: 17.5px;
+    float: left;
+}
+.secondLogo{
+    background: url(../img/logo2.png) no-repeat 6px 50px rgb(143,213,254);
+    width: 200px;
+    height: 195px;    
+    border-radius: 50%;
+    margin: -50px 0px 0px 415px;
+    z-index: 1;
+    position: relative;
+}
+.regButtons {
+    float: right;
+    margin-top: 30px;
+}
+button.registration{
+    color: rgb(148,194,224);
+    padding: 8px 15px;
+    background: #fff;
+    border-radius: 5px;
+    margin-right: 5px;
+    float: left;
+    border: 1px solid rgb(96,169,212);
+}
+button.login{
+    color: #fff;
+    padding: 8px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;    
+    background: rgb(96,169,212);
+}
+/* --------------------------after header--------------------------*/
+.afterHead {
+    width: 100%;
+    height: 45px;
+    background: rgb(242,242,242);
+    z-index: 2;
+    position: relative;
+}
+.afterHeadContent {
+    width: 960px;
+    margin: auto;
+}
+.afterHeadContent > .menu {
+    float: left;
+    margin-top: -32px;
+}
+.afterHeadContent > .menu > a {
+    color: rgb(133,133,133);
+    margin-right: 20px;
+}
+.afterHeadContent > .menu > a:hover {
+    text-decoration: none;
+    border-bottom: 1px dashed rgb(133,133,133);
+    padding-bottom: 3px;
+}
+.afterHeadContent > .menu > a:first-child {
+    border-bottom: 1px dashed rgb(133,133,133);
+    padding-bottom: 3px;    
+}
+.broadcast {
+    float: right;
+    margin-top: -40.5px;
+}
+.broadcast > a:hover {
+    color:#fff !important;
+    text-decoration: none !important;
+}
+.broadcast > a {
+    color: #fff !important;
+}
+.translation {
+    padding: 8px 12px;
+    background: rgb(211,63,84);
+    border-radius: 5px;
+    margin-right: 5px;
+    float: left;
+    font-weight: bold;
+}
+.vk {
+    padding: 8px 12px;
+    border-radius: 5px;
+    float: left;
+    font-weight: bold;
+    background: rgb(96,169,212);
+    text-transform: uppercase;
+}
+.rss {
+    background: rgb(96,169,212);
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-left: 5px;
+    float: right;
+}
+/* -------------------- Content -------------------------*/
+#twitter-widget-0 {
+    width: 230px !important;
+    margin-top: 20px !important;
+    height: 400px;
+    position: relative !important;
+}
+.content > .h3 {
+    color: rgb(96,169,212);
+}
+.middle {
+    width: 100%;
+    position: relative;
+}
+.middle:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+.container {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    padding: 0 !important;
+}
+.content {
+    padding: 0 270px 0 0;
+}
+.right-sidebar {
+    float: left;
+    width: 220px;
+    margin-left: -220px;
+    position: relative;
+}
+footer {
+    margin-top: 20px;
+}
+.footer {
+    width: 960px;
+    height: 100px;
+    background: rgb(242,242,242);
+    text-align: center;    
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 43px;
+}
+.footer > a {
+    color: rgb(93,93,93);
+    margin-right: 10px;
+}
+.footer > a:hover {
+    color: rgb(93,93,93) !important;   
+}
+.wrapper {
+    width: 960px;
+    margin: 45px auto;
+}
+.search {
+    margin-top: 20px;
+}
+.sInput {
+    width: 615px;
+    height: 40px;
+    background: rgb(242,242,242);
+    border: none;
+    padding-left: 10px;
+}
+.sButton {
+    width: 65px;
+    text-align: center;
+    height: 40px;
+    border: none;
+    background: rgb(96,169,212);
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+}
+.project {
+    margin-bottom: 40px;
+}
+.poster {
+    width: 120px;
+    float: left;
+    margin-right: 20px;
+}
+.projectBlock {
+    width: 120px;
+    height: 200px;
+    margin-right: 20px;
+}
+.prjBlockAbout {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 120px;
+    height: 35px;
+    color: #FFF;
+    font-weight: bold;
+    padding: 7.5px 20px;
+    position: relative;
+    margin-top: -35px;
+    text-align: center;
+}
+.prjBlockAbout.darkRed {background: rgb(133,32,49)}
+.prjBlockAbout.green {background: rgb(25,97,125)}
+.prjBlockAbout.yellow {background: rgb(211,164,2)}
+.prjBlockAbout.violet {background: rgb(114,100,155)}
+.prjBlockAbout.orange {background: rgb(219,140,132)}
+.project > .all, .updates > .all {
+    float: right;
+    color: rgb(133,133,133);
+    text-decoration: none;
+    border-bottom: 1px dashed rgb(133,133,133);
+    padding-top: 10px;
+    margin-right: 0.64pc;
+}
+.project.width220 > div > .prjBlockAbout {
+    width: 220px !important;
+}
+.project.width220 {
+    margin-bottom: 0 !important;
+}
+.projectBlock.type2 {
+    width: 220px !important;
+    height: 85px !important;
+    margin: 10px 0 0 0 !important;
+}
+/* ----------- index/updates -----------*/
+.updBlock {
+    margin-bottom: 2px;
+    height: 40px;
+}
+.updIcon {
+    width: 65px;
+    height: 40px;
+    background-color: rgb(217,238,250) !important;
+    float: left;
+}   
+.updIcon.type1 {background: url("../img/updIcons/icon1.png") no-repeat scroll 24.5px 12px;}
+.updIcon.type2 {background: url("../img/updIcons/icon2.png") no-repeat scroll 24.5px 12px;}
+.updIcon.type3 {background: url("../img/updIcons/icon3.png") no-repeat scroll 24.5px 12px;}
+.updIcon.type4 {background: url("../img/updIcons/icon4.png") no-repeat scroll 24.5px 12px;}
+.updDate {
+    width: 100px;
+    height: 40px;
+    float: left;
+    background: rgb(184,226,250);
+    text-align: center;
+    padding-top: 10px;
+}
+.updTitle {
+    width: 375px;
+    height: 40px;
+    background: none repeat scroll 0% 0% #D9EEFA;
+    float: left;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    padding: 10px;
+}
+.updTitle > a {
+    color: rgb(77,77,77) !important;
+}
+.updTitle > a:hover {
+    text-decoration: none;
+    border-bottom: 1px dashed rgb(133,133,133);
+    padding-bottom: 2px;
+}
+.updType {
+    width: 140px;
+    height: 40px;
+    background: rgb(184,226,250);
+    float: left;
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.updPaginator {
+    padding-top: 10px;
+}
+.updPaginator > a {
+    color: rgb(110,110,110);
+    margin-right: 3px;
+}
+.updPaginator > a.active {
+    text-decoration: underline;
+}
+/* -------- loginBlock -----------*/
+.loginBlock {
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+}
+.loginBlock > div {
+    height: 320px;
+    width: 270px;
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    opacity: 1;
+    margin: 15em auto auto;
+    border-radius: 10px;
+}
+.loginContent {
+    width: 100%;
+    height: 235px;
+    background: rgb(69,169,212);
+    border-radius: 8px 8px 0px 0px;
+}
+.loginInput, .passwordInput {
+    width: 230px;
+    height: 40px;
+    margin: auto;
+    margin-bottom: 10px;
+    color: rgb(124,124,124)
+}
+
+.loginInput > div,
+.passwordInput > div {
+    width: 50px;
+    text-align: right;
+    height: 40px;
+    float: left;
+    background: #fff;
+    color: rgb(199,199,199);
+    border-radius: 5px 0 0 5px;
+    padding-top: 10px;
+}
+.loginInput > input,
+.passwordInput > input {
+    width: 180px;
+    height: 40px;
+    background: #fff;
+    border: 0;
+    border-radius: 0 5px 5px 0;
+}
+.passwordInput > div {
+    width: 60px !important;
+}
+.passwordInput > input {
+    width: 170px;
+}
+.resetPass {
+    position: relative;
+    float: right;
+    margin-top: -34px;
+    margin-right: 23px;
+}
+.resetPass > a {
+    color: #fff !important;
+    text-decoration: underline;
+}
+.loginContent > input[type="checkbox"] {
+    border: 0;
+    border-radius: 2px;
+    background: #fff;
+}
+button.enter {
+    width: 230px;
+    height: 40px;
+    border-radius: 5px;
+    background: #fff;
+    color: rgb(148,194,224);
+    border: 0;
+    font-size: 17px;
+}
+button.loginClose {
+    width: 20px;
+    height: 20px;
+    background: none repeat scroll 0% 0% #FFF;
+    position: absolute;
+    border-radius: 5px;
+    border: 0px none;
+    margin-left: 275px;
+    color: #4BA7E3;
+    padding-left: 5.3pt !important;
+    padding-top: 0px;
+}
+.loginFooter {
+    width: 270px;
+}
+.loginFooter > div {
+    text-align: center;
+    margin: auto;
+    color: rgb(107,107,107);
+    margin-top: 22px;
+}
+.loginFooter > div > a {
+    color: rgb(96,169,212) !important;
+    text-decoration: underline;
+}
+.modal-backdrop {
+    position: fixed;
+    background-color: #000;
+    height: 100%;
+    opacity: 0.6;
+    z-index: 99;
+}
+/* --------------- login ------------*/
+.enterError {
+    background: none repeat scroll 0% 0% #F2F2F2;
+    color: #D76170;
+    height: 60px;
+    font-size: 13px;
+    line-height: 20px;
+    padding-top: 9px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.userError {
+    width: 95px;
+    height: 60px;
+    float: left;
+    background: url(../img/peopleIcon.png) no-repeat 54% 13px;
+}
+.form-control.login, .form-control.password, .loginCheckbox {
+    width: 285px;
+    margin-left: 17pc;
+}
+.logButton {
+    margin-right: 8.2pc;
+    width: 100px;
+    background: rgb(229,229,229);
+    border: 0;
+    color: rgb(77,77,77);
+}
+/* --------------- updates ------------------ */
+.updSearch {
+    margin-bottom: 15px;
+}
+.updSearch > .bold {
+    font-size: 13px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+.updPaginator {
+    padding-top: 5px;
+    font-size: 12.5px;
+    padding-bottom: 10px;
+}
+.updSearch > a {
+    padding: 5px 10px 5px 37.5px;
+    color: rgb(93,93,93);
+    text-decoration: none !important;
+}
+.updPaginator > a > i, .disabled > i {
+    font-size: 10px !important;
+}
+.updSearch > a.active {
+    color: #fff !important;
+}
+.updSearch > .first.active {
+    background: rgb(96,169,212) url(../img/updIcons/all_active.png) no-repeat 10.5px !important;
+}
+.updSearch > .second.active {
+    background: rgb(96,169,212) url(../img/updIcons/icon2_active.png) no-repeat 10.5px !important;
+}
+.updSearch > .third.active {
+    background: rgb(96,169,212) url(../img/updIcons/icon3_active.png) no-repeat 10.5px  !important;
+}
+.updSearch > .fourth.active {
+    background: rgb(96,169,212) url(../img/updIcons/icon1_active.png) no-repeat 10.5px !important;
+}
+.updSearch > .fifth.active {
+    background: rgb(96,169,212) url(../img/updIcons/icon4_active.png) no-repeat 10.5px !important;
+}
+.updSearch > .first {
+    background: rgb(242,242,242) url(../img/updIcons/all.png) no-repeat 10.5px;
+}
+.updSearch > .second {
+    background: rgb(242,242,242) url(../img/updIcons/icon2.png) no-repeat 10.5px;
+}
+.updSearch > .third {
+    background: rgb(242,242,242) url(../img/updIcons/icon3.png) no-repeat 10.5px;
+}
+.updSearch > .fourth {
+    background: rgb(242,242,242) url(../img/updIcons/icon1.png) no-repeat 10.5px;
+}
+.updSearch > .fifth {
+    background: rgb(242,242,242) url(../img/updIcons/icon4.png) no-repeat 10.5px;
+}
+.disabled {
+    color: rgb(193,193,193);
+    text-decoration: underline;
+    margin-right: 4px;
+}
+.miniSearch {
+    margin-top: 20px;
+}
+.miniSearch > input {
+    width: 180px;
+    height: 40px;
+    background: rgb(242,242,242);
+    border: none;
+    padding-left: 10px;
+}
+.miniSearch > button {
+    width: 40px;
+    text-align: center;
+    height: 40px;
+    border: none;
+    background: rgb(96,169,212);
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+}
