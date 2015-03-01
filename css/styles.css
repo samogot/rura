@@ -7,9 +7,11 @@ header{
     height: 100px;
     background: rgb(96,169,212);
 }
-.head {
-    width: 960px;
-    margin: auto
+.container {
+    max-width: 960px;
+    overflow: hidden;
+padding-right: 0; 
+padding-left: 0; 
 }
 .logos {
     float: left;
@@ -26,29 +28,84 @@ header{
     width: 200px;
     height: 195px;    
     border-radius: 50%;
-    margin: -50px 0px 0px 415px;
     z-index: 1;
     position: relative;
+}
+.navbar-brand{
+	height: 100px;
 }
 .regButtons {
     float: right;
     margin-top: 30px;
 }
-button.registration{
-    color: rgb(148,194,224);
-    padding: 8px 15px;
-    background: #fff;
-    border-radius: 5px;
-    margin-right: 5px;
-    float: left;
-    border: 1px solid rgb(96,169,212);
+.btn {
+    border: 0 none;
 }
-button.login{
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+.btn.sharp {
+  border-radius:0;
+}
+.btn.outline {
+}
+.btn-white{
+    color: rgb(96,169,212);
+    background-color: #fff;
+}
+.btn-white:hover{
+    color: #333;
+    background-color: #F2F2F2;
+}
+.btn-outline{
     color: #fff;
-    padding: 8px 15px;
     border: 1px solid #fff;
-    border-radius: 5px;    
-    background: rgb(96,169,212);
+    background: none;
+    padding: 5px 11px;
+}
+.btn-outline:hover{
+    color: #60A9D4;
+    background-color: #fff;
+}
+.btn-primary {
+  background-color: #60A9D4;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #358ec2;
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #358ec2;
+  border-color: #3288ba;
+}
+.btn-primary.disabled,
+.btn-primary:disabled,
+.btn-primary[disabled] {
+  background-color: #358ec2;
+  background-image: none;
+}
+.navbar-top {
+background-color: #60A9D4;
+border-color: #60A9D4;
+margin-bottom: 0px;
+border: none;
+}
+.navbar-top .navbar-form, .navbar-top .navbar-toggle{
+    margin-top: 30px;
+}
+.navbar-top .navbar-toggle { border-color: #fff; }
+.navbar-top .navbar-toggle .icon-bar { background-color: #fff; }
+.navbar-top .navbar-toggle:hover { background-color: #fff; }
+.navbar-top .navbar-toggle:hover .icon-bar { background-color: #60A9D4; }
+.navbar-lower{
+min-height:0;
+border: none;
+background: #F2F2F2;
+}
+.navbar-lower .navbar-collapse{
+padding-right: 0; 
+padding-left: 0; 
 }
 /* --------------------------after header--------------------------*/
 .afterHead {
@@ -132,12 +189,12 @@ button.login{
     clear: both;
     content: '';
 }
-.container {
+/*.container {
     width: 100%;
     float: left;
     overflow: hidden;
     padding: 0 !important;
-}
+}*/
 .content {
     padding: 0 270px 0 0;
 }
