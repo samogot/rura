@@ -98,13 +98,16 @@ min-height:0;
 border: none;
 background: #F2F2F2;
 }
+.navbar-top .navbar-toggle{
+    margin-top: 10px;
+}
+.navbar-top .navbar-form{
+    margin-top: 30px;
+}
 @media (max-width: 768px){
 .navbar-brand {
 height: 55px;
 padding: 5px 10px;
-}
-.navbar-top .navbar-form, .navbar-top .navbar-toggle{
-    margin-top: 10px;
 }
 .navbar-brand>img{
 height: 45px;
