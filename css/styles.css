@@ -102,30 +102,54 @@ background: #F2F2F2;
     margin-top: 10px;
 }
 .navbar-top .navbar-form{
-    margin-top: 30px;
+	margin-top: 30px;
+}
+.secondLogoContainer
+{
+	width:200px;
+	margin:-50px auto;
+	height:100px;
+}
+@media (max-width: 991px) {
+	.navbar-brand {
+	height: 75px;
+	padding: 7.5px 15px;
+	}
+	.navbar-brand>img{
+	height: 60px;
+	}
+	.navbar-top .navbar-form{
+		margin-top: 22px;
+	}
+	.secondLogoContainer
+	{
+		width:200px;
+		margin:-55px auto;
+		height:75px;
+	}
 }
 @media (max-width: 768px){
-.navbar-brand {
-height: 55px;
-padding: 5px 10px;
-}
-.navbar-brand>img{
-height: 45px;
-}
+	.navbar-brand {
+	height: 55px;
+	padding: 5px 10px;
+	}
+	.navbar-brand>img{
+	height: 45px;
+	}
 }
 @media (min-width: 768px){
-.navbar-lower .navbar-collapse{
-padding-right: 0; 
-padding-left: 0; 
-}
-.navbar-lower .navbar-nav>li>a {
-padding: 0 0 2px;
-margin: 12.5px 10px 0;
-}
-.navbar-lower .navbar-nav>li:hover>a,.navbar-lower .navbar-nav>li.active>a {
-background: none;
-border-bottom: 1px dashed #777;
-}
+	.navbar-lower .navbar-collapse{
+	padding-right: 0; 
+	padding-left: 0; 
+	}
+	.navbar-lower .navbar-nav>li>a {
+	padding: 0 0 2px;
+	margin: 12.5px 10px 0;
+	}
+	.navbar-lower .navbar-nav>li:hover>a,.navbar-lower .navbar-nav>li.active>a {
+	background: none;
+	border-bottom: 1px dashed #777;
+	}
 }
 /* --------------------------after header--------------------------*/
 .afterHead {
