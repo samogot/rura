@@ -1,6 +1,9 @@
 .bold {
     font-weight: bold;
 }
+body {
+    min-width: 340px;
+}
 /* --------------- header --------------*/
 header{
     width: 100%;
@@ -114,6 +117,20 @@ background: #F2F2F2;
 	margin:-50px auto;
 	height:100px;
 }
+@media (max-width: 1200px) {
+    .updBlock > .updTitle {
+        width: 45%;
+    }
+    .updBlock > .updIcon {
+        width: 10%;
+    }
+    .updBlock > .updType {
+        width: 25%;
+    }
+    .updBlock > .updDate {
+        width: 20%;
+    }
+}
 @media (max-width: 991px) {
 	.navbar-brand {
 	height: 75px;
@@ -140,6 +157,11 @@ background: #F2F2F2;
 	.navbar-brand>img{
 	height: 45px;
 	}
+    .right-sidebar {
+        margin: auto;
+        width: 220px;
+        margin-top: 15px;
+    }
 }
 @media (min-width: 768px){
 	.navbar-lower .navbar-collapse{
@@ -154,6 +176,18 @@ background: #F2F2F2;
 	background: none;
 	border-bottom: 1px dashed #777;
 	}
+}
+@media (max-width: 445px){
+    .updDate {
+        display: none;
+    }
+    .updates > .updBlock > .updTitle {
+        width: 55%;
+        padding: 10px 0;
+    }
+    .updates > .updBlock > .updType {
+        width: 35%;
+    }    
 }
 /* --------------------------after header--------------------------*/
 .afterHead {
@@ -258,13 +292,14 @@ footer {
     margin-top: 20px;
 }
 .footer {
-    width: 960px;
-    height: 100px;
+    max-width: 1200px;
+    min-height: 100px;
     background: rgb(242,242,242);
     text-align: center;    
     margin: auto;
     margin-bottom: 10px;
     padding: 43px;
+    width: 100%;
 }
 .footer > a {
     color: rgb(93,93,93);
@@ -362,10 +397,10 @@ display: inline-block;
     background-color: rgb(217,238,250) !important;
     float: left;
 }   
-.updIcon.type1 {background: url("../img/updIcons/icon1.png") no-repeat scroll 24.5px 12px;}
-.updIcon.type2 {background: url("../img/updIcons/icon2.png") no-repeat scroll 24.5px 12px;}
-.updIcon.type3 {background: url("../img/updIcons/icon3.png") no-repeat scroll 24.5px 12px;}
-.updIcon.type4 {background: url("../img/updIcons/icon4.png") no-repeat scroll 24.5px 12px;}
+.updIcon.type1 {background: url("../img/updIcons/icon1.png") no-repeat scroll 50% 12px;}
+.updIcon.type2 {background: url("../img/updIcons/icon2.png") no-repeat scroll 50% 12px;}
+.updIcon.type3 {background: url("../img/updIcons/icon3.png") no-repeat scroll 50% 12px;}
+.updIcon.type4 {background: url("../img/updIcons/icon4.png") no-repeat scroll 50% 12px;}
 .updDate {
     width: 100px;
     height: 40px;
@@ -375,7 +410,7 @@ display: inline-block;
     padding-top: 10px;
 }
 .updTitle {
-    width: 375px;
+    width: 42em;
     height: 40px;
     background: none repeat scroll 0% 0% #D9EEFA;
     float: left;
