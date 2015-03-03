@@ -8,7 +8,7 @@ header{
     background: rgb(96,169,212);
 }
 .container {
-    max-width: 990px;
+    /*max-width: 990px;*/
     overflow: hidden;
 }
 .logos {
@@ -238,21 +238,21 @@ background: #F2F2F2;
     content: '';
 }
 @media (min-width: 768px){
-.leftColumn {
-    width: 100%;
-    float: left;
-    overflow: hidden;
-    padding: 0 !important;
-}
-.content {
-    padding: 0 270px 0 0;
-}
-.right-sidebar {
-    float: left;
-    width: 220px;
-    margin-left: -220px;
-    position: relative;
-}
+	.leftColumn {
+		width: 100%;
+		float: left;
+		overflow: hidden;
+		padding: 0 !important;
+	}
+	.content {
+		padding: 0 240px 0 0;
+	}
+	.right-sidebar {
+		float: left;
+		width: 220px;
+		margin-left: -220px;
+		position: relative;
+	}
 }
 footer {
     margin-top: 20px;
