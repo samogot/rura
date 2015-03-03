@@ -42,8 +42,12 @@ header{
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: 0 none;
 }
-.btn.sharp {
+.input-group.sharp  .form-control, .input-group.sharp  .btn, .btn.sharp{
   border-radius:0;
+}
+input[type="text"]{
+background-color: #F2F2F2;
+border: none;
 }
 .btn.outline {
 }
@@ -128,7 +132,7 @@ background: #F2F2F2;
 		height:75px;
 	}
 }
-@media (max-width: 768px){
+@media (max-width: 767px){
 	.navbar-brand {
 	height: 55px;
 	padding: 5px 10px;
@@ -233,12 +237,13 @@ background: #F2F2F2;
     clear: both;
     content: '';
 }
-/*.container {
+@media (min-width: 768px){
+.leftColumn {
     width: 100%;
     float: left;
     overflow: hidden;
     padding: 0 !important;
-}*/
+}
 .content {
     padding: 0 270px 0 0;
 }
@@ -247,6 +252,7 @@ background: #F2F2F2;
     width: 220px;
     margin-left: -220px;
     position: relative;
+}
 }
 footer {
     margin-top: 20px;
@@ -293,6 +299,10 @@ footer {
 }
 .project {
     margin-bottom: 40px;
+}
+.project a{
+margin: 1.5px;
+display: inline-block;
 }
 .poster {
     width: 120px;
