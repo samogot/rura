@@ -551,13 +551,13 @@ button.loginClose {
     color: rgb(96,169,212) !important;
     text-decoration: underline;
 }
-.modal-backdrop {
+/*.modal-backdrop {
     position: fixed;
     background-color: #000;
     height: 100%;
     opacity: 0.6;
     z-index: 99;
-}
+}*/
 /* --------------- login ------------*/
 .enterError {
     background: none repeat scroll 0% 0% #F2F2F2;
