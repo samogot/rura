@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/listgroup.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalLabel">Вход</h4>
+      </div>
+      <div class="modal-body">
+                <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Запомнить пароль
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary">Вход</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop" style="display:none"></div>
+<nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png"></a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <div class="secondLogoContainer"><div class="secondLogo"></div></div>
+      <form class="navbar-form navbar-right">
+            <button class="btn btn-white">Регистрация</button>
+            <button class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</button>
+      </form>
+    </div>
+  </div><!-- /.container -->
+</nav>
+<nav class="navbar navbar-default navbar-lower" role="navigation">
+  <div class="container">
+    <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form visible-xs-block">
+            <button class="btn btn-default">Регистрация</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</button>
+      </form>
+      <ul class="nav navbar-nav">
+            <li><a href="#">Обновления</a></li>
+            <li><a href="#">Проекты</a></li>
+            <li><a href="#">Набор в команду</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Связь</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+            <a href="#" class="btn btn-danger">Трансляции</a>
+            <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
+            <a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container">
+        <div class="leftColumn">
+            <main class="content">
+                <form>
+                <h2>Информация</h2>
+                <div class="form-group">
+                    <label for="name_url">Ссылка</label>
+                    <input type="text" class="form-control" id="name_url">
+                </div>
+                <div class="form-group">
+                    <label for="name_url">Имя для файлов</label>
+                    <input type="text" class="form-control" id="name_url">
+                </div>
+                <div class="form-group">
+                    <label for="name_url">Имя для заголовков</label>
+                    <input type="text" class="form-control" id="name_url">
+                </div>
+                <h2>Этапы/Стаф</h2>
+                <h2>Главы</h2>
+                <h2>Обновления</h2>
+                <h2>Изображения <button type="button" class="btn btn-default" title="Добавить"><i class="fa fa-plus"></i></button></h2>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="list-group select sortable">
+							<a class="list-group-item heading"><span class="move">Начальные иллюстрации</span></a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image1" aria-expanded="true" aria-controls="image1" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png"></center>
+								<span class="hidden-sm">20.02.2015</span>
+								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image2" aria-expanded="true" aria-controls="image2" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png"></center>
+								<span class="hidden-sm">20.02.2015</span>
+								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png"></center>
+								<span class="hidden-sm">20.02.2015</span>
+								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
+								<span class="hidden-sm">20.02.2015</span>
+								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+							</a>
+							<a class="list-group-item heading"><span class="move">Глава 1</span></a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
+								<span class="hidden-sm">20.02.2015</span>
+								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-8" id="imageform" role="tablist" aria-multiselectable="true">
+						<div  class="panel">
+						<div class="row collapse" role="tabpanel" id="image1">
+							<div class="col-sm-6">
+								<h2>Основа</h2>
+								<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive">
+								<div class="form-group">
+									<label for="image1_date">Дата загрузки</label>
+									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<h2>Покрас</h2>
+							</div>
+						</div>
+						</div>
+						<div class="panel">
+						<div class="row collapse" role="tabpanel" id="image2">
+							<div class="col-sm-6">
+								<h2>Основа</h2>
+								<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive">
+								<div class="form-group">
+									<label for="image1_date">Дата загрузки</label>
+									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<h2>Покрас</h2>
+							</div>
+						</div>
+						</div>
+						<div class="panel">
+						<div class="row collapse" role="tabpanel" id="image3">
+							<div class="col-sm-6">
+								<h2>Основа</h2>
+								<img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png" class="img-responsive">
+								<div class="form-group">
+									<label for="image1_date">Дата загрузки</label>
+									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<h2>Покрас</h2>
+							</div>
+						</div>
+						</div>
+						<div class="panel">
+						<div class="row collapse" role="tabpanel" id="image4">
+							<div class="col-sm-6">
+								<h2>Основа</h2>
+								<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
+								<div class="form-group">
+									<label for="image1_date">Дата загрузки</label>
+									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<h2>Покрас</h2>
+							</div>
+						</div>
+						</div>
+						<div class="panel">
+						<div class="row collapse" role="tabpanel" id="image5">
+							<div class="col-sm-6">
+								<h2>Основа</h2>
+								<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
+								<div class="form-group">
+									<label for="image1_date">Дата загрузки</label>
+									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<h2>Покрас</h2>
+								<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
+								<div class="form-group">
+									<label for="image1_date">Дата загрузки</label>
+									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </form>
+            </main>
+        </div>
+        <aside class="right-sidebar">
+            <div style="color:rgb(77,77,77);">
+                <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
+                <div class="h4">Проекты</div>
+            </div>
+            <div class="projectBlock">
+                <div class="project width220">
+                <center><a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="220" height="73"></a><a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" width="220" height="73"></a><a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" width="220" height="73"></a><a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" width="220" height="73"></a><a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" width="220" height="73"></a><a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" width="220" height="73"></a><a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" width="220" height="73"></a><a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" width="220" height="73"></a><a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" width="220" height="73"></a><a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" width="220" height="73"></a><a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" width="220" height="73"></a><a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" width="220" height="73"></a></center>
+                </div>
+            </div>
+        </aside>
+</div><div class="container">
+    <footer>
+        <div class="footer">
+            <a href="#">Обновления</a>
+            <a href="#">Проекты</a>
+            <a href="#">Набор в команду</a>
+            <a href="#">FAQ</a>
+            <a href="#">О нас</a>
+            <a href="#">Помощь</a>
+            <a href="#">Связь</a>
+        </div>
+        <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
+    </footer>
+</div>
+
+</body>
+<script type="text/javascript">
+$('.list-group.select.sortable').sortable({
+      items: "a:not(:first-child.heading)",
+	  handle:'.move'
+    });
+</script>
+</html>

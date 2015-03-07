@@ -666,3 +666,44 @@ button.loginClose {
     font-size: 18px;
     position: absolute;
 }
+.list-group.select{
+	max-height: 300px;
+	overflow-y: auto;
+}
+.move.fa.fa-ellipsis-v {
+	padding: 0 5px 0 10px;
+}
+.move{
+	cursor: move;
+}
+.list-group.select .list-group-item
+{
+	padding: 10px 5px;
+}
+.list-group.select .list-group-item.heading, .list-group.select .list-group-item.heading:hover, .list-group.select .list-group-item.heading:focus {
+	color: #777;
+	background-color: #eee;
+	padding: 3px 15px;
+	font-weight: bold;
+	border: 1px solid #dddddd;
+}
+.list-group-item img {
+height: 32px;
+margin: 0 auto;
+}
+a.list-group-item center {
+display: inline-block;
+width: 50px;
+margin-right: 10px;
+margin-left: 5px;
+}
+#imageform img{
+max-height: 180px;
+margin: 0 auto;
+}
+#imageform .panel {
+margin-bottom: 0;
+border: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
