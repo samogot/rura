@@ -10,7 +10,19 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/listgroup.js"></script>
+    <script src="js/listgroup.js"></script>\
+	<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+	<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+	<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+	<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>\
+	<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+	<script src="js/jquery.iframe-transport.js"></script>
+	<!-- The basic File Upload plugin -->
+	<script src="js/jquery.fileupload.js"></script>
+	<!-- The File Upload processing plugin -->
+	<script src="js/jquery.fileupload-process.js"></script>
+	<!-- The File Upload image preview & resize plugin -->
+	<script src="js/jquery.fileupload-image.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -102,140 +114,191 @@
         <div class="leftColumn">
             <main class="content">
                 <form>
+				<input type="hidden" id="volume_id" name="volume_id">
                 <h2>Информация</h2>
                 <div class="form-group">
                     <label for="name_url">Ссылка</label>
-                    <input type="text" class="form-control" id="name_url">
+                    <input type="text" class="form-control" id="name_url" name="name_url">
                 </div>
                 <div class="form-group">
-                    <label for="name_url">Имя для файлов</label>
-                    <input type="text" class="form-control" id="name_url">
+                    <label for="name_file">Имя для файлов</label>
+                    <input type="text" class="form-control" id="name_file" name="name_file">
                 </div>
                 <div class="form-group">
-                    <label for="name_url">Имя для заголовков</label>
-                    <input type="text" class="form-control" id="name_url">
+                    <label for="name_title">Имя для заголовков</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
                 </div>
                 <h2>Этапы/Стаф</h2>
                 <h2>Главы</h2>
                 <h2>Обновления</h2>
-                <h2>Изображения <button type="button" class="btn btn-default" title="Добавить"><i class="fa fa-plus"></i></button></h2>
+                <h2>Изображения</h2>
 				<div class="row">
-					<div class="col-sm-4">
-						<div class="list-group select sortable">
+					<div class="col-xs-4">
+						<div class="list-group select sortable" id="imageselect">
 							<a class="list-group-item heading"><span class="move">Начальные иллюстрации</span></a>
 							<a data-toggle="collapse" data-parent="#imageform" href="#image1" aria-expanded="true" aria-controls="image1" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
 								<center><img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png"></center>
-								<span class="hidden-sm">20.02.2015</span>
-								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#imageform" href="#image2" aria-expanded="true" aria-controls="image2" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
 								<center><img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png"></center>
-								<span class="hidden-sm">20.02.2015</span>
-								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
 								<center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png"></center>
-								<span class="hidden-sm">20.02.2015</span>
-								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
 								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm">20.02.2015</span>
-								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
 							</a>
 							<a class="list-group-item heading"><span class="move">Глава 1</span></a>
 							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
 								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm">20.02.2015</span>
-								<button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-trash-o"></i></button>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png"></center>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
+							</a>
+							<a class="list-group-item heading"><span class="move">Глава 1</span></a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png"></center>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
+							</a>
+							<a class="list-group-item heading"><span class="move">Глава 1</span></a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png"></center>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
+							</a>
+							<a class="list-group-item heading"><span class="move">Глава 1</span></a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
+								<span class="hidden-sm hidden-xs">20.02.2015</span>
 							</a>
 						</div>
 					</div>
-					<div class="col-sm-8" id="imageform" role="tablist" aria-multiselectable="true">
+					<div class="col-xs-8 admin-affix" id="imageform" role="tablist" aria-multiselectable="true">
+						<div class="btn-group" role="group" aria-label="Панель изображений">
+						  <button type="button" class="btn btn-success" title="Добавить новые изображения" id="btn-image-add"><i class="fa fa-plus"></i></button>
+						  <button type="button" class="btn btn-default btn-border" title="Режим замены изображений" id="btn-image-replace-main"><i class="fa fa-retweet"></i></button>
+						  <button type="button" class="btn btn-default btn-border" title="Режим добавления/замены покрасов" id="btn-image-reset-color"><i class="fa fa-exchange"></i></button>
+						  <button type="button" class="btn btn-danger" title="Удалить изображение" id="btn-image-delete" disabled><i class="fa fa-trash-o"></i></button>
+						</div>
 						<div  class="panel">
-						<div class="row collapse" role="tabpanel" id="image1">
-							<div class="col-sm-6">
-								<h2>Основа</h2>
-								<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive">
-								<div class="form-group">
-									<label for="image1_date">Дата загрузки</label>
-									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+							<div class="row collapse image-data" role="tabpanel" id="image1">
+								<input type="hidden" id="image1_id">
+								<div class="col-xs-6 image-data-main">
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive btn-image-replace">
+									<div class="form-group">
+										<label for="image1_main_date">Дата загрузки</label>
+										<input type="text" class="form-control disable" id="image1_main_date" value="20.02.2015 10:00:00">
+									</div>
+								</div>
+								<div class="col-xs-6 image-data-color">
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3>
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<h2>Покрас</h2>
-							</div>
-						</div>
 						</div>
 						<div class="panel">
-						<div class="row collapse" role="tabpanel" id="image2">
-							<div class="col-sm-6">
-								<h2>Основа</h2>
-								<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive">
-								<div class="form-group">
-									<label for="image1_date">Дата загрузки</label>
-									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+							<div class="row collapse image-data" role="tabpanel" id="image2">
+								<div class="col-xs-6 image-data-main">
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive btn-image-replace">
+									<div class="form-group">
+										<label for="image1_main_date">Дата загрузки</label>
+										<input type="text" class="form-control disable" id="image1_main_date" value="20.02.2015 10:00:00">
+									</div>
+								</div>
+								<div class="col-xs-6 image-data-color">
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3>
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<h2>Покрас</h2>
-							</div>
-						</div>
 						</div>
 						<div class="panel">
-						<div class="row collapse" role="tabpanel" id="image3">
-							<div class="col-sm-6">
-								<h2>Основа</h2>
-								<img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png" class="img-responsive">
-								<div class="form-group">
-									<label for="image1_date">Дата загрузки</label>
-									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+							<div class="row collapse image-data" role="tabpanel" id="image3">
+								<div class="col-xs-6 image-data-main">
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png" class="img-responsive btn-image-replace">
+									<div class="form-group">
+										<label for="image1_main_date">Дата загрузки</label>
+										<input type="text" class="form-control disable" id="image1_main_date" value="20.02.2015 10:00:00">
+									</div>
+								</div>
+								<div class="col-xs-6 image-data-color">
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3>
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<h2>Покрас</h2>
-							</div>
-						</div>
 						</div>
 						<div class="panel">
-						<div class="row collapse" role="tabpanel" id="image4">
-							<div class="col-sm-6">
-								<h2>Основа</h2>
-								<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
-								<div class="form-group">
-									<label for="image1_date">Дата загрузки</label>
-									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+							<div class="row collapse image-data" role="tabpanel" id="image4">
+								<div class="col-xs-6 image-data-main">
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive btn-image-replace">
+									<div class="form-group">
+										<label for="image1_main_date">Дата загрузки</label>
+										<input type="text" class="form-control disable" id="image1_main_date" value="20.02.2015 10:00:00">
+									</div>
+								</div>
+								<div class="col-xs-6 image-data-color">
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3>
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<h2>Покрас</h2>
-							</div>
-						</div>
 						</div>
 						<div class="panel">
-						<div class="row collapse" role="tabpanel" id="image5">
-							<div class="col-sm-6">
-								<h2>Основа</h2>
-								<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
-								<div class="form-group">
-									<label for="image1_date">Дата загрузки</label>
-									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
+							<div class="row collapse image-data" role="tabpanel" id="image5">
+								<div class="col-xs-6 image-data-main">
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive btn-image-replace">
+									<div class="form-group">
+										<label for="image1_main_date">Дата загрузки</label>
+										<input type="text" class="form-control disable" id="image1_main_date" value="20.02.2015 10:00:00">
+									</div>
+								</div>
+								<div class="col-xs-6 image-data-color">
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive btn-image-replace">
+									<div class="form-group">
+										<label for="image1_color_date">Дата загрузки</label>
+										<input type="text" class="form-control disable" id="image1_color_date" value="20.02.2015 10:00:00">
+									</div>
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<h2>Покрас</h2>
-								<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
-								<div class="form-group">
-									<label for="image1_date">Дата загрузки</label>
-									<input type="text" class="form-control disable" id="image1_date" value="20.02.2015 10:00:00">
-								</div>
-							</div>
-						</div>
 						</div>
 					</div>
 				</div>
@@ -271,9 +334,37 @@
 
 </body>
 <script type="text/javascript">
-$('.list-group.select.sortable').sortable({
-      items: "a:not(:first-child.heading)",
-	  handle:'.move'
+	$('.list-group.select.sortable').sortable({
+		items: "a:not(:first-child.heading)",
+		handle:'.move'
     });
+	$('.admin-affix').each(function() {
+		var parent = $(this).parent();
+		$(this).affix({
+			offset: {
+				top: function() { return parent.offset().top - 10; },
+				bottom: function() { return $(document).height() - parent.outerHeight(true) - parent.offset().top; }
+			}
+		});
+	});
+	$('.image-data').on('hidden.bs.collapse', function () {
+		$('#btn-image-delete').attr('disabled',true);
+	}).on('shown.bs.collapse', function() {
+		$('#btn-image-delete').attr('disabled',false);
+	});
+	$(document).on('dragover', function(e) {
+        if (window.dropZoneTimeout)
+            clearTimeout(window.dropZoneTimeout);
+        else $('body').addClass('dragover');
+			
+		$('.image-data-main,.image-data-color,#imageselect').removeClass('hover');
+        $(e.target).closest('.image-data-main,.image-data-color,#imageselect').addClass('hover');
+
+        window.dropZoneTimeout = setTimeout(function() {
+            window.dropZoneTimeout = null;
+            $('body').removeClass('dragover');
+			$('.image-data-main,.image-data-color,#imageselect').removeClass('hover');
+        }, 400);
+    }).on('drop dragover', function(e) { e.preventDefault(); });
 </script>
 </html>
