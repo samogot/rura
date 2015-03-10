@@ -4,6 +4,9 @@
 body {
     min-width: 340px;
 }
+.clear-both {
+    clear: both;
+}
 /* --------------- header --------------*/
 header{
     width: 100%;
@@ -791,4 +794,91 @@ transition: all 0.3s ease-out;
 opacity: 1;
 border-color: #60a9d4;
 color: #60a9d4;
+}
+/* ------------------------- faq -------------------- */
+center.project {
+    margin-bottom: 4px;
+}
+.color110 {
+    color: rgb(110,110,110);
+}
+.faqContent {
+    background: rgb(242,242,242);
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 20px;
+    color: rgb(77,77,77);
+    margin-bottom: 25px;
+}
+.panel-heading {
+    background: rgb(202,233,252);
+    border: 1px solid rgb(67,186,255) !important;
+    border-radius: 0;
+}
+.panel-heading > h4 > a > div {
+    color: rgb(77,77,77);
+    font-size: 10pt;
+    text-decoration: underline;
+}
+.panel-heading > h4 > a:hover {
+    text-decoration: none;
+}
+.color110 {
+    color: rgb(110,110,110);
+}
+.answer > .h4 {
+    color: #60A9D4;
+    font-size: 17px;
+}
+.answer {
+    color: rgb(94,94,94);
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+.panel-heading.gray {
+    background: rgb(242,242,242);
+    border-style: dashed !important;
+}
+.h4.gray {
+    color: rgb(77,77,77);
+}
+textarea[class="form-control"] {
+    margin: 0px;
+    max-height: 85px;
+    min-height: 85px;
+    font-size: 16px !important;
+    padding: 11px !important;
+    height: 87px;
+    max-width: 779px;
+    width: 784px;
+    background-color: rgb(242, 242, 242);
+}
+.avatar > div {
+    background: rgb(77,77,77);
+    margin-right: 10px;
+    margin-bottom: -80px;
+    height: 80px;
+    width: 80px;
+}
+.timeAgo {
+    color: rgb(138,138,138);
+}
+.name {
+    color: rgb(77,77,77);
+    margin-right: 10px;
+}
+.commentAnswer {
+    color: rgb(77,77,77);
+}
+.comment {
+    min-width: 80px;
+}
+.avatar {
+    height: 100%;
+    width: 80px;
+}
+.commentText {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

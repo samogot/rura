@@ -1,14 +1,412 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>index</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
-    
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalLabel">Вход</h4>
+      </div>
+      <div class="modal-body">
+				<form class="form-horizontal">
+		  <div class="form-group">
+			<label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
+			<div class="col-sm-10">
+			  <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
+			<div class="col-sm-10">
+			  <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+			  <div class="checkbox">
+				<label>
+				  <input type="checkbox"> Запомнить пароль
+				</label>
+			  </div>
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+			  <button type="submit" class="btn btn-primary">Вход</button>
+			</div>
+		  </div>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop" style="display:none"></div>
+<nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png"></a>
+    </div>
+    <div class="collapse navbar-collapse">
+	  <div class="secondLogoContainer"><div class="secondLogo"></div></div>
+      <form class="navbar-form navbar-right">
+            <button class="btn btn-white">Регистрация</button>
+            <a class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</a>
+      </form>
+    </div>
+  </div><!-- /.container -->
+</nav>
+<nav class="navbar navbar-default navbar-lower" role="navigation">
+  <div class="container">
+    <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form visible-xs-block">
+            <button class="btn btn-default">Регистрация</button>
+            <a class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</a>
+      </form>
+      <ul class="nav navbar-nav">
+            <li><a href="#">Обновления</a></li>
+            <li><a href="#">Проекты</a></li>
+            <li><a href="#">Набор в команду</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">О нас</a></li>
+        	<li><a href="#">Связь</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+            <a href="#" class="btn btn-danger">Трансляции</a>
+            <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
+        	<a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container">
+		<div class="leftColumn">
+			<main class="content">
+          <div class="h3" style="margin-top: 15px !important;">F.A.Q.</div>
+          <p>
+              <span class="color110">Данная страница предназначена для людей, которых интересуют детали относительно нас и наших переводов.
+          </p>
+          <img src="img/faq.png" style="max-width: 680px; width: 100%;">
+          <div class="faqContent">
+              <div class="bold pull-left">Сожержание /</div>&nbsp; вопросы и ответы
+          </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div style="margin-bottom: 5px;">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#question1" aria-expanded="true" aria-controls="collapseOne">
+                        <div><div class="bold pull-left" style="margin-right:10px;">1:</div>С какого языка вы переводите?</div>
+                    </a>
+                  </h4>
+                </div>
+                <div id="question1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="answer">
+                        <h4 class="h4">С какого языка вы переводите?</h4>
+                        <div>
+                            <div class="bold pull-left">Ответ:</div>&nbsp;Основная часть наших проектов переводятся с английского. При необходимости сверяемся
+            с японским. Есть также пара проектов, которые переводятся напрямую с японского. Подробнее можно узнать, тыкнув в нужный том (там указывается кто за что отвечает и с какого языка идет перевод).
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom: 5px;">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#question2" aria-expanded="true" aria-controls="collapseOne">
+                        <div><div class="bold pull-left" style="margin-right:10px;">2:</div>Где можно узнать дату следующего релиза?</div>
+                    </a>
+                    </h4>
+                </div>
+                <div id="question2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="answer">
+                        <h4 class="h4">Где можно узнать дату следующего релиза?</h4>
+                        <div>
+                            <div class="bold pull-left">Ответ:</div>&nbsp;...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom: 5px;">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#question3" aria-expanded="true" aria-controls="collapseOne">
+                        <div><div class="bold pull-left" style="margin-right:10px;">3:</div>Большой ли у вас состав команды?</div>
+                    </a>
+                    </h4>
+                </div>
+                <div id="question3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="answer">
+                        <h4 class="h4">Большой ли у вас состав команды?</h4>
+                        <div>
+                            <div class="bold pull-left">Ответ:</div>&nbsp;40 человек. Подробнее можно узнать в разделе "<a href="#">О команде</a>"
+                        </div>
+                    </div>
+                </div>
+            </div><!-- конец блока -->
+            <div style="margin-bottom: 5px;">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#question4" aria-expanded="true" aria-controls="collapseOne">
+                        <div><div class="bold pull-left" style="margin-right:10px;">4:</div>Планируете ли вы переводить ранобэ *Название ранобэ*?</div>
+                    </a>
+                    </h4>
+                </div>
+                <div id="question4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="answer">
+                        <h4 class="h4">Планируете ли вы переводить ранобэ *Название ранобэ*?</h4>
+                        <div>
+                            <div class="bold pull-left">Ответ:</div>&nbsp;...
+                        </div>
+                    </div>
+                </div>
+            </div><!-- конец блока -->
+            <div style="margin-bottom: 5px;">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#question5" aria-expanded="true" aria-controls="collapseOne">
+                        <div><div class="bold pull-left" style="margin-right:10px;">5:</div>Сколько, как минимум, глав должно быть переведено на английский, чтобы ваша команда
+     взялась за перевод на русский??</div>
+                    </a>
+                    </h4>
+                </div>
+                <div id="question5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="answer">
+                        <h4 class="h4">Сколько, как минимум, глав должно быть переведено на английский, чтобы ваша команда
+     взялась за перевод на русский?</h4>
+                        <div>
+                            <div class="bold pull-left">Ответ:</div>&nbsp;...
+                        </div>
+                    </div>
+                </div>
+            </div><!-- конец блока -->
+            <div style="margin-bottom: 5px;">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#question6" aria-expanded="true" aria-controls="collapseOne">
+                        <div><div class="bold pull-left" style="margin-right:10px;">6:</div>Возьмется ли ваша команда за проект, который уже переводит кто-то еще??</div>
+                    </a>
+                    </h4>
+                </div>
+                <div id="question6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="answer">
+                        <h4 class="h4">Возьмется ли ваша команда за проект, который уже переводит кто-то еще?</h4>
+                        <div>
+                            <div class="bold pull-left">Ответ:</div>&nbsp;...
+                        </div>
+                    </div>
+                </div>
+            </div><!-- конец блока -->
+            <div style="margin-bottom: 5px;">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#question7" aria-expanded="true" aria-controls="collapseOne">
+                        <div><div class="bold pull-left" style="margin-right:10px;">7:</div>Почему в разных релизах имеются различия на предмет использования именных суффиксов, Поливанова/Хепбёрна, наличие/отсутствие нецензурных выражений? Или, например, имена/названия были переведены как "A", а не "B"</div>
+                    </a>
+                    </h4>
+                </div>
+                <div id="question7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="answer">
+                        <h4 class="h4">Почему в разных релизах имеются различия на предмет использования именных суффиксов, Поливанова/Хепбёрна, наличие/отсутствие нецензурных выражений? Или, например, имена/названия были переведены как "A", а не "B</h4>
+                        <div>
+                            <div class="bold pull-left">Ответ:</div>&nbsp;...
+                        </div>
+                    </div>
+                </div>
+            </div><!-- конец блока -->
+            <div style="margin-bottom: 5px;">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#question31" aria-expanded="true" aria-controls="collapseOne">
+                        <div><div class="bold pull-left" style="margin-right:10px;">31:</div>Банк работ</div>
+                    </a>
+                    </h4>
+                </div>
+                <div id="question31" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="answer">
+                        <h4 class="h4">Банк работ</h4>
+                        <div>
+                            Здесь представлен список тайтлов, которые мы собрали из предложенных вами вариантов. Наличие серии в списке не дает никакой гарантии того, что мы возьмем ее на перевод - скорее это список-справочник, облегчающий команде ориентацию в английских переводах ранобэ.
+                        </div>
+                        <br>
+                        <div style="margin-bottom: 5px;">
+                            <div class="panel-heading gray" role="tab">
+                                <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#question31-1" aria-expanded="true" aria-controls="collapseOne">
+                                    <div><div class="bold pull-left" style="margin-right:10px;">31.1:</div>На рассмотрении (анонсированы/поиск переводчиков/переговоры с другими переводчикми)</div>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="question31-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="answer">
+                                    <h4 class="h4 gray">На рассмотрении (анонсированы/поиск переводчиков/переговоры с другими переводчикми)</h4>
+                                    <div>
+- Date a Live (заморожен, на долгой очереди)
+<br><br>
+- Сакурасо (заморожен, на долгой очереди)
+<br><br>
+- Gekkou (заморожен, на очень долгой очереди)
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div><!-- конец внутреннего блока -->
+                        <div style="margin-bottom: 5px;">
+                            <div class="panel-heading gray" role="tab">
+                                <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#question31-2" aria-expanded="true" aria-controls="collapseOne">
+                                    <div><div class="bold pull-left" style="margin-right:10px;">31.2:</div>Под вопросом (перевод возможен, но нет заинтересованных в переводе членов команды. А может мы просто скрываем от вас то, что переводим что-то из </div>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="question31-2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="answer">
+                                    <h4 class="h4 gray">Под вопросом (перевод возможен, но нет заинтересованных в переводе членов команды. А может мы просто скрываем от вас то, что переводим что-то из )</h4>
+                                    <div>
+- Absolute Duo - <a href="#">ссылка</a>
+<br><br>
+- Baccano! - <a href="#">ссылка</a>
+<br><br>
+- Black Bullet - <a href="#">ссылка</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div><!-- конец внутреннего блока -->
+                    </div>
+                </div>
+            </div><!-- конец блока -->
+            <div style="margin-bottom: 5px;">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#question32" aria-expanded="true" aria-controls="collapseOne">
+                        <div><div class="bold pull-left" style="margin-right:10px;">32:</div>Если вы не нашли ответ на свой вопрос</div>
+                    </a>
+                    </h4>
+                </div>
+                <div id="question32" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="answer">
+                        <h4 class="h4">Если вы не нашли ответ на свой вопрос</h4>
+                        <div>
+Если то, что вас интересует, отсутствует на данной странице, вы можете написать свой вопрос в
+коментарии.
+<br><br>
+Просьба:
+<br><br>
+а) Если кидаете предложение на перевод - кидайте с ссылкой на англоязычную версию с минимум
+    одним переведенным томом.
+<br><br>
+б) Убедитесь, что ваш вопрос новый и отсутствует выше. В противном случае просто сотрем его.
+                        </div>
+                    </div>
+                </div>
+            </div><!-- конец блока -->
+        </div><!-- end/panel-group  -->
+        <h3 class="h3">Комментарии</h3>
+        <p>
+          <span class="color110">На сайте РуРанобэ приветствуются <span class="bold">все комментарий</span>. Если вы не хотите быть анонимным, <a href="#">зарегистрируйтесь</a> или <a href="#">войдите</a>. 
+        </p>
+	<div class="input-group input-group-lg sharp" style="margin-bottom:40px;">
+        <textarea type="text" class="form-control" placeholder="Введите комментарии" rows="3"></textarea>
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" style="height:85px; ">Отправить</button>
+        </span>
+    </div>   
+    <div class="comments">
+        <div class="comment">
+            <div class="avatar"><div class=""><img src="#" width="80" height="80"></div></div>
+            <div style="margin-left: 90px;">
+                <div class="name pull-left bold">Анонимный участник №1</div>
+                <div class="timeAgo">2 дня назад</div>
+                <div class="commentText">
+                    А кто придумал внешний вид(дизайн) Руйки-тян ? (Она очаровательна~~)
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nam reiciendis molestias itaque, excepturi aut error quam necessitatibus! Voluptate et veniam sed? Cupiditate omnis, aut unde aliquid blanditiis, nam in.</div>
+                    <div>Minus voluptates repellat sapiente quam! Officia explicabo expedita aut blanditiis quibusdam, natus voluptatem libero eaque magnam molestiae unde neque, repellendus! Fugit ipsum voluptates quas vero vel dolore quisquam mollitia consequatur?</div>
+                </div>
+                <a href="#" class="commentAnswer bold">Ответить</a>
+            </div>
+        </div>
+    </div>
+    </main>
+		</div>
+		<aside class="right-sidebar">
+        <div class="miniSearch">
+            <input type="text" placeholder="Поиск..."><button><i class="fa fa-search"></i></button>
+        </div>
+        <div style="color:rgb(77,77,77);">
+            <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
+            <div class="h4">Проекты</div>
+        </div>
+            <center class="project">       
+            <p><a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" height="73" width="220"></a>
+            <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" height="73" width="220"></a>
+            <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" height="73" width="220"></a>
+            <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220"></a>
+            <a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" height="73" width="220"></a>
+            <a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" height="73" width="220"></a>
+            <a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" height="73" width="220"></a>
+            <a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" height="73" width="220"></a>
+            <a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" height="73" width="220"></a>
+            <a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" height="73" width="220"></a>
+            <a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" height="73" width="220"></a>
+            <a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" height="73" width="220"></a>
+            <a href="/r/ssnts" title="Дуэлянт странствующей богини"><img alt="Дуэлянт странствующей богини" src="http://ruranobe.ru/w/images/1/12/sidebanner-ssnts.png" height="73" width="220"></a>
+            <a href="/r/lh" title="Log Horizon"><img alt="Log Horizon" src="http://ruranobe.ru/w/images/f/f5/sidebanner-lh.png" height="73" width="220"></a>
+            <a href="/r/mdn" title="Пусть твоя душа упокоится в Магдале"><img alt="Пусть твоя душа упокоится в Магдале" src="http://ruranobe.ru/w/images/3/30/sidebanner-mdn.png" height="73" width="220"></a>
+            <a href="/r/tnynn" title="Становление Героя Щита"><img alt="Становление Героя Щита" src="http://ruranobe.ru/w/images/1/19/sidebanner-tnynn.png" height="73" width="220"></a>
+            <a href="/r/snpnk" title="Кошечка из Сакурасо"><img alt="Кошечка из Сакурасо" src="http://ruranobe.ru/w/images/1/18/sidebanner-snpnk.png" height="73" width="220"></a>
+            <a href="/r/ol" title="Overlord"><img alt="Overlord" src="http://ruranobe.ru/w/images/a/a6/sidebanner-ol.png" height="73" width="220"></a>
+            <a href="/r/ngnl" title="No Game No Life"><img alt="No Game No Life" src="http://ruranobe.ru/w/images/4/42/sidebanner-ngnl.png" height="73" width="220"></a>
+            <a href="/r/tr" title="Tokyo Ravens"><img alt="Tokyo Ravens" src="http://ruranobe.ru/w/images/f/fb/sidebanner-tr.png" height="73" width="220"></a>
+            <a href="/r/tmni" title="Некий Магический Индекс"><img alt="Некий Магический Индекс" src="http://ruranobe.ru/w/images/8/88/sidebanner-tmni.png" height="73" width="220"></a>
+            <a href="/r/haruhi" title="Серия Харухи Судзумии"><img alt="Серия Харухи Судзумии" src="http://ruranobe.ru/w/images/4/4f/sidebanner-haruhi.png" height="73" width="220"></a>
+            <a href="/r/saw" title="Волчица и пряности"><img alt="Волчица и пряности" src="http://ruranobe.ru/w/images/9/9e/sidebanner-saw.png" height="73" width="220"></a>
+            <a href="/r/ch2b" title="Чудачества любви не помеха!"><img alt="Чудачества любви не помеха!" src="http://ruranobe.ru/w/images/1/1a/sidebanner-ch2b.png" height="73" width="220"></a>
+            <a href="/r/aynik" title="All You Need Is Kill"><img alt="All You Need Is Kill" src="http://ruranobe.ru/w/images/b/ba/sidebanner-aynik.png" height="73" width="220"></a>
+            <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220"></a>
+            <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220"></a>
+            <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220"></a><a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220"></a> 
+            </p>
+            </center>
+            <div style="color:rgb(77,77,77);">
+                <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
+                <div class="h4">Друзья</div>
+            </div>
+            <div class="poster" style="margin-right:0px !important;">
+                <a href="#"><div class="projectBlock type2"><img src="img/friend.png"></div></a>
+            </div>
+        </aside>
+</div>
+<div class="container">
+	<footer>
+	    <div class="footer">
+	        <a href="#">Обновления</a>
+	        <a href="#">Проекты</a>
+	        <a href="#">Набор в команду</a>
+	        <a href="#">FAQ</a>
+	        <a href="#">О нас</a>
+	        <a href="#">Помощь</a>
+	        <a href="#">Связь</a>
+	    </div>
+	    <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
+	</footer>
+</div>
+
 </body>
 </html>
