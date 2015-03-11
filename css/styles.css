@@ -596,6 +596,7 @@ button.loginClose {
 /* --------------- updates ------------------ */
 .updSearch {
     margin-bottom: 15px;
+    line-height: 30px;
 }
 .updSearch > .bold {
     font-size: 13px;
