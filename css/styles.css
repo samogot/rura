@@ -7,6 +7,12 @@ body {
 .clear-both {
     clear: both;
 }
+.italic {
+    font-style: italic;
+}
+.red {
+    color: rgb(211,63,84);
+}
 /* --------------- header --------------*/
 header{
     width: 100%;
@@ -874,6 +880,7 @@ textarea[class="form-control"] {
 }
 .comment {
     min-width: 80px;
+    margin-top: 20px;
 }
 .avatar {
     height: 100%;
@@ -882,4 +889,41 @@ textarea[class="form-control"] {
 .commentText {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+/* -------------------- release ------------------*/
+.releaseImg > img {
+    max-width: 240px;
+    width: 100%;
+}
+.releaseImg {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.nextVolume {
+    max-width: 240px;
+}
+.nextVolume > div > a > i {
+    font-size: 11px;
+}
+.nextVolume > div {
+    width: 50%;
+    background: rgb(242,242,242);
+    min-height: 40px;
+    float: left;
+    padding-top: 11px;
+}
+.nextVolume > div > a {
+    color: rgb(77,77,77);
+}
+.aboutRelease {
+    color: rgb(77,77,77);
+}
+.read > a > div {
+    border-bottom: 1px solid rgb(231,231,231);
+    height: 28px;
+    margin-bottom: 5px;
+}
+.read > a {
+    color: rgb(77,77,77);
+    width: 100%;
 }
