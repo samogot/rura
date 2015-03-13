@@ -388,6 +388,12 @@ display: inline-block;
     padding-top: 10px;
     margin-right: 0.64pc;
 }
+.project > .all:hover, .updates > .all:hover,
+.project > .all:active, .updates > .all:active,
+.project > .all:focus, .updates > .all:focus {
+    text-decoration: none;
+    color: rgb(133,133,133);
+}
 .project.width220 > div > .prjBlockAbout {
     width: 220px !important;
 }
@@ -926,4 +932,82 @@ textarea[class="form-control"] {
 .read > a {
     color: rgb(77,77,77);
     width: 100%;
+}
+aside > .actions > div:hover {
+    background: rgb(231,231,231) no-repeat 5% 50%;
+}
+.actions > div {
+    padding: 5px 5px 5px 35px;
+    width: 100%;
+    background: no-repeat scroll 5% 50% #F2F2F2;
+    margin-bottom: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.actions > div > a {
+    color: rgb(77,77,77);
+}
+.actions > div > a:hover {
+    text-decoration: none;
+    border-bottom: 1px dashed rgb(77,77,77);
+}
+.download {
+    color: #60A9D4 !important;
+    border-bottom: 0 !important;
+}
+a.more {
+    float: right;
+    color: rgb(133,133,133);
+    text-decoration: none;
+    border-bottom: 1px dashed rgb(133,133,133);
+}
+.actions {
+    margin-bottom: 20px;
+}
+.h4 + div > a {
+    margin-bottom: 10px;
+}
+/* -------------- project ------------*/
+.ranobeList > div > .pull-left {
+    font-size: 13px;
+    background: rgb(231,231,231);
+    width: 55px;
+    text-align: center;
+    margin-right: 5px;
+}
+.ranobeList > div:hover {
+    background: rgb(242,242,242);
+}
+.ranobeList > div {
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid rgb(231,231,231);
+    padding-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+main > .ranobeList > div:last-child {
+    border-bottom: none;
+}
+.ranobeList > div > a {
+    color: rgb(77,77,77);
+}
+main > .ranobeList > div > a:hover {
+    color: #60A9D4;
+}
+.ranobeList > div > .status {
+    color: #fff;
+    font-weight: bold;
+    padding: 0px 5px;
+    margin-top: -1px;
+    width: 95px;
+    text-align: center;
+    float: left;
+    margin-right: 5px;
+}
+.h3.project {
+    margin-bottom: 0px; 
+    margin-top: 35px;
 }
