@@ -707,25 +707,27 @@ button.loginClose {
 	font-weight: bold;
 	border: 1px solid #dddddd;
 }
-.list-group-item img {
-height: 32px;
-margin: 0 auto;
+.list-group-item img, .list-group-item canvas {
+	height: 32px;
+	margin: 0 auto;
+	max-width: 50px;
 }
 a.list-group-item center {
-display: inline-block;
-width: 50px;
-margin-right: 10px;
-margin-left: 5px;
+	display: inline-block;
+	height: 32px;
+	width: 50px;
+	margin-right: 10px;
+	margin-left: 5px;
 }
 #imageform img{
-max-height: 180px;
-margin: 0 auto;
+	max-height: 180px;
+	margin: 0 auto;
 }
 #imageform .panel {
-margin-bottom: 0;
-border: none;
--webkit-box-shadow: none;
-box-shadow: none;
+	margin-bottom: 0;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 
 .admin-affix.affix {
@@ -760,7 +762,7 @@ box-shadow: none;
 
 
 #imageselect{
-min-height: 140px;
+min-height: 340px;
 }
 .dragover #imageselect::before {
 content: 'Добавить файлы';
@@ -807,6 +809,26 @@ transition: all 0.3s ease-out;
 opacity: 1;
 border-color: #60a9d4;
 color: #60a9d4;
+}
+
+#imageform .progress {
+	margin: 5px 0;
+}
+
+#btn-image-add,.btn-image-replace {
+  position: relative;
+  overflow: hidden;
+}
+.fileupload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
 }
 /* ------------------------- faq -------------------- */
 center.project {

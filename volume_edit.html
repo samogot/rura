@@ -135,7 +135,8 @@
 				<div class="row">
 					<div class="col-xs-4">
 						<div class="list-group select sortable" id="imageselect">
-							<a class="list-group-item heading"><span class="move">Начальные иллюстрации</span></a>
+							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Обложки</span></a>
+							<a class="list-group-item heading" data-chapter-id="1"><span class="move">Начальные иллюстрации</span></a>
 							<a data-toggle="collapse" data-parent="#imageform" href="#image1" aria-expanded="true" aria-controls="image1" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
 								<center><img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png"></center>
@@ -156,55 +157,7 @@
 								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
 								<span class="hidden-sm hidden-xs">20.02.2015</span>
 							</a>
-							<a class="list-group-item heading"><span class="move">Глава 1</span></a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a class="list-group-item heading"><span class="move">Глава 1</span></a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a class="list-group-item heading"><span class="move">Глава 1</span></a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a class="list-group-item heading"><span class="move">Глава 1</span></a>
+							<a class="list-group-item heading" data-chapter-id="2"><span class="move">Глава 1</span></a>
 							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
 								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
@@ -214,16 +167,23 @@
 					</div>
 					<div class="col-xs-8 admin-affix" id="imageform" role="tablist" aria-multiselectable="true">
 						<div class="btn-group" role="group" aria-label="Панель изображений">
-						  <button type="button" class="btn btn-success" title="Добавить новые изображения" id="btn-image-add"><i class="fa fa-plus"></i></button>
+						  <button type="button" class="btn btn-success" title="Добавить новые изображения" id="btn-image-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
 						  <button type="button" class="btn btn-default btn-border" title="Режим замены изображений" id="btn-image-replace-main"><i class="fa fa-retweet"></i></button>
-						  <button type="button" class="btn btn-default btn-border" title="Режим добавления/замены покрасов" id="btn-image-reset-color"><i class="fa fa-exchange"></i></button>
+						  <button type="button" class="btn btn-default btn-border" title="Режим добавления/замены покрасов" id="btn-image-reset-color"><i class="fa fa-retweet" style="color: #60a9d4;"></i><i class="fa fa-paint-brush" style="font-size: 9px;margin-left: -9px;"></i></button>
 						  <button type="button" class="btn btn-danger" title="Удалить изображение" id="btn-image-delete" disabled><i class="fa fa-trash-o"></i></button>
+						</div>
+						<div class="progress collapse">
+							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+								<span class="sr-only">0% Complete</span>
+							</div>
 						</div>
 						<div  class="panel">
 							<div class="row collapse image-data" role="tabpanel" id="image1">
 								<input type="hidden" id="image1_id">
+								<input type="hidden" id="image1_order">
+								<input type="hidden" id="image1_chapter_id">
 								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive btn-image-replace">
 									<div class="form-group">
 										<label for="image1_main_date">Дата загрузки</label>
@@ -231,14 +191,17 @@
 									</div>
 								</div>
 								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3>
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
 								</div>
 							</div>
 						</div>
 						<div class="panel">
 							<div class="row collapse image-data" role="tabpanel" id="image2">
+								<input type="hidden" id="image2_id">
+								<input type="hidden" id="image2_order">
+								<input type="hidden" id="image2_chapter_id">
 								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive btn-image-replace">
 									<div class="form-group">
 										<label for="image1_main_date">Дата загрузки</label>
@@ -246,14 +209,17 @@
 									</div>
 								</div>
 								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3>
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
 								</div>
 							</div>
 						</div>
 						<div class="panel">
 							<div class="row collapse image-data" role="tabpanel" id="image3">
+								<input type="hidden" id="image3_id">
+								<input type="hidden" id="image3_order">
+								<input type="hidden" id="image3_chapter_id">
 								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png" class="img-responsive btn-image-replace">
 									<div class="form-group">
 										<label for="image1_main_date">Дата загрузки</label>
@@ -261,14 +227,17 @@
 									</div>
 								</div>
 								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3>
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
 								</div>
 							</div>
 						</div>
 						<div class="panel">
 							<div class="row collapse image-data" role="tabpanel" id="image4">
+								<input type="hidden" id="image4_id">
+								<input type="hidden" id="image4_order">
+								<input type="hidden" id="image4_chapter_id">
 								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive btn-image-replace">
 									<div class="form-group">
 										<label for="image1_main_date">Дата загрузки</label>
@@ -276,14 +245,17 @@
 									</div>
 								</div>
 								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3>
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
 								</div>
 							</div>
 						</div>
 						<div class="panel">
 							<div class="row collapse image-data" role="tabpanel" id="image5">
+								<input type="hidden" id="image5_id">
+								<input type="hidden" id="image5_order">
+								<input type="hidden" id="image5_chapter_id">
 								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive btn-image-replace">
 									<div class="form-group">
 										<label for="image1_main_date">Дата загрузки</label>
@@ -291,7 +263,7 @@
 									</div>
 								</div>
 								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3>
+									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive btn-image-replace">
 									<div class="form-group">
 										<label for="image1_color_date">Дата загрузки</label>
@@ -338,6 +310,31 @@
 		items: "a:not(:first-child.heading)",
 		handle:'.move'
     });
+	$('#imageselect').on( "sortupdate", function( event, ui ) {
+		if(ui.item.hasClass('heading'))
+		{
+			var start = 0; 
+			$(this).children().each(function(i,e) {
+				if($(e).position().top <= ui.originalPosition.top)
+					start = i; 
+				else return false;
+			});
+			var end = ui.item.index()
+			if(start < end)
+				$(this).children().slice(start, end).filter('.heading').insertAfter(ui.item);
+			else
+				$(this).children().slice(end + 1, start + 1).filter('.heading').insertBefore(ui.item);
+		}
+		var order = 0, chapter_id = 0;
+		$(this).children().each(function(){
+			if($(this).is('.heading[data-chapter-id]'))
+				chapter_id = $(this).attr('data-chapter-id');
+			else {
+				$($(this).attr('href')+'_order').val(++order);
+				$($(this).attr('href')+'_chapter_id').val(chapter_id);
+			}
+		});
+	});
 	$('.admin-affix').each(function() {
 		var parent = $(this).parent();
 		$(this).affix({
@@ -366,5 +363,80 @@
 			$('.image-data-main,.image-data-color,#imageselect').removeClass('hover');
         }, 400);
     }).on('drop dragover', function(e) { e.preventDefault(); });
+	
+	$('#btn-image-add').fileupload({
+        url: "http://localhost/uplstub/index.php",
+        dataType: 'json',
+		formData: {ctype: 'main'},
+        acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
+        previewMaxHeight: 180,
+        previewMaxWidth: 260,
+		dropZone: $('#imageselect')
+    }).on('fileuploadadd', function (e, data) {
+        $.each(data.files, function (index, file) {
+			if(!data.last_num) data.last_num = $('#imageselect a[href^="#image"]:last-child').attr('href').substr(6);
+			if(!data.last_num) data.last_num = 0;
+			file.num = ++data.last_num;
+			file.ctype = 'main';
+			$('<a data-toggle="collapse" data-parent="#imageform" href="#image'+file.num+'" aria-expanded="true" aria-controls="image'+file.num+'" class="list-group-item"> <i class="fa fa-ellipsis-v move ui-sortable-handle"></i> <center><i class="fa fa-spinner fa-spin"></i></center> <span class="hidden-sm hidden-xs">'+file.name+'</span> </a>').appendTo('#imageselect');
+			$('<div class="panel"><div class="row collapse image-data" role="tabpanel" id="image'+file.num+'"><input type="hidden" id="image'+file.num+'_id"><input type="hidden" id="image'+file.num+'_order"><input type="hidden" id="image'+file.num+'_chapter_id"><div class="col-xs-6 image-data-main"><h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3><center><i class="fa fa-spinner fa-spin"></i></center><div class="form-group"><label for="image1_main_date">Дата загрузки</label><input type="text" class="form-control disable" id="image'+file.num+'_main_date"></div></div><div class="col-xs-6 image-data-color"><h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3></div></div></div>').appendTo('#imageform');
+        });
+		$('#imageform .progress').collapse('show');
+		data.submit();
+    });
+	
+	$('.btn-image-replace').each(function(){
+		$(this).fileupload({
+			url: "http://localhost/uplstub/index.php",
+			dataType: 'json',
+			formData: {
+				ctype: $(this).closest('.image-data-main').length ? 'main' : 'color', 
+				num: $(this).closest('.image-data').attr('id').substr(5), 
+				id: $('#'+$(this).closest('.image-data').attr('id')+'_id').val()
+			},
+			acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
+			previewMaxHeight: 180,
+			previewMaxWidth: 260,
+			maxNumberOfFiles: 1,
+			dropZone: $(this).closest('.image-data-main,.image-data-color')
+		}).on('fileuploadadd', function (e, data) {
+			data.files[0].num = $(this).closest('.image-data').attr('id').substr(5);
+			data.files[0].ctype = $(this).closest('.image-data-main').length ? 'main' : 'color';
+			$(this).closest('.image-data-main,.image-data-color').find('img').after('<center><i class="fa fa-spinner fa-spin"></i></center>').detach();
+			$('#imageform .progress').collapse('show');
+			data.submit();
+		});
+	});
+	
+	$('#btn-image-add,.btn-image-replace').on('fileuploadprocessalways', function (e, data) {
+        var index = data.index,
+            file = data.files[index];
+        if (file.preview) {
+            $('#imageselect a[href="#image'+file.num+'"] center').empty().append(file.preview);
+			var newCanvas = $(file.preview).clone().get(0);
+			newCanvas.getContext('2d').drawImage(file.preview, 0, 0);
+            $('#image'+file.num+' .image-data-'+file.ctype+' center').empty().append(newCanvas);
+		}
+        if (file.error)
+			$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
+    }).on('fileuploadprogressall', function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $('#imageform .progress-bar').css('width', progress + '%');
+        $('#imageform .progress-bar').attr('aria-valuenow', progress);
+        $('#imageform .progress-bar span').text(progress + '% Complete');
+    }).on('fileuploaddone', function (e, data) {
+		$('#imageform .progress').collapse('hide');
+		console.log(data)
+        $.each(data.result.files, function (index, file) {
+            if (file.url) {
+				$('#image'+data.files[index].num+'_id').val(file.id);
+				$('#imageselect a[href="#image'+data.files[index].num+'"] center').empty().append($('<img>').attr('src', file.url));
+				$('#image'+data.files[index].num+' .image-data-'+data.files[index].ctype+' center').empty().append($('<img>').attr('src', file.url).addClass('img-responsive'));
+            } else if (file.error)
+				$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
+        });
+    }).on('fileuploadfail', function (e, data) {
+		$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
+    });
 </script>
 </html>
