@@ -182,6 +182,7 @@
 								<input type="hidden" id="image1_id">
 								<input type="hidden" id="image1_order">
 								<input type="hidden" id="image1_chapter_id">
+								<input type="hidden" id="image1_delete">
 								<div class="col-xs-6 image-data-main">
 									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive btn-image-replace">
@@ -200,6 +201,7 @@
 								<input type="hidden" id="image2_id">
 								<input type="hidden" id="image2_order">
 								<input type="hidden" id="image2_chapter_id">
+								<input type="hidden" id="image2_delete">
 								<div class="col-xs-6 image-data-main">
 									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive btn-image-replace">
@@ -218,6 +220,7 @@
 								<input type="hidden" id="image3_id">
 								<input type="hidden" id="image3_order">
 								<input type="hidden" id="image3_chapter_id">
+								<input type="hidden" id="image3_delete">
 								<div class="col-xs-6 image-data-main">
 									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png" class="img-responsive btn-image-replace">
@@ -236,6 +239,7 @@
 								<input type="hidden" id="image4_id">
 								<input type="hidden" id="image4_order">
 								<input type="hidden" id="image4_chapter_id">
+								<input type="hidden" id="image4_delete">
 								<div class="col-xs-6 image-data-main">
 									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive btn-image-replace">
@@ -254,6 +258,7 @@
 								<input type="hidden" id="image5_id">
 								<input type="hidden" id="image5_order">
 								<input type="hidden" id="image5_chapter_id">
+								<input type="hidden" id="image5_delete">
 								<div class="col-xs-6 image-data-main">
 									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
 									<img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive btn-image-replace">
@@ -379,7 +384,7 @@
 			file.num = ++data.last_num;
 			file.ctype = 'main';
 			$('<a data-toggle="collapse" data-parent="#imageform" href="#image'+file.num+'" aria-expanded="true" aria-controls="image'+file.num+'" class="list-group-item"> <i class="fa fa-ellipsis-v move ui-sortable-handle"></i> <center><i class="fa fa-spinner fa-spin"></i></center> <span class="hidden-sm hidden-xs">'+file.name+'</span> </a>').appendTo('#imageselect');
-			$('<div class="panel"><div class="row collapse image-data" role="tabpanel" id="image'+file.num+'"><input type="hidden" id="image'+file.num+'_id"><input type="hidden" id="image'+file.num+'_order"><input type="hidden" id="image'+file.num+'_chapter_id"><div class="col-xs-6 image-data-main"><h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3><center><i class="fa fa-spinner fa-spin"></i></center><div class="form-group"><label for="image1_main_date">Дата загрузки</label><input type="text" class="form-control disable" id="image'+file.num+'_main_date"></div></div><div class="col-xs-6 image-data-color"><h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3></div></div></div>').appendTo('#imageform');
+			$('<div class="panel"><div class="row collapse image-data" role="tabpanel" id="image'+file.num+'"><input type="hidden" id="image'+file.num+'_id"><input type="hidden" id="image'+file.num+'_order"><input type="hidden" id="image'+file.num+'_chapter_id"><input type="hidden" id="image'+file.num+'_delete"><div class="col-xs-6 image-data-main"><h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3><center><i class="fa fa-spinner fa-spin"></i></center><div class="form-group"><label for="image1_main_date">Дата загрузки</label><input type="text" class="form-control disable" id="image'+file.num+'_main_date"></div></div><div class="col-xs-6 image-data-color"><h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3></div></div></div>').appendTo('#imageform');
         });
 		$('#imageform .progress').collapse('show');
 		data.submit();
@@ -438,5 +443,11 @@
     }).on('fileuploadfail', function (e, data) {
 		$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
     });
+	$('#btn-image-delete').click(function(){
+		var id = $('.image-data.in').attr('id');
+		$('.image-data.in').collapse('hide');
+		$('#'+id+'_detele').val(true);
+		$('#imageselect [href="#'+id+'"]').detach();
+	});
 </script>
 </html>
