@@ -362,7 +362,7 @@
             $('body').removeClass('dragover');
 			$('.image-data-main,.image-data-color,#imageselect').removeClass('hover');
         }, 400);
-    }).on('drop dragover', function(e) { e.preventDefault(); });
+    }).on('drop dragover dragstart', function(e) { e.preventDefault(); });
 	
 	$('#btn-image-add').fileupload({
         url: "http://localhost/uplstub/index.php",

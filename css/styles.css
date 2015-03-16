@@ -696,6 +696,9 @@ button.loginClose {
 .move{
 	cursor: move;
 }
+.list-group.select .list-group-item.heading:first-child .move{
+	cursor: default;
+}
 .list-group.select .list-group-item
 {
 	padding: 10px 5px;
@@ -706,6 +709,11 @@ button.loginClose {
 	padding: 3px 15px;
 	font-weight: bold;
 	border: 1px solid #dddddd;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 .list-group-item img, .list-group-item canvas {
 	height: 32px;
