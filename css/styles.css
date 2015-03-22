@@ -3,6 +3,7 @@
 }
 body {
     min-width: 340px;
+    color: rgb(77,77,77);
 }
 .clear-both {
     clear: both;
@@ -161,6 +162,9 @@ background: #F2F2F2;
 		margin:-55px auto;
 		height:75px;
 	}
+    .displayNone991 {
+        display: none;
+    }
 }
 @media (max-width: 767px){
 	.navbar-brand {
@@ -1032,4 +1036,100 @@ main > .ranobeList > div > a:hover {
 .h3.project {
     margin-bottom: 0px; 
     margin-top: 35px;
+}
+/* ---------------------- all_projects ----------- */
+.view {
+    color: rgb(77,77,77);
+    padding-top: 5px;
+    padding-right: 5px;
+}
+button.view1 {
+    border: 0;
+    background: rgb(242,242,242) no-repeat 50%;
+    background-image: url(../img/view1.png);
+    width: 35px;
+    height: 30px;
+}
+button.view2 {
+    border: 0;
+    background: rgb(242,242,242) no-repeat 50%;
+    background-image: url(../img/view2.png);
+    width: 35px;
+    height: 30px;
+    margin-left: -4px;
+}
+div > button.view1.active {
+    background: rgb(96,169,212) url(../img/view1.active.png) no-repeat 50%;
+}
+div > button.view2.active {
+    background: rgb(96,169,212) url(../img/view2.active.png) no-repeat 50%;
+}
+.viewType1 {
+    max-width: 214px;
+    margin: 10px 10px 10px 0px;
+    line-height: 20px;
+    float: left;
+}
+.viewType1 > div > .stateGreen {
+    width: 50%;
+    text-align: center;
+    background: rgb(147, 194, 42);
+    color: rgb(255, 255, 255);
+    padding: 4px;
+    float: left;
+}
+.viewType1 > div > .stateRed {
+    width: 50%;
+    text-align: center;
+    background: rgb(220, 93, 72);
+    color: rgb(255, 255, 255);
+    padding: 4px;
+    float: left;
+}
+.viewType1 > div > .moreAboutProject {
+    width: 50%;
+    text-align: center;
+    background: rgb(242,242,242);
+    padding: 4px;    
+    float: right;
+}
+.viewType1 > div > .moreAboutProject > a {
+    color: rgb(77,77,77);
+}
+.viewType1 > a > img {
+    margin-bottom: 6px;
+}
+.viewTypeBlock2 { 
+    display: none;
+    margin-bottom: 40px;
+ }
+.viewType2 {
+    margin: 10px 0px;
+    border-bottom: 1px solid rgb(242,242,242);
+}   
+.viewType2 > a > img {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.viewType2about {
+    margin-top: -75px;
+    width: 120px;
+    background: rgb(147, 194, 42);
+    text-align: center;
+    height: 75px;
+    color: #fff;
+}
+.viewType2about > .volumes {
+    padding-top: 45px;
+    background: url(../img/updIcons/icon2_active.png) no-repeat 50% 40%;
+}
+.viewTypeBlock2 > .moreAboutProject {
+    width: 120px;
+    text-align: center;
+    background: rgb(242,242,242);
+    padding: 5px;
+    margin-top: -10px;
+}
+.viewTypeBlock2 > .moreAboutProject > a {
+    color: rgb(133,133,133);
 }

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalLabel">Вход</h4>
+      </div>
+      <div class="modal-body">
+				<form class="form-horizontal">
+		  <div class="form-group">
+			<label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
+			<div class="col-sm-10">
+			  <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
+			<div class="col-sm-10">
+			  <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+			  <div class="checkbox">
+				<label>
+				  <input type="checkbox"> Запомнить пароль
+				</label>
+			  </div>
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+			  <button type="submit" class="btn btn-primary">Вход</button>
+			</div>
+		  </div>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop" style="display:none"></div>
+<nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png"></a>
+    </div>
+    <div class="collapse navbar-collapse">
+	  <div class="secondLogoContainer"><div class="secondLogo"></div></div>
+      <form class="navbar-form navbar-right">
+            <button class="btn btn-white">Регистрация</button>
+            <a class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</a>
+      </form>
+    </div>
+  </div><!-- /.container -->
+</nav>
+<nav class="navbar navbar-default navbar-lower" role="navigation">
+  <div class="container">
+    <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form visible-xs-block">
+            <button class="btn btn-default">Регистрация</button>
+            <a class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</a>
+      </form>
+      <ul class="nav navbar-nav">
+            <li><a href="#">Обновления</a></li>
+            <li><a href="#">Проекты</a></li>
+            <li><a href="#">Набор в команду</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">О нас</a></li>
+        	<li><a href="#">Связь</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+            <a href="#" class="btn btn-danger">Трансляции</a>
+            <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
+        	<a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container">
+		<div class="leftColumn">
+        	<main class="content">
+              <div class="h3" style="margin-top: 15px !important;">Проекты</div>
+              <p><span class="color110">Ниже перечислены наши проекты.</span></p>        
+              <div class="displayNone991">
+                  <div class="view pull-left">Вид:</div>
+                  <button class="view1 active"></button>
+                  <button class="view2"></button>
+              </div>
+              <!-- view type 1 -->
+              <div class="viewType1">
+                  <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="100%"></a>
+                  <a href="#" style="text-decoration: underline;">Sword Art Online</a>
+                  <span class="bold">Автор:&nbsp;</span>Кавахара Реки<br>
+                  <span class="bold">Томов:&nbsp;</span>15<br>
+                  <div style="margin-top:15px;">
+                      <div class="stateGreen">Выпускается</div>
+                      <div class="moreAboutProject">
+                          <a href="#">Подробнее</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="viewType1">
+                  <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="100%"></a>
+                  <a href="#" style="text-decoration: underline;">Sword Art Online</a>
+                  <span class="bold">Автор:&nbsp;</span>Кавахара Реки<br>
+                  <span class="bold">Томов:&nbsp;</span>15<br>
+                  <div style="margin-top:15px;">
+                      <div class="stateRed">Окончен</div>
+                      <div class="moreAboutProject">
+                          <a href="#">Подробнее</a>
+                     </div>
+                  </div>
+              </div>
+              <div class="viewType1">
+                  <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="100%"></a>
+                  <a href="#" style="text-decoration: underline;">Sword Art Online</a>
+                  <span class="bold">Автор:&nbsp;</span>Кавахара Реки<br>
+                  <span class="bold">Томов:&nbsp;</span>15<br>
+                  <div style="margin-top:15px;">
+                      <div class="stateGreen">Выпускается</div>
+                      <div class="moreAboutProject">
+                          <a href="#">Подробнее</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="viewType1">
+                  <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="100%"></a>
+                  <a href="#" style="text-decoration: underline;">Sword Art Online</a>
+                  <span class="bold">Автор:&nbsp;</span>Кавахара Реки<br>
+                  <span class="bold">Томов:&nbsp;</span>15<br>
+                  <div style="margin-top:15px;">
+                      <div class="stateRed">Окончен</div>
+                      <div class="moreAboutProject">
+                          <a href="#">Подробнее</a>
+                     </div>
+                  </div>
+              </div>
+              <div class="viewType1">
+                  <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="100%"></a>
+                  <a href="#" style="text-decoration: underline;">Sword Art Online</a>
+                  <span class="bold">Автор:&nbsp;</span>Кавахара Реки<br>
+                  <span class="bold">Томов:&nbsp;</span>15<br>
+                  <div style="margin-top:15px;">
+                      <div class="stateGreen">Выпускается</div>
+                      <div class="moreAboutProject">
+                          <a href="#">Подробнее</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="viewType1">
+                  <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="100%"></a>
+                  <a href="#" style="text-decoration: underline;">Sword Art Online</a>
+                  <span class="bold">Автор:&nbsp;</span>Кавахара Реки<br>
+                  <span class="bold">Томов:&nbsp;</span>15<br>
+                  <div style="margin-top:15px;">
+                      <div class="stateRed">Окончен</div>
+                      <div class="moreAboutProject">
+                          <a href="#">Подробнее</a>
+                     </div>
+                  </div>
+              </div>
+              <!-- view type 2 -->
+              <div class="viewTypeBlock2">
+                  <div class="viewType2">
+                      <a href="/r/sao" title="Sword Art Online" class="pull-left"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="220px"></a>
+                      <div style="padding-bottom: 10px;"><a href="#" style="text-decoration: underline;">Sword Art Online</a></div>
+                      <div style="line-height: 22px;margin-bottom: 4px;">
+                          <span class="bold">Автор:&nbsp;</span>Кавахара Реки<br>
+                          <span class="bold">Иллюстратор:&nbsp;</span>Abec<br>
+                      </div>
+                  </div>
+                  <div class="viewType2about pull-right">
+                      <div class="volumes"><span class="bold">Томов:&nbsp;</span>15</div>
+                  </div>
+                  <div class="moreAboutProject pull-right">
+                      <a href="#">Подробнее</a>
+                  </div>
+              </div>
+              <div class="viewTypeBlock2">
+                  <div class="viewType2">
+                      <a href="/r/sao" title="Sword Art Online" class="pull-left"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="220px"></a>
+                      <div style="padding-bottom: 10px;"><a href="#" style="text-decoration: underline;">Sword Art Online</a></div>
+                      <div style="line-height: 22px;margin-bottom: 4px;">
+                          <span class="bold">Автор:&nbsp;</span>Кавахара Реки<br>
+                          <span class="bold">Иллюстратор:&nbsp;</span>Abec<br>
+                      </div>
+                  </div>
+                  <div class="viewType2about pull-right">
+                      <div class="volumes"><span class="bold">Томов:&nbsp;</span>15</div>
+                  </div>
+                  <div class="moreAboutProject pull-right">
+                      <a href="#">Подробнее</a>
+                  </div>
+              </div>
+              <div class="viewTypeBlock2">
+                  <div class="viewType2">
+                      <a href="/r/sao" title="Sword Art Online" class="pull-left"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="220px"></a>
+                      <div style="padding-bottom: 10px;"><a href="#" style="text-decoration: underline;">Sword Art Online</a></div>
+                      <div style="line-height: 22px;margin-bottom: 4px;">
+                          <span class="bold">Автор:&nbsp;</span>Кавахара Реки<br>
+                          <span class="bold">Иллюстратор:&nbsp;</span>Abec<br>
+                      </div>
+                  </div>
+                  <div class="viewType2about pull-right">
+                      <div class="volumes"><span class="bold">Томов:&nbsp;</span>15</div>
+                  </div>
+                  <div class="moreAboutProject pull-right">
+                      <a href="#">Подробнее</a>
+                  </div>
+              </div>
+          </main>
+		</div>
+		<aside class="right-sidebar">
+        <div class="miniSearch" style="margin-bottom: 20px;">
+            <input type="text" placeholder="Поиск..."><button><i class="fa fa-search"></i></button>
+        </div>
+            <script type="text/javascript" src="https://vk.com/js/api/openapi.js?115"></script>
+            <div id="vk_groups"></div>
+            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/RuRa_team" data-widget-id="540043044683546624">Твиты от @RuRa_team</a>
+            <script>
+            VK.Widgets.Group("vk_groups", {mode: 2, width: "220", height: "660", color1: 'FFFFFF', color2: '5290b5', color3: '60a7d2'}, 43340456);
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+            </script>   
+            <div style="color:rgb(77,77,77);">
+                <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
+                <div class="h4">Друзья</div>
+            </div>
+            <div class="poster" style="margin-right:0px !important;">
+                <a href="#"><div class="projectBlock type2"><img src="img/friend.png"></div></a>
+            </div>
+        </aside>
+</div>
+<div class="container">
+	<footer>
+	    <div class="footer">
+	        <a href="#">Обновления</a>
+	        <a href="#">Проекты</a>
+	        <a href="#">Набор в команду</a>
+	        <a href="#">FAQ</a>
+	        <a href="#">О нас</a>
+	        <a href="#">Помощь</a>
+	        <a href="#">Связь</a>
+	    </div>
+	    <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
+	</footer>
+</div>
+</body>
+<script type="text/javascript">
+$('.view1').click(function(){
+  if ( $('.view1').hasClass('active') ) {
+
+  } else {
+    $(".view1").addClass("active");
+    $(".viewType1").show();
+    $(".view2").removeClass("active");
+    $(".viewTypeBlock2").hide();
+  }
+});
+$('.view2').click(function(){
+  if ( $('.view2').hasClass('active') ) {
+
+  } else {
+    $(".view2").addClass("active");
+    $(".viewTypeBlock2").show();
+    $(".view1").removeClass("active");
+    $(".viewType1").hide();
+  }
+});
+</script>
+</html>
