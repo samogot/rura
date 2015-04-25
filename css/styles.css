@@ -1133,3 +1133,74 @@ div > button.view2.active {
 .viewTypeBlock2 > .moreAboutProject > a {
     color: rgb(133,133,133);
 }
+
+/* --------------------------------participants---------------------------- */
+#participantselect{
+min-height: 340px;
+}
+.dragover #participantselect::before {
+content: 'Добавить файлы';
+position: absolute;
+top: 0px;
+bottom: 20px;
+left: 15px;
+right: 15px;
+opacity: 0.9;
+padding-top: 50px;
+background: white;
+border: 5px dashed #777;
+text-align: center;
+font-size: 30px;
+font-weight: 500;
+color: #777;
+z-index: 3;
+}
+.dragover .participant-data-main::before,.dragover .participant-data-color::before {
+content: 'Заменить файл';
+position: absolute;
+top: 15px;
+height: 305px;
+left: 5px;
+right: 5px;
+padding-top: 129px;
+opacity: 0.9;
+background: white;
+border: 5px dashed #777;
+text-align: center;
+font-size: 30px;
+font-weight: 500;
+color: #777;
+z-index: 3;
+}
+.dragover .participant-data-main.hover::before,
+.dragover .participant-data-color.hover::before,
+.dragover #participantselect.hover::before {
+-webkit-transition: all 0.3s ease-out;
+-moz-transition: all 0.3s ease-out;
+-ms-transition: all 0.3s ease-out;
+-o-transition: all 0.3s ease-out;
+transition: all 0.3s ease-out;
+opacity: 1;
+border-color: #60a9d4;
+color: #60a9d4;
+}
+
+#participantform .progress {
+	margin: 5px 0;
+}
+
+#btn-participant-add,.btn-participant-replace {
+  position: relative;
+  overflow: hidden;
+}
+.fileupload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
