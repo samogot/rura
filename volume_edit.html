@@ -548,84 +548,107 @@
 
 </body>
 <script type="text/javascript">
-	$('.list-group.select.sortable').sortable({
-		items: "a:not(:first-child.heading)",
-		handle:'.move'
+	/*классы: 
+	list-group - бутстрапны класс
+	select - мой класс для обозначения list-group`ов админки с возможностью выбора
+	sortable - мой класс для обозначения тех .list-group.select в которых пользователь может перетягивать елементы
+	move - дочерный елемент в елементах sortable - маркер за который разрешается перетягивать
+	heading - такие елементы .list-group.select которые не могут быть выбраны, но могут быть перетянуты. по сути используется только для глав в редактировании изображений - в других модулях потребности в них нет
+	*/
+	$('.list-group.select.sortable').sortable({ // включаем jquery-ui sortable
+		items: "a:not(:first-child.heading)", // запрещаем передвигать что либо выше первого heading (не может быть картинок вне глав)
+		handle:'.move' // задаем маркер перетягивания
     });
-	$('#imageselect').on( "sortupdate", function( event, ui ) {
-		if(ui.item.hasClass('heading'))
+	
+	
+	$('#imageselect').on( "sortupdate", function( event, ui ) { // для списка изображений задаем обработчик перетягивания
+		if(ui.item.hasClass('heading')) // если мы перетянули главу, мы должны убедится что не нарушили порядок следовани глав
 		{
-			var start = 0; 
-			$(this).children().each(function(i,e) {
-				if($(e).position().top <= ui.originalPosition.top)
+			var start = 0; // jquery-ui sortable не дает информации о том какой у елемента был индекс до перетягивания
+			$(this).children().each(function(i,e) { // поэтому мы находим его линейно 
+				if($(e).position().top <= ui.originalPosition.top) // сравнивая по y координате каждого елемента в пикселах с координатой изначального положения
 					start = i; 
 				else return false;
 			});
-			var end = ui.item.index()
-			if(start < end)
-				$(this).children().slice(start, end).filter('.heading').insertAfter(ui.item);
+			var end = ui.item.index()  // индекс итоговой позиции известен
+			if(start < end) // если мы перетянули вниз
+				$(this).children().slice(start, end).filter('.heading').insertAfter(ui.item); // то перемещаем все заголовки (если они есть) между индексами и ставим их в том же порядке после тепущего
 			else
-				$(this).children().slice(end + 1, start + 1).filter('.heading').insertBefore(ui.item);
+				$(this).children().slice(end + 1, start + 1).filter('.heading').insertBefore(ui.item);  // в противном случае точно так же ставим перед текущим
 		}
-		var order = 0, chapter_id = 0;
-		$(this).children().each(function(){
+		var order = 0, chapter_id = 0; // теперь нам нужно для каждого изображения поставить его порядковый номер и id главы к которой оно принадлежит
+		$(this).children().each(function(){ // вообще делать это линейно для всех елементов при любом изменении не очень хорошо. правельные было бы обновлять только для тех изображений для которых что-то изменилось. но мне было лень
 			if($(this).is('.heading[data-chapter-id]'))
-				chapter_id = $(this).attr('data-chapter-id');
+				chapter_id = $(this).attr('data-chapter-id'); // если мы попали на елемент заголовка - запомнили номер текущей главы
 			else {
-				$($(this).attr('href')+'_order').val(++order);
-				$($(this).attr('href')+'_chapter_id').val(chapter_id);
+				$($(this).attr('href')+'_order').val(++order); // посчитали порядок
+				$($(this).attr('href')+'_chapter_id').val(chapter_id); // вспомнили последний известный айдишник главы
 			}
 		});
 	});
-	$('.admin-affix').each(function() {
+	
+	//admin-affix - мой класс для обозначения общего елемента, который аффиксируется справа от списка .list-group.select
+	$('.admin-affix').each(function() { // используется bootstrap affix
 		var parent = $(this).parent();
 		$(this).affix({
 			offset: {
-				top: function() { return parent.offset().top - 10; },
-				bottom: function() { return $(document).height() - parent.outerHeight(true) - parent.offset().top; }
-			}
+				top: function() { return parent.offset().top - 10; }, // в открепленнойм стиле у меня стоит отступ 10 пикселов от верхнего края экрана, знасит откреплять мы начинаем за 10 пикселей от позиции родительского елемента
+				bottom: function() { return $(document).height() - parent.outerHeight(true) - parent.offset().top; } // нижняя граница, конда плагину нужно снова закрепить admin-affix считается по разнице нижней граници родительского елемента и нижнего края экрана
+			} // то есть мы аффиксируем admin-affix в пределах его родительского елемента. предпологается что размер родительского елемента растягивается за счет наполнения list-group.select, но нужно где то явно указать min-height что бы в случае если елементов в list-group.select меньше чем высота самого admin-affix, родительский елемень не схлопнулся при откреплении admin-affix
 		});
 	});
-	$('.image-data').on('hidden.bs.collapse', function () {
+	
+	// дальше пошел код спецефический для изображений. его я буду комментировать не так подробно
+	
+	
+	// активируем и деактивируем кнопку удаления иллюстраций в зависимости от того выбрано что то или нет
+	$('.image-data').on('hidden.bs.collapse', function () { 
 		$('#btn-image-delete').attr('disabled',true);
 	}).on('shown.bs.collapse', function() {
 		$('#btn-image-delete').attr('disabled',false);
 	});
+	
+	// рисуем дропзоны при затягивании файла на страницу браузера
 	$(document).on('dragover', function(e) {
         if (window.dropZoneTimeout)
             clearTimeout(window.dropZoneTimeout);
-        else $('body').addClass('dragover');
+        else $('body').addClass('dragover'); //выставляем класс на body который активирует css отрисовку дропзон
 			
+		// при затягивании файла в одну из дропзон, она подсвечивается
 		$('.image-data-main,.image-data-color,#imageselect').removeClass('hover');
         $(e.target).closest('.image-data-main,.image-data-color,#imageselect').addClass('hover');
+		
+		// если в течении 400мс событие не повторяется предпологаем что никто уже ничего не перетягивает и выключаем отрисовку дропзон
         window.dropZoneTimeout = setTimeout(function() {
             window.dropZoneTimeout = null;
             $('body').removeClass('dragover');
 			$('.image-data-main,.image-data-color,#imageselect').removeClass('hover');
         }, 400);
-    }).on('drop dragover dragstart', function(e) { e.preventDefault(); });
+    }).on('drop dragover dragstart', function(e) { e.preventDefault(); }); // выключаем стандортное поведение браузера на drag'n'drop
 	
+	// настраиваем jQuery File Upload для кнопки добавить или затягивания файла на список иллюстраций
 	$('#btn-image-add').fileupload({
-        url: "http://localhost/uplstub/index.php",
+        url: "http://localhost/uplstub/index.php", // "обработка" загруженых велась у меня на локально денвере. скорее всего без этого вообще работать не будет
         dataType: 'json',
 		formData: {ctype: 'main'},
         acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
         previewMaxHeight: 180,
         previewMaxWidth: 260,
 		dropZone: $('#imageselect')
-    }).on('fileuploadadd', function (e, data) {
+    }).on('fileuploadadd', function (e, data) { // при добавлении файла сразу создаем елемент в #imageselect
         $.each(data.files, function (index, file) {
 			if(!data.last_num) data.last_num = $('#imageselect a[href^="#image"]:last-child').attr('href').substr(6);
 			if(!data.last_num) data.last_num = 0;
-			file.num = ++data.last_num;
-			file.ctype = 'main';
+			file.num = ++data.last_num; // num - внутренний/временный айдишник иллюстраций фронтенда - порядок добавления 
+			file.ctype = 'main'; // ctype - color type. основная ираста или покрас
 			$('<a data-toggle="collapse" data-parent="#imageform" href="#image'+file.num+'" aria-expanded="true" aria-controls="image'+file.num+'" class="list-group-item"> <i class="fa fa-ellipsis-v move ui-sortable-handle"></i> <center><i class="fa fa-spinner fa-spin"></i></center> <span class="hidden-sm hidden-xs">'+file.name+'</span> </a>').appendTo('#imageselect');
 			$('<div class="panel"><div class="row collapse image-data" role="tabpanel" id="image'+file.num+'"><input type="hidden" id="image'+file.num+'_id"><input type="hidden" id="image'+file.num+'_order"><input type="hidden" id="image'+file.num+'_chapter_id"><input type="hidden" id="image'+file.num+'_delete"><div class="col-xs-6 image-data-main"><h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3><center><i class="fa fa-spinner fa-spin"></i></center><div class="form-group"><label for="image1_main_date">Дата загрузки</label><input type="text" class="form-control disable" id="image'+file.num+'_main_date"></div></div><div class="col-xs-6 image-data-color"><h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3></div></div></div>').appendTo('#imageform');
         });
-		$('#imageform .progress').collapse('show');
-		data.submit();
+		$('#imageform .progress').collapse('show'); // показываем прогресбар
+		data.submit(); // начинаем загрузку
     });
 	
+	// настраиваем jQuery File Upload для кнопки заменить или затягивания файла на существующую ирасту
 	$('.btn-image-replace').each(function(){
 		$(this).fileupload({
 			url: "http://localhost/uplstub/index.php",
@@ -652,34 +675,34 @@
 	$('#btn-image-add,.btn-image-replace').on('fileuploadprocessalways', function (e, data) {
         var index = data.index,
             file = data.files[index];
-        if (file.preview) {
+        if (file.preview) { // заменяем иконку загрузки за превюшку, как только она становится доступна
             $('#imageselect a[href="#image'+file.num+'"] center').empty().append(file.preview);
 			var newCanvas = $(file.preview).clone().get(0);
 			newCanvas.getContext('2d').drawImage(file.preview, 0, 0);
             $('#image'+file.num+' .image-data-'+file.ctype+' center').empty().append(newCanvas);
 		}
-        if (file.error)
+        if (file.error) // или выводим сообщение об ошибке обработки на клиенте
 			$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
-    }).on('fileuploadprogressall', function (e, data) {
+    }).on('fileuploadprogressall', function (e, data) { // обновляем прогресбар
         var progress = parseInt(data.loaded / data.total * 100, 10);
         $('#imageform .progress-bar').css('width', progress + '%');
         $('#imageform .progress-bar').attr('aria-valuenow', progress);
         $('#imageform .progress-bar span').text(progress + '% Complete');
-    }).on('fileuploaddone', function (e, data) {
+    }).on('fileuploaddone', function (e, data) { // при завершении загрузки заменяем превюшку на img тег с адресом уже загруженной ирасты
 		$('#imageform .progress').collapse('hide');
-		console.log(data)
+		//console.log(data) // с сервера в json`е должны прийти поля url и id
         $.each(data.result.files, function (index, file) {
             if (file.url) {
 				$('#image'+data.files[index].num+'_id').val(file.id);
 				$('#imageselect a[href="#image'+data.files[index].num+'"] center').empty().append($('<img>').attr('src', file.url));
 				$('#image'+data.files[index].num+' .image-data-'+data.files[index].ctype+' center').empty().append($('<img>').attr('src', file.url).addClass('img-responsive'));
-            } else if (file.error)
+            } else if (file.error) // выводим ошибку возвращенную с сервера
 				$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
         });
-    }).on('fileuploadfail', function (e, data) {
+    }).on('fileuploadfail', function (e, data) { // выводим ошибку аякса
 		$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
     });
-	$('#btn-image-delete').click(function(){
+	$('#btn-image-delete').click(function(){ // обработка кнопки удаления
 		var id = $('.image-data.in').attr('id');
 		$('.image-data.in').collapse('hide');
 		$('#'+id+'_detele').val(true);
