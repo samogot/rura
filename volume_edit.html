@@ -128,10 +128,247 @@
                     <label for="name_title">Имя для заголовков</label>
                     <input type="text" class="form-control" id="name_title" name="name_title">
                 </div>
+				<div class="form-group">
+                    <label for="name_title">Основное имя</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Название (яп.)</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Название (англ.)</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Название (рус.)</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Короткое название</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Серия</label>
+					<select class="form-control" id="name_title" name="name_title">
+						<option>Sword Art Online</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+                </div>	
+				<div class="form-group">
+                    <label for="name_title">Номер в серии</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Автор</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Иллюстратор</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Дата публикации</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">ISBN</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Тип релиза</label>
+                    <select class="form-control" id="name_title" name="name_title">
+						<option>Том ранобэ</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+                </div>
+				<div class="form-group">
+					<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Автоконвертирование</label>
+				</div>
+				<div class="form-group">
+                    <label for="name_title">Статус релиза</label>
+                    <select class="form-control" id="name_title" name="name_title">
+						<option>Закончен</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Внешняя ссылка</label>
+                    <input type="text" class="form-control" id="name_title" name="name_title">
+                </div>
+				<div class="form-group">
+                    <label for="name_title">Аннотация</label>
+                    <textarea class="form-control" id="name_title" name="name_title"></textarea>
+                </div>
+				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+				</form>
                 <h2>Этапы/Стаф</h2>
+				<form>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="list-group select sortable" id="imageselect">
+							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Команда</span></a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image6" aria-expanded="true" aria-controls="image1" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="role">Перевод с английского</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image7" aria-expanded="true" aria-controls="image2" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="name">Danholm</span> - <span class="hidden-sm hidden-xs" id="role">Эдит</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image8" aria-expanded="true" aria-controls="image3" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="name">Lady Astrel</span> - <span class="hidden-sm hidden-xs" id="role">Редактура</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#imageform" href="#image9" aria-expanded="true" aria-controls="image4" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="name">Test</span> - <span class="hidden-sm hidden-xs" id="role">Test</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-8 admin-affix" id="imageform" role="tablist" aria-multiselectable="true">
+						<div class="btn-group" role="group" aria-label="Панель изображений">
+						  <button type="button" class="btn btn-success" title="Добавить новые изображения" id="btn-image-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
+						  <button type="button" class="btn btn-default btn-border" title="Режим замены изображений" id="btn-image-replace-main"><i class="fa fa-retweet"></i></button>
+						  <button type="button" class="btn btn-default btn-border" title="Режим добавления/замены покрасов" id="btn-image-reset-color"><i class="fa fa-retweet" style="color: #60a9d4;"></i><i class="fa fa-paint-brush" style="font-size: 9px;margin-left: -9px;"></i></button>
+						  <button type="button" class="btn btn-danger" title="Удалить изображение" id="btn-image-delete" disabled><i class="fa fa-trash-o"></i></button>
+						</div>
+						<div class="progress collapse">
+							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+								<span class="sr-only">0% Complete</span>
+							</div>
+						</div>
+						<div  class="panel">
+							<div class="row collapse image-data" role="tabpanel" id="image6">
+								<input type="hidden" id="image6_id">
+								<input type="hidden" id="image6_order">
+								<input type="hidden" id="image6_chapter_id">
+								<input type="hidden" id="image6_delete">
+								<div class="col-xs-12 image-data-main">
+									<h3>Основа</h3>
+									<div class="form-group">
+										<label for="participant1_name">Участник</label>
+										<select class="form-control">
+											<option selected="selected">Ushwood</option>
+											<option>Danholm</option>
+											<option>Lady Astrel</option>
+											<option>Test</option>
+										</select>
+										<label for="participant1_role">Роль</label>
+										<select class="form-control">
+											<option selected="selected">Перевод с английского</option>
+											<option>Эдит</option>
+											<option>Редактура</option>
+											<option>Test</option>
+										</select>
+										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse image-data" role="tabpanel" id="image7">
+								<input type="hidden" id="image7_id">
+								<input type="hidden" id="image7_order">
+								<input type="hidden" id="image7_chapter_id">
+								<input type="hidden" id="image7_delete">
+								<div class="col-xs-12 image-data-main">
+									<h3>Основа</h3>
+									<div class="form-group">
+										<label for="participant1_name">Участник</label>
+										<select class="form-control">
+											<option>Ushwood</option>
+											<option selected="selected">Danholm</option>
+											<option>Lady Astrel</option>
+											<option>Test</option>
+										</select>
+										<label for="participant2_role">Роль</label>
+										<select class="form-control">
+											<option>Перевод с английского</option>
+											<option selected="selected">Эдит</option>
+											<option>Редактура</option>
+											<option>Test</option>
+										</select>
+										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse image-data" role="tabpanel" id="image8">
+								<input type="hidden" id="image8_id">
+								<input type="hidden" id="image8_order">
+								<input type="hidden" id="image8_chapter_id">
+								<input type="hidden" id="image8_delete">
+								<div class="col-xs-12 image-data-main">
+									<h3>Основа</h3>
+									<div class="form-group">
+										<label for="participant1_name">Участник</label>
+										<select class="form-control">
+											<option>Ushwood</option>
+											<option>Danholm</option>
+											<option selected="selected">Lady Astrel</option>
+											<option>Test</option>
+										</select>
+										<label for="participant3_role">Роль</label>
+										<select class="form-control">
+											<option>Перевод с английского</option>
+											<option>Эдит</option>
+											<option selected="selected">Редактура</option>
+											<option>Test</option>
+										</select>
+										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse image-data" role="tabpanel" id="image9">
+								<input type="hidden" id="image9_id">
+								<input type="hidden" id="image9_order">
+								<input type="hidden" id="image9_chapter_id">
+								<input type="hidden" id="image9_delete">
+								<div class="col-xs-12 image-data-main">
+									<h3>Основа</h3>
+									<div class="form-group">
+										<label for="participant1_name">Участник</label>
+										<select class="form-control">
+											<option>Ushwood</option>
+											<option>Danholm</option>
+											<option>Lady Astrel</option>
+											<option selected="selected">Test</option>
+										</select>
+										<label for="participant4_role">Роль</label>
+										<select class="form-control">
+											<option>Перевод с английского</option>
+											<option>Эдит</option>
+											<option>Редактура</option>
+											<option selected="selected">Test</option>
+										</select>
+										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+				</form>
                 <h2>Главы</h2>
+				<form>
+				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+				</form>
                 <h2>Обновления</h2>
+				<form>
+				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+				</form>
                 <h2>Изображения</h2>
+			<form>
 				<div class="row">
 					<div class="col-xs-4">
 						<div class="list-group select sortable" id="imageselect">
@@ -361,7 +598,6 @@
 			
 		$('.image-data-main,.image-data-color,#imageselect').removeClass('hover');
         $(e.target).closest('.image-data-main,.image-data-color,#imageselect').addClass('hover');
-
         window.dropZoneTimeout = setTimeout(function() {
             window.dropZoneTimeout = null;
             $('body').removeClass('dragover');
