@@ -1239,7 +1239,7 @@ color: #60a9d4;
 .text .h4.project{
     color: rgb(96,169,212);
 }
-.controlText button .hint {
+.controlText button .hint , .btn-white.OpenContent .hint{
   background: #8fd5fe url('../img/actions/textControl.png') left no-repeat;
   position: fixed;
   padding: 10px 10px 10px 15px;
@@ -1252,12 +1252,15 @@ color: #60a9d4;
   border-bottom:5px solid #f2f2f2;
 }
 .OpenContent{
-      height: 35px;
+  height: 35px;
   line-height: 17px;
   color: #fff;
 }
 .OpenContent:hover{
     color:rgb(96, 169, 212);
+}
+.OpenContent.btn-white{
+  color: rgb(96,169,212) !important;
 }
 div.mistake{
     padding: 20px;
@@ -1359,10 +1362,6 @@ div.overlay{
   font-size: .85em;
 }
 
-.ContentNav .ContentNav span {
-  margin: 0 5px 0 2px;
-}
-
 .ContentNav .ContentNav .active a,
 .ContentNav .ContentNav .active:hover a,
 .ContentNav .ContentNav .active:focus a {
@@ -1371,12 +1370,9 @@ div.overlay{
   border-left: 5px solid black;
 }
 
-.ContentNav .ContentNav .active span,
-.ContentNav .ContentNav .active:hover span,
-.ContentNav .ContentNav .active:focus span {
-  display: none;
-}
-
+ .btn-white.OpenContent{
+    display: none;
+  }
 @media screen and (max-width: 767px) {
   .leftColumn.active {
     right: 50%;
@@ -1392,4 +1388,33 @@ div.overlay{
     right: 0;
     display: block !important;
   }
+  .content-module.active div{
+    display: block !important;
+  }
+  .btn-white.OpenContent{
+    display: block;
+    top: 85px;
+    left: 20px;
+    position: fixed;
+    z-index: 10;
+  }
+  .btn-white.OpenContent.active{
+    left: calc(50% + 20px);
+  }
+}
+.content-module div.affix-top {
+  position: relative;
+}
+
+.content-module div.affix {
+  top: 20px;
+}
+
+.content-module div.affix,
+.content-module div.affix-bottom {
+    width: 213px;
+}
+
+.content-module div.affix-bottom {
+  position: absolute;
 }

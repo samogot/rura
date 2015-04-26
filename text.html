@@ -12,6 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body data-spy="scroll" data-target=".scrollspy">
+<!-- Кнопка скрытия -->
+<button class="btn btn-white OpenContent"> <i class="fa fa-home"></i>
+    <div class="hint">Содержание</div>
+</button>
+<!-- Кнопка скрытия -->
+
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -2071,7 +2077,7 @@ SAO v09 12.png
 Я закрыл глаза и попытался представить силуэт этой девочки по имени Алиса. Но мой разум никак не мог нарисовать её лицо, в моих глазах вспыхивал золотой свет.
 На следующее утро я с болью осознал, как мало я порой думаю.
 
-<div class="h4" id="Глава-1-4">Глава 4</div>Бомммм. В 5:30 зазвенел колокол, и я открыл глаза, полный раздумий о том, что я должен сделать и что я могу сделать, и поднялся с чистой постели.
+<div class="h4" id="Глава-3-4">Глава 4</div>Бомммм. В 5:30 зазвенел колокол, и я открыл глаза, полный раздумий о том, что я должен сделать и что я могу сделать, и поднялся с чистой постели.
 Я открыл окно на север, размял спину и вдохнул холодный воздух, окрашенный рассветом. От нескольких глубоких вдохов моя сонливость полностью выветрилась из головы. Я навострил уши и услышал, как в противоположной по коридору комнате также проснулись дети. Быстро переодевшись, я решил воспользоваться шансом и умыться раньше них. Я взглянул на свои «стартовые вещи» — тунику и хлопковые штаны — на них не было ни одного явного пятнышка, однако Юдзио сказал, что если я не буду их стирать, их Жизни быстро иссякнут. Если это так, то мне надо скорее поменять свою одежду. Нужно поговорить об этом с Юдзио, подумал я, выходя через чёрный ход к колодцу.
 Я зачерпнул несколько ковшей из бадьи и налил в корыто, а когда нагнулся, чтобы умыть лицо, сзади послышались шаги. Наверняка это Селка, подумал я, поднимая лицо. Я развернулся, вытирая руки.
 — Ааа… Доброе утро, сестра.
@@ -2748,46 +2754,20 @@ SAO v09 15.png
             <div class="miniSearch">
                 <input type="text" placeholder="Поиск..."><button><i class="fa fa-search"></i></button>
             </div>
-            <div class="module content-module  hidden-xs hidden-sm" data-spy="affix">
+            <div class="module">
                 <div class="module_name opened">
-                    <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
-                    <div class="h4">Содержание</div>
+                  <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
+                  <div class="h4">Скачать том</div>
                 </div>
-                <div class="actions scrollspy">
-                    <ul id="nav" class="nav ContentNav">
-                        <li><a href="#Пролог-1">Пролог 1</a></li>
-                        <li>
-                            <ul class="nav ContentNav">
-                                <li><a href="#Глава-1-1">Глава 1</a></li>
-                                <li><a href="#Глава-1-2">Глава 2</a></li>
-                                <li><a href="#Глава-1-3">Глава 3</a></li>
-                                <li><a href="#Глава-1-4">Глава 4</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#Пролог-2">Пролог 2</a></li>
-                        <li>
-                            <ul class="nav ContentNav">
-                                <li><a href="#Глава-2-1">Глава 1</a></li>
-                                <li><a href="#Глава-2-2">Глава 2</a></li>
-                                <li><a href="#Глава-2-3">Глава 3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#Интерлюдия-1">Интерлюдия 1</a></li>
-                        <li><a href="#Underworld">Часть первая — Underworld</a></li>
-                        <li>
-                            <ul class="nav ContentNav">
-                                <li><a href="#Глава-3-1">Глава 1</a></li>
-                                <li><a href="#Глава-3-2">Глава 2</a></li>
-                                <li><a href="#Глава-3-3">Глава 3</a></li>
-                                <li><a href="#Глава-3-4">Глава 4</a></li>
-                                <li><a href="#Глава-3-5">Глава 5</a></li>
-                                <li><a href="#Глава-3-6">Глава 6</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#Послесловие-автора">Послесловие автора</a></li>
-                        <li><a href="#Примечания">Примечания</a></li>
-                        <li><a href="#Комментарии">Комментарии</a></li>
-                    </ul>
+                <div class="actions">
+                  <div style="background-image:url(img/list.png);padding: 10px 0px 10px 35px;">
+                      <a href="#" class="download bold">Скачать fb2 </a><span class="bold">(4.4 мб)</span>
+                      <div class="italic">С иллюстрациями</div>
+                  </div>
+                  <div style="background-image:url(img/list.png);padding: 10px 0px 10px 35px;">
+                      <a href="#" class="download bold">Скачать fb2 </a><span class="bold">(543 кб)</span>
+                      <div class="italic">Без иллюстраций</div>
+                  </div>
                 </div>
             </div>
             <div class="module">
@@ -2849,6 +2829,49 @@ SAO v09 15.png
                 <div class="poster actions" style="margin-right:0px !important;">
                     <a href="#"><div class="projectBlock type2"><img src="img/friend.png"></div></a>
                 </div>
+            </div>
+            <div class="module content-module scrollspy">
+              <div data-spy="affix">
+                <div class="module_name opened">
+                    <div class="h4">Содержание</div>
+                </div>
+                <div class="actions">
+                    <ul id="nav" class="nav ContentNav">
+                        <li><a href="#Пролог-1">Пролог 1</a></li>
+                        <li>
+                            <ul class="nav ContentNav">
+                                <li><a href="#Глава-1-1">Глава 1</a></li>
+                                <li><a href="#Глава-1-2">Глава 2</a></li>
+                                <li><a href="#Глава-1-3">Глава 3</a></li>
+                                <li><a href="#Глава-1-4">Глава 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#Пролог-2">Пролог 2</a></li>
+                        <li>
+                            <ul class="nav ContentNav">
+                                <li><a href="#Глава-2-1">Глава 1</a></li>
+                                <li><a href="#Глава-2-2">Глава 2</a></li>
+                                <li><a href="#Глава-2-3">Глава 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#Интерлюдия-1">Интерлюдия 1</a></li>
+                        <li><a href="#Underworld">Часть первая — Underworld</a></li>
+                        <li>
+                            <ul class="nav ContentNav">
+                                <li><a href="#Глава-3-1">Глава 1</a></li>
+                                <li><a href="#Глава-3-2">Глава 2</a></li>
+                                <li><a href="#Глава-3-3">Глава 3</a></li>
+                                <li><a href="#Глава-3-4">Глава 4</a></li>
+                                <li><a href="#Глава-3-5">Глава 5</a></li>
+                                <li><a href="#Глава-3-6">Глава 6</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#Послесловие-автора">Послесловие автора</a></li>
+                        <li><a href="#Примечания">Примечания</a></li>
+                        <li><a href="#Комментарии">Комментарии</a></li>
+                    </ul>
+                </div>
+              </div>
             </div>
         </aside>
 </div>
@@ -2923,25 +2946,33 @@ SAO v09 15.png
             $(this).addClass("opened");
         }
     });
-    $('#nav').affix({
-        offset: {
-            top: 100,
-            bottom: 100
-        }
-    });
     $('.OpenContent').click(function(){
         var $right = $('.content-module');
         var $left = $('.leftColumn');
         if($right.hasClass("active")){
             $right.removeClass("active");
+            $right.children('div').removeClass("active");
             $left.removeClass("active");
         } else {
             $right.addClass("active");
+            $right.children('div').addClass("active");
             $left.addClass("active");
         }
-
-
-
+    });
+    $('.btn').hover(
+        function(){
+            $(this).children('.hint').show()
+        }
+        ,
+        function(){
+            $(this).children('.hint').hide()
+        }
+    );
+    $('.content-module').children('div').affix({
+      offset: {
+        top: $('.content-module').children('div').offset().top,
+        bottom: ($('footer').outerHeight(true) + 40)
+      }
     });
 </script>
 </body>
