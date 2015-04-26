@@ -211,27 +211,27 @@
 				<form>
 				<div class="row">
 					<div class="col-xs-4">
-						<div class="list-group select sortable" id="imageselect">
+						<div class="list-group select sortable" id="participantselect">
 							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Команда</span></a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image6" aria-expanded="true" aria-controls="image1" class="list-group-item" >
+							<a data-toggle="collapse" data-parent="#participantform" href="#participant1" aria-expanded="true" aria-controls="participant1" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="role">Перевод с английского</span>
+								<span class="hidden-sm hidden-xs"  id="participant1_name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="participant1_role">Перевод с английского</span>
 							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image7" aria-expanded="true" aria-controls="image2" class="list-group-item" >
+							<a data-toggle="collapse" data-parent="#participantform" href="#participant2" aria-expanded="true" aria-controls="participant2" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="name">Danholm</span> - <span class="hidden-sm hidden-xs" id="role">Эдит</span>
+								<span class="hidden-sm hidden-xs"  id="participant2_name">Danholm</span> - <span class="hidden-sm hidden-xs" id="participant2_role">Эдит</span>
 							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image8" aria-expanded="true" aria-controls="image3" class="list-group-item" >
+							<a data-toggle="collapse" data-parent="#participantform" href="#participant3" aria-expanded="true" aria-controls="participant3" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="name">Lady Astrel</span> - <span class="hidden-sm hidden-xs" id="role">Редактура</span>
+								<span class="hidden-sm hidden-xs"  id="participant3_name">Lady Astrel</span> - <span class="hidden-sm hidden-xs" id="participant3_role">Редактура</span>
 							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image9" aria-expanded="true" aria-controls="image4" class="list-group-item" >
+							<a data-toggle="collapse" data-parent="#participantform" href="#participant4" aria-expanded="true" aria-controls="participant4" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="name">Test</span> - <span class="hidden-sm hidden-xs" id="role">Test</span>
+								<span class="hidden-sm hidden-xs"  id="participant4_name">Test</span> - <span class="hidden-sm hidden-xs" id="participant4_role">Test</span>
 							</a>
 						</div>
 					</div>
-					<div class="col-xs-8 admin-affix" id="imageform" role="tablist" aria-multiselectable="true">
+					<div class="col-xs-8 admin-affix" id="participantform" role="tablist" aria-multiselectable="true">
 						<div class="btn-group" role="group" aria-label="Панель изображений">
 						  <button type="button" class="btn btn-success" title="Добавить новые изображения" id="btn-image-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
 						  <button type="button" class="btn btn-default btn-border" title="Режим замены изображений" id="btn-image-replace-main"><i class="fa fa-retweet"></i></button>
@@ -244,23 +244,22 @@
 							</div>
 						</div>
 						<div  class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="image6">
-								<input type="hidden" id="image6_id">
-								<input type="hidden" id="image6_order">
-								<input type="hidden" id="image6_chapter_id">
-								<input type="hidden" id="image6_delete">
+							<div class="row collapse image-data" role="tabpanel" id="participant1">
+								<input type="hidden" id="participant1_id">
+								<input type="hidden" id="participant1_order">
+								<input type="hidden" id="participant1_delete">
 								<div class="col-xs-12 image-data-main">
 									<h3>Основа</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<select class="form-control">
+										<select class="form-control" id="participant1_name_select">
 											<option selected="selected">Ushwood</option>
 											<option>Danholm</option>
 											<option>Lady Astrel</option>
 											<option>Test</option>
 										</select>
 										<label for="participant1_role">Роль</label>
-										<select class="form-control">
+										<select class="form-control" id="participant1_role_select">
 											<option selected="selected">Перевод с английского</option>
 											<option>Эдит</option>
 											<option>Редактура</option>
@@ -272,23 +271,22 @@
 							</div>
 						</div>
 						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="image7">
-								<input type="hidden" id="image7_id">
-								<input type="hidden" id="image7_order">
-								<input type="hidden" id="image7_chapter_id">
-								<input type="hidden" id="image7_delete">
+							<div class="row collapse image-data" role="tabpanel" id="participant2">
+								<input type="hidden" id="participant2_id">
+								<input type="hidden" id="participant2_order">
+								<input type="hidden" id="participant2_delete">
 								<div class="col-xs-12 image-data-main">
 									<h3>Основа</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<select class="form-control">
+										<select class="form-control" id="participant1_name_select">
 											<option>Ushwood</option>
 											<option selected="selected">Danholm</option>
 											<option>Lady Astrel</option>
 											<option>Test</option>
 										</select>
 										<label for="participant2_role">Роль</label>
-										<select class="form-control">
+										<select class="form-control" id="participant1_role_select">
 											<option>Перевод с английского</option>
 											<option selected="selected">Эдит</option>
 											<option>Редактура</option>
@@ -300,23 +298,22 @@
 							</div>
 						</div>
 						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="image8">
-								<input type="hidden" id="image8_id">
-								<input type="hidden" id="image8_order">
-								<input type="hidden" id="image8_chapter_id">
-								<input type="hidden" id="image8_delete">
+							<div class="row collapse image-data" role="tabpanel" id="participant3">
+								<input type="hidden" id="participant3_id">
+								<input type="hidden" id="participant3_order">
+								<input type="hidden" id="participant3_delete">
 								<div class="col-xs-12 image-data-main">
 									<h3>Основа</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<select class="form-control">
+										<select class="form-control" id="participant1_name_select">
 											<option>Ushwood</option>
 											<option>Danholm</option>
 											<option selected="selected">Lady Astrel</option>
 											<option>Test</option>
 										</select>
 										<label for="participant3_role">Роль</label>
-										<select class="form-control">
+										<select class="form-control" id="participant1_role_select">
 											<option>Перевод с английского</option>
 											<option>Эдит</option>
 											<option selected="selected">Редактура</option>
@@ -328,23 +325,22 @@
 							</div>
 						</div>
 						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="image9">
-								<input type="hidden" id="image9_id">
-								<input type="hidden" id="image9_order">
-								<input type="hidden" id="image9_chapter_id">
-								<input type="hidden" id="image9_delete">
+							<div class="row collapse image-data" role="tabpanel" id="participant4">
+								<input type="hidden" id="participant4_id">
+								<input type="hidden" id="participant4_order">
+								<input type="hidden" id="participant4_delete">
 								<div class="col-xs-12 image-data-main">
 									<h3>Основа</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<select class="form-control">
+										<select class="form-control" id="participant1_name_select">
 											<option>Ushwood</option>
 											<option>Danholm</option>
 											<option>Lady Astrel</option>
 											<option selected="selected">Test</option>
 										</select>
 										<label for="participant4_role">Роль</label>
-										<select class="form-control">
+										<select class="form-control" id="participant1_role_select">
 											<option>Перевод с английского</option>
 											<option>Эдит</option>
 											<option>Редактура</option>
@@ -361,11 +357,11 @@
 				</form>
                 <h2>Главы</h2>
 				<form>
-				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 				</form>
                 <h2>Обновления</h2>
 				<form>
-				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 				</form>
                 <h2>Изображения</h2>
 			<form>
@@ -585,6 +581,21 @@
 				$($(this).attr('href')+'_chapter_id').val(chapter_id); // вспомнили последний известный айдишник главы
 			}
 		});
+	});
+	
+	$('#participantselect').on( "sortupdate", function( event, ui ) { // для списка участников перевода задаем обработчик перетягивания
+		var p_order = 0; // поставим для каждого участника порядковый номер
+		$(this).children().each(function(){ // проверяем каждый элемент
+			if(!$(this).is('.heading[data-chapter-id]')){ // если это не heading
+				$($(this).attr('href')+'_order').val(++p_order); // обновляем порядок
+				//console.log($(this).attr('href')); // на всякий случай пока оставлю
+				//console.log(p_order);
+			}
+		});
+	});
+	
+	$('#participant1_name_select').on("change", function(){
+		console.log($('#participant1_name_select').val());
 	});
 	
 	//admin-affix - мой класс для обозначения общего елемента, который аффиксируется справа от списка .list-group.select
