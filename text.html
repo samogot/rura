@@ -2945,6 +2945,9 @@ SAO v09 15.png
             $(this).parent().children('.actions').show();
             $(this).addClass("opened");
         }
+        $(window).off('.affix')
+        $('.content-module').children('div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
+        $('.content-module').children('div').affix({ offset: {top: $('.content-module').children('div').offset().top}})
     });
     $('.OpenContent').click(function(){
         var $right = $('.content-module');
