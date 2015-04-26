@@ -7,9 +7,14 @@
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+    <!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<!--<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>-->
+	<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+    <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!--<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="js/listgroup.js"></script>
 	<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
 	<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
@@ -252,19 +257,13 @@
 									<h3>Основа</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<select class="form-control" id="participant1_name_select">
-											<option selected="selected">Ushwood</option>
-											<option>Danholm</option>
-											<option>Lady Astrel</option>
-											<option>Test</option>
-										</select>
+										<div id="participant_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Ushwood" data-p="1">
+										</div>
 										<label for="participant1_role">Роль</label>
-										<select class="form-control" id="participant1_role_select">
-											<option selected="selected">Перевод с английского</option>
-											<option>Эдит</option>
-											<option>Редактура</option>
-											<option>Test</option>
-										</select>
+										<div id="participant_roles_selector">
+											<input class="form-control typeahead role_input" type="text" id="participant1_role_input" value="Перевод с английского" data-p="1">
+										</div>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
 								</div>
@@ -279,19 +278,13 @@
 									<h3>Основа</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<select class="form-control" id="participant1_name_select">
-											<option>Ushwood</option>
-											<option selected="selected">Danholm</option>
-											<option>Lady Astrel</option>
-											<option>Test</option>
-										</select>
-										<label for="participant2_role">Роль</label>
-										<select class="form-control" id="participant1_role_select">
-											<option>Перевод с английского</option>
-											<option selected="selected">Эдит</option>
-											<option>Редактура</option>
-											<option>Test</option>
-										</select>
+										<div id="participant_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant2_name_input" value="Danholm" data-p="2">
+										</div>
+										<label for="participant1_role">Роль</label>
+										<div id="participant_roles_selector">
+											<input class="form-control typeahead role_input" type="text" id="participant2_role_input" value="Эдит" data-p="2">
+										</div>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
 								</div>
@@ -306,19 +299,13 @@
 									<h3>Основа</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<select class="form-control" id="participant1_name_select">
-											<option>Ushwood</option>
-											<option>Danholm</option>
-											<option selected="selected">Lady Astrel</option>
-											<option>Test</option>
-										</select>
-										<label for="participant3_role">Роль</label>
-										<select class="form-control" id="participant1_role_select">
-											<option>Перевод с английского</option>
-											<option>Эдит</option>
-											<option selected="selected">Редактура</option>
-											<option>Test</option>
-										</select>
+										<div id="participant_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant3_name_input" value="Lady Astrel" data-p="3">
+										</div>
+										<label for="participant1_role">Роль</label>
+										<div id="participant_roles_selector">
+											<input class="form-control typeahead role_input" type="text" id="participant3_role_input" value="Редактура" data-p="3">
+										</div>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
 								</div>
@@ -333,19 +320,13 @@
 									<h3>Основа</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<select class="form-control" id="participant1_name_select">
-											<option>Ushwood</option>
-											<option>Danholm</option>
-											<option>Lady Astrel</option>
-											<option selected="selected">Test</option>
-										</select>
-										<label for="participant4_role">Роль</label>
-										<select class="form-control" id="participant1_role_select">
-											<option>Перевод с английского</option>
-											<option>Эдит</option>
-											<option>Редактура</option>
-											<option selected="selected">Test</option>
-										</select>
+										<div id="participant_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant4_name_input" value="Test" data-p="4">
+										</div>
+										<label for="participant1_role">Роль</label>
+										<div id="participant_roles_selector">
+											<input class="form-control typeahead role_input" type="text" id="participant4_role_input" value="Test" data-p="4">
+										</div>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
 								</div>
@@ -516,6 +497,7 @@
             </form>
             </main>
         </div>
+		
         <aside class="right-sidebar">
             <div style="color:rgb(77,77,77);">
                 <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
@@ -582,8 +564,8 @@
 			}
 		});
 	});
-	
-	$('#participantselect').on( "sortupdate", function( event, ui ) { // для списка участников перевода задаем обработчик перетягивания
+
+	$('#participantselect').on( "sortupdate", function() { // для списка участников перевода задаем обработчик перетягивания
 		var p_order = 0; // поставим для каждого участника порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
 			if(!$(this).is('.heading[data-chapter-id]')){ // если это не heading
@@ -594,8 +576,68 @@
 		});
 	});
 	
-	$('#participant1_name_select').on("change", function(){
-		console.log($('#participant1_name_select').val());
+	// ---------- typeahead start ----------
+	var substringMatcher = function(strs) {
+		return function findMatches(q, cb) {
+			var matches, substringRegex;
+ 
+			// an array that will be populated with substring matches
+			matches = [];
+ 
+			// regex used to determine if a string contains the substring `q`
+			substrRegex = new RegExp(q, 'i');
+ 
+			// iterate through the pool of strings and for any string that
+			// contains the substring `q`, add it to the `matches` array
+			$.each(strs, function(i, str) {
+				if (substrRegex.test(str)) {
+					matches.push(str);
+				}
+			});
+ 
+			cb(matches);
+		};
+	};
+ 
+	var names = ['Ushwood', 'Danholm', 'Lady Astrel', 'Test'
+	];
+	
+	var roles = ['Перевод с английского', 'Эдит', 'Редактура', 'Test'
+	];
+ 
+	$('#participant_names_selector .typeahead').typeahead({  // обработчик имен
+		hint: true,
+		limit: 10,
+		highlight: true,
+		minLength: 1
+	},
+	{
+		name: 'participant_names',
+		source: substringMatcher(names)
+	});
+	
+	$('#participant_roles_selector .typeahead').typeahead({  // обработчик ролей
+		hint: true,
+		limit: 10,
+		highlight: true,
+		minLength: 1
+	},
+	{
+		name: 'participant_roles',
+		source: substringMatcher(roles)
+	});
+	// ---------- typeahead end --------------
+	
+	$('.name-input').on('keyup', function() { // ищем среди элементов класса name-input, тот в котором мы сейчас пишем
+			var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
+			var i = elem.attr('data-p'); // получаем id участника
+			$('#participant'+ i + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+	});
+	
+	$('.role-input').on('keyup', function() { // ищем среди элементов класса role-input, тот в котором мы сейчас пишем
+			var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
+			var i = elem.attr('data-p'); // получаем id участника
+			$('#participant'+ i + '_role').html(elem.val()); // при помощи предыдущего значения вытворяем с ролями, что хотим
 	});
 	
 	//admin-affix - мой класс для обозначения общего елемента, который аффиксируется справа от списка .list-group.select
