@@ -1425,6 +1425,10 @@ div.overlay {
     .text{
         margin-left: 45px;
     }
+    .navbar-static-top.active{
+        position: fixed;
+        width: 100%;
+    }
 }
 .content-module div.affix-top {
     position: relative;
