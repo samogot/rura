@@ -9,15 +9,10 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body data-spy="scroll" data-target=".scrollspy">
-<!-- Кнопка скрытия -->
-<button class="btn btn-white OpenContent"> <i class="fa fa-home"></i>
-    <div class="hint">Содержание</div>
-</button>
-<!-- Кнопка скрытия -->
-
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -109,8 +104,7 @@
 </nav>
 <div class="container">
         <div class="leftColumn">
-            <main class="content">
-            <div class="controlText">
+<div class="controlText">
                 <button class="btn btn-white"> <i class="fa fa-home"></i>
                     <div class="hint">Содержание</div>
                 </button>
@@ -131,6 +125,7 @@
                 </button>
                 <button class="btn btn-white"> <i class="fa fa-cog"></i></button>
             </div>
+            <main class="content">
             <div class="text">
                 <div class="h3 project">Sword Art Online - том 9</div>
 <div class="h4 project" id="Пролог-1">Пролог 1</a></div>Седьмой месяц по календарю Мира Людей, год 372
@@ -2947,20 +2942,12 @@ SAO v09 15.png
         }
         $(window).off('.affix')
         $('.content-module').children('div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
-        $('.content-module').children('div').affix({ offset: {top: $('.content-module').children('div').offset().top}})
-    });
-    $('.OpenContent').click(function(){
-        var $right = $('.content-module');
-        var $left = $('.leftColumn');
-        if($right.hasClass("active")){
-            $right.removeClass("active");
-            $right.children('div').removeClass("active");
-            $left.removeClass("active");
-        } else {
-            $right.addClass("active");
-            $right.children('div').addClass("active");
-            $left.addClass("active");
-        }
+        $('.content-module').children('div').affix({
+          offset: {
+            top: $('.content-module').children('div').offset().top,
+            bottom: ( $(document).height() - $('.text').outerHeight(true) - $('.text').parent().offset().top  + $('.comments').outerHeight(true) + 200 )
+          }
+        })
     });
     $('.btn').hover(
         function(){
@@ -2974,9 +2961,49 @@ SAO v09 15.png
     $('.content-module').children('div').affix({
       offset: {
         top: $('.content-module').children('div').offset().top,
-        bottom: ($('footer').outerHeight(true) + 40)
+        bottom: ( $(document).height() - $('.text').outerHeight(true) - $('.text').parent().offset().top  + $('.comments').outerHeight(true) + 200 )
       }
     });
+    $('.controlText').affix({
+      offset: {
+        top:  $('.controlText').offset().top,
+        bottom: ( $(document).height() - $('.text').outerHeight(true) - $('.text').parent().offset().top  + $('.comments').outerHeight(true) + 300 )
+      }
+    });
+    if($(window).width()<767){
+      var $right = $('.content-module');
+      var $center = $('.leftColumn');
+      $(".leftColumn").swipe( {
+        swipeLeft:function(event, direction, distance) {
+          if(distance>80){
+            if($right.hasClass("active")){
+                $right.removeClass("active");
+                $right.children('div').removeClass("active");
+                $center.removeClass("active");
+            } else {
+                $right.addClass("active");
+                $right.children('div').addClass("active");
+                $center.addClass("active");
+            }
+          }
+        },
+        swipeRight:function(event, direction, distance) {
+          if(distance>80){
+            if($right.hasClass("active")){
+                $right.removeClass("active");
+                $right.children('div').removeClass("active");
+                $center.removeClass("active");
+            } else {
+                $right.addClass("active");
+                $right.children('div').addClass("active");
+                $center.addClass("active");
+            }
+          }
+        },
+        threshold:0,
+        excludedElements:$.fn.swipe.defaults.excludedElements
+      });
+    }
 </script>
 </body>
 </html>
