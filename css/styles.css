@@ -1246,6 +1246,8 @@ color: #60a9d4;
     width: 50px;
     height: 50px;
     position: relative;
+    background: #F1F1F1;
+    margin-bottom: 1px;
 }
 .controlText button .hint {
     background: #8fd5fe url('../img/actions/textControl.png') left no-repeat;
@@ -1356,7 +1358,6 @@ div.overlay {
     color: black;
 }
 .ContentNav li {
-    background: #F2F2F2;
     margin-bottom: 1px;
 }
 .ContentNav li a:hover,
@@ -1409,21 +1410,14 @@ div.overlay {
         margin-left: 5px;
         margin-right: 15px;
     }
-    #nav li {
-        font-size: 90%;
-    }
 
 
     /* Содержание */
     .content-module {
-        right: calc(5px - 50%);
+        right: -218px;
         position: absolute;
         top: 50px;
-        width: 50%;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
+        width: 220px;
     }
     .content-module.active {
         right: 0;
@@ -1432,14 +1426,25 @@ div.overlay {
     .content-module.active div {
         display: block !important;
     }
-    .content-module ul:first-of-type{
+    .content-module ul{
         padding-left: 0px;
     }
     .module_name {
         padding-left: 10px;
     }
-    .ContentNav > li.active > a:last-of-type{
-        border-left: 5px solid rgb(96,169,212);
+
+    .ContentNav > li.active > a{
+        padding-left: 18px !important;
+        border-left: 2px solid rgb(96,169,212) !important;
+    }
+    .ContentNav .ContentNav > .active > a {
+        padding-left: 30px !important;
+    }
+    .ContentNav .ContentNav > li > a {
+        padding-left: 30px !important;
+    }
+    .ContentNav .ContentNav .active a {
+        border-left: 2px solid rgb(96,169,212);
     }
     .ContentNav .ContentNav .active:hover a, .ContentNav .ContentNav .active:focus a {
         border-left: none;
@@ -1465,10 +1470,6 @@ div.overlay {
         top: 50px;
         width: 50px;
         background: transparent;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
     }
     .controlText.active {
         left: -50px;
@@ -1485,12 +1486,12 @@ div.overlay {
         left: calc(50% + 20px);
     }
     .controlText .btn {
-        width: 40px;
+        width: 38px;
         height: 35px;
-        border-right: 5px solid rgb(96,169,212);
+        border-right: 2px solid rgb(96,169,212);
         border-radius: 0;
-        margin-top: 5px;
-        margin-right: 5px;
+        margin-top: 1px;
+        margin-right: 2px;
     }
 
     /* НавБар */
