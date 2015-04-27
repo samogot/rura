@@ -102,6 +102,7 @@
 <div class="container">
         <div class="leftColumn">
 <div class="controlText">
+  <div>
                 <button class="btn btn-white"> <i class="fa fa-home"></i>
                     <div class="hint">Содержание</div>
                 </button>
@@ -121,6 +122,7 @@
                     <div class="hint">Нашли ошибку? Тык!</div>
                 </button>
                 <button class="btn btn-white"> <i class="fa fa-cog"></i></button>
+            </div>
             </div>
             <main class="content">
             <div class="text">
@@ -2942,7 +2944,7 @@ SAO v09 15.png
         $('.content-module').children('div').affix({
           offset: {
             top: $('.content-module').children('div').offset().top,
-            bottom: ( $(document).height() - $('.text').outerHeight(true) - $('.text').parent().offset().top  + $('.comments').outerHeight(true) + 200 )
+        bottom: ( $('footer').outerHeight(true) + 100 )
           }
         })
     });
@@ -2958,29 +2960,29 @@ SAO v09 15.png
     $('.content-module').children('div').affix({
       offset: {
         top: $('.content-module').children('div').offset().top,
-        bottom: ( $(document).height() - $('.text').outerHeight(true) - $('.text').parent().offset().top  + $('.comments').outerHeight(true) + 200 )
+        bottom: ( $('footer').outerHeight(true) + 100 )
       }
     });
-    $('.controlText').affix({
+    $('.controlText').children('div').affix({
       offset: {
-        top:  $('.controlText').offset().top,
+        top:  $('.controlText').children('div').offset().top,
         bottom: ( $(document).height() - $('.text').outerHeight(true) - $('.text').parent().offset().top  + $('.comments').outerHeight(true) + 300 )
       }
     });
     if($(window).width()<767){
       var $right = $('.content-module');
       var $center = $('.leftColumn');
+      var $left = $('.controlText');
       $(".leftColumn").swipe( {
         swipeLeft:function(event, direction, distance) {
           if(distance>80){
-            if($right.hasClass("active")){
-                $right.removeClass("active");
-                $right.children('div').removeClass("active");
-                $center.removeClass("active");
+            if($left.hasClass("active")){
+                $left.removeClass("active");
+                $center.removeClass("activeLeft");
             } else {
                 $right.addClass("active");
                 $right.children('div').addClass("active");
-                $center.addClass("active");
+                $center.addClass("activeRight");
             }
           }
         },
@@ -2989,16 +2991,20 @@ SAO v09 15.png
             if($right.hasClass("active")){
                 $right.removeClass("active");
                 $right.children('div').removeClass("active");
-                $center.removeClass("active");
+                $center.removeClass("activeRight");
             } else {
-                $right.addClass("active");
-                $right.children('div').addClass("active");
-                $center.addClass("active");
+                $left.addClass("active");
+                $center.addClass("activeLeft");
             }
           }
         },
         threshold:0,
         excludedElements:$.fn.swipe.defaults.excludedElements
+      });
+      $('#nav').click(function(){
+                $right.removeClass("active");
+                $right.children('div').removeClass("active");
+                $center.removeClass("activeRight");
       });
       $(function(){
       var lastScrollTop = 0, delta = 5;
@@ -3009,11 +3015,10 @@ SAO v09 15.png
             return;
 
          if (st < lastScrollTop){
-             // downscroll code
+            // upscroll code
             $('.navbar-static-top').addClass('active')
          } else {
-            // upscroll code
-            console.log('scroll up');
+             // downscroll code
             $('.navbar-static-top').removeClass('active')
          }
          lastScrollTop = st;
