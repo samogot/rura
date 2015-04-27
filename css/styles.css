@@ -1494,7 +1494,7 @@ div.overlay {
     }
 
     /* НавБар */
-    .navbar-static-top.active{
+    .navbar-static-top.active, .navbar-lower.active{
         position: fixed;
         width: 100%;
     }

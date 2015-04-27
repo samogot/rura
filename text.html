@@ -3017,9 +3017,11 @@ SAO v09 15.png
          if (st < lastScrollTop){
             // upscroll code
             $('.navbar-static-top').addClass('active')
+            $('.navbar-lower').addClass('active')
          } else {
              // downscroll code
             $('.navbar-static-top').removeClass('active')
+            $('.navbar-lower').removeClass('active')
          }
          lastScrollTop = st;
       });
