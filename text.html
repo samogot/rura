@@ -2954,18 +2954,32 @@ SAO v09 15.png
             $(this).children('.hint').hide()
         }
     );
-    $('.content-module').children('div').affix({
-      offset: {
-        top: $('.content-module').children('div').offset().top,
-        bottom: ( $('footer').outerHeight(true) + 100 )
-      }
-    });
-    $('.controlText').children('div').affix({
-      offset: {
-        top:  $('.controlText').children('div').offset().top,
-        bottom: ( $(document).height() - $('.text').outerHeight(true) - $('.text').parent().offset().top  + $('.comments').outerHeight(true) + 300 )
-      }
-    });
+        $('.content-module').children('div').affix({
+          offset: {
+            top: $('.content-module').children('div').offset().top,
+            bottom: ( $('footer').outerHeight(true) + 100 )
+          }
+        });
+        $('.controlText').children('div').affix({
+          offset: {
+            top:  $('.controlText').children('div').offset().top,
+            bottom: ( $(document).height() - $('.text').outerHeight(true) - $('.text').parent().offset().top  + $('.comments').outerHeight(true) + 300 )
+          }
+        });
+      $(window).resize(function(){
+        $('.content-module').children('div').affix({
+          offset: {
+            top: $('.content-module').children('div').offset().top,
+            bottom: ( $('footer').outerHeight(true) + 100 )
+          }
+        });
+        $('.controlText').children('div').affix({
+          offset: {
+            top:  $('.controlText').children('div').offset().top,
+            bottom: ( $(document).height() - $('.text').outerHeight(true) - $('.text').parent().offset().top  + $('.comments').outerHeight(true) + 300 )
+          }
+        });
+      });
     if($(window).width()<767){
       var $right = $('.content-module');
       var $center = $('.leftColumn');
