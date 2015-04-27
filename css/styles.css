@@ -1399,11 +1399,11 @@ div.overlay {
 @media screen and (max-width: 767px) {
     /* Основа */
     .leftColumn.activeRight {
-        right: 50%;
+        right: 230px;
         position: relative;
     }
     .leftColumn.activeLeft {
-        left: 50px;
+        left: 40px;
         position: relative;
     }
     .text{
@@ -1418,6 +1418,10 @@ div.overlay {
         position: absolute;
         top: 50px;
         width: 220px;
+        display: block !important;
+    }
+    .content-module div{
+        display: block !important;
     }
     .content-module.active {
         right: 0;
@@ -1453,26 +1457,23 @@ div.overlay {
         background: none;
         color: #000;
     }
-    .controlText button .hint {
-        /*
-        padding: 3px 5px 3px 12px;
-        margin-left: 20px;
-        margin-top: -25px;
-        */
-        display: none !important;
-    }
 
 
     /* Инструменты */
     .controlText {
-        left: -35px;
         position: absolute;
-        top: 50px;
-        width: 50px;
+        width: 40px;
         background: transparent;
+        height: initial;
     }
-    .controlText.active {
-        left: -50px;
+    .controlText div{
+        width: 40px;
+        left: -36px;
+        position: fixed;
+        top: 100px;
+    }
+    .controlText div.active {
+        left: 10px;
         display: block !important;
     }
     .btn-white.OpenContent {
@@ -1491,13 +1492,29 @@ div.overlay {
         border-right: 2px solid rgb(96,169,212);
         border-radius: 0;
         margin-top: 1px;
-        margin-right: 2px;
     }
-
+    .controlText .btn:hover, .controlText .btn:active {
+        color:rgb(96,169,212);
+        box-shadow: none;
+    }
+    .controlText button .hint {
+        /*
+        padding: 3px 5px 3px 12px;
+        margin-left: 20px;
+        margin-top: -25px;
+        */
+        display: none !important;
+    }
     /* НавБар */
     .navbar-static-top.active, .navbar-lower.active{
         position: fixed;
         width: 100%;
+    }
+
+
+    /* Блоки */
+    .right-sidebar div{
+        display: none;
     }
 }
 .content-module div.affix-top {

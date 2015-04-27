@@ -2969,7 +2969,7 @@ SAO v09 15.png
     if($(window).width()<767){
       var $right = $('.content-module');
       var $center = $('.leftColumn');
-      var $left = $('.controlText');
+      var $left = $('.controlText div');
       $(".leftColumn").swipe( {
         swipeLeft:function(event, direction, distance) {
           if(distance>80){
@@ -3003,11 +3003,13 @@ SAO v09 15.png
                 $right.children('div').removeClass("active");
                 $center.removeClass("activeRight");
       });
+
+
+/*
       $(function(){
       var lastScrollTop = 0, delta = 5;
       $(window).scroll(function(event){
          var st = $(this).scrollTop();
-
          if(Math.abs(lastScrollTop - st) <= delta)
             return;
 
@@ -3022,8 +3024,9 @@ SAO v09 15.png
          }
          lastScrollTop = st;
       });
-    })
-  }
+      })
+*/
+    }
 </script>
 </body>
 </html>
