@@ -7,15 +7,11 @@
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js">
-
-</script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">
-
-</script>
-    <script src="js/jquery.touchSwipe.min.js">
-
-</script>
+    <link rel="stylesheet" href="css/bootstrap-slider.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body data-spy="scroll" data-target=".scrollspy">
@@ -110,27 +106,44 @@
 <div class="controlText">
   <div>
                 <button class="btn btn-white"> <i class="fa fa-home"></i>
-                    <div class="hint"><div></div>Содержание</div>
+                    <div class="hint"><div class="miniicon"></div>Содержание</div>
                 </button>
                 <button class="btn btn-white"> <i class="fa fa-reply"></i>
-                    <div class="hint"><div></div>Предыдущая глава</div>
+                    <div class="hint"><div class="miniicon"></div>Предыдущая глава</div>
                 </button>
                 <button class="btn btn-white"> <i class="fa fa-share"></i>
-                    <div class="hint"><div></div>Следующая глава</div>
+                    <div class="hint"><div class="miniicon"></div>Следующая глава</div>
                 </button>
                 <button class="btn btn-white"> <i class="fa fa-bookmark"></i>
-                    <div class="hint"><div></div>Создать закладку</div>
+                    <div class="hint"><div class="miniicon"></div>Создать закладку</div>
                 </button>
                 <button class="btn btn-white top"> <i class="fa fa-arrow-up"></i>
-                    <div class="hint"><div></div>Вверх</div>
+                    <div class="hint"><div class="miniicon"></div>Вверх</div>
                 </button>
                 <button class="btn btn-white mistake"> <i class="fa fa-comment"></i>
-                    <div class="hint"><div></div>Нашли ошибку? Тык!</div>
+                    <div class="hint"><div class="miniicon"></div>Нашли ошибку? Тык!</div>
                 </button>
-                <button class="btn btn-white"> <i class="fa fa-cog"></i></button>
+                <button class="btn btn-white options"> <i class="fa fa-cog"></i>
+                    <div class="hint"><div class="miniicon"></div>
+                      <p>Шрифт</p>
+                      <div class="font active" data-name="helvetica">
+                        <div class="type helvetica">A</div>
+                        <div class="fontname helvetica">Helvetica</div>
+                      </div>
+                      <div class="font" data-name="georgia">
+                        <div class="type georgia">A</div>
+                        <div class="fontname georgia">Georgia</div>
+                      </div>
+                      <p>Размер</p>
+                      <div class="fontslider" align="center">
+                        <input type="text" id="font-slider">
+                      </div>
+                    </div>
+                </button>
             </div>
             </div>
             <main class="content">
+            <div class="text">
 <h2 id="p1">Пролог 1</h2>
 <center class="subtitle"><b>Седьмой месяц по календарю Мира Людей, год 372</b></center>
 <h3 id="p1ch1">Глава 1</h3>
@@ -2699,7 +2712,7 @@
 </li>
 <li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7"><span class="cite-accessibility-label">Перейти </span>↑</a></span> <span class="reference-text">Имеется в виду слово «pan», пришедшее в японский язык из голландского.</span>
 </li>
-</ol>
+</ol></div>
                 <h3 class="h3" id="comments">Комментарии</h3>
                 <p>
                   <span class="color110">На сайте РуРанобэ приветствуются <span class="bold">все комментарий</span>. Если вы не хотите быть анонимным, <a href="#">зарегистрируйтесь</a> или <a href="#">войдите</a>.
@@ -3056,6 +3069,30 @@ if ( isMobile() == true ) {
       })
 */
 }
+
+$('.options .font').click(function(){
+    if ($(this).hasClass("active")) {} else {
+      $('.options .font').removeClass("active");
+      $(this).addClass("active");
+      $('.text').css('font-family',$(this).data('name'));
+    }
+})
+var FontSize = function() {
+    var font = '';
+    switch(fontslider.getValue()){
+      case 0: font = '80%';break;
+      case 1: font = '100%';break;
+      case 2: font = '120%';break;
+    }
+  $('.text').css('font-size',font);
+}
+var fontslider = $("#font-slider").slider({
+        step: 1,
+        value: 1,
+        ticks: [0,1,2],
+        ticks_snap_bounds: 20,
+        tooltip: 'hide'
+    }).on('slide', FontSize).on('change', FontSize).data('slider');
 </script>
 </body>
 </html>
