@@ -1664,7 +1664,58 @@ ul.ContentNav {
 .content-module div.affix-bottom {
     position: absolute;
 }
+.leftbg, .rightbg{
+    width: 100%;
+    height: calc(100% + 20px);
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    background: #CF4256;
+    margin-top: -20px;
+}
+.rightbg{
+    left: calc(100% + 15px);
+}
+.leftbg{
+    right: calc(100% + 15px);
+}
 
+.leftbg:before,.rightbg:before {
+    width:100%;
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    /* red up pointing triangle */
+    background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228px%22%20height%3D%224px%22%3E%3Cpolygon%20points%3D%220%2C4%204%2C0%208%2C4%22%20fill%3D%22%23CF4256%22%2F%3E%3C%2Fsvg%3E");
+}
+.rightbg:before {
+    left: -4px;
+}
+
+.leftbg:after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    height: 4px;
+    width:4px;
+    height:100%;
+    background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228px%22%20height%3D%228px%22%3E%3Cpolygon%20points%3D%220%2C8%204%2C4%200%2C0%22%20fill%3D%22%23CF4256%22%2F%3E%3C%2Fsvg%3E");
+}
+.rightbg:after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -8px;
+    height: 4px;
+    width:8px;
+    height:100%;
+    background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228px%22%20height%3D%228px%22%3E%3Cpolygon%20points%3D%228%2C8%204%2C4%208%2C0%22%20fill%3D%22%23CF4256%22%2F%3E%3C%2Fsvg%3E");
+
+}
 
 
 @media (min-width: 768px){
