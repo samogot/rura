@@ -2933,15 +2933,15 @@ function reinitAffix() {
         .css('top', '').affix({
         offset: {
             top: $('.content-module>div').offset().top - 20,
-            bottom: $('footer').outerHeight(true) 
+            bottom: $('footer').outerHeight(true)
         }
     })
     $('.controlText>div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
         .css('top', '').affix({
         offset: {
             top: $('.controlText>div').offset().top - 40,
-            bottom: $(document).height() - ($('#comments').length 
-                    ? $('#comments').offset().top 
+            bottom: $(document).height() - ($('#comments').length
+                    ? $('#comments').offset().top
                     : $('.leftColumn').offset().top + $('.leftColumn').outerHeight(true))
         }
     });
@@ -2950,7 +2950,7 @@ $('.controlText .btn').hover(
 function() {
     $(this).children('.hint').show()
 }
-, 
+,
 function() {
     $(this).children('.hint').hide()
 }
@@ -2975,7 +2975,7 @@ $('.module_name').click(function() {
     if ($(this).hasClass("opened")) {
         $(this).parent().children('.actions').hide();
         $(this).removeClass("opened");
-    } 
+    }
     else {
         $(this).parent().children('.actions').show();
         $(this).addClass("opened");
@@ -2986,20 +2986,25 @@ $('.btn').hover(
 function() {
     $(this).children('.hint').show()
 }
-, 
+,
 function() {
     $(this).children('.hint').hide()
 }
 );
 reinitAffix();
+
+
 $(window).resize(reinitAffix);
-if ($(window).width() < 767) {
+function isMobile() {
+  try{ document.createEvent("TouchEvent"); return true; }
+  catch(e){ return false; }
+}
+if ( isMobile() == true ) {
     var $right = $('.content-module');
     var $center = $('.leftColumn');
     var $left = $('.controlText div');
     $(".leftColumn").swipe({
-        swipeLeft: function(event, direction, distance) {
-            if (distance > 80) {
+        swipeLeft: function() {
                 if ($left.hasClass("active")) {
                     $left.removeClass("active");
                     $center.removeClass("activeLeft");
@@ -3008,10 +3013,8 @@ if ($(window).width() < 767) {
                     $right.children('div').addClass("active");
                     $center.addClass("activeRight");
                 }
-            }
         },
-        swipeRight: function(event, direction, distance) {
-            if (distance > 80) {
+        swipeRight: function() {
                 if ($right.hasClass("active")) {
                     $right.removeClass("active");
                     $right.children('div').removeClass("active");
@@ -3020,9 +3023,8 @@ if ($(window).width() < 767) {
                     $left.addClass("active");
                     $center.addClass("activeLeft");
                 }
-            }
         },
-        threshold: 0,
+        threshold: 100,
         excludedElements: $.fn.swipe.defaults.excludedElements
     });
     $('#nav').click(function() {
