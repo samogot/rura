@@ -7,11 +7,11 @@
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap-slider.css">
+    <!--<link rel="stylesheet" href="css/bootstrap-slider.css">-->
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
-    <script src="js/bootstrap-slider.js"></script>
+    <!--<script src="js/bootstrap-slider.js"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body data-spy="scroll" data-target=".scrollspy">
@@ -102,15 +102,17 @@
   </div>
 </nav>
 <div class="container">
-        <div class="leftColumn blue">
+        <div class="leftColumn" data-color="">
         <div class="leftbg"></div>
         <div class="rightbg"></div>
+        <div class="leftMobile"></div>
+        <div class="rightMobile"></div>
 <div class="controlText">
   <div>
                 <button class="btn btn-white"> <i class="fa fa-home"></i>
                     <div class="hint"><div class="miniicon"></div>Содержание</div>
                 </button>
-                <button class="btn btn-white"> <i class="fa fa-reply"></i>
+                <button class="btn btn-white disable"> <i class="fa fa-reply"></i>
                     <div class="hint"><div class="miniicon"></div>Предыдущая глава</div>
                 </button>
                 <button class="btn btn-white"> <i class="fa fa-share"></i>
@@ -138,7 +140,24 @@
                       </div>
                       <p>Размер</p>
                       <div class="fontslider" align="center">
-                        <input type="text" id="font-slider">
+                        <input id="fontslide" type ="range" min ="0" max="2" step ="1"/>
+                      </div>
+                      <p>Цвета</p>
+                      <div class="pagecolors" align="center">
+                        <div class="day">
+                          <div class="name">День</div>
+                          <div class="pagecolor white" data-color="white"></div>
+                          <div class="pagecolor red" data-color="red"></div>
+                          <div class="pagecolor blue" data-color="blue"></div>
+                          <div class="pagecolor black" data-color="black"></div>
+                        </div>
+                        <div class="night">
+                          <div class="name">Ночь</div>
+                          <div class="pagecolor white" data-color="white"></div>
+                          <div class="pagecolor red" data-color="red"></div>
+                          <div class="pagecolor blue" data-color="blue"></div>
+                          <div class="pagecolor black" data-color="black"></div>
+                        </div>
                       </div>
                     </div>
                 </button>
@@ -2922,7 +2941,7 @@
 <div class="mistake">
     <form class="form-horizontal">
     <h4>Орфографическая ошибка в тексте</h4>
-    <p><span class="MistakeText">Честно говоря</span>, с моим нынешним уровнем этот навык, хоть и очень полезен...</p>
+    <p><span class="MistakeText"></span></p>
     <div class="MistakeComment">
         Комментарий для автора <span class="grey">(необязательно)</span>:
         <textarea></textarea>
@@ -2976,6 +2995,10 @@ $('.btn.top').click(function() {
 $('.btn.mistake').click(function() {
     $('.overlay').show();
     $('div.mistake').show();
+    var Mistake = getText();
+    if((Mistake != "")||(Mistake != ' ')){
+      $('div.mistake .MistakeText').text(getText());
+    } else { alert('Для начала, выделите ошибку!')}
 });
 $('.overlay').click(function() {
     $('.overlay').hide();
@@ -2988,11 +3011,11 @@ $('div.mistake .cancel').click(function() {
 $('.module_name').click(function() {
     $(this).children('.fa').toggleClass("fa-chevron-right fa-chevron-down");
     if ($(this).hasClass("opened")) {
-        $(this).parent().children('.actions').hide();
+        $(this).parent().children('.actions').slideUp();
         $(this).removeClass("opened");
     }
     else {
-        $(this).parent().children('.actions').show();
+        $(this).parent().children('.actions').slideDown();
         $(this).addClass("opened");
     }
     reinitAffix();
@@ -3018,27 +3041,32 @@ if ( isMobile() == true ) {
     var $right = $('.content-module');
     var $center = $('.leftColumn');
     var $left = $('.controlText div');
+    function OpenRight() {
+        if ($left.hasClass("active")) {
+            $left.removeClass("active");
+            $center.removeClass("activeLeft");
+        } else {
+            $right.addClass("active");
+            $right.children('div').addClass("active");
+            $center.addClass("activeRight");
+        }
+    }
+
+    function OpenLeft() {
+        if ($right.hasClass("active")) {
+            $right.removeClass("active");
+            $right.children('div').removeClass("active");
+            $center.removeClass("activeRight");
+        } else {
+            $left.addClass("active");
+            $center.addClass("activeLeft");
+        }
+    }
+    $('.leftMobile').click(OpenLeft);
+    $('.rightMobile').click(OpenRight);
     $(".leftColumn").swipe({
-        swipeLeft: function() {
-                if ($left.hasClass("active")) {
-                    $left.removeClass("active");
-                    $center.removeClass("activeLeft");
-                } else {
-                    $right.addClass("active");
-                    $right.children('div').addClass("active");
-                    $center.addClass("activeRight");
-                }
-        },
-        swipeRight: function() {
-                if ($right.hasClass("active")) {
-                    $right.removeClass("active");
-                    $right.children('div').removeClass("active");
-                    $center.removeClass("activeRight");
-                } else {
-                    $left.addClass("active");
-                    $center.addClass("activeLeft");
-                }
-        },
+        swipeLeft: function() { OpenRight() },
+        swipeRight: function() { OpenLeft() },
         threshold: 100,
         excludedElements: $.fn.swipe.defaults.excludedElements
     });
@@ -3046,6 +3074,18 @@ if ( isMobile() == true ) {
         $right.removeClass("active");
         $right.children('div').removeClass("active");
         $center.removeClass("activeRight");
+    });
+    $('.controlText .btn').click(function() {
+        $left.removeClass("active");
+        $center.removeClass("activeLeft");
+    });
+    $('.controlText .btn.options').click(function(){
+        $('.controlText .btn.options').addClass('active');
+        $('.overlay').show();
+    })
+    $('.overlay').click(function() {
+        $('.overlay').hide();
+        $('.controlText .btn.options').removeClass('active');
     });
 
 
@@ -3078,23 +3118,85 @@ $('.options .font').click(function(){
       $(this).addClass("active");
       $('.text').css('font-family',$(this).data('name'));
     }
+    saveSettings({key:'fontname', item:$(this).data('name')});
 })
-var FontSize = function() {
+$('.options .pagecolor').click(function(){
+    if ($(this).hasClass("active")) {} else {
+      $('.options .pagecolor').removeClass("active");
+      $(this).addClass("active");
+      $('.leftColumn').removeClass($('.leftColumn').data('color'));
+      $('.leftColumn').addClass($(this).data('color'));
+      $('.leftColumn').data('color',$(this).data('color'));
+      saveSettings({key:'bgcolor', item:$(this).data('color')});
+      if($(this).parent().hasClass('night')){
+        $('body').addClass("night");
+        saveSettings({key:'night', item:true});
+      } else {
+        $('body').removeClass("night");
+        saveSettings({key:'night', item:false});
+      }
+    }
+})
+$("#fontslide").on("change mousemove",function(){
     var font = '';
-    switch(fontslider.getValue()){
-      case 0: font = '80%';break;
-      case 1: font = '100%';break;
-      case 2: font = '120%';break;
+    switch($(this).val()){
+      case '0': font = '80%';break;
+      case '1': font = '100%';break;
+      case '2': font = '120%';break;
     }
   $('.text').css('font-size',font);
+  saveSettings({key:'fontsize', item:$(this).val()});
+});
+function supportsLocalStorage() {
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null;
+} catch (e) {
+    return false;
+  }
 }
-var fontslider = $("#font-slider").slider({
-        step: 1,
-        value: 1,
-        ticks: [0,1,2],
-        ticks_snap_bounds: 20,
-        tooltip: 'hide'
-    }).on('slide', FontSize).on('change', FontSize).data('slider');
+function saveSettings(options) {
+    if (!supportsLocalStorage()) { return false; }
+    localStorage.setItem(options.key, options.item);
+}
+function loadSettings() {
+    if (!supportsLocalStorage()) { return false; }
+    if(localStorage.getItem("bgcolor") != undefined){
+      $('.leftColumn').addClass(localStorage.getItem("bgcolor"));
+      $('.leftColumn').data('color',localStorage.getItem("bgcolor"));
+      if(localStorage.getItem("night") == "true"){
+        $('body').addClass("night");
+        $('.options .night .pagecolor.'+localStorage.getItem("bgcolor")).addClass("active");
+      } else {
+        $('.options .day .pagecolor.'+localStorage.getItem("bgcolor")).addClass("active");
+      }
+    }
+    if(localStorage.getItem("fontsize")){
+      var font = '';
+      switch(localStorage.getItem("fontsize")){
+        case '0': font = '80%';break;
+        case '1': font = '100%';break;
+        case '2': font = '120%';break;
+      }
+      $('.text').css('font-size',font);
+      $("#fontslide").val(localStorage.getItem("fontsize"));
+    }
+    if(localStorage.getItem("fontname")){
+      $('.options .font.'+localStorage.getItem("fontname")).addClass("active");
+      $('.text').css('font-family',localStorage.getItem("fontname"));
+    }
+
+}
+function getText(){
+  if (window.getSelection) {
+   return window.getSelection() + "";
+  } else if (document.getSelection) {
+    return document.getSelection() + "";
+  } else if (document.selection) {
+    return document.selection.createRange().text + "";
+  }
+  return '';
+}
+$(document).ready(function(){ loadSettings() });
 </script>
 </body>
 </html>

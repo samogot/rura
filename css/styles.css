@@ -1290,6 +1290,9 @@ color: #60a9d4;
     text-align: left;
     top:0;
 }
+.controlText .btn.disable {
+    color: #A8A8A8;
+}
 .controlText button .hint .miniicon{
     background: url('../img/actions/textControl.png') left no-repeat;
     width: 9px;
@@ -1302,7 +1305,7 @@ color: #60a9d4;
 }
 .controlText button.options .hint {
     width:200px;
-    height: 180px;
+    height: 280px;
     background: #F1F1F1;
     border-top: 5px solid #8fd5fe;
     border-bottom: 5px solid #8fd5fe;
@@ -1338,49 +1341,43 @@ color: #60a9d4;
 .controlText button.options .hint .helvetica{
     font-family: "Helvetica";
 }
-/* SLIDER */
-.slider.slider-horizontal .slider-selection
-{
-  background: transparent;
-  box-shadow: none;
+.controlText button.options .hint .pagecolors > div div{
+    margin-left: -5px;
+    display: inline-block;
+    border: 1px solid #92D1FD;
+    height: 32px;
+    text-align: center;
+    line-height: 2;
+    vertical-align: top;
 }
-.slider-tick.in-selection
-{
-  background-image: -webkit-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%);
-  background-image: linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#fff5f5f5', GradientType=0);
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+.controlText button.options .hint .pagecolors > div{
+    height: 36px;
+    border: 0px;
 }
-.slider {
-    width: 60% !important;
+.controlText button.options .hint .pagecolor {
+    width: 32px;
 }
-.slider.slider-horizontal .slider-track{
-    height: 2px !important;
-    background: #92D1FD;
-    box-shadow: none;
+.controlText button.options .hint .pagecolors > div div.name{
+    margin-bottom: 5px;
+    margin-right: 0;
+    width: calc(100% - 124px);
 }
-.slider.slider-horizontal .slider-tick, .slider.slider-horizontal .slider-handle{
-    margin-top: 3px;
+.controlText button.options .hint .pagecolor.active{
+    border: 5px solid red;
 }
-.slider-tick{
-    width: 10px !important;
-    height: 10px !important;
-    background: #FEFDFF !important;
-    box-shadow: none !important;
-    border: 1px solid #92D1FD !important;
+.controlText button.options .hint .pagecolor.white {
+    background: white;
 }
-.slider-tick.in-selection{
-    background: #FEFDFF !important;
+.controlText button.options .hint .pagecolor.red {
+    background: #CF4256;
 }
-.slider-handle {
-    width: 10px !important;
-    height: 10px !important;
-    background: #92D1FD !important;
-    box-shadow: none !important;
-    border: 1px solid #92D1FD !important;
+.controlText button.options .hint .pagecolor.black{
+    background: black;
 }
+.controlText button.options .hint .pagecolor.blue {
+    background: #3793C8;
+}
+
 .text {
 }
 .text > .h3 {
@@ -1447,7 +1444,7 @@ div.mistake button {
     margin-bottom: 20px;
 }
 div.overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: none;
@@ -1471,7 +1468,7 @@ div.overlay {
     background: #fff;
 }
 .ContentNav > li > a {
-    padding: 5px 10px !important;
+    padding: 5px 20px !important;
 }
 .ContentNav a {
     color: black;
@@ -1481,8 +1478,8 @@ div.overlay {
 }
 .ContentNav li a:hover,
 .ContentNav li a:focus {
-    background: #8fd5fe;
-    color: #fff;
+    color: rgb(96,169,212);
+    border-left: 1px solid rgb(96,169,212);
 }
 ul.ContentNav {
     background: #fff;
@@ -1530,6 +1527,19 @@ ul.ContentNav {
     display: none;
 }
 @media screen and (max-width: 767px) {
+    .leftMobile, .rightMobile{
+        width: 10px;
+        bottom: 20px;
+        position: absolute;
+        top: -20px;
+    }
+    .rightMobile{
+        left: calc(100%);
+    }
+    .leftMobile{
+        right: calc(100% + 5px);
+    }
+
     /* ÃƒÆ’Ã‚ÂÃƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬ËœÃƒâ€šÃ‚ÂÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â½ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â¾ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â²ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â° */
     .leftColumn.activeRight {
         right: 230px;
@@ -1557,7 +1567,7 @@ ul.ContentNav {
         display: block !important;
     }
     .content-module.active {
-        right: 0;
+        right: 6px;
         display: block !important;
     }
     .content-module.active div {
@@ -1570,6 +1580,9 @@ ul.ContentNav {
     }
     .module_name {
         padding-left: 10px;
+    }
+    .affix .module_name {
+        color: #fff;
     }
     .ContentNav > li.active > a{
         padding-left: 18px !important;
@@ -1599,12 +1612,17 @@ ul.ContentNav {
         width: 40px;
         background: transparent;
         height: initial;
+        top: -12px;
+        z-index: 15;
     }
     .controlText div.affix{
         left: -36px;
     }
+    .controlText > div{
+        width: 40px !important;
+    }
     .controlText div{
-        width: 40px;
+        width: initial;
         left: 14px;
         /* position: fixed; */
         /* top: 100px; */
@@ -1612,12 +1630,12 @@ ul.ContentNav {
         /* left: initial !important; */
     }
     .controlText div.active {
-        left: 25px;
+        left: 10px;
         display: block !important;
     }
 
     .controlText div.active.affix {
-        left: 10px;
+        left: 0px;
     }
     .btn-white.OpenContent {
         display: block;
@@ -1647,6 +1665,16 @@ ul.ContentNav {
         margin-top: -25px;
         */
         display: none !important;
+    }
+    .controlText button.options.active .hint {
+        display: block !important;
+        left:50px;
+    }
+    .controlText button.options.active .hint .miniicon {
+        background: transparent;
+    }
+    .controlText button.options .hint .type, .controlText button.options .hint .fontname, .controlText button.options .hint .pagecolors > div div{
+        display: inline-block !important;
     }
     /* ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚ÂÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â°ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â²ÃƒÆ’Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬ËœÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
     .navbar-static-top.active, .navbar-lower.active{
@@ -1678,6 +1706,12 @@ ul.ContentNav {
     bottom: 20px;
     position: absolute;
     top: -20px;
+}
+.leftColumn.red{
+    color: #000;
+}
+body.night .leftColumn.red{
+    color: #fff;
 }
 .leftColumn.red .leftbg, .leftColumn.red .rightbg{
     background: #CF4256;
