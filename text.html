@@ -145,19 +145,18 @@
                       <p>Цвета</p>
                       <div class="pagecolors" align="center">
                         <div class="day">
-                          <div class="name">День</div>
                           <div class="pagecolor white" data-color="white"></div>
                           <div class="pagecolor red" data-color="red"></div>
                           <div class="pagecolor blue" data-color="blue"></div>
                           <div class="pagecolor black" data-color="black"></div>
                         </div>
-                        <div class="night">
-                          <div class="name">Ночь</div>
-                          <div class="pagecolor white" data-color="white"></div>
-                          <div class="pagecolor red" data-color="red"></div>
-                          <div class="pagecolor blue" data-color="blue"></div>
-                          <div class="pagecolor black" data-color="black"></div>
-                        </div>
+                      </div>
+                      <p>Режим</p>
+                      <div class="daynight" align="center">
+                        <span>День</span>
+                        <input type="checkbox" id="daynight" checked />
+                        <label class="slider" for="daynight"></label>
+                        <span>Ночь</span>
                       </div>
                     </div>
                 </button>
@@ -3062,6 +3061,8 @@ if ( isMobile() == true ) {
             $center.addClass("activeLeft");
         }
     }
+    $('.leftbg').click(OpenRight);
+    $('.rightbg').click(OpenLeft);
     $('.leftMobile').click(OpenLeft);
     $('.rightMobile').click(OpenRight);
     $(".leftColumn").swipe({
@@ -3128,15 +3129,19 @@ $('.options .pagecolor').click(function(){
       $('.leftColumn').addClass($(this).data('color'));
       $('.leftColumn').data('color',$(this).data('color'));
       saveSettings({key:'bgcolor', item:$(this).data('color')});
-      if($(this).parent().hasClass('night')){
-        $('body').addClass("night");
-        saveSettings({key:'night', item:true});
-      } else {
-        $('body').removeClass("night");
-        saveSettings({key:'night', item:false});
-      }
     }
 })
+$('#daynight').change(function(){
+  if ($('#daynight').attr('checked') != "checked"){
+    $('#daynight').attr('checked',"checked");
+    $('body').addClass("night");
+    saveSettings({key:'night', item:true});
+  } else {
+    $('#daynight').removeAttr('checked');
+    $('body').removeClass("night");
+    saveSettings({key:'night', item:false});
+  }
+});
 $("#fontslide").on("change mousemove",function(){
     var font = '';
     switch($(this).val()){
@@ -3169,12 +3174,13 @@ function loadSettings() {
     if (localStorage.getItem("bgcolor") != undefined) {
         $('.leftColumn').addClass(localStorage.getItem("bgcolor"));
         $('.leftColumn').data('color', localStorage.getItem("bgcolor"));
-        if (localStorage.getItem("night") == "true") {
-            $('body').addClass("night");
-            $('.options .night .pagecolor.' + localStorage.getItem("bgcolor")).addClass("active");
-        } else {
-            $('.options .day .pagecolor.' + localStorage.getItem("bgcolor")).addClass("active");
-        }
+    }
+    if (localStorage.getItem("night") == "true") {
+        $('body').addClass("night");
+        $('#daynight').attr('checked',"checked");
+    } else {
+        $('#daynight').removeAttr('checked');
+        $('body').removeClass("night");
     }
     if (localStorage.getItem("fontsize")) {
         var font = '';
