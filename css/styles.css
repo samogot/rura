@@ -1215,6 +1215,14 @@ color: #60a9d4;
     box-shadow: none;
 }
 
+/* ------------------------------ chapters --------------------------- */
+
+#chapterform .panel {
+    margin-bottom: 0px;
+    border: medium none;
+    box-shadow: none;
+}
+
 /* ------------------------------ styles for typeahead --------------------------- */
 .tt-menu {
         width: 422px;

@@ -30,6 +30,13 @@
 	<script src="js/jquery.fileupload-image.js"></script>
 	<script src="js/volume.edit.scripts.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<style>
+	input[type="checkbox"] {
+		margin: -6px 0px 0px;
+		line-height: normal;
+		width: 13px;
+	}
+	</style>
 </head>
 <body>
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -123,11 +130,11 @@
 				<input type="hidden" id="volume_id" name="volume_id">
                 <h2>Информация</h2>
                 <div class="form-group">
-                    <label for="name_url">Ссылка</label>
-                    <input type="text" class="form-control" id="name_url" name="name_url">
+                    <label for="url">Ссылка</label>
+                    <input type="text" class="form-control" id="url" name="url">
                 </div>
                 <div class="form-group">
-                    <label for="name_file">Имя для файлов</label>
+                    <label for="name_file">Имя для файлов (Основное имя)</label>
                     <input type="text" class="form-control" id="name_file" name="name_file">
                 </div>
                 <div class="form-group">
@@ -135,28 +142,28 @@
                     <input type="text" class="form-control" id="name_title" name="name_title">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Основное имя</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="name_jp">Название (яп.)</label>
+                    <input type="text" class="form-control" id="name_jp" name="name_jp">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Название (яп.)</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="name_en">Название (англ.)</label>
+                    <input type="text" class="form-control" id="name_en" name="name_en">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Название (англ.)</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="name_ru">Название (рус.)</label>
+                    <input type="text" class="form-control" id="name_ru" name="name_ru">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Название (рус.)</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="name_romaji">Название (романдзи)</label>
+                    <input type="text" class="form-control" id="name_romaji" name="name_romaji">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Короткое название</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="name_short">Короткое название</label>
+                    <input type="text" class="form-control" id="name_short" name="name_short">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Серия</label>
-					<select class="form-control" id="name_title" name="name_title">
+                    <label for="project_id">Серия</label>
+					<select class="form-control" id="project_id" name="project_id">
 						<option>Sword Art Online</option>
 						<option>2</option>
 						<option>3</option>
@@ -165,51 +172,65 @@
 					</select>
                 </div>	
 				<div class="form-group">
-                    <label for="name_title">Номер в серии</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="sequence_number">Номер в серии</label>
+                    <input type="text" class="form-control" id="sequence_number" name="sequence_number">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Автор</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="author">Автор</label>
+                    <input type="text" class="form-control" id="author" name="author">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Иллюстратор</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="illustrator">Иллюстратор</label>
+                    <input type="text" class="form-control" id="illustrator" name="illustrator">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Дата публикации</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="release_date ">Дата публикации</label>
+                    <input type="text" class="form-control" id="release_date " name="release_date ">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">ISBN</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="ISBN">ISBN</label>
+                    <input type="text" class="form-control" id="ISBN" name="ISBN">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Тип релиза</label>
-                    <select class="form-control" id="name_title" name="name_title">
-						<option>Том ранобэ</option>
-						<option>2</option>
-						<option>3</option>
+                    <label for="volume_type">Тип релиза</label>
+                    <select class="form-control" id="volume_type" name="volume_type">
+						<option>Ранобэ</option>
+						<option>Побочные истории</option>
+						<option>Авторские додзинси</option>
+						<option>Другое</option>
 					</select>
                 </div>
 				<div class="form-group">
-					<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Автоконвертирование</label>
-				</div>
-				<div class="form-group">
-                    <label for="name_title">Статус релиза</label>
-                    <select class="form-control" id="name_title" name="name_title">
-						<option>Закончен</option>
-						<option>2</option>
-						<option>3</option>
+                    <label for="volume_status">Статус релиза</label>
+                    <select class="form-control" id="volume_status" name="volume_status">
+						<option value="1">Скрыт</option>
+						<option value="3">Заброшенный сторонний перевод</option>
+						<option value="4">Активный сторонний перевод</option>
+						<option value="5">Завершенный сторонний перевод</option>
+						<option value="6">Отсутствует анлейт</option>
+						<option value="7">Заморожен</option>
+						<option value="8">Приостановлен</option>
+						<option value="9">Очередь перевода</option>
+						<option value="10">Перевод в онгоинге</option>
+						<option value="11">Перевод</option>
+						<option value="12">Редактура</option>
+						<option value="13">Не оформлен</option>
+						<option value="14">Завершен</option>
 					</select>
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Внешняя ссылка</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
+                    <label for="external_url">Внешняя ссылка</label>
+                    <input type="text" class="form-control" id="external_url" name="external_url">
                 </div>
 				<div class="form-group">
-                    <label for="name_title">Аннотация</label>
-                    <textarea class="form-control" id="name_title" name="name_title"></textarea>
+                    <label for="annotation">Аннотация</label>
+                    <textarea class="form-control" id="annotation" name="annotation" rows="3"></textarea>
+                </div>
+				<div class="form-group checkbox">
+					<label>
+						<input type="checkbox" class="form-control" id="adult" name="adult">
+						&emsp;18+ (Непотребное содержание)
+					</label>
                 </div>
 				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 				</form>
@@ -256,13 +277,16 @@
 									<h3>Настройка участника</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<div id="participant_names_selector">
+										<div id="participant1_names_selector">
 											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Ushwood">
 										</div>
 										<label for="participant1_role">Роль</label>
-										<div id="participant_roles_selector">
-											<input class="form-control typeahead role-input" type="text" id="participant1_role_input" value="Перевод с английского">
-										</div>
+										<select class="form-control role-input" id="participant_roles_selector">
+											<option selected>Перевод с английского</option>
+											<option>Эдит</option>
+											<option>Редактура</option>
+											<option>Test</option>
+										</select>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
 								</div>
@@ -277,13 +301,16 @@
 									<h3>Настройка участника</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<div id="participant_names_selector">
+										<div id="participant2_names_selector">
 											<input class="form-control typeahead name-input" type="text" id="participant2_name_input" value="Danholm">
 										</div>
 										<label for="participant1_role">Роль</label>
-										<div id="participant_roles_selector">
-											<input class="form-control typeahead role-input" type="text" id="participant2_role_input" value="Эдит">
-										</div>
+										<select class="form-control role-input" id="participant_roles_selector">
+											<option>Перевод с английского</option>
+											<option selected>Эдит</option>
+											<option>Редактура</option>
+											<option>Test</option>
+										</select>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
 								</div>
@@ -298,13 +325,16 @@
 									<h3>Настройка участника</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<div id="participant_names_selector">
+										<div id="participant3_names_selector">
 											<input class="form-control typeahead name-input" type="text" id="participant3_name_input" value="Lady Astrel">
 										</div>
 										<label for="participant1_role">Роль</label>
-										<div id="participant_roles_selector">
-											<input class="form-control typeahead role-input" type="text" id="participant3_role_input" value="Редактура">
-										</div>
+										<select class="form-control role-input" id="participant_roles_selector">
+											<option>Перевод с английского</option>
+											<option>Эдит</option>
+											<option selected>Редактура</option>
+											<option>Test</option>
+										</select>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
 								</div>
@@ -319,13 +349,16 @@
 									<h3>Настройка участника</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
-										<div id="participant_names_selector">
+										<div id="participant4_names_selector">
 											<input class="form-control typeahead name-input" type="text" id="participant4_name_input" value="Test">
 										</div>
 										<label for="participant1_role">Роль</label>
-										<div id="participant_roles_selector">
-											<input class="form-control typeahead role-input" type="text" id="participant4_role_input" value="Test">
-										</div>
+										<select class="form-control role-input" id="participant_roles_selector">
+											<option>Перевод с английского</option>
+											<option>Эдит</option>
+											<option>Редактура</option>
+											<option selected>Test</option>
+										</select>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
 								</div>
@@ -337,6 +370,116 @@
 				</form>
                 <h2>Главы</h2>
 				<form>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="list-group select sortable" id="chapterselect">
+							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Команда</span></a>
+							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter1" aria-expanded="true" aria-controls="chapter1" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="chapter1_name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="chapter1_role">Перевод с английского</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter2" aria-expanded="true" aria-controls="chapter2" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="chapter2_name">Danholm</span> - <span class="hidden-sm hidden-xs" id="chapter2_role">Эдит</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter3" aria-expanded="true" aria-controls="chapter3" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="chapter3_name">Lady Astrel</span> - <span class="hidden-sm hidden-xs" id="chapter3_role">Редактура</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter4" aria-expanded="true" aria-controls="chapter4" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="chapter4_name">Test</span> - <span class="hidden-sm hidden-xs" id="chapter4_role">Test</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-8 admin-affix" id="chapterform" role="tablist" aria-multiselectable="true">
+						<div class="btn-group" role="group" aria-label="Панель участника">
+						  <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-chapter-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
+						  <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i></button>
+						</div>
+						<div class="progress collapse">
+							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+								<span class="sr-only">0% Complete</span>
+							</div>
+						</div>
+						<div  class="panel">
+							<div class="row collapse chapter-data" role="tabpanel" id="chapter1">
+								<input type="hidden" id="chapter1_id">
+								<input type="hidden" id="chapter1_order"> 
+								<input type="hidden" id="chapter1_delete">
+								<div class="chapter-data-main">
+									<h3>Настройка главы</h3>
+									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group">
+										<label for="chapter1_url">Ссылка</label>
+										<input>
+										<label for="chapter1_name">Заголовок</label>
+										<div id="chapter1_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Начальные иллюстрации">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse chapter-data" role="tabpanel" id="chapter2">
+								<input type="hidden" id="chapter2_id">
+								<input type="hidden" id="chapter2_order">
+								<input type="hidden" id="chapter2_delete">
+								<div class="chapter-data-main">
+									<h3>Настройка главы</h3>
+									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group">
+										<label for="chapter2_url">Ссылка</label>
+										<input>
+										<label for="chapter2_name">Заголовок</label>
+										<div id="chapter2_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Пролог">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse chapter-data" role="tabpanel" id="chapter3">
+								<input type="hidden" id="chapter3_id" value="3">
+								<input type="hidden" id="chapter3_order">
+								<input type="hidden" id="chapter3_delete">
+								<div class="chapter-data-main">
+									<h3>Настройка главы</h3>
+									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group">
+										<label for="chapter3_url">Ссылка</label>
+										<input>
+										<label for="chapter3_name">Заголовок</label>
+										<div id="chapter3_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Глава 1">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse chapter-data" role="tabpanel" id="chapter4">
+								<input type="hidden" id="chapter4_id">
+								<input type="hidden" id="chapter4_order">
+								<input type="hidden" id="chapter4_delete">
+								<div class="chapter-data-main">
+									<h3>Настройка главы</h3>
+									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group">
+										<label for="chapter4_url">Ссылка</label>
+										<input>
+										<label for="chapter4_name">Заголовок</label>
+										<div id="chapter4_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Глава 2">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 				</form>
                 <h2>Обновления</h2>
@@ -559,13 +702,10 @@
 		});
 	});
 	
+	var i=0;
+	
 	$('#btn-participant-add').click(function(){
-		var i=0;
-		$('#participantform').children('.panel').each(function(){
-			i++;
-		});
 		i++;
-		console.log(i);
 		var newParticipant = '<a data-toggle="collapse" data-parent="#participantform" href="#participant' + i + '" aria-expanded="true" aria-controls="participant' + i + '" class="list-group-item" >'+'<i class="fa fa-ellipsis-v move"></i>'+'<span class="hidden-sm hidden-xs"  id="participant' + i + '_name">New</span> - <span class="hidden-sm hidden-xs" id="participant' + i + '_role">Role</span>' + '</a>';
 		var newPanel = '<div class="panel">'+
 		'<div class="row collapse participant-data" role="tabpanel" id="participant' + i + '">'+
@@ -576,13 +716,16 @@
 		'<h3>Настройка участника</h3>'+
 		'<div class="form-group">'+
 		'<label for="participant' + i + '_name">Участник</label>'+
-		'<div id="participant_names_selector">'+
+		'<div id="participant' + i + '_names_selector">'+
 		'<input class="form-control typeahead name-input" type="text" id="participant' + i + '_name_input" value="New">'+
 		'</div>'+
 		'<label for="participant' + i + '_role">Роль</label>'+
-		'<div id="participant_roles_selector">'+
-		'<input class="form-control typeahead role-input" type="text" id="participant' + i + '_role_input" value="Role">'+
-		'</div>'+
+		'<select class="form-control role-input" id="participant_roles_selector">' +
+		'<option selected>Перевод с английского</option>' +
+		'<option>Эдит</option>' +
+		'<option>Редактура</option>' +
+		'<option>Test</option>' +
+		'</select>'+
 		'<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>'+
 		'</div>'+
 		'</div>'+
@@ -590,6 +733,16 @@
 		'</div>';
 		$('#participantselect').append(newParticipant);
 		$('#participantform').append(newPanel);
+		$('#participant' + i + '_names_selector .typeahead').typeahead({  // обработчик имен
+			hint: true,
+			limit: 10,
+			highlight: true,
+			minLength: 1
+		},
+		{
+			name: 'participant_names',
+			source: substringMatcher(names)
+		});
 	});
 	
 	// ---------- typeahead start ----------
@@ -618,48 +771,36 @@
 	var names = ['Ushwood', 'Danholm', 'Lady Astrel', 'Test'
 	];
 	
-	var roles = ['Перевод с английского', 'Эдит', 'Редактура', 'Test'
-	];
- 
-	$('#participant_names_selector .typeahead').typeahead({  // обработчик имен
-		hint: true,
-		limit: 10,
-		highlight: true,
-		minLength: 1
-	},
-	{
-		name: 'participant_names',
-		source: substringMatcher(names)
-	});
-	
-	$('#participant_roles_selector .typeahead').typeahead({  // обработчик ролей
-		hint: true,
-		limit: 10,
-		highlight: true,
-		minLength: 1
-	},
-	{
-		name: 'participant_roles',
-		source: substringMatcher(roles)
+	$('#participantform').children('.panel').each(function(){
+		i++;
+		$('#participant' + i + '_names_selector .typeahead').typeahead({  // обработчик имен
+			hint: true,
+			limit: 10,
+			highlight: true,
+			minLength: 1
+		},
+		{
+			name: 'participant_names',
+			source: substringMatcher(names)
+		});
 	});
 	// ---------- typeahead end --------------
 	
-	$('.name-input').on('keyup', function() { // ищем среди элементов класса name-input, тот в котором мы сейчас пишем
-			var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
-			var id = $('.participant-data.in').attr('id'); // получаем id участника
-			console.log(id);
-			$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+	$('#participantform').on('keyup', '.name-input', function(){
+		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
+		var id = $('.participant-data.in').attr('id'); // получаем id участника
+		$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 	});
 	
-	$('.role-input').on('keyup', function() { // ищем среди элементов класса role-input, тот в котором мы сейчас пишем
-			var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
-			var id = $('.participant-data.in').attr('id'); // получаем id участника
-			$('#' + id + '_role').html(elem.val()); // при помощи предыдущего значения вытворяем с ролями, что хотим
+	$('#participantform').on('change', '.role-input', function(){
+		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
+		var id = $('.participant-data.in').attr('id'); // получаем id участника
+		$('#' + id + '_role').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 	});
 	
-	$('.participant-data').on('hidden.bs.collapse', function () { 
+	$('#participantform').on('hidden.bs.collapse', '.participant-data', function () { 
 		$('#btn-participant-delete').attr('disabled',true);
-	}).on('shown.bs.collapse', function() {
+	}).on('shown.bs.collapse', '.participant-data', function() {
 		$('#btn-participant-delete').attr('disabled',false);
 	});
 	
