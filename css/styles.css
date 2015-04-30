@@ -1611,16 +1611,17 @@ ul.ContentNav {
         width: 15px;
         bottom: 20px;
         position: absolute;
-        top: -20px;
+        top: -40px;
+        left: 100%;
+        cursor: pointer;
+        z-index: 17;
     }
-    .leftMobule:hover, .rightMobile:hover{
+    .leftColumn.activeLeft .leftMobile, .leftColumn.activeLeft .rightMobile,
+    .leftColumn.activeRight .leftMobile, .leftColumn.activeRight .rightMobile {
+        display: none;
+    }
+    .leftMobile:hover, .rightMobile:hover{
         background: rgba(96,169,212,0.3);
-    }
-    .rightMobile{
-        left: calc(100%);
-    }
-    .leftMobile{
-        right: calc(100% - 5px);
     }
 
     /* ÃƒÆ’Ã‚ÂÃƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬ËœÃƒâ€šÃ‚ÂÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â½ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â¾ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â²ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â° */
