@@ -1597,10 +1597,11 @@ ul.ContentNav {
         bottom: 20px;
         position: absolute;
         top: -40px;
-        left: 100%;
         cursor: pointer;
         z-index: 17;
     }
+    .leftMobile { right: 100%; }
+    .rightMobile{ left: 100%; }
     .leftColumn.activeLeft .leftMobile, .leftColumn.activeLeft .rightMobile,
     .leftColumn.activeRight .leftMobile, .leftColumn.activeRight .rightMobile {
         display: none;
@@ -1824,6 +1825,7 @@ body.night .leftColumn.red{
 
 .leftbg,.rightbg {
     top: -40px;
+    cursor: pointer;
 }
 }
 
