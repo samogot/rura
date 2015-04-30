@@ -3036,7 +3036,7 @@ function isMobile() {
   try{ document.createEvent("TouchEvent"); return true; }
   catch(e){ return false; }
 }
-if ( isMobile() == true ) {
+
     var $right = $('.content-module');
     var $center = $('.leftColumn');
     var $left = $('.controlText > div');
@@ -3065,7 +3065,7 @@ if ( isMobile() == true ) {
     $('.rightbg').click(OpenLeft);
     $('.leftMobile').click(OpenLeft);
     $('.rightMobile').click(OpenRight);
-    $(".leftColumn").swipe({
+if ( isMobile() == true )     $(".leftColumn").swipe({
         swipeLeft: function() { OpenRight() },
         swipeRight: function() { OpenLeft() },
         threshold: 100,
@@ -3114,7 +3114,7 @@ if ( isMobile() == true ) {
       });
       })
 */
-}
+
 
 $('.options .font').click(function(){
     if ($(this).hasClass("active")) {} else {
