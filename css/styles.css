@@ -1666,61 +1666,22 @@ ul.ContentNav {
     position: absolute;
 }
 .leftbg, .rightbg{
-    width: 100%;
-    /* height: calc(100% + 20px); */
-    bottom: -176px;
-    display: inline-block;
+    width: 1140px;
+    bottom: 20px;
     position: absolute;
-    top: 4px;
+    top: -20px;
     background: #CF4256;
-    margin-top: -20px;
+    -moz-border-image: url("data:image/svg+xml,%3Csvg%20id=%22svg%22%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Crect%20width=%22100%25%22%20height=%22100%25%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,8%204,4%208,8%2012,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%22%20fill=%22#CF4256%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    -webkit-border-image: url("data:image/svg+xml,%3Csvg%20id=%22svg%22%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Crect%20width=%22100%25%22%20height=%22100%25%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,8%204,4%208,8%2012,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%22%20fill=%22#CF4256%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    -o-border-image: url("data:image/svg+xml,%3Csvg%20id=%22svg%22%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Crect%20width=%22100%25%22%20height=%22100%25%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,8%204,4%208,8%2012,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%22%20fill=%22#CF4256%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    border-image: url("data:image/svg+xml,%3Csvg%20id=%22svg%22%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Crect%20width=%22100%25%22%20height=%22100%25%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,8%204,4%208,8%2012,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%22%20fill=%22#CF4256%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
 }
 .rightbg{
-    left: calc(100% + 19px);
+    left: calc(100% + 15px);
 }
 .leftbg{
-    right: calc(100% + 19px);
+    right: calc(100% + 15px);
 }
-
-.leftbg:before,.rightbg:before {
-    width: 1140px;
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    /* red up pointing triangle */
-    background-color: #F2F2F2;
-    background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228px%22%20height%3D%224px%22%3E%3Cpolygon%20points%3D%220%2C4%204%2C0%208%2C4%22%20fill%3D%22%23CF4256%22%2F%3E%3C%2Fsvg%3E");
-}
-.rightbg:before {
-    left: -4px;
-}
-
-.leftbg:after {
-    content: "";
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    /* height: 4px; */
-    bottom: 0;
-    width:4px;
-    /* height:100%; */
-    background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228px%22%20height%3D%228px%22%3E%3Cpolygon%20points%3D%220%2C8%204%2C4%200%2C0%22%20fill%3D%22%23CF4256%22%2F%3E%3C%2Fsvg%3E");
-}
-.rightbg:after {
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: -8px;
-    height: 4px;
-    width:8px;
-    height:100%;
-    background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228px%22%20height%3D%228px%22%3E%3Cpolygon%20points%3D%228%2C8%204%2C4%208%2C0%22%20fill%3D%22%23CF4256%22%2F%3E%3C%2Fsvg%3E");
-
-}
-
 
 @media (min-width: 768px){
 nav .container {
