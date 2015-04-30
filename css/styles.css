@@ -1520,7 +1520,7 @@ div.mistake .sendText {
 div.mistake button {
     margin-bottom: 20px;
 }
-div.overlay {
+div.overlayT {
     position: fixed;
     top: 0;
     left: 0;
@@ -1528,7 +1528,7 @@ div.overlay {
     width: 100%;
     height: 100%;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
 }
 .module {
     width: 100%;
@@ -1608,16 +1608,19 @@ ul.ContentNav {
 }
 @media screen and (max-width: 767px) {
     .leftMobile, .rightMobile{
-        width: 10px;
+        width: 15px;
         bottom: 20px;
         position: absolute;
         top: -20px;
+    }
+    .leftMobule:hover, .rightMobile:hover{
+        background: rgba(96,169,212,0.3);
     }
     .rightMobile{
         left: calc(100%);
     }
     .leftMobile{
-        right: calc(100% + 5px);
+        right: calc(100% - 5px);
     }
 
     /* ÃƒÆ’Ã‚ÂÃƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬ËœÃƒâ€šÃ‚ÂÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â½ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â¾ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â²ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â° */
@@ -1745,9 +1748,10 @@ ul.ContentNav {
     .controlText button.options.active .hint {
         display: block !important;
         left:50px;
+        margin-top: -250px;
     }
-    .controlText button.options.active .hint .miniicon {
-        background: transparent;
+    .controlText button.options.active .hint .miniicon{
+        top: calc(100% - 35px);
     }
     .controlText button.options .hint .type, .controlText button.options .hint .fontname, .controlText button.options .hint .pagecolors > div div{
         display: inline-block !important;
@@ -1867,5 +1871,7 @@ nav .container {
     overflow: hidden; */
 }
 }
-
+body.night center.project {
+    opacity: 0.5;
+}
 

@@ -2956,7 +2956,7 @@
     </form>
 </div>
 <!-- Конец Блока ошибки -->
-<div class="overlay"></div>
+<div class="overlayT"></div>
 <script type="text/javascript">
 
 
@@ -2992,19 +2992,19 @@ $('.btn.top').click(function() {
     $(document).scrollTop(0);
 });
 $('.btn.mistake').click(function() {
-    $('.overlay').show();
+    $('.overlayT').show();
     $('div.mistake').show();
     var Mistake = getText();
     if((Mistake != "")||(Mistake != ' ')){
       $('div.mistake .MistakeText').text(getText());
     } else { alert('Для начала, выделите ошибку!')}
 });
-$('.overlay').click(function() {
-    $('.overlay').hide();
+$('.overlayT').click(function() {
+    $('.overlayT').hide();
     $('div.mistake').hide();
 });
 $('div.mistake .cancel').click(function() {
-    $('.overlay').hide();
+    $('.overlayT').hide();
     $('div.mistake').hide();
 });
 $('.module_name').click(function() {
@@ -3039,7 +3039,7 @@ function isMobile() {
 if ( isMobile() == true ) {
     var $right = $('.content-module');
     var $center = $('.leftColumn');
-    var $left = $('.controlText div');
+    var $left = $('.controlText > div');
     function OpenRight() {
         if ($left.hasClass("active")) {
             $left.removeClass("active");
@@ -3077,16 +3077,19 @@ if ( isMobile() == true ) {
         $center.removeClass("activeRight");
     });
     $('.controlText .btn').click(function() {
+      if($(this).hasClass('options')){return false;}
         $left.removeClass("active");
         $center.removeClass("activeLeft");
     });
     $('.controlText .btn.options').click(function(){
         $('.controlText .btn.options').addClass('active');
-        $('.overlay').show();
+        $('.overlayT').show();
     })
-    $('.overlay').click(function() {
-        $('.overlay').hide();
+    $('.overlayT').click(function() {
+        $('.overlayT').hide();
         $('.controlText .btn.options').removeClass('active');
+        $left.removeClass("active");
+        $center.removeClass("activeLeft");
     });
 
 
@@ -3131,7 +3134,7 @@ $('.options .pagecolor').click(function(){
       saveSettings({key:'bgcolor', item:$(this).data('color')});
     }
 })
-$('#daynight').change(function(){
+$('#daynight').on('change',function(){
   if ($('#daynight').attr('checked') != "checked"){
     $('#daynight').attr('checked',"checked");
     $('body').addClass("night");
