@@ -1541,68 +1541,53 @@ div.overlayT {
     list-style: none;
     padding-left: 20px;
 }
-.content-module {
-    /* background: #fff; */
-}
-.ContentNav > li > a {
-    padding: 5px 10px !important;
-}
-.ContentNav a {
-    color: black;
-}
-.ContentNav li {
-    margin-bottom: 1px;
-}
-.ContentNav li a:hover,
-.ContentNav li a:focus {
-    color: rgb(96, 169, 212);
-    border-left: 1px solid rgb(96, 169, 212);
-}
-.nav > li > a:hover, .nav > li > a:focus{
-    background: transparent;
-}
+
+
 ul.ContentNav {
-    /* background: #fff; */
-    padding-left: 0 !important;
+    padding-left: 0;
 }
-.ContentNav .active {
-    font-weight: bold;
-    color: #000;
-}
-.ContentNav .active a {
-    font-weight: bold;
-    color: #000;
+.ContentNav .ContentNav {
+    display: none;
+    font-size: .85em;
 }
 .ContentNav .active .ContentNav {
     display: block;
 }
-.ContentNav .ContentNav {
-    display: none;
+.ContentNav > li > a {
+    padding: 5px 10px;
+    color: black;
+    border-left-style: solid;
+    border-left-color: rgb(96, 169, 212);
+    border-left-width: 0;
+}
+.ContentNav li a:hover,
+.ContentNav li a:focus {
+    color: rgb(96, 169, 212);
+    background: transparent;
+    border-left-width: 1px;
+    padding-left: 9px;
+}
+.ContentNav .active > a,
+.ContentNav .active > a:hover,
+.ContentNav .active > a:focus {
+    font-weight: bold;
+    border-left-width: 2px;
+    padding-left: 8px;
 }
 .ContentNav .ContentNav a {
-    font-weight: normal;
-    font-size: .85em;
+    padding-left: 30px ;
 }
 .ContentNav .ContentNav .active a,
-.ContentNav .ContentNav .active:hover a,
-.ContentNav .ContentNav .active:focus a {
-    font-weight: bold;
-    padding-left: 30px;
-    border-left: 2px solid rgb(96, 169, 212);
+.ContentNav .ContentNav .active a:hover,
+.ContentNav .ContentNav .active a:focus {
+    padding-left: 28px;
 }
-.ContentNav > li.active > a {
-    padding-left: 18px !important;
-    border-left: 2px solid rgb(96, 169, 212) !important;
+.ContentNav .ContentNav li a:hover,
+.ContentNav .ContentNav li a:focus {
+    padding-left: 29px;
 }
-.ContentNav .ContentNav > .active > a {
-    padding-left: 30px !important;
-}
-.ContentNav .ContentNav > li > a {
-    padding-left: 30px !important;
-}
-.ContentNav .ContentNav .active a {
-    border-left: 2px solid rgb(96, 169, 212);
-}
+
+
 .btn-white.OpenContent {
     display: none;
 }
@@ -1664,26 +1649,6 @@ ul.ContentNav {
     }
     .module_name {
         padding-left: 10px;
-    }
-    .ContentNav > li.active > a{
-        padding-left: 18px !important;
-        border-left: 2px solid rgb(96,169,212) !important;
-    }
-    .ContentNav .ContentNav > .active > a {
-        padding-left: 30px !important;
-    }
-    .ContentNav .ContentNav > li > a {
-        padding-left: 30px !important;
-    }
-    .ContentNav .ContentNav .active a {
-        border-left: 2px solid rgb(96,169,212);
-    }
-    .ContentNav .ContentNav .active:hover a, .ContentNav .ContentNav .active:focus a {
-        border-left: none;
-    }
-    .ContentNav li a:hover, .ContentNav li a:focus {
-        background: none;
-        color: #000;
     }
 
 
@@ -1770,15 +1735,10 @@ ul.ContentNav {
     }
 
 
-    .content-module.active .module_name {
-        color: #fff;
-    }
-    .content-module.active .ContentNav a {
-      color: #fff;
-    }
-    .content-module.active .ContentNav > li.active > a
-    {
-        border-left-color: #fff !important;
+    .content-module.active .module_name { color: #fff; }
+    .content-module.active .ContentNav a { 
+        color: #fff; 
+        border-left-color: #fff; 
     }
 }
 .content-module div.affix-top {
