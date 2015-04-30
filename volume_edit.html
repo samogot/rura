@@ -238,120 +238,6 @@
 				<form>
 				<div class="row">
 					<div class="col-xs-4">
-						<div class="list-group select sortable" id="chapterselect">
-							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Команда</span></a>
-							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter1" aria-expanded="true" aria-controls="chapter1" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter1_name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="chapter1_role">Перевод с английского</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter2" aria-expanded="true" aria-controls="chapter2" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter2_name">Danholm</span> - <span class="hidden-sm hidden-xs" id="chapter2_role">Эдит</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter3" aria-expanded="true" aria-controls="chapter3" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter3_name">Lady Astrel</span> - <span class="hidden-sm hidden-xs" id="chapter3_role">Редактура</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter4" aria-expanded="true" aria-controls="chapter4" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter4_name">Test</span> - <span class="hidden-sm hidden-xs" id="chapter4_role">Test</span>
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-8 admin-affix" id="chapterform" role="tablist" aria-multiselectable="true">
-						<div class="btn-group" role="group" aria-label="Панель участника">
-						  <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-chapter-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
-						  <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i></button>
-						</div>
-						<div class="progress collapse">
-							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-								<span class="sr-only">0% Complete</span>
-							</div>
-						</div>
-						<div  class="panel">
-							<div class="row collapse chapter-data" role="tabpanel" id="chapter1">
-								<input type="hidden" id="chapter1_id">
-								<input type="hidden" id="chapter1_order"> 
-								<input type="hidden" id="chapter1_delete">
-								<div class="chapter-data-main">
-									<h3>Настройка главы</h3>
-									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
-									<div class="form-group">
-										<label for="chapter1_url">Ссылка</label>
-										<input>
-										<label for="chapter1_name">Заголовок</label>
-										<div id="chapter1_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Начальные иллюстрации">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse chapter-data" role="tabpanel" id="chapter2">
-								<input type="hidden" id="chapter2_id">
-								<input type="hidden" id="chapter2_order">
-								<input type="hidden" id="chapter2_delete">
-								<div class="chapter-data-main">
-									<h3>Настройка главы</h3>
-									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
-									<div class="form-group">
-										<label for="chapter2_url">Ссылка</label>
-										<input>
-										<label for="chapter2_name">Заголовок</label>
-										<div id="chapter2_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Пролог">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse chapter-data" role="tabpanel" id="chapter3">
-								<input type="hidden" id="chapter3_id" value="3">
-								<input type="hidden" id="chapter3_order">
-								<input type="hidden" id="chapter3_delete">
-								<div class="chapter-data-main">
-									<h3>Настройка главы</h3>
-									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
-									<div class="form-group">
-										<label for="chapter3_url">Ссылка</label>
-										<input>
-										<label for="chapter3_name">Заголовок</label>
-										<div id="chapter3_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Глава 1">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse chapter-data" role="tabpanel" id="chapter4">
-								<input type="hidden" id="chapter4_id">
-								<input type="hidden" id="chapter4_order">
-								<input type="hidden" id="chapter4_delete">
-								<div class="chapter-data-main">
-									<h3>Настройка главы</h3>
-									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
-									<div class="form-group">
-										<label for="chapter4_url">Ссылка</label>
-										<input>
-										<label for="chapter4_name">Заголовок</label>
-										<div id="chapter4_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Глава 2">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
-				</form>
-                <h2>Главы</h2>
-				<form>
-				<div class="row">
-					<div class="col-xs-4">
 						<div class="list-group select sortable" id="participantselect">
 							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Команда</span></a>
 							<a data-toggle="collapse" data-parent="#participantform" href="#participant1" aria-expanded="true" aria-controls="participant1" class="list-group-item" >
@@ -474,6 +360,120 @@
 											<option selected>Test</option>
 										</select>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+				</form>
+                <h2>Главы</h2>
+				<form>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="list-group select sortable" id="chapterselect">
+							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Команда</span></a>
+							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter1" aria-expanded="true" aria-controls="chapter1" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="chapter1_name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="chapter1_role">Перевод с английского</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter2" aria-expanded="true" aria-controls="chapter2" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="chapter2_name">Danholm</span> - <span class="hidden-sm hidden-xs" id="chapter2_role">Эдит</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter3" aria-expanded="true" aria-controls="chapter3" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="chapter3_name">Lady Astrel</span> - <span class="hidden-sm hidden-xs" id="chapter3_role">Редактура</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter4" aria-expanded="true" aria-controls="chapter4" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="chapter4_name">Test</span> - <span class="hidden-sm hidden-xs" id="chapter4_role">Test</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-8 admin-affix" id="chapterform" role="tablist" aria-multiselectable="true">
+						<div class="btn-group" role="group" aria-label="Панель участника">
+						  <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-chapter-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
+						  <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i></button>
+						</div>
+						<div class="progress collapse">
+							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+								<span class="sr-only">0% Complete</span>
+							</div>
+						</div>
+						<div  class="panel">
+							<div class="row collapse chapter-data" role="tabpanel" id="chapter1">
+								<input type="hidden" id="chapter1_id">
+								<input type="hidden" id="chapter1_order"> 
+								<input type="hidden" id="chapter1_delete">
+								<div class="chapter-data-main">
+									<h3>Настройка главы</h3>
+									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group">
+										<label for="chapter1_url">Ссылка</label>
+										<input>
+										<label for="chapter1_name">Заголовок</label>
+										<div id="chapter1_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Начальные иллюстрации">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse chapter-data" role="tabpanel" id="chapter2">
+								<input type="hidden" id="chapter2_id">
+								<input type="hidden" id="chapter2_order">
+								<input type="hidden" id="chapter2_delete">
+								<div class="chapter-data-main">
+									<h3>Настройка главы</h3>
+									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group">
+										<label for="chapter2_url">Ссылка</label>
+										<input>
+										<label for="chapter2_name">Заголовок</label>
+										<div id="chapter2_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Пролог">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse chapter-data" role="tabpanel" id="chapter3">
+								<input type="hidden" id="chapter3_id" value="3">
+								<input type="hidden" id="chapter3_order">
+								<input type="hidden" id="chapter3_delete">
+								<div class="chapter-data-main">
+									<h3>Настройка главы</h3>
+									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group">
+										<label for="chapter3_url">Ссылка</label>
+										<input>
+										<label for="chapter3_name">Заголовок</label>
+										<div id="chapter3_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Глава 1">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse chapter-data" role="tabpanel" id="chapter4">
+								<input type="hidden" id="chapter4_id">
+								<input type="hidden" id="chapter4_order">
+								<input type="hidden" id="chapter4_delete">
+								<div class="chapter-data-main">
+									<h3>Настройка главы</h3>
+									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group">
+										<label for="chapter4_url">Ссылка</label>
+										<input>
+										<label for="chapter4_name">Заголовок</label>
+										<div id="chapter4_names_selector">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Глава 2">
+										</div>
 									</div>
 								</div>
 							</div>
