@@ -4,6 +4,7 @@
 body {
     min-width: 340px;
     color: rgb(77,77,77);
+    overflow-x: hidden;
 }
 .clear-both {
     clear: both;
@@ -783,7 +784,7 @@ a.list-group-item center {
 min-height: 340px;
 }
 .dragover #imageselect::before {
-content: 'Ãâ€ÃÂ¾ÃÂ±ÃÂ°ÃÂ²ÃÂ¸Ã‘â€šÃ‘Å’ Ã‘â€žÃÂ°ÃÂ¹ÃÂ»Ã‘â€¹';
+content: 'ÃƒÂÃ¢â‚¬ÂÃƒÂÃ‚Â¾ÃƒÂÃ‚Â±ÃƒÂÃ‚Â°ÃƒÂÃ‚Â²ÃƒÂÃ‚Â¸Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã…â€™ Ãƒâ€˜Ã¢â‚¬Å¾ÃƒÂÃ‚Â°ÃƒÂÃ‚Â¹ÃƒÂÃ‚Â»Ãƒâ€˜Ã¢â‚¬Â¹';
 position: absolute;
 top: 0px;
 bottom: 20px;
@@ -800,7 +801,7 @@ color: #777;
 z-index: 3;
 }
 .dragover .image-data-main::before,.dragover .image-data-color::before {
-content: 'Ãâ€”ÃÂ°ÃÂ¼ÃÂµÃÂ½ÃÂ¸Ã‘â€šÃ‘Å’ Ã‘â€žÃÂ°ÃÂ¹ÃÂ»';
+content: 'ÃƒÂÃ¢â‚¬â€ÃƒÂÃ‚Â°ÃƒÂÃ‚Â¼ÃƒÂÃ‚ÂµÃƒÂÃ‚Â½ÃƒÂÃ‚Â¸Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã…â€™ Ãƒâ€˜Ã¢â‚¬Å¾ÃƒÂÃ‚Â°ÃƒÂÃ‚Â¹ÃƒÂÃ‚Â»';
 position: absolute;
 top: 15px;
 height: 305px;
@@ -1145,7 +1146,7 @@ div > button.view2.active {
 min-height: 340px;
 }*/
 .dragover #participantselect::before {
-content: 'Ãâ€ÃÂ¾ÃÂ±ÃÂ°ÃÂ²ÃÂ¸Ã‘â€šÃ‘Å’ Ã‘â€žÃÂ°ÃÂ¹ÃÂ»Ã‘â€¹';
+content: 'ÃƒÂÃ¢â‚¬ÂÃƒÂÃ‚Â¾ÃƒÂÃ‚Â±ÃƒÂÃ‚Â°ÃƒÂÃ‚Â²ÃƒÂÃ‚Â¸Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã…â€™ Ãƒâ€˜Ã¢â‚¬Å¾ÃƒÂÃ‚Â°ÃƒÂÃ‚Â¹ÃƒÂÃ‚Â»Ãƒâ€˜Ã¢â‚¬Â¹';
 position: absolute;
 top: 0px;
 bottom: 20px;
@@ -1162,7 +1163,7 @@ color: #777;
 z-index: 3;
 }
 .dragover .participant-data-main::before,.dragover .participant-data-color::before {
-content: 'Ãâ€”ÃÂ°ÃÂ¼ÃÂµÃÂ½ÃÂ¸Ã‘â€šÃ‘Å’ Ã‘â€žÃÂ°ÃÂ¹ÃÂ»';
+content: 'ÃƒÂÃ¢â‚¬â€ÃƒÂÃ‚Â°ÃƒÂÃ‚Â¼ÃƒÂÃ‚ÂµÃƒÂÃ‚Â½ÃƒÂÃ‚Â¸Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã…â€™ Ãƒâ€˜Ã¢â‚¬Å¾ÃƒÂÃ‚Â°ÃƒÂÃ‚Â¹ÃƒÂÃ‚Â»';
 position: absolute;
 top: 15px;
 height: 305px;
@@ -1521,7 +1522,7 @@ ul.ContentNav {
     display: none;
 }
 @media screen and (max-width: 767px) {
-    /* ÃÅ¾Ã‘ÂÃÂ½ÃÂ¾ÃÂ²ÃÂ° */
+    /* ÃƒÂÃ…Â¾Ãƒâ€˜Ã‚ÂÃƒÂÃ‚Â½ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â²ÃƒÂÃ‚Â° */
     .leftColumn.activeRight {
         right: 230px;
         position: relative;
@@ -1536,7 +1537,7 @@ ul.ContentNav {
     }
 
 
-    /* ÃÂ¡ÃÂ¾ÃÂ´ÃÂµÃ‘â‚¬ÃÂ¶ÃÂ°ÃÂ½ÃÂ¸ÃÂµ */
+    /* ÃƒÂÃ‚Â¡ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â´ÃƒÂÃ‚ÂµÃƒâ€˜Ã¢â€šÂ¬ÃƒÂÃ‚Â¶ÃƒÂÃ‚Â°ÃƒÂÃ‚Â½ÃƒÂÃ‚Â¸ÃƒÂÃ‚Âµ */
     .content-module {
         right: -218px;
         position: absolute;
@@ -1584,7 +1585,7 @@ ul.ContentNav {
     }
 
 
-    /* ÃËœÃÂ½Ã‘ÂÃ‘â€šÃ‘â‚¬Ã‘Æ’ÃÂ¼ÃÂµÃÂ½Ã‘â€šÃ‘â€¹ */
+    /* ÃƒÂÃ‹Å“ÃƒÂÃ‚Â½Ãƒâ€˜Ã‚ÂÃƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã¢â€šÂ¬Ãƒâ€˜Ã†â€™ÃƒÂÃ‚Â¼ÃƒÂÃ‚ÂµÃƒÂÃ‚Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã¢â‚¬Â¹ */
     .controlText {
         position: absolute;
         width: 40px;
@@ -1639,14 +1640,14 @@ ul.ContentNav {
         */
         display: none !important;
     }
-    /* ÃÂÃÂ°ÃÂ²Ãâ€˜ÃÂ°Ã‘â‚¬ */
+    /* ÃƒÂÃ‚ÂÃƒÂÃ‚Â°ÃƒÂÃ‚Â²ÃƒÂÃ¢â‚¬ËœÃƒÂÃ‚Â°Ãƒâ€˜Ã¢â€šÂ¬ */
     .navbar-static-top.active, .navbar-lower.active{
         position: fixed;
         width: 100%;
     }
 
 
-    /* Ãâ€˜ÃÂ»ÃÂ¾ÃÂºÃÂ¸ */
+    /* ÃƒÂÃ¢â‚¬ËœÃƒÂÃ‚Â»ÃƒÂÃ‚Â¾ÃƒÂÃ‚ÂºÃƒÂÃ‚Â¸ */
     .right-sidebar div{
         display: none;
     }
@@ -1666,22 +1667,23 @@ ul.ContentNav {
 }
 .leftbg, .rightbg{
     width: 100%;
-    height: calc(100% + 20px);
+    /* height: calc(100% + 20px); */
+    bottom: -176px;
     display: inline-block;
     position: absolute;
-    top: 5px;
+    top: 4px;
     background: #CF4256;
     margin-top: -20px;
 }
 .rightbg{
-    left: calc(100% + 15px);
+    left: calc(100% + 19px);
 }
 .leftbg{
-    right: calc(100% + 15px);
+    right: calc(100% + 19px);
 }
 
 .leftbg:before,.rightbg:before {
-    width:100%;
+    width: 1140px;
     content: "";
     position: absolute;
     top: -4px;
@@ -1689,6 +1691,7 @@ ul.ContentNav {
     right: 0;
     height: 4px;
     /* red up pointing triangle */
+    background-color: #F2F2F2;
     background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228px%22%20height%3D%224px%22%3E%3Cpolygon%20points%3D%220%2C4%204%2C0%208%2C4%22%20fill%3D%22%23CF4256%22%2F%3E%3C%2Fsvg%3E");
 }
 .rightbg:before {
@@ -1700,9 +1703,10 @@ ul.ContentNav {
     position: absolute;
     top: -4px;
     right: -4px;
-    height: 4px;
+    /* height: 4px; */
+    bottom: 0;
     width:4px;
-    height:100%;
+    /* height:100%; */
     background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228px%22%20height%3D%228px%22%3E%3Cpolygon%20points%3D%220%2C8%204%2C4%200%2C0%22%20fill%3D%22%23CF4256%22%2F%3E%3C%2Fsvg%3E");
 }
 .rightbg:after {
