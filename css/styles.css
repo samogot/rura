@@ -1264,13 +1264,14 @@ color: #60a9d4;
     left: -65px;
     top: 0;
 }
-.controlText > div{
+.controlText > div {
     width: 50px;
     position: relative;
 }
-.controlText div.affix{
+.controlText div.affix {
     top: 40px;
     /* left: 10px; */
+
     position: fixed;
 }
 .controlText .btn {
@@ -1296,12 +1297,12 @@ color: #60a9d4;
     height: 50px;
     vertical-align: top;
     text-align: left;
-    top:0;
+    top: 0;
 }
 .controlText .btn.disable {
     color: #A8A8A8;
 }
-.controlText button .hint .miniicon{
+.controlText button .hint .miniicon {
     background: url('../img/actions/textControl.png') left no-repeat;
     width: 9px;
     height: 40px;
@@ -1312,28 +1313,28 @@ color: #60a9d4;
     left: -7px;
 }
 .controlText button.options .hint {
-    width:200px;
+    width: 200px;
     height: 280px;
     background: #F1F1F1;
     border-top: 5px solid #8fd5fe;
     border-bottom: 5px solid #8fd5fe;
     color: #4E4E4E;
 }
-.controlText button.options .hint .miniicon{
+.controlText button.options .hint .miniicon {
     background: url('../img/actions/textControl2.png') left no-repeat;
 }
-.controlText button.options .hint .type, .controlText button.options .hint .fontname{
+.controlText button.options .hint .type,
+.controlText button.options .hint .fontname {
     border: 1px solid #92D1FD;
     height: 32px;
     display: inline-block;
     text-align: center;
     line-height: 32px;
-
 }
-.controlText button.options .hint .font{
+.controlText button.options .hint .font {
     margin-bottom: 5px;
 }
-.controlText button.options .hint .font.active .fontname{
+.controlText button.options .hint .font.active .fontname {
     background: #92D1FD;
 }
 .controlText button.options .hint .type {
@@ -1343,13 +1344,13 @@ color: #60a9d4;
     margin-left: -5px;
     width: calc(100% - 32px);
 }
-.controlText button.options .hint .georgia{
+.controlText button.options .hint .georgia {
     font-family: "Georgia";
 }
-.controlText button.options .hint .helvetica{
+.controlText button.options .hint .helvetica {
     font-family: "Helvetica";
 }
-.controlText button.options .hint .pagecolors > div div{
+.controlText button.options .hint .pagecolors > div div {
     margin-left: -5px;
     display: inline-block;
     border: 1px solid #92D1FD;
@@ -1358,19 +1359,19 @@ color: #60a9d4;
     line-height: 2;
     vertical-align: top;
 }
-.controlText button.options .hint .pagecolors > div{
+.controlText button.options .hint .pagecolors > div {
     height: 36px;
     border: 0px;
 }
 .controlText button.options .hint .pagecolor {
     width: 32px;
 }
-.controlText button.options .hint .pagecolors > div div.name{
+.controlText button.options .hint .pagecolors > div div.name {
     margin-bottom: 5px;
     margin-right: 0;
     width: calc(100% - 124px);
 }
-.controlText button.options .hint .pagecolor.active{
+.controlText button.options .hint .pagecolor.active {
     border: 5px solid red;
 }
 .controlText button.options .hint .pagecolor.white {
@@ -1379,16 +1380,13 @@ color: #60a9d4;
 .controlText button.options .hint .pagecolor.red {
     background: #CF4256;
 }
-.controlText button.options .hint .pagecolor.black{
+.controlText button.options .hint .pagecolor.black {
     background: black;
 }
 .controlText button.options .hint .pagecolor.blue {
     background: #3793C8;
 }
-
-.text {
-}
-.text > .h3 {
+.text {} .text > .h3 {
     color: rgb(96, 169, 212);
 }
 .text .annotation {
@@ -1486,8 +1484,8 @@ div.overlay {
 }
 .ContentNav li a:hover,
 .ContentNav li a:focus {
-    color: rgb(96,169,212);
-    border-left: 1px solid rgb(96,169,212);
+    color: rgb(96, 169, 212);
+    border-left: 1px solid rgb(96, 169, 212);
 }
 ul.ContentNav {
     background: #fff;
@@ -1516,21 +1514,21 @@ ul.ContentNav {
 .ContentNav .ContentNav .active:focus a {
     font-weight: bold;
     padding-left: 30px;
-    border-left: 2px solid rgb(96,169,212);
+    border-left: 2px solid rgb(96, 169, 212);
 }
-    .ContentNav > li.active > a{
-        padding-left: 18px !important;
-        border-left: 2px solid rgb(96,169,212) !important;
-    }
-    .ContentNav .ContentNav > .active > a {
-        padding-left: 30px !important;
-    }
-    .ContentNav .ContentNav > li > a {
-        padding-left: 30px !important;
-    }
-    .ContentNav .ContentNav .active a {
-        border-left: 2px solid rgb(96,169,212);
-    }
+.ContentNav > li.active > a {
+    padding-left: 18px !important;
+    border-left: 2px solid rgb(96, 169, 212) !important;
+}
+.ContentNav .ContentNav > .active > a {
+    padding-left: 30px !important;
+}
+.ContentNav .ContentNav > li > a {
+    padding-left: 30px !important;
+}
+.ContentNav .ContentNav .active a {
+    border-left: 2px solid rgb(96, 169, 212);
+}
 .btn-white.OpenContent {
     display: none;
 }

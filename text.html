@@ -3148,55 +3148,70 @@ $("#fontslide").on("change mousemove",function(){
   saveSettings({key:'fontsize', item:$(this).val()});
 });
 function supportsLocalStorage() {
-  try {
-    return 'localStorage' in window && window['localStorage'] !== null;
-} catch (e) {
-    return false;
-  }
+    try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
 }
+
 function saveSettings(options) {
-    if (!supportsLocalStorage()) { return false; }
+    if (!supportsLocalStorage()) {
+        return false;
+    }
     localStorage.setItem(options.key, options.item);
 }
+
 function loadSettings() {
-    if (!supportsLocalStorage()) { return false; }
-    if(localStorage.getItem("bgcolor") != undefined){
-      $('.leftColumn').addClass(localStorage.getItem("bgcolor"));
-      $('.leftColumn').data('color',localStorage.getItem("bgcolor"));
-      if(localStorage.getItem("night") == "true"){
-        $('body').addClass("night");
-        $('.options .night .pagecolor.'+localStorage.getItem("bgcolor")).addClass("active");
-      } else {
-        $('.options .day .pagecolor.'+localStorage.getItem("bgcolor")).addClass("active");
-      }
+    if (!supportsLocalStorage()) {
+        return false;
     }
-    if(localStorage.getItem("fontsize")){
-      var font = '';
-      switch(localStorage.getItem("fontsize")){
-        case '0': font = '80%';break;
-        case '1': font = '100%';break;
-        case '2': font = '120%';break;
-      }
-      $('.text').css('font-size',font);
-      $("#fontslide").val(localStorage.getItem("fontsize"));
+    if (localStorage.getItem("bgcolor") != undefined) {
+        $('.leftColumn').addClass(localStorage.getItem("bgcolor"));
+        $('.leftColumn').data('color', localStorage.getItem("bgcolor"));
+        if (localStorage.getItem("night") == "true") {
+            $('body').addClass("night");
+            $('.options .night .pagecolor.' + localStorage.getItem("bgcolor")).addClass("active");
+        } else {
+            $('.options .day .pagecolor.' + localStorage.getItem("bgcolor")).addClass("active");
+        }
     }
-    if(localStorage.getItem("fontname")){
-      $('.options .font.'+localStorage.getItem("fontname")).addClass("active");
-      $('.text').css('font-family',localStorage.getItem("fontname"));
+    if (localStorage.getItem("fontsize")) {
+        var font = '';
+        switch (localStorage.getItem("fontsize")) {
+            case '0':
+                font = '80%';
+                break;
+            case '1':
+                font = '100%';
+                break;
+            case '2':
+                font = '120%';
+                break;
+        }
+        $('.text').css('font-size', font);
+        $("#fontslide").val(localStorage.getItem("fontsize"));
+    }
+    if (localStorage.getItem("fontname")) {
+        $('.options .font.' + localStorage.getItem("fontname")).addClass("active");
+        $('.text').css('font-family', localStorage.getItem("fontname"));
     }
 
 }
-function getText(){
-  if (window.getSelection) {
-   return window.getSelection() + "";
-  } else if (document.getSelection) {
-    return document.getSelection() + "";
-  } else if (document.selection) {
-    return document.selection.createRange().text + "";
-  }
-  return '';
+
+function getText() {
+    if (window.getSelection) {
+        return window.getSelection() + "";
+    } else if (document.getSelection) {
+        return document.getSelection() + "";
+    } else if (document.selection) {
+        return document.selection.createRange().text + "";
+    }
+    return '';
 }
-$(document).ready(function(){ loadSettings() });
+$(document).ready(function() {
+    loadSettings()
+});
 </script>
 </body>
 </html>
