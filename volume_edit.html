@@ -28,6 +28,7 @@
 	<script src="js/jquery.fileupload-process.js"></script>
 	<!-- The File Upload image preview & resize plugin -->
 	<script src="js/jquery.fileupload-image.js"></script>
+	<script src="js/volume.edit.scripts.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -237,11 +238,9 @@
 						</div>
 					</div>
 					<div class="col-xs-8 admin-affix" id="participantform" role="tablist" aria-multiselectable="true">
-						<div class="btn-group" role="group" aria-label="Панель изображений">
-						  <button type="button" class="btn btn-success" title="Добавить новые изображения" id="btn-image-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
-						  <button type="button" class="btn btn-default btn-border" title="Режим замены изображений" id="btn-image-replace-main"><i class="fa fa-retweet"></i></button>
-						  <button type="button" class="btn btn-default btn-border" title="Режим добавления/замены покрасов" id="btn-image-reset-color"><i class="fa fa-retweet" style="color: #60a9d4;"></i><i class="fa fa-paint-brush" style="font-size: 9px;margin-left: -9px;"></i></button>
-						  <button type="button" class="btn btn-danger" title="Удалить изображение" id="btn-image-delete" disabled><i class="fa fa-trash-o"></i></button>
+						<div class="btn-group" role="group" aria-label="Панель участника">
+						  <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-participant-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
+						  <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-participant-delete" disabled><i class="fa fa-trash-o"></i></button>
 						</div>
 						<div class="progress collapse">
 							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
@@ -249,20 +248,20 @@
 							</div>
 						</div>
 						<div  class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="participant1">
+							<div class="row collapse participant-data" role="tabpanel" id="participant1">
 								<input type="hidden" id="participant1_id">
-								<input type="hidden" id="participant1_order">
+								<input type="hidden" id="participant1_order"> 
 								<input type="hidden" id="participant1_delete">
-								<div class="col-xs-12 image-data-main">
-									<h3>Основа</h3>
+								<div class="participant-data-main">
+									<h3>Настройка участника</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
 										<div id="participant_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Ushwood" data-p="1">
+											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Ushwood">
 										</div>
 										<label for="participant1_role">Роль</label>
 										<div id="participant_roles_selector">
-											<input class="form-control typeahead role-input" type="text" id="participant1_role_input" value="Перевод с английского" data-p="1">
+											<input class="form-control typeahead role-input" type="text" id="participant1_role_input" value="Перевод с английского">
 										</div>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
@@ -270,20 +269,20 @@
 							</div>
 						</div>
 						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="participant2">
+							<div class="row collapse participant-data" role="tabpanel" id="participant2">
 								<input type="hidden" id="participant2_id">
 								<input type="hidden" id="participant2_order">
 								<input type="hidden" id="participant2_delete">
-								<div class="col-xs-12 image-data-main">
-									<h3>Основа</h3>
+								<div class="participant-data-main">
+									<h3>Настройка участника</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
 										<div id="participant_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant2_name_input" value="Danholm" data-p="2">
+											<input class="form-control typeahead name-input" type="text" id="participant2_name_input" value="Danholm">
 										</div>
 										<label for="participant1_role">Роль</label>
 										<div id="participant_roles_selector">
-											<input class="form-control typeahead role-input" type="text" id="participant2_role_input" value="Эдит" data-p="2">
+											<input class="form-control typeahead role-input" type="text" id="participant2_role_input" value="Эдит">
 										</div>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
@@ -291,20 +290,20 @@
 							</div>
 						</div>
 						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="participant3">
-								<input type="hidden" id="participant3_id">
+							<div class="row collapse participant-data" role="tabpanel" id="participant3">
+								<input type="hidden" id="participant3_id" value="3">
 								<input type="hidden" id="participant3_order">
 								<input type="hidden" id="participant3_delete">
-								<div class="col-xs-12 image-data-main">
-									<h3>Основа</h3>
+								<div class="participant-data-main">
+									<h3>Настройка участника</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
 										<div id="participant_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant3_name_input" value="Lady Astrel" data-p="3">
+											<input class="form-control typeahead name-input" type="text" id="participant3_name_input" value="Lady Astrel">
 										</div>
 										<label for="participant1_role">Роль</label>
 										<div id="participant_roles_selector">
-											<input class="form-control typeahead role-input" type="text" id="participant3_role_input" value="Редактура" data-p="3">
+											<input class="form-control typeahead role-input" type="text" id="participant3_role_input" value="Редактура">
 										</div>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
@@ -312,20 +311,20 @@
 							</div>
 						</div>
 						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="participant4">
+							<div class="row collapse participant-data" role="tabpanel" id="participant4">
 								<input type="hidden" id="participant4_id">
 								<input type="hidden" id="participant4_order">
 								<input type="hidden" id="participant4_delete">
-								<div class="col-xs-12 image-data-main">
-									<h3>Основа</h3>
+								<div class="participant-data-main">
+									<h3>Настройка участника</h3>
 									<div class="form-group">
 										<label for="participant1_name">Участник</label>
 										<div id="participant_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant4_name_input" value="Test" data-p="4">
+											<input class="form-control typeahead name-input" type="text" id="participant4_name_input" value="Test">
 										</div>
 										<label for="participant1_role">Роль</label>
 										<div id="participant_roles_selector">
-											<input class="form-control typeahead role-input" type="text" id="participant4_role_input" value="Test" data-p="4">
+											<input class="form-control typeahead role-input" type="text" id="participant4_role_input" value="Test">
 										</div>
 										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
 									</div>
@@ -538,33 +537,17 @@
 		handle:'.move' // задаем маркер перетягивания
     });
 	
-	
-	$('#imageselect').on( "sortupdate", function( event, ui ) { // для списка изображений задаем обработчик перетягивания
-		if(ui.item.hasClass('heading')) // если мы перетянули главу, мы должны убедится что не нарушили порядок следовани глав
-		{
-			var start = 0; // jquery-ui sortable не дает информации о том какой у елемента был индекс до перетягивания
-			$(this).children().each(function(i,e) { // поэтому мы находим его линейно 
-				if($(e).position().top <= ui.originalPosition.top) // сравнивая по y координате каждого елемента в пикселах с координатой изначального положения
-					start = i; 
-				else return false;
-			});
-			var end = ui.item.index()  // индекс итоговой позиции известен
-			if(start < end) // если мы перетянули вниз
-				$(this).children().slice(start, end).filter('.heading').insertAfter(ui.item); // то перемещаем все заголовки (если они есть) между индексами и ставим их в том же порядке после тепущего
-			else
-				$(this).children().slice(end + 1, start + 1).filter('.heading').insertBefore(ui.item);  // в противном случае точно так же ставим перед текущим
-		}
-		var order = 0, chapter_id = 0; // теперь нам нужно для каждого изображения поставить его порядковый номер и id главы к которой оно принадлежит
-		$(this).children().each(function(){ // вообще делать это линейно для всех елементов при любом изменении не очень хорошо. правельные было бы обновлять только для тех изображений для которых что-то изменилось. но мне было лень
-			if($(this).is('.heading[data-chapter-id]'))
-				chapter_id = $(this).attr('data-chapter-id'); // если мы попали на елемент заголовка - запомнили номер текущей главы
-			else {
-				$($(this).attr('href')+'_order').val(++order); // посчитали порядок
-				$($(this).attr('href')+'_chapter_id').val(chapter_id); // вспомнили последний известный айдишник главы
-			}
+	//admin-affix - мой класс для обозначения общего елемента, который аффиксируется справа от списка .list-group.select
+	$('.admin-affix').each(function() { // используется bootstrap affix
+		var parent = $(this).parent();
+		$(this).affix({
+			offset: {
+				top: function() { return parent.offset().top - 10; }, // в открепленнойм стиле у меня стоит отступ 10 пикселов от верхнего края экрана, знасит откреплять мы начинаем за 10 пикселей от позиции родительского елемента
+				bottom: function() { return $(document).height() - parent.outerHeight(true) - parent.offset().top; } // нижняя граница, конда плагину нужно снова закрепить admin-affix считается по разнице нижней граници родительского елемента и нижнего края экрана
+			} // то есть мы аффиксируем admin-affix в пределах его родительского елемента. предпологается что размер родительского елемента растягивается за счет наполнения list-group.select, но нужно где то явно указать min-height что бы в случае если елементов в list-group.select меньше чем высота самого admin-affix, родительский елемень не схлопнулся при откреплении admin-affix
 		});
 	});
-
+	
 	$('#participantselect').on( "sortupdate", function() { // для списка участников перевода задаем обработчик перетягивания
 		var p_order = 0; // поставим для каждого участника порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
@@ -574,6 +557,39 @@
 				//console.log(p_order);
 			}
 		});
+	});
+	
+	$('#btn-participant-add').click(function(){
+		var i=0;
+		$('#participantform').children('.panel').each(function(){
+			i++;
+		});
+		i++;
+		console.log(i);
+		var newParticipant = '<a data-toggle="collapse" data-parent="#participantform" href="#participant' + i + '" aria-expanded="true" aria-controls="participant' + i + '" class="list-group-item" >'+'<i class="fa fa-ellipsis-v move"></i>'+'<span class="hidden-sm hidden-xs"  id="participant' + i + '_name">New</span> - <span class="hidden-sm hidden-xs" id="participant' + i + '_role">Role</span>' + '</a>';
+		var newPanel = '<div class="panel">'+
+		'<div class="row collapse participant-data" role="tabpanel" id="participant' + i + '">'+
+		'<input type="hidden" id="participant' + i + '_id">'+
+		'<input type="hidden" id="participant' + i + '_order">'+
+		'<input type="hidden" id="participant' + i + '_delete">'+
+		'<div class="participant-data-main">'+
+		'<h3>Настройка участника</h3>'+
+		'<div class="form-group">'+
+		'<label for="participant' + i + '_name">Участник</label>'+
+		'<div id="participant_names_selector">'+
+		'<input class="form-control typeahead name-input" type="text" id="participant' + i + '_name_input" value="New">'+
+		'</div>'+
+		'<label for="participant' + i + '_role">Роль</label>'+
+		'<div id="participant_roles_selector">'+
+		'<input class="form-control typeahead role-input" type="text" id="participant' + i + '_role_input" value="Role">'+
+		'</div>'+
+		'<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>'+
+		'</div>'+
+		'</div>'+
+		'</div>'+
+		'</div>';
+		$('#participantselect').append(newParticipant);
+		$('#participantform').append(newPanel);
 	});
 	
 	// ---------- typeahead start ----------
@@ -630,27 +646,56 @@
 	
 	$('.name-input').on('keyup', function() { // ищем среди элементов класса name-input, тот в котором мы сейчас пишем
 			var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
-			var i = elem.attr('data-p'); // получаем id участника
-			$('#participant'+ i + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+			var id = $('.participant-data.in').attr('id'); // получаем id участника
+			console.log(id);
+			$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 	});
 	
 	$('.role-input').on('keyup', function() { // ищем среди элементов класса role-input, тот в котором мы сейчас пишем
 			var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
-			var i = elem.attr('data-p'); // получаем id участника
-			$('#participant'+ i + '_role').html(elem.val()); // при помощи предыдущего значения вытворяем с ролями, что хотим
+			var id = $('.participant-data.in').attr('id'); // получаем id участника
+			$('#' + id + '_role').html(elem.val()); // при помощи предыдущего значения вытворяем с ролями, что хотим
 	});
 	
-	//admin-affix - мой класс для обозначения общего елемента, который аффиксируется справа от списка .list-group.select
-	$('.admin-affix').each(function() { // используется bootstrap affix
-		var parent = $(this).parent();
-		$(this).affix({
-			offset: {
-				top: function() { return parent.offset().top - 10; }, // в открепленнойм стиле у меня стоит отступ 10 пикселов от верхнего края экрана, знасит откреплять мы начинаем за 10 пикселей от позиции родительского елемента
-				bottom: function() { return $(document).height() - parent.outerHeight(true) - parent.offset().top; } // нижняя граница, конда плагину нужно снова закрепить admin-affix считается по разнице нижней граници родительского елемента и нижнего края экрана
-			} // то есть мы аффиксируем admin-affix в пределах его родительского елемента. предпологается что размер родительского елемента растягивается за счет наполнения list-group.select, но нужно где то явно указать min-height что бы в случае если елементов в list-group.select меньше чем высота самого admin-affix, родительский елемень не схлопнулся при откреплении admin-affix
+	$('.participant-data').on('hidden.bs.collapse', function () { 
+		$('#btn-participant-delete').attr('disabled',true);
+	}).on('shown.bs.collapse', function() {
+		$('#btn-participant-delete').attr('disabled',false);
+	});
+	
+	$('#btn-participant-delete').on('click',function(){ // обработка кнопки удаления для участников
+		var id = $('.participant-data.in').attr('id');
+		$('.participant-data.in').collapse('hide');
+		$('#'+id+'_detele').val(true);
+		$('#participantselect [href="#'+id+'"]').detach();
+	});
+	
+	$('#imageselect').on( "sortupdate", function( event, ui ) { // для списка изображений задаем обработчик перетягивания
+		if(ui.item.hasClass('heading')) // если мы перетянули главу, мы должны убедится что не нарушили порядок следовани глав
+		{
+			var start = 0; // jquery-ui sortable не дает информации о том какой у елемента был индекс до перетягивания
+			$(this).children().each(function(i,e) { // поэтому мы находим его линейно 
+				if($(e).position().top <= ui.originalPosition.top) // сравнивая по y координате каждого елемента в пикселах с координатой изначального положения
+					start = i; 
+				else return false;
+			});
+			var end = ui.item.index()  // индекс итоговой позиции известен
+			if(start < end) // если мы перетянули вниз
+				$(this).children().slice(start, end).filter('.heading').insertAfter(ui.item); // то перемещаем все заголовки (если они есть) между индексами и ставим их в том же порядке после тепущего
+			else
+				$(this).children().slice(end + 1, start + 1).filter('.heading').insertBefore(ui.item);  // в противном случае точно так же ставим перед текущим
+		}
+		var order = 0, chapter_id = 0; // теперь нам нужно для каждого изображения поставить его порядковый номер и id главы к которой оно принадлежит
+		$(this).children().each(function(){ // вообще делать это линейно для всех елементов при любом изменении не очень хорошо. правельные было бы обновлять только для тех изображений для которых что-то изменилось. но мне было лень
+			if($(this).is('.heading[data-chapter-id]'))
+				chapter_id = $(this).attr('data-chapter-id'); // если мы попали на елемент заголовка - запомнили номер текущей главы
+			else {
+				$($(this).attr('href')+'_order').val(++order); // посчитали порядок
+				$($(this).attr('href')+'_chapter_id').val(chapter_id); // вспомнили последний известный айдишник главы
+			}
 		});
 	});
-	
+
 	// дальше пошел код спецефический для изображений. его я буду комментировать не так подробно
 	
 	
@@ -755,6 +800,7 @@
     }).on('fileuploadfail', function (e, data) { // выводим ошибку аякса
 		$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
     });
+	
 	$('#btn-image-delete').click(function(){ // обработка кнопки удаления
 		var id = $('.image-data.in').attr('id');
 		$('.image-data.in').collapse('hide');
