@@ -260,7 +260,7 @@
 					</div>
 					<div class="col-xs-8 admin-affix" id="participantform" role="tablist" aria-multiselectable="true">
 						<div class="btn-group" role="group" aria-label="Панель участника">
-						  <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-participant-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
+						  <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-participant-add"><i class="fa fa-plus"></i></button>
 						  <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-participant-delete" disabled><i class="fa fa-trash-o"></i></button>
 						</div>
 						<div class="progress collapse">
@@ -373,29 +373,28 @@
 				<div class="row">
 					<div class="col-xs-4">
 						<div class="list-group select sortable" id="chapterselect">
-							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Команда</span></a>
 							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter1" aria-expanded="true" aria-controls="chapter1" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter1_name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="chapter1_role">Перевод с английского</span>
+								<span class="hidden-sm hidden-xs"  id="chapter1_name">Начальные иллюстрации</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter2" aria-expanded="true" aria-controls="chapter2" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter2_name">Danholm</span> - <span class="hidden-sm hidden-xs" id="chapter2_role">Эдит</span>
+								<span class="hidden-sm hidden-xs"  id="chapter2_name">Пролог</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter3" aria-expanded="true" aria-controls="chapter3" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter3_name">Lady Astrel</span> - <span class="hidden-sm hidden-xs" id="chapter3_role">Редактура</span>
+								<span class="hidden-sm hidden-xs"  id="chapter3_name">Глава 1</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter4" aria-expanded="true" aria-controls="chapter4" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter4_name">Test</span> - <span class="hidden-sm hidden-xs" id="chapter4_role">Test</span>
+								<span class="hidden-sm hidden-xs"  id="chapter4_name">Глава 2</span>
 							</a>
 						</div>
 					</div>
 					<div class="col-xs-8 admin-affix" id="chapterform" role="tablist" aria-multiselectable="true">
-						<div class="btn-group" role="group" aria-label="Панель участника">
-						  <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-chapter-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
-						  <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i></button>
+						<div class="btn-group" role="group" aria-label="Панель глав">
+						  <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-chapter-add"><i class="fa fa-plus"></i></button>
+						  <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i></button>
 						</div>
 						<div class="progress collapse">
 							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
@@ -409,13 +408,18 @@
 								<input type="hidden" id="chapter1_delete">
 								<div class="chapter-data-main">
 									<h3>Настройка главы</h3>
-									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group checkbox">
+										<label>
+											<input type="checkbox" class="form-control" id="chapter1_is_subchapter" name="chapter1_is_subchapter">
+											&emsp;Подглава
+										</label>
+									</div>
 									<div class="form-group">
 										<label for="chapter1_url">Ссылка</label>
-										<input>
+										<input class="form-control url-input" type="text" id="chapter1_url_input">
 										<label for="chapter1_name">Заголовок</label>
 										<div id="chapter1_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Начальные иллюстрации">
+											<input class="form-control name-input" type="text" id="chapter1_name_input" value="Начальные иллюстрации">
 										</div>
 									</div>
 								</div>
@@ -428,13 +432,18 @@
 								<input type="hidden" id="chapter2_delete">
 								<div class="chapter-data-main">
 									<h3>Настройка главы</h3>
-									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group checkbox">
+										<label>
+											<input type="checkbox" class="form-control" id="chapter2_is_subchapter" name="chapter2_is_subchapter">
+											&emsp;Подглава
+										</label>
+									</div>
 									<div class="form-group">
 										<label for="chapter2_url">Ссылка</label>
-										<input>
+										<input class="form-control url-input" type="text" id="chapter2_url_input">
 										<label for="chapter2_name">Заголовок</label>
 										<div id="chapter2_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Пролог">
+											<input class="form-control name-input" type="text" id="chapter2_name_input" value="Пролог">
 										</div>
 									</div>
 								</div>
@@ -447,13 +456,18 @@
 								<input type="hidden" id="chapter3_delete">
 								<div class="chapter-data-main">
 									<h3>Настройка главы</h3>
-									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group checkbox">
+										<label>
+											<input type="checkbox" class="form-control" id="chapter3_is_subchapter" name="chapter3_is_subchapter">
+											&emsp;Подглава
+										</label>
+									</div>
 									<div class="form-group">
 										<label for="chapter3_url">Ссылка</label>
-										<input>
+										<input class="form-control url-input" type="text" id="chapter3_url_input">
 										<label for="chapter3_name">Заголовок</label>
 										<div id="chapter3_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Глава 1">
+											<input class="form-control name-input" type="text" id="chapter3_name_input" value="Глава 1">
 										</div>
 									</div>
 								</div>
@@ -466,13 +480,18 @@
 								<input type="hidden" id="chapter4_delete">
 								<div class="chapter-data-main">
 									<h3>Настройка главы</h3>
-									<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Подглава</label>
+									<div class="form-group checkbox">
+										<label>
+											<input type="checkbox" class="form-control" id="chapter4_is_subchapter" name="chapter4_is_subchapter">
+											&emsp;Подглава
+										</label>
+									</div>
 									<div class="form-group">
 										<label for="chapter4_url">Ссылка</label>
-										<input>
+										<input class="form-control url-input" type="text" id="chapter4_url_input">
 										<label for="chapter4_name">Заголовок</label>
 										<div id="chapter4_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Глава 2">
+											<input class="form-control name-input" type="text" id="chapter4_name_input" value="Глава 2">
 										</div>
 									</div>
 								</div>
@@ -691,6 +710,8 @@
 		});
 	});
 	
+	/* ------------------------------------------ PARTISIPANTS START ------------------------------------------ */
+	
 	$('#participantselect').on( "sortupdate", function() { // для списка участников перевода задаем обработчик перетягивания
 		var p_order = 0; // поставим для каждого участника порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
@@ -702,9 +723,9 @@
 		});
 	});
 	
-	var i=0;
+	var i=0; // id каждого элемента в пункте участников перевода
 	
-	$('#btn-participant-add').click(function(){
+	$('#btn-participant-add').click(function(){ // обработка кнопки добавления новых участников
 		i++;
 		var newParticipant = '<a data-toggle="collapse" data-parent="#participantform" href="#participant' + i + '" aria-expanded="true" aria-controls="participant' + i + '" class="list-group-item" >'+'<i class="fa fa-ellipsis-v move"></i>'+'<span class="hidden-sm hidden-xs"  id="participant' + i + '_name">New</span> - <span class="hidden-sm hidden-xs" id="participant' + i + '_role">Role</span>' + '</a>';
 		var newPanel = '<div class="panel">'+
@@ -733,7 +754,7 @@
 		'</div>';
 		$('#participantselect').append(newParticipant);
 		$('#participantform').append(newPanel);
-		$('#participant' + i + '_names_selector .typeahead').typeahead({  // обработчик имен
+		$('#participant' + i + '_names_selector .typeahead').typeahead({  // инициализируем обработчик имен при каждом создании участника
 			hint: true,
 			limit: 10,
 			highlight: true,
@@ -795,10 +816,10 @@
 	$('#participantform').on('change', '.role-input', function(){
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.participant-data.in').attr('id'); // получаем id участника
-		$('#' + id + '_role').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+		$('#' + id + '_role').html(elem.val()); // при помощи предыдущего значения вытворяем с ролями, что хотим
 	});
 	
-	$('#participantform').on('hidden.bs.collapse', '.participant-data', function () { 
+	$('#participantform').on('hidden.bs.collapse', '.participant-data', function () { // обработка активности кнопки удаления
 		$('#btn-participant-delete').attr('disabled',true);
 	}).on('shown.bs.collapse', '.participant-data', function() {
 		$('#btn-participant-delete').attr('disabled',false);
@@ -810,6 +831,93 @@
 		$('#'+id+'_detele').val(true);
 		$('#participantselect [href="#'+id+'"]').detach();
 	});
+	
+	/* ----------------------------------------- PARTISIPANTS END ----------------------------------------- */
+	
+	/* ------------------------------------------ CHAPTERS START ------------------------------------------ */
+	
+	$('#chapterselect').on( "sortupdate", function() { // для списка глав задаем обработчик перетягивания
+		var ch_order = 0; // поставим для каждой главы порядковый номер
+		$(this).children().each(function(){ // проверяем каждый элемент
+			$($(this).attr('href')+'_order').val(++ch_order); // обновляем порядок
+				//console.log($(this).attr('href')); // на всякий случай пока оставлю
+				//console.log(p_order);
+		});
+	});
+	
+	var j=0; // id каждого элемента в пункте "Главы"
+	var k=0; // нужна, чтобы считать непосредственно сами главы (красивости)
+	
+	$('#btn-chapter-add').click(function(){ // обработка кнопки добавления новой главы
+		j++;
+		k++;
+		var newChapter = '<a data-toggle="collapse" data-parent="#chapterform" href="#chapter' + j + '" aria-expanded="true" aria-controls="chapter' + j + '" class="list-group-item" >'+
+		'<i class="fa fa-ellipsis-v move"></i>'+
+		'<span class="hidden-sm hidden-xs"  id="chapter' + j + '_name">Глава ' + k + '</span>'+
+		'</a>';
+		var newPanel = '<div class="panel">'+
+		'<div class="row collapse chapter-data" role="tabpanel" id="chapter' + j + '">'+
+		'<input type="hidden" id="chapter' + j + '_id">'+
+		'<input type="hidden" id="chapter' + j + '_order">'+
+		'<input type="hidden" id="chapter' + j + '_delete">'+
+		'<div class="chapter-data-main">'+
+		'<h3>Настройка главы</h3>'+
+		'<div class="form-group checkbox">'+
+		'<label>'+
+		'<input type="checkbox" class="form-control" id="chapter' + j + '_is_subchapter" name="chapter' + j + '_is_subchapter">'+
+		'&emsp;Подглава'+
+		'</label>'+
+		'</div>'+
+		'<div class="form-group">'+
+		'<label for="chapter' + j + '_url">Ссылка</label>'+
+		'<input class="form-control url-input" type="text" id="chapter' + j + '_url_input">'+
+		'<label for="chapter' + j + '_name">Заголовок</label>'+
+		'<div id="chapter3_names_selector">'+
+		'<input class="form-control name-input" type="text" id="chapter' + j + '_name_input" value="Глава ' + k + '">'
+		'</div>'+
+		'</div>'+
+		'</div>'+
+		'</div>'+
+		'</div>';
+		$('#chapterselect').append(newChapter);
+		$('#chapterform').append(newPanel);
+	});
+	
+	$('#chapterform').children('.panel').each(function(){
+		j++; // считаем кажую панель (читай кажый объект) 
+		var str = $('#chapter' + j + '_name_input').val(); // берем название каждой главы
+		str = str.substring(0,5); // вычленяем первые 5 букв
+		console.log(str);
+		if (str == "Глава") k++; // если они совпадают с "главой", то увеличиваем счетчик (нужно для динамики названий)
+	});
+	
+	$('#chapterform').on('keyup', '.name-input', function(){
+		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
+		var id = $('.chapter-data.in').attr('id'); // получаем id главы
+		$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+	});
+	
+	
+	
+	$('#chapterform').on('hidden.bs.collapse', '.chapter-data', function () { // обработка активности кнопки удаления
+		$('#btn-chapter-delete').attr('disabled',true);
+	}).on('shown.bs.collapse', '.chapter-data', function() {
+		$('#btn-chapter-delete').attr('disabled',false);
+	});
+	
+	$('#btn-chapter-delete').on('click',function(){ // обработка кнопки удаления для глав
+		var id = $('.chapter-data.in').attr('id');
+		$('.chapter-data.in').collapse('hide');
+		$('#'+id+'_detele').val(true);
+		$('#chapterselect [href="#'+id+'"]').detach();
+		var str = $('#' + id + '_name_input').val(); // берем название каждой главы
+		str = str.substring(0,5); // вычленяем первые 5 букв
+		if (str == "Глава") k--; // если они совпадают с "главой", то уменьшаем счетчик
+	});
+	
+	/* ------------------------------------------ CHAPTERS END ------------------------------------------ */
+	
+	/* ------------------------------------------ IMAGES START ------------------------------------------ */
 	
 	$('#imageselect').on( "sortupdate", function( event, ui ) { // для списка изображений задаем обработчик перетягивания
 		if(ui.item.hasClass('heading')) // если мы перетянули главу, мы должны убедится что не нарушили порядок следовани глав
@@ -948,5 +1056,7 @@
 		$('#'+id+'_detele').val(true);
 		$('#imageselect [href="#'+id+'"]').detach();
 	});
+	
+	/* ------------------------------------------ IMAGES END ------------------------------------------ */
 </script>
 </html>
