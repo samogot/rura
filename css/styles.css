@@ -1302,6 +1302,10 @@ color: #60a9d4;
     color: #A8A8A8;
     opacity: 1;
 }
+.controlText .btn.options:active, .controlText .btn.options.active{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
 .controlText button .hint .miniicon {
     background: url('../img/actions/textControl.png') left no-repeat;
     width: 9px;
@@ -1712,7 +1716,7 @@ ul.ContentNav {
         */
         display: none !important;
     }
-    .controlText button.options.active .hint {
+    .controlText button.options.activated .hint {
         display: block !important;
         left:50px;
         margin-top: -250px;
@@ -1737,9 +1741,9 @@ ul.ContentNav {
 
 
     .content-module.active .module_name { color: #fff; }
-    .content-module.active .ContentNav a { 
-        color: #fff; 
-        border-left-color: #fff; 
+    .content-module.active .ContentNav a {
+        color: #fff;
+        border-left-color: #fff;
     }
 }
 .content-module div.affix-top {
@@ -1792,7 +1796,13 @@ body.night .leftbg, body.night .rightbg {
 .leftColumn.red{
     color: #000;
 }
+body.night .right-sidebar{
+    color: #000;
+}
 body.night .leftColumn.red{
+    color: #fff;
+}
+body.night .ContentNav > li > a{
     color: #fff;
 }
 .leftColumn.red .leftbg, .leftColumn.red .rightbg{

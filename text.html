@@ -2982,10 +2982,12 @@ function reinitAffix() {
 $('.controlText .btn').hover(
 function() {
     $(this).children('.hint').show()
+    if($(this).hasClass('options')) $(this).addClass('activated');
 }
 ,
 function() {
     $(this).children('.hint').hide()
+    if($(this).hasClass('options')) $(this).removeClass('activated');
 }
 );
 $('.btn.top').click(function() {
@@ -3082,12 +3084,13 @@ if ( isMobile() == true )     $(".leftColumn").swipe({
         $center.removeClass("activeLeft");
     });
     $('.controlText .btn.options').click(function(){
-        $('.controlText .btn.options').addClass('active');
+      if($(this).hasClass('activated')){return false;}
+        $('.controlText .btn.options').addClass('activated');
         $('.overlayT').show();
     })
     $('.overlayT').click(function() {
         $('.overlayT').hide();
-        $('.controlText .btn.options').removeClass('active');
+        $('.controlText .btn.options').removeClass('activated');
         $left.removeClass("active");
         $center.removeClass("activeLeft");
     });
