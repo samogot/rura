@@ -451,7 +451,7 @@
 						</div>
 						<div class="panel">
 							<div class="row collapse chapter-data" role="tabpanel" id="chapter3">
-								<input type="hidden" id="chapter3_id" value="3">
+								<input type="hidden" id="chapter3_id">
 								<input type="hidden" id="chapter3_order">
 								<input type="hidden" id="chapter3_delete">
 								<div class="chapter-data-main">
@@ -503,6 +503,143 @@
 				</form>
                 <h2>Обновления</h2>
 				<form>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="list-group select sortable" id="updateselect">
+							<a data-toggle="collapse" data-parent="#updateform" href="#update1" aria-expanded="true" aria-controls="update1" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="update1_date">2015-05-01</span>: <span class="hidden-sm hidden-xs"  id="update1_chapter">Весь том</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#updateform" href="#update2" aria-expanded="true" aria-controls="update2" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="update2_date">2013-01-01</span>: <span class="hidden-sm hidden-xs"  id="update2_chapter">Начальные иллюстрации (1)</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#updateform" href="#update3" aria-expanded="true" aria-controls="update3" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="update3_name">2074-12-13</span>: <span class="hidden-sm hidden-xs"  id="update3_chapter">Пролог (2)</span>
+							</a>
+							<a data-toggle="collapse" data-parent="#updateform" href="#update4" aria-expanded="true" aria-controls="update4" class="list-group-item" >
+								<i class="fa fa-ellipsis-v move"></i>
+								<span class="hidden-sm hidden-xs"  id="update4_name">2015-05-01</span>: <span class="hidden-sm hidden-xs"  id="update4_chapter">Глава 1 (3)</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-8 admin-affix" id="updateform" role="tablist" aria-multiselectable="true">
+						<div class="btn-group" role="group" aria-label="Панель глав">
+						  <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i></button>
+						  <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-update-delete" disabled><i class="fa fa-trash-o"></i></button>
+						</div>
+						<div class="progress collapse">
+							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+								<span class="sr-only">0% Complete</span>
+							</div>
+						</div>
+						<div  class="panel">
+							<div class="row collapse update-data" role="tabpanel" id="update1">
+								<input type="hidden" id="update1_id">
+								<input type="hidden" id="update1_order"> 
+								<input type="hidden" id="update1_delete">
+								<div class="update-data-main">
+									<h3>Настройка обновления</h3>
+									<div class="form-group">
+										<label for="update1_type">Тип</label>
+										<select id="update1_type" class="form-control update_type">
+											<option>Перевод</option>
+											<option>Глобальная редактура</option>
+											<option>Обновление иллюстраций</option>
+											<option>Другое</option>
+										</select>
+										<label for="update1_chapter">Глава</label>
+										<select id="update1_chapter_select" class="form-control update_chapter">
+										</select>
+										<label for="update1_date_input">Дата</label>
+										<input class="form-control date-input" type="text" id="update1_date_input" value="2015-05-01">
+										<label for="update1_name">Описание (опционально)</label>
+										<input class="form-control" type="text" id="update1_description" placeholder="Перевод">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse update-data" role="tabpanel" id="update2">
+								<input type="hidden" id="update2_id">
+								<input type="hidden" id="update2_order">
+								<input type="hidden" id="update2_delete">
+								<div class="update-data-main">
+									<h3>Настройка обновления</h3>
+									<div class="form-group">
+										<label for="update2_type">Тип</label>
+										<select id="update2_type" class="form-control update_type">
+											<option>Перевод</option>
+											<option>Глобальная редактура</option>
+											<option>Обновление иллюстраций</option>
+											<option>Другое</option>
+										</select>
+										<label for="update2_chapter">Глава</label>
+										<select id="update2_chapter_select" class="form-control update_chapter">
+										</select>
+										<label for="update2_date_input">Дата</label>
+										<input class="form-control date-input" type="text" id="update2_date_input" value="2015-05-01">
+										<label for="update2_name">Описание (опционально)</label>
+										<input class="form-control" type="text" id="update2_description" placeholder="Перевод">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse update-data" role="tabpanel" id="update3">
+								<input type="hidden" id="update3_id">
+								<input type="hidden" id="update3_order">
+								<input type="hidden" id="update3_delete">
+								<div class="update-data-main">
+									<h3>Настройка обновления</h3>
+									<div class="form-group">
+										<label for="update3_type">Тип</label>
+										<select id="update3_type" class="form-control update_type">
+											<option>Перевод</option>
+											<option>Глобальная редактура</option>
+											<option>Обновление иллюстраций</option>
+											<option>Другое</option>
+										</select>
+										<label for="update3_chapter">Глава</label>
+										<select id="update3_chapter_select" class="form-control update_chapter">
+										</select>
+										<label for="update3_date_input">Дата</label>
+										<input class="form-control date-input" type="text" id="update3_date_input" value="2015-05-01">
+										<label for="update3_name">Описание (опционально)</label>
+										<input class="form-control" type="text" id="update3_description" placeholder="Перевод">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="row collapse update-data" role="tabpanel" id="update4">
+								<input type="hidden" id="update4_id">
+								<input type="hidden" id="update4_order">
+								<input type="hidden" id="update4_delete">
+								<div class="update-data-main">
+									<h3>Настройка обновления</h3>
+									<div class="form-group">
+										<label for="update4_type">Тип</label>
+										<select id="update4_type" class="form-control update_type">
+											<option>Перевод</option>
+											<option>Глобальная редактура</option>
+											<option>Обновление иллюстраций</option>
+											<option>Другое</option>
+										</select>
+										<label for="update1_chapter">Глава</label>
+										<select id="update4_chapter_select" class="form-control update_chapter">
+										</select>
+										<label for="update4_date_input">Дата</label>
+										<input class="form-control date-input" type="text" id="update4_date_input" value="2015-05-01">
+										<label for="update4_name">Описание (опционально)</label>
+										<input class="form-control" type="text" id="update4_description" placeholder="Перевод">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 				</form>
                 <h2>Изображения</h2>
@@ -510,7 +647,7 @@
 				<div class="row">
 					<div class="col-xs-4">
 						<div class="list-group select sortable" id="imageselect">
-							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Обложки</span></a>
+							<a class="list-group-item heading" data-chapter-id="-1" value="1"><span class="move">Обложки</span></a>
 							<a class="list-group-item heading" data-chapter-id="1"><span class="move">Начальные иллюстрации</span></a>
 							<a data-toggle="collapse" data-parent="#imageform" href="#image1" aria-expanded="true" aria-controls="image1" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
@@ -532,12 +669,14 @@
 								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
 								<span class="hidden-sm hidden-xs">20.02.2015</span>
 							</a>
-							<a class="list-group-item heading" data-chapter-id="2"><span class="move">Глава 1</span></a>
+							<a class="list-group-item heading" data-chapter-id="2"><span class="move">Пролог</span></a>
+							<a class="list-group-item heading" data-chapter-id="3"><span class="move">Глава 1</span></a>
 							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
 								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
 								<span class="hidden-sm hidden-xs">20.02.2015</span>
 							</a>
+							<a class="list-group-item heading" data-chapter-id="4"><span class="move">Глава 2</span></a>
 						</div>
 					</div>
 					<div class="col-xs-8 admin-affix" id="imageform" role="tablist" aria-multiselectable="true">
@@ -879,15 +1018,16 @@
 		'</div>'+
 		'</div>'+
 		'</div>';
+		var newChapterHeading = '<a class="list-group-item heading" data-chapter-id="' + j + '"><span class="move">Глава ' + k + '</span></a>';
 		$('#chapterselect').append(newChapter);
 		$('#chapterform').append(newPanel);
+		$('#imageselect').append(newChapterHeading);
 	});
 	
 	$('#chapterform').children('.panel').each(function(){
 		j++; // считаем кажую панель (читай кажый объект) 
 		var str = $('#chapter' + j + '_name_input').val(); // берем название каждой главы
 		str = str.substring(0,5); // вычленяем первые 5 букв
-		console.log(str);
 		if (str == "Глава") k++; // если они совпадают с "главой", то увеличиваем счетчик (нужно для динамики названий)
 	});
 	
@@ -895,6 +1035,8 @@
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.chapter-data.in').attr('id'); // получаем id главы
 		$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+		id = id.substring(7);
+		$('.heading[data-chapter-id="'+id+'"]').children().html(elem.val());
 	});
 	
 	
@@ -916,6 +1058,104 @@
 	});
 	
 	/* ------------------------------------------ CHAPTERS END ------------------------------------------ */
+	
+	/* ------------------------------------------ UPDATES START ----------------------------------------- */
+	//update1_typeupdate1_description
+	
+	$('#updateselect').on( "sortupdate", function() { // для списка обновлений задаем обработчик перетягивания
+		var ch_order = 0; // поставим для каждого обновления порядковый номер
+		$(this).children().each(function(){ // проверяем каждый элемент
+			$($(this).attr('href')+'_order').val(++ch_order); // обновляем порядок
+				//console.log($(this).attr('href')); // на всякий случай пока оставлю
+				//console.log(p_order);
+		});
+	});
+	
+	var v=0; // id каждого элемента в пункте "Обновления"
+	var u=0; 
+	var OptionsForSelect = '<option>Весь том</option>';
+	
+	$('#chapterselect').children('a').each(function(){
+		u++;
+		OptionsForSelect = OptionsForSelect + '<option>' + $(this).children('span').text() + ' (' + u + ')</option>';
+	});
+	
+	$('#btn-update-add').click(function(){ // обработка кнопки добавления нового обновления
+		v++;
+		var today = new Date();
+		var newUpdate = '<a data-toggle="collapse" data-parent="#updateform" href="#update' + v + '" aria-expanded="true" aria-controls="update' + v + '" class="list-group-item" >'+
+		'<i class="fa fa-ellipsis-v move"></i>'+
+		'<span class="hidden-sm hidden-xs"  id="update' + v + '_date">' + today + '</span>:'+
+		'<span class="hidden-sm hidden-xs"  id="update' + v + '_chapter">Весь том</span>'+
+		'</a>';
+		var newPanel = '<div class="panel">'+
+		'<div class="row collapse update-data" role="tabpanel" id="update' + v + '">'+
+		'<input type="hidden" id="update' + v + '_id">'+
+		'<input type="hidden" id="update' + v + '_order">'+
+		'<input type="hidden" id="update' + v + '_delete">'+
+		'<div class="update-data-main">'+
+		'<h3>Настройка обновления</h3>'+
+		'<div class="form-group">'+
+		'<label for="update' + v + '_type">Тип</label>'+
+		'<select id="update' + v + '_type" class="form-control update_type">'+
+		'<option>Перевод</option>'+
+		'<option>Глобальная редактура</option>'+
+		'<option>Обновление иллюстраций</option>'+
+		'<option>Другое</option>'+
+		'</select>'+
+		'<label for="update' + v + '_chapter">Глава</label>'+
+		'<select id="update' + v + '_chapter_select" class="form-control update_chapter">'+
+		'</select>'+
+		'<label for="update' + v + '_date_input">Дата</label>'+
+		'<input class="form-control date-input" type="text" id="update' + v + '_date_input" value="' + today + '">'+
+		'<label for="update' + v + '_name">Описание (опционально)</label>'+
+		'<input class="form-control" type="text" id="update' + v + '_description" placeholder="Перевод">'+
+		'</div>'+
+		'</div>'+
+		'</div>'+
+		'</div>';
+		$('#updateselect').append(newUpdate);
+		$('#updateform').append(newPanel);
+		$('#update' + v + '_chapter_select').append(OptionsForSelect);
+	});
+	
+	$('#updateform').children('.panel').each(function(){
+		v++; // считаем кажую панель (читай кажый объект) 
+		$(this).find('.update_chapter').append(OptionsForSelect);
+	});
+	
+	$('#updateform').on('keyup', '.date-input', function(){
+		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
+		var id = $('.update-data.in').attr('id'); // получаем id главы
+		$('#' + id + '_date').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+	});
+	
+	$('#updateform').on('change', '.update_type', function(){
+		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
+		var id = $('.update-data.in').attr('id'); // получаем id главы
+		$('#' + id + '_description').prop('placeholder', elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+	});
+	
+	$('#updateform').on('change', '.update_chapter', function(){
+		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
+		var id = $('.update-data.in').attr('id'); // получаем id главы
+		$('#' + id + '_chapter').text(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+	});
+	
+	$('#updateform').on('hidden.bs.collapse', '.update-data', function () { // обработка активности кнопки удаления
+		$('#btn-update-delete').attr('disabled',true);
+	}).on('shown.bs.collapse', '.update-data', function() {
+		$('#btn-update-delete').attr('disabled',false);
+	});
+	
+	$('#btn-update-delete').on('click',function(){ // обработка кнопки удаления для глав
+		var id = $('.update-data.in').attr('id');
+		$('.update-data.in').collapse('hide');
+		$('#'+id+'_detele').val(true);
+		$('#updateselect [href="#'+id+'"]').detach();
+	});
+	
+	/* ------------------------------------------ UPDATES END ------------------------------------------- */
 	
 	/* ------------------------------------------ IMAGES START ------------------------------------------ */
 	
