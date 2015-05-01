@@ -204,18 +204,26 @@
                     <label for="volume_status">Статус релиза</label>
                     <select class="form-control" id="volume_status" name="volume_status">
 						<option value="1">Скрыт</option>
-						<option value="3">Заброшенный сторонний перевод</option>
-						<option value="4">Активный сторонний перевод</option>
-						<option value="5">Завершенный сторонний перевод</option>
-						<option value="6">Отсутствует анлейт</option>
-						<option value="7">Заморожен</option>
-						<option value="8">Приостановлен</option>
-						<option value="9">Очередь перевода</option>
-						<option value="10">Перевод в онгоинге</option>
-						<option value="11">Перевод</option>
-						<option value="12">Редактура</option>
-						<option value="13">Не оформлен</option>
-						<option value="14">Завершен</option>
+						<optgroup label="Сторонний перевод">
+							<option value="3">Заброшенный сторонний перевод</option>
+							<option value="4">Активный сторонний перевод</option>
+							<option value="5">Завершенный сторонний перевод</option>
+						</optgroup>
+						<optgroup label="Не в работе">
+							<option value="6">Отсутствует анлейт</option>
+							<option value="7">Заморожен</option>
+							<option value="8">Приостановлен</option>
+							<option value="9">Очередь перевода</option>
+						</optgroup>
+						<optgroup label="В работе">
+							<option value="10">Перевод в онгоинге</option>
+							<option value="11">Перевод</option>
+							<option value="12">Редактура</option>
+						</optgroup>
+						<optgroup label="Опубликован">
+							<option value="13">Не оформлен</option>
+							<option value="14">Завершен</option>
+						</optgroup>
 					</select>
                 </div>
 				<div class="form-group">
@@ -239,7 +247,6 @@
 				<div class="row">
 					<div class="col-xs-4">
 						<div class="list-group select sortable" id="participantselect">
-							<a class="list-group-item heading" data-chapter-id="-1"><span class="move">Команда</span></a>
 							<a data-toggle="collapse" data-parent="#participantform" href="#participant1" aria-expanded="true" aria-controls="participant1" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
 								<span class="hidden-sm hidden-xs"  id="participant1_name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="participant1_role">Перевод с английского</span>
@@ -418,9 +425,7 @@
 										<label for="chapter1_url">Ссылка</label>
 										<input class="form-control url-input" type="text" id="chapter1_url_input">
 										<label for="chapter1_name">Заголовок</label>
-										<div id="chapter1_names_selector">
-											<input class="form-control name-input" type="text" id="chapter1_name_input" value="Начальные иллюстрации">
-										</div>
+										<input class="form-control name-input" type="text" id="chapter1_name_input" value="Начальные иллюстрации">
 									</div>
 								</div>
 							</div>
@@ -442,9 +447,7 @@
 										<label for="chapter2_url">Ссылка</label>
 										<input class="form-control url-input" type="text" id="chapter2_url_input">
 										<label for="chapter2_name">Заголовок</label>
-										<div id="chapter2_names_selector">
-											<input class="form-control name-input" type="text" id="chapter2_name_input" value="Пролог">
-										</div>
+										<input class="form-control name-input" type="text" id="chapter2_name_input" value="Пролог">
 									</div>
 								</div>
 							</div>
@@ -466,9 +469,7 @@
 										<label for="chapter3_url">Ссылка</label>
 										<input class="form-control url-input" type="text" id="chapter3_url_input">
 										<label for="chapter3_name">Заголовок</label>
-										<div id="chapter3_names_selector">
-											<input class="form-control name-input" type="text" id="chapter3_name_input" value="Глава 1">
-										</div>
+										<input class="form-control name-input" type="text" id="chapter3_name_input" value="Глава 1">
 									</div>
 								</div>
 							</div>
@@ -490,9 +491,7 @@
 										<label for="chapter4_url">Ссылка</label>
 										<input class="form-control url-input" type="text" id="chapter4_url_input">
 										<label for="chapter4_name">Заголовок</label>
-										<div id="chapter4_names_selector">
-											<input class="form-control name-input" type="text" id="chapter4_name_input" value="Глава 2">
-										</div>
+										<input class="form-control name-input" type="text" id="chapter4_name_input" value="Глава 2">
 									</div>
 								</div>
 							</div>
@@ -516,11 +515,11 @@
 							</a>
 							<a data-toggle="collapse" data-parent="#updateform" href="#update3" aria-expanded="true" aria-controls="update3" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="update3_name">2074-12-13</span>: <span class="hidden-sm hidden-xs"  id="update3_chapter">Пролог (2)</span>
+								<span class="hidden-sm hidden-xs"  id="update3_date">2074-12-13</span>: <span class="hidden-sm hidden-xs"  id="update3_chapter">Пролог (2)</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#updateform" href="#update4" aria-expanded="true" aria-controls="update4" class="list-group-item" >
 								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="update4_name">2015-05-01</span>: <span class="hidden-sm hidden-xs"  id="update4_chapter">Глава 1 (3)</span>
+								<span class="hidden-sm hidden-xs"  id="update4_date">2015-05-01</span>: <span class="hidden-sm hidden-xs"  id="update4_chapter">Глава 1 (3)</span>
 							</a>
 						</div>
 					</div>
@@ -579,7 +578,7 @@
 										<select id="update2_chapter_select" class="form-control update_chapter">
 										</select>
 										<label for="update2_date_input">Дата</label>
-										<input class="form-control date-input" type="text" id="update2_date_input" value="2015-05-01">
+										<input class="form-control date-input" type="text" id="update2_date_input" value="2013-01-01">
 										<label for="update2_name">Описание (опционально)</label>
 										<input class="form-control" type="text" id="update2_description" placeholder="Перевод">
 									</div>
@@ -605,7 +604,7 @@
 										<select id="update3_chapter_select" class="form-control update_chapter">
 										</select>
 										<label for="update3_date_input">Дата</label>
-										<input class="form-control date-input" type="text" id="update3_date_input" value="2015-05-01">
+										<input class="form-control date-input" type="text" id="update3_date_input" value="2074-12-13">
 										<label for="update3_name">Описание (опционально)</label>
 										<input class="form-control" type="text" id="update3_description" placeholder="Перевод">
 									</div>
@@ -854,11 +853,9 @@
 	$('#participantselect').on( "sortupdate", function() { // для списка участников перевода задаем обработчик перетягивания
 		var p_order = 0; // поставим для каждого участника порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
-			if(!$(this).is('.heading[data-chapter-id]')){ // если это не heading
-				$($(this).attr('href')+'_order').val(++p_order); // обновляем порядок
+			$($(this).attr('href')+'_order').val(++p_order); // обновляем порядок
 				//console.log($(this).attr('href')); // на всякий случай пока оставлю
 				//console.log(p_order);
-			}
 		});
 	});
 	
@@ -946,7 +943,7 @@
 	});
 	// ---------- typeahead end --------------
 	
-	$('#participantform').on('keyup', '.name-input', function(){
+	$('#participantform').on('change', '.name-input', function(){
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.participant-data.in').attr('id'); // получаем id участника
 		$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
@@ -989,6 +986,14 @@
 	
 	$('#btn-chapter-add').click(function(){ // обработка кнопки добавления новой главы
 		j++;
+		$('#chapterform').children('.panel').children().children('div').children('div.form-group').children('.name-input').each(function(){
+			var str = $(this).val();
+			var number = str.substring(7);
+			str = str.substring(0,5); // вычленяем первые 5 букв
+			if (str == "Глава") k++; // если они совпадают с "главой", то увеличиваем счетчик (нужно для динамики названий)
+			
+			console.log($(this).val());
+		});
 		k++;
 		var newChapter = '<a data-toggle="collapse" data-parent="#chapterform" href="#chapter' + j + '" aria-expanded="true" aria-controls="chapter' + j + '" class="list-group-item" >'+
 		'<i class="fa fa-ellipsis-v move"></i>'+
@@ -1011,9 +1016,7 @@
 		'<label for="chapter' + j + '_url">Ссылка</label>'+
 		'<input class="form-control url-input" type="text" id="chapter' + j + '_url_input">'+
 		'<label for="chapter' + j + '_name">Заголовок</label>'+
-		'<div id="chapter3_names_selector">'+
-		'<input class="form-control name-input" type="text" id="chapter' + j + '_name_input" value="Глава ' + k + '">'
-		'</div>'+
+		'<input class="form-control name-input" type="text" id="chapter' + j + '_name_input" value="Глава ' + k + '">'+
 		'</div>'+
 		'</div>'+
 		'</div>'+
@@ -1026,9 +1029,9 @@
 	
 	$('#chapterform').children('.panel').each(function(){
 		j++; // считаем кажую панель (читай кажый объект) 
-		var str = $('#chapter' + j + '_name_input').val(); // берем название каждой главы
-		str = str.substring(0,5); // вычленяем первые 5 букв
-		if (str == "Глава") k++; // если они совпадают с "главой", то увеличиваем счетчик (нужно для динамики названий)
+		//var str = $('#chapter' + j + '_name_input').val(); // берем название каждой главы
+		//str = str.substring(0,5); // вычленяем первые 5 букв
+		//if (str == "Глава") k++; // если они совпадают с "главой", то увеличиваем счетчик (нужно для динамики названий)
 	});
 	
 	$('#chapterform').on('keyup', '.name-input', function(){
@@ -1049,12 +1052,14 @@
 	
 	$('#btn-chapter-delete').on('click',function(){ // обработка кнопки удаления для глав
 		var id = $('.chapter-data.in').attr('id');
-		$('.chapter-data.in').collapse('hide');
-		$('#'+id+'_detele').val(true);
-		$('#chapterselect [href="#'+id+'"]').detach();
 		var str = $('#' + id + '_name_input').val(); // берем название каждой главы
 		str = str.substring(0,5); // вычленяем первые 5 букв
 		if (str == "Глава") k--; // если они совпадают с "главой", то уменьшаем счетчик
+		$('.chapter-data.in').collapse('hide');
+		$('#'+id+'_detele').val(true);
+		$('#chapterselect [href="#'+id+'"]').detach();
+		id = id.substring(7);
+		$('.heading[data-chapter-id="'+id+'"]').detach();
 	});
 	
 	/* ------------------------------------------ CHAPTERS END ------------------------------------------ */
@@ -1082,7 +1087,8 @@
 	
 	$('#btn-update-add').click(function(){ // обработка кнопки добавления нового обновления
 		v++;
-		var today = new Date();
+		var nowDate = new Date();
+		var today = nowDate.getFullYear() + '-' + nowDate.getDay() + '-' + nowDate.getDate();
 		var newUpdate = '<a data-toggle="collapse" data-parent="#updateform" href="#update' + v + '" aria-expanded="true" aria-controls="update' + v + '" class="list-group-item" >'+
 		'<i class="fa fa-ellipsis-v move"></i>'+
 		'<span class="hidden-sm hidden-xs"  id="update' + v + '_date">' + today + '</span>:'+
