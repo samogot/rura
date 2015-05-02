@@ -177,11 +177,15 @@
                 </div>
 				<div class="form-group">
                     <label for="author">Автор</label>
-                    <input type="text" class="form-control" id="author" name="author">
+					<div id="author-name-typeahead">
+						<input class="form-control typeahead author-name" type="text" id="author" name="author">
+					</div>
                 </div>
 				<div class="form-group">
                     <label for="illustrator">Иллюстратор</label>
-                    <input type="text" class="form-control" id="illustrator" name="illustrator">
+					<div id="illustrator-name-typeahead">
+						<input class="form-control typeahead illustrator-name" type="text" id="illustrator" name="illustrator">
+					</div>
                 </div>
 				<div class="form-group">
                     <label for="release_date ">Дата публикации</label>
@@ -240,6 +244,7 @@
 						&emsp;18+ (Непотребное содержание)
 					</label>
                 </div>
+				<div id="datepicker"></div>
 				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 				</form>
                 <h2>Этапы/Стаф</h2>
@@ -848,6 +853,8 @@
 		});
 	});
 	
+	$( "#datepicker" ).datepicker();
+	
 	/* ------------------------------------------ PARTISIPANTS START ------------------------------------------ */
 	
 	$('#participantselect').on( "sortupdate", function() { // для списка участников перевода задаем обработчик перетягивания
@@ -928,6 +935,12 @@
 	var names = ['Ushwood', 'Danholm', 'Lady Astrel', 'Test'
 	];
 	
+	var authors = ['Oda Shiichiro', 'Sorachi Hideyaki', 'Lev Tolstoi', 'Test'
+	];
+	
+	var illustrators = ['Andrew Rublev', 'Someone Someoneson', 'Hitomi Akira', 'Test'
+	];
+	
 	$('#participantform').children('.panel').each(function(){
 		i++;
 		$('#participant' + i + '_names_selector .typeahead').typeahead({  // обработчик имен
@@ -940,6 +953,28 @@
 			name: 'participant_names',
 			source: substringMatcher(names)
 		});
+	});
+	
+	$('#author-name-typeahead .typeahead').typeahead({  // обработчик имен
+		hint: true,
+		limit: 10,
+		highlight: true,
+		minLength: 1
+	},
+	{
+		name: 'author_names',
+		source: substringMatcher(authors)
+	});
+		
+	$('#illustrator-name-typeahead .typeahead').typeahead({  // обработчик имен
+		hint: true,
+		limit: 10,
+		highlight: true,
+		minLength: 1
+	},
+	{
+		name: 'illustrator_names',
+		source: substringMatcher(illustrators)
 	});
 	// ---------- typeahead end --------------
 	
@@ -1065,7 +1100,6 @@
 	/* ------------------------------------------ CHAPTERS END ------------------------------------------ */
 	
 	/* ------------------------------------------ UPDATES START ----------------------------------------- */
-	//update1_typeupdate1_description
 	
 	$('#updateselect').on( "sortupdate", function() { // для списка обновлений задаем обработчик перетягивания
 		var ch_order = 0; // поставим для каждого обновления порядковый номер
@@ -1120,8 +1154,8 @@
 		'</div>'+
 		'</div>'+
 		'</div>';
-		$('#updateselect').append(newUpdate);
-		$('#updateform').append(newPanel);
+		$('#updateselect').prepend(newUpdate);
+		$('#updateform').prepend(newPanel);
 		$('#update' + v + '_chapter_select').append(OptionsForSelect);
 	});
 	
