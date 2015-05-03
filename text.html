@@ -2802,7 +2802,7 @@
             </div>
             <div class="module">
                 <div class="module_name opened">
-                  <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
+                  <i class="fa fa-chevron-down pull-left"></i>
                   <div class="h4">Скачать том</div>
                 </div>
                 <div class="actions">
@@ -2818,7 +2818,7 @@
             </div>
             <div class="module">
                 <div class="module_name opened">
-                    <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
+                    <i class="fa fa-chevron-down pull-left"></i>
                     <div class="h4">Обновления серии</div>
                 </div>
                 <div class="actions">
@@ -2830,12 +2830,11 @@
             </div>
             <div class="module">
                 <div class="module_name opened">
-                    <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
+                    <i class="fa fa-chevron-down pull-left"></i>
                     <div class="h4">Проекты</div>
                 </div>
-                <div class="actions">
-                <center class="project">
-                    <p><a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" height="73" width="220"></a>
+                <div class="actions banners">
+                    <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" height="73" width="220"></a>
                     <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" height="73" width="220"></a>
                     <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" height="73" width="220"></a>
                     <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220"></a>
@@ -2863,26 +2862,21 @@
                     <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220"></a>
                     <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220"></a>
                     <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220"></a><a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220"></a>
-                    </p>
-                </center>
                 </div>
             </div>
             <div class="module">
                 <div class="module_name opened">
-                    <i class="fa fa-chevron-down pull-left" style="margin-top: 2px;"></i>
+                    <i class="fa fa-chevron-down pull-left"></i>
                     <div class="h4">Друзья</div>
                 </div>
-                <div class="actions">
-                <center class="project">
-                    <p>
+                <div class="actions banners">
                     <a href="#"><img src="img/friend.png"></a>
-                    </p>
-                </center>
                 </div>
             </div>
             <div class="module content-module scrollspy">
               <div data-spy="affix">
                 <div class="module_name opened">
+                    <i class="fa fa-chevron-down pull-left"></i>
                     <div class="h4">Содержание</div>
                 </div>
                 <div class="actions">
@@ -3012,14 +3006,13 @@ $('div.mistake .cancel').click(function() {
 $('.module_name').click(function() {
     $(this).children('.fa').toggleClass("fa-chevron-right fa-chevron-down");
     if ($(this).hasClass("opened")) {
-        $(this).parent().children('.actions').slideUp();
+        $(this).parent().children('.actions').slideUp(reinitAffix);
         $(this).removeClass("opened");
     }
     else {
-        $(this).parent().children('.actions').slideDown();
+        $(this).parent().children('.actions').slideDown(reinitAffix);
         $(this).addClass("opened");
     }
-    reinitAffix();
 });
 $('.btn').hover(
 function() {

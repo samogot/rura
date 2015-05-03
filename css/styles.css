@@ -1995,3 +1995,15 @@ body.night center.project {
     opacity: 0.5;
 }
 
+
+
+.actions.banners a {
+    display: inline-block;
+    margin: 2px 0;
+}
+
+.module_name i.fa.pull-left {
+    margin-top: 2px;
+    width: 14px;
+    text-align: center;
+}
