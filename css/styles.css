@@ -45,7 +45,7 @@ header {
     background: url(../img/logo1.png);
     width: 251px;
     height: 65px;
-    margin-top: 17.5px;
+    margin-top: 18px;
     float: left;
 }
 
@@ -132,15 +132,13 @@ input[type="text"] {
 .btn-primary.disabled,
 .btn-primary:disabled,
 .btn-primary[disabled] {
-    background-color: #358ec2;
-    background-image: none;
+    background: #358ec2 none;
 }
 
 .navbar-top {
     background-color: #60A9D4;
-    border-color: #60A9D4;
-    margin-bottom: 0px;
-    border: none;
+    margin-bottom: 0;
+    border: none #60A9D4;
     /* border-radius: 0; */
 }
 
@@ -202,7 +200,7 @@ input[type="text"] {
 @media (max-width: 991px) {
     .navbar-brand {
         height: 75px;
-        padding: 7.5px 15px;
+        padding: 8px 15px;
     }
 
     .navbar-brand > img {
@@ -235,9 +233,8 @@ input[type="text"] {
     }
 
     .right-sidebar {
-        margin: auto;
         width: 220px;
-        margin-top: 15px;
+        margin: 15px auto auto;
     }
 }
 
@@ -249,7 +246,7 @@ input[type="text"] {
 
     .navbar-lower .navbar-nav > li > a {
         padding: 0 0 2px;
-        margin: 12.5px 10px 0;
+        margin: 13px 10px 0;
     }
 
     .navbar-lower .navbar-nav > li:hover > a, .navbar-lower .navbar-nav > li.active > a {
@@ -407,8 +404,7 @@ footer {
     min-height: 100px;
     background: rgb(242, 242, 242);
     text-align: center;
-    margin: auto;
-    margin-bottom: 10px;
+    margin: 0 auto 10px;
     padding: 43px;
     width: 100%;
 }
@@ -455,7 +451,7 @@ footer {
 }
 
 .project a {
-    margin: 1.5px;
+    margin: 2px;
     display: inline-block;
 }
 
@@ -479,7 +475,7 @@ footer {
     height: 35px;
     color: #FFF;
     font-weight: bold;
-    padding: 7.5px 20px;
+    padding: 8px 20px;
     position: relative;
     margin-top: -35px;
     text-align: center;
@@ -576,7 +572,7 @@ footer {
 .updTitle {
     width: 42em;
     height: 40px;
-    background: none repeat scroll 0% 0% #D9EEFA;
+    background: none repeat scroll 0 0 #D9EEFA;
     float: left;
     font-weight: bold;
     white-space: nowrap;
@@ -630,7 +626,7 @@ footer {
 .loginBlock > div {
     height: 320px;
     width: 270px;
-    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    background: none repeat scroll 0 0 rgb(255, 255, 255);
     opacity: 1;
     margin: 15em auto auto;
     border-radius: 10px;
@@ -640,14 +636,13 @@ footer {
     width: 100%;
     height: 235px;
     background: rgb(69, 169, 212);
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 8px 8px 0 0;
 }
 
 .loginInput, .passwordInput {
     width: 230px;
     height: 40px;
-    margin: auto;
-    margin-bottom: 10px;
+    margin: auto auto 10px;
     color: rgb(124, 124, 124)
 }
 
@@ -711,14 +706,14 @@ button.enter {
 button.loginClose {
     width: 20px;
     height: 20px;
-    background: none repeat scroll 0% 0% #FFF;
+    background: none repeat scroll 0 0 #FFF;
     position: absolute;
     border-radius: 5px;
-    border: 0px none;
+    border: 0 none;
     margin-left: 275px;
     color: #4BA7E3;
     padding-left: 5.3pt !important;
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 .loginFooter {
@@ -727,9 +722,8 @@ button.loginClose {
 
 .loginFooter > div {
     text-align: center;
-    margin: auto;
     color: rgb(107, 107, 107);
-    margin-top: 22px;
+    margin: 22px auto auto;
 }
 
 .loginFooter > div > a {
@@ -746,7 +740,7 @@ button.loginClose {
 }*/
 /* --------------- login ------------*/
 .enterError {
-    background: none repeat scroll 0% 0% #F2F2F2;
+    background: none repeat scroll 0 0 #F2F2F2;
     color: #D76170;
     height: 60px;
     font-size: 13px;
@@ -790,12 +784,12 @@ button.loginClose {
 
 .updPaginator {
     padding-top: 5px;
-    font-size: 12.5px;
+    font-size: 13px;
     padding-bottom: 10px;
 }
 
 .updSearch > a {
-    padding: 5px 10px 5px 37.5px;
+    padding: 5px 10px 5px 38px;
     color: rgb(93, 93, 93);
     text-decoration: none !important;
 }
@@ -809,43 +803,43 @@ button.loginClose {
 }
 
 .updSearch > .first.active {
-    background: rgb(96, 169, 212) url(../img/updIcons/all_active.png) no-repeat 10.5px !important;
+    background: rgb(96, 169, 212) url(../img/updIcons/all_active.png) no-repeat 11px !important;
 }
 
 .updSearch > .second.active {
-    background: rgb(96, 169, 212) url(../img/updIcons/icon2_active.png) no-repeat 10.5px !important;
+    background: rgb(96, 169, 212) url(../img/updIcons/icon2_active.png) no-repeat 11px !important;
 }
 
 .updSearch > .third.active {
-    background: rgb(96, 169, 212) url(../img/updIcons/icon3_active.png) no-repeat 10.5px !important;
+    background: rgb(96, 169, 212) url(../img/updIcons/icon3_active.png) no-repeat 11px !important;
 }
 
 .updSearch > .fourth.active {
-    background: rgb(96, 169, 212) url(../img/updIcons/icon1_active.png) no-repeat 10.5px !important;
+    background: rgb(96, 169, 212) url(../img/updIcons/icon1_active.png) no-repeat 11px !important;
 }
 
 .updSearch > .fifth.active {
-    background: rgb(96, 169, 212) url(../img/updIcons/icon4_active.png) no-repeat 10.5px !important;
+    background: rgb(96, 169, 212) url(../img/updIcons/icon4_active.png) no-repeat 11px !important;
 }
 
 .updSearch > .first {
-    background: rgb(242, 242, 242) url(../img/updIcons/all.png) no-repeat 10.5px;
+    background: rgb(242, 242, 242) url(../img/updIcons/all.png) no-repeat 11px;
 }
 
 .updSearch > .second {
-    background: rgb(242, 242, 242) url(../img/updIcons/icon2.png) no-repeat 10.5px;
+    background: rgb(242, 242, 242) url(../img/updIcons/icon2.png) no-repeat 11px;
 }
 
 .updSearch > .third {
-    background: rgb(242, 242, 242) url(../img/updIcons/icon3.png) no-repeat 10.5px;
+    background: rgb(242, 242, 242) url(../img/updIcons/icon3.png) no-repeat 11px;
 }
 
 .updSearch > .fourth {
-    background: rgb(242, 242, 242) url(../img/updIcons/icon1.png) no-repeat 10.5px;
+    background: rgb(242, 242, 242) url(../img/updIcons/icon1.png) no-repeat 11px;
 }
 
 .updSearch > .fifth {
-    background: rgb(242, 242, 242) url(../img/updIcons/icon4.png) no-repeat 10.5px;
+    background: rgb(242, 242, 242) url(../img/updIcons/icon4.png) no-repeat 11px;
 }
 
 .disabled {
@@ -977,7 +971,7 @@ a.list-group-item center {
 .dragover #imageselect::before {
     content: 'Добавить файлы';
     position: absolute;
-    top: 0px;
+    top: 0;
     bottom: 20px;
     left: 15px;
     right: 15px;
@@ -1104,7 +1098,7 @@ center.project {
 }
 
 textarea[class="form-control"] {
-    margin: 0px;
+    margin: 0;
     max-height: 85px;
     min-height: 85px;
     font-size: 16px !important;
@@ -1265,9 +1259,8 @@ a.more {
 
 .ranobeList > div {
     width: 100%;
-    padding: 5px;
     border-bottom: 1px solid rgb(231, 231, 231);
-    padding-top: 10px;
+    padding: 10px 5px 5px;
     /*
         white-space: nowrap;
         overflow: hidden;
@@ -1288,7 +1281,7 @@ main > .ranobeList > div > a:hover {
 }
 
 .h3.project {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-top: 35px;
 }
 
@@ -1301,16 +1294,14 @@ main > .ranobeList > div > a:hover {
 
 button.view1 {
     border: 0;
-    background: rgb(242, 242, 242) no-repeat 50%;
-    background-image: url(../img/view1.png);
+    background: rgb(242, 242, 242) url(../img/view1.png) no-repeat 50% 50%;
     width: 35px;
     height: 30px;
 }
 
 button.view2 {
     border: 0;
-    background: rgb(242, 242, 242) no-repeat 50%;
-    background-image: url(../img/view2.png);
+    background: rgb(242, 242, 242) url(../img/view2.png) no-repeat 50% 50%;
     width: 35px;
     height: 30px;
     margin-left: -4px;
@@ -1326,7 +1317,7 @@ div > button.view2.active {
 
 .viewType1 {
     max-width: 214px;
-    margin: 10px 10px 10px 0px;
+    margin: 10px 10px 10px 0;
     line-height: 20px;
     float: left;
 }
@@ -1371,7 +1362,7 @@ div > button.view2.active {
 }
 
 .viewType2 {
-    margin: 10px 0px;
+    margin: 10px 0;
     border-bottom: 1px solid rgb(242, 242, 242);
 }
 
@@ -1430,7 +1421,7 @@ div > button.view2.active {
 }
 
 #participantform .panel {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     border: medium none;
     box-shadow: none;
 }
@@ -1438,7 +1429,7 @@ div > button.view2.active {
 /* ------------------------------ chapters --------------------------- */
 
 #chapterform .panel {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     border: medium none;
     box-shadow: none;
 }
@@ -1450,7 +1441,7 @@ div > button.view2.active {
 /* ------------------------------ updates ---------------------------- */
 
 #updateform .panel {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     border: medium none;
     box-shadow: none;
 }
@@ -1462,12 +1453,12 @@ div > button.view2.active {
 /* ------------------------------ styles for typeahead --------------------------- */
 .tt-menu {
     width: 422px;
-    margin: 12px 0px;
-    padding: 8px 0px;
+    margin: 12px 0;
+    padding: 8px 0;
     background-color: #FFF;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .tt-menu, .gist {
@@ -1502,17 +1493,17 @@ div > button.view2.active {
 
 .ui-datepicker {
     width: 17em;
-    padding: 0.2em 0.2em 0px;
+    padding: 0.2em 0.2em 0;
     display: none;
 }
 
 .ui-datepicker .ui-datepicker-header {
     position: relative;
-    padding: 0.2em 0px;
+    padding: 0.2em 0;
 }
 
 .ui-datepicker .ui-datepicker-title {
-    margin: 0px 2.3em;
+    margin: 0 2.3em;
     line-height: 1.8em;
     text-align: center;
 }
@@ -1534,7 +1525,7 @@ div > button.view2.active {
     padding: 0.7em 0.3em 0.85em 0.85em;
     text-align: center;
     font-weight: bold;
-    border: 0px none;
+    border: 0 none;
 }
 
 .ui-datepicker td span, .ui-datepicker td a {
@@ -1545,7 +1536,7 @@ div > button.view2.active {
 }
 
 .ui-datepicker td {
-    border: 0px none;
+    border: 0 none;
     padding: 1px;
 }
 
@@ -1605,13 +1596,11 @@ div > button.view2.active {
 }
 
 .ui-icon-circle-triangle-e {
-    background-position: -48px -192px;
-    background-image: url("../img/ui-icon-right.png");
+    background: url("../img/ui-icon-right.png") -48px -192px;
 }
 
 .ui-icon-circle-triangle-w {
-    background-position: -80px -192px;
-    background-image: url("../img/ui-icon-left.png");
+    background: url("../img/ui-icon-left.png") -80px -192px;
 }
 
 .ui-icon {
@@ -1776,11 +1765,11 @@ div > button.view2.active {
 }
 
 .controlText button.options .hint .georgia {
-    font-family: "Georgia";
+    font-family: "Georgia", serif;
 }
 
 .controlText button.options .hint .helvetica {
-    font-family: "Helvetica";
+    font-family: "Helvetica", sans-serif;
 }
 
 .controlText button.options .hint .pagecolors > div div {
@@ -1795,7 +1784,7 @@ div > button.view2.active {
 
 .controlText button.options .hint .pagecolors > div {
     height: 36px;
-    border: 0px;
+    border: 0;
 }
 
 .controlText button.options .hint .pagecolor {
@@ -1848,7 +1837,7 @@ div > button.view2.active {
     content: '';
     width: 1em;
     height: 1em;
-    left: 0em;
+    left: 0;
     border-radius: 50%;
     transition: 250ms ease-in-out;
     background: #92D1FD;
@@ -1860,7 +1849,7 @@ div > button.view2.active {
     content: '';
     width: 115px;
     height: 0.5em;
-    left: 0em;
+    left: 0;
     border-radius: 0.75em;
     transition: 250ms ease-in-out;
     background: #d0d0d0;
@@ -2028,9 +2017,7 @@ ul.ContentNav {
 .ContentNav > li > a {
     padding: 5px 10px;
     color: black;
-    border-left-style: solid;
-    border-left-color: rgb(96, 169, 212);
-    border-left-width: 0;
+    border-left: 0 solid rgb(96, 169, 212);
 }
 
 .ContentNav li a:hover,
@@ -2136,7 +2123,7 @@ ul.ContentNav {
     }
 
     .content-module ul {
-        padding-left: 0px;
+        padding-left: 0;
     }
 
     .module_name {
@@ -2360,7 +2347,6 @@ body.night .ContentNav > li > a {
 @media (min-width: 768px) {
     nav .container {
         overflow: hidden;
-        */
     }
 }
 
