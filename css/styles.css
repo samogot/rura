@@ -1147,6 +1147,16 @@ div > button.view2.active {
     color: rgb(133,133,133);
 }
 
+.input-group-addon{ 
+    background-color: #F1F1F1;
+    border: medium none;
+    margin-bottom: 1px;
+}
+
+.input-group-addon:hover{
+    background-color: #E2E2E2;
+}
+
 /* --------------------------------participants---------------------------- */
 #participantselect{
 	min-height: 252px;
@@ -1236,6 +1246,11 @@ width: 100%;
 }
 
 .ui-datepicker {
+    margin: 12px 0px;
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     width: 17em;
     padding: 0.2em 0.2em 0px;
     display: none;

@@ -533,7 +533,7 @@
 						  <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i></button>
 						  <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-update-delete" disabled><i class="fa fa-trash-o"></i></button>
 						</div>
-						<div class="progress collapse update-insert">
+						<div class="progress collapse">
 							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
 								<span class="sr-only">0% Complete</span>
 							</div>
@@ -635,14 +635,7 @@
 										<select id="update4_chapter_select" class="form-control update_chapter">
 										</select>
 										<label for="update4_date_input">Дата</label>
-										<form class="form-inline">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <input type="text" class="form-control date-input" id="update4_date_input" value="2015-5-1">
-                                                                                            <div class="input-group-addon glyphicon glyphicon-calendar calendar"></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
+										<input class="form-control date-input" type="text" id="update4_date_input" value="2015-05-01">
 										<label for="update4_name">Описание (опционально)</label>
 										<input class="form-control" type="text" id="update4_description" placeholder="Перевод">
 									</div>
@@ -860,11 +853,7 @@
 		});
 	});
 	
-	//$( "#datepicker" ).datepicker();
-        //$(".date-input").datepicker({dateFormat:"yy-mm-dd"});
-	$( '#updateform' ).on('click', '.date-input', function(){
-            $(this).datepicker({dateFormat: "yy-mm-dd"}); 
-	});
+	$( "#datepicker" ).datepicker();
 	
 	/* ------------------------------------------ PARTISIPANTS START ------------------------------------------ */
 	
@@ -1018,8 +1007,6 @@
 	
 	/* ------------------------------------------ CHAPTERS START ------------------------------------------ */
 	
-	var OptionsForSelect = '<option>Весь том</option>';
-	
 	$('#chapterselect').on( "sortupdate", function() { // для списка глав задаем обработчик перетягивания
 		var ch_order = 0; // поставим для каждой главы порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
@@ -1034,17 +1021,14 @@
 	
 	$('#btn-chapter-add').click(function(){ // обработка кнопки добавления новой главы
 		j++;
-		var number = 0;
-		$('#chapterselect').children().each(function(){
-			var str = $(this).children('span').text();
-			var str2 = str.substring(0,5); // вычленяем первые 5 букв
-			if (str2 == "Глава") { // если они совпадают с "главой", то увеличиваем счетчик (нужно для динамики названий)
-                            number = str.substring(6);
-			}
-			console.log($(this).children('span').text());
-			console.log(number);
+		$('#chapterform').children('.panel').children().children('div').children('div.form-group').children('.name-input').each(function(){
+			var str = $(this).val();
+			var number = str.substring(7);
+			str = str.substring(0,5); // вычленяем первые 5 букв
+			if (str == "Глава") k++; // если они совпадают с "главой", то увеличиваем счетчик (нужно для динамики названий)
+			
+			console.log($(this).val());
 		});
-		k = number*1;
 		k++;
 		var newChapter = '<a data-toggle="collapse" data-parent="#chapterform" href="#chapter' + j + '" aria-expanded="true" aria-controls="chapter' + j + '" class="list-group-item" >'+
 		'<i class="fa fa-ellipsis-v move"></i>'+
@@ -1076,7 +1060,6 @@
 		$('#chapterselect').append(newChapter);
 		$('#chapterform').append(newPanel);
 		$('#imageselect').append(newChapterHeading);
-                OptionsForSelect = OptionsForSelect + '<option id="select_chapter' + j + '">Глава ' + k + ' (' + j + ')</option>';
 	});
 	
 	$('#chapterform').children('.panel').each(function(){
@@ -1092,8 +1075,6 @@
 		$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 		id = id.substring(7);
 		$('.heading[data-chapter-id="'+id+'"]').children().html(elem.val());
-		$('#select_chapter' + id).html(elem.val());
-		console.log($('#select_chapter' + id));
 	});
 	
 	
@@ -1106,6 +1087,9 @@
 	
 	$('#btn-chapter-delete').on('click',function(){ // обработка кнопки удаления для глав
 		var id = $('.chapter-data.in').attr('id');
+		var str = $('#' + id + '_name_input').val(); // берем название каждой главы
+		str = str.substring(0,5); // вычленяем первые 5 букв
+		if (str == "Глава") k--; // если они совпадают с "главой", то уменьшаем счетчик
 		$('.chapter-data.in').collapse('hide');
 		$('#'+id+'_detele').val(true);
 		$('#chapterselect [href="#'+id+'"]').detach();
@@ -1128,10 +1112,11 @@
 	
 	var v=0; // id каждого элемента в пункте "Обновления"
 	var u=0; 
+	var OptionsForSelect = '<option>Весь том</option>';
 	
 	$('#chapterselect').children('a').each(function(){
 		u++;
-		OptionsForSelect = OptionsForSelect + '<option id="select_chapter' + u + '">' + $(this).children('span').text() + ' (' + u + ')</option>';
+		OptionsForSelect = OptionsForSelect + '<option>' + $(this).children('span').text() + ' (' + u + ')</option>';
 	});
 	
 	$('#btn-update-add').click(function(){ // обработка кнопки добавления нового обновления
@@ -1170,9 +1155,8 @@
 		'</div>'+
 		'</div>';
 		$('#updateselect').prepend(newUpdate);
-		$('.update-insert').after(newPanel);
+		$('#updateform').prepend(newPanel);
 		$('#update' + v + '_chapter_select').append(OptionsForSelect);
-		$('#update' + v + '_date_input').datepicker({dateFormat: "yy-mm-dd"});
 	});
 	
 	$('#updateform').children('.panel').each(function(){
