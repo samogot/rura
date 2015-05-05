@@ -1329,8 +1329,8 @@ width: 100%;
 }
 
 .ui-datepicker .ui-datepicker-next {
-    right: 2px; 
-	
+    right: 2px;
+
 }
 
 .ui-icon-circle-triangle-e {
@@ -1575,8 +1575,86 @@ width: 100%;
 .daynight input:checked + .slider::after {
   left: 105px;
 }
+.slideOne {
+  width: 50px;
+  height: 10px;
+  background: #333;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+.slideOne label {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  cursor: pointer;
+  background: #fcfff4;
+  background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  border-radius: 50px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+}
+.slideOne input[type=checkbox] {
+  visibility: hidden;
+}
+.slideOne input[type=checkbox]:checked + label {
+  left: 37px;
+}
 
-
+/*
+.onoffswitch {
+    position: relative; width: 200px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid ; border-radius: 50px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 15px; padding: 0; line-height: 15px;
+    font-size: 11px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "День";
+    padding-left: 10px;
+    background-color: #D0D0D0; color: #000000;
+}
+.onoffswitch-inner:after {
+    content: "Ночь";
+    padding-right: 10px;
+    background-color: #D0D0D0; color: #000000;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 30px; margin: -7.5px;
+    background: #92D1FD;
+    border: 2px solid ; border-radius: 50px;
+    position: absolute; top: 0; bottom: 0; right: 181px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+*/
 input[type=range] {
     /*removes default webkit styles*/
     -webkit-appearance: none;
@@ -1940,28 +2018,28 @@ body.night .leftbg, body.night .rightbg {
         border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#000000%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#60A9D4%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
     }
 }
-.leftColumn.red{
+body.red .leftColumn{
     color: #000;
 }
 body.night .right-sidebar{
     color: #000;
 }
-body.night .leftColumn.red{
+body.night.red  .leftColumn{
     color: #fff;
 }
 body.night .ContentNav > li > a{
     color: #fff;
 }
-.leftColumn.red .leftbg, .leftColumn.red .rightbg{
+body.red .leftbg, body.red .rightbg{
     background: #CF4256;
 }
-.leftColumn.blue .leftbg, .leftColumn.blue .rightbg{
+body.blue .leftbg, body.blue .rightbg{
     background: #3793C8;
 }
-.leftColumn.black .leftbg, .leftColumn.black .rightbg{
+body.black .leftbg, body.black .rightbg{
     background: #000000;
 }
-.leftColumn.white .leftbg, .leftColumn.white .rightbg{
+body.white .leftbg, body.white .rightbg{
     background: #FFFFFF;
 }
 

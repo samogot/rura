@@ -6,15 +6,17 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap-switch.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!--<link rel="stylesheet" href="css/bootstrap-slider.css">-->
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
     <!--<script src="js/bootstrap-slider.js"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
-<body data-spy="scroll" data-target=".scrollspy">
+<body data-spy="scroll" data-target=".scrollspy" data-color="">
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -102,7 +104,7 @@
   </div>
 </nav>
 <div class="container">
-        <div class="leftColumn" data-color="">
+        <div class="leftColumn">
         <div class="leftbg"></div>
         <div class="rightbg"></div>
         <div class="leftMobile"></div>
@@ -153,10 +155,7 @@
                       </div>
                       <p>Режим</p>
                       <div class="daynight" align="center">
-                        <span>День</span>
-                        <input type="checkbox" id="daynight" checked />
-                        <label class="slider" for="daynight"></label>
-                        <span>Ночь</span>
+                        <input type="checkbox" id="daynight" data-size="small" data-animate="true" data-on-text="<i class='fa fa-moon-o'></i>" data-off-text="<i class='fa fa-sun-o'></i>">
                       </div>
                     </div>
                 </button>
@@ -2953,7 +2952,7 @@
 <div class="overlayT"></div>
 <script type="text/javascript">
 
-
+$("#daynight").bootstrapSwitch();
 function reinitAffix() {
     $(window).off('.affix')
     $('.content-module>div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
@@ -3124,19 +3123,17 @@ $('.options .pagecolor').click(function(){
     if ($(this).hasClass("active")) {} else {
       $('.options .pagecolor').removeClass("active");
       $(this).addClass("active");
-      $('.leftColumn').removeClass($('.leftColumn').data('color'));
-      $('.leftColumn').addClass($(this).data('color'));
-      $('.leftColumn').data('color',$(this).data('color'));
+      $('body').removeClass($('body').data('color'));
+      $('body').addClass($(this).data('color'));
+      $('body').data('color',$(this).data('color'));
       saveSettings({key:'bgcolor', item:$(this).data('color')});
     }
 })
-$('#daynight').on('change',function(){
-  if ($('#daynight').attr('checked') != "checked"){
-    $('#daynight').attr('checked',"checked");
+$('#daynight').on('switchChange.bootstrapSwitch', function(event, state) {
+  if(state == true){
     $('body').addClass("night");
     saveSettings({key:'night', item:true});
   } else {
-    $('#daynight').removeAttr('checked');
     $('body').removeClass("night");
     saveSettings({key:'night', item:false});
   }
@@ -3171,14 +3168,15 @@ function loadSettings() {
         return false;
     }
     if (localStorage.getItem("bgcolor") != undefined) {
-        $('.leftColumn').addClass(localStorage.getItem("bgcolor"));
-        $('.leftColumn').data('color', localStorage.getItem("bgcolor"));
+        $('body').addClass(localStorage.getItem("bgcolor"));
+        $('body').data('color', localStorage.getItem("bgcolor"));
+        $('.options .pagecolor[data-color="'+localStorage.getItem("bgcolor")+'"]').addClass('active');
     }
     if (localStorage.getItem("night") == "true") {
         $('body').addClass("night");
-        $('#daynight').attr('checked',"checked");
+        $('#daynight').bootstrapSwitch('state', true)
     } else {
-        $('#daynight').removeAttr('checked');
+        $('#daynight').bootstrapSwitch('state', false)
         $('body').removeClass("night");
     }
     if (localStorage.getItem("fontsize")) {
