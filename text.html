@@ -120,7 +120,7 @@
                 <button class="btn btn-white"> <i class="fa fa-share"></i>
                     <div class="hint"><div class="miniicon"></div>Следующая глава</div>
                 </button>
-                <button class="btn btn-white"> <i class="fa fa-bookmark"></i>
+                <button class="btn btn-white bookmark"> <i class="fa fa-bookmark"></i>
                     <div class="hint"><div class="miniicon"></div>Создать закладку</div>
                 </button>
                 <button class="btn btn-white top"> <i class="fa fa-arrow-up"></i>
@@ -166,16 +166,16 @@
 <h2 id="p1">Пролог 1</h2>
 <center class="subtitle"><b>Седьмой месяц по календарю Мира Людей, год 372</b></center>
 <h3 id="p1ch1">Глава 1</h3>
-<p>Схватить топор.</p>
-<p>Размахнуться.</p>
-<p>Ударить.</p>
-<p>И если бы дело было только в этих движениях, однако если отвлечёшься хоть на мгновение, неудачный удар по твёрдой коре моментально отразится резкой болью в руках. Дыхание, момент, скорость, перенос веса тела, всё это необходимо контролировать с самого начала, передавая скрытую силу топора дереву, и тогда раздастся приятный чистый и высокий звук.</p>
-<p>Теорию он понимал хорошо, но на деле это было не так-то просто. Юдзио получил это задание весной, когда ему было десять. С тех пор пришло уже второе лето, однако лишь каждый десятый его удар получался правильным. Знакомые Юдзио рассказывали, что его предшественник, дедушка Гаритта, всегда попадал в яблочко и даже после размахивания топором оставался полон сил, а вот Юдзио уже после пятидесяти ударов чувствовал онемение в руках, плечи были готовы отвалиться, и он не мог больше поднять топор.</p>
-<p>— Сорок… три! Сорок… четыре!!!</p>
-<p>Он громко подсчитывал удары, подбадривая себя на следующий, пот попадал в глаза, отчего взор мутнел, руки становились скользкими, а его точность стремительно падала. В состоянии отчаяния, он крепко схватил топор и замахнулся всем телом.</p>
-<p>— Сорок… девять! Пять… де… сят!..</p>
-<p>Его последний удар был плох даже для него, топор угодил мимо прорубленного участка в стволе, и раздался душераздирающий лязг. От такой жути могли хоть искры из глаз полететь, потому Юдзио отбросил топор, после чего попятился назад и уселся на плотный мох.</p>
-<p>Пока переводил дыхание, он услышал насмешливый голос справа от себя.</p>
+<p id="p1ch1-1">Схватить топор.</p>
+<p id="p1ch1-2">Размахнуться.</p>
+<p id="p1ch1-3">Ударить.</p>
+<p id="p1ch1-4">И если бы дело было только в этих движениях, однако если отвлечёшься хоть на мгновение, неудачный удар по твёрдой коре моментально отразится резкой болью в руках. Дыхание, момент, скорость, перенос веса тела, всё это необходимо контролировать с самого начала, передавая скрытую силу топора дереву, и тогда раздастся приятный чистый и высокий звук.</p>
+<p id="p1ch1-5">Теорию он понимал хорошо, но на деле это было не так-то просто. Юдзио получил это задание весной, когда ему было десять. С тех пор пришло уже второе лето, однако лишь каждый десятый его удар получался правильным. Знакомые Юдзио рассказывали, что его предшественник, дедушка Гаритта, всегда попадал в яблочко и даже после размахивания топором оставался полон сил, а вот Юдзио уже после пятидесяти ударов чувствовал онемение в руках, плечи были готовы отвалиться, и он не мог больше поднять топор.</p>
+<p id="p1ch1-6">— Сорок… три! Сорок… четыре!!!</p>
+<p id="p1ch1-7">Он громко подсчитывал удары, подбадривая себя на следующий, пот попадал в глаза, отчего взор мутнел, руки становились скользкими, а его точность стремительно падала. В состоянии отчаяния, он крепко схватил топор и замахнулся всем телом.</p>
+<p id="p1ch1-8">— Сорок… девять! Пять… де… сят!..</p>
+<p id="p1ch1-9">Его последний удар был плох даже для него, топор угодил мимо прорубленного участка в стволе, и раздался душераздирающий лязг. От такой жути могли хоть искры из глаз полететь, потому Юдзио отбросил топор, после чего попятился назад и уселся на плотный мох.</p>
+<p id="p1ch1-10">Пока переводил дыхание, он услышал насмешливый голос справа от себя.</p>
 <p>— Хороший звук раздался три раза за пятьдесят ударов, так что всего выходит, ммм, сорок один. Похоже, сегодня водой Сирал угощаешь ты, Юдзио.</p>
 <p>Сказавший это был мальчик примерно того же возраста, лежащий неподалёку. Юдзио не ответил, а стал рыться в поисках кожаной фляги. Подняв её, он жадно выпил воды, которая уже стала совсем тёплой. Вдоволь напившись, он плотно закрыл флягу пробкой и лишь затем сказал:</p>
 <p>— Хмм, а у тебя сорок три, да? Да я скоро догоню тебя. Так, сейчас твоя очередь… Кирито.</p>
@@ -2962,36 +2962,40 @@
 <div class="overlayT"></div>
 <script type="text/javascript">
 
-$("#daynight").bootstrapSwitch();
+
+/* AFFIX */
 function reinitAffix() {
     $(window).off('.affix')
     $('.content-module>div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
         .css('top', '').affix({
-        offset: {
-            top: $('.content-module>div').offset().top - 20,
-            bottom: $('footer').outerHeight(true)
-        }
-    })
+            offset: {
+                top: $('.content-module>div').offset().top - 20,
+                bottom: $('footer').outerHeight(true)
+            }
+        })
     $('.controlText>div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
         .css('top', '').affix({
-        offset: {
-            top: $('.controlText>div').offset().top - 40,
-            bottom: $(document).height() - ($('#comments').length
-                    ? $('#comments').offset().top
-                    : $('.leftColumn').offset().top + $('.leftColumn').outerHeight(true))
-        }
-    });
+            offset: {
+                top: $('.controlText>div').offset().top - 40,
+                bottom: $(document).height() - ($('#comments').length ? $('#comments').offset().top : $('.leftColumn').offset().top + $('.leftColumn').outerHeight(true))
+            }
+        });
 }
+$(window).resize(reinitAffix);
+reinitAffix();
+/* AFFIX */
+
+/* ИНСТРУМЕНТЫ */
+$("#daynight").bootstrapSwitch();
 $('.controlText .btn').hover(
-function() {
-    $(this).children('.hint').show()
-    if($(this).hasClass('options')) $(this).addClass('activated');
-}
-,
-function() {
-    $(this).children('.hint').hide()
-    if($(this).hasClass('options')) $(this).removeClass('activated');
-}
+    function() {
+        $(this).children('.hint').show()
+        if ($(this).hasClass('options')) $(this).addClass('activated');
+    },
+    function() {
+        $(this).children('.hint').hide()
+        if ($(this).hasClass('options')) $(this).removeClass('activated');
+    }
 );
 $('.btn.top').click(function() {
     $(document).scrollTop(0);
@@ -3000,102 +3004,120 @@ $('.overlayT').click(function() {
     $('.overlayT').hide();
     $('div.mistake').hide();
 });
+$('.btn').hover(
+    function() {
+        $(this).children('.hint').show()
+    },
+    function() {
+        $(this).children('.hint').hide()
+    }
+);
+$('.controlText .btn.disable').attr('disabled', 'disabled');
+/* ИНСТРУМЕНТЫ */
+
 $('.module_name').click(function() {
     $(this).children('.fa').toggleClass("fa-chevron-right fa-chevron-down");
     if ($(this).hasClass("opened")) {
         $(this).parent().children('.actions').slideUp(reinitAffix);
         $(this).removeClass("opened");
-    }
-    else {
+    } else {
         $(this).parent().children('.actions').slideDown(reinitAffix);
         $(this).addClass("opened");
     }
 });
-$('.btn').hover(
-function() {
-    $(this).children('.hint').show()
-}
-,
-function() {
-    $(this).children('.hint').hide()
-}
-);
-reinitAffix();
 
 /* MODAL */
-$('div.mistake').on('hidden.bs.modal', function (e) {
-  $('body').css('padding',0)
+$('div.mistake').on('hidden.bs.modal', function(e) {
+    $('body').css('padding', 0)
 })
 $('.btn.mistake').click(function() {
     var Mistake = getText();
     console.log(Mistake);
-    if(Mistake == "" || Mistake == ' '){
-      alert('Для начала, выделите ошибку!');
-    } else { $('div.mistake').modal('show');$('div.mistake').find('.MistakeText').text(getText()); }
+    if (Mistake == "" || Mistake == ' ') {
+        alert('Для начала, выделите ошибку!');
+    } else {
+        $('div.mistake').modal('show');
+        $('div.mistake').find('.MistakeText').text(getText());
+    }
 });
+/* MODAL */
 
-$(window).resize(reinitAffix);
+
+/* MOBILE */
 function isMobile() {
-  try{ document.createEvent("TouchEvent"); return true; }
-  catch(e){ return false; }
+    try {
+        document.createEvent("TouchEvent");
+        return true;
+    } catch (e) {
+        return false;
+    }
 }
 
-    var $right = $('.content-module');
-    var $center = $('.leftColumn');
-    var $left = $('.controlText > div');
-    function OpenRight() {
-        if ($left.hasClass("active")) {
-            $left.removeClass("active");
-            $center.removeClass("activeLeft");
-        } else {
-            $right.addClass("active");
-            $right.children('div').addClass("active");
-            $center.addClass("activeRight");
-        }
-    }
+var $right = $('.content-module');
+var $center = $('.leftColumn');
+var $left = $('.controlText > div');
 
-    function OpenLeft() {
-        if ($right.hasClass("active")) {
-            $right.removeClass("active");
-            $right.children('div').removeClass("active");
-            $center.removeClass("activeRight");
-        } else {
-            $left.addClass("active");
-            $center.addClass("activeLeft");
-        }
+function OpenRight() {
+    if ($left.hasClass("active")) {
+        $left.removeClass("active");
+        $center.removeClass("activeLeft");
+    } else {
+        $right.addClass("active");
+        $right.children('div').addClass("active");
+        $center.addClass("activeRight");
     }
-    $('.leftbg').click(OpenRight);
-    $('.rightbg').click(OpenLeft);
-    $('.leftMobile').click(OpenLeft);
-    $('.rightMobile').click(OpenRight);
-if ( isMobile() == true )     $(".leftColumn").swipe({
-        swipeLeft: function() { OpenRight() },
-        swipeRight: function() { OpenLeft() },
-        threshold: 100,
-        excludedElements: $.fn.swipe.defaults.excludedElements
-    });
-    $('#nav').click(function() {
+}
+
+function OpenLeft() {
+    if ($right.hasClass("active")) {
         $right.removeClass("active");
         $right.children('div').removeClass("active");
         $center.removeClass("activeRight");
-    });
-    $('.controlText .btn').click(function() {
-      if($(this).hasClass('options')){return false;}
-        $left.removeClass("active");
-        $center.removeClass("activeLeft");
-    });
-    $('.controlText .btn.options').click(function(){
-      if($(this).hasClass('activated')){return false;}
-        $('.controlText .btn.options').addClass('activated');
-        $('.overlayT').show();
-    })
-    $('.overlayT').click(function() {
-        $('.overlayT').hide();
-        $('.controlText .btn.options').removeClass('activated');
-        $left.removeClass("active");
-        $center.removeClass("activeLeft");
-    });
-
+    } else {
+        $left.addClass("active");
+        $center.addClass("activeLeft");
+    }
+}
+$('.leftbg').click(OpenRight);
+$('.rightbg').click(OpenLeft);
+$('.leftMobile').click(OpenLeft);
+$('.rightMobile').click(OpenRight);
+if (isMobile() == true) $(".leftColumn").swipe({
+    swipeLeft: function() {
+        OpenRight()
+    },
+    swipeRight: function() {
+        OpenLeft()
+    },
+    threshold: 100,
+    excludedElements: $.fn.swipe.defaults.excludedElements
+});
+$('#nav').click(function() {
+    $right.removeClass("active");
+    $right.children('div').removeClass("active");
+    $center.removeClass("activeRight");
+});
+$('.controlText .btn').click(function() {
+    if ($(this).hasClass('options')) {
+        return false;
+    }
+    $left.removeClass("active");
+    $center.removeClass("activeLeft");
+});
+$('.controlText .btn.options').click(function() {
+    if ($(this).hasClass('activated')) {
+        return false;
+    }
+    $('.controlText .btn.options').addClass('activated');
+    $('.overlayT').show();
+})
+$('.overlayT').click(function() {
+    $('.overlayT').hide();
+    $('.controlText .btn.options').removeClass('activated');
+    $left.removeClass("active");
+    $center.removeClass("activeLeft");
+});
+/* MOBILE */
 
 /*
       $(function(){
@@ -3120,42 +3142,64 @@ if ( isMobile() == true )     $(".leftColumn").swipe({
 */
 
 
-$('.options .font').click(function(){
+/* НАСТРОЙКИ */
+$('.options .font').click(function() {
     if ($(this).hasClass("active")) {} else {
-      $('.options .font').removeClass("active");
-      $(this).addClass("active");
-      $('.text').css('font-family',$(this).data('name'));
+        $('.options .font').removeClass("active");
+        $(this).addClass("active");
+        $('.text').css('font-family', $(this).data('name'));
     }
-    saveSettings({key:'fontname', item:$(this).data('name')});
+    saveSettings({
+        key: 'fontname',
+        item: $(this).data('name')
+    });
 })
-$('.options .pagecolor').click(function(){
+$('.options .pagecolor').click(function() {
     if ($(this).hasClass("active")) {} else {
-      $('.options .pagecolor').removeClass("active");
-      $(this).addClass("active");
-      $('body').removeClass($('body').data('color'));
-      $('body').addClass($(this).data('color'));
-      $('body').data('color',$(this).data('color'));
-      saveSettings({key:'bgcolor', item:$(this).data('color')});
+        $('.options .pagecolor').removeClass("active");
+        $(this).addClass("active");
+        $('body').removeClass($('body').data('color'));
+        $('body').addClass($(this).data('color'));
+        $('body').data('color', $(this).data('color'));
+        saveSettings({
+            key: 'bgcolor',
+            item: $(this).data('color')
+        });
     }
 })
 $('#daynight').on('switchChange.bootstrapSwitch', function(event, state) {
-  if(state == true){
-    $('body').addClass("night");
-    saveSettings({key:'night', item:true});
-  } else {
-    $('body').removeClass("night");
-    saveSettings({key:'night', item:false});
-  }
-});
-$("#fontslide").on("change mousemove",function(){
-    var font = '';
-    switch($(this).val()){
-      case '0': font = '80%';break;
-      case '1': font = '100%';break;
-      case '2': font = '120%';break;
+    if (state == true) {
+        $('body').addClass("night");
+        saveSettings({
+            key: 'night',
+            item: true
+        });
+    } else {
+        $('body').removeClass("night");
+        saveSettings({
+            key: 'night',
+            item: false
+        });
     }
-  $('.text').css('font-size',font);
-  saveSettings({key:'fontsize', item:$(this).val()});
+});
+$("#fontslide").on("change mousemove", function() {
+    var font = '';
+    switch ($(this).val()) {
+        case '0':
+            font = '80%';
+            break;
+        case '1':
+            font = '100%';
+            break;
+        case '2':
+            font = '120%';
+            break;
+    }
+    $('.text').css('font-size', font);
+    saveSettings({
+        key: 'fontsize',
+        item: $(this).val()
+    });
 });
 function supportsLocalStorage() {
     try {
@@ -3164,14 +3208,12 @@ function supportsLocalStorage() {
         return false;
     }
 }
-
 function saveSettings(options) {
     if (!supportsLocalStorage()) {
         return false;
     }
     localStorage.setItem(options.key, options.item);
 }
-
 function loadSettings() {
     if (!supportsLocalStorage()) {
         return false;
@@ -3179,7 +3221,7 @@ function loadSettings() {
     if (localStorage.getItem("bgcolor") != undefined) {
         $('body').addClass(localStorage.getItem("bgcolor"));
         $('body').attr('data-color', localStorage.getItem("bgcolor"));
-        $('.options .pagecolor[data-color="'+localStorage.getItem("bgcolor")+'"]').addClass('active');
+        $('.options .pagecolor[data-color="' + localStorage.getItem("bgcolor") + '"]').addClass('active');
     }
     if (localStorage.getItem("night") == "true") {
         $('body').addClass("night");
@@ -3208,9 +3250,7 @@ function loadSettings() {
         $('.options .font.' + localStorage.getItem("fontname")).addClass("active");
         $('.text').css('font-family', localStorage.getItem("fontname"));
     }
-
 }
-
 function getText() {
     if (window.getSelection) {
         return window.getSelection() + "";
@@ -3224,8 +3264,36 @@ function getText() {
 $(document).ready(function() {
     loadSettings()
 });
+/* НАСТРОЙКИ */
 
-$('.controlText .btn.disable').attr('disabled', 'disabled');
+/* ЗАКЛАДКИ */
+function hideP() {
+    $('.text p').removeClass('show');
+    $('.text p').off('click');
+}
+$('.controlText .btn.bookmark').click(function() {
+    $('.text p')
+        .addClass('show')
+        .on('click', function() {
+            alert($(this).attr('id'));
+            saveSettings({
+                key: 'bookmark',
+                item: $(this).attr('id')
+            });
+            hideP()
+        })
+});
+$('body').click(function(eventObject) {
+    if ($(eventObject.target).closest('div.text').length == 0 && $(eventObject.target).closest(".btn.bookmark").length == 0) {
+        hideP()
+    }
+});
+$('body').keydown(function(eventObject) {
+    if (eventObject.which == 27) {
+        hideP()
+    }
+});
+/* ЗАКЛАДКИ */
 </script>
 </body>
 </html>

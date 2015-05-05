@@ -1753,18 +1753,8 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 .OpenContent.btn-white {
     color: rgb(96, 169, 212) !important;
 }
-div.mistake {/*
-    padding: 20px;
-    background: #fff;
-    width: 510px;
-    height: 250px;
-    position: fixed;
-    top: 40%;
-    left: 40%;*/
-    margin-top: 105px;/*
-    margin-left: -245px;
-    z-index: 11;
-    display: none;*/
+div.mistake {
+    margin-top: 105px;
 }
 div.mistake h4 {
     color: rgb(96, 169, 212);
@@ -1784,14 +1774,6 @@ div.mistake .grey {
     color: #c6c6c6;
     font-size: 12px;
 }
-div.mistake .sendText {
-    display: inline-block;
-    white-space: pre-line;
-    width: 270px;
-}/*
-div.mistake button {
-    margin-bottom: 20px;
-}*/
 div.overlayT {
     position: fixed;
     top: 0;
@@ -2132,4 +2114,12 @@ body.night center.project {
     margin-top: 2px;
     width: 14px;
     text-align: center;
+}
+.text p.show {
+    background: #F1F1F1;
+    padding: 1px;
+}
+.text p.show:hover {
+    border: 1px dashed #92D1FD;
+    padding: 0;
 }
