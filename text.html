@@ -2930,24 +2930,34 @@
     </footer>
 </div>
 <!-- Блок ошибки -->
-<div class="mistake">
+<div class="modal mistake fade" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
     <form class="form-horizontal">
-    <h4>Орфографическая ошибка в тексте</h4>
-    <p><span class="MistakeText"></span></p>
-    <div class="MistakeComment">
-        Комментарий для автора <span class="grey">(необязательно)</span>:
-        <textarea></textarea>
-    </div>
-    <div class="MistakeButtons">
-        <div class="sendText">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Орфографическая ошибка в тексте</h4>
+      </div>
+      <div class="modal-body">
+        <p><span class="MistakeText"></span></p>
+        <div class="MistakeComment">
+            Комментарий для автора <span class="grey">(необязательно)</span>:
+            <textarea></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+      <div class="row"></div>
+        <div class="col-sm-7">
             Послать сообщение об ошибке автору?
             <span class="grey">Ваш браузер останется на той же странице</span>
         </div>
+        <div class="col-sm-5">
         <button type="button" class="btn btn-primary">Отправить</button>
-        <button type="button" class="btn btn-default cancel">Отменить</button>
-    </div>
-    </form>
-</div>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button></div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <!-- Конец Блока ошибки -->
 <div class="overlayT"></div>
 <script type="text/javascript">
@@ -2986,19 +2996,7 @@ function() {
 $('.btn.top').click(function() {
     $(document).scrollTop(0);
 });
-$('.btn.mistake').click(function() {
-    $('.overlayT').show();
-    $('div.mistake').show();
-    var Mistake = getText();
-    if((Mistake != "")||(Mistake != ' ')){
-      $('div.mistake .MistakeText').text(getText());
-    } else { alert('Для начала, выделите ошибку!')}
-});
 $('.overlayT').click(function() {
-    $('.overlayT').hide();
-    $('div.mistake').hide();
-});
-$('div.mistake .cancel').click(function() {
     $('.overlayT').hide();
     $('div.mistake').hide();
 });
@@ -3024,6 +3022,17 @@ function() {
 );
 reinitAffix();
 
+/* MODAL */
+$('div.mistake').on('hidden.bs.modal', function (e) {
+  $('body').css('padding',0)
+})
+$('.btn.mistake').click(function() {
+    var Mistake = getText();
+    console.log(Mistake);
+    if(Mistake == "" || Mistake == ' '){
+      alert('Для начала, выделите ошибку!');
+    } else { $('div.mistake').modal('show');$('div.mistake').find('.MistakeText').text(getText()); }
+});
 
 $(window).resize(reinitAffix);
 function isMobile() {
@@ -3169,7 +3178,7 @@ function loadSettings() {
     }
     if (localStorage.getItem("bgcolor") != undefined) {
         $('body').addClass(localStorage.getItem("bgcolor"));
-        $('body').data('color', localStorage.getItem("bgcolor"));
+        $('body').attr('data-color', localStorage.getItem("bgcolor"));
         $('.options .pagecolor[data-color="'+localStorage.getItem("bgcolor")+'"]').addClass('active');
     }
     if (localStorage.getItem("night") == "true") {
