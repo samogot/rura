@@ -2044,6 +2044,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-bottom: 10px;
 }
 
+.text h2.project {
+    color: rgb(96, 169, 212);
+}
 .text .h4.project {
     color: rgb(96, 169, 212);
 }
@@ -2062,18 +2065,18 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     color: rgb(96, 169, 212) !important;
 }
 
-div.mistake {
+div.mistake {/*
     padding: 20px;
     background: #fff;
     width: 510px;
     height: 250px;
     position: fixed;
     top: 40%;
-    left: 40%;
-    margin-top: -105px;
+    left: 40%;*/
+    margin-top: 105px;/*
     margin-left: -245px;
     z-index: 11;
-    display: none;
+    display: none;*/
 }
 
 div.mistake h4 {
@@ -2103,11 +2106,20 @@ div.mistake .sendText {
     white-space: pre-line;
     width: 270px;
 }
-
+/*
 div.mistake button {
     margin-bottom: 20px;
+}*/
+body.modal-open {
+    padding-right: 0 !important;
+    overflow: auto !important;
+    overflow-x: hidden !important;
 }
-
+.modal-backdrop {
+    height: 100%;
+    z-index: 50;
+    position: fixed;
+}
 div.overlayT {
     position: fixed;
     top: 0;
@@ -2496,7 +2508,7 @@ body.night center.project {
 }
 
 .actions.banners a {
-    display: inline-block;
+    display: block;
     margin: 2px 0;
 }
 
@@ -2508,10 +2520,20 @@ body.night center.project {
 
 .text p.show {
     background: #F1F1F1;
-    padding: 1px;
 }
 
 .text p.show:hover {
     border: 1px dashed #92D1FD;
-    padding: 0;
+    margin: -1px -1px 9px -1px;
+}
+.hiddenBanners {
+    display: none;
+    padding: 0 !important;
+}
+span.more{
+  float: right;
+  color: rgb(133, 133, 133);
+  text-decoration: none;
+  border-bottom: 1px dashed rgb(133, 133, 133);
+  cursor: pointer;
 }

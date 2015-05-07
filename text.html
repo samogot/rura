@@ -13,6 +13,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
     <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
     <!--<script src="js/bootstrap-slider.js"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
@@ -120,7 +121,7 @@
                 <button class="btn btn-white"> <i class="fa fa-share"></i>
                     <div class="hint"><div class="miniicon"></div>Следующая глава</div>
                 </button>
-                <button class="btn btn-white bookmark"> <i class="fa fa-bookmark"></i>
+                <button class="btn btn-white bookmark" data-active="false"> <i class="fa fa-bookmark"></i>
                     <div class="hint"><div class="miniicon"></div>Создать закладку</div>
                 </button>
                 <button class="btn btn-white top"> <i class="fa fa-arrow-up"></i>
@@ -163,6 +164,7 @@
             </div>
             <main class="content">
             <div class="text">
+<h2 id="chapter9" class='project chapter' data-chapter="sao-v9">Sword Art Online 9</h2>
 <h2 id="p1">Пролог 1</h2>
 <center class="subtitle"><b>Седьмой месяц по календарю Мира Людей, год 372</b></center>
 <h3 id="p1ch1">Глава 1</h3>
@@ -2830,6 +2832,15 @@
             <div class="module">
                 <div class="module_name opened">
                     <i class="fa fa-chevron-down pull-left"></i>
+                    <div class="h4">Друзья</div>
+                </div>
+                <div class="actions banners">
+                    <a href="#"><img src="img/friend.png"></a>
+                </div>
+            </div>
+            <div class="module projects-module">
+                <div class="module_name opened">
+                    <i class="fa fa-chevron-down pull-left"></i>
                     <div class="h4">Проекты</div>
                 </div>
                 <div class="actions banners">
@@ -2861,15 +2872,6 @@
                     <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220"></a>
                     <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220"></a>
                     <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220"></a><a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220"></a>
-                </div>
-            </div>
-            <div class="module">
-                <div class="module_name opened">
-                    <i class="fa fa-chevron-down pull-left"></i>
-                    <div class="h4">Друзья</div>
-                </div>
-                <div class="actions banners">
-                    <a href="#"><img src="img/friend.png"></a>
                 </div>
             </div>
             <div class="module content-module scrollspy">
@@ -2929,36 +2931,6 @@
         <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
     </footer>
 </div>
-<!-- Блок ошибки -->
-<div class="modal mistake fade" tabindex="-1" role="dialog"  aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-    <form class="form-horizontal">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Орфографическая ошибка в тексте</h4>
-      </div>
-      <div class="modal-body">
-        <p><span class="MistakeText"></span></p>
-        <div class="MistakeComment">
-            Комментарий для автора <span class="grey">(необязательно)</span>:
-            <textarea></textarea>
-        </div>
-      </div>
-      <div class="modal-footer">
-      <div class="row"></div>
-        <div class="col-sm-7">
-            Послать сообщение об ошибке автору?
-            <span class="grey">Ваш браузер останется на той же странице</span>
-        </div>
-        <div class="col-sm-5">
-        <button type="button" class="btn btn-primary">Отправить</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button></div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!-- Конец Блока ошибки -->
 <div class="overlayT"></div>
 <script type="text/javascript">
 
@@ -3026,21 +2998,6 @@ $('.module_name').click(function() {
     }
 });
 
-/* MODAL */
-$('div.mistake').on('hidden.bs.modal', function(e) {
-    $('body').css('padding', 0)
-})
-$('.btn.mistake').click(function() {
-    var Mistake = getText();
-    console.log(Mistake);
-    if (Mistake == "" || Mistake == ' ') {
-        alert('Для начала, выделите ошибку!');
-    } else {
-        $('div.mistake').modal('show');
-        $('div.mistake').find('.MistakeText').text(getText());
-    }
-});
-/* MODAL */
 
 
 /* MOBILE */
@@ -3251,16 +3208,6 @@ function loadSettings() {
         $('.text').css('font-family', localStorage.getItem("fontname"));
     }
 }
-function getText() {
-    if (window.getSelection) {
-        return window.getSelection() + "";
-    } else if (document.getSelection) {
-        return document.getSelection() + "";
-    } else if (document.selection) {
-        return document.selection.createRange().text + "";
-    }
-    return '';
-}
 $(document).ready(function() {
     loadSettings()
 });
@@ -3270,6 +3217,7 @@ $(document).ready(function() {
 function hideP() {
     $('.text p').removeClass('show');
     $('.text p').off('click');
+    $('.btn.bookmark').attr('data-active',false);
 }
 $('.controlText .btn.bookmark').click(function() {
     $('.text p')
@@ -3281,10 +3229,16 @@ $('.controlText .btn.bookmark').click(function() {
                 item: $(this).attr('id')
             });
             hideP()
-        })
+        });
+    setTimeout(function(){$('.btn.bookmark').attr('data-active',true)},2000);
 });
 $('body').click(function(eventObject) {
     if ($(eventObject.target).closest('div.text').length == 0 && $(eventObject.target).closest(".btn.bookmark").length == 0) {
+        hideP()
+    }
+});
+$('.controlText .btn.bookmark').click(function() {
+    if($(this).attr('data-active') == "true"){
         hideP()
     }
 });
@@ -3294,6 +3248,170 @@ $('body').keydown(function(eventObject) {
     }
 });
 /* ЗАКЛАДКИ */
+
+
+/* MODAL */
+function getText() {
+    if (window.getSelection) {
+        return window.getSelection() + "";
+    } else if (document.getSelection) {
+        return document.getSelection() + "";
+    } else if (document.selection) {
+        return document.selection.createRange().text + "";
+    }
+    return '';
+}
+$('div.mistake').on('hidden.bs.modal', function(e) {
+    $('body').css('padding', 0)
+})
+$('.btn.mistake').click(function() {
+    var Mistake = getText();
+    if (Mistake == "" || Mistake == ' ') {
+        alert('Для начала, выделите ошибку!');
+    } else {
+        var Parameters = getOrphusParameters();
+        var chapterId = $('.chapter').data('chapter');
+        console.log(Parameters);
+        console.log(chapterId);
+        var callbackUrl = '';
+        showOrphusDialog(Parameters.originalText, callbackUrl, Parameters.startOffset, Parameters.paragraph, chapterId);
+    }
+});
+/* MODAL */
+/* ОШИБКИ */
+function showOrphusDialog(originalText, callbackUrl, startOffset, paragraph, chapterId)
+{
+  bootbox.dialog({
+      title: "Предложить правку",
+      message: '<form id="orphusForm">' +
+           '  <div class="form-group">' +
+           '    <label for="orphusReplacement">Текст правки</label>' +
+           '    <input type="text" class="form-control" name="replacementText" id="orphusReplacement" value="' + originalText + '">' +
+           '    <p class="help-block" style="display: none"></p>' +
+           '  </div>' +
+           '  <div class="form-group">' +
+           '    <label for="orphusComment">Комментарий <small>(необязательно)</small></label>' +
+           '    <input type="text" class="form-control" name="optionalComment" id="orphusComment">' +
+           '  </div>' +
+           '</form>',
+      buttons: {
+         cancel: {
+          label: "Отменить",
+          className: "btn-default",
+          callback: function () { }
+        },
+        success: {
+          label: "Подтвердить",
+          className: "btn-success",
+          callback: function () {
+/* TODO: text size check */
+            var replacement = $('#orphusReplacement').val();
+            if (!replacement) {
+              $('#orphusReplacement').next('.help-block').text('Введите текст для замены.').show();
+              $('#orphusReplacement').parent('.form-group').addClass('has-error');
+              return false;
+            }
+            if (replacement == originalText) {
+              $('#orphusReplacement').next('.help-block').text('Текст для замены должен отличаться от исходного.').show();
+              $('#orphusReplacement').parent('.form-group').addClass('has-error');
+              return false;
+            }
+            var data = $('#orphusForm').serialize();
+            var wcall = Wicket.Ajax.get({ 'u': callbackUrl + '&' + data + '&startOffset=' + startOffset + '&paragraph=' + paragraph + '&chapterId=' + chapterId + '&originalText=' + originalText});
+          }
+        }
+      }
+    }
+  );
+}
+
+
+/* variable attrs come from wicket framework */
+function isOrphusPreconditionsMet(attrs)
+{
+  if($('#orphusForm').length)
+  {
+    return false;
+  }
+  var keycode = Wicket.Event.keyCode(attrs.event);
+  if ((keycode == 13) && (attrs.event.ctrlKey)) //ctrl+enter
+  {
+    var range = getSelectionRange();
+    if (range && range.toString().length > 0)
+    {
+/* TODO: tag p must have associated 'id' attribute.
+ *  Probably with special format like ch+chapterId+p+paragraph
+ *  where paragraph is just порядковый номер абзаца :) */
+      return $(range.startContainer).closest('p').is($(range.endContainer).closest('p'));
+    }
+  }
+  return false;
+}
+
+function getSelectionRange()
+{
+  if (window.getSelection && window.getSelection().rangeCount > 0)
+  {
+    return window.getSelection().getRangeAt(0);
+  }
+  else if (document.selection && document.selection.type != "Control")
+  {
+    return document.selection.createRange();
+  }
+  return null;
+}
+
+function getOrphusParameters()
+{
+  var range = getSelectionRange();
+  var p = $(range.startContainer).closest('p').get(0);
+  var offset = 0;
+  if (range.cloneRange)
+  {
+    var preCaretRange = range.cloneRange();
+    preCaretRange.selectNodeContents(p);
+    preCaretRange.setEnd(range.endContainer, range.endOffset);
+    offset = preCaretRange.toString().length;
+  }
+  else
+  {
+    var preCaretTextRange = document.body.createTextRange();
+    preCaretTextRange.moveToElementText(p);
+    preCaretTextRange.setEndPoint("EndToEnd", range);
+    offset = preCaretTextRange.text.length;
+  }
+        /* TODO: add chapterId parameter. Maybe in wicket code */
+  return {originalText: range.toString(),
+                startOffset: offset - range.toString().length,
+                paragraph: p.id};
+}
+/* ОШИБКИ */
+
+
+
+
+$(document).ready(function() {
+  var banH = $('.projects-module .banners a').height();
+  var needDelete = parseInt(((($('.projects-module .banners a:last').offset().top - $('.leftColumn .content').height()) / $('.projects-module .banners a').height()) +1),10);
+  if($('.projects-module .banners a:last').offset().top > $('.leftColumn .content').height()){
+    $('.projects-module .banners').append('<div class="hiddenBanners"></div>');
+    var Blength = $('.projects-module .banners a').length;
+    var deleteFrom = Blength - needDelete + 1;
+    console.log(deleteFrom);
+    if (deleteFrom < 4) {
+        deleteFrom = 4;
+    }
+    console.log("var i = "+deleteFrom+"; i <"+ Blength);
+    $('.projects-module .banners a:gt('+deleteFrom+')').each(function(indx){
+        $(this).detach().appendTo('.hiddenBanners');
+    });
+    $('.hiddenBanners').before('<span class="more moreprojects">Больше</span>')
+    $('.moreprojects').click(function() {
+        $(this).remove();
+        $('.hiddenBanners').slideDown(reinitAffix);
+    });
+  }
+});
 </script>
 </body>
 </html>
