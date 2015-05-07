@@ -112,25 +112,25 @@
         <div class="rightMobile"></div>
 <div class="controlText">
   <div>
-                <button class="btn btn-white"> <i class="fa fa-home"></i>
+                <div class="btn btn-white soderj-button"> <i class="fa fa-home"></i>
                     <div class="hint"><div class="miniicon"></div>Содержание</div>
-                </button>
-                <button class="btn btn-white disable"> <i class="fa fa-reply"></i>
+                </div>
+                <div class="btn btn-white disable"> <i class="fa fa-reply"></i>
                     <div class="hint"><div class="miniicon"></div>Предыдущая глава</div>
-                </button>
-                <button class="btn btn-white"> <i class="fa fa-share"></i>
+                </div>
+                <div class="btn btn-white"> <i class="fa fa-share"></i>
                     <div class="hint"><div class="miniicon"></div>Следующая глава</div>
-                </button>
-                <button class="btn btn-white bookmark" data-active="false"> <i class="fa fa-bookmark"></i>
+                </div>
+                <div class="btn btn-white bookmark-button" data-active="false"> <i class="fa fa-bookmark"></i>
                     <div class="hint"><div class="miniicon"></div>Создать закладку</div>
-                </button>
-                <button class="btn btn-white top"> <i class="fa fa-arrow-up"></i>
+                </div>
+                <div class="btn btn-white top-button"> <i class="fa fa-arrow-up"></i>
                     <div class="hint"><div class="miniicon"></div>Вверх</div>
-                </button>
-                <button class="btn btn-white mistake"> <i class="fa fa-comment"></i>
+                </div>
+                <div class="btn btn-white mistake-button"> <i class="fa fa-comment"></i>
                     <div class="hint"><div class="miniicon"></div>Нашли ошибку? Тык!</div>
-                </button>
-                <button class="btn btn-white options"> <i class="fa fa-cog"></i>
+                </div>
+                <div class="btn btn-white options-button"> <i class="fa fa-cog"></i>
                     <div class="hint"><div class="miniicon"></div>
                       <p>Шрифт</p>
                       <div class="font active" data-name="helvetica">
@@ -159,7 +159,7 @@
                         <input type="checkbox" id="daynight" data-size="small" data-animate="true" data-on-text="<i class='fa fa-moon-o'></i>" data-off-text="<i class='fa fa-sun-o'></i>">
                       </div>
                     </div>
-                </button>
+                </div>
             </div>
             </div>
             <main class="content">
@@ -3039,6 +3039,7 @@ $('.leftbg').click(OpenRight);
 $('.rightbg').click(OpenLeft);
 $('.leftMobile').click(OpenLeft);
 $('.rightMobile').click(OpenRight);
+$('.soderj-button').click(function(){OpenRight();OpenRight();});
 if (isMobile() == true) $(".leftColumn").swipe({
     swipeLeft: function() {
         OpenRight()
@@ -3061,16 +3062,16 @@ $('.controlText .btn').click(function() {
     $left.removeClass("active");
     $center.removeClass("activeLeft");
 });
-$('.controlText .btn.options').click(function() {
+$('.controlText .btn.options-button').click(function() {
     if ($(this).hasClass('activated')) {
         return false;
     }
-    $('.controlText .btn.options').addClass('activated');
-    $('.overlayT').show();
+    $('.controlText .btn.options-button').addClass('activated');
+    if (isMobile() == true)  $('.overlayT').show();
 })
 $('.overlayT').click(function() {
     $('.overlayT').hide();
-    $('.controlText .btn.options').removeClass('activated');
+    $('.controlText .btn.options-button').removeClass('activated');
     $left.removeClass("active");
     $center.removeClass("activeLeft");
 });
@@ -3100,9 +3101,9 @@ $('.overlayT').click(function() {
 
 
 /* НАСТРОЙКИ */
-$('.options .font').click(function() {
+$('.options-button .font').click(function() {
     if ($(this).hasClass("active")) {} else {
-        $('.options .font').removeClass("active");
+        $('.options-button .font').removeClass("active");
         $(this).addClass("active");
         $('.text').css('font-family', $(this).data('name'));
     }
@@ -3111,9 +3112,9 @@ $('.options .font').click(function() {
         item: $(this).data('name')
     });
 })
-$('.options .pagecolor').click(function() {
+$('.options-button .pagecolor').click(function() {
     if ($(this).hasClass("active")) {} else {
-        $('.options .pagecolor').removeClass("active");
+        $('.options-button .pagecolor').removeClass("active");
         $(this).addClass("active");
         $('body').removeClass($('body').data('color'));
         $('body').addClass($(this).data('color'));
@@ -3178,7 +3179,7 @@ function loadSettings() {
     if (localStorage.getItem("bgcolor") != undefined) {
         $('body').addClass(localStorage.getItem("bgcolor"));
         $('body').attr('data-color', localStorage.getItem("bgcolor"));
-        $('.options .pagecolor[data-color="' + localStorage.getItem("bgcolor") + '"]').addClass('active');
+        $('.options-button .pagecolor[data-color="' + localStorage.getItem("bgcolor") + '"]').addClass('active');
     }
     if (localStorage.getItem("night") == "true") {
         $('body').addClass("night");
@@ -3204,7 +3205,7 @@ function loadSettings() {
         $("#fontslide").val(localStorage.getItem("fontsize"));
     }
     if (localStorage.getItem("fontname")) {
-        $('.options .font.' + localStorage.getItem("fontname")).addClass("active");
+        $('.options-button .font.' + localStorage.getItem("fontname")).addClass("active");
         $('.text').css('font-family', localStorage.getItem("fontname"));
     }
 }

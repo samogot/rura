@@ -1723,9 +1723,10 @@ div > button.view2.active {
     margin-bottom: 1px;
     color: #4E4E4E;
     border-radius: 0;
+    line-height: 38px;
 }
 
-.controlText button .hint {
+.controlText div .hint {
     background: #8fd5fe;
     border-top: 5px solid #F1F1F1;
     border-bottom: 5px solid #F1F1F1;
@@ -1740,6 +1741,7 @@ div > button.view2.active {
     vertical-align: top;
     text-align: left;
     top: 0;
+    line-height: 20px;
 }
 
 .controlText .btn.disable {
@@ -1747,13 +1749,13 @@ div > button.view2.active {
     opacity: 1;
 }
 
-.controlText .btn.options:active,
-.controlText .btn.options.active {
+.controlText .btn.options-button:active,
+.controlText .btn.options-button.active {
     box-shadow: none;
     -webkit-box-shadow: none;
 }
 
-.controlText button .hint .miniicon {
+.controlText div .hint .miniicon {
     background: url('../img/actions/textControl.png') left no-repeat;
     width: 9px;
     height: 40px;
@@ -1764,21 +1766,23 @@ div > button.view2.active {
     left: -7px;
 }
 
-.controlText button.options .hint {
+.controlText div.options-button .hint {
     width: 200px;
     height: 300px;
     background: #F1F1F1;
     border-top: 5px solid #8fd5fe;
     border-bottom: 5px solid #8fd5fe;
     color: #4E4E4E;
+    top: -250px;
 }
 
-.controlText button.options .hint .miniicon {
+.controlText div.options-button .hint .miniicon {
     background: url('../img/actions/textControl2.png') left no-repeat;
+    margin-top: 240px;
 }
 
-.controlText button.options .hint .type,
-.controlText button.options .hint .fontname {
+.controlText div.options-button .hint .type,
+.controlText div.options-button .hint .fontname {
     border: 1px solid #92D1FD;
     height: 32px;
     display: inline-block;
@@ -1786,32 +1790,32 @@ div > button.view2.active {
     line-height: 32px;
 }
 
-.controlText button.options .hint .font {
+.controlText div.options-button .hint .font {
     margin-bottom: 5px;
 }
 
-.controlText button.options .hint .font.active .fontname {
+.controlText div.options-button .hint .font.active .fontname {
     background: #92D1FD;
 }
 
-.controlText button.options .hint .type {
+.controlText div.options-button .hint .type {
     width: 32px;
 }
 
-.controlText button.options .hint .fontname {
+.controlText div.options-button .hint .fontname {
     margin-left: -5px;
     width: calc(100% - 32px);
 }
 
-.controlText button.options .hint .georgia {
+.controlText div.options-button .hint .georgia {
     font-family: "Georgia", serif;
 }
 
-.controlText button.options .hint .helvetica {
+.controlText div.option-buttons .hint .helvetica {
     font-family: "Helvetica", sans-serif;
 }
 
-.controlText button.options .hint .pagecolors > div div {
+.controlText div.options-button .hint .pagecolors > div div {
     margin-left: -5px;
     display: inline-block;
     border: 1px solid #92D1FD;
@@ -1821,38 +1825,38 @@ div > button.view2.active {
     vertical-align: top;
 }
 
-.controlText button.options .hint .pagecolors > div {
+.controlText div.options-button .hint .pagecolors > div {
     height: 36px;
     border: 0;
 }
 
-.controlText button.options .hint .pagecolor {
+.controlText div.options-button .hint .pagecolor {
     width: 32px;
 }
 
-.controlText button.options .hint .pagecolors > div div.name {
+.controlText div.options-button .hint .pagecolors > div div.name {
     margin-bottom: 5px;
     margin-right: 0;
     width: calc(100% - 124px);
 }
 
-.controlText button.options .hint .pagecolor.active {
+.controlText div.options-button .hint .pagecolor.active {
     border: 5px solid red;
 }
 
-.controlText button.options .hint .pagecolor.white {
+.controlText div.options-button .hint .pagecolor.white {
     background: white;
 }
 
-.controlText button.options .hint .pagecolor.red {
+.controlText div.options-button .hint .pagecolor.red {
     background: #CF4256;
 }
 
-.controlText button.options .hint .pagecolor.black {
+.controlText div.options-button .hint .pagecolor.black {
     background: black;
 }
 
-.controlText button.options .hint .pagecolor.blue {
+.controlText div.options-button .hint .pagecolor.blue {
     background: #3793C8;
 }
 
@@ -1881,6 +1885,7 @@ div > button.view2.active {
     transition: 250ms ease-in-out;
     background: #92D1FD;
     bottom: -0.25em;
+    cursor: pointer;
 }
 
 .daynight .slider::before {
@@ -2325,7 +2330,9 @@ ul.ContentNav {
         height: 35px;
         border-right: 2px solid rgb(96, 169, 212);
         border-radius: 0;
+        margin-left: -14px;
         margin-top: 1px;
+        line-height: 23px;
     }
 
     .controlText .btn:hover,
@@ -2334,7 +2341,7 @@ ul.ContentNav {
         box-shadow: none;
     }
 
-    .controlText button .hint {
+    .controlText div .hint {
         /*
         padding: 3px 5px 3px 12px;
         margin-left: 20px;
@@ -2343,20 +2350,19 @@ ul.ContentNav {
 
         display: none !important;
     }
-
-    .controlText button.options.activated .hint {
+    .controlText div.options-button.activated .hint {
         display: block !important;
         left: 50px;
-        margin-top: -250px;
+        margin-top: -8px;
     }
-
-    .controlText button.options.active .hint .miniicon {
+    body.white .content-module.active .module_name, body.white .content-module.active .ContentNav a { color:#000; }
+    .controlText div.options-button.active .hint .miniicon {
         top: calc(100% - 35px);
     }
 
-    .controlText button.options .hint .type,
-    .controlText button.options .hint .fontname,
-    .controlText button.options .hint .pagecolors > div div {
+    .controlText div.options-button .hint .type,
+    .controlText div.options-button .hint .fontname,
+    .controlText div.options-button .hint .pagecolors > div div {
         display: inline-block !important;
     }
 
@@ -2520,6 +2526,7 @@ body.night center.project {
 
 .text p.show {
     background: #F1F1F1;
+    cursor: pointer;
 }
 
 .text p.show:hover {
