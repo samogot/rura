@@ -299,7 +299,12 @@
 											<option>Редактура</option>
 											<option>Test</option>
 										</select>
-										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
+										<div class="form-group checkbox">
+                                                                                    <label>
+                                                                                        <input type="checkbox" class="form-control" id="participant1_team_show" name="participant1_team_show">
+                                                                                        &emsp;Отображать команду
+                                                                                    </label>
+                                                                                </div>
 									</div>
 								</div>
 							</div>
@@ -323,7 +328,12 @@
 											<option>Редактура</option>
 											<option>Test</option>
 										</select>
-										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
+										<div class="form-group checkbox">
+                                                                                    <label>
+                                                                                        <input type="checkbox" class="form-control" id="participant2_team_show" name="participant2_team_show">
+                                                                                        &emsp;Отображать команду
+                                                                                    </label>
+                                                                                </div>
 									</div>
 								</div>
 							</div>
@@ -347,7 +357,12 @@
 											<option selected>Редактура</option>
 											<option>Test</option>
 										</select>
-										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
+										<div class="form-group checkbox">
+                                                                                    <label>
+                                                                                        <input type="checkbox" class="form-control" id="participant3_team_show" name="participant3_team_show">
+                                                                                        &emsp;Отображать команду
+                                                                                    </label>
+                                                                                </div>
 									</div>
 								</div>
 							</div>
@@ -371,7 +386,12 @@
 											<option>Редактура</option>
 											<option selected>Test</option>
 										</select>
-										<input type="checkbox" id="name_title" name="name_title"><label for="name_title"> Отображать команду</label>
+										<div class="form-group checkbox">
+                                                                                    <label>
+                                                                                        <input type="checkbox" class="form-control" id="participant4_team_show" name="participant4_team_show">
+                                                                                        &emsp;Отображать команду
+                                                                                    </label>
+                                                                                </div>
 									</div>
 								</div>
 							</div>
@@ -422,7 +442,7 @@
 									<h3>Настройка главы</h3>
 									<div class="form-group checkbox">
 										<label>
-											<input type="checkbox" class="form-control" id="chapter1_is_subchapter" name="chapter1_is_subchapter">
+											<input type="checkbox" class="form-control is-subchapter" id="chapter1_is_subchapter" name="chapter1_is_subchapter">
 											&emsp;Подглава
 										</label>
 									</div>
@@ -444,7 +464,7 @@
 									<h3>Настройка главы</h3>
 									<div class="form-group checkbox">
 										<label>
-											<input type="checkbox" class="form-control" id="chapter2_is_subchapter" name="chapter2_is_subchapter">
+											<input type="checkbox" class="form-control is-subchapter" id="chapter2_is_subchapter" name="chapter2_is_subchapter">
 											&emsp;Подглава
 										</label>
 									</div>
@@ -466,7 +486,7 @@
 									<h3>Настройка главы</h3>
 									<div class="form-group checkbox">
 										<label>
-											<input type="checkbox" class="form-control" id="chapter3_is_subchapter" name="chapter3_is_subchapter">
+											<input type="checkbox" class="form-control is-subchapter" id="chapter3_is_subchapter" name="chapter3_is_subchapter">
 											&emsp;Подглава
 										</label>
 									</div>
@@ -488,7 +508,7 @@
 									<h3>Настройка главы</h3>
 									<div class="form-group checkbox">
 										<label>
-											<input type="checkbox" class="form-control" id="chapter4_is_subchapter" name="chapter4_is_subchapter">
+											<input type="checkbox" class="form-control is-subchapter" id="chapter4_is_subchapter" name="chapter4_is_subchapter">
 											&emsp;Подглава
 										</label>
 									</div>
@@ -511,19 +531,15 @@
 					<div class="col-xs-4">
 						<div class="list-group select sortable" id="updateselect">
 							<a data-toggle="collapse" data-parent="#updateform" href="#update1" aria-expanded="true" aria-controls="update1" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
 								<span class="hidden-sm hidden-xs"  id="update1_date">2015-05-01</span>: <span class="hidden-sm hidden-xs"  id="update1_chapter">Весь том</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#updateform" href="#update2" aria-expanded="true" aria-controls="update2" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
 								<span class="hidden-sm hidden-xs"  id="update2_date">2013-01-01</span>: <span class="hidden-sm hidden-xs"  id="update2_chapter">Начальные иллюстрации (1)</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#updateform" href="#update3" aria-expanded="true" aria-controls="update3" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
 								<span class="hidden-sm hidden-xs"  id="update3_date">2074-12-13</span>: <span class="hidden-sm hidden-xs"  id="update3_chapter">Пролог (2)</span>
 							</a>
 							<a data-toggle="collapse" data-parent="#updateform" href="#update4" aria-expanded="true" aria-controls="update4" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
 								<span class="hidden-sm hidden-xs"  id="update4_date">2015-05-01</span>: <span class="hidden-sm hidden-xs"  id="update4_chapter">Глава 1 (3)</span>
 							</a>
 						</div>
@@ -631,16 +647,12 @@
 											<option>Обновление иллюстраций</option>
 											<option>Другое</option>
 										</select>
-										<label for="update1_chapter">Глава</label>
+										<label for="update4_chapter">Глава</label>
 										<select id="update4_chapter_select" class="form-control update_chapter">
 										</select>
 										<label for="update4_date_input">Дата</label>
-										<form class="form-inline">
                                                                                     <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <input type="text" class="form-control date-input" id="update4_date_input" value="2015-5-1">
-                                                                                            <div class="input-group-addon glyphicon glyphicon-calendar calendar"></div>
-                                                                                        </div>
+                                                                                        <input type="text" class="form-control date-input" id="update4_date_input" value="2015-5-1">
                                                                                     </div>
                                                                                 </form>
 										<label for="update4_name">Описание (опционально)</label>
@@ -860,11 +872,7 @@
 		});
 	});
 	
-	//$( "#datepicker" ).datepicker();
-        //$(".date-input").datepicker({dateFormat:"yy-mm-dd"});
-	$( '#updateform' ).on('click', '.date-input', function(){
-            $(this).datepicker({dateFormat: "yy-mm-dd"}); 
-	});
+        $(".date-input").datepicker({dateFormat:"yy-mm-dd"}); // инициализация дейтпикера
 	
 	/* ------------------------------------------ PARTISIPANTS START ------------------------------------------ */
 	
@@ -872,8 +880,6 @@
 		var p_order = 0; // поставим для каждого участника порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
 			$($(this).attr('href')+'_order').val(++p_order); // обновляем порядок
-				//console.log($(this).attr('href')); // на всякий случай пока оставлю
-				//console.log(p_order);
 		});
 	});
 	
@@ -918,6 +924,10 @@
 			name: 'participant_names',
 			source: substringMatcher(names)
 		});
+		$('.typeahead').bind('typeahead:select', function(ev, suggestion) {
+                    var id = $('.participant-data.in').attr('id');
+                    $('#' + id + '_name').html(suggestion);
+                });
 	});
 	
 	// ---------- typeahead start ----------
@@ -954,7 +964,7 @@
 	
 	$('#participantform').children('.panel').each(function(){
 		i++;
-		$('#participant' + i + '_names_selector .typeahead').typeahead({  // обработчик имен
+		$('#participant' + i + '_names_selector .typeahead').typeahead({  // обработчик никнеймов 
 			hint: true,
 			limit: 10,
 			highlight: true,
@@ -966,7 +976,7 @@
 		});
 	});
 	
-	$('#author-name-typeahead .typeahead').typeahead({  // обработчик имен
+	$('#author-name-typeahead .typeahead').typeahead({  // обработчик имен авторов
 		hint: true,
 		limit: 10,
 		highlight: true,
@@ -977,7 +987,7 @@
 		source: substringMatcher(authors)
 	});
 		
-	$('#illustrator-name-typeahead .typeahead').typeahead({  // обработчик имен
+	$('#illustrator-name-typeahead .typeahead').typeahead({  // обработчик имен иллюстраторов
 		hint: true,
 		limit: 10,
 		highlight: true,
@@ -989,7 +999,17 @@
 	});
 	// ---------- typeahead end --------------
 	
-	$('#participantform').on('change', '.name-input', function(){
+	$('#participantselect').on('click', 'a.list-group-item', function() { // баг фикс кнопки удаления
+            $('.participant-data.in').collapse('hide');
+            $($(this).attr('href')).collapse('show');
+        });
+	
+	$('.typeahead').bind('typeahead:select', function(ev, suggestion) {
+            var id = $('.participant-data.in').attr('id');
+            $('#' + id + '_name').html(suggestion);
+        });
+	
+	$('#participantform').on('keyup', '.name-input', function(){
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.participant-data.in').attr('id'); // получаем id участника
 		$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
@@ -1009,9 +1029,18 @@
 	
 	$('#btn-participant-delete').on('click',function(){ // обработка кнопки удаления для участников
 		var id = $('.participant-data.in').attr('id');
+		var nextParticipant = $('#participantselect [href="#'+id+'"]').next();
+		var nextPanel = $(nextParticipant.attr('href'));
 		$('.participant-data.in').collapse('hide');
 		$('#'+id+'_detele').val(true);
 		$('#participantselect [href="#'+id+'"]').detach();
+		if (nextParticipant.attr('class') && nextPanel.attr('class')) {
+                    nextParticipant.addClass('active');
+                    nextPanel.collapse('show');
+		} else {
+                    $('#participantselect').children().last().addClass('active');
+                    $($('#participantselect').children().last().attr('href')).collapse('show');
+		}
 	});
 	
 	/* ----------------------------------------- PARTISIPANTS END ----------------------------------------- */
@@ -1027,24 +1056,39 @@
 				//console.log($(this).attr('href')); // на всякий случай пока оставлю
 				//console.log(p_order);
 		});
+		OptionsForSelect = '<option>Весь том</option>'; // при любом перетаскивании строим селект снова
+		u = 0;
+		$('#chapterselect').children('a').each(function(){
+                    u++;
+                    OptionsForSelect = OptionsForSelect + '<option id="select_chapter' + u + '">' + $(this).children('span').text() + ' (' + u + ')</option>';
+                });
+                $('#updateform').children('.panel').find('.update_chapter').html(OptionsForSelect);
 	});
 	
 	var j=0; // id каждого элемента в пункте "Главы"
 	var k=0; // нужна, чтобы считать непосредственно сами главы (красивости)
+        var u=0; // переменная для select'а
 	
 	$('#btn-chapter-add').click(function(){ // обработка кнопки добавления новой главы
 		j++;
 		var number = 0;
-		$('#chapterselect').children().each(function(){
-			var str = $(this).children('span').text();
-			var str2 = str.substring(0,5); // вычленяем первые 5 букв
-			if (str2 == "Глава") { // если они совпадают с "главой", то увеличиваем счетчик (нужно для динамики названий)
-                            number = str.substring(6);
+                var chapterTen = false;
+                $('#chapterselect').children().each(function(){ // обрабатываем количество "Глав"
+                    var str1 = $(this).children('span').text();
+                    if (str1.substring(0,8) == "Глава 10") chapterTen = true;
+                });
+		$('#chapterselect').children().each(function(){ // обрабатываем количество "Глав"
+                        var str1 = $(this).children('span').text();
+			var str2 = str1.substring(0,5); // вычленяем первые 5 букв
+//   			if (str1.substring(0,8) == "Глава 10") chapterTen = true;
+			if ((str2 == "Глава") && (str1.substring(6,7)*1 > number) && (!chapterTen)) { // если они совпадают с "главой", и глава меньше 10,
+                            number = str1.substring(6,7)*1; // то присваеваем наибольшее число переменной
 			}
-			console.log($(this).children('span').text());
-			console.log(number);
+			if ((str2 == "Глава") && (str1.substring(6,8)*1 > number) && (chapterTen)) { // если они совпадают с "главой", и глава больше 10,
+                            number = str1.substring(6,8)*1; // то присваеваем наибольшее число переменной
+			}
 		});
-		k = number*1;
+		k = number;
 		k++;
 		var newChapter = '<a data-toggle="collapse" data-parent="#chapterform" href="#chapter' + j + '" aria-expanded="true" aria-controls="chapter' + j + '" class="list-group-item" >'+
 		'<i class="fa fa-ellipsis-v move"></i>'+
@@ -1059,7 +1103,7 @@
 		'<h3>Настройка главы</h3>'+
 		'<div class="form-group checkbox">'+
 		'<label>'+
-		'<input type="checkbox" class="form-control" id="chapter' + j + '_is_subchapter" name="chapter' + j + '_is_subchapter">'+
+		'<input type="checkbox" class="form-control is-subchapter" id="chapter' + j + '_is_subchapter" name="chapter' + j + '_is_subchapter">'+
 		'&emsp;Подглава'+
 		'</label>'+
 		'</div>'+
@@ -1073,17 +1117,46 @@
 		'</div>'+
 		'</div>';
 		var newChapterHeading = '<a class="list-group-item heading" data-chapter-id="' + j + '"><span class="move">Глава ' + k + '</span></a>';
-		$('#chapterselect').append(newChapter);
-		$('#chapterform').append(newPanel);
-		$('#imageselect').append(newChapterHeading);
-                OptionsForSelect = OptionsForSelect + '<option id="select_chapter' + j + '">Глава ' + k + ' (' + j + ')</option>';
+		if (!($('#chapterselect').children('.active').attr('href'))) { // если не выбранно ни одного элемента
+                    $('#chapterselect').append(newChapter);
+                    $('#chapterform').append(newPanel);
+                    $('#imageselect').append(newChapterHeading); // то вставляем новые главы, панели для глав, heading'и в конец
+		} else {                                         // иначе
+                    $('#chapterselect').children('.active').after(newChapter); 
+                    $('#chapterform').children('.panel').each(function(){
+                        if ($(this).children().hasClass('in')) $(this).after(newPanel); // вставляем после выбранного элемента
+                    });
+                    var isRightChapter = false; // переменная поиска
+                    var imageAfterChapter; // переменная для картинки
+                    var id = $('.chapter-data.in').attr('id'); // id выбранного элемента
+                    id = id.substring(7); // берем оттуда только цифру
+                    $('#imageselect').children().each(function(){ // в случае с heading мы будеми проверять его на наличие картинок под ним
+                        if(($(this).is('.heading[data-chapter-id]')) && ($(this).attr('data-chapter-id') == id*1)) {
+                            isRightChapter = true; // если это нужный нам heading, то начинаем искать
+                        } else if (($(this).attr('data-parent') == '#imageform') && (isRightChapter)) { 
+                            imageAfterChapter = $(this); // пихаем последнюю картинку что нашли в переменную
+                        } else { 
+                            isRightChapter = false; // перестаем искать, как только натыкаемся на другой heading
+                        }
+                    });
+                    if (imageAfterChapter) { // если мы отыскали какую-либо картинку под выбранной главой
+                        imageAfterChapter.after(newChapterHeading); // то вставляем после нее
+                    } else {
+                        $('.heading[data-chapter-id="' + id + '"]').after(newChapterHeading); // иначе втавляем после выбранного heading
+                    }
+		}
+		$('#chapter' + j + '_name').css({'margin': '0px 0px 0px 3px'}); // отступ для вновь созданого элемента, дабы он выглядел как все
+		OptionsForSelect = '<option>Весь том</option>'; // Начинаем строить селект
+		u = 0;
+		$('#chapterselect').children('a').each(function(){
+                    u++;
+                    OptionsForSelect = OptionsForSelect + '<option id="select_chapter' + u + '">' + $(this).children('span').text() + ' (' + u + ')</option>';
+                });
+                $('#updateform').children('.panel').find('.update_chapter').html(OptionsForSelect); 
 	});
 	
 	$('#chapterform').children('.panel').each(function(){
-		j++; // считаем кажую панель (читай кажый объект) 
-		//var str = $('#chapter' + j + '_name_input').val(); // берем название каждой главы
-		//str = str.substring(0,5); // вычленяем первые 5 букв
-		//if (str == "Глава") k++; // если они совпадают с "главой", то увеличиваем счетчик (нужно для динамики названий)
+		j++; // считаем кажую панель 
 	});
 	
 	$('#chapterform').on('keyup', '.name-input', function(){
@@ -1091,12 +1164,24 @@
 		var id = $('.chapter-data.in').attr('id'); // получаем id главы
 		$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 		id = id.substring(7);
-		$('.heading[data-chapter-id="'+id+'"]').children().html(elem.val());
+		$('.heading[data-chapter-id="' + id + '"]').children().html(elem.val());
 		$('#select_chapter' + id).html(elem.val());
-		console.log($('#select_chapter' + id));
+// 		console.log($('#select_chapter' + id));
 	});
 	
+	$('#chapterform').on('click', '.is-subchapter', function(){ // обработчик подглав
+            var id = $('.chapter-data.in').attr('id'); // получаем id главы
+            if ($(this).prop("checked")) { // если выделено, то
+                $('#' + id + '_name').css({'margin': '0px 0px 0px 28px'}); // при помощи css делаем подглаву
+            } else {
+                $('#' + id + '_name').css({'margin': '0px 0px 0px 3px'}); // либо делаем наоборот
+            }
+	})
 	
+	$('#chapterselect').on('click', 'a.list-group-item', function() { // баг фикс кнопки удаления (line 1185)
+            $('.chapter-data.in').collapse('hide');
+            $($(this).attr('href')).collapse('show');
+        });
 	
 	$('#chapterform').on('hidden.bs.collapse', '.chapter-data', function () { // обработка активности кнопки удаления
 		$('#btn-chapter-delete').attr('disabled',true);
@@ -1106,11 +1191,20 @@
 	
 	$('#btn-chapter-delete').on('click',function(){ // обработка кнопки удаления для глав
 		var id = $('.chapter-data.in').attr('id');
+		var nextChapter = $('#chapterselect [href="#'+id+'"]').next();
+		var nextPanel = $(nextChapter.attr('href'));
 		$('.chapter-data.in').collapse('hide');
 		$('#'+id+'_detele').val(true);
 		$('#chapterselect [href="#'+id+'"]').detach();
 		id = id.substring(7);
 		$('.heading[data-chapter-id="'+id+'"]').detach();
+		if (nextChapter.attr('class') && nextPanel.attr('class')) {
+                    nextChapter.addClass('active');
+                    nextPanel.collapse('toggle');
+		} else {
+                    $('#chapterselect').children().last().addClass('active');
+                    $($('#chapterselect').children().last().attr('href')).collapse('toggle');
+		}
 	});
 	
 	/* ------------------------------------------ CHAPTERS END ------------------------------------------ */
@@ -1118,16 +1212,13 @@
 	/* ------------------------------------------ UPDATES START ----------------------------------------- */
 	
 	$('#updateselect').on( "sortupdate", function() { // для списка обновлений задаем обработчик перетягивания
-		var ch_order = 0; // поставим для каждого обновления порядковый номер
+		var up_order = 0; // поставим для каждого обновления порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
-			$($(this).attr('href')+'_order').val(++ch_order); // обновляем порядок
-				//console.log($(this).attr('href')); // на всякий случай пока оставлю
-				//console.log(p_order);
+			$($(this).attr('href')+'_order').val(++up_order); // обновляем порядок
 		});
 	});
 	
 	var v=0; // id каждого элемента в пункте "Обновления"
-	var u=0; 
 	
 	$('#chapterselect').children('a').each(function(){
 		u++;
@@ -1139,7 +1230,6 @@
 		var nowDate = new Date();
 		var today = nowDate.getFullYear() + '-' + nowDate.getDay() + '-' + nowDate.getDate();
 		var newUpdate = '<a data-toggle="collapse" data-parent="#updateform" href="#update' + v + '" aria-expanded="true" aria-controls="update' + v + '" class="list-group-item" >'+
-		'<i class="fa fa-ellipsis-v move"></i>'+
 		'<span class="hidden-sm hidden-xs"  id="update' + v + '_date">' + today + '</span>:'+
 		'<span class="hidden-sm hidden-xs"  id="update' + v + '_chapter">Весь том</span>'+
 		'</a>';
@@ -1198,6 +1288,11 @@
 		$('#' + id + '_chapter').text(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 	});
 	
+	$('#updateselect').on('click', 'a.list-group-item', function() { // баг фикс кнопки удаления
+            $('.update-data.in').collapse('hide');
+            $($(this).attr('href')).collapse('show');
+        });
+	
 	$('#updateform').on('hidden.bs.collapse', '.update-data', function () { // обработка активности кнопки удаления
 		$('#btn-update-delete').attr('disabled',true);
 	}).on('shown.bs.collapse', '.update-data', function() {
@@ -1206,9 +1301,18 @@
 	
 	$('#btn-update-delete').on('click',function(){ // обработка кнопки удаления для глав
 		var id = $('.update-data.in').attr('id');
+		var nextUpdate = $('#updateselect [href="#'+id+'"]').next();
+		var nextPanel = $(nextUpdate.attr('href'));
 		$('.update-data.in').collapse('hide');
 		$('#'+id+'_detele').val(true);
 		$('#updateselect [href="#'+id+'"]').detach();
+		if (nextUpdate.attr('class') && nextPanel.attr('class')) {
+                    nextUpdate.addClass('active');
+                    nextPanel.collapse('show');
+		} else {
+                    $('#updateselect').children().last().addClass('active');
+                    $($('#updateselect').children().last().attr('href')).collapse('show');
+		}
 	});
 	
 	/* ------------------------------------------ UPDATES END ------------------------------------------- */
@@ -1240,6 +1344,11 @@
 			}
 		});
 	});
+	
+	$('#imageselect').on('click', 'a.list-group-item', function() { // баг фикс кнопки удаления
+            $('.image-data.in').collapse('hide');
+            $($(this).attr('href')).collapse('show');
+        });
 
 	// дальше пошел код спецефический для изображений. его я буду комментировать не так подробно
 	
@@ -1348,9 +1457,18 @@
 	
 	$('#btn-image-delete').click(function(){ // обработка кнопки удаления
 		var id = $('.image-data.in').attr('id');
+                var nextImage = $('#chapterselect [href="#'+id+'"]').next();
+		var nextPanel = $(nextImage.attr('href'));
 		$('.image-data.in').collapse('hide');
 		$('#'+id+'_detele').val(true);
 		$('#imageselect [href="#'+id+'"]').detach();
+		if (nextImage.attr('class') && nextPanel.attr('class')) {
+                    nextImage.addClass('active');
+                    nextPanel.collapse('show');
+		} else {
+                    $('#chapterselect').children().last().addClass('active');
+                    $($('#chapterselect').children().last().attr('href')).collapse('show');
+		}
 	});
 	
 	/* ------------------------------------------ IMAGES END ------------------------------------------ */
