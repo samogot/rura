@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap-switch.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!--<link rel="stylesheet" href="css/bootstrap-slider.css">-->
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
     <!--<script src="js/bootstrap-slider.js"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
-<body data-spy="scroll" data-target=".scrollspy">
+<body data-spy="scroll" data-target=".scrollspy" data-color="">
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -102,32 +105,32 @@
   </div>
 </nav>
 <div class="container">
-        <div class="leftColumn" data-color="">
+        <div class="leftColumn">
         <div class="leftbg"></div>
         <div class="rightbg"></div>
         <div class="leftMobile"></div>
         <div class="rightMobile"></div>
 <div class="controlText">
   <div>
-                <button class="btn btn-white"> <i class="fa fa-home"></i>
+                <div class="btn btn-white soderj-button"> <i class="fa fa-home"></i>
                     <div class="hint"><div class="miniicon"></div>Содержание</div>
-                </button>
-                <button class="btn btn-white disable"> <i class="fa fa-reply"></i>
+                </div>
+                <div class="btn btn-white disable"> <i class="fa fa-reply"></i>
                     <div class="hint"><div class="miniicon"></div>Предыдущая глава</div>
-                </button>
-                <button class="btn btn-white"> <i class="fa fa-share"></i>
+                </div>
+                <div class="btn btn-white"> <i class="fa fa-share"></i>
                     <div class="hint"><div class="miniicon"></div>Следующая глава</div>
-                </button>
-                <button class="btn btn-white"> <i class="fa fa-bookmark"></i>
+                </div>
+                <div class="btn btn-white bookmark-button" data-active="false"> <i class="fa fa-bookmark"></i>
                     <div class="hint"><div class="miniicon"></div>Создать закладку</div>
-                </button>
-                <button class="btn btn-white top"> <i class="fa fa-arrow-up"></i>
+                </div>
+                <div class="btn btn-white top-button"> <i class="fa fa-arrow-up"></i>
                     <div class="hint"><div class="miniicon"></div>Вверх</div>
-                </button>
-                <button class="btn btn-white mistake"> <i class="fa fa-comment"></i>
+                </div>
+                <div class="btn btn-white mistake-button"> <i class="fa fa-comment"></i>
                     <div class="hint"><div class="miniicon"></div>Нашли ошибку? Тык!</div>
-                </button>
-                <button class="btn btn-white options"> <i class="fa fa-cog"></i>
+                </div>
+                <div class="btn btn-white options-button"> <i class="fa fa-cog"></i>
                     <div class="hint"><div class="miniicon"></div>
                       <p>Шрифт</p>
                       <div class="font active" data-name="helvetica">
@@ -153,30 +156,28 @@
                       </div>
                       <p>Режим</p>
                       <div class="daynight" align="center">
-                        <span>День</span>
-                        <input type="checkbox" id="daynight" checked />
-                        <label class="slider" for="daynight"></label>
-                        <span>Ночь</span>
+                        <input type="checkbox" id="daynight" data-size="small" data-animate="true" data-on-text="<i class='fa fa-moon-o'></i>" data-off-text="<i class='fa fa-sun-o'></i>">
                       </div>
                     </div>
-                </button>
+                </div>
             </div>
             </div>
             <main class="content">
             <div class="text">
+<h2 id="chapter9" class='project chapter' data-chapter="sao-v9">Sword Art Online 9</h2>
 <h2 id="p1">Пролог 1</h2>
 <center class="subtitle"><b>Седьмой месяц по календарю Мира Людей, год 372</b></center>
 <h3 id="p1ch1">Глава 1</h3>
-<p>Схватить топор.</p>
-<p>Размахнуться.</p>
-<p>Ударить.</p>
-<p>И если бы дело было только в этих движениях, однако если отвлечёшься хоть на мгновение, неудачный удар по твёрдой коре моментально отразится резкой болью в руках. Дыхание, момент, скорость, перенос веса тела, всё это необходимо контролировать с самого начала, передавая скрытую силу топора дереву, и тогда раздастся приятный чистый и высокий звук.</p>
-<p>Теорию он понимал хорошо, но на деле это было не так-то просто. Юдзио получил это задание весной, когда ему было десять. С тех пор пришло уже второе лето, однако лишь каждый десятый его удар получался правильным. Знакомые Юдзио рассказывали, что его предшественник, дедушка Гаритта, всегда попадал в яблочко и даже после размахивания топором оставался полон сил, а вот Юдзио уже после пятидесяти ударов чувствовал онемение в руках, плечи были готовы отвалиться, и он не мог больше поднять топор.</p>
-<p>— Сорок… три! Сорок… четыре!!!</p>
-<p>Он громко подсчитывал удары, подбадривая себя на следующий, пот попадал в глаза, отчего взор мутнел, руки становились скользкими, а его точность стремительно падала. В состоянии отчаяния, он крепко схватил топор и замахнулся всем телом.</p>
-<p>— Сорок… девять! Пять… де… сят!..</p>
-<p>Его последний удар был плох даже для него, топор угодил мимо прорубленного участка в стволе, и раздался душераздирающий лязг. От такой жути могли хоть искры из глаз полететь, потому Юдзио отбросил топор, после чего попятился назад и уселся на плотный мох.</p>
-<p>Пока переводил дыхание, он услышал насмешливый голос справа от себя.</p>
+<p id="p1ch1-1">Схватить топор.</p>
+<p id="p1ch1-2">Размахнуться.</p>
+<p id="p1ch1-3">Ударить.</p>
+<p id="p1ch1-4">И если бы дело было только в этих движениях, однако если отвлечёшься хоть на мгновение, неудачный удар по твёрдой коре моментально отразится резкой болью в руках. Дыхание, момент, скорость, перенос веса тела, всё это необходимо контролировать с самого начала, передавая скрытую силу топора дереву, и тогда раздастся приятный чистый и высокий звук.</p>
+<p id="p1ch1-5">Теорию он понимал хорошо, но на деле это было не так-то просто. Юдзио получил это задание весной, когда ему было десять. С тех пор пришло уже второе лето, однако лишь каждый десятый его удар получался правильным. Знакомые Юдзио рассказывали, что его предшественник, дедушка Гаритта, всегда попадал в яблочко и даже после размахивания топором оставался полон сил, а вот Юдзио уже после пятидесяти ударов чувствовал онемение в руках, плечи были готовы отвалиться, и он не мог больше поднять топор.</p>
+<p id="p1ch1-6">— Сорок… три! Сорок… четыре!!!</p>
+<p id="p1ch1-7">Он громко подсчитывал удары, подбадривая себя на следующий, пот попадал в глаза, отчего взор мутнел, руки становились скользкими, а его точность стремительно падала. В состоянии отчаяния, он крепко схватил топор и замахнулся всем телом.</p>
+<p id="p1ch1-8">— Сорок… девять! Пять… де… сят!..</p>
+<p id="p1ch1-9">Его последний удар был плох даже для него, топор угодил мимо прорубленного участка в стволе, и раздался душераздирающий лязг. От такой жути могли хоть искры из глаз полететь, потому Юдзио отбросил топор, после чего попятился назад и уселся на плотный мох.</p>
+<p id="p1ch1-10">Пока переводил дыхание, он услышал насмешливый голос справа от себя.</p>
 <p>— Хороший звук раздался три раза за пятьдесят ударов, так что всего выходит, ммм, сорок один. Похоже, сегодня водой Сирал угощаешь ты, Юдзио.</p>
 <p>Сказавший это был мальчик примерно того же возраста, лежащий неподалёку. Юдзио не ответил, а стал рыться в поисках кожаной фляги. Подняв её, он жадно выпил воды, которая уже стала совсем тёплой. Вдоволь напившись, он плотно закрыл флягу пробкой и лишь затем сказал:</p>
 <p>— Хмм, а у тебя сорок три, да? Да я скоро догоню тебя. Так, сейчас твоя очередь… Кирито.</p>
@@ -2828,7 +2829,7 @@
                     <span><a href="#" class="more">Больше</a></span>
                 </div>
             </div>
-            <div class="module">
+            <div class="module projects-module">
                 <div class="module_name opened">
                     <i class="fa fa-chevron-down pull-left"></i>
                     <div class="h4">Проекты</div>
@@ -2930,164 +2931,151 @@
         <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
     </footer>
 </div>
-<!-- Блок ошибки -->
-<div class="mistake">
-    <form class="form-horizontal">
-    <h4>Орфографическая ошибка в тексте</h4>
-    <p><span class="MistakeText"></span></p>
-    <div class="MistakeComment">
-        Комментарий для автора <span class="grey">(необязательно)</span>:
-        <textarea></textarea>
-    </div>
-    <div class="MistakeButtons">
-        <div class="sendText">
-            Послать сообщение об ошибке автору?
-            <span class="grey">Ваш браузер останется на той же странице</span>
-        </div>
-        <button type="button" class="btn btn-primary">Отправить</button>
-        <button type="button" class="btn btn-default cancel">Отменить</button>
-    </div>
-    </form>
-</div>
-<!-- Конец Блока ошибки -->
 <div class="overlayT"></div>
 <script type="text/javascript">
 
 
+/* AFFIX */
 function reinitAffix() {
     $(window).off('.affix')
     $('.content-module>div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
         .css('top', '').affix({
-        offset: {
-            top: $('.content-module>div').offset().top - 20,
-            bottom: $('footer').outerHeight(true)
-        }
-    })
+            offset: {
+                top: $('.content-module>div').offset().top - 20,
+                bottom: $('footer').outerHeight(true)
+            }
+        })
     $('.controlText>div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
         .css('top', '').affix({
-        offset: {
-            top: $('.controlText>div').offset().top - 40,
-            bottom: $(document).height() - ($('#comments').length
-                    ? $('#comments').offset().top
-                    : $('.leftColumn').offset().top + $('.leftColumn').outerHeight(true))
-        }
-    });
+            offset: {
+                top: $('.controlText>div').offset().top - 40,
+                bottom: $(document).height() - ($('#comments').length ? $('#comments').offset().top : $('.leftColumn').offset().top + $('.leftColumn').outerHeight(true))
+            }
+        });
 }
+$(window).resize(reinitAffix);
+reinitAffix();
+/* AFFIX */
+
+/* ИНСТРУМЕНТЫ */
+$("#daynight").bootstrapSwitch();
 $('.controlText .btn').hover(
-function() {
-    $(this).children('.hint').show()
-    if($(this).hasClass('options')) $(this).addClass('activated');
-}
-,
-function() {
-    $(this).children('.hint').hide()
-    if($(this).hasClass('options')) $(this).removeClass('activated');
-}
+    function() {
+        $(this).children('.hint').show()
+        if ($(this).hasClass('options')) $(this).addClass('activated');
+    },
+    function() {
+        $(this).children('.hint').hide()
+        if ($(this).hasClass('options')) $(this).removeClass('activated');
+    }
 );
 $('.btn.top').click(function() {
     $(document).scrollTop(0);
-});
-$('.btn.mistake').click(function() {
-    $('.overlayT').show();
-    $('div.mistake').show();
-    var Mistake = getText();
-    if((Mistake != "")||(Mistake != ' ')){
-      $('div.mistake .MistakeText').text(getText());
-    } else { alert('Для начала, выделите ошибку!')}
 });
 $('.overlayT').click(function() {
     $('.overlayT').hide();
     $('div.mistake').hide();
 });
-$('div.mistake .cancel').click(function() {
-    $('.overlayT').hide();
-    $('div.mistake').hide();
-});
+$('.btn').hover(
+    function() {
+        $(this).children('.hint').show()
+    },
+    function() {
+        $(this).children('.hint').hide()
+    }
+);
+$('.controlText .btn.disable').attr('disabled', 'disabled');
+/* ИНСТРУМЕНТЫ */
+
 $('.module_name').click(function() {
     $(this).children('.fa').toggleClass("fa-chevron-right fa-chevron-down");
     if ($(this).hasClass("opened")) {
         $(this).parent().children('.actions').slideUp(reinitAffix);
         $(this).removeClass("opened");
-    }
-    else {
+    } else {
         $(this).parent().children('.actions').slideDown(reinitAffix);
         $(this).addClass("opened");
     }
 });
-$('.btn').hover(
-function() {
-    $(this).children('.hint').show()
-}
-,
-function() {
-    $(this).children('.hint').hide()
-}
-);
-reinitAffix();
 
 
-$(window).resize(reinitAffix);
+
+/* MOBILE */
 function isMobile() {
-  try{ document.createEvent("TouchEvent"); return true; }
-  catch(e){ return false; }
+    try {
+        document.createEvent("TouchEvent");
+        return true;
+    } catch (e) {
+        return false;
+    }
 }
 
-    var $right = $('.content-module');
-    var $center = $('.leftColumn');
-    var $left = $('.controlText > div');
-    function OpenRight() {
-        if ($left.hasClass("active")) {
-            $left.removeClass("active");
-            $center.removeClass("activeLeft");
-        } else {
-            $right.addClass("active");
-            $right.children('div').addClass("active");
-            $center.addClass("activeRight");
-        }
-    }
+var $right = $('.content-module');
+var $center = $('.leftColumn');
+var $left = $('.controlText > div');
 
-    function OpenLeft() {
-        if ($right.hasClass("active")) {
-            $right.removeClass("active");
-            $right.children('div').removeClass("active");
-            $center.removeClass("activeRight");
-        } else {
-            $left.addClass("active");
-            $center.addClass("activeLeft");
-        }
+function OpenRight() {
+    if ($left.hasClass("active")) {
+        $left.removeClass("active");
+        $center.removeClass("activeLeft");
+    } else {
+        $right.addClass("active");
+        $right.children('div').addClass("active");
+        $center.addClass("activeRight");
     }
-    $('.leftbg').click(OpenRight);
-    $('.rightbg').click(OpenLeft);
-    $('.leftMobile').click(OpenLeft);
-    $('.rightMobile').click(OpenRight);
-if ( isMobile() == true )     $(".leftColumn").swipe({
-        swipeLeft: function() { OpenRight() },
-        swipeRight: function() { OpenLeft() },
-        threshold: 100,
-        excludedElements: $.fn.swipe.defaults.excludedElements
-    });
-    $('#nav').click(function() {
+}
+
+function OpenLeft() {
+    if ($right.hasClass("active")) {
         $right.removeClass("active");
         $right.children('div').removeClass("active");
         $center.removeClass("activeRight");
-    });
-    $('.controlText .btn').click(function() {
-      if($(this).hasClass('options')){return false;}
-        $left.removeClass("active");
-        $center.removeClass("activeLeft");
-    });
-    $('.controlText .btn.options').click(function(){
-      if($(this).hasClass('activated')){return false;}
-        $('.controlText .btn.options').addClass('activated');
-        $('.overlayT').show();
-    })
-    $('.overlayT').click(function() {
-        $('.overlayT').hide();
-        $('.controlText .btn.options').removeClass('activated');
-        $left.removeClass("active");
-        $center.removeClass("activeLeft");
-    });
-
+    } else {
+        $left.addClass("active");
+        $center.addClass("activeLeft");
+    }
+}
+$('.leftbg').click(OpenRight);
+$('.rightbg').click(OpenLeft);
+$('.leftMobile').click(OpenLeft);
+$('.rightMobile').click(OpenRight);
+$('.soderj-button').click(function(){OpenRight();OpenRight();});
+if (isMobile() == true) $(".leftColumn").swipe({
+    swipeLeft: function() {
+        OpenRight()
+    },
+    swipeRight: function() {
+        OpenLeft()
+    },
+    threshold: 100,
+    excludedElements: $.fn.swipe.defaults.excludedElements
+});
+$('#nav').click(function() {
+    $right.removeClass("active");
+    $right.children('div').removeClass("active");
+    $center.removeClass("activeRight");
+});
+$('.controlText .btn').click(function() {
+    if ($(this).hasClass('options')) {
+        return false;
+    }
+    $left.removeClass("active");
+    $center.removeClass("activeLeft");
+});
+$('.controlText .btn.options-button').click(function() {
+    if ($(this).hasClass('activated')) {
+        return false;
+    }
+    $('.controlText .btn.options-button').addClass('activated');
+    if (isMobile() == true)  $('.overlayT').show();
+})
+$('.overlayT').click(function() {
+    $('.overlayT').hide();
+    $('.controlText .btn.options-button').removeClass('activated');
+    $left.removeClass("active");
+    $center.removeClass("activeLeft");
+});
+/* MOBILE */
 
 /*
       $(function(){
@@ -3112,44 +3100,64 @@ if ( isMobile() == true )     $(".leftColumn").swipe({
 */
 
 
-$('.options .font').click(function(){
+/* НАСТРОЙКИ */
+$('.options-button .font').click(function() {
     if ($(this).hasClass("active")) {} else {
-      $('.options .font').removeClass("active");
-      $(this).addClass("active");
-      $('.text').css('font-family',$(this).data('name'));
+        $('.options-button .font').removeClass("active");
+        $(this).addClass("active");
+        $('.text').css('font-family', $(this).data('name'));
     }
-    saveSettings({key:'fontname', item:$(this).data('name')});
+    saveSettings({
+        key: 'fontname',
+        item: $(this).data('name')
+    });
 })
-$('.options .pagecolor').click(function(){
+$('.options-button .pagecolor').click(function() {
     if ($(this).hasClass("active")) {} else {
-      $('.options .pagecolor').removeClass("active");
-      $(this).addClass("active");
-      $('.leftColumn').removeClass($('.leftColumn').data('color'));
-      $('.leftColumn').addClass($(this).data('color'));
-      $('.leftColumn').data('color',$(this).data('color'));
-      saveSettings({key:'bgcolor', item:$(this).data('color')});
+        $('.options-button .pagecolor').removeClass("active");
+        $(this).addClass("active");
+        $('body').removeClass($('body').data('color'));
+        $('body').addClass($(this).data('color'));
+        $('body').data('color', $(this).data('color'));
+        saveSettings({
+            key: 'bgcolor',
+            item: $(this).data('color')
+        });
     }
 })
-$('#daynight').on('change',function(){
-  if ($('#daynight').attr('checked') != "checked"){
-    $('#daynight').attr('checked',"checked");
-    $('body').addClass("night");
-    saveSettings({key:'night', item:true});
-  } else {
-    $('#daynight').removeAttr('checked');
-    $('body').removeClass("night");
-    saveSettings({key:'night', item:false});
-  }
+$('#daynight').on('switchChange.bootstrapSwitch', function(event, state) {
+    if (state == true) {
+        $('body').addClass("night");
+        saveSettings({
+            key: 'night',
+            item: true
+        });
+    } else {
+        $('body').removeClass("night");
+        saveSettings({
+            key: 'night',
+            item: false
+        });
+    }
 });
-$("#fontslide").on("change mousemove",function(){
+$("#fontslide").on("change mousemove", function() {
     var font = '';
-    switch($(this).val()){
-      case '0': font = '80%';break;
-      case '1': font = '100%';break;
-      case '2': font = '120%';break;
+    switch ($(this).val()) {
+        case '0':
+            font = '80%';
+            break;
+        case '1':
+            font = '100%';
+            break;
+        case '2':
+            font = '120%';
+            break;
     }
-  $('.text').css('font-size',font);
-  saveSettings({key:'fontsize', item:$(this).val()});
+    $('.text').css('font-size', font);
+    saveSettings({
+        key: 'fontsize',
+        item: $(this).val()
+    });
 });
 function supportsLocalStorage() {
     try {
@@ -3158,27 +3166,26 @@ function supportsLocalStorage() {
         return false;
     }
 }
-
 function saveSettings(options) {
     if (!supportsLocalStorage()) {
         return false;
     }
     localStorage.setItem(options.key, options.item);
 }
-
 function loadSettings() {
     if (!supportsLocalStorage()) {
         return false;
     }
     if (localStorage.getItem("bgcolor") != undefined) {
-        $('.leftColumn').addClass(localStorage.getItem("bgcolor"));
-        $('.leftColumn').data('color', localStorage.getItem("bgcolor"));
+        $('body').addClass(localStorage.getItem("bgcolor"));
+        $('body').attr('data-color', localStorage.getItem("bgcolor"));
+        $('.options-button .pagecolor[data-color="' + localStorage.getItem("bgcolor") + '"]').addClass('active');
     }
     if (localStorage.getItem("night") == "true") {
         $('body').addClass("night");
-        $('#daynight').attr('checked',"checked");
+        $('#daynight').bootstrapSwitch('state', true)
     } else {
-        $('#daynight').removeAttr('checked');
+        $('#daynight').bootstrapSwitch('state', false)
         $('body').removeClass("night");
     }
     if (localStorage.getItem("fontsize")) {
@@ -3198,12 +3205,53 @@ function loadSettings() {
         $("#fontslide").val(localStorage.getItem("fontsize"));
     }
     if (localStorage.getItem("fontname")) {
-        $('.options .font.' + localStorage.getItem("fontname")).addClass("active");
+        $('.options-button .font.' + localStorage.getItem("fontname")).addClass("active");
         $('.text').css('font-family', localStorage.getItem("fontname"));
     }
-
 }
+$(document).ready(function() {
+    loadSettings()
+});
+/* НАСТРОЙКИ */
 
+/* ЗАКЛАДКИ */
+function hideP() {
+    $('.text p').removeClass('show');
+    $('.text p').off('click');
+    $('.btn.bookmark').attr('data-active',false);
+}
+$('.controlText .btn.bookmark').click(function() {
+    $('.text p')
+        .addClass('show')
+        .on('click', function() {
+            alert($(this).attr('id'));
+            saveSettings({
+                key: 'bookmark',
+                item: $(this).attr('id')
+            });
+            hideP()
+        });
+    setTimeout(function(){$('.btn.bookmark').attr('data-active',true)},2000);
+});
+$('body').click(function(eventObject) {
+    if ($(eventObject.target).closest('div.text').length == 0 && $(eventObject.target).closest(".btn.bookmark").length == 0) {
+        hideP()
+    }
+});
+$('.controlText .btn.bookmark').click(function() {
+    if($(this).attr('data-active') == "true"){
+        hideP()
+    }
+});
+$('body').keydown(function(eventObject) {
+    if (eventObject.which == 27) {
+        hideP()
+    }
+});
+/* ЗАКЛАДКИ */
+
+
+/* MODAL */
 function getText() {
     if (window.getSelection) {
         return window.getSelection() + "";
@@ -3214,11 +3262,157 @@ function getText() {
     }
     return '';
 }
-$(document).ready(function() {
-    loadSettings()
+$('div.mistake').on('hidden.bs.modal', function(e) {
+    $('body').css('padding', 0)
+})
+$('.btn.mistake').click(function() {
+    var Mistake = getText();
+    if (Mistake == "" || Mistake == ' ') {
+        alert('Для начала, выделите ошибку!');
+    } else {
+        var Parameters = getOrphusParameters();
+        var chapterId = $('.chapter').data('chapter');
+        console.log(Parameters);
+        console.log(chapterId);
+        var callbackUrl = '';
+        showOrphusDialog(Parameters.originalText, callbackUrl, Parameters.startOffset, Parameters.paragraph, chapterId);
+    }
 });
+/* MODAL */
+/* ОШИБКИ */
+function showOrphusDialog(originalText, callbackUrl, startOffset, paragraph, chapterId)
+{
+  bootbox.dialog({
+      title: "Предложить правку",
+      message: '<form id="orphusForm">' +
+           '  <div class="form-group">' +
+           '    <label for="orphusReplacement">Текст правки</label>' +
+           '    <input type="text" class="form-control" name="replacementText" id="orphusReplacement" value="' + originalText + '">' +
+           '    <p class="help-block" style="display: none"></p>' +
+           '  </div>' +
+           '  <div class="form-group">' +
+           '    <label for="orphusComment">Комментарий <small>(необязательно)</small></label>' +
+           '    <input type="text" class="form-control" name="optionalComment" id="orphusComment">' +
+           '  </div>' +
+           '</form>',
+      buttons: {
+         cancel: {
+          label: "Отменить",
+          className: "btn-default",
+          callback: function () { }
+        },
+        success: {
+          label: "Подтвердить",
+          className: "btn-success",
+          callback: function () {
+/* TODO: text size check */
+            var replacement = $('#orphusReplacement').val();
+            if (!replacement) {
+              $('#orphusReplacement').next('.help-block').text('Введите текст для замены.').show();
+              $('#orphusReplacement').parent('.form-group').addClass('has-error');
+              return false;
+            }
+            if (replacement == originalText) {
+              $('#orphusReplacement').next('.help-block').text('Текст для замены должен отличаться от исходного.').show();
+              $('#orphusReplacement').parent('.form-group').addClass('has-error');
+              return false;
+            }
+            var data = $('#orphusForm').serialize();
+            var wcall = Wicket.Ajax.get({ 'u': callbackUrl + '&' + data + '&startOffset=' + startOffset + '&paragraph=' + paragraph + '&chapterId=' + chapterId + '&originalText=' + originalText});
+          }
+        }
+      }
+    }
+  );
+}
 
-$('.controlText .btn.disable').attr('disabled', 'disabled');
+
+/* variable attrs come from wicket framework */
+function isOrphusPreconditionsMet(attrs)
+{
+  if($('#orphusForm').length)
+  {
+    return false;
+  }
+  var keycode = Wicket.Event.keyCode(attrs.event);
+  if ((keycode == 13) && (attrs.event.ctrlKey)) //ctrl+enter
+  {
+    var range = getSelectionRange();
+    if (range && range.toString().length > 0)
+    {
+/* TODO: tag p must have associated 'id' attribute.
+ *  Probably with special format like ch+chapterId+p+paragraph
+ *  where paragraph is just порядковый номер абзаца :) */
+      return $(range.startContainer).closest('p').is($(range.endContainer).closest('p'));
+    }
+  }
+  return false;
+}
+
+function getSelectionRange()
+{
+  if (window.getSelection && window.getSelection().rangeCount > 0)
+  {
+    return window.getSelection().getRangeAt(0);
+  }
+  else if (document.selection && document.selection.type != "Control")
+  {
+    return document.selection.createRange();
+  }
+  return null;
+}
+
+function getOrphusParameters()
+{
+  var range = getSelectionRange();
+  var p = $(range.startContainer).closest('p').get(0);
+  var offset = 0;
+  if (range.cloneRange)
+  {
+    var preCaretRange = range.cloneRange();
+    preCaretRange.selectNodeContents(p);
+    preCaretRange.setEnd(range.endContainer, range.endOffset);
+    offset = preCaretRange.toString().length;
+  }
+  else
+  {
+    var preCaretTextRange = document.body.createTextRange();
+    preCaretTextRange.moveToElementText(p);
+    preCaretTextRange.setEndPoint("EndToEnd", range);
+    offset = preCaretTextRange.text.length;
+  }
+        /* TODO: add chapterId parameter. Maybe in wicket code */
+  return {originalText: range.toString(),
+                startOffset: offset - range.toString().length,
+                paragraph: p.id};
+}
+/* ОШИБКИ */
+
+
+
+
+$(document).ready(function() {
+  var banH = $('.projects-module .banners a').height();
+  if($('.content-module li:last').offset().top > $('.leftColumn .content').height()){
+    var needDelete = parseInt(((($('.content-module li:last').offset().top - $('.leftColumn .content').height()) / $('.projects-module .banners a').height()) +1),10);
+    $('.projects-module .banners').append('<div class="hiddenBanners"></div>');
+    var Blength = $('.projects-module .banners a').length;
+    var deleteFrom = Blength - needDelete + 1;
+    console.log(deleteFrom);
+    if (deleteFrom < 4) {
+        deleteFrom = 4;
+    }
+    console.log("var i = "+deleteFrom+"; i <"+ Blength);
+    $('.projects-module .banners a:gt('+deleteFrom+')').each(function(indx){
+        $(this).detach().appendTo('.hiddenBanners');
+    });
+    $('.hiddenBanners').before('<span class="more moreprojects">Больше</span>')
+    $('.moreprojects').click(function() {
+        $(this).remove();
+        $('.hiddenBanners').slideDown(reinitAffix);
+    });
+  }
+});
 </script>
 </body>
 </html>
