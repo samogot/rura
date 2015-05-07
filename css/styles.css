@@ -1415,6 +1415,7 @@ div > button.view2.active {
 #project-cover-carousel .carousel-inner {
     width: 240px;
     height: 343px;
+<<<<<<< HEAD
 }
 
 .input-group-addon{ 
@@ -1425,6 +1426,8 @@ div > button.view2.active {
 
 .input-group-addon:hover{
     background-color: #E2E2E2;
+=======
+>>>>>>> 336f2b988a22d090da46be1db45c89235e4b0cea
 }
 
 /* --------------------------------participants---------------------------- */
