@@ -2829,15 +2829,6 @@
                     <span><a href="#" class="more">Больше</a></span>
                 </div>
             </div>
-            <div class="module">
-                <div class="module_name opened">
-                    <i class="fa fa-chevron-down pull-left"></i>
-                    <div class="h4">Друзья</div>
-                </div>
-                <div class="actions banners">
-                    <a href="#"><img src="img/friend.png"></a>
-                </div>
-            </div>
             <div class="module projects-module">
                 <div class="module_name opened">
                     <i class="fa fa-chevron-down pull-left"></i>
@@ -2872,6 +2863,15 @@
                     <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220"></a>
                     <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220"></a>
                     <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220"></a><a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220"></a>
+                </div>
+            </div>
+            <div class="module">
+                <div class="module_name opened">
+                    <i class="fa fa-chevron-down pull-left"></i>
+                    <div class="h4">Друзья</div>
+                </div>
+                <div class="actions banners">
+                    <a href="#"><img src="img/friend.png"></a>
                 </div>
             </div>
             <div class="module content-module scrollspy">
@@ -3392,8 +3392,8 @@ function getOrphusParameters()
 
 $(document).ready(function() {
   var banH = $('.projects-module .banners a').height();
-  var needDelete = parseInt(((($('.projects-module .banners a:last').offset().top - $('.leftColumn .content').height()) / $('.projects-module .banners a').height()) +1),10);
-  if($('.projects-module .banners a:last').offset().top > $('.leftColumn .content').height()){
+  if($('.content-module li:last').offset().top > $('.leftColumn .content').height()){
+    var needDelete = parseInt(((($('.content-module li:last').offset().top - $('.leftColumn .content').height()) / $('.projects-module .banners a').height()) +1),10);
     $('.projects-module .banners').append('<div class="hiddenBanners"></div>');
     var Blength = $('.projects-module .banners a').length;
     var deleteFrom = Blength - needDelete + 1;
@@ -3413,5 +3413,10 @@ $(document).ready(function() {
   }
 });
 </script>
+<style>
+.text{
+  height: 600px;
+  overflow:hidden;
+}
 </body>
 </html>
