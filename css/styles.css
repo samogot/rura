@@ -2593,6 +2593,12 @@ table.rc-table-resizing thead > th > a {
     border: none;
     box-shadow: none;
     -webkit-box-shadow: none;
+    transition: none;
+    -webkit-transition: none;
+}
+.volumetable input::-webkit-input-placeholder, .volumetable input::-moz-placeholder, .volumetable input:-ms-input-placeholder{
+    color: inherit;
+    font-style: italic;
 }
 .volumetable .form-control:hover, .volumetable .form-control:active {
     background-color: #F2F2F2;

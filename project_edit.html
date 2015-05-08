@@ -137,10 +137,6 @@
                     <label for="url">Ссылка</label>
                     <input type="text" class="form-control" id="url" name="url">
                 </div>
-                <div class="form-group">
-                    <label for="name_file">Имя для файлов (Основное имя)</label>
-                    <input type="text" class="form-control" id="name_file" name="name_file">
-                </div>
 				<div class="form-group">
                     <label for="name_jp">Название (яп.)</label>
                     <input type="text" class="form-control" id="name_jp" name="name_jp">
@@ -158,10 +154,6 @@
                     <input type="text" class="form-control" id="name_romaji" name="name_romaji">
                 </div>
 				<div class="form-group">
-                    <label for="name_short">Короткое название</label>
-                    <input type="text" class="form-control" id="name_short" name="name_short">
-                </div>
-				<div class="form-group">
                     <label for="author">Автор</label>
 					<div id="author-name-typeahead">
 						<input class="form-control typeahead author-name" type="text" id="author" name="author">
@@ -173,25 +165,17 @@
 						<input class="form-control typeahead illustrator-name" type="text" id="illustrator" name="illustrator">
 					</div>
                 </div>
-				<div class="form-group">
-                    <label for="release_date">Дата публикации</label>
-                    <input type="text" class="form-control" id="release_date" name="release_date">
-                </div>
                 <div class="form-group">
-                    <label for="order_number">Порядковый номер</label>
-                    <input type="text" class="form-control" id="order_number" name="order_number">
-                </div>
-                <div class="form-group">
-                    <label for="onevolume">Одна глава</label>
                     <input type="checkbox" id="onevolume" name="onevolume" value="false">
+                    <label for="onevolume">Однотомник</label>
                 </div>
                 <div class="form-group">
-                    <label for="banner_hidden">Баннер скрыт</label>
                     <input type="checkbox" id="banner_hidden" name="banner_hidden" value="false">
+                    <label for="banner_hidden">Баннер скрыт</label>
                 </div>
                 <div class="form-group">
-                    <label for="project_hidden">Проект скрыт</label>
                     <input type="checkbox" id="project_hidden" name="project_hidden" value="false">
+                    <label for="project_hidden">Проект скрыт</label>
                 </div>
                 <div class="form-group">
                     <label for="franchise">Описание франшизы</label>
@@ -219,35 +203,35 @@
                                         <label for="LABELnumber">#</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELurl" name="LABEL" value="1">
+                                        <input type="checkbox" id="LABELurl" name="LABEL" value="1" checked>
                                         <label for="LABELurl">Ссылка</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELname_file" name="LABEL" value="2">
+                                        <input type="checkbox" id="LABELname_file" name="LABEL" value="2" checked>
                                         <label for="LABELname_file">Имя для файлов (Основное имя)</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELname_title" name="LABEL" value="3">
+                                        <input type="checkbox" id="LABELname_title" name="LABEL" value="3" checked>
                                         <label for="LABELname_title">Имя для заголовков</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELname_jp" name="LABEL" value="4">
+                                        <input type="checkbox" id="LABELname_jp" name="LABEL" value="4" checked>
                                         <label for="LABELname_jp">Название (яп.)</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELname_en" name="LABEL" value="5">
+                                        <input type="checkbox" id="LABELname_en" name="LABEL" value="5" checked>
                                         <label for="LABELname_en">Название (англ.)</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELname_ru" name="LABEL" value="6">
+                                        <input type="checkbox" id="LABELname_ru" name="LABEL" value="6" checked>
                                         <label for="LABELname_ru">Название (рус.)</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELname_romaji" name="LABEL" value="7">
+                                        <input type="checkbox" id="LABELname_romaji" name="LABEL" value="7" checked>
                                         <label for="LABELname_romaji">Название (романдзи)</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELname_short" name="LABEL" value="8">
+                                        <input type="checkbox" id="LABELname_short" name="LABEL" value="8" checked>
                                         <label for="LABELname_short">Короткое название</label>
                                     </li>
                                     <li>
@@ -255,7 +239,7 @@
                                         <label for="LABELproject_id">Серия</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELsequence_number" name="LABEL" value="10">
+                                        <input type="checkbox" id="LABELsequence_number" name="LABEL" value="10" checked>
                                         <label for="LABELsequence_number">Номер в серии</label>
                                     </li>
                                     <li>
@@ -267,11 +251,11 @@
                                         <label for="LABELillustrator">Иллюстратор</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELrelease_date" name="LABEL" value="13">
+                                        <input type="checkbox" id="LABELrelease_date" name="LABEL" value="13" checked>
                                         <label for="LABELrelease_date">Дата публикации</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="LABELISBN" name="LABEL" value="14">
+                                        <input type="checkbox" id="LABELISBN" name="LABEL" value="14" checked>
                                         <label for="LABELISBN">ISBN</label>
                                     </li>
                                     <li>
@@ -298,8 +282,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-12-sm" style="overflow-x:scroll">
-                            <table class="table table-bordered">
+                        <div class="col-12-sm" style="overflow-x:scroll;margin-top:15px;">
+                            <table class="table table-bordered table-condensed">
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -464,9 +448,9 @@
 */
     var volumelength = $('.volumetable tr').length-1;
     $(function(){
-        $('[name="LABEL"]').attr('checked','checked');
+        checkCheck()
     });
-    $('.dropdown-menu.noclose li').click(function(){
+    function checkCheck(){
         for(var i=0;i<volumelength;i++){
             ($('[name="LABEL"]').not('[name="LABEL"]:checked')).each(function(indx){
                 $('.volumetable table tr:eq('+(i+1)+') > td:eq('+$(this).val()+')').hide();$('.volumetable table tr > th:eq('+$(this).val()+')').hide();
@@ -475,8 +459,8 @@
                 $('.volumetable table tr:eq('+(i+1)+') > td:eq('+$(this).val()+')').show();$('.volumetable table tr > th:eq('+$(this).val()+')').show();
             });
         }
-
-    })
+    }
+    $('.dropdown-menu.noclose li').click(function(){checkCheck()});
     $('.volumetable').on('click','tr',function(){
         $('.volumetable tr').removeClass('info');
         $(this).addClass('info');
@@ -494,6 +478,7 @@
             $('.volumetable tr.clonned .form-control').each(function(){
                 $(this).attr('id',volumelength+$(this).attr('id').substr(1));
             });
+            checkCheck()
 
         }
         else {
@@ -515,27 +500,27 @@
         var newVolume = '';
         newVolume +=  '<tr>';
         newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'number" name="number" value="'+volumelength+'"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'url" name="url" value="Text"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_file" name="name_file" value="Text"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_title" name="name_title" value="Text"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_jp" name="name_jp" value="Text"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_en" name="name_en" value="Text"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_ru" name="name_ru" value="Text"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_romaji" name="name_romaji"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_short" name="name_short"></td>';
-        newVolume +=  '<td><select class="form-control" id="'+volumelength+'project_id" name="project_id">';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'url" name="url" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_file" name="name_file" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_title" name="name_title" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_jp" name="name_jp" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_en" name="name_en" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_ru" name="name_ru" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_romaji" name="name_romaji" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_short" name="name_short" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><select class="form-control" id="'+volumelength+'project_id" name="project_id" placeholder="<пусто>">';
         newVolume +=  '<option>Sword Art Online</option>';
         newVolume +=  '<option>2</option>';
         newVolume +=  '<option>3</option>';
         newVolume +=  '<option>4</option>';
         newVolume +=  '<option>5</option>';
         newVolume +=  '</select></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'sequence_number" name="sequence_number"></td>';
-        newVolume +=  '<td><input class="form-control typeahead author-name" type="text" id="'+volumelength+'author" name="author" value="Text"></td>';
-        newVolume +=  '<td><input class="form-control typeahead illustrator-name" type="text" id="'+volumelength+'illustrator" name="illustrator" value="Text"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'release_date" name="release_date"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'ISBN" name="ISBN" value="Text"></td>';
-        newVolume +=  '<td><select class="form-control" id="'+volumelength+'volume_type" name="volume_type">';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'sequence_number" name="sequence_number" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input class="form-control typeahead author-name" type="text" id="'+volumelength+'author" name="author"  placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input class="form-control typeahead illustrator-name" type="text" id="'+volumelength+'illustrator" name="illustrator"  placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'release_date" name="release_date" placeholder="<пусто>"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'ISBN" name="ISBN"  placeholder="<пусто>"></td>';
+        newVolume +=  '<td><select class="form-control" id="'+volumelength+'volume_type" name="volume_type" >';
         newVolume +=  '<option>Ранобэ</option>';
         newVolume +=  '<option>Побочные истории</option>';
         newVolume +=  '<option>Авторские додзинси</option>';
@@ -565,9 +550,9 @@
         newVolume +=  '<option value="14">Завершен</option>';
         newVolume +=  '</optgroup>';
         newVolume +=  '</select></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'external_url" name="external_url"></td>';
-        newVolume +=  '<td><textarea class="form-control" id="'+volumelength+'annotation" name="annotation" rows="3" style="width: 100%;"></textarea></td>';
-        newVolume +=  '<td><input type="checkbox" class="form-control" id="'+volumelength+'adult" name="adult"></td>';
+        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'external_url" name="external_url"  placeholder="<пусто>"></td>';
+        newVolume +=  '<td><textarea class="form-control" id="'+volumelength+'annotation" name="annotation" rows="3" style="width: 100%;"  placeholder="<пусто>"></textarea></td>';
+        newVolume +=  '<td><input type="checkbox" class="form-control" id="'+volumelength+'adult" name="adult"  placeholder="<пусто>"></td>';
         newVolume +=  '</tr>';
         $(newVolume).appendTo($(".volumetable table"));
     });
