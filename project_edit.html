@@ -206,14 +206,14 @@
 
                 <h3>Редактирование томов</h3>
                 <form>
-    				<div class="row volumetable">
-                        <div class="btn-group" role="group" aria-label="Панель глав">
+    				<div class="volumetable">
+                        <div class="btn-group col-12-sm" role="group" aria-label="Панель глав">
                             <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i></button>
                             <button type="button" class="btn btn-warning" title="Дублировать главу" id="btn-update-clone"><i class="fa fa-files-o"></i></button>
                             <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-update-delete"><i class="fa fa-trash-o"></i></button>
                             <div class="btn-group">
                               <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Выбранные колонки <span class="caret"></span></button>
-                                <ul class="dropdown-menu noclose">
+                                <ul class="dropdown-menu noclose bullet pull-top pull-right">
                                     <li>
                                         <input type="checkbox" id="LABELnumber" name="LABEL" value="0">
                                         <label for="LABELnumber">#</label>
@@ -298,129 +298,131 @@
                                 </ul>
                             </div>
                         </div>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Ссылка</th>
-                                    <th>Имя для файлов (Основное имя)</th>
-                                    <th>Имя для заголовков</th>
-                                    <th>Название (яп.)</th>
-                                    <th>Название (англ.)</th>
-                                    <th>Название (рус.)</th>
-                                    <th>Название (романдзи)</th>
-                                    <th>Короткое название</th>
-                                    <th>Серия</th>
-                                    <th>Номер в серии</th>
-                                    <th>Автор</th>
-                                    <th>Иллюстратор</th>
-                                    <th>Дата публикации</th>
-                                    <th>ISBN</th>
-                                    <th>Тип релиза</th>
-                                    <th>Статус релиза</th>
-                                    <th>Внешняя ссылка</th>
-                                    <th>Аннотация</th>
-                                    <th>18+ (Непотребное содержание)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <input type="text" class="form-control" id="1number" name="number" value="1">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1url" name="url" value="http://ruranobe.ru/r/sao/v1">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1name_file" name="name_file" value="Sword Art Online 1">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1name_title" name="name_title" value="Sword Art Online 1">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1name_jp" name="name_jp" value="ソードアート・オンライン1 アインクラッド">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1name_en" name="name_en" value="Sword Art Online 1: Aincrad">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1name_ru" name="name_ru" value="Sword Art Online 1: Айнкрад">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1name_romaji" name="name_romaji">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1name_short" name="name_short">
-                                    </td>
-                                    <td>
-                                        <select class="form-control" id="1project_id" name="project_id">
-                                            <option>Sword Art Online</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1sequence_number" name="sequence_number">
-                                    </td>
-                                    <td>
-                                        <input class="form-control typeahead author-name" type="text" id="1author" name="author" value="Рэки Кавахара">
-                                    </td>
-                                    <td>
-                                        <input class="form-control typeahead illustrator-name" type="text" id="1illustrator" name="illustrator" value="abec">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1release_date" name="release_date">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1ISBN" name="ISBN" value="978-4048677608">
-                                    </td>
-                                    <td>
-                                        <select class="form-control" id="1volume_type" name="volume_type">
-                                            <option>Ранобэ</option>
-                                            <option>Побочные истории</option>
-                                            <option>Авторские додзинси</option>
-                                            <option>Другое</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <select class="form-control" id="1volume_status" name="volume_status">
-                                            <option value="1">Скрыт</option>
-                                            <optgroup label="Сторонний перевод">
-                                                <option value="3">Заброшенный сторонний перевод</option>
-                                                <option value="4">Активный сторонний перевод</option>
-                                                <option value="5">Завершенный сторонний перевод</option>
-                                            </optgroup>
-                                            <optgroup label="Не в работе">
-                                                <option value="6">Отсутствует анлейт</option>
-                                                <option value="7">Заморожен</option>
-                                                <option value="8">Приостановлен</option>
-                                                <option value="9">Очередь перевода</option>
-                                            </optgroup>
-                                            <optgroup label="В работе">
-                                                <option value="10">Перевод в онгоинге</option>
-                                                <option value="11">Перевод</option>
-                                                <option value="12">Редактура</option>
-                                            </optgroup>
-                                            <optgroup label="Опубликован">
-                                                <option value="13">Не оформлен</option>
-                                                <option value="14">Завершен</option>
-                                            </optgroup>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" id="1external_url" name="external_url">
-                                    </td>
-                                    <td>
-                                        <textarea class="form-control" id="1annotation" name="annotation" rows="3" style="width: 100%;"></textarea>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" id="1adult" name="adult">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="col-12-sm" style="overflow-x:scroll">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Ссылка</th>
+                                        <th>Имя для файлов (Основное имя)</th>
+                                        <th>Имя для заголовков</th>
+                                        <th>Название (яп.)</th>
+                                        <th>Название (англ.)</th>
+                                        <th>Название (рус.)</th>
+                                        <th>Название (романдзи)</th>
+                                        <th>Короткое название</th>
+                                        <th>Серия</th>
+                                        <th>Номер в серии</th>
+                                        <th>Автор</th>
+                                        <th>Иллюстратор</th>
+                                        <th>Дата публикации</th>
+                                        <th>ISBN</th>
+                                        <th>Тип релиза</th>
+                                        <th>Статус релиза</th>
+                                        <th>Внешняя ссылка</th>
+                                        <th>Аннотация</th>
+                                        <th>18+ (Непотребное содержание)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" id="1number" name="number" value="1">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1url" name="url" value="http://ruranobe.ru/r/sao/v1">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1name_file" name="name_file" value="Sword Art Online 1">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1name_title" name="name_title" value="Sword Art Online 1">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1name_jp" name="name_jp" value="ソードアート・オンライン1 アインクラッド">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1name_en" name="name_en" value="Sword Art Online 1: Aincrad">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1name_ru" name="name_ru" value="Sword Art Online 1: Айнкрад">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1name_romaji" name="name_romaji">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1name_short" name="name_short">
+                                        </td>
+                                        <td>
+                                            <select class="form-control" id="1project_id" name="project_id">
+                                                <option>Sword Art Online</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1sequence_number" name="sequence_number">
+                                        </td>
+                                        <td>
+                                            <input class="form-control typeahead author-name" type="text" id="1author" name="author" value="Рэки Кавахара">
+                                        </td>
+                                        <td>
+                                            <input class="form-control typeahead illustrator-name" type="text" id="1illustrator" name="illustrator" value="abec">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1release_date" name="release_date">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1ISBN" name="ISBN" value="978-4048677608">
+                                        </td>
+                                        <td>
+                                            <select class="form-control" id="1volume_type" name="volume_type">
+                                                <option>Ранобэ</option>
+                                                <option>Побочные истории</option>
+                                                <option>Авторские додзинси</option>
+                                                <option>Другое</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-control" id="1volume_status" name="volume_status">
+                                                <option value="1">Скрыт</option>
+                                                <optgroup label="Сторонний перевод">
+                                                    <option value="3">Заброшенный сторонний перевод</option>
+                                                    <option value="4">Активный сторонний перевод</option>
+                                                    <option value="5">Завершенный сторонний перевод</option>
+                                                </optgroup>
+                                                <optgroup label="Не в работе">
+                                                    <option value="6">Отсутствует анлейт</option>
+                                                    <option value="7">Заморожен</option>
+                                                    <option value="8">Приостановлен</option>
+                                                    <option value="9">Очередь перевода</option>
+                                                </optgroup>
+                                                <optgroup label="В работе">
+                                                    <option value="10">Перевод в онгоинге</option>
+                                                    <option value="11">Перевод</option>
+                                                    <option value="12">Редактура</option>
+                                                </optgroup>
+                                                <optgroup label="Опубликован">
+                                                    <option value="13">Не оформлен</option>
+                                                    <option value="14">Завершен</option>
+                                                </optgroup>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="1external_url" name="external_url">
+                                        </td>
+                                        <td>
+                                            <textarea class="form-control" id="1annotation" name="annotation" rows="3" style="width: 100%;"></textarea>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="form-control" id="1adult" name="adult">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 				</form>
 

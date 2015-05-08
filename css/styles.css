@@ -2577,10 +2577,6 @@ table.rc-table-resizing thead > th > a {
 /*   resize  */
 
 /*   table   */
-.volumetable {
-    overflow-x: scroll;
-    min-height: 585px;
-}
 .volumetable th {
     text-align: center;
 }
