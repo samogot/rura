@@ -247,7 +247,7 @@
 						&emsp;18+ (Непотребное содержание)
 					</label>
                 </div>
-				<div id="datepicker"></div>
+				<div id="testdibv"></div>
 				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 				</form>
                 <h2>Этапы/Стаф</h2>
@@ -1050,15 +1050,36 @@
 	
 	/* ------------------------------------------ CHAPTERS START ------------------------------------------ */
 	
-	var OptionsForSelect = '<option>Весь том</option>';
+	var OptionsForSelect = '<option>Весь том</option>'; // опции для селекта
+        var u=0; // переменная для select'а
 	
-	$('#chapterselect').on( "sortupdate", function() { // для списка глав задаем обработчик перетягивания
-		var ch_order = 0; // поставим для каждой главы порядковый номер
+	$('#chapterselect').on( "sortupdate", function( event, ui ) { // для списка глав задаем обработчик перетягивания
+		var p_order = 0; // поставим для каждой главы порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
-			$($(this).attr('href')+'_order').val(++ch_order); // обновляем порядок
-				//console.log($(this).attr('href')); // на всякий случай пока оставлю
-				//console.log(p_order);
+			$($(this).attr('href')+'_order').val(++p_order); // обновляем порядок
+// 				console.log($(this).attr('href')); // на всякий случай пока оставлю
+// 				console.log(p_order);
 		});
+                var id = ui.item.attr('href').substring(8); // находим id главы, которую только что перетащили
+                var isRightChapter = false; // переменная поиска
+                var chapter = []; // массив для картинок с главой
+                chapter.push($('.heading[data-chapter-id='+ id +']').get(0)); // пихаем саму главу в массив
+                $('#imageselect').children().each(function(){ // проверим главу на наличие картинок под ней
+                    if(($(this).is('.heading[data-chapter-id]')) && ($(this).attr('data-chapter-id') == id*1)) { // если это нужный нам heading,
+                        isRightChapter = true; // то начинаем искать
+                    } else if (($(this).attr('data-parent') == '#imageform') && (isRightChapter)) { 
+                        chapter.push($(this).get(0)); // пихаем последнюю картинку что нашли в массив
+                    } else { 
+                        isRightChapter = false; // перестаем искать, как только натыкаемся на другой heading
+                    }
+                });
+                if (ui.item.next().attr('href')) { // если следующий элемент в списке присутствует,
+                    var nextElem = ui.item.next(); // то получаем его
+                    id = nextElem.attr('href').substring(8); // находим id следующей главы
+                    $('.heading[data-chapter-id='+ id +']').before(chapter); // и вставляем перед ней
+                } else { // иначе
+                    $('#imageselect').append(chapter); // вставляем в конце селекта
+                }
 		OptionsForSelect = '<option>Весь том</option>'; // при любом перетаскивании строим селект снова
 		u = 0;
 		$('#chapterselect').children('a').each(function(){
@@ -1070,7 +1091,6 @@
 	
 	var j=0; // id каждого элемента в пункте "Главы"
 	var k=0; // нужна, чтобы считать непосредственно сами главы (красивости)
-        var u=0; // переменная для select'а
 	
 	$('#btn-chapter-add').click(function(){ // обработка кнопки добавления новой главы
 		j++;
@@ -1149,6 +1169,12 @@
                     }
 		}
 		$('#chapter' + j + '_name').css({'margin': '0px 0px 0px 3px'}); // отступ для вновь созданого элемента, дабы он выглядел как все
+		var p_order = 0; // поставим для каждой главы порядковый номер
+		$(this).children().each(function(){ // проверяем каждый элемент
+			$($(this).attr('href')+'_order').val(++p_order); // обновляем порядок
+				console.log($(this).attr('href')); // на всякий случай пока оставлю
+				console.log(p_order);
+		});
 		OptionsForSelect = '<option>Весь том</option>'; // Начинаем строить селект
 		u = 0;
 		$('#chapterselect').children('a').each(function(){
