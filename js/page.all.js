@@ -1,10 +1,20 @@
 $('.module_name').click(function() {
     $(this).children('.fa').toggleClass("fa-chevron-right fa-chevron-down");
     if ($(this).hasClass("opened")) {
-        $(this).parent().children('.actions').slideUp(reinitAffix);
+        if($('.module-content').length != 0) {
+            $(this).parent().children('.actions').slideUp(reinitAffix);
+        }
+        else {
+            $(this).parent().children('.actions').slideUp();
+        }
         $(this).removeClass("opened");
     } else {
-        $(this).parent().children('.actions').slideDown(reinitAffix);
+        if($('.module-content').length != 0) {
+            $(this).parent().children('.actions').slideDown(reinitAffix);
+        }
+        else {
+            $(this).parent().children('.actions').slideDown();
+        }
         $(this).addClass("opened");
     }
 });
