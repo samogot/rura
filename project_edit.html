@@ -417,18 +417,16 @@
                 <h3>Редактирование подсерий</h3>
                 <form>
                     <div class="subseriestable">
-                        <div class="col-xs-6">
-                            <div class="list-group select sortable" id="subseries">
-                                <a data-toggle="collapse" data-parent="#subseries" href="#sub1" aria-expanded="true" aria-controls="chapter1" class="list-group-item" >
+                            <div class="btn-group col-12-sm">
+                                <button type="button" class="btn btn-success" title="Добавить новую подсерию" id="btn-sub-add"><i class="fa fa-plus"></i></button>
+                                <button type="button" class="btn btn-danger" title="Удалить подсерию" id="btn-sub-delete"><i class="fa fa-trash-o"></i></button>
+                            </div>
+                            <div class="list-group select sortable" id="subseries" style="margin-top:15px;">
+                                <a data-toggle="collapse" data-parent="#subseries" href="#sub0" aria-expanded="true" aria-controls="chapter1" class="list-group-item" >
                                     <i class="fa fa-ellipsis-v move"></i>
-                                    <input type="text" class="form-control" placeholder="<пусто>" id="1sub_input" name="external_url">
+                                    <input type="text" class="form-control" placeholder="<пусто>" id="0sub_input" name="external_url">
                                 </a>
                             </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <button type="button" class="btn btn-success" title="Добавить новую подсерию" id="btn-sub-add"><i class="fa fa-plus"></i></button>
-                            <button type="button" class="btn btn-danger" title="Удалить подсерию" id="btn-sub-delete"><i class="fa fa-trash-o"></i></button>
-                        </div>
                     </div>
                 </form>
 
@@ -493,11 +491,21 @@
         newSub +=  '<i class="fa fa-ellipsis-v move"></i>'
         newSub +=  '<input type="text" class="form-control" placeholder="<пусто>" id="'+sublength+'sub_input" name="external_url">'
         newSub +=  '</a>';
-        $(newSub).appendTo($("#subseries"));
+        if($('.subseriestable a.list-group-item').hasClass('active')){
+            $(newSub).insertAfter($(".subseriestable a.list-group-item.active"));
+        } else {
+            $(newSub).appendTo($("#subseries"));
+        }
+            $('[href="#sub'+sublength+'"]').click();
+            $('#'+sublength+'sub_input').focus();
     });
     $('#btn-sub-delete').click(function(){
-        if($('.subseriestable a.list-group-item').hasClass('info')){
-            $('.subseriestable a.list-group-item.info').remove();
+        if($('.subseriestable a.list-group-item').hasClass('active')){
+            $thissub = $('.subseriestable a.list-group-item.active');
+            $nextsub = $thissub.next();
+            $thissub.remove();
+            $nextsub.addClass('active');
+            $nextsub.children('input').focus();
             sublength--
         }
         else {
@@ -527,6 +535,7 @@
             $('.volumetable tr.clonned .form-control').each(function(){
                 $(this).attr('id',volumelength+$(this).attr('id').substr(1));
             });
+            $("#"+volumelength+"url").focus().val('');
             checkCheck()
 
         }
@@ -536,8 +545,11 @@
     });
     $('#btn-update-delete').click(function(){
         if($('.volumetable tr').hasClass('info')){
-            $('.volumetable tr.info').remove();
+            $thisvol = $('.volumetable tr.info');
+            $nextvol = $thisvol.next();
             volumelength--
+            $thisvol.remove();
+            $nextvol.addClass('info');
         }
         else {
             alert('Сначала выделите главу!')
@@ -605,6 +617,9 @@
         newVolume +=  '<td><input type="checkbox" class="form-control" id="'+volumelength+'adult" name="adult"  placeholder="<пусто>"></td>';
         newVolume +=  '</tr>';
         $(newVolume).appendTo($(".volumetable table"));
+        $("#"+volumelength+"url").focus();
+        $('.volumetable tr').removeClass('info');
+        $("#"+volumelength+"url").parent().parent().addClass('info');
         checkCheck();
     });
 </script>
