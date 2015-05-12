@@ -554,7 +554,7 @@ footer {
 .updIcon {
     width: 65px;
     height: 40px;
-    background-color: rgb(217, 238, 250) !important;
+    background: rgb(217, 238, 250) no-repeat scroll 50% 12px;
     float: left;
 }
 
@@ -2360,7 +2360,7 @@ body.night center.project {
 
 .text p.show:hover {
     border: 1px dashed #92D1FD;
-    margin: -1px -1px 9px -1px;
+    margin: -1px -1px 4px -1px;
 }
 
 .hiddenBanners {
@@ -2494,4 +2494,13 @@ table.rc-table-resizing thead > th > a {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.text p {
+    margin: 0 0 5px;
+    text-indent: 25px;
+}
+
+.text {
+    text-align: justify;
 }

@@ -1,10 +1,10 @@
 /* AFFIX */
 function reinitAffix() {
     $(window).off('.affix')
-    $('.content-module>div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
+    $('#contents-module>div').removeData('bs.affix').removeClass('affix affix-top affix-bottom')
         .css('top', '').affix({
             offset: {
-                top: $('.content-module > div').offset().top - 20,
+                top: $('#contents-module > div').offset().top - 20,
                 bottom: $('footer').outerHeight(true)
             }
         })
@@ -62,7 +62,7 @@ function isMobile() {
     }
 }
 
-var $right = $('.content-module');
+var $right = $('#contents-module');
 var $center = $('.leftColumn');
 var $left = $('.controlText > div');
 
