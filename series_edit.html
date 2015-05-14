@@ -230,6 +230,142 @@
                 </div>
                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                 </form>
+
+                <h2>Виды работ</h2>
+                <form>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="btn-group" role="group" aria-label="Виды работ" data-type="activities">
+                          <button type="button" class="btn btn-success btn_add" title="Добавить новый вид" id="btn-activities-add"><i class="fa fa-plus"></i></button>
+                          <button type="button" class="btn btn-danger btn_delete" title="Удалить главу" id="btn-activities-delete" disabled><i class="fa fa-trash-o"></i></button>
+                        </div>
+                        <div class="list-group select sortable" id="activitiesselect" style="margin-top:10px">
+                            <a data-toggle="collapse" data-parent="#activitiesform" href="#activities1" aria-expanded="true" aria-controls="activities1" class="list-group-item" >
+                                <span class="hidden-sm hidden-xs"  id="activities1_name">Название 1</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 admin-affix" id="activitiesform" role="tablist" aria-multiselectable="true">
+                        <div class="progress collapse">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                <span class="sr-only">0% Complete</span>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="row collapse activities-data" role="tabpanel" id="activities1">
+                                <input type="hidden" id="activities1_id">
+                                <input type="hidden" id="activities1_order">
+                                <input type="hidden" id="activities1_delete">
+                                <div class="activities-data-main">
+                                    <h3>Настройка вида</h3>
+                                    <div class="form-group">
+                                        <label for="activities1_name_input">Название</label>
+                                        <input class="form-control name-input" type="text" id="activities1_name_input" value="Название">
+                                        <label for="activities1_type_input">Тип</label>
+                                        <select class="form-control" id="activities1_type_input">
+                                            <option>Текст</option>
+                                            <option>Изображение</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+
+
+
+                <h2>Команды</h2>
+                <form>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="btn-group" role="group" aria-label="Виды работ" data-type="teams">
+                          <button type="button" class="btn btn-success btn_add" title="Добавить новый вид" id="btn-teams-add"><i class="fa fa-plus"></i></button>
+                          <button type="button" class="btn btn-danger btn_delete" title="Удалить главу" id="btn-teams-delete" disabled><i class="fa fa-trash-o"></i></button>
+                        </div>
+                        <div class="list-group select sortable" id="teamsselect" style="margin-top:10px">
+                            <a data-toggle="collapse" data-parent="#teamsform" href="#teams1" aria-expanded="true" aria-controls="teams1" class="list-group-item" >
+                                <span class="hidden-sm hidden-xs"  id="teams1_name">Название 1</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 admin-affix" id="teamsform" role="tablist" aria-multiselectable="true">
+                        <div class="progress collapse">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                <span class="sr-only">0% Complete</span>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="row collapse teams-data" role="tabpanel" id="teams1">
+                                <input type="hidden" id="teams1_id">
+                                <input type="hidden" id="teams1_order">
+                                <input type="hidden" id="teams1_delete">
+                                <div class="teams-data-main">
+                                    <h3>Настройка команды</h3>
+                                    <div class="form-group">
+                                        <label for="teams1_name_input">Название</label>
+                                        <input class="form-control name-input" type="text" id="teams1_name_input" value="Название">
+                                        <label for="teams1_url_input">Ссылка</label>
+                                        <input class="form-control url-input" type="text" id="teams1_url_input" value="Ссылка на сайт">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+
+
+
+                <h2>Члены команды</h2>
+                <form>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="btn-group" role="group" aria-label="Виды работ" data-type="teammembers">
+                          <button type="button" class="btn btn-success btn_add" title="Добавить новый вид" id="btn-teammembers-add"><i class="fa fa-plus"></i></button>
+                          <button type="button" class="btn btn-danger btn_delete" title="Удалить главу" id="btn-teammembers-delete" disabled><i class="fa fa-trash-o"></i></button>
+                        </div>
+                        <div class="list-group select sortable" id="teammembersselect" style="margin-top:10px">
+                            <a data-toggle="collapse" data-parent="#teammembersform" href="#teammembers1" aria-expanded="true" aria-controls="teammembers1" class="list-group-item" >
+                                <span class="hidden-sm hidden-xs"  id="teammembers1_name">Участник 1</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 admin-affix" id="teammembersform" role="tablist" aria-multiselectable="true">
+                        <div class="progress collapse">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                <span class="sr-only">0% Complete</span>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="row collapse teammembers-data" role="tabpanel" id="teammembers1">
+                                <input type="hidden" id="teammembers1_id">
+                                <input type="hidden" id="teammembers1_order">
+                                <input type="hidden" id="teammembers1_delete">
+                                <div class="teammembers-data-main">
+                                    <h3>Настройка участника</h3>
+                                    <div class="form-group">
+                                        <label for="teammembers1_name_input">Никнейм</label>
+                                        <div id="teammembers1_names_selector">
+                                            <input class="form-control name-input typeahead" type="text" id="teammembers1_name_input" value="Никнейм">
+                                        </div>
+                                        <label for="activities1_team_input">Название команды</label>
+                                        <select class="form-control all_teams" id="teammembers1_team_input">
+                                            <option name="teams1">Команда 1</option>
+                                        </select>
+                                        <input type="checkbox" id="teammembers1_checkbox_input">
+                                        <label for="teammembers1_checkbox_input">Активен</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
             </main>
         </div>
 
@@ -293,7 +429,7 @@
         $(".volumetable table").resizableColumns();
     });
 */
-    $('.list-group.select.sortable').sortable({ // включаем jquery-ui sortable
+    $('#seriesselect').sortable({ // включаем jquery-ui sortable
         items: "a:not(:first-child.heading)", // запрещаем передвигать что либо выше первого heading (не может быть картинок вне глав)
         handle:'.move' // задаем маркер перетягивания
     });
@@ -407,7 +543,184 @@
                     $($('#seriesselect').children().last().attr('href')).collapse('toggle');
         }
     });
+    var ac= $('#activitiesselect .list-group-item').length;
+    var team= $('#teamsselect .list-group-item').length;
+    var teamm= $('#teammembersselect .list-group-item').length;
 
+    $('.btn_add').click(function(){
+        var type = $(this).parent().data('type');
+        var num;
+        switch (type) {
+            case 'activities':
+                ac++;
+                var newMenu = '<a data-toggle="collapse" data-parent="#activitiesform" href="#activities' + ac + '" aria-expanded="true" aria-controls="activities' + ac + '" class="list-group-item" >'+
+                '<span class="hidden-sm hidden-xs"  id="activities' + ac + '_name">Название ' + ac + '</span>'+
+                '</a>';
+                var newPanel = '<div class="panel">'+
+                '<div class="row collapse activities-data" role="tabpanel" id="activities' + ac + '">'+
+                '<input type="hidden" id="activities' + ac + '_id">'+
+                '<input type="hidden" id="activities' + ac + '_order">'+
+                '<input type="hidden" id="activities' + ac + '_delete">'+
+                '<div class="activities-data-main">'+
+                '<h3>Настройка серии</h3>'+
+                '<div class="form-group">'+
+                '<label for="activities' + ac + '_name_input">Название</label>' +
+                '<input class="form-control name-input" type="text" id="activities' + ac + '_name_input" value="Название ' + ac + '">' +
+                '<label for="activities' + ac + '_type_input">Тип</label>' +
+                '<select class="form-control" id="activities' + ac + '_type_input">' +
+                '<option>Текст</option>' +
+                '<option>Изображение</option>' +
+                '</select>' +
+                '</div>'+
+                '</div>'+
+                '</div>'+
+                '</div>';
+                num = ac;
+                break;
+            case 'teams':
+                team++;
+                var newMenu = '<a data-toggle="collapse" data-parent="#teamsform" href="#teams'+team+'" aria-expanded="true" aria-controls="teams'+team+'" class="list-group-item" >'+
+                '<span class="hidden-sm hidden-xs"  id="teams'+team+'_name">Название '+team+'</span>'+
+                '</a>';
+                var newPanel = '<div class="panel">'+
+                '<div class="row collapse teams-data" role="tabpanel" id="teams'+team+'">'+
+                '<input type="hidden" id="teams'+team+'_id">'+
+                '<input type="hidden" id="teams'+team+'_order">'+
+                '<input type="hidden" id="teams'+team+'_delete">'+
+                '<div class="teams-data-main">'+
+                '<h3>Настройка серии</h3>'+
+                '<div class="form-group">'+
+                '<label for="teams'+team+'_name_input">Название</label>'+
+                '<input class="form-control name-input" type="text" id="teams'+team+'_name_input" value="Название '+team+'">'+
+                '<label for="teams'+team+'_url_input">Ссылка</label>'+
+                '<input class="form-control url-input" type="text" id="teams'+team+'_url_input" value="Ссылка на сайт">'+
+                '</div>'+
+                '</div>'+
+                '</div>';
+                $(".all_teams").append("<option name='teams"+team+"'>Название "+team+"</option>");
+                num = team;
+                break;
+            case 'teammembers':
+                teamm++;
+                var newMenu = '<a data-toggle="collapse" data-parent="#teammembersform" href="#teammembers'+teamm+'" aria-expanded="true" aria-controls="teammembers'+teamm+'" class="list-group-item" >' +
+                '<span class="hidden-sm hidden-xs"  id="teammembers'+teamm+'_name">Участник '+teamm+'</span>' +
+                '</a>';
+                var newPanel = '<div class="panel">' +
+                '<div class="row collapse teammembers-data" role="tabpanel" id="teammembers'+teamm+'">' +
+                '<input type="hidden" id="teammembers'+teamm+'_id">' +
+                '<input type="hidden" id="teammembers'+teamm+'_order">' +
+                '<input type="hidden" id="teammembers'+teamm+'_delete">' +
+                '<div class="teammembers-data-main">' +
+                '<h3>Настройка участника</h3>' +
+                '<div class="form-group">' +
+                '<label for="teammembers'+teamm+'_name_input">Никнейм</label>' +
+                '<div id="teammembers'+teamm+'_names_selector">' +
+                '<input class="form-control name-input typeahead" type="text" id="teammembers'+teamm+'_name_input" value="Никнейм">' +
+                '</div>' +
+                '<label for="activities'+teamm+'_team_input">Название команды</label>' +
+                '<select class="form-control all_teams" id="teammembers'+teamm+'_team_input">' +
+                '<option name="teams1">Команда 1</option>' +
+                '</select>' +
+                '<input type="checkbox" id="teammembers'+teamm+'_checkbox_input">' +
+                '<label for="teammembers'+teamm+'_checkbox_input">Активен</label>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+                num = teamm;
+                break;
+        }
+        if (!($('#'+type+'select').children('.active').attr('href'))) { // если не выбранно ни одного элемента
+            $('#'+type+'select').append(newMenu);
+            $('#'+type+'form').append(newPanel);
+        } else {                                         // иначе
+            $('#'+type+'select').children('.active').after(newMenu)
+            $('#'+type+'form').children('.panel').each(function(){
+                if ($(this).children().hasClass('in')) $(this).after(newPanel)// вставляем после выбранного элемента
+            });
+        }
+        $('[href="#'+type+num+'"').click();$('#'+type+num+' .name-input').focus();
+
+    });
+    $('[role="tablist"').on('keyup', '.name-input', function(){
+        var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
+        var type = elem.closest('[role="tablist"').attr('id').slice(0,-4);
+        var id = $('.'+type+'-data.in').attr('id'); // получаем id серии
+        $('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
+        $('[name="'+id+'"').html(elem.val());
+        id = id.substring(7);
+        $('.heading[data-'+type+'-id="' + id + '"]').children().html(elem.val());
+        $('#select_'+type+'' + id).html(elem.val());
+    });
+    $('.list-group.select.sortable').on('click', 'a.list-group-item', function() { // баг фикс кнопки удаления (line 1185)
+            $('.'+$(this).closest('.list-group.select.sortable').attr('id').slice(0,-6)+'-data.in').collapse('hide');
+            $($(this).attr('href')).collapse('show');
+            $($(this).attr('href')).find('.name-input').focus();
+    });
+    $('.btn_delete').on('click',function(){ // обработка кнопки удаления для глав
+        var type = $(this).parent().data('type');
+        var id = $('.'+type+'-data.in').attr('id');
+        var nextActivities = $('#'+type+'select [href="#'+id+'"]').next();
+        var nextPanel = $(nextActivities.attr('href'));
+        $('.'+type+'-data.in').collapse('hide');
+        $('.'+type+'-data.in').parent().hide();
+        $('#'+id+'_delete').val(true);
+        $('#'+type+'select [href="#'+id+'"]').detach();
+        id = id.substring(7);
+        $('.heading[data-'+type+'-id="'+id+'"]').detach();
+        if (nextActivities.attr('class') && nextPanel.attr('class')) {
+                    nextActivities.addClass('active');
+                    nextPanel.collapse('toggle');
+        } else {
+                    $('#'+type+'select').children().last().addClass('active');
+                    $($('#'+type+'select').children().last().attr('href')).collapse('toggle');
+        }
+    });
+    $('[role="tablist"]').on('hidden.bs.collapse', '[role="tabpanel"]', function () { // обработка активности кнопки удаления
+        $(this).closest('.col-xs-8').parent().find('.btn_delete').attr('disabled',true);
+
+    }).on('shown.bs.collapse', '[role="tabpanel"]', function() {
+        $(this).closest('.col-xs-8').parent().find('.btn_delete').attr('disabled',false);
+    });
+
+
+    // ---------- typeahead start ----------
+    var substringMatcher = function(strs) {
+        return function findMatches(q, cb) {
+            var matches, substringRegex;
+
+            // an array that will be populated with substring matches
+            matches = [];
+
+            // regex used to determine if a string contains the substring `q`
+            substrRegex = new RegExp(q, 'i');
+
+            // iterate through the pool of strings and for any string that
+            // contains the substring `q`, add it to the `matches` array
+            $.each(strs, function(i, str) {
+                if (substrRegex.test(str)) {
+                    matches.push(str);
+                }
+            });
+
+            cb(matches);
+        };
+    };
+    var names = ['Ushwood', 'Danholm', 'Lady Astrel', 'Test'
+    ];
+    $('#teammembersform').children('.panel').each(function(){
+        $('#teammembers' + teamm + '_names_selector .typeahead').typeahead({  // обработчик никнеймов
+            hint: true,
+            limit: 10,
+            highlight: true,
+            minLength: 1
+        },
+        {
+            name: 'participant_names',
+            source: substringMatcher(names)
+        });
+    });
+    // ---------- typeahead end --------------
 </script>
 <script src="js/page.all.js"></script>
 </html>
