@@ -1123,16 +1123,24 @@ center.project {
     color: rgb(77, 77, 77);
 }
 
-textarea[class="form-control"] {
-    margin: 0;
-    max-height: 85px;
-    min-height: 85px;
-    font-size: 16px !important;
-    padding: 11px !important;
-    height: 87px;
-    max-width: 779px;
-    width: 784px;
+
+.comment-form {
+    margin-bottom: 40px;
+}
+
+textarea.form-control {
+    width: 100% !important;
     background-color: rgb(242, 242, 242);
+}
+
+.comment-form textarea.form-control {
+    font-size: 16px;
+    padding: 11px;
+    height: 87px;
+}
+
+.comment-form .input-group-btn .btn {
+   height: calc(100% + 12px);
 }
 
 .avatar > div {
