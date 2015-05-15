@@ -114,14 +114,15 @@
                         <button type="button" class="btn btn-default" title="Курсив"  data-insert="''insert''"><i class="fa fa-italic"></i></button>
                     </div>
                     <div class="btn-group" role="group" aria-label="Заголовки">
-                        <button type="button" class="btn btn-default" title="Заголовок 2-го уровня"  data-insert="==insert=="><i class="fa fa-header">2</i></button>
-                        <button type="button" class="btn btn-default" title="Заголовок 3-го уровня"  data-insert="===insert==="><i class="fa fa-header">3</i></button>
-                        <button type="button" class="btn btn-default" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}">Подзаголовок</button>
-                        <button type="button" class="btn btn-default" title="Примечание"  data-insert="{{ref|insert}}"><i class="fa fa-file-text"></i></button>
-                        <button type="button" class="btn btn-default" title="Комментарий"  data-insert="<!—insert—>"><i class="fa fa-comment"></i></button>
+                        <button type="button" class="btn btn-default" title="Заголовок 2-го уровня"  data-insert="==insert=="><i class="fa fa-header"></i>2</button>
+                        <button type="button" class="btn btn-default" title="Заголовок 3-го уровня"  data-insert="===insert==="><i class="fa fa-header"></i>3</button>
+                        <button type="button" class="btn btn-default" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}"><i class="fa fa-header"></i><i class="fa fa-align-center" style="font-size:80%"></i></button>
                     </div>
-                    <div class="btn-group" role="group" aria-label="Иллюстрация">
-                        <button type="button" class="btn btn-default" title="Иллюстрация" data-insert="{{insert}}"><i class="fa fa-picture-o"></i></button>
+                    <div class="btn-group" role="group" aria-label="Разное">
+                        <button type="button" class="btn btn-default" title="Примечание"  data-insert="{{ref|insert}}"><i class="fa fa-file-text"></i></button>
+                        <button type="button" class="btn btn-default" title="Комментарий"  data-insert="<!— insert —>"><i class="fa fa-tag"></i></button>
+                        <button type="button" class="btn btn-default" title="Иллюстрация" data-insert="{{Иллюстрация}}insert"><i class="fa fa-picture-o"></i></button>
+                        <button type="button" class="btn btn-default" title="Ссылка на Википедию" data-insert="Подробнее на [insert Википедии]"><i class="fa fa-link"></i><span style="font-size: 72%; margin-left: -2px; vertical-align: super; font-weight: bold;">W</span></button>
                     </div>
                 </div>
                 <textarea class="form-control" id="textarea" name="textarea" cols="30" rows="50" style="min-height:400px;"></textarea>
