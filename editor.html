@@ -109,11 +109,11 @@
             <main class="content">
                 <h2>Редактирование текста</h2>
                 <div class="btn-toolbar edittext" role="toolbar" aria-label="Toolbar">
-                    <div class="btn-group" role="group" aria-label="Жирный / Курсив / Подчеркнутый">
+                    <div class="btn-group BoldItalian" role="group" aria-label="Жирный / Курсив / Подчеркнутый">
                         <button type="button" class="btn btn-default" title="Жирный" data-insert="'''insert'''"><i class="fa fa-bold"></i></button>
                         <button type="button" class="btn btn-default" title="Курсив"  data-insert="''insert''"><i class="fa fa-italic"></i></button>
                     </div>
-                    <div class="btn-group" role="group" aria-label="Заголовки">
+                    <div class="btn-group Heading" role="group" aria-label="Заголовки">
                         <button type="button" class="btn btn-default" title="Заголовок 2-го уровня"  data-insert="==insert=="><i class="fa fa-header"></i>2</button>
                         <button type="button" class="btn btn-default" title="Заголовок 3-го уровня"  data-insert="===insert==="><i class="fa fa-header"></i>3</button>
                         <button type="button" class="btn btn-default" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}"><i class="fa fa-header"></i><i class="fa fa-align-center" style="font-size:80%"></i></button>
@@ -194,24 +194,91 @@
 <script src="js/ellipses-left.js"></script>
 <script src="js/page.all.js"></script>
 <script>
-  function insertAtCaret(text) {
+  function getText() {
+      var text = document.getElementById('textarea');
+      return {'start' : text.selectionStart, 'end': text.selectionEnd, 'sellength': text.selectionEnd - text.selectionStart}
+  }
+  function clear(text){
+    var status = 0; // 0 - ничего, 1 - курсив, 2 - жирный, 3 - заголовок2, 4 - заголовок 3, 5 - подзаголовок
+    var searcher;
+    var array = ["''", "'''", "==", "===", "{{Подзаголовок|"];
+    for(var i=0; i<array.length; i++) {
+        found = text.indexOf(array[i]);
+        if(found != -1){
+            status = i+1;
+        }
+    }
+    if(status != 0){
+        var found1st = text.indexOf(array[status-1]);
+        var lengthStatus1 = array[status-1].length;
+        var left = text.substring(0,found1st);
+        text = text.slice(found1st+lengthStatus1,text.length);
+        if(status != 5){
+            var found2nd = text.indexOf(array[status-1]);
+            lengthStatus2 = lengthStatus1;
+        } else {
+            var found2nd = text.indexOf('}}');
+            lengthStatus2 = 2;
+        }
+        var right = text.substring(found2nd+lengthStatus2,text.length);
+        text = text.slice(0,found2nd);
+        return {'text':left+text+right,'left':lengthStatus1, 'right':lengthStatus2};
+    } else {
+        return {'text':text,'left':0,'right':0};
+    }
+  }
+  function allline(text, line) {
+    var txtarea = document.getElementById('textarea');
+    var cleared = clear(textarea.value.split("\n")[line]);
+    var lineText = cleared.text;
+    var start = textarea.value.indexOf(lineText);
+    var lengthLine = lineText.length;
+    var left = textarea.value.substring(0,start-cleared.left);
+    var right = textarea.value.substring(start+lengthLine+cleared.right,textarea.value.length);
+    textarea.value = left + text[0] + lineText + text[1] + right;
+  }
+  function insertAtCaret(text, type, line) {
+    var sel = getText();
     var txtarea = document.getElementById('textarea');
     var scrollPos = txtarea.scrollTop;
     var strPos = 0;
-        strPos = txtarea.selectionStart;
-        strPosEnd = txtarea.selectionEnd;
+        strPos = sel.start;
+        strPosEnd = sel.end;
     var front = (txtarea.value).substring(0,strPos);
     var center = (txtarea.value).substring(strPos,strPosEnd);
     var back = (txtarea.value).substring(strPosEnd,txtarea.value.length);
-    txtarea.value=front+text[0]+center+text[1]+back;
+    if (type) {
+        center = "\n"+text[0]+clear(center).text+text[1]+"\n";
+    } else {
+        center = text[0]+center+text[1];
+    }
+    txtarea.value=front+center+back;
     strPos = strPos + text[0].length;
         txtarea.selectionStart = strPos;
         txtarea.selectionEnd = strPos;
         txtarea.focus();
     txtarea.scrollTop = scrollPos;
   }
-  $('.edittext button').click(function(){
+
+  $('.edittext .BoldItalian button').click(function(){
     insertAtCaret($(this).data('insert').split('insert'));
+  })
+
+
+  $('.edittext .Heading button').click(function(){
+    var sel = getText();
+    var line = textarea.value.substr(0, textarea.selectionStart).split("\n").length - 1;
+        if (sel.sellength == 0) {
+            allline($(this).data('insert').split('insert'), line);
+        } else {
+            if(textarea.value.indexOf(textarea.value.split("\n")[line]) == getText().start || textarea.value.indexOf(textarea.value.split("\n")[line+1])-1 == getText().end)
+            {
+              allline($(this).data('insert').split('insert'), line);
+            }
+            else{
+                insertAtCaret($(this).data('insert').split('insert'),2);
+            }
+        }
   })
 </script>
 </body>
