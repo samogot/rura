@@ -1123,14 +1123,13 @@ center.project {
     color: rgb(77, 77, 77);
 }
 
-
 .comment-form {
     margin-bottom: 40px;
 }
 
 textarea.form-control {
     width: 100% !important;
-    background-color: rgb(242, 242, 242);
+    background-color: #F2F2F2;
 }
 
 .comment-form textarea.form-control {
@@ -1140,7 +1139,7 @@ textarea.form-control {
 }
 
 .comment-form .input-group-btn .btn {
-   height: calc(100% + 12px);
+    height: calc(100% + 12px);
 }
 
 .avatar > div {
