@@ -116,12 +116,12 @@
                     <div class="btn-group Heading" role="group" aria-label="Заголовки">
                         <button type="button" class="btn btn-default" title="Заголовок 2-го уровня"  data-insert="==insert=="><i class="fa fa-header"></i>2</button>
                         <button type="button" class="btn btn-default" title="Заголовок 3-го уровня"  data-insert="===insert==="><i class="fa fa-header"></i>3</button>
-                        <button type="button" class="btn btn-default" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}"><i class="fa fa-header"></i><i class="fa fa-align-center" style="font-size:80%"></i></button>
+                        <button type="button" class="btn btn-default UnderHead" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}"><i class="fa fa-header"></i><i class="fa fa-align-center" style="font-size:80%"></i></button>
                     </div>
-                    <div class="btn-group" role="group" aria-label="Разное">
+                    <div class="btn-group Another" role="group" aria-label="Разное">
                         <button type="button" class="btn btn-default" title="Примечание"  data-insert="{{ref|insert}}"><i class="fa fa-file-text"></i></button>
                         <button type="button" class="btn btn-default" title="Комментарий"  data-insert="<!— insert —>"><i class="fa fa-tag"></i></button>
-                        <button type="button" class="btn btn-default" title="Иллюстрация" data-insert="{{Иллюстрация}}insert"><i class="fa fa-picture-o"></i></button>
+                        <button type="button" class="btn btn-default Illus" title="Иллюстрация" data-insert="{{Иллюстрация}}insert "><i class="fa fa-picture-o"></i></button>
                         <button type="button" class="btn btn-default" title="Ссылка на Википедию" data-insert="Подробнее на [insert Википедии]"><i class="fa fa-link"></i><span style="font-size: 72%; margin-left: -2px; vertical-align: super; font-weight: bold;">W</span></button>
                     </div>
                 </div>
@@ -198,7 +198,7 @@
       var text = document.getElementById('textarea');
       return {'start' : text.selectionStart, 'end': text.selectionEnd, 'sellength': text.selectionEnd - text.selectionStart}
   }
-  function clear(text){
+  function clear(text,extra){
     var status = 0; // 0 - ничего, 1 - курсив, 2 - жирный, 3 - заголовок2, 4 - заголовок 3, 5 - подзаголовок
     var searcher;
     var array = ["''", "'''", "==", "===", "{{Подзаголовок|"];
@@ -209,6 +209,9 @@
         }
     }
     if(status != 0){
+        if((status == 1 || status == 2) && extra){
+          return {'text':text,'left':0,'right':0};
+        }
         var found1st = text.indexOf(array[status-1]);
         var lengthStatus1 = array[status-1].length;
         var left = text.substring(0,found1st);
@@ -227,19 +230,55 @@
         return {'text':text,'left':0,'right':0};
     }
   }
-  function allline(text, line) {
-    var txtarea = document.getElementById('textarea');
-    var cleared = clear(textarea.value.split("\n")[line]);
-    var lineText = cleared.text;
-    var start = textarea.value.indexOf(lineText);
-    var lengthLine = lineText.length;
-    var left = textarea.value.substring(0,start-cleared.left);
-    var right = textarea.value.substring(start+lengthLine+cleared.right,textarea.value.length);
-    textarea.value = left + text[0] + lineText + text[1] + right;
+  function actOnEachLine(textarea, func) {
+    var lines = textarea.value.replace(/\r\n/g, "\n").split("\n");
+    var newLines, newValue, i;
+
+    // Use the map() method of Array where available
+    if (typeof lines.map != "undefined") {
+        newLines = lines.map(func);
+    } else {
+        newLines = [];
+        i = lines.length;
+        while (i--) {
+            newLines[i] = func(lines[i]);
+        }
+    }
+    textarea.value = newLines.join("\r\n");
   }
-  function insertAtCaret(text, type, line) {
+  function allline(text, line, buttons) {
+    var txtarea = document.getElementById('textarea');
+    var scrollPos = txtarea.scrollTop;
+    /*var l = text[0].length;*/
+    var sel = getText();
+
+    var lines = textarea.value.replace(/\r\n/g, "\n").split("\n");
+    var newLines, newValue, lengthLine, textL;
+
+    newLines = [];
+    lengthLine = lines.length;
+    for (var i = 0; i < lengthLine; i++) {
+        if (i == line) {
+            if(text[0] == "{{Подзаголовок|"){
+              lines[i] = clear(lines[i],777).text;
+            } else {
+              lines[i] = clear(lines[i]).text;
+            }
+            lines[i] = text[0] + lines[i] + text[1];
+            textL = lines[i].length;
+        }
+        newLines[i] = lines[i];
+    };
+    textarea.value = newLines.join("\r\n");
+    /*
+    position(sel, l, scrollPos)
+    */
+    position(sel,textL,scrollPos, line);
+  }
+  function insertAtCaret(text, type, buttons) {
     var sel = getText();
     var txtarea = document.getElementById('textarea');
+    /*var l = text[0].length;*/
     var scrollPos = txtarea.scrollTop;
     var strPos = 0;
         strPos = sel.start;
@@ -247,39 +286,164 @@
     var front = (txtarea.value).substring(0,strPos);
     var center = (txtarea.value).substring(strPos,strPosEnd);
     var back = (txtarea.value).substring(strPosEnd,txtarea.value.length);
-    if (type) {
-        center = "\n"+text[0]+clear(center).text+text[1]+"\n";
+    if (type == 1) {
+        if(text[0] == "{{Подзаголовок|"){
+            center = clear(center,777).text;
+        } else {
+            center = clear(center).text
+        }
+        center = "\n"+text[0]+center+text[1]+"\n";
+        /*l = l+1;*/
+    } else if (type == 2) {
+        center = text[0]+''+text[1];
     } else {
         center = text[0]+center+text[1];
     }
+    textL = center.length;
     txtarea.value=front+center+back;
-    strPos = strPos + text[0].length;
-        txtarea.selectionStart = strPos;
-        txtarea.selectionEnd = strPos;
-        txtarea.focus();
-    txtarea.scrollTop = scrollPos;
+    /*
+    position(sel, l, scrollPos)
+    */
+    position(sel,textL,scrollPos);
   }
-
-  $('.edittext .BoldItalian button').click(function(){
-    insertAtCaret($(this).data('insert').split('insert'));
+  /*
+  function position(txtarea, sel, l, scrollPos){
+      txtarea.selectionStart = sel.start+l;
+      txtarea.selectionEnd = sel.end+l;
+      txtarea.focus();
+      txtarea.scrollTop = scrollPos;
+  }
+  */
+  function position(sel,textL, scrollPos, line){
+      var txtarea = document.getElementById('textarea');
+      if(sel.sellength == 0){
+          if ( textarea.value.indexOf(textarea.value.split("\n")[line+1])-1 < (sel.start + textL) ){
+              txtarea.selectionStart = textarea.value.indexOf(textarea.value.split("\n")[line+1])-1;
+              txtarea.selectionEnd = textarea.value.indexOf(textarea.value.split("\n")[line+1])-1;
+          }
+          else {
+              txtarea.selectionStart = sel.start + textL;
+              txtarea.selectionEnd = sel.start + textL;
+          }
+      }
+      else {
+          txtarea.selectionStart = sel.start + textL;
+          txtarea.selectionEnd = sel.start + textL;
+      }
+      txtarea.focus();
+      txtarea.scrollTop = scrollPos;
+  }
+  // ctrl = 111;
+  $('.edittext .BoldItalian button').click(function(e){
+    var input = $(this).data('insert').split('insert');
+    var sel = getText();
+    var line = textarea.value.substr(0, sel.start).split("\n").length - 1;
+    if (e.shiftKey) {
+        allline(input, line);
+    } else {
+        insertAtCaret(input);
+    }
+  })
+  $('.edittext .Another button').click(function(e){
+    if( $(this).hasClass('Illus') ){
+        var input = $(this).data('insert').split('insert');
+        var sel = getText();
+        var line = textarea.value.substr(0, sel.start).split("\n").length - 1;
+        if (sel.sellength == 0) {
+            if(textarea.value.indexOf(textarea.value.split("\n")[line+1])-1 == getText().end){
+                if(textarea.value.split("\n")[line] == ""){
+                    allline(input, line);
+                } else {
+                    input[0] = "\n"+input[0];
+                    input[1] = input[1]+"\n";
+                    insertAtCaret(input, 2);
+                }
+            } else {
+                input[0] = "\n"+input[0];
+                insertAtCaret(input, line);
+            }
+        } else {
+            input[0] = "\n"+input[0];
+            insertAtCaret(input, 2);
+        }
+    } else {
+        insertAtCaret(input);
+    }
   })
 
 
-  $('.edittext .Heading button').click(function(){
+  $('.edittext .Heading button').click(function(e){
+    var txtarea = document.getElementById('textarea');
+    var input = $(this).data('insert').split('insert');
     var sel = getText();
-    var line = textarea.value.substr(0, textarea.selectionStart).split("\n").length - 1;
+    var line = textarea.value.substr(0, sel.start).split("\n").length - 1;
         if (sel.sellength == 0) {
-            allline($(this).data('insert').split('insert'), line);
+            allline(input, line);
         } else {
-            if(textarea.value.indexOf(textarea.value.split("\n")[line]) == getText().start || textarea.value.indexOf(textarea.value.split("\n")[line+1])-1 == getText().end)
+            if(textarea.value.indexOf(textarea.value.split("\n")[line]) == getText().start && textarea.value.indexOf(textarea.value.split("\n")[line+1])-1 == getText().end)
             {
-              allline($(this).data('insert').split('insert'), line);
-            }
-            else{
-                insertAtCaret($(this).data('insert').split('insert'),2);
+                allline(input, line);
+            } else {
+                if (e.shiftKey) {
+                    allline(input, line);
+                } else {
+                    insertAtCaret(input, 1);
+                }
             }
         }
   })
+
+
+
+
+var ta = document.querySelector('textarea');
+ta.addEventListener('keyup', function(e) {
+    if (this.lastValue == null) {
+        this.lastValue = this.defaultValue;
+    }
+
+    var last = this.lastValue,
+        current = this.value;
+
+    var ta = this;
+
+    var methods = {};
+    methods.overText = function(start, end, text) {
+        ta.selectionStart = start;
+        ta.selectionEnd = end;
+        document.execCommand('insertText', false, text);
+    }
+    methods.TextEvent = function(start, end, text) {
+        var e = document.createEvent('TextEvent');
+        e.initTextEvent('textInput', true, true, null, text, 9, "en-US");
+        ta.focus();
+        ta.setSelectionRange(start, end);
+        ta.dispatchEvent(e);
+    }
+    methods.replaceValue = function(start, end, text) {
+        var str =
+            ta.value.substr(0, start) +
+            text +
+            ta.value.substr(end);
+        ta.selectionStart = 0;
+        ta.selectionEnd = ta.value.length;
+        document.execCommand('insertText', false, str);
+    }
+    methods.setValue = function(start, end, text) {
+        var str =
+            ta.value.substr(0, start) +
+            text +
+            ta.value.substr(end);
+        ta.value = str;
+    }
+    if (current.length > last.length) {
+        var start = this.selectionStart,
+            added = current.substr(start - 1, 1);
+    }
+    this.lastValue = this.value;
+    });
+    ta.focus();
+    ta.selectionStart = ta.selectionEnd = ta.value.length;
 </script>
 </body>
 </html>
