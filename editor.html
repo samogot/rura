@@ -193,48 +193,148 @@
 <div class="overlayT"></div>
 <script src="js/ellipses-left.js"></script>
 <script src="js/page.all.js"></script>
-<script>
-  function getText() {
-      var text = document.getElementById('textarea');
-      return {'start' : text.selectionStart, 'end': text.selectionEnd, 'sellength': text.selectionEnd - text.selectionStart}
-  }
-  function clear(text,extra){
-    var status = 0; // 0 - ничего, 1 - курсив, 2 - жирный, 3 - заголовок2, 4 - заголовок 3, 5 - подзаголовок
-    var searcher;
-    var array = ["''", "'''", "==", "===", "{{Подзаголовок|"];
-    for(var i=0; i<array.length; i++) {
-        found = text.indexOf(array[i]);
-        if(found != -1){
-            status = i+1;
+<script>/*
+$.fn.getRange = function(start, end) {
+    return this.each(function() {
+        if (this.setSelectionRange) {
+            this.focus();
+            this.setSelectionRange(start, end);
+        } else if (this.createTextRange) {
+            var range = this.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', end);
+            range.moveStart('character', start);
+            range.select();
+        }
+    });
+};*/
+$.fn.getRange = function (start, end) {
+    if (start && end) {
+        return this.each(function () {
+            if (this.setSelectionRange) {
+                this.focus();
+                this.setSelectionRange(start, end);
+            } else if (this.createTextRange) {
+                var range = this.createTextRange();
+                range.collapse(true);
+                range.moveEnd('character', end);
+                range.moveStart('character', start);
+                range.select();
+            }
+        });
+    } else {
+        return {
+            'start': $(this)[0].selectionStart
+            , 'end': $(this)[0].selectionEnd
+            , 'sellength': $(this)[0].selectionEnd - $(this)[0].selectionStart
         }
     }
+};
+$.fn.insertData = function () {
+    return $(this).data('insert').split('insert');
+}
+$.fn.getLine = function (line) {
+    return $(this).val().split("\n")[line];
+}
+var textarea = $('#textarea');
+
+function find(array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] == value) return i;
+    }
+    return -1;
+}
+
+function clear(text, extra) {
+    var status = []; // 0 - ничего, 1 - курсив, 2 - жирный, 3 - заголовок2, 4 - заголовок 3, 5 - подзаголовок
+    var statusL = 0;
+    var statuses = [];
+    var array = ["\'\'\'", "\'\'", "\=\=\=", "\=\=", "\{\{Подзаголовок"];
+    var extra = extra ? true : false;
+    for (var i = 0; i < array.length; i++) {
+        if (i != 4) {
+            found = text.match(array[i] + "[0-9a-zA-Zа-яА-Я]+" + array[i]);
+        } else {
+            found = text.match("\{\{Подзаголовок\|" + "[0-9a-zA-Zа-яА-Я]+" + "\}\}");
+        }
+        if (found != null) {
+            status.push(i);
+            statusL++;
+            statuses.push(array[i]);
+        }
+    }
+    if (status.length != 0) {
+        for (var i = 0; i < statuses.length; i++) {
+            if (((find(status, 0) != -1) || (find(status, 1) != -1)) && extra) {
+                return {
+                    'text': text
+                    , 'left': 0
+                    , 'right': 0
+                };
+            }
+            if (find(status, 4) == -1) {
+                search1L = search2L = statuses[i].length;
+            } else {
+                search1L = statuses[i].length + 1;
+                search2L = 2;
+            }
+            text = (text.substr(search1L)).slice(0, -search2L);
+            return {
+                'text': text
+                , 'left': 240
+                , 'right': 0
+            };
+        }
+    } else {
+        return {
+            'text': text
+            , 'left': 0
+            , 'right': 0
+        };
+    }
+}
+
+
+/*
+    for(var i=0; i<array.length; i++) {
+        found = text.match(array[i]);
+        if(found != -1){
+            status = i+1;
+            statusL++;
+            statuses[i] = array[i];
+        }
+    }
+      console.log(statusL);
+      console.log('[qwe')
+      console.log(status);
     if(status != 0){
+      var found1st, lengthStatus1, left, right, lengthStatus2;
+      console.log(statusL);
+
+      for(var i = 0; i < statusL; i++){
         if((status == 1 || status == 2) && extra){
           return {'text':text,'left':0,'right':0};
         }
-        var found1st = text.indexOf(array[status-1]);
-        var lengthStatus1 = array[status-1].length;
-        var left = text.substring(0,found1st);
-        text = text.slice(found1st+lengthStatus1,text.length);
+        console.log(statuses[i] + 'statuses');
         if(status != 5){
-            var found2nd = text.indexOf(array[status-1]);
-            lengthStatus2 = lengthStatus1;
+            search1 = search2 = status[i];
         } else {
-            var found2nd = text.indexOf('}}');
-            lengthStatus2 = 2;
+            search1 = status[i];
+            search2 = '}}';
         }
-        var right = text.substring(found2nd+lengthStatus2,text.length);
-        text = text.slice(0,found2nd);
-        return {'text':left+text+right,'left':lengthStatus1, 'right':lengthStatus2};
+        founded = text.match(search1+"[a-zA-Zа-яА-Я]+"+search2);
+        console.log(search1+"text+"+search2+"founded"+founded);
+        console.log('[qwe')
+        return {'text':founded,'left':240, 'right':0};
+      }
     } else {
         return {'text':text,'left':0,'right':0};
     }
-  }
-  function actOnEachLine(textarea, func) {
-    var lines = textarea.value.replace(/\r\n/g, "\n").split("\n");
+  }*/
+function actOnEachLine(textarea, func) {
+    var lines = textarea.val().replace(/\r\n/g, "\n").split("\n");
     var newLines, newValue, i;
 
-    // Use the map() method of Array where available
     if (typeof lines.map != "undefined") {
         newLines = lines.map(func);
     } else {
@@ -244,154 +344,189 @@
             newLines[i] = func(lines[i]);
         }
     }
-    textarea.value = newLines.join("\r\n");
-  }
-  function allline(text, line, buttons) {
-    var txtarea = document.getElementById('textarea');
-    var scrollPos = txtarea.scrollTop;
-    /*var l = text[0].length;*/
-    var sel = getText();
+    textarea.val() = newLines.join("\r\n");
+}
 
-    var lines = textarea.value.replace(/\r\n/g, "\n").split("\n");
+function allline(text, line, buttons) {
+    var scrollPos = textarea.scrollTop;
+    var sel = textarea.getRange();
+
+    var lines = textarea.val().replace(/\r\n/g, "\n").split("\n");
     var newLines, newValue, lengthLine, textL;
 
     newLines = [];
     lengthLine = lines.length;
     for (var i = 0; i < lengthLine; i++) {
         if (i == line) {
-            if(text[0] == "{{Подзаголовок|"){
-              lines[i] = clear(lines[i],777).text;
+            if (text[0] == "{{Подзаголовок|") {
+                lines[i] = clear(lines[i], 777).text;
             } else {
-              lines[i] = clear(lines[i]).text;
+                lines[i] = clear(lines[i]).text;
             }
             lines[i] = text[0] + lines[i] + text[1];
             textL = lines[i].length;
         }
         newLines[i] = lines[i];
     };
-    textarea.value = newLines.join("\r\n");
-    /*
-    position(sel, l, scrollPos)
-    */
-    position(sel,textL,scrollPos, line);
-  }
-  function insertAtCaret(text, type, buttons) {
-    var sel = getText();
-    var txtarea = document.getElementById('textarea');
-    /*var l = text[0].length;*/
-    var scrollPos = txtarea.scrollTop;
+    var insert = {
+        'left': text[0].length
+        , 'right': text[1].length
+    };
+    textarea.val(newLines.join("\r\n"));
+    if (line == textarea.val().split("\n").length - 1) {
+        textarea.val(textarea.val() + "\n");
+    }
+    position(sel, textL, 0, insert, line);
+    textarea.scrollTop = scrollPos;
+}
+
+function insertAtCaret(text, type, buttons) {
+    var sel = textarea.getRange();
+    var scrollPos = textarea.scrollTop;
     var strPos = 0;
-        strPos = sel.start;
-        strPosEnd = sel.end;
-    var front = (txtarea.value).substring(0,strPos);
-    var center = (txtarea.value).substring(strPos,strPosEnd);
-    var back = (txtarea.value).substring(strPosEnd,txtarea.value.length);
+    strPos = sel.start;
+    strPosEnd = sel.end;
+    var front = (textarea.val()).substring(0, strPos);
+    var center = (textarea.val()).substring(strPos, strPosEnd);
+    var back = (textarea.val()).substring(strPosEnd, textarea.val().length);
     if (type == 1) {
-        if(text[0] == "{{Подзаголовок|"){
-            center = clear(center,777).text;
+        if (text[0] == "{{Подзаголовок|") {
+            center = clear(center, 777).text;
         } else {
             center = clear(center).text
         }
-        center = "\n"+text[0]+center+text[1]+"\n";
-        /*l = l+1;*/
+        center = "\n" + text[0] + center + text[1] + "\n";
     } else if (type == 2) {
-        center = text[0]+''+text[1];
+        center = text[0] + '' + text[1];
     } else {
-        center = text[0]+center+text[1];
+        center = text[0] + center + text[1];
     }
     textL = center.length;
-    txtarea.value=front+center+back;
-    /*
-    position(sel, l, scrollPos)
-    */
-    position(sel,textL,scrollPos);
-  }
-  /*
-  function position(txtarea, sel, l, scrollPos){
-      txtarea.selectionStart = sel.start+l;
-      txtarea.selectionEnd = sel.end+l;
-      txtarea.focus();
-      txtarea.scrollTop = scrollPos;
-  }
-  */
-  function position(sel,textL, scrollPos, line){
-      var txtarea = document.getElementById('textarea');
-      if(sel.sellength == 0){
-          if ( textarea.value.indexOf(textarea.value.split("\n")[line+1])-1 < (sel.start + textL) ){
-              txtarea.selectionStart = textarea.value.indexOf(textarea.value.split("\n")[line+1])-1;
-              txtarea.selectionEnd = textarea.value.indexOf(textarea.value.split("\n")[line+1])-1;
-          }
-          else {
-              txtarea.selectionStart = sel.start + textL;
-              txtarea.selectionEnd = sel.start + textL;
-          }
-      }
-      else {
-          txtarea.selectionStart = sel.start + textL;
-          txtarea.selectionEnd = sel.start + textL;
-      }
-      txtarea.focus();
-      txtarea.scrollTop = scrollPos;
-  }
-  // ctrl = 111;
-  $('.edittext .BoldItalian button').click(function(e){
-    var input = $(this).data('insert').split('insert');
-    var sel = getText();
-    var line = textarea.value.substr(0, sel.start).split("\n").length - 1;
-    if (e.shiftKey) {
-        allline(input, line);
+    var insert = {
+        'left': text[0].length
+        , 'right': text[1].length
+    };
+    textarea.val(front + center + back);
+    position(sel, textL, type, insert);
+    textarea.scrollTop = scrollPos;
+}
+function TEKCTline(line){
+    var lines = textarea.val().replace(/\r\n/g, "\n").split("\n");
+    newLines = [];
+    lengthLine = lines.length;
+    for (var i = 0; i < lengthLine; i++) {
+        if (i == line) {
+           lines[i] = "TEKCT";
+        }
+        newLines[i] = lines[i];
+    };
+    textarea.val(newLines.join("\r\n"));
+}
+function position(sel, textL, type, insert, line) {
+    var add = (type == 1) ? 1 : 0;
+    var s;
+    var text = textL - insert.left - insert.right;
+    if (text === 0) {
+        var sl = sel.start + insert.left;
+        textarea.getRange(sl,sl);
     } else {
-        insertAtCaret(input);
-    }
-  })
-  $('.edittext .Another button').click(function(e){
-    if( $(this).hasClass('Illus') ){
-        var input = $(this).data('insert').split('insert');
-        var sel = getText();
-        var line = textarea.value.substr(0, sel.start).split("\n").length - 1;
-        if (sel.sellength == 0) {
-            if(textarea.value.indexOf(textarea.value.split("\n")[line+1])-1 == getText().end){
-                if(textarea.value.split("\n")[line] == ""){
-                    allline(input, line);
-                } else {
-                    input[0] = "\n"+input[0];
-                    input[1] = input[1]+"\n";
-                    insertAtCaret(input, 2);
-                }
+        if (sel.sellength === 0) {
+            if (textarea.val().indexOf(textarea.getLine(line + 1)) - 1 < (sel.start + textL)) {
+                s = textarea.val().indexOf(textarea.getLine(line + 1)) - 1;
+                textarea.getRange(s, s);
             } else {
-                input[0] = "\n"+input[0];
-                insertAtCaret(input, line);
+                s = sel.start + textL;
+                textarea.getRange(s, s);
             }
         } else {
-            input[0] = "\n"+input[0];
-            insertAtCaret(input, 2);
-        }
+            s = sel.end + insert.left + insert.right + add;
+            textarea.getRange(s, s);
+        };
+    }
+    textarea.focus();
+}
+$('.edittext .BoldItalian button').click(function (e) {
+    var input = $(this).insertData();
+    var sel = textarea.getRange();
+    var line = textarea.val().substr(0, sel.start).split("\n").length - 1;
+    if ((e.shiftKey)&&(e.ctrlKey)){
+        TEKCTline(line)
+        allline(input, line);
+        textarea.getRange(textarea.val().indexOf("TEKCT"),textarea.val().indexOf("TEKCT")+5)
+    } else if (e.shiftKey) {
+        allline(input, line);
+    } else if (e.ctrlKey){
+        textarea[0].setRangeText('TEKCT');
+        textarea.getRange(sel.start,sel.start+5);
+        insertAtCaret(input);
+        textarea.getRange(sel.start+input[0].length,sel.start+input[0].length+5)
     } else {
         insertAtCaret(input);
     }
-  })
-
-
-  $('.edittext .Heading button').click(function(e){
-    var txtarea = document.getElementById('textarea');
-    var input = $(this).data('insert').split('insert');
-    var sel = getText();
-    var line = textarea.value.substr(0, sel.start).split("\n").length - 1;
-        if (sel.sellength == 0) {
+})
+$('.edittext .Another button').click(function (e) {
+    var input = $(this).insertData();
+    console.log(input);
+    if ($(this).hasClass('Illus')) {
+        var sel = textarea.getRange();
+        var line = textarea.val().substr(0, sel.start).split("\n").length - 1;
+        if (e.shiftKey) {
             allline(input, line);
         } else {
-            if(textarea.value.indexOf(textarea.value.split("\n")[line]) == getText().start && textarea.value.indexOf(textarea.value.split("\n")[line+1])-1 == getText().end)
-            {
-                allline(input, line);
-            } else {
-                if (e.shiftKey) {
-                    allline(input, line);
+            if (sel.sellength == 0) {
+                if (textarea.val().indexOf(textarea.getLine(line + 1)) - 1 == getText().end) {
+                    if (textarea.getLine(line) == "") {
+                        allline(input, line);
+                    } else {
+                        input[0] = "\n" + input[0];
+                        input[1] = input[1] + "\n";
+                        insertAtCaret(input, 2);
+                    }
                 } else {
-                    insertAtCaret(input, 1);
+                    input[0] = "\n" + input[0];
+                    insertAtCaret(input, line);
                 }
+            } else {
+                input[0] = "\n" + input[0];
+                insertAtCaret(input, 2);
             }
         }
-  })
+    } else {
+        insertAtCaret(input);
+    }
+})
+
+
+$('.edittext .Heading button').click(function (e) {
+    var input = $(this).insertData();
+    var sel = textarea.getRange();
+    console.log(sel);
+    var line = textarea.val().substr(0, sel.start).split("\n").length - 1;
+    if (sel.sellength == 0) {
+        allline(input, line);
+    } else {
+        if (textarea.val().indexOf(textarea.getLine(line)) == sel.start && textarea.val().indexOf(textarea.getLine(1)) + textarea.getLine(1).length == sel.end) {
+            console.log('allline');
+            allline(input, line);
+        } else {
+            if ((e.shiftKey)&&(e.ctrlKey)){
+                TEKCTline(line)
+                allline(input, line);
+                textarea.getRange(textarea.val().indexOf("TEKCT"),textarea.val().indexOf("TEKCT")+5)
+            } else if (e.shiftKey) {
+                allline(input, line);
+            } else if (e.ctrlKey){
+                textarea[0].setRangeText('TEKCT');
+                textarea.getRange(sel.start,sel.start+5);
+                insertAtCaret(input, 1);
+                textarea.getRange(sel.start+input[0].length+1,sel.start+input[0].length+6)
+            } else {
+                insertAtCaret(input, 1);
+            }
+        }
+    }
+})
+
 
 
 

@@ -12,9 +12,7 @@ $(document).ready(function () {
         var needDelete = parseInt((((lasts - $('.leftColumn .content').height()) / $('#all-projects-module .banners a').height()) + 1), 10);
         var Blength = $('#all-projects-module .banners a').length;
         var deleteFrom = Blength - needDelete + 1;
-        console.log(deleteFrom);
         if (deleteFrom < 4) deleteFrom = 4;
-        console.log("var i = " + deleteFrom + "; i <" + Blength);
         $('#all-projects-module .banners a').slice(deleteFrom + 1).hide();
         $('#all-projects-module .banners').append('<span class="more moreprojects">Больше</span>');
         $('.moreprojects').click(function () {
