@@ -2488,3 +2488,98 @@ table.rc-table-resizing thead > th > a {
 .text {
     text-align: justify;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*               DNEVNIK RUJKI               */
+.journal {
+    margin: 40px 0;
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+}
+.journal:before {
+    position: absolute;
+    left: 25px;
+    top: 0;
+    content: ' ';
+    display: block;
+    width: 3px;
+    height: calc(100% - 9px);
+    z-index: 0;
+    margin-left: -3px;
+    background: #8fd5fe;
+}
+.journalpost {
+    margin-bottom: 30px;
+    position: relative;
+}
+.journalpost:last-child{
+    margin-left: 53px;
+    font-weight: bold;
+}
+.journalpost:last-child:before {
+    width: 20px;
+    display: block;
+    height: 3px;
+    background-color: #8fd5fe;
+    content: ' ';
+    position: absolute;
+    top: 8px;
+    left: -29px;
+}
+.postinfo, .posttext {
+    display: inline-block;
+}
+.postinfo {
+    width: 50px;
+    float: left;
+    z-index: 1;
+    text-align: center;
+    position: relative;
+}
+.posttext {
+    width: calc(100% - 55px);
+    margin-left: 5px;
+}
+.authorimg {
+    border-radius: 50%;
+    width: 45px;
+    background: #8fd5fe;
+    margin: auto;
+}
+.postdate {
+    color: #8a8a8a;
+    font-size: 12px;
+    background: #fff;
+}
+.postquote {
+    background: #f2f2f2;
+    padding: 16px;
+}
+.postquote .fa-quote-left{
+    color: #60a9d4;
+    float: left;
+}
+.posttext h5 {
+    color: #60a9d4;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.postquote div {
+    display: inline-block;
+    margin-left: 16px;
+    width: calc(100% - 30px);
+}
+/*               DNEVNIK RUJKI               */
