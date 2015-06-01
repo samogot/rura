@@ -559,7 +559,6 @@ footer {
     background: rgb(217, 238, 250) no-repeat scroll 50% 12px;
     float: left;
 }
-
 .updIcon.type1 {
     background: url("../img/updIcons/icon1.png") no-repeat scroll 50% 12px;
 }
@@ -2268,6 +2267,37 @@ body.night.red .leftColumn {
     color: #FFF;
 }
 
+.moduleIcon.list {
+    background: url("../img/list.png") no-repeat scroll 10px 20px;
+    padding: 10px 0px 10px 35px;
+}
+.moduleIcon.type1 {
+    background: url("../img/updIcons/icon1.png") no-repeat scroll 10px 8px;
+}
+.moduleIcon.type2 {
+    background: url("../img/updIcons/icon2.png") no-repeat scroll 10px 8px;
+}
+.moduleIcon.type3 {
+    background: url("../img/updIcons/icon3.png") no-repeat scroll 10px 8px;
+}
+.moduleIcon.type4 {
+    background: url("../img/updIcons/icon4.png") no-repeat scroll 10px 8px;
+}
+body.night .moduleIcon.list {
+    background: #4E4E4E url("../img/list_active.png") no-repeat scroll 10px 20px;
+}
+body.night .moduleIcon.type1 {
+    background: #4E4E4E url("../img/updIcons/icon1_active.png") no-repeat scroll 10px 8px;
+}
+body.night .moduleIcon.type2 {
+    background: #4E4E4E url("../img/updIcons/icon2_active.png") no-repeat scroll 10px 8px;
+}
+body.night .moduleIcon.type3 {
+    background: #4E4E4E url("../img/updIcons/icon3_active.png") no-repeat scroll 10px 8px;
+}
+body.night .moduleIcon.type4 {
+    background: #4E4E4E url("../img/updIcons/icon4_active.png") no-repeat scroll 10px 8px;
+}
 body.night .ContentNav > li > a {
     color: #FFF;
 }
@@ -2504,8 +2534,8 @@ table.rc-table-resizing thead > th > a {
 .journal {
     margin: 40px 0;
     list-style-type: none;
-    position: relative;
     padding: 0;
+    position: relative;
 }
 .journal:before {
     position: absolute;
@@ -2583,3 +2613,108 @@ table.rc-table-resizing thead > th > a {
     width: calc(100% - 30px);
 }
 /*               DNEVNIK RUJKI               */
+
+
+
+
+
+
+
+
+/*                  CABINET                  */
+.leftcabinet,.infocabinet{
+    display: inline-block;
+    position: relative;
+}
+.leftcabinet {
+    width: 150px;
+    float: left;
+}
+.avatarcabinet, .placeholderavatar, .avatarcabinet img{
+    width: 150px;
+    height: 150px;
+}
+.avatarcabinet{
+    margin-bottom: 5px;
+    border: 1px dashed #68add6;
+    position: relative;
+    background: #f2f2f2 url("../img/no_avatar.png") no-repeat;
+}
+.avatarcabinet img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.placeholderavatar{
+    position: absolute;
+    width: 80px;
+    bottom: 0;
+    left:0;
+    right: 0;
+    margin: auto;
+    height: 100px;
+    text-align: center;
+    z-index: 0;
+}
+.placeholderavatar p{
+    font-size: 20px;
+}
+.leftcabinet button{
+    width: 100%;
+    margin-bottom: 5px;
+}
+.infocabinet{
+    width: calc(100% - 175px);
+    margin-left: 20px;
+}
+.infocabinet button {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+.infocabinet span.grey {
+    color: #C6C6C6;
+    font-size: 12px;
+}
+
+.userbookmarks{
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+}
+.userbookmarks li {
+    margin-bottom: 40px;
+}
+.userbookmarks li .fa-bookmark {
+    float: left;
+}
+.userbookmark{
+    margin-left: 15px;
+    display: inline-block;
+    width: calc(100% - 70px);
+}
+.bookmarktext{
+    padding: 15px;
+    background: #f2f2f2;
+    margin-bottom: 10px;
+}
+.bookmarkbuttons {
+    height: 30px;
+}
+.bookmarkbuttons button{
+    background: #f2f2f2;
+    float: right;
+}
+.bookmarkbuttons button:nth-child(1){
+    float: left;
+}
+.bookmarkcomments {
+    margin-top: 5px;
+}
+.bookmarkcomment {
+    border: 1px solid #f8c928;
+    background: #ffedb1;
+    padding: 5px;
+}
+/*                  CABINET                  */
