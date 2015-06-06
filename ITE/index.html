@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>RuRa ITE</title>
+    <!-- Dock Spawn -->
+    <link rel="stylesheet" href="resources/css/font-awesome.css">
+    <link rel="stylesheet" href="resources/css/dock-manager.css">
+    <link rel="stylesheet" href="resources/ide/css/ide.css">
+    <script src="resources/js/dockspawn.js" type="text/javascript"></script>
+
+    <!-- Code Mirror Source Code Editor -->
+    <link rel="stylesheet" href="resources/codemirror/lib/codemirror.css">
+    <script src="resources/codemirror/lib/codemirror.js"></script>
+    <script src="resources/codemirror/mode/mediawiki/mediawiki.js"></script>
+    <link rel="stylesheet" href="resources/codemirror/mode/mediawiki/mediawiki.css">
+    <script src="resources/codemirror/addon/selection/active-line.js"></script>
+
+    <!-- JS Tree -->
+    <script type="text/javascript" src="resources/jstree/_lib/jquery.js"></script>
+    <script type="text/javascript" src="resources/jstree/_lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="resources/jstree/_lib/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="resources/jstree/jquery.jstree.js"></script>
+
+  </head>
+  <body>
+    <div class="header" id="header" style="width:100%">
+        <div class="header-title">RuRanobe ITE</div>
+        <div class="header-description">Редактор</div>
+    </div>
+
+    <div id="my_dock_manager" class="my-dock-manager">
+    </div>
+    <div id="toolbar_window" caption="Панель инструментов" class="toolbar-window"></div>
+    <div id="statusbar_window" caption="Строка состояния" class="toolbar-window"></div>
+    <div id="left_window" class="left-window"></div>
+    <div id="GJap_window" class="GJap-window"></div>
+    <div id="GEn_window" class="Gen-window"></div>
+    <div id="Jap_window" class="Jap-window"></div>
+    <div id="Fresh_window" class="Fresh-window"></div>
+
+    <div id="part_window" icon="icon-circle-arrow-right" class="part-window">
+        <ul>
+            <li id="solution_window_1" class="jstree-closed">
+                <a href="#">Том 1</a>
+                <ul>
+                    <li id="v1_p1"><a href="#">Пролог</a></li>
+                    <li id="v1_p2"><a href="#">Глава 1</a></li>
+                    <li id="v1_p3"><a href="#">Глава 2</a></li>
+                </ul>
+            </li>
+            <li id="solution_window_2">
+                <a href="#">Том 2</a>
+                <ul>
+                    <li id="v1_p1"><a href="#">Пролог</a></li>
+                    <li id="v1_p2"><a href="#">Глава 1</a></li>
+                    <li id="v1_p3"><a href="#">Глава 2</a></li>
+                </ul>
+            </li>
+            <li id="solution_window_3">
+                <a href="#">Том 3</a>
+                <ul>
+                    <li id="v1_p1"><a href="#">Пролог</a></li>
+                    <li id="v1_p2"><a href="#">Глава 1</a></li>
+                    <li id="v1_p3"><a href="#">Глава 2</a></li>
+                </ul>
+            </li>
+            <li id="solution_window_4">
+                <a href="#">Том 4</a>
+                <ul>
+                    <li id="v1_p1"><a href="#">Пролог</a></li>
+                    <li id="v1_p2"><a href="#">Глава 1</a></li>
+                    <li id="v1_p3"><a href="#">Глава 2</a></li>
+                </ul>
+            </li>
+            <li id="solution_window_5">
+                <a href="#">Том 5</a>
+                <ul>
+                    <li id="v1_p1"><a href="#">Пролог</a></li>
+                    <li id="v1_p2"><a href="#">Глава 1</a></li>
+                    <li id="v1_p3"><a href="#">Глава 2</a></li>
+                </ul>
+            </li>
+            <li id="solution_window_6">
+                <a href="#">Том 6</a>
+                <ul>
+                    <li id="v1_p1"><a href="#">Пролог</a></li>
+                    <li id="v1_p2"><a href="#">Глава 1</a></li>
+                    <li id="v1_p3"><a href="#">Глава 2</a></li>
+                </ul>
+            </li>
+            <li id="solution_window_7">
+                <a href="#">Том 7</a>
+                <ul>
+                    <li id="v1_p1"><a href="#">Пролог</a></li>
+                    <li id="v1_p2"><a href="#">Глава 1</a></li>
+                    <li id="v1_p3"><a href="#">Глава 2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="sinonim_window" class="sinonim-window"></div>
+    <div id="multitran_window" class="multitran-window"></div>
+
+
+    <div id="right_window" class="right-window"></div>
+    <div id="vol1_window" class="vol1-window"></div>
+    <div id="vol2_window" class="vol2-window"></div>
+
+
+    <div id="originalJap" class="originalJap"></div>
+    <div id="originalEng" class="originalEng"></div>
+    <div id="originalPrev" class="originalPrev"></div>
+    <div id="originalOrph" class="originalOrph"></div>
+
+
+
+
+
+<!--
+
+    <div id="properties_window" caption="Параметры" class="properties-window"></div>
+    <div id="problems_window" caption="Проблемы" class="problems-window"></div>
+    <div id="editor1_window" caption="Steering.h" class="editor1-window editor-host"></div>
+    <div id="editor2_window" caption="Steering.cpp" class="editor2-window editor-host"></div>
+    <div id="editor3_window" caption="Sword Art Online: 1 том" class="editor3-window editor-host"></div>
+    <div id="output_window" caption="Вывод" class="output-window editor-host"></div>
+
+    <div id="solution_window" caption="Список томов" icon="icon-circle-arrow-right" class="solution-window">
+        <ul>
+            <li id="solution_window_1" class="jstree-closed">
+                <a href="#">Том 1</a>
+                <ul>
+                    <li id="phtml_2"><a href="#">Source File 1</a></li>
+                    <li id="phtml_3"><a href="#">Header File 1</a></li>
+                </ul>
+            </li>
+            <li id="solution_window_2">
+                <a href="#">Том 2</a>
+            </li>
+            <li id="solution_window_3">
+                <a href="#">Том 3</a>
+            </li>
+            <li id="solution_window_4">
+                <a href="#">Том 4</a>
+            </li>
+            <li id="solution_window_5">
+                <a href="#">Том 5</a>
+            </li>
+            <li id="solution_window_6">
+                <a href="#">Том 6</a>
+            </li>
+            <li id="solution_window_7">
+                <a href="#">Том 7</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="toolbox_window" caption="Toolbox" class="toolbox-window">
+        <ul>
+            <li id="toolbox_window_1"><a href="#">Tool 1</a></li>
+            <li id="toolbox_window_2"><a href="#">Tool 2</a></li>
+            <li id="toolbox_window_3"><a href="#">Tool 3</a></li>
+            <li id="toolbox_window_4"><a href="#">Tool 4</a></li>
+            <li id="toolbox_window_5"><a href="#">Tool 5</a></li>
+        </ul>
+    </div>
+    <div id="outline_window" class="outline-window">
+    </div>
+-->
+    <script src="resources/ide/js/sample-source.js"></script>
+    <script src="resources/ide/js/demo-ide.js"></script>
+    <script>
+            // Convert a div to the dock manager.  Panels can then be docked on to it
+            var divDockManager = document.getElementById("my_dock_manager");
+            var dockManager = new dockspawn.DockManager(divDockManager);
+            dockManager.initialize();
+            // Let the dock manager element fill in the entire screen
+            var onResized = function(e)
+            {
+                dockManager.resize(window.innerWidth - (divDockManager.clientLeft + divDockManager.offsetLeft), window.innerHeight - (divDockManager.clientTop + divDockManager.offsetTop));
+            }
+            window.onresize = onResized;
+            onResized(null);
+
+            // Convert existing elements on the page into "Panels".
+            // They can then be docked on to the dock manager
+            // Panels get a titlebar and a close button, and can also be
+            // converted to a floating dialog box which can be dragged / resized
+            var toolbar = new dockspawn.PanelContainer(document.getElementById("toolbar_window"), dockManager);
+            var statusbar = new dockspawn.PanelContainer(document.getElementById("statusbar_window"), dockManager);
+
+            /* LEFT */
+            var left = new dockspawn.PanelContainer(document.getElementById("left_window"), dockManager, "Google");
+            var Multitran = new dockspawn.PanelContainer(document.getElementById("multitran_window"), dockManager, "Multitran");
+            var Sinonim = new dockspawn.PanelContainer(document.getElementById("sinonim_window"), dockManager, "Синонимы");
+            var Part = new dockspawn.PanelContainer(document.getElementById("part_window"), dockManager, "Список томов");
+
+
+            /* RIGHT */
+            //   top   //
+            var right = new dockspawn.PanelContainer(document.getElementById("right_window"), dockManager, "Right");
+            var vol1 = new dockspawn.PanelContainer(document.getElementById("vol1_window"), dockManager, "Глава 1");
+            var vol2 = new dockspawn.PanelContainer(document.getElementById("vol2_window"), dockManager, "Глава 2");
+            var originalJap = new dockspawn.PanelContainer(document.getElementById("originalJap"), dockManager, "Japanese");
+            var originalEng = new dockspawn.PanelContainer(document.getElementById("originalEng"), dockManager, "English");
+            var originalPrev = new dockspawn.PanelContainer(document.getElementById("originalPrev"), dockManager, "Предыдущая");
+            var originalOrph = new dockspawn.PanelContainer(document.getElementById("originalOrph"), dockManager, "Орфус");
+            //  bottom //
+            var GJap = new dockspawn.PanelContainer(document.getElementById("GJap_window"), dockManager, "Google Japanese");
+            var GEn = new dockspawn.PanelContainer(document.getElementById("GEn_window"), dockManager, "Google English");
+            var Jap = new dockspawn.PanelContainer(document.getElementById("Jap_window"), dockManager, "Japanese");
+            var Fresh = new dockspawn.PanelContainer(document.getElementById("Fresh_window"), dockManager, "Свежий Взгляд");
+
+
+
+/*
+
+            var solution = new dockspawn.PanelContainer(document.getElementById("solution_window"), dockManager);
+            var properties = new dockspawn.PanelContainer(document.getElementById("properties_window"), dockManager);
+            var toolbox = new dockspawn.PanelContainer(document.getElementById("toolbox_window"), dockManager);
+            var outline = new dockspawn.PanelContainer(document.getElementById("outline_window"), dockManager);
+            var problems = new dockspawn.PanelContainer(document.getElementById("problems_window"), dockManager);
+            var output = new dockspawn.PanelContainer(document.getElementById("output_window"), dockManager);
+            var editor1 = new dockspawn.PanelContainer(document.getElementById("editor1_window"), dockManager);
+            var editor2 = new dockspawn.PanelContainer(document.getElementById("editor2_window"), dockManager);
+            var editor3 = new dockspawn.PanelContainer(document.getElementById("editor3_window"), dockManager);*/
+
+            // Dock the panels on the dock manager
+            var documentNode = dockManager.context.model.documentManagerNode;
+            var toolbarNode = dockManager.dockUp(documentNode, toolbar, 0.065);
+            var statusNode = dockManager.dockDown(documentNode, statusbar, 0.055);
+
+            /* LEFT */
+            var leftNode = dockManager.dockLeft(documentNode, left, 0.25);
+            var PartNode = dockManager.dockUp(leftNode, Part, 0.6);
+            var MultitranNode = dockManager.dockFill(leftNode, Multitran, 0.6);
+            var SinonimNode = dockManager.dockFill(leftNode, Sinonim, 0.6);
+
+
+            /* RIGHT */
+            //  bottom //
+            var GJapNode = dockManager.dockDown(documentNode, GJap, 0.25);
+            var GEnNode = dockManager.dockFill(GJapNode, GEn, 0.75);
+            var JapNode = dockManager.dockFill(GJapNode, Jap);
+            var FreshNode = dockManager.dockFill(GJapNode, Fresh);
+
+
+
+
+            var originalJapNode = dockManager.dockLeft(documentNode, originalJap, 0.5);
+            var originalEngNode = dockManager.dockFill(originalJapNode, originalEng, 0.5);
+            var originalPrevNode = dockManager.dockFill(originalJapNode, originalPrev, 0.5);
+            var originalOrphNode = dockManager.dockFill(originalJapNode, originalOrph, 0.5);
+
+
+            var vol1Node = dockManager.dockFill(documentNode, vol1, 0.5);
+            var vol2Node = dockManager.dockFill(documentNode, vol2, 0.5);
+
+
+
+
+/*
+            var outlineNode = dockManager.dockLeft(documentNode, outline, 0.15);
+            var solutionNode = dockManager.dockFill(outlineNode, solution);
+            var propertiesNode = dockManager.dockDown(outlineNode, properties, 0.6);
+            var outputNode = dockManager.dockDown(documentNode, output, 0.2);
+            var problemsNode = dockManager.dockRight(outputNode, problems, 0.4);
+            var toolboxNode = dockManager.dockRight(documentNode, toolbox, 0.2);
+            var editor1Node = dockManager.dockFill(documentNode, editor1);
+            var editor2Node = dockManager.dockFill(documentNode, editor2);
+            var editor3Node = dockManager.dockFill(documentNode, editor3);*/
+
+
+
+    </script>
+
+    <!--
+
+    <script type="application/dart" src="dock_spawn_demo_ide.dart"></script>
+    <script src="packages/browser/dart.js"></script>-->
+
+
+</body>
+</html>

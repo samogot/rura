@@ -1,0 +1,139 @@
+
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0px;
+  overflow: hidden;
+  position:fixed;
+}
+
+.header {
+  background-color: #60A9D4;
+  color: #fff;
+  width: 100%;
+  height: 46px;
+  border-bottom: 1px solid #fff;
+}
+
+.header-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  padding: 15px;
+  float: left;
+  position:relative;
+}
+
+.header-description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  float: left;
+  padding: 15px;
+  position:relative;
+}
+
+.my-dock-manager {
+  background-color: #F8F8F8;
+  clear: both;
+}
+
+.solution-window {
+	width: 300px;
+	height: 200px;
+	background-color: #eee;
+}
+
+.output-window {
+	width: 300px;
+	height: 200px;
+	background-color: #eee;
+}
+
+.properties-window {
+	width: 300px;
+	height: 200px;
+	background-color: #aac;
+}
+
+.toolbox-window {
+	width: 300px;
+	height: 200px;
+	background-color: #eee;
+}
+
+.editor1-window {
+	width: 300px;
+	height: 200px;
+	background-color: #fff;
+}
+
+.editor2-window {
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+}
+.editor3-window {
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+}
+
+.outline-window {
+	width: 300px;
+	height: 200px;
+	background-color: #ddd;
+}
+
+.problems-window {
+	width: 300px;
+	height: 200px;
+	background-color: #edd;
+}
+
+.editor-host {
+	height: auto;
+	overflow: visible;
+}
+
+.activeline {background: #e8f2ff !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.panel-titlebar, .tab-handle-list-container {
+  background: #F2F2F2;
+  color: #4D4D4D;
+}
+.solution-window, .properties-window, .problems-window, .output-window, .tab-host {
+  background: #fff;
+}
+.tab-handle {
+  background-color: #60A9D4;
+  color: #fff;
+}
+.splitbar-vertical, .splitter-container-horizontal, .splitter-container-vertical, .splitbar-horizontal, .tab-handle-content-seperator {
+  background-color: #60A9D4;
+}
+.tab-handle:hover {
+  background-color: #60A9D4;
+  color: #fff;
+  text-decoration: underline;
+}
+.panel-base:focus .panel-titlebar {
+  background-color: #60A9D4;
+  color: #fff;
+}
+.CodeMirror {
+  height: 100% !important;
+}
