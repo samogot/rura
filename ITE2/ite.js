@@ -61,9 +61,9 @@
         // myPanel.layout().$table.css('padding', '5px');
 
         // Constrain the sizing of this window so the user can't resize it.
-        myPanel.initSize(Infinity, 30);
-        myPanel.minSize(100, 30);
-        myPanel.maxSize(Infinity, 30);
+        myPanel.initSize(Infinity, 24);
+        myPanel.minSize(100, 24);
+        myPanel.maxSize(Infinity, 24);
         myPanel.title(false);
 
         // Do not allow the user to move or remove this panel, this will remove the title bar completely from the frame.
@@ -134,6 +134,7 @@
             var $qwe = $('<div class="volume" id="volume'+volL+'"></div>');
             myPanel.title('Глава ' + (volL+1));
             myPanel.layout().addItem($qwe);
+            myPanel.scrollable(false, false);
         }
     });
     myDocker.registerPanelType('GJap', {
@@ -209,27 +210,30 @@
 
 /* INITIALIZATION */
     myDocker.startLoading('Loading...');
-    var volumePanel = myDocker.addPanel('volume', wcDocker.DOCK.RIGHT,null, {w: "33%"});
+	
+    var volumePanel = myDocker.addPanel('volume', wcDocker.DOCK.RIGHT, null);
     var volumePanel1 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
     var volumePanel2 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
 
-    var treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.LEFT, null, {w: "24%"});
-    var translateG = myDocker.addPanel('TranG', wcDocker.DOCK.BOTTOM, treePanel);
-    var translateM = myDocker.addPanel('TranM', wcDocker.DOCK.STACKED, translateG);
-    var translateSin = myDocker.addPanel('TranSin', wcDocker.DOCK.STACKED, translateG);
-    var toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
-    var statusbarPanel = myDocker.addPanel('Statusbar', wcDocker.DOCK.BOTTOM);
-
-
-    var GJap = myDocker.addPanel('GJap', wcDocker.DOCK.BOTTOM, volumePanel, {h: 200});
+    var GJap = myDocker.addPanel('GJap', wcDocker.DOCK.BOTTOM, volumePanel, {w: "75%"});
     var GEn = myDocker.addPanel('GEn', wcDocker.DOCK.STACKED, GJap);
     var Jap = myDocker.addPanel('Jap', wcDocker.DOCK.STACKED, GJap);
-    var Fresh = myDocker.addPanel('Fresh', wcDocker.DOCK.STACKED, GJap);
+    var Fresh = myDocker.addPanel('Fresh', wcDocker.DOCK.STACKED, GJap, {tabOrientation: wcDocker.TAB.BOTTOM});
+	
+    var translateG = myDocker.addPanel('TranG', wcDocker.DOCK.LEFT, GJap, {w: "25%"});
+    var translateM = myDocker.addPanel('TranM', wcDocker.DOCK.STACKED, translateG);
+    var translateSin = myDocker.addPanel('TranSin', wcDocker.DOCK.STACKED, translateG, {tabOrientation: wcDocker.TAB.BOTTOM});
 
-    var originalJap = myDocker.addPanel('originalJap', wcDocker.DOCK.LEFT, volumePanel, {w: "33%"});
+    var originalJap = myDocker.addPanel('originalJap', wcDocker.DOCK.LEFT, volumePanel, {w: "50%"});
     var originalEng = myDocker.addPanel('originalEng', wcDocker.DOCK.STACKED, originalJap);
     var originalPrev = myDocker.addPanel('originalPrev', wcDocker.DOCK.STACKED, originalJap);
     var originalOrph = myDocker.addPanel('originalOrph', wcDocker.DOCK.STACKED, originalJap);
+	
+	
+    var toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
+    var statusbarPanel = myDocker.addPanel('Statusbar', wcDocker.DOCK.BOTTOM);
+    var treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.LEFT, wcDocker.COLLAPSED, {w: "25%"});
+
 
 
 // SETTING

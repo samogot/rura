@@ -31,9 +31,19 @@ body {
   padding: 15px;
   position:relative;
 }
-.CodeMirror {
-  height: 100% !important;
+.wcLayout .CodeMirror {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: auto;
 }
 .wcLayout, .wcLayout tr, .wcLayout td {
   vertical-align: top;
+}
+
+.wcFrameButton:active {
+    border: 1px inset #444;
+    padding: 4px;
 }
