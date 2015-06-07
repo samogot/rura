@@ -239,11 +239,11 @@ $('#originalOrph').height(originalOrph.height() - 10).click();
 myDocker.on(wcDocker.EVENT.LOADED, function () {
     myDocker.finishLoading(500);
 });
-    myDocker.on(wcDocker.EVENT.RESIZE_ENDED, function() {
-		console.log(wcDocker.EVENT.RESIZE_ENDED, document.activeElement, window.activeElement)
-		setTimeout(function(){
-			console.log('setTimeout', document.activeElement, window.activeElement)
-			if(document.activeElement == $('body').get(0))
-				window.activeElement.focus();
-		}, 0);      
-    });
+myDocker.on(wcDocker.EVENT.RESIZE_STARTED, function() {
+	if(document.activeElement != $(window.activeCoreMirror.getWrapperElement()).find('textarea').get(0))
+		window.activeCoreMirror = undefined;
+});
+myDocker.on(wcDocker.EVENT.RESIZE_ENDED, function() {
+	if(document.activeElement == $('body').get(0) && window.activeCoreMirror)
+		window.activeCoreMirror.focus();
+});

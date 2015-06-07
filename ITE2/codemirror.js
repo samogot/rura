@@ -151,7 +151,7 @@ function smartPasteListner(cm) {
 }
 CMwindows.forEach(function (item, i, arr) {
     item.getWrapperElement().addEventListener("paste", smartPasteListner(item));
-    item.on('focus',function(){window.activeElement = item;});
+    item.on('focus',function(){window.activeCoreMirror = item;});
 });
 
 CMoriginalJap.on('change', function (cm, changeObj) {
