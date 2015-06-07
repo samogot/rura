@@ -47,3 +47,9 @@ body {
     border: 1px inset #444;
     padding: 4px;
 }
+
+#status-line {
+    background-color: #EDEDED;
+    border-top: 2px solid #60A9D4;
+    padding: 3px;
+}

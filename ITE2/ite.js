@@ -231,7 +231,7 @@
 	
 	
     var toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
-    var statusbarPanel = myDocker.addPanel('Statusbar', wcDocker.DOCK.BOTTOM);
+    // var statusbarPanel = myDocker.addPanel('Statusbar', wcDocker.DOCK.BOTTOM);
     var treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.LEFT, wcDocker.COLLAPSED, {w: "25%"});
 
 
