@@ -1301,6 +1301,7 @@ a.more {
     text-align: center;
     font-style: italic;
     padding: 2px 5px;
+    font-weight: bold;
 }
 
 .ranobeList .sub-project:hover {

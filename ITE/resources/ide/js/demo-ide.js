@@ -94,49 +94,80 @@ function addN(type, num, col){
 */
 
 function smartPasteListner(cm) {
-  return function(event) {
-    var data = event.clipboardData.getData('text/html');
-    if(data) {
-      data = data.replace(/([\n\r\t] *)+/g,'\n');
-      data = data.replace(/>\n</g,'><');
-      data = data.replace(/\n/g,' ');
-      data = data.replace(/<(\/?(rb|rp|rt|ruby))(\s+[^>]*?)?>/g,'[$1]');
-      data = data.replace(/(<p(\s+[^>]*?)?>\s*)?<\/?br(\s+[^>]*?)?\/?>(\s*<\/p>)?/g,'\n');
-      data = data.replace(/(<\/p>(\s*))?<p(\s+[^>]*?)?>/g,'$2\n');
-      data = data.replace(/<([^: >]+:[^ >]+|style)(\s+[^>]*?)?>.*?<\/\1>/g,'');
-      data = data.replace(/<\/html>.*/,'');
-      var data_t = data;
-      do {
-        data = data_t;
-        data_t = data.replace(/<a[^>]+style\s*=\s*["']([^"']*;)?mso-footnote-id:\s*([^"';\s]+)\s*(;[^"']*)?["'].*?<\/a😡.|\r|\n)*?)<div[^>]+id\s*=\s*["']?\2["']?[^>]*>\s*((.|\r|\n)*?<\/div>)/g, '{{ref|$6}}$4');
-      } while(data != data_t);
-      do {
-        data = data_t;
-        data_t = data.replace(/<a[^>]+style\s*=\s*["']([^"']*;)?mso-endnote-id:\s*([^"';\s]+)\s*(;[^"']*)?["'].*?<\/a😡.|\r|\n)*?)<div[^>]+id\s*=\s*["']?\2["']?[^>]*>\s*((.|\r|\n)*?<\/div>)/g, '{{ref|$6}}$4');
-      } while(data != data_t);
-      data = data.replace(/<!\[if !supportFootnotes\]>(.|\r|\n)*?<!\[endif\]>/g,'');
-      data = data.replace(/<!\[if !supportEndnotes\]>(.|\r|\n)*?<!\[endif\]>/g,'');
-      data = data.replace(/<i(\s+[^>]*?)?>(.*?)<\/i>/g,"''$2''");
-      data = data.replace(/<b(\s+[^>]*?)?>(.*?)<\/b>/g,"'''$2'''");
-      data = data.replace(/<\/?.+?>/g,'');
-      data = data.replace(/''''''/g,'');
-      data = data.replace(/''''/g,'');
-      data = data.replace(/\{\{ref\|\s+/g,'{{ref|');
-      data = data.replace(/\[(\/?(rb|rp|rt|ruby))\]/g,'<$1>');
-      data = data.replace(/^\n+/,'');
-      data = data.replace(/###/g,'{{Иллюстрация}}');
-      data = data.replace(/&nbsp;/g," ");
-      //data = data.replace(/\n\n+/g,"\n");
-      data = data.replace(/%%%/g,'');
-      //console.log(data);
-      cm.getDoc().replaceSelection(data);
-      event.preventDefault();
-    }
-  }
+	return function(event) { 
+		var data = event.clipboardData.getData('text/html');
+		if(data) {
+			//убераем лишние пробельные символы 
+			data = data.replace(/([\n\r] *)+/g,'\n');
+			data = data.replace(/>\n</g,'><');
+			data = data.replace(/\s+/g,' ');
+			//экранируем теги руби избавляясь от стилей
+			data = data.replace(/<(\/?(rb|rp|rt|ruby))( +[^>]*?)?>/g,'[$1]');
+			//добавляем разрывы строк в места абзацев и брейков
+			data = data.replace(/(<p( [^>]*?)?>)?<\/?br( [^>]*?)?\/?>( <\/p>)?/g,'\n');
+			data = data.replace(/(<\/p>(\n*))?<p( [^>]*?)?>/g,'$2\n');
+			//удаляем все теги стиля и теги пространства имен вместе с содержимим
+			data = data.replace(/<([^: >]+:[^ >]+|style)( [^>]*?)?>.*?<\/\1>/g,'');
+			//удаляем текст после завершающего html
+			data = data.replace(/<\/html>.*/,'');
+			//обрабатываем вордовские сноски
+			var data_t = data;
+			do {
+				data = data_t;
+				data_t = data.replace(/<a[^>]+style ?= ?["']([^"']*;)?mso-(foot|end)note-id: ?([^"'; ]+) ?(;[^"']*)?["'].*?<\/a>((.|\r|\n)*?)<div[^>]+id ?= ?["']?\3["']?[^>]*>\s*((.|\r|\n)*?<\/div>)/g, '{{ref|$7}}$5');
+			} while(data != data_t);
+			data = data.replace(/<!\[if !support(Foot|End)notes\]>(.|\r|\n)*?<!\[endif\]>/g,'');
+			//обрабатываем жирность-курсив
+			data = data.replace(/<i( [^>]*?)?>(.*?)<\/i>/g,"''$2''");
+			data = data.replace(/<b( [^>]*?)?>(.*?)<\/b>/g,"'''$2'''");
+			//удаляем все теги
+			data = data.replace(/<\/?.+?>/g,'');
+			//чистка жирности-курсива
+			data = data.replace(/''''''/g,'');
+			data = data.replace(/''''/g,'');
+			//чистка примечаний
+			data = data.replace(/\{\{ref\| /g,'{{ref|');
+			//востановление руби
+			data = data.replace(/\[(\/?(rb|rp|rt|ruby))\]/g,'<$1>');
+			//удаляем разрывы с начала фрагмента
+			data = data.replace(/^\n/,'');
+			//заменяем ###
+			data = data.replace(/###/g,'{{Иллюстрация}}');
+			// заменяем неразрывный пробел
+			data = data.replace(/&nbsp;/g," ");
+			//заменяем %%%
+			//data = data.replace(/\n\n+/g,"\n");
+			data = data.replace(/%%%/g,'');
+			//чистка лишних пробелов и корректировка тире
+			data = data.replace(/  +/g,' ');
+			data = data.replace(/ ?\n ?/g,"\n");
+			data = data.replace(/\n[-–] ?/g,"\n— ");
+			data = data.replace(/ [-–] /g," — ");
+			data = data.replace(/([^ \n—])[—–]([^ \n—])/g,"$1-$1");
+			data = data.replace(/— —/g,"——");
+			data = data.replace(/— —/g,"——");
+			//console.log(data);
+			cm.getDoc().replaceSelection(data);
+			event.preventDefault();
+		}
+	}
 }
 CMwindows.forEach(function(item, i, arr) {
   item.getWrapperElement().addEventListener("paste", smartPasteListner(item));
 });
+
+CMoriginalJap.on('change', function(cm, changeObj){
+  var cur=cm.getSearchCursor(/<ruby>.*?<\/ruby>/, changeObj.from)
+  while(cur.findNext()) {
+    if(cm.getDoc().findMarksAt(cur.from()).some(function(){return this.primary.className=='ruby';}))
+    break;
+    cm.getDoc().markText(cur.from(), cur.to(), {
+    className: 'ruby',
+    shared: true,
+    replacedWith: $(cur.pos.match[0]).get(0)
+    });
+  }
+})
 
 /*
 function res(){
