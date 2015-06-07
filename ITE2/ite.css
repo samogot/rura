@@ -1,0 +1,39 @@
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0px;
+  overflow: hidden;
+  position:fixed;
+}
+.header {
+  background-color: #60A9D4;
+  color: #fff;
+  width: 100%;
+  height: 46px;
+  border-bottom: 1px solid #fff;
+}
+
+.header-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  padding: 15px;
+  float: left;
+  position:relative;
+}
+
+.header-description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  float: left;
+  padding: 15px;
+  position:relative;
+}
+.CodeMirror {
+  height: 100% !important;
+}
+.wcLayout, .wcLayout tr, .wcLayout td {
+  vertical-align: top;
+}
