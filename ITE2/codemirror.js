@@ -7,7 +7,7 @@ var mwextUrlProtocolsVAL = {"tag":{"pre":"mw-tag-pre","nowiki":"mw-tag-nowiki","
 var mwextTagsVAL = {"pre":true,"nowiki":true,"gallery":true,"indicator":true,"phptag":true,"source":true,"syntaxhighlight":true,"foxway":true}
 var mwextFunctionSynonymsVAL = [{"ns":"ns","nse":"nse","urlencode":"urlencode","lcfirst":"lcfirst","ucfirst":"ucfirst","lc":"lc","uc":"uc","localurl":"localurl","localurle":"localurle","fullurl":"fullurl","fullurle":"fullurle","canonicalurl":"canonicalurl","canonicalurle":"canonicalurle","formatnum":"formatnum","grammar":"grammar","gender":"gender","plural":"plural","#language":"language","padleft":"padleft","padright":"padright","anchorencode":"anchorencode","filepath":"filepath","pageid":"pageid","int":"int","#special":"special","#speciale":"speciale","#tag":"tag","#formatdate":"formatdate","#dateformat":"formatdate","#phptag":"phptag","#multimaps":"multimaps","#number_format":"number_format","#numbertext":"MAG_NUMBERTEXT","#moneytext":"MAG_MONEYTEXT","#if":"if","#ifeq":"ifeq","#switch":"switch","#ifexist":"ifexist","#ifexpr":"ifexpr","#iferror":"iferror","#expr":"expr","#time":"time","#timel":"timel","#rel2abs":"rel2abs","#titleparts":"titleparts","#len":"len","#pos":"pos","#rpos":"rpos","#sub":"sub","#count":"count","#replace":"replace","#explode":"explode","#urldecode":"urldecode","#foxway":"foxway","articlepath":"articlepath","server":"server","servername":"servername","scriptpath":"scriptpath","stylepath":"stylepath","currentuser":"MAG_CURRENTUSER","currentloggeduser":"MAG_CURRENTLOGGEDUSER","currentuserrealname":"MAG_CURRENTUSERREALNAME","logo":"MAG_LOGO","uuid":"MAG_UUID","userlanguagecode":"MAG_USERLANGUAGECODE"},{"NUMBEROFPAGES":"numberofpages","NUMBEROFUSERS":"numberofusers","NUMBEROFACTIVEUSERS":"numberofactiveusers","NUMBEROFARTICLES":"numberofarticles","NUMBEROFFILES":"numberoffiles","NUMBEROFADMINS":"numberofadmins","NUMBERINGROUP":"numberingroup","NUMINGROUP":"numberingroup","NUMBEROFEDITS":"numberofedits","DEFAULTSORT":"defaultsort","DEFAULTSORTKEY":"defaultsort","DEFAULTCATEGORYSORT":"defaultsort","PAGESINCATEGORY":"pagesincategory","PAGESINCAT":"pagesincategory","PAGESIZE":"pagesize","PROTECTIONLEVEL":"protectionlevel","NAMESPACEE":"namespacee","NAMESPACENUMBER":"namespacenumber","TALKSPACE":"talkspace","TALKSPACEE":"talkspacee","SUBJECTSPACE":"subjectspace","ARTICLESPACE":"subjectspace","SUBJECTSPACEE":"subjectspacee","ARTICLESPACEE":"subjectspacee","PAGENAME":"pagename","PAGENAMEE":"pagenamee","FULLPAGENAME":"fullpagename","FULLPAGENAMEE":"fullpagenamee","ROOTPAGENAME":"rootpagename","ROOTPAGENAMEE":"rootpagenamee","BASEPAGENAME":"basepagename","BASEPAGENAMEE":"basepagenamee","SUBPAGENAME":"subpagename","SUBPAGENAMEE":"subpagenamee","TALKPAGENAME":"talkpagename","TALKPAGENAMEE":"talkpagenamee","SUBJECTPAGENAME":"subjectpagename","ARTICLEPAGENAME":"subjectpagename","SUBJECTPAGENAMEE":"subjectpagenamee","ARTICLEPAGENAMEE":"subjectpagenamee","REVISIONID":"revisionid","REVISIONDAY":"revisionday","REVISIONDAY2":"revisionday2","REVISIONMONTH":"revisionmonth","REVISIONMONTH1":"revisionmonth1","REVISIONYEAR":"revisionyear","REVISIONTIMESTAMP":"revisiontimestamp","REVISIONUSER":"revisionuser","CASCADINGSOURCES":"cascadingsources","NAMESPACE":"namespace","DISPLAYTITLE":"displaytitle","!":"!","CURRENTMONTH":"currentmonth","CURRENTMONTH2":"currentmonth","CURRENTMONTH1":"currentmonth1","CURRENTMONTHNAME":"currentmonthname","CURRENTMONTHNAMEGEN":"currentmonthnamegen","CURRENTMONTHABBREV":"currentmonthabbrev","CURRENTDAY":"currentday","CURRENTDAY2":"currentday2","CURRENTDAYNAME":"currentdayname","CURRENTYEAR":"currentyear","CURRENTTIME":"currenttime","CURRENTHOUR":"currenthour","LOCALMONTH":"localmonth","LOCALMONTH2":"localmonth","LOCALMONTH1":"localmonth1","LOCALMONTHNAME":"localmonthname","LOCALMONTHNAMEGEN":"localmonthnamegen","LOCALMONTHABBREV":"localmonthabbrev","LOCALDAY":"localday","LOCALDAY2":"localday2","LOCALDAYNAME":"localdayname","LOCALYEAR":"localyear","LOCALTIME":"localtime","LOCALHOUR":"localhour","SITENAME":"sitename","CURRENTWEEK":"currentweek","CURRENTDOW":"currentdow","LOCALWEEK":"localweek","LOCALDOW":"localdow","REVISIONSIZE":"revisionsize","CURRENTVERSION":"currentversion","CURRENTTIMESTAMP":"currenttimestamp","LOCALTIMESTAMP":"localtimestamp","DIRECTIONMARK":"directionmark","DIRMARK":"directionmark","CONTENTLANGUAGE":"contentlanguage","CONTENTLANG":"contentlanguage"}];
 var CMoriginalJap = CodeMirror(document.getElementById("originalJap"), {
-    lineNumbers: true,
+    lineNumbers: !$('body').hasClass('wcMobile'),
     matchBrackets: true,
     styleActiveLine: true,
     lineWrapping: true,
@@ -18,7 +18,7 @@ var CMoriginalJap = CodeMirror(document.getElementById("originalJap"), {
     value: source_Jap
 });
 var CMoriginalEng = CodeMirror(document.getElementById("originalEng"), {
-    lineNumbers: true,
+    lineNumbers: !$('body').hasClass('wcMobile'),
     matchBrackets: true,
     styleActiveLine: true,
     lineWrapping: true,
@@ -29,7 +29,7 @@ var CMoriginalEng = CodeMirror(document.getElementById("originalEng"), {
     value: source_Eng
 });
 var CMoriginalPrev = CodeMirror(document.getElementById("originalPrev"), {
-    lineNumbers: true,
+    lineNumbers: !$('body').hasClass('wcMobile'),
     matchBrackets: true,
     lineWrapping: true,
     mwextUrlProtocols: mwextUrlProtocolsVAL,
@@ -40,7 +40,7 @@ var CMoriginalPrev = CodeMirror(document.getElementById("originalPrev"), {
     value: source_editor3
 });
 var CMoriginalOrph = CodeMirror(document.getElementById("originalOrph"), {
-    lineNumbers: true,
+    lineNumbers: !$('body').hasClass('wcMobile'),
     matchBrackets: true,
     lineWrapping: true,
     styleActiveLine: true,
@@ -51,7 +51,7 @@ var CMoriginalOrph = CodeMirror(document.getElementById("originalOrph"), {
     value: source_editor3
 });
 var CMvol1_window = CodeMirror(document.getElementById("volume0"), {
-    lineNumbers: true,
+    lineNumbers: !$('body').hasClass('wcMobile'),
     matchBrackets: true,
     lineWrapping: true,
     styleActiveLine: true,
