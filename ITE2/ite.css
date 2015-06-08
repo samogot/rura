@@ -50,4 +50,32 @@ body {
     background-color: #EDEDED;
     border-top: 2px solid #60A9D4;
     padding: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.wcFullScreen div#header {
+    display: none;
+}
+
+div#header {
+    width: 100%;
+}
+
+.dockerContainer {
+    position: absolute;
+    top: 46px;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+}
+
+.wcFullScreen .dockerContainer {
+    top: 0;
+}
+
+table.toolbox td {
+    padding: 3px;
 }

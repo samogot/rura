@@ -27,16 +27,18 @@ myDocker.registerPanelType('Toolbox', {
         myPanel.closeable(false);
         myPanel.scrollable(false, false);
 
-        var $button_bold = $('<button type="button" class="btn btn-default btn-xs" title="Жирный" data-insert="\'\'\'insert\'\'\'"><i class="fa fa-bold"></i></button>');
-        var $button_ital = $('<button type="button" class="btn btn-default btn-xs" title="Курсив"  data-insert="\'\'insert\'\'"><i class="fa fa-italic"></i></button>');
-        var $button_h2 = $('<button type="button" class="btn btn-default btn-xs" title="Заголовок 2-го уровня"  data-insert="==insert=="><i class="fa fa-header"></i>2</button>');
-        var $button_h3 = $('<button type="button" class="btn btn-default btn-xs" title="Заголовок 3-го уровня"  data-insert="===insert==="><i class="fa fa-header"></i>3</button>');
-        var $button_uh = $('<button type="button" class="btn btn-default btn-xs UnderHead" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}"><i class="fa fa-header"></i><i class="fa fa-align-center" style="font-size:80%"></i></button>');
-        var $button_pr = $('<button type="button" class="btn btn-default btn-xs" title="Примечание"  data-insert="{{ref|insert}}"><i class="fa fa-file-text"></i></button>');
-        var $button_com = $('<button type="button" class="btn btn-default btn-xs" title="Комментарий"  data-insert="<!— insert —>"><i class="fa fa-tag"></i></button>');
-        var $button_illus = $('<button type="button" class="btn btn-default btn-xs Illus" title="Иллюстрация" data-insert="{{Иллюстрация}}insert "><i class="fa fa-picture-o"></i></button>');
-        var $button_wiki = $('<button type="button" class="btn btn-default btn-xs" title="Ссылка на Википедию" data-insert="Подробнее на [insert Википедии]"><i class="fa fa-link"></i><span style="font-size: 72%; margin-left: -2px; vertical-align: super; font-weight: bold;">W</span></button>');
+        window.$button_bold = $('<button type="button" class="btn btn-default btn-xs" title="Жирный" data-insert="\'\'\'insert\'\'\'"><i class="fa fa-bold"></i></button>');
+        window.$button_ital = $('<button type="button" class="btn btn-default btn-xs" title="Курсив"  data-insert="\'\'insert\'\'"><i class="fa fa-italic"></i></button>');
+        window.$button_h2 = $('<button type="button" class="btn btn-default btn-xs" title="Заголовок 2-го уровня"  data-insert="==insert=="><i class="fa fa-header"></i>2</button>');
+        window.$button_h3 = $('<button type="button" class="btn btn-default btn-xs" title="Заголовок 3-го уровня"  data-insert="===insert==="><i class="fa fa-header"></i>3</button>');
+        window.$button_uh = $('<button type="button" class="btn btn-default btn-xs UnderHead" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}"><i class="fa fa-header"></i><i class="fa fa-align-center" style="font-size:80%"></i></button>');
+        window.$button_pr = $('<button type="button" class="btn btn-default btn-xs" title="Примечание"  data-insert="{{ref|insert}}"><i class="fa fa-file-text"></i></button>');
+        window.$button_com = $('<button type="button" class="btn btn-default btn-xs" title="Комментарий"  data-insert="<!— insert —>"><i class="fa fa-tag"></i></button>');
+        window.$button_illus = $('<button type="button" class="btn btn-default btn-xs Illus" title="Иллюстрация" data-insert="{{Иллюстрация}}insert "><i class="fa fa-picture-o"></i></button>');
+        window.$button_wiki = $('<button type="button" class="btn btn-default btn-xs" title="Ссылка на Википедию" data-insert="Подробнее на [insert Википедии]"><i class="fa fa-link"></i><span style="font-size: 72%; margin-left: -2px; vertical-align: super; font-weight: bold;">W</span></button>');
+        window.$button_fullscreen = $('<button type="button" class="btn btn-default btn-xs" title="Полноэкранный режим"><i class="fa fa-expand"></i></button>');
 
+        myPanel.layout().$table.addClass('toolbox');
         myPanel.layout().addItem($button_bold);
         myPanel.layout().addItem($button_ital);
         myPanel.layout().addItem($button_h2);
@@ -46,6 +48,26 @@ myDocker.registerPanelType('Toolbox', {
         myPanel.layout().addItem($button_com);
         myPanel.layout().addItem($button_illus);
         myPanel.layout().addItem($button_wiki);
+        myPanel.layout().addItem($button_fullscreen);
+
+        $button_fullscreen.click(function(){
+            var doc = window.document;
+            var docEl = doc.documentElement;
+
+            var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+            var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+            if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                requestFullScreen.call(docEl);
+                $('body').addClass('wcFullScreen')
+                $button_fullscreen.find('.fa').addClass('fa-compress').removeClass('fa-expand');
+            }
+            else {
+                cancelFullScreen.call(doc);
+                $('body').removeClass('wcFullScreen')
+                $button_fullscreen.find('.fa').addClass('fa-expand').removeClass('fa-compress');
+            }
+        });
     }
 });
 myDocker.registerPanelType('Statusbar', {
@@ -192,28 +214,55 @@ myDocker.registerPanelType('originalOrph', {
 /* INITIALIZATION */
 myDocker.startLoading('Loading...');
 
-var volumePanel = myDocker.addPanel('volume', wcDocker.DOCK.RIGHT, null);
-var volumePanel1 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
-var volumePanel2 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
+if($('body').hasClass('wcMobile'))
+{
+    var volumePanel = myDocker.addPanel('volume', wcDocker.DOCK.RIGHT, null);
+    var volumePanel1 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
+    var volumePanel2 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
 
-var GJap = myDocker.addPanel('GJap', wcDocker.DOCK.BOTTOM, volumePanel, { w: "75%" });
-var GEn = myDocker.addPanel('GEn', wcDocker.DOCK.STACKED, GJap);
-var Jap = myDocker.addPanel('Jap', wcDocker.DOCK.STACKED, GJap);
-var Fresh = myDocker.addPanel('Fresh', wcDocker.DOCK.STACKED, GJap, { tabOrientation: wcDocker.TAB.BOTTOM });
+    var GJap = myDocker.addPanel('GJap', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    var GEn = myDocker.addPanel('GEn', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    var Jap = myDocker.addPanel('Jap', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    var Fresh = myDocker.addPanel('Fresh', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
 
-var translateG = myDocker.addPanel('TranG', wcDocker.DOCK.LEFT, GJap, { w: "25%" });
-var translateM = myDocker.addPanel('TranM', wcDocker.DOCK.STACKED, translateG);
-var translateSin = myDocker.addPanel('TranSin', wcDocker.DOCK.STACKED, translateG, { tabOrientation: wcDocker.TAB.BOTTOM });
+    var translateG = myDocker.addPanel('TranG', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    var translateM = myDocker.addPanel('TranM', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    var translateSin = myDocker.addPanel('TranSin', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
 
-var originalJap = myDocker.addPanel('originalJap', wcDocker.DOCK.LEFT, volumePanel, { w: "50%" });
-var originalEng = myDocker.addPanel('originalEng', wcDocker.DOCK.STACKED, originalJap);
-var originalPrev = myDocker.addPanel('originalPrev', wcDocker.DOCK.STACKED, originalJap);
-var originalOrph = myDocker.addPanel('originalOrph', wcDocker.DOCK.STACKED, originalJap);
+    var originalJap = myDocker.addPanel('originalJap', wcDocker.DOCK.LEFT, volumePanel, { w: "50%" });
+    var originalEng = myDocker.addPanel('originalEng', wcDocker.DOCK.STACKED, originalJap);
+    var originalPrev = myDocker.addPanel('originalPrev', wcDocker.DOCK.STACKED, originalJap);
+    var originalOrph = myDocker.addPanel('originalOrph', wcDocker.DOCK.STACKED, originalJap);
 
 
-var toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
-// var statusbarPanel = myDocker.addPanel('Statusbar', wcDocker.DOCK.BOTTOM);
-var treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.LEFT, wcDocker.COLLAPSED, { w: "25%" });
+    var toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
+    var treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.STACKED, originalJap);
+}
+else
+{
+    var volumePanel = myDocker.addPanel('volume', wcDocker.DOCK.RIGHT, null);
+    var volumePanel1 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
+    var volumePanel2 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
+
+    var GJap = myDocker.addPanel('GJap', wcDocker.DOCK.BOTTOM, volumePanel, { w: "75%" });
+    var GEn = myDocker.addPanel('GEn', wcDocker.DOCK.STACKED, GJap);
+    var Jap = myDocker.addPanel('Jap', wcDocker.DOCK.STACKED, GJap);
+    var Fresh = myDocker.addPanel('Fresh', wcDocker.DOCK.STACKED, GJap, { tabOrientation: wcDocker.TAB.BOTTOM });
+
+    var translateG = myDocker.addPanel('TranG', wcDocker.DOCK.LEFT, GJap, { w: "25%" });
+    var translateM = myDocker.addPanel('TranM', wcDocker.DOCK.STACKED, translateG);
+    var translateSin = myDocker.addPanel('TranSin', wcDocker.DOCK.STACKED, translateG, { tabOrientation: wcDocker.TAB.BOTTOM });
+
+    var originalJap = myDocker.addPanel('originalJap', wcDocker.DOCK.LEFT, volumePanel, { w: "50%" });
+    var originalEng = myDocker.addPanel('originalEng', wcDocker.DOCK.STACKED, originalJap);
+    var originalPrev = myDocker.addPanel('originalPrev', wcDocker.DOCK.STACKED, originalJap);
+    var originalOrph = myDocker.addPanel('originalOrph', wcDocker.DOCK.STACKED, originalJap);
+
+
+    var toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
+    // var statusbarPanel = myDocker.addPanel('Statusbar', wcDocker.DOCK.BOTTOM);
+    var treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.LEFT, wcDocker.COLLAPSED, { w: "25%" });
+}
 
 
 
@@ -240,8 +289,12 @@ myDocker.on(wcDocker.EVENT.LOADED, function () {
     myDocker.finishLoading(500);
 });
 myDocker.on(wcDocker.EVENT.RESIZE_STARTED, function() {
-	if(document.activeElement != $(window.activeCoreMirror.getWrapperElement()).find('textarea').get(0))
+	if(window.activeCoreMirror && document.activeElement != $(window.activeCoreMirror.getWrapperElement()).find('textarea').get(0))
 		window.activeCoreMirror = undefined;
+    if($('body').hasClass('wcFullScreen') && !window.document.fullscreenElement && !window.document.mozFullScreenElement && !window.document.webkitFullscreenElement && !window.document.msFullscreenElement) {
+        $('body').removeClass('wcFullScreen')
+        $button_fullscreen.find('.fa').addClass('fa-expand').removeClass('fa-compress');
+    }
 });
 myDocker.on(wcDocker.EVENT.RESIZE_ENDED, function() {
 	if(document.activeElement == $('body').get(0) && window.activeCoreMirror)
