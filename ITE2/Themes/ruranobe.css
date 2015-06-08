@@ -242,7 +242,7 @@ button:focus {
   Mobile style changes.
 */
 
-.wcMobile .wcFrameTitleBar {
+/* .wcMobile .wcFrameTitleBar {
     height: 29px;
 }
 .wcMobile .wcFrameTitle {
@@ -253,6 +253,7 @@ button:focus {
     width: 25px;
     height: 25px;
     font-size: 22px;
+line-height: 21px;
 }
 .wcMobile .wcFrameCenter {
     top: 29px;
@@ -262,7 +263,7 @@ button:focus {
     height: 29px;
 }
 .wcMobile .wcPanelTab > div {
-    margin-top: 4px;
+    margin-top: 2px;
 }
 .wcMobile .wcSplitterBarV.wcSplitterBar:not(.wcSplitterBarStatic) {
     width: 12px;
@@ -279,4 +280,13 @@ button:focus {
 .wcMobile .wcButton,
 .wcMobile button {
     font-size: 22px;
+} */
+
+.wcMobile .wcSplitterBarV.wcSplitterBar:not(.wcSplitterBarStatic) {
+    width: 6px;
+    border-width: 3px;
+}
+.wcMobile .wcSplitterBarH.wcSplitterBar:not(.wcSplitterBarStatic) {
+    height: 6px;
+    border-width: 3px;
 }
