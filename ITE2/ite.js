@@ -27,11 +27,11 @@ myDocker.registerPanelType('Toolbox', {
         myPanel.closeable(false);
         myPanel.scrollable(false, false);
 
-        window.$button_bold = $('<button type="button" class="btn btn-default btn-xs" title="Жирный" data-insert="\'\'\'insert\'\'\'"><i class="fa fa-bold"></i></button>');
-        window.$button_ital = $('<button type="button" class="btn btn-default btn-xs" title="Курсив"  data-insert="\'\'insert\'\'"><i class="fa fa-italic"></i></button>');
-        window.$button_h2 = $('<button type="button" class="btn btn-default btn-xs" title="Заголовок 2-го уровня"  data-insert="==insert=="><i class="fa fa-header"></i>2</button>');
-        window.$button_h3 = $('<button type="button" class="btn btn-default btn-xs" title="Заголовок 3-го уровня"  data-insert="===insert==="><i class="fa fa-header"></i>3</button>');
-        window.$button_uh = $('<button type="button" class="btn btn-default btn-xs UnderHead" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}"><i class="fa fa-header"></i><i class="fa fa-align-center" style="font-size:80%"></i></button>');
+        window.$button_bold = $('<button type="button" data-type="BoldIt" class="btn btn-default btn-xs" title="Жирный" data-insert="\'\'\'insert\'\'\'"><i class="fa fa-bold"></i></button>');
+        window.$button_ital = $('<button type="button" data-type="BoldIt" class="btn btn-default btn-xs" title="Курсив"  data-insert="\'\'insert\'\'"><i class="fa fa-italic"></i></button>');
+        window.$button_h2 = $('<button type="button" data-type="head" class="btn btn-default btn-xs" title="Заголовок 2-го уровня"  data-insert="==insert=="><i class="fa fa-header"></i>2</button>');
+        window.$button_h3 = $('<button type="button" data-type="head" class="btn btn-default btn-xs" title="Заголовок 3-го уровня"  data-insert="===insert==="><i class="fa fa-header"></i>3</button>');
+        window.$button_uh = $('<button type="button" data-type="head" class="btn btn-default btn-xs UnderHead" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}"><i class="fa fa-header"></i><i class="fa fa-align-center" style="font-size:80%"></i></button>');
         window.$button_pr = $('<button type="button" class="btn btn-default btn-xs" title="Примечание"  data-insert="{{ref|insert}}"><i class="fa fa-file-text"></i></button>');
         window.$button_com = $('<button type="button" class="btn btn-default btn-xs" title="Комментарий"  data-insert="<!— insert —>"><i class="fa fa-tag"></i></button>');
         window.$button_illus = $('<button type="button" class="btn btn-default btn-xs Illus" title="Иллюстрация" data-insert="{{Иллюстрация}}insert "><i class="fa fa-picture-o"></i></button>');

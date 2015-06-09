@@ -190,7 +190,7 @@ CMoriginalJap.on('change', function (cm, changeObj) {
 CMs=[CMoriginalJap, CMoriginalEng, CMvol1_window];
 Mass=[[],[],[]];
 for(var c = 0; c < CMs.length; c++) {
-	for(var i=0;i<150;++i) 
+	for(var i=0;i<150;++i)
 		Mass[c][i]=0;
 }
 Mass[1][3] = 1;
@@ -199,7 +199,7 @@ Mass[0][89] = 1;
 Mass[1][89] = 1;
 Mass[0][108] = 1;
 
-	
+
 aligners=[[],[],[]];
 function padBelow(cm, line, size) {
 	var $elt = $('<div>').addClass('line-sync-spacer').css({height: size, minWidth: 1});
@@ -251,8 +251,8 @@ function updateLineSync() {
                     minheight = sizes[j];
             }
             if(maxheight==minheight) continue;
-			for(var j = 0; j < cms.length; j++) 
-				if(maxheight-sizes[j]>0) 
+			for(var j = 0; j < cms.length; j++)
+				if(maxheight-sizes[j]>0)
                     aligners[cms[j]][i-shift[cms[j]]] = padBelow(CMs[cms[j]], i-shift[cms[j]], maxheight-sizes[j]);
 			// console.log(i,shift,cms,maxheight,sizes);
 		}
@@ -280,3 +280,40 @@ $.each([volumePanel, volumePanel1, volumePanel2, originalJap, originalEng, origi
         },100);
     });
 });
+
+
+
+function checkLine(text){
+
+}
+
+$('button[data-type=head]').on('click', function(e){
+    var selText = CMvol1_window.getSelection();
+    var insert = $(this).data('insert').split('insert');
+    var sel = {'start': CMvol1_window.listSelections()[0].anchor,'end': CMvol1_window.listSelections()[0].head};
+    var startLine = sel.start.line;
+    var head = '';
+    if (sel.start.ch == 0 && sel.end.ch == (CMvol1_window.getLine(startLine)).length){
+        head = '\n'
+    }
+    CMvol1_window.setSelection({"line":startLine, "ch":0},{"line":startLine,"ch":(CMvol1_window.getLine(startLine)).length});
+    selText = CMvol1_window.getSelection();
+    CMvol1_window.replaceSelection(insert[0]+selText+insert[1]+head);
+    CMvol1_window.focus();
+})
+$('button[data-type=BoldIt]').on('click', function(e){
+    var selText = CMvol1_window.getSelection();
+    var insert = $(this).data('insert').split('insert');
+    var sel = {'start': CMvol1_window.listSelections()[0].anchor,'end': CMvol1_window.listSelections()[0].head};
+    var startLine = sel.start.line;
+    if (e.shiftKey){
+        console.log(startLine);
+        CMvol1_window.setSelection({"line":startLine, "ch":0},{"line":startLine,"ch":(CMvol1_window.getLine(startLine)).length});
+        selText = CMvol1_window.getSelection();
+        CMvol1_window.replaceSelection(insert[0]+selText+insert[1]);
+    } else if (selText.length == 0) {
+        CMvol1_window.replaceSelection(insert[0]+insert[1]);
+        CMvol1_window.setCursor(startLine, (sel.start.ch+insert[0].length));
+    }
+    CMvol1_window.focus();
+})
