@@ -83,11 +83,6 @@ $.each(CMwindows, function() {
 	this.on('scroll', onScroll);
 });
 
-var Mass1JAP = [0, 1, 2, 3, 3, 4, 5, 5];
-var Mass2ENG = [0, 0, 1, 2, 3, 4, 4, 5];
-var Mass3RUS = [0, 1, 1, 2, 3, 3, 4, 5];
-
-
 /*
 $('#originalEng .CodeMirror-code div:eq(0) pre span').html($('#originalEng .CodeMirror-code div:eq(0) pre span').html() + '\n')
 function addN(type, num, col){
@@ -181,3 +176,64 @@ CMoriginalJap.on('change', function (cm, changeObj) {
         });
     }
 })
+
+
+
+CMs=[CMoriginalJap, CMoriginalEng, CMvol1_window];
+Mass=[[],[],[]];
+for(var c = 0; c < CMs.length; c++) {
+	for(var i=0;i<150;++i) 
+		Mass[c][i]=0;
+}
+Mass[1][3] = 1;
+Mass[2][3] = 1;
+Mass[0][89] = 1;
+Mass[1][89] = 1;
+Mass[0][108] = 1;
+
+	
+aligners=[];
+function padBelow(cm, line, size) {
+	var $elt = $('<div>').addClass('line-sync-spacer').css({height: size, minWidth: 1});
+	return cm.addLineWidget(line, $elt.get(0), {height: size, above: false, handleMouseEvents: true});
+}
+function updateLineSync(count) {
+	if(!count) count=144
+	var scroll = CMvol1_window.getScrollInfo().top;
+	for (var i = 0; i < aligners.length; i++)
+	  aligners[i].clear();
+	aligners=[];
+	shift=[0,0,0];
+	for(var i = 0; i < count; i++){
+		cms=[];
+		for(var c = 0; c < CMs.length; c++){
+			shift[c]+=Mass[c][i];
+			if(!Mass[c][i]) cms.push(c);
+		}
+		var sizes=[];
+		if(cms.length>1) {
+			var new_sizes=[];
+			var maxheight=0;
+			for(var j = 0; j < cms.length; j++){
+				new_sizes[j]=CMs[cms[j]].heightAtLine(i-shift[cms[j]]+1, "local");
+				if (maxheight < new_sizes[j])
+					maxheight = new_sizes[j];
+				}
+			sizes=new_sizes;
+			for(var j = 0; j < cms.length; j++) 
+				if(maxheight-sizes[j]>0) aligners.push(padBelow(CMs[cms[j]], i-shift[cms[j]], maxheight-sizes[j]));
+			console.log(i,shift,cms,maxheight,sizes);
+		}
+	}
+	CMvol1_window.scrollTo(0, scroll)
+}
+function updateLineSyncOp(count) {
+	var func = function(){updateLineSync(count)};
+	for(var c = 0; c < CMs.length; c++)
+		(function(){
+			var cm=CMs[c];
+			var prevF = func;
+			func = function(){cm.operation(prevF)};
+		})()
+	func();
+}
