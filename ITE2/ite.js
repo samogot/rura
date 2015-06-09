@@ -37,6 +37,7 @@ myDocker.registerPanelType('Toolbox', {
         window.$button_illus = $('<button type="button" class="btn btn-default btn-xs Illus" title="Иллюстрация" data-insert="{{Иллюстрация}}insert "><i class="fa fa-picture-o"></i></button>');
         window.$button_wiki = $('<button type="button" class="btn btn-default btn-xs" title="Ссылка на Википедию" data-insert="Подробнее на [insert Википедии]"><i class="fa fa-link"></i><span style="font-size: 72%; margin-left: -2px; vertical-align: super; font-weight: bold;">W</span></button>');
         window.$button_fullscreen = $('<button type="button" class="btn btn-default btn-xs" title="Полноэкранный режим"><i class="fa fa-expand"></i></button>');
+        window.$button_scrollock = $('<button type="button" class="btn btn-default btn-xs" title="Синхронизировать высоту строк"><i class="fa fa-arrows-v"></i></button>');
 
         myPanel.layout().$table.addClass('toolbox');
         myPanel.layout().addItem($button_bold);
@@ -49,6 +50,7 @@ myDocker.registerPanelType('Toolbox', {
         myPanel.layout().addItem($button_illus);
         myPanel.layout().addItem($button_wiki);
         myPanel.layout().addItem($button_fullscreen);
+        myPanel.layout().addItem($button_scrollock);
 
         $button_fullscreen.click(function(){
             var doc = window.document;
@@ -67,6 +69,10 @@ myDocker.registerPanelType('Toolbox', {
                 $('body').removeClass('wcFullScreen')
                 $button_fullscreen.find('.fa').addClass('fa-expand').removeClass('fa-compress');
             }
+        });
+
+        $button_scrollock.click(function(){
+            updateLineSyncOp(114)
         });
     }
 });
@@ -300,3 +306,5 @@ myDocker.on(wcDocker.EVENT.RESIZE_ENDED, function() {
 	if(document.activeElement == $('body').get(0) && window.activeCoreMirror)
 		window.activeCoreMirror.focus();
 });
+
+
