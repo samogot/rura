@@ -77,7 +77,8 @@ function onScroll(cm){
 	});
 	scrollLockTileout = setTimeout(function(){
 		$.each(CMwindows, function() { if (cm != this) this.on('scroll', onScroll); });
-	},1000);
+        setTimeout(function(){ updateLineSyncOp(); },100);
+	},100);
 }
 $.each(CMwindows, function() {
 	this.on('scroll', onScroll);
@@ -160,13 +161,15 @@ myDocker.on(wcDocker.EVENT.LOADED, function () {
     CMwindows.forEach(function (item, i, arr) {
         item.setOption('lineNumbers', !$('body').hasClass('wcMobile'));
     });
+    markRuby(CMoriginalJap);
 });
 
-CMoriginalJap.on('change', function (cm, changeObj) {
-    var cur = cm.getSearchCursor(/<ruby>.*?<\/ruby>/, changeObj.from)
+function markRuby(cm, from){
+    if(!from) from=0;
+    var cur = cm.getSearchCursor(/<ruby>.*?<\/ruby>/, {line: from, ch: 0})
     while (cur.findNext()) {
         if (cm.getDoc().findMarksAt(cur.from()).some(function () {
-                return this.primary.className == 'ruby';
+                return this.primary && this.primary.className == 'ruby';
             }))
             break;
         cm.getDoc().markText(cur.from(), cur.to(), {
@@ -175,6 +178,11 @@ CMoriginalJap.on('change', function (cm, changeObj) {
             replacedWith: $(cur.pos.match[0]).get(0)
         });
     }
+}
+
+CMoriginalJap.on('change', function (cm, changeObj) {
+    markRuby(cm, changeObj.from.line);
+    setTimeout(function(){ updateLineSyncOp(); },100);
 })
 
 
@@ -192,43 +200,68 @@ Mass[1][89] = 1;
 Mass[0][108] = 1;
 
 	
-aligners=[];
+aligners=[[],[],[]];
 function padBelow(cm, line, size) {
 	var $elt = $('<div>').addClass('line-sync-spacer').css({height: size, minWidth: 1});
 	return cm.addLineWidget(line, $elt.get(0), {height: size, above: false, handleMouseEvents: true});
 }
-function updateLineSync(count) {
-	if(!count) count=144
+
+function updateLineSync() {
 	var scroll = CMvol1_window.getScrollInfo().top;
-	for (var i = 0; i < aligners.length; i++)
-	  aligners[i].clear();
-	aligners=[];
+	// for (var i = 0; i < aligners.length; i++)
+	  // aligners[i].clear();
+	// aligners=[];
 	shift=[0,0,0];
-	for(var i = 0; i < count; i++){
+	for(var i = 0;; i++){
 		cms=[];
+        var last=true;
 		for(var c = 0; c < CMs.length; c++){
 			shift[c]+=Mass[c][i];
-			if(!Mass[c][i]) cms.push(c);
+            if(i-shift[c] < CMs[c].getDoc().lineCount()) {
+                last = false;
+    			if(!Mass[c][i]) cms.push(c);
+            }
 		}
+        if(last) break;
 		var sizes=[];
 		if(cms.length>1) {
-			var new_sizes=[];
 			var maxheight=0;
+            var minheight=Infinity;
 			for(var j = 0; j < cms.length; j++){
-				new_sizes[j]=CMs[cms[j]].heightAtLine(i-shift[cms[j]]+1, "local");
-				if (maxheight < new_sizes[j])
-					maxheight = new_sizes[j];
-				}
-			sizes=new_sizes;
+				sizes[j]=CMs[cms[j]].heightAtLine(i-shift[cms[j]]+1, "local");
+				if (maxheight < sizes[j])
+					maxheight = sizes[j];
+                if (minheight > sizes[j])
+                    minheight = sizes[j];
+			}
+            if(maxheight==minheight) continue;
+            for(var j = 0; j < cms.length; j++){
+                if(aligners[cms[j]][i-shift[cms[j]]]) {
+                    aligners[cms[j]][i-shift[cms[j]]].clear();
+                    aligners[cms[j]][i-shift[cms[j]]] = undefined;
+                }
+            }
+            var maxheight=0;
+            var minheight=Infinity;
+            for(var j = 0; j < cms.length; j++){
+                sizes[j]=CMs[cms[j]].heightAtLine(i-shift[cms[j]]+1, "local");
+                if (maxheight < sizes[j])
+                    maxheight = sizes[j];
+                if (minheight > sizes[j])
+                    minheight = sizes[j];
+            }
+            if(maxheight==minheight) continue;
 			for(var j = 0; j < cms.length; j++) 
-				if(maxheight-sizes[j]>0) aligners.push(padBelow(CMs[cms[j]], i-shift[cms[j]], maxheight-sizes[j]));
-			console.log(i,shift,cms,maxheight,sizes);
+				if(maxheight-sizes[j]>0) 
+                    aligners[cms[j]][i-shift[cms[j]]] = padBelow(CMs[cms[j]], i-shift[cms[j]], maxheight-sizes[j]);
+			// console.log(i,shift,cms,maxheight,sizes);
 		}
 	}
 	CMvol1_window.scrollTo(0, scroll)
 }
-function updateLineSyncOp(count) {
-	var func = function(){updateLineSync(count)};
+
+function updateLineSyncOp() {
+	var func = function(){updateLineSync()};
 	for(var c = 0; c < CMs.length; c++)
 		(function(){
 			var cm=CMs[c];
@@ -237,3 +270,13 @@ function updateLineSyncOp(count) {
 		})()
 	func();
 }
+
+var onResizeTimeout;
+$.each([volumePanel, volumePanel1, volumePanel2, originalJap, originalEng, originalPrev, originalOrph],function(){
+    this.on(wcDocker.EVENT.RESIZE_ENDED, function (panel, data) {
+        if(onResizeTimeout) clearTimeout(onResizeTimeout);
+        onResizeTimeout = setTimeout(function(){
+            updateLineSyncOp();
+        },100);
+    });
+});

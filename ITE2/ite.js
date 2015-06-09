@@ -50,7 +50,7 @@ myDocker.registerPanelType('Toolbox', {
         myPanel.layout().addItem($button_illus);
         myPanel.layout().addItem($button_wiki);
         myPanel.layout().addItem($button_fullscreen);
-        myPanel.layout().addItem($button_scrollock);
+        // myPanel.layout().addItem($button_scrollock);
 
         $button_fullscreen.click(function(){
             var doc = window.document;
@@ -222,68 +222,80 @@ myDocker.startLoading('Loading...');
 
 if($('body').hasClass('wcMobile'))
 {
-    var volumePanel = myDocker.addPanel('volume', wcDocker.DOCK.RIGHT, null);
-    var volumePanel1 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
-    var volumePanel2 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
+    window.volumePanel = myDocker.addPanel('volume', wcDocker.DOCK.RIGHT, null);
+    window.volumePanel1 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
+    window.volumePanel2 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
 
-    var GJap = myDocker.addPanel('GJap', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
-    var GEn = myDocker.addPanel('GEn', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
-    var Jap = myDocker.addPanel('Jap', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
-    var Fresh = myDocker.addPanel('Fresh', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.GJap = myDocker.addPanel('GJap', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.GEn = myDocker.addPanel('GEn', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.JRTt = myDocker.addPanel('Jap', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.JRTd = myDocker.addPanel('Jap', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.Jap = myDocker.addPanel('Jap', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.Eng = myDocker.addPanel('Jap', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.Fresh = myDocker.addPanel('Fresh', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
 
-    var translateG = myDocker.addPanel('TranG', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
-    var translateM = myDocker.addPanel('TranM', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
-    var translateSin = myDocker.addPanel('TranSin', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.translateG = myDocker.addPanel('TranG', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.translateM = myDocker.addPanel('TranM', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.translateY = myDocker.addPanel('TranM', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
+    window.translateSin = myDocker.addPanel('TranSin', wcDocker.DOCK.BOTTOM, wcDocker.COLLAPSED);
 
-    var originalJap = myDocker.addPanel('originalJap', wcDocker.DOCK.LEFT, volumePanel, { w: "50%" });
-    var originalEng = myDocker.addPanel('originalEng', wcDocker.DOCK.STACKED, originalJap);
-    var originalPrev = myDocker.addPanel('originalPrev', wcDocker.DOCK.STACKED, originalJap);
-    var originalOrph = myDocker.addPanel('originalOrph', wcDocker.DOCK.STACKED, originalJap);
+    window.originalJap = myDocker.addPanel('originalJap', wcDocker.DOCK.LEFT, volumePanel, { w: "50%" });
+    window.originalEng = myDocker.addPanel('originalEng', wcDocker.DOCK.STACKED, originalJap);
+    window.originalPrev = myDocker.addPanel('originalPrev', wcDocker.DOCK.STACKED, originalJap);
+    window.originalOrph = myDocker.addPanel('originalOrph', wcDocker.DOCK.STACKED, originalJap);
 
 
-    var toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
-    var treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.STACKED, originalJap);
+    window.toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
+    window.treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.STACKED, originalJap);
 }
 else
 {
-    var volumePanel = myDocker.addPanel('volume', wcDocker.DOCK.RIGHT, null);
-    var volumePanel1 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
-    var volumePanel2 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
+    window.volumePanel = myDocker.addPanel('volume', wcDocker.DOCK.RIGHT, null);
+    window.volumePanel1 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
+    window.volumePanel2 = myDocker.addPanel('volume', wcDocker.DOCK.STACKED, volumePanel);
 
-    var GJap = myDocker.addPanel('GJap', wcDocker.DOCK.BOTTOM, volumePanel, { w: "75%" });
-    var GEn = myDocker.addPanel('GEn', wcDocker.DOCK.STACKED, GJap);
-    var Jap = myDocker.addPanel('Jap', wcDocker.DOCK.STACKED, GJap);
-    var Fresh = myDocker.addPanel('Fresh', wcDocker.DOCK.STACKED, GJap, { tabOrientation: wcDocker.TAB.BOTTOM });
+    window.Jap = myDocker.addPanel('Jap', wcDocker.DOCK.BOTTOM, volumePanel, { w: "75%" });
+    window.Eng = myDocker.addPanel('Jap', wcDocker.DOCK.STACKED, Jap);
+    window.GJap = myDocker.addPanel('GJap', wcDocker.DOCK.STACKED, Jap);
+    window.GEn = myDocker.addPanel('GEn', wcDocker.DOCK.STACKED, Jap);
+    window.JRTt = myDocker.addPanel('Jap', wcDocker.DOCK.STACKED, Jap);
+    window.JRTd = myDocker.addPanel('Jap', wcDocker.DOCK.STACKED, Jap);
+    window.Fresh = myDocker.addPanel('Fresh', wcDocker.DOCK.STACKED, Jap, { tabOrientation: wcDocker.TAB.BOTTOM });
 
-    var translateG = myDocker.addPanel('TranG', wcDocker.DOCK.LEFT, GJap, { w: "25%" });
-    var translateM = myDocker.addPanel('TranM', wcDocker.DOCK.STACKED, translateG);
-    var translateSin = myDocker.addPanel('TranSin', wcDocker.DOCK.STACKED, translateG, { tabOrientation: wcDocker.TAB.BOTTOM });
+    window.translateG = myDocker.addPanel('TranG', wcDocker.DOCK.LEFT, Jap, { w: "25%" });
+    window.translateM = myDocker.addPanel('TranM', wcDocker.DOCK.STACKED, translateG);
+    window.translateY = myDocker.addPanel('TranM', wcDocker.DOCK.STACKED, translateG);
+    window.translateSin = myDocker.addPanel('TranSin', wcDocker.DOCK.STACKED, translateG, { tabOrientation: wcDocker.TAB.BOTTOM });
 
-    var originalJap = myDocker.addPanel('originalJap', wcDocker.DOCK.LEFT, volumePanel, { w: "50%" });
-    var originalEng = myDocker.addPanel('originalEng', wcDocker.DOCK.STACKED, originalJap);
-    var originalPrev = myDocker.addPanel('originalPrev', wcDocker.DOCK.STACKED, originalJap);
-    var originalOrph = myDocker.addPanel('originalOrph', wcDocker.DOCK.STACKED, originalJap);
+    window.originalJap = myDocker.addPanel('originalJap', wcDocker.DOCK.LEFT, volumePanel, { w: "50%" });
+    window.originalEng = myDocker.addPanel('originalEng', wcDocker.DOCK.STACKED, originalJap);
+    window.originalPrev = myDocker.addPanel('originalPrev', wcDocker.DOCK.STACKED, originalJap);
+    window.originalOrph = myDocker.addPanel('originalOrph', wcDocker.DOCK.STACKED, originalJap);
 
 
-    var toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
-    // var statusbarPanel = myDocker.addPanel('Statusbar', wcDocker.DOCK.BOTTOM);
-    var treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.LEFT, wcDocker.COLLAPSED, { w: "25%" });
+    window.toolBoxPanel = myDocker.addPanel('Toolbox', wcDocker.DOCK.TOP);
+    // window.statusbarPanel = myDocker.addPanel('Statusbar', wcDocker.DOCK.BOTTOM);
+    window.treePanel = myDocker.addPanel('VolumeTree', wcDocker.DOCK.LEFT, wcDocker.COLLAPSED, { w: "25%" });
 }
 
 
 
 // SETTING
-treePanel.title("Дерево Томов");
+treePanel.title("Дерево глав");
 translateG.title("Google");
 translateM.title("Multitran");
-translateSin.title("Синоним");
-GJap.title("Google Japanese");
-GEn.title("Google English");
-Jap.title("Japanese");
+translateY.title("Яркси");
+translateSin.title("Ссоварь синонимов");
+GJap.title("Google абзаца с япа");
+GEn.title("Google абзаца с англа");
+JRTt.title("ЯРП перевод");
+JRTd.title("ЯРП разбор");
+Jap.title("Яп абзац");
+Eng.title("Англ абзац");
 Fresh.title("Свежий Взгляд");
-originalJap.title("Japanese");
-originalEng.title("English");
-originalPrev.title("Предыдущий");
+originalJap.title("Японский");
+originalEng.title("Анлейт");
+originalPrev.title("Предыдущая");
 originalOrph.title("Орфус");
 $('#originalJap').height(originalJap.height() - 10).click();
 $('#originalEng').height(originalEng.height() - 10).click();
