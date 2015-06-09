@@ -64,15 +64,23 @@ var CMvol1_window = CodeMirror(document.getElementById("volume0"), {
 var CMwindows = [CMoriginalJap, CMoriginalEng, CMoriginalPrev, CMoriginalOrph, CMvol1_window];
 var CMscroll, leftX, topY;
 
-CMwindows.forEach(function (item, i, arr) {
-    item.on('scroll', function () {
-        CMscroll = item.getScrollInfo();
-        CMwindows.forEach(function (item2, i2, arr2) {
-            if (item != item2) {
-                item2.scrollTo(CMscroll.left, CMscroll.top)
-            }
-        });
-    });
+var scrollLockTileout;
+function onScroll(cm){
+	if(scrollLockTileout) clearTimeout(scrollLockTileout);
+	var scroll = cm.getScrollInfo();
+	$.each(CMwindows, function() {
+		if (cm != this) {
+			this.off('scroll', onScroll);
+			this.scrollTo(scroll.left, scroll.top);
+			console.log(cm, this);
+		}
+	});
+	scrollLockTileout = setTimeout(function(){
+		$.each(CMwindows, function() { if (cm != this) this.on('scroll', onScroll); });
+	},1000);
+}
+$.each(CMwindows, function() {
+	this.on('scroll', onScroll);
 });
 
 var Mass1JAP = [0, 1, 2, 3, 3, 4, 5, 5];
