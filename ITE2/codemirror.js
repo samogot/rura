@@ -282,9 +282,47 @@ $.each([volumePanel, volumePanel1, volumePanel2, originalJap, originalEng, origi
 });
 
 
+function find(array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] == value) return i;
+    }
+    return -1;
+}
 
-function checkLine(text){
-
+function clearText(text,type){
+    var status = []; // 0 - ничего, 1 - курсив, 2 - жирный, 3 - заголовок2, 4 - заголовок 3, 5 - подзаголовок
+    var statusL = 0;
+    var statuses = [];
+    var array = ["\'\'\'", "\'\'", "\=\=\=", "\=\=", "\{\{Подзаголовок"];
+    var extra = (type=="head") ? true : false;
+    var start,end;
+    for (var i = 0; i < array.length; i++) {
+        if (i != 4) {
+            found = text.match(array[i] + "[0-9a-zA-Zа-яА-Я].+" + array[i]);
+        } else {
+            found = text.match("\{\{Подзаголовок\|" + "[0-9a-zA-Zа-яА-Я]+" + "\}\}");
+        }
+        if (found != null) {
+            status.push(i);
+            statusL++;
+            statuses.push(array[i]);
+        }
+    }
+    console.log(status);
+    if (status.length != 0) {
+        for (var i = 0; i < statuses.length; i++) {
+            start = text.indexOf(statuses[i])+statuses[i].length
+            if (find(status, 4) == -1) {
+                end = text.indexOf(statuses[i],start);
+            } else {
+                end = text.indexOf("}}",start);
+            }
+            text = text.slice(start, end);
+            return text
+        }
+    } else {
+        return text
+    }
 }
 
 $('button[data-type=head]').on('click', function(e){
@@ -292,12 +330,13 @@ $('button[data-type=head]').on('click', function(e){
     var insert = $(this).data('insert').split('insert');
     var sel = {'start': CMvol1_window.listSelections()[0].anchor,'end': CMvol1_window.listSelections()[0].head};
     var startLine = sel.start.line;
-    var head = '';
-    if (sel.start.ch == 0 && sel.end.ch == (CMvol1_window.getLine(startLine)).length){
-        head = '\n'
+    var head = '\n';
+    if ((sel.start.ch == 0 || sel.end.ch == 0) && sel.end.ch == (CMvol1_window.getLine(startLine)).length){
+        head = '';
     }
     CMvol1_window.setSelection({"line":startLine, "ch":0},{"line":startLine,"ch":(CMvol1_window.getLine(startLine)).length});
     selText = CMvol1_window.getSelection();
+    selText = clearText(selText);
     CMvol1_window.replaceSelection(insert[0]+selText+insert[1]+head);
     CMvol1_window.focus();
 })
@@ -314,6 +353,8 @@ $('button[data-type=BoldIt]').on('click', function(e){
     } else if (selText.length == 0) {
         CMvol1_window.replaceSelection(insert[0]+insert[1]);
         CMvol1_window.setCursor(startLine, (sel.start.ch+insert[0].length));
+    } else {
+        CMvol1_window.replaceSelection(insert[0]+selText+insert[1]);
     }
     CMvol1_window.focus();
 })
