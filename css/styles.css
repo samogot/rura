@@ -2719,3 +2719,8 @@ table.rc-table-resizing thead > th > a {
     padding: 5px;
 }
 /*                  CABINET                  */
+
+
+.form-group #banner{
+display: block;
+}
