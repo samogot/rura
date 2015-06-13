@@ -129,7 +129,7 @@
 <div class="container">
         <div class="leftColumn">
             <main class="content">
-                <form>
+                <form class="FormUpdate FormAjax" data-type="project">
 				<input type="hidden" id="volume_id" name="volume_id">
                 <h2>Редактирование проекта (серии)</h2>
                 <h3>Информация</h3>
@@ -203,12 +203,11 @@
 				</form>
 
                 <h3>Редактирование томов</h3>
-                <form>
     				<div class="volumetable">
                         <div class="btn-group col-12-sm" role="group" aria-label="Панель глав">
-                            <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i></button>
+                            <button type="button" class="btn btn-success" data-type="volume" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i></button>
                             <button type="button" class="btn btn-warning" title="Дублировать главу" id="btn-update-clone"><i class="fa fa-files-o"></i></button>
-                            <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-update-delete"><i class="fa fa-trash-o"></i></button>
+                            <button type="button" class="btn btn-danger" data-type="volume" title="Удалить главу" id="btn-update-delete"><i class="fa fa-trash-o"></i></button>
                             <div class="btn-group">
                               <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Выбранные колонки <span class="caret"></span></button>
                                 <ul class="dropdown-menu noclose bullet pull-top pull-right">
@@ -323,7 +322,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr class="FormAjax FormUpdate" data-parent="#volume" data-type="volume_n1">
+                                        <input type="hidden" id="volume_id" name="volume_id">
                                         <td>
                                             <input type="text" class="form-control" placeholder="<пусто>" id="1number" name="number" value="1">
                                         </td>
@@ -422,14 +422,13 @@
                             </table>
                         </div>
                     </div>
-				</form>
 
                 <h3>Редактирование подсерий</h3>
                 <form>
                     <div class="subseriestable">
                             <div class="btn-group col-12-sm">
-                                <button type="button" class="btn btn-success" title="Добавить новую подсерию" id="btn-sub-add"><i class="fa fa-plus"></i></button>
-                                <button type="button" class="btn btn-danger" title="Удалить подсерию" id="btn-sub-delete"><i class="fa fa-trash-o"></i></button>
+                                <button type="button" class="btn btn-success" data-type="subseries" title="Добавить новую подсерию" id="btn-sub-add"><i class="fa fa-plus"></i></button>
+                                <button type="button" class="btn btn-danger" data-type="subseries" title="Удалить подсерию" id="btn-sub-delete"><i class="fa fa-trash-o"></i></button>
                             </div>
                             <div class="list-group select sortable" id="subseries" style="margin-top:15px;">
                                 <a data-toggle="collapse" data-parent="#subseries" href="#sub0" aria-expanded="true" aria-controls="chapter1" class="list-group-item" >
@@ -606,7 +605,7 @@
     $('#btn-update-add').click(function(){
         volumelength++;
         var newVolume = '';
-        newVolume +=  '<tr>';
+        newVolume +=  '<tr class="FormAjax FormUpdate" data-parent="#volume" data-type="volume_n'+volumelength+'">';
         newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'number" name="number" value="'+volumelength+'"></td>';
         newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'url" name="url" placeholder="<пусто>"></td>';
         newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_file" name="name_file" placeholder="<пусто>"></td>';
@@ -668,12 +667,12 @@
         $("#"+volumelength+"url").parent().parent().addClass('info');
         checkCheck();
     });
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	$('#banner').fileupload({
 		url: "http://localhost/uplstub/index.php",
 		dataType: 'json',
@@ -713,4 +712,5 @@
     });
 </script>
 <script src="js/page.all.js"></script>
+<script src="js/adminka.js"></script>
 </html>
