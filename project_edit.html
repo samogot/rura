@@ -715,7 +715,29 @@
     }).on('fileuploadfail', function (e, data) { // выводим ошибку аякса
 		$('.progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
     });
+
+
+    /*     Старт редактирование подсерия       */
+var SubPositions = {};
+$('body').on('change','#subseries input',
+    function(){
+        $.map($('#subseries').find('a'), function(el) {
+            SubPositions[$(el).index()+1]= $(el).children('input').val();
+        });
+        alert(JSON.stringify(SubPositions));
+        return false;
+    }
+)
+$('#subseries').sortable({
+    stop: function(e, ui) {
+        $.map($(this).find('a'), function(el) {
+            SubPositions[$(el).index()+1]= $(el).children('input').val();
+        });
+        alert(JSON.stringify(SubPositions));
+    }
+});
+
+    /*     Старт редактирование подсерия       */
 </script>
 <script src="js/page.all.js"></script>
-<script src="js/adminka.js"></script>
 </html>
