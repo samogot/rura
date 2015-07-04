@@ -29,7 +29,7 @@
 	<script src="js/jquery.fileupload-process.js"></script>
 	<!-- The File Upload image preview & resize plugin -->
 	<script src="js/jquery.fileupload-image.js"></script>
-	<script src="js/volume.edit.scripts.js"></script>
+	<!-- <script src="js/volume.edit.scripts.js"></script> -->
 	<script src="js/moment-with-locales.min.js"></script>
 	<script src="js/bootstrap-datetimepicker.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -173,7 +173,7 @@
 						<option>4</option>
 						<option>5</option>
 					</select>
-                </div>	
+                </div>
 				<div class="form-group">
                     <label for="sequence_number">Номер в серии</label>
                     <input type="text" class="form-control" id="sequence_number" name="sequence_number">
@@ -286,7 +286,7 @@
 						<div  class="panel">
 							<div class="row collapse participant-data" role="tabpanel" id="participant1">
 								<input type="hidden" id="participant1_id">
-								<input type="hidden" id="participant1_order"> 
+								<input type="hidden" id="participant1_order">
 								<input type="hidden" id="participant1_delete">
 								<div class="participant-data-main">
 									<h3>Настройка участника</h3>
@@ -439,7 +439,7 @@
 						<div  class="panel">
 							<div class="row collapse chapter-data" role="tabpanel" id="chapter1">
 								<input type="hidden" id="chapter1_id">
-								<input type="hidden" id="chapter1_order"> 
+								<input type="hidden" id="chapter1_order">
 								<input type="hidden" id="chapter1_delete">
 								<div class="chapter-data-main">
 									<h3>Настройка главы</h3>
@@ -560,7 +560,7 @@
 						<div  class="panel">
 							<div class="row collapse update-data" role="tabpanel" id="update1">
 								<input type="hidden" id="update1_id">
-								<input type="hidden" id="update1_order"> 
+								<input type="hidden" id="update1_order">
 								<input type="hidden" id="update1_delete">
 								<div class="update-data-main">
 									<h3>Настройка обновления</h3>
@@ -823,7 +823,7 @@
             </form>
             </main>
         </div>
-		
+
         <aside class="right-sidebar">
             <div style="color:rgb(77,77,77);">
                 <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
@@ -852,7 +852,7 @@
 
 </body>
 <script type="text/javascript">
-	/*классы: 
+	/*классы:
 	list-group - бутстрапны класс
 	select - мой класс для обозначения list-group`ов админки с возможностью выбора
 	sortable - мой класс для обозначения тех .list-group.select в которых пользователь может перетягивать елементы
@@ -863,7 +863,7 @@
 		items: "a:not(:first-child.heading)", // запрещаем передвигать что либо выше первого heading (не может быть картинок вне глав)
 		handle:'.move' // задаем маркер перетягивания
     });
-	
+
 	//admin-affix - мой класс для обозначения общего елемента, который аффиксируется справа от списка .list-group.select
 	$('.admin-affix').each(function() { // используется bootstrap affix
 		var parent = $(this).parent();
@@ -874,20 +874,20 @@
 			} // то есть мы аффиксируем admin-affix в пределах его родительского елемента. предпологается что размер родительского елемента растягивается за счет наполнения list-group.select, но нужно где то явно указать min-height что бы в случае если елементов в list-group.select меньше чем высота самого admin-affix, родительский елемень не схлопнулся при откреплении admin-affix
 		});
 	});
-	
+
         $(".date-input").datetimepicker({format:"YYYY-MM-DD HH-mm", locale: 'ru', useCurrent: 'hour'}); // инициализация дейтпикера
-	
+
 	/* ------------------------------------------ PARTISIPANTS START ------------------------------------------ */
-	
+
 	$('#participantselect').on( "sortupdate", function() { // для списка участников перевода задаем обработчик перетягивания
 		var p_order = 0; // поставим для каждого участника порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
 			$($(this).attr('href')+'_order').val(++p_order); // обновляем порядок
 		});
 	});
-	
+
 	var i=0; // id каждого элемента в пункте участников перевода
-	
+
 	$('#btn-participant-add').click(function(){ // обработка кнопки добавления новых участников
 		i++;
 		var newParticipant = '<a data-toggle="collapse" data-parent="#participantform" href="#participant' + i + '" aria-expanded="true" aria-controls="participant' + i + '" class="list-group-item" >'+'<i class="fa fa-ellipsis-v move"></i>'+'<span class="hidden-sm hidden-xs"  id="participant' + i + '_name">New</span> - <span class="hidden-sm hidden-xs" id="participant' + i + '_role">Role</span>' + '</a>';
@@ -932,18 +932,18 @@
                     $('#' + id + '_name').html(suggestion);
                 });
 	});
-	
+
 	// ---------- typeahead start ----------
 	var substringMatcher = function(strs) {
 		return function findMatches(q, cb) {
 			var matches, substringRegex;
- 
+
 			// an array that will be populated with substring matches
 			matches = [];
- 
+
 			// regex used to determine if a string contains the substring `q`
 			substrRegex = new RegExp(q, 'i');
- 
+
 			// iterate through the pool of strings and for any string that
 			// contains the substring `q`, add it to the `matches` array
 			$.each(strs, function(i, str) {
@@ -951,23 +951,23 @@
 					matches.push(str);
 				}
 			});
- 
+
 			cb(matches);
 		};
 	};
- 
+
 	var names = ['Ushwood', 'Danholm', 'Lady Astrel', 'Test'
 	];
-	
+
 	var authors = ['Oda Shiichiro', 'Sorachi Hideyaki', 'Lev Tolstoi', 'Test'
 	];
-	
+
 	var illustrators = ['Andrew Rublev', 'Someone Someoneson', 'Hitomi Akira', 'Test'
 	];
-	
+
 	$('#participantform').children('.panel').each(function(){
 		i++;
-		$('#participant' + i + '_names_selector .typeahead').typeahead({  // обработчик никнеймов 
+		$('#participant' + i + '_names_selector .typeahead').typeahead({  // обработчик никнеймов
 			hint: true,
 			limit: 10,
 			highlight: true,
@@ -978,7 +978,7 @@
 			source: substringMatcher(names)
 		});
 	});
-	
+
 	$('#author-name-typeahead .typeahead').typeahead({  // обработчик имен авторов
 		hint: true,
 		limit: 10,
@@ -989,7 +989,7 @@
 		name: 'author_names',
 		source: substringMatcher(authors)
 	});
-		
+
 	$('#illustrator-name-typeahead .typeahead').typeahead({  // обработчик имен иллюстраторов
 		hint: true,
 		limit: 10,
@@ -1001,35 +1001,35 @@
 		source: substringMatcher(illustrators)
 	});
 	// ---------- typeahead end --------------
-	
+
 	$('#participantselect').on('click', 'a.list-group-item', function() { // баг фикс кнопки удаления
             $('.participant-data.in').collapse('hide');
             $($(this).attr('href')).collapse('show');
         });
-	
+
 	$('.typeahead').bind('typeahead:select', function(ev, suggestion) {
             var id = $('.participant-data.in').attr('id');
             $('#' + id + '_name').html(suggestion);
         });
-	
+
 	$('#participantform').on('keyup', '.name-input', function(){
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.participant-data.in').attr('id'); // получаем id участника
 		$('#' + id + '_name').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 	});
-	
+
 	$('#participantform').on('change', '.role-input', function(){
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.participant-data.in').attr('id'); // получаем id участника
 		$('#' + id + '_role').html(elem.val()); // при помощи предыдущего значения вытворяем с ролями, что хотим
 	});
-	
+
 	$('#participantform').on('hidden.bs.collapse', '.participant-data', function () { // обработка активности кнопки удаления
 		$('#btn-participant-delete').attr('disabled',true);
 	}).on('shown.bs.collapse', '.participant-data', function() {
 		$('#btn-participant-delete').attr('disabled',false);
 	});
-	
+
 	$('#btn-participant-delete').on('click',function(){ // обработка кнопки удаления для участников
 		var id = $('.participant-data.in').attr('id');
 		var nextParticipant = $('#participantselect [href="#'+id+'"]').next();
@@ -1045,14 +1045,14 @@
                     $($('#participantselect').children().last().attr('href')).collapse('show');
 		}
 	});
-	
+
 	/* ----------------------------------------- PARTISIPANTS END ----------------------------------------- */
-	
+
 	/* ------------------------------------------ CHAPTERS START ------------------------------------------ */
-	
+
 	var OptionsForSelect = '<option>Весь том</option>'; // опции для селекта
         var u=0; // переменная для select'а
-	
+
 	$('#chapterselect').on( "sortupdate", function( event, ui ) { // для списка глав задаем обработчик перетягивания
 		var p_order = 0; // поставим для каждой главы порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
@@ -1067,9 +1067,9 @@
                 $('#imageselect').children().each(function(){ // проверим главу на наличие картинок под ней
                     if(($(this).is('.heading[data-chapter-id]')) && ($(this).attr('data-chapter-id') == id*1)) { // если это нужный нам heading,
                         isRightChapter = true; // то начинаем искать
-                    } else if (($(this).attr('data-parent') == '#imageform') && (isRightChapter)) { 
+                    } else if (($(this).attr('data-parent') == '#imageform') && (isRightChapter)) {
                         chapter.push($(this).get(0)); // пихаем последнюю картинку что нашли в массив
-                    } else { 
+                    } else {
                         isRightChapter = false; // перестаем искать, как только натыкаемся на другой heading
                     }
                 });
@@ -1088,10 +1088,10 @@
                 });
                 $('#updateform').children('.panel').find('.update_chapter').html(OptionsForSelect);
 	});
-	
+
 	var j=0; // id каждого элемента в пункте "Главы"
 	var k=0; // нужна, чтобы считать непосредственно сами главы (красивости)
-	
+
 	$('#btn-chapter-add').click(function(){ // обработка кнопки добавления новой главы
 		j++;
 		var number = 0;
@@ -1145,7 +1145,7 @@
                     $('#chapterform').append(newPanel);
                     $('#imageselect').append(newChapterHeading); // то вставляем новые главы, панели для глав, heading'и в конец
 		} else {                                         // иначе
-                    $('#chapterselect').children('.active').after(newChapter); 
+                    $('#chapterselect').children('.active').after(newChapter);
                     $('#chapterform').children('.panel').each(function(){
                         if ($(this).children().hasClass('in')) $(this).after(newPanel); // вставляем после выбранного элемента
                     });
@@ -1156,9 +1156,9 @@
                     $('#imageselect').children().each(function(){ // в случае с heading мы будеми проверять его на наличие картинок под ним
                         if(($(this).is('.heading[data-chapter-id]')) && ($(this).attr('data-chapter-id') == id*1)) {
                             isRightChapter = true; // если это нужный нам heading, то начинаем искать
-                        } else if (($(this).attr('data-parent') == '#imageform') && (isRightChapter)) { 
+                        } else if (($(this).attr('data-parent') == '#imageform') && (isRightChapter)) {
                             imageAfterChapter = $(this); // пихаем последнюю картинку что нашли в переменную
-                        } else { 
+                        } else {
                             isRightChapter = false; // перестаем искать, как только натыкаемся на другой heading
                         }
                     });
@@ -1181,13 +1181,13 @@
                     u++;
                     OptionsForSelect = OptionsForSelect + '<option id="select_chapter' + u + '">' + $(this).children('span').text() + ' (' + u + ')</option>';
                 });
-                $('#updateform').children('.panel').find('.update_chapter').html(OptionsForSelect); 
+                $('#updateform').children('.panel').find('.update_chapter').html(OptionsForSelect);
 	});
-	
+
 	$('#chapterform').children('.panel').each(function(){
-		j++; // считаем кажую панель 
+		j++; // считаем кажую панель
 	});
-	
+
 	$('#chapterform').on('keyup', '.name-input', function(){
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.chapter-data.in').attr('id'); // получаем id главы
@@ -1197,7 +1197,7 @@
 		$('#select_chapter' + id).html(elem.val());
 // 		console.log($('#select_chapter' + id));
 	});
-	
+
 	$('#chapterform').on('click', '.is-subchapter', function(){ // обработчик подглав
             var id = $('.chapter-data.in').attr('id'); // получаем id главы
             if ($(this).prop("checked")) { // если выделено, то
@@ -1206,18 +1206,18 @@
                 $('#' + id + '_name').css({'margin': '0px 0px 0px 3px'}); // либо делаем наоборот
             }
 	})
-	
+
 	$('#chapterselect').on('click', 'a.list-group-item', function() { // баг фикс кнопки удаления (line 1185)
             $('.chapter-data.in').collapse('hide');
             $($(this).attr('href')).collapse('show');
         });
-	
+
 	$('#chapterform').on('hidden.bs.collapse', '.chapter-data', function () { // обработка активности кнопки удаления
 		$('#btn-chapter-delete').attr('disabled',true);
 	}).on('shown.bs.collapse', '.chapter-data', function() {
 		$('#btn-chapter-delete').attr('disabled',false);
 	});
-	
+
 	$('#btn-chapter-delete').on('click',function(){ // обработка кнопки удаления для глав
 		var id = $('.chapter-data.in').attr('id');
 		var nextChapter = $('#chapterselect [href="#'+id+'"]').next();
@@ -1235,25 +1235,25 @@
                     $($('#chapterselect').children().last().attr('href')).collapse('toggle');
 		}
 	});
-	
+
 	/* ------------------------------------------ CHAPTERS END ------------------------------------------ */
-	
+
 	/* ------------------------------------------ UPDATES START ----------------------------------------- */
-	
+
 	$('#updateselect').on( "sortupdate", function() { // для списка обновлений задаем обработчик перетягивания
 		var up_order = 0; // поставим для каждого обновления порядковый номер
 		$(this).children().each(function(){ // проверяем каждый элемент
 			$($(this).attr('href')+'_order').val(++up_order); // обновляем порядок
 		});
 	});
-	
+
 	var v=0; // id каждого элемента в пункте "Обновления"
-	
+
 	$('#chapterselect').children('a').each(function(){
 		u++;
 		OptionsForSelect = OptionsForSelect + '<option id="select_chapter' + u + '">' + $(this).children('span').text() + ' (' + u + ')</option>';
 	});
-	
+
 	$('#btn-update-add').click(function(){ // обработка кнопки добавления нового обновления
 		v++;
 		var nowDate = new Date();
@@ -1297,41 +1297,41 @@
 		$('#update' + v + '_chapter_select').append(OptionsForSelect);
 		$('#update' + v + '_date_input').datetimepicker({format:"YYYY-MM-DD HH-mm", locale: 'ru', useCurrent: 'hour'});
 	});
-	
+
 	$('#updateform').children('.panel').each(function(){
-		v++; // считаем кажую панель (читай кажый объект) 
+		v++; // считаем кажую панель (читай кажый объект)
 		$(this).find('.update_chapter').append(OptionsForSelect);
 	});
-	
+
 	$('#updateform').on('dp.change', '.date-input', function(){
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.update-data.in').attr('id'); // получаем id главы
 		$('#' + id + '_date').html(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 	});
-	
+
 	$('#updateform').on('change', '.update_type', function(){
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.update-data.in').attr('id'); // получаем id главы
 		$('#' + id + '_description').prop('placeholder', elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 	});
-	
+
 	$('#updateform').on('change', '.update_chapter', function(){
 		var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
 		var id = $('.update-data.in').attr('id'); // получаем id главы
 		$('#' + id + '_chapter').text(elem.val()); // при помощи предыдущего значения вытворяем с именами, что хотим
 	});
-	
+
 	$('#updateselect').on('click', 'a.list-group-item', function() { // баг фикс кнопки удаления
             $('.update-data.in').collapse('hide');
             $($(this).attr('href')).collapse('show');
         });
-	
+
 	$('#updateform').on('hidden.bs.collapse', '.update-data', function () { // обработка активности кнопки удаления
 		$('#btn-update-delete').attr('disabled',true);
 	}).on('shown.bs.collapse', '.update-data', function() {
 		$('#btn-update-delete').attr('disabled',false);
 	});
-	
+
 	$('#btn-update-delete').on('click',function(){ // обработка кнопки удаления для глав
 		var id = $('.update-data.in').attr('id');
 		var nextUpdate = $('#updateselect [href="#'+id+'"]').next();
@@ -1347,18 +1347,18 @@
                     $($('#updateselect').children().last().attr('href')).collapse('show');
 		}
 	});
-	
+
 	/* ------------------------------------------ UPDATES END ------------------------------------------- */
-	
+
 	/* ------------------------------------------ IMAGES START ------------------------------------------ */
-	
+
 	$('#imageselect').on( "sortupdate", function( event, ui ) { // для списка изображений задаем обработчик перетягивания
 		if(ui.item.hasClass('heading')) // если мы перетянули главу, мы должны убедится что не нарушили порядок следовани глав
 		{
 			var start = 0; // jquery-ui sortable не дает информации о том какой у елемента был индекс до перетягивания
-			$(this).children().each(function(i,e) { // поэтому мы находим его линейно 
+			$(this).children().each(function(i,e) { // поэтому мы находим его линейно
 				if($(e).position().top <= ui.originalPosition.top) // сравнивая по y координате каждого елемента в пикселах с координатой изначального положения
-					start = i; 
+					start = i;
 				else return false;
 			});
 			var end = ui.item.index()  // индекс итоговой позиции известен
@@ -1377,32 +1377,32 @@
 			}
 		});
 	});
-	
+
 	$('#imageselect').on('click', 'a.list-group-item', function() { // баг фикс кнопки удаления
             $('.image-data.in').collapse('hide');
             $($(this).attr('href')).collapse('show');
         });
 
 	// дальше пошел код спецефический для изображений. его я буду комментировать не так подробно
-	
-	
+
+
 	// активируем и деактивируем кнопку удаления иллюстраций в зависимости от того выбрано что то или нет
-	$('.image-data').on('hidden.bs.collapse', function () { 
+	$('.image-data').on('hidden.bs.collapse', function () {
 		$('#btn-image-delete').attr('disabled',true);
 	}).on('shown.bs.collapse', function() {
 		$('#btn-image-delete').attr('disabled',false);
 	});
-	
+
 	// рисуем дропзоны при затягивании файла на страницу браузера
 	$(document).on('dragover', function(e) {
         if (window.dropZoneTimeout)
             clearTimeout(window.dropZoneTimeout);
         else $('body').addClass('dragover'); //выставляем класс на body который активирует css отрисовку дропзон
-			
+
 		// при затягивании файла в одну из дропзон, она подсвечивается
 		$('.image-data-main,.image-data-color,#imageselect').removeClass('hover');
         $(e.target).closest('.image-data-main,.image-data-color,#imageselect').addClass('hover');
-		
+
 		// если в течении 400мс событие не повторяется предпологаем что никто уже ничего не перетягивает и выключаем отрисовку дропзон
         window.dropZoneTimeout = setTimeout(function() {
             window.dropZoneTimeout = null;
@@ -1410,13 +1410,13 @@
 			$('.image-data-main,.image-data-color,#imageselect').removeClass('hover');
         }, 400);
     }).on('drop dragover dragstart', function(e) { e.preventDefault(); }); // выключаем стандортное поведение браузера на drag'n'drop
-	
+
 	// настраиваем jQuery File Upload для кнопки добавить или затягивания файла на список иллюстраций
 	$('#btn-image-add').fileupload({
-        url: "http://localhost/uplstub/index.php", // "обработка" загруженых велась у меня на локально денвере. скорее всего без этого вообще работать не будет
+        url: "/rura/loading_files.php", // "обработка" загруженых велась у меня на локально денвере. скорее всего без этого вообще работать не будет
         dataType: 'json',
 		formData: {ctype: 'main'},
-        acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
+        acceptFileTypes: /(\.|\/)(jpe?g|png|jpg)$/i,
         previewMaxHeight: 180,
         previewMaxWidth: 260,
 		dropZone: $('#imageselect')
@@ -1424,7 +1424,7 @@
         $.each(data.files, function (index, file) {
 			if(!data.last_num) data.last_num = $('#imageselect a[href^="#image"]:last-child').attr('href').substr(6);
 			if(!data.last_num) data.last_num = 0;
-			file.num = ++data.last_num; // num - внутренний/временный айдишник иллюстраций фронтенда - порядок добавления 
+			file.num = ++data.last_num; // num - внутренний/временный айдишник иллюстраций фронтенда - порядок добавления
 			file.ctype = 'main'; // ctype - color type. основная ираста или покрас
 			$('<a data-toggle="collapse" data-parent="#imageform" href="#image'+file.num+'" aria-expanded="true" aria-controls="image'+file.num+'" class="list-group-item"> <i class="fa fa-ellipsis-v move ui-sortable-handle"></i> <center><i class="fa fa-spinner fa-spin"></i></center> <span class="hidden-sm hidden-xs">'+file.name+'</span> </a>').appendTo('#imageselect');
 			$('<div class="panel"><div class="row collapse image-data" role="tabpanel" id="image'+file.num+'"><input type="hidden" id="image'+file.num+'_id"><input type="hidden" id="image'+file.num+'_order"><input type="hidden" id="image'+file.num+'_chapter_id"><input type="hidden" id="image'+file.num+'_delete"><div class="col-xs-6 image-data-main"><h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i></button></h3><center><i class="fa fa-spinner fa-spin"></i></center><div class="form-group"><label for="image1_main_date">Дата загрузки</label><input type="text" class="form-control disable" id="image'+file.num+'_main_date"></div></div><div class="col-xs-6 image-data-color"><h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i></h3></div></div></div>').appendTo('#imageform');
@@ -1432,18 +1432,18 @@
 		$('#imageform .progress').collapse('show'); // показываем прогресбар
 		data.submit(); // начинаем загрузку
     });
-	
+
 	// настраиваем jQuery File Upload для кнопки заменить или затягивания файла на существующую ирасту
 	$('.btn-image-replace').each(function(){
 		$(this).fileupload({
-			url: "http://localhost/uplstub/index.php",
+			url: "/rura/loading_files.php",
 			dataType: 'json',
 			formData: {
-				ctype: $(this).closest('.image-data-main').length ? 'main' : 'color', 
-				num: $(this).closest('.image-data').attr('id').substr(5), 
+				ctype: $(this).closest('.image-data-main').length ? 'main' : 'color',
+				num: $(this).closest('.image-data').attr('id').substr(5),
 				id: $('#'+$(this).closest('.image-data').attr('id')+'_id').val()
 			},
-			acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
+			acceptFileTypes: /(\.|\/)(jpe?g|png|jpg)$/i,
 			previewMaxHeight: 180,
 			previewMaxWidth: 260,
 			maxNumberOfFiles: 1,
@@ -1454,10 +1454,11 @@
 			$(this).closest('.image-data-main,.image-data-color').find('img').after('<center><i class="fa fa-spinner fa-spin"></i></center>').detach();
 			$('#imageform .progress').collapse('show');
 			data.submit();
-		});
+		})
 	});
-	
+
 	$('#btn-image-add,.btn-image-replace').on('fileuploadprocessalways', function (e, data) {
+        console.log(data);
         var index = data.index,
             file = data.files[index];
         if (file.preview) { // заменяем иконку загрузки за превюшку, как только она становится доступна
@@ -1475,19 +1476,20 @@
         $('#imageform .progress-bar span').text(progress + '% Complete');
     }).on('fileuploaddone', function (e, data) { // при завершении загрузки заменяем превюшку на img тег с адресом уже загруженной ирасты
 		$('#imageform .progress').collapse('hide');
-		//console.log(data) // с сервера в json`е должны прийти поля url и id
+        console.log(data) // с сервера в json`е должны прийти поля url и id
         $.each(data.result.files, function (index, file) {
             if (file.url) {
 				$('#image'+data.files[index].num+'_id').val(file.id);
 				$('#imageselect a[href="#image'+data.files[index].num+'"] center').empty().append($('<img>').attr('src', file.url));
 				$('#image'+data.files[index].num+' .image-data-'+data.files[index].ctype+' center').empty().append($('<img>').attr('src', file.url).addClass('img-responsive'));
+                $('#image'+data.files[index].num+'_main_date').val(moment(data._time).format('DD.MM.YYYY HH:mm:ss'));
             } else if (file.error) // выводим ошибку возвращенную с сервера
 				$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
         });
     }).on('fileuploadfail', function (e, data) { // выводим ошибку аякса
 		$('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
     });
-	
+
 	$('#btn-image-delete').click(function(){ // обработка кнопки удаления
 		var id = $('.image-data.in').attr('id');
                 var nextImage = $('#chapterselect [href="#'+id+'"]').next();
@@ -1503,7 +1505,7 @@
                     $($('#chapterselect').children().last().attr('href')).collapse('show');
 		}
 	});
-	
+
 	/* ------------------------------------------ IMAGES END ------------------------------------------ */
 </script>
 </html>

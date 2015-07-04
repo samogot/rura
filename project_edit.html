@@ -679,12 +679,12 @@
 
 
 	$('#banner').fileupload({
-		url: "http://localhost/uplstub/index.php",
+		url: "/rura/loading_files.php",
 		dataType: 'json',
 		formData: {
 			id: $('#banner_id').val()
 		},
-		acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
+		acceptFileTypes: /(\.|\/)(jpe?g|png|jpg)$/i,
 		previewMaxHeight: 73,
 		previewMaxWidth: 220,
 		maxNumberOfFiles: 1,
@@ -708,7 +708,7 @@
         $.each(data.result.files, function (index, file) {
             if (file.url) {
 				$('#banner_id').val(file.id);
-				$('#banner').attr('src','file.url');
+				$('#banner').attr('src',file.url);
             } else if (file.error) // выводим ошибку возвращенную с сервера
 				$('.progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
         });
