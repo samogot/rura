@@ -293,9 +293,9 @@ function clearText(text,type){
     var status = []; // 0 - ничего, 1 - курсив, 2 - жирный, 3 - заголовок2, 4 - заголовок 3, 5 - подзаголовок
     var statusL = 0;
     var statuses = [];
-    var array = ["\'\'\'", "\'\'", "\=\=\=", "\=\=", "\{\{Подзаголовок"];
+    var array = ["\'\'\'", "\'\'", "\=\=\=", "\=\=", "\{\{Подзаголовок\|"];
     var extra = (type=="head") ? true : false;
-    var start,end;
+    var start,end,prev,next;
     for (var i = 0; i < array.length; i++) {
         if (i != 4) {
             found = text.match(array[i] + "[0-9a-zA-Zа-яА-Я].+" + array[i]);
@@ -312,13 +312,16 @@ function clearText(text,type){
     if (status.length != 0) {
         for (var i = 0; i < statuses.length; i++) {
             start = text.indexOf(statuses[i])+statuses[i].length
+            prev = text.slice(0, start-statuses[i].length);
             if (find(status, 4) == -1) {
                 end = text.indexOf(statuses[i],start);
+                next = text.slice(end+statuses[i].length, text.length);
             } else {
                 end = text.indexOf("}}",start);
+                next = text.slice(end+2, text.length);
             }
             text = text.slice(start, end);
-            return text
+            return prev+text+next;
         }
     } else {
         return text
@@ -340,7 +343,7 @@ $('button[data-type=head]').on('click', function(e){
     CMvol1_window.replaceSelection(insert[0]+selText+insert[1]+head);
     CMvol1_window.focus();
 })
-$('button[data-type=BoldIt]').on('click', function(e){
+$('button[data-type=BoldIt], button[data-type=another]').on('click', function(e){
     var selText = CMvol1_window.getSelection();
     var insert = $(this).data('insert').split('insert');
     var sel = {'start': CMvol1_window.listSelections()[0].anchor,'end': CMvol1_window.listSelections()[0].head};

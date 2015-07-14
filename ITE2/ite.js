@@ -32,10 +32,10 @@ myDocker.registerPanelType('Toolbox', {
         window.$button_h2 = $('<button type="button" data-type="head" class="btn btn-default btn-xs" title="Заголовок 2-го уровня"  data-insert="==insert=="><i class="fa fa-header"></i>2</button>');
         window.$button_h3 = $('<button type="button" data-type="head" class="btn btn-default btn-xs" title="Заголовок 3-го уровня"  data-insert="===insert==="><i class="fa fa-header"></i>3</button>');
         window.$button_uh = $('<button type="button" data-type="head" class="btn btn-default btn-xs UnderHead" title="Подзаголовок"  data-insert="{{Подзаголовок|insert}}"><i class="fa fa-header"></i><i class="fa fa-align-center" style="font-size:80%"></i></button>');
-        window.$button_pr = $('<button type="button" class="btn btn-default btn-xs" title="Примечание"  data-insert="{{ref|insert}}"><i class="fa fa-file-text"></i></button>');
-        window.$button_com = $('<button type="button" class="btn btn-default btn-xs" title="Комментарий"  data-insert="<!— insert —>"><i class="fa fa-tag"></i></button>');
-        window.$button_illus = $('<button type="button" class="btn btn-default btn-xs Illus" title="Иллюстрация" data-insert="{{Иллюстрация}}insert "><i class="fa fa-picture-o"></i></button>');
-        window.$button_wiki = $('<button type="button" class="btn btn-default btn-xs" title="Ссылка на Википедию" data-insert="Подробнее на [insert Википедии]"><i class="fa fa-link"></i><span style="font-size: 72%; margin-left: -2px; vertical-align: super; font-weight: bold;">W</span></button>');
+        window.$button_pr = $('<button type="button" data-type="another" class="btn btn-default btn-xs" title="Примечание"  data-insert="{{ref|insert}}"><i class="fa fa-file-text"></i></button>');
+        window.$button_com = $('<button type="button" data-type="another" class="btn btn-default btn-xs" title="Комментарий"  data-insert="<!— insert —>"><i class="fa fa-tag"></i></button>');
+        window.$button_illus = $('<button type="button" data-type="head" class="btn btn-default btn-xs Illus" title="Иллюстрация" data-insert="{{Иллюстрация}}insert "><i class="fa fa-picture-o"></i></button>');
+        window.$button_wiki = $('<button type="button" data-type="another" class="btn btn-default btn-xs" title="Ссылка на Википедию" data-insert="Подробнее на [insert Википедии]"><i class="fa fa-link"></i><span style="font-size: 72%; margin-left: -2px; vertical-align: super; font-weight: bold;">W</span></button>');
         window.$button_fullscreen = $('<button type="button" class="btn btn-default btn-xs" title="Полноэкранный режим"><i class="fa fa-expand"></i></button>');
         window.$button_scrollock = $('<button type="button" class="btn btn-default btn-xs" title="Синхронизировать высоту строк"><i class="fa fa-arrows-v"></i></button>');
 
