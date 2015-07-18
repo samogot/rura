@@ -7,6 +7,7 @@
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/dropdowns-enhancement.css">
+    <link rel="stylesheet" href="css/jquery.resizableColumns.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -30,6 +31,7 @@
 	<script src="js/jquery.fileupload-process.js"></script>
 	<!-- The File Upload image preview & resize plugin -->
 	<script src="js/jquery.fileupload-image.js"></script>
+    <script src="js/store.min.js"></script>
     <script src="js/jquery.resizableColumns.min.js"></script>
     <script src="js/ellipses-left.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -498,6 +500,12 @@
 
 </body>
 <script type="text/javascript">
+
+$(function(){
+  $("table.table").resizableColumns({
+    store: window.store
+  });
+});
 /*
     $(function(){
         $(".volumetable table").resizableColumns();
