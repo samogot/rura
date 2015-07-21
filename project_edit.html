@@ -33,6 +33,7 @@
 	<script src="js/jquery.fileupload-image.js"></script>
     <script src="js/store.min.js"></script>
     <script src="js/jquery.resizableColumns.min.js"></script>
+    <script src="https://rawgit.com/samogot/colResizable/master/source/colResizable-1.5.source.js"></script>
     <script src="js/ellipses-left.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<style>
@@ -298,7 +299,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-12-sm" style="overflow-x:scroll;margin-top:15px;">
+                        <div class="col-12-sm" style="overflow-x:scroll;margin-top:15px;  overflow-y: hidden;">
                             <table class="table table-bordered table-condensed">
                                 <thead>
                                     <tr>
@@ -502,15 +503,16 @@
 <script type="text/javascript">
 
 $(function(){
-  $("table.table").resizableColumns({
-    store: window.store
-  });
-});
-/*
-    $(function(){
-        $(".volumetable table").resizableColumns();
+    $("table.table").colResizable({
+        fixed:false,
+        liveDrag:true,
+        liveDrag:true,
+        postbackSafe:true,
+        headerOnly:true,
+        overflow:true
     });
-*/
+});
+
     $('.list-group.select.sortable').sortable({ // включаем jquery-ui sortable
         items: "a:not(:first-child.heading)", // запрещаем передвигать что либо выше первого heading (не может быть картинок вне глав)
         handle:'.move' // задаем маркер перетягивания
