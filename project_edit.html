@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -10,210 +11,228 @@
     <link rel="stylesheet" href="css/jquery.resizableColumns.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-	<!--<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>-->
-	<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!--<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>-->
+    <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
     <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<!--<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="js/listgroup.js"></script>
     <script src="js/dropdowns-enhancement.js"></script>
-	<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-	<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-	<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-	<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-	<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-	<script src="js/jquery.iframe-transport.js"></script>
-	<!-- The basic File Upload plugin -->
-	<script src="js/jquery.fileupload.js"></script>
-	<!-- The File Upload processing plugin -->
-	<script src="js/jquery.fileupload-process.js"></script>
-	<!-- The File Upload image preview & resize plugin -->
-	<script src="js/jquery.fileupload-image.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script src="js/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="js/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="js/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="js/jquery.fileupload-image.js"></script>
     <script src="js/store.min.js"></script>
     <script src="js/jquery.resizableColumns.min.js"></script>
     <script src="https://rawgit.com/samogot/colResizable/master/source/colResizable-1.5.source.js"></script>
     <script src="js/ellipses-left.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<style>
-	input[type="checkbox"] {
-		margin: -6px 0px 0px;
-		line-height: normal;
-		width: 13px;
-	}
-	</style>
+    <style>
+        input[type="checkbox"] {
+            margin: -6px 0px 0px;
+            line-height: normal;
+            width: 13px;
+        }
+    </style>
 </head>
+
 <body>
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="loginModalLabel">Вход</h4>
-      </div>
-      <div class="modal-body">
-                <form class="form-horizontal">
-          <div class="form-group">
-            <label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="loginModalLabel">Вход</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Запомнить пароль
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">Вход</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+        </div>
+    </div>
+    <div class="modal-backdrop" style="display:none"></div>
+    <nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png">
+                </a>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Запомнить пароль
-                </label>
-              </div>
+            <div class="collapse navbar-collapse">
+                <div class="secondLogoContainer">
+                    <div class="secondLogo"></div>
+                </div>
+                <form class="navbar-form navbar-right">
+                    <button class="btn btn-white">Регистрация</button>
+                    <button class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</button>
+                </form>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary">Вход</button>
+        </div>
+        <!-- /.container -->
+    </nav>
+    <nav class="navbar navbar-default navbar-lower" role="navigation">
+        <div class="container">
+            <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form visible-xs-block">
+                    <button class="btn btn-default">Регистрация</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</button>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Обновления</a>
+                    </li>
+                    <li><a href="#">Проекты</a>
+                    </li>
+                    <li><a href="#">Набор в команду</a>
+                    </li>
+                    <li><a href="#">FAQ</a>
+                    </li>
+                    <li><a href="#">О нас</a>
+                    </li>
+                    <li><a href="#">Связь</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <a href="#" class="btn btn-danger">Трансляции</a>
+                    <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
+                </form>
             </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal-backdrop" style="display:none"></div>
-<nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png"></a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <div class="secondLogoContainer"><div class="secondLogo"></div></div>
-      <form class="navbar-form navbar-right">
-            <button class="btn btn-white">Регистрация</button>
-            <button class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</button>
-      </form>
-    </div>
-  </div><!-- /.container -->
-</nav>
-<nav class="navbar navbar-default navbar-lower" role="navigation">
-  <div class="container">
-    <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
-      <form class="navbar-form visible-xs-block">
-            <button class="btn btn-default">Регистрация</button>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</button>
-      </form>
-      <ul class="nav navbar-nav">
-            <li><a href="#">Обновления</a></li>
-            <li><a href="#">Проекты</a></li>
-            <li><a href="#">Набор в команду</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Связь</a></li>
-      </ul>
-      <form class="navbar-form navbar-right">
-            <a href="#" class="btn btn-danger">Трансляции</a>
-            <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
-            <a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
-      </form>
-    </div>
-  </div>
-</nav>
-<div class="container">
+        </div>
+    </nav>
+    <div class="container">
         <div class="leftColumn">
             <main class="content">
                 <form class="FormUpdate FormAjax" data-type="project">
-				<input type="hidden" id="volume_id" name="volume_id">
-                <h2>Редактирование проекта (серии)</h2>
-                <h3>Информация</h3>
-                <div class="form-group">
-                    <label for="url">Ссылка</label>
-                    <input type="text" class="form-control" id="url" name="url">
-                </div>
-                <div class="form-group">
-                    <label for="banner">Изображение</label>
-                    <input type="file" class="fileupload">
-                    <input type="hidden" id="banner_id">
-                    <img src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220" id="banner">
-                </div>
-				<div class="progress collapse">
-					<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-						<span class="sr-only">0% Complete</span>
-					</div>
-				</div>
-                <div class="form-group">
-                    <label for="name_title">Название для заголовков</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
-                </div>
-                <div class="form-group">
-                    <label for="name_jp">Название (яп.)</label>
-                    <input type="text" class="form-control" id="name_jp" name="name_jp">
-                </div>
-				<div class="form-group">
-                    <label for="name_en">Название (англ.)</label>
-                    <input type="text" class="form-control" id="name_en" name="name_en">
-                </div>
-				<div class="form-group">
-                    <label for="name_ru">Название (рус.)</label>
-                    <input type="text" class="form-control" id="name_ru" name="name_ru">
-                </div>
-				<div class="form-group">
-                    <label for="name_romaji">Название (романдзи)</label>
-                    <input type="text" class="form-control" id="name_romaji" name="name_romaji">
-                </div>
-				<div class="form-group">
-                    <label for="author">Автор</label>
-					<div id="author-name-typeahead">
-						<input class="form-control typeahead author-name" type="text" id="author" name="author">
-					</div>
-                </div>
-				<div class="form-group">
-                    <label for="illustrator">Иллюстратор</label>
-					<div id="illustrator-name-typeahead">
-						<input class="form-control typeahead illustrator-name" type="text" id="illustrator" name="illustrator">
-					</div>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="onevolume" name="onevolume" value="false">
-                    <label for="onevolume">Однотомник</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="banner_hidden" name="banner_hidden" value="false">
-                    <label for="banner_hidden">Баннер скрыт</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="project_hidden" name="project_hidden" value="false">
-                    <label for="project_hidden">Проект скрыт</label>
-                </div>
-                <div class="form-group">
-                    <label for="franchise">Описание франшизы</label>
-                    <textarea class="form-control" id="franchise" name="franchise" rows="3"></textarea>
-                </div>
-				<div class="form-group">
-                    <label for="annotation">Аннотация</label>
-                    <textarea class="form-control" id="annotation" name="annotation" rows="3"></textarea>
-                </div>
-				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
-				</form>
+                    <input type="hidden" id="volume_id" name="volume_id">
+                    <h2>Редактирование проекта (серии)</h2>
+                    <h3>Информация</h3>
+                    <div class="form-group">
+                        <label for="url">Ссылка</label>
+                        <input type="text" class="form-control" id="url" name="url">
+                    </div>
+                    <div class="form-group">
+                        <label for="banner">Изображение</label>
+                        <input type="file" class="fileupload">
+                        <input type="hidden" id="banner_id">
+                        <img src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220" id="banner">
+                    </div>
+                    <div class="progress collapse">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                            <span class="sr-only">0% Complete</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name_title">Название для заголовков</label>
+                        <input type="text" class="form-control" id="name_title" name="name_title">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_jp">Название (яп.)</label>
+                        <input type="text" class="form-control" id="name_jp" name="name_jp">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_en">Название (англ.)</label>
+                        <input type="text" class="form-control" id="name_en" name="name_en">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_ru">Название (рус.)</label>
+                        <input type="text" class="form-control" id="name_ru" name="name_ru">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_romaji">Название (романдзи)</label>
+                        <input type="text" class="form-control" id="name_romaji" name="name_romaji">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Автор</label>
+                        <div id="author-name-typeahead">
+                            <input class="form-control typeahead author-name" type="text" id="author" name="author">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="illustrator">Иллюстратор</label>
+                        <div id="illustrator-name-typeahead">
+                            <input class="form-control typeahead illustrator-name" type="text" id="illustrator" name="illustrator">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="onevolume" name="onevolume" value="false">
+                        <label for="onevolume">Однотомник</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="banner_hidden" name="banner_hidden" value="false">
+                        <label for="banner_hidden">Баннер скрыт</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="project_hidden" name="project_hidden" value="false">
+                        <label for="project_hidden">Проект скрыт</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="franchise">Описание франшизы</label>
+                        <textarea class="form-control" id="franchise" name="franchise" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="annotation">Аннотация</label>
+                        <textarea class="form-control" id="annotation" name="annotation" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
 
-                <h3>Редактирование томов</h3>
-    				<div class="volumetable">
+
+                <div>
+                    <div class="divHeader">
+                        <span>Редактирование томов</span>
                         <div class="btn-group col-12-sm" role="group" aria-label="Панель глав">
-                            <button type="button" class="btn btn-success" data-type="volume" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i></button>
-                            <button type="button" class="btn btn-warning" title="Дублировать главу" id="btn-update-clone"><i class="fa fa-files-o"></i></button>
-                            <button type="button" class="btn btn-danger" data-type="volume" title="Удалить главу" id="btn-update-delete"><i class="fa fa-trash-o"></i></button>
+                            <button type="button" class="btn btn-success" data-type="volume" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-warning" title="Дублировать главу" id="btn-update-clone"><i class="fa fa-files-o"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" data-type="volume" title="Удалить главу" id="btn-update-delete"><i class="fa fa-trash-o"></i>
+                            </button>
                             <div class="btn-group">
-                              <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Выбранные колонки <span class="caret"></span></button>
+                                <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Выбранные колонки <span class="caret"></span>
+                                </button>
                                 <ul class="dropdown-menu noclose bullet pull-top pull-right">
                                     <li>
                                         <input type="checkbox" id="LABELnumber" name="LABEL" value="0">
@@ -295,10 +314,12 @@
                                         <input type="checkbox" id="LABELadult" name="LABEL" value="19">
                                         <label for="LABELadult">18+ (Непотребное содержание)</label>
                                     </li>
-                                  <!-- Other items -->
+                                    <!-- Other items -->
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                    <div class="volumetable">
                         <div class="col-12-sm" style="overflow-x:scroll;margin-top:15px;  overflow-y: hidden;">
                             <table class="table table-bordered table-condensed">
                                 <thead>
@@ -426,20 +447,26 @@
                             </table>
                         </div>
                     </div>
-
-                <h3>Редактирование подсерий</h3>
+                </div>
+                <div>
+                    <div class="divHeader">
+                        <span>Редактирование подсерий</span>
+                        <div class="btn-group col-12-sm">
+                            <button type="button" class="btn btn-success" data-type="subseries" title="Добавить новую подсерию" id="btn-sub-add"><i class="fa fa-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" data-type="subseries" title="Удалить подсерию" id="btn-sub-delete"><i class="fa fa-trash-o"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <form>
                     <div class="subseriestable">
-                            <div class="btn-group col-12-sm">
-                                <button type="button" class="btn btn-success" data-type="subseries" title="Добавить новую подсерию" id="btn-sub-add"><i class="fa fa-plus"></i></button>
-                                <button type="button" class="btn btn-danger" data-type="subseries" title="Удалить подсерию" id="btn-sub-delete"><i class="fa fa-trash-o"></i></button>
-                            </div>
-                            <div class="list-group select sortable" id="subseries" style="margin-top:15px;">
-                                <a data-toggle="collapse" data-parent="#subseries" data-type="subseries_n1" href="#sub1" aria-expanded="true" aria-controls="chapter1" class="list-group-item FormAjax FormUpdate" >
-                                    <i class="fa fa-ellipsis-v move"></i>
-                                    <input type="text" class="form-control" placeholder="<пусто>" id="1sub_input" name="external_url">
-                                </a>
-                            </div>
+                        <div class="list-group select sortable" id="subseries" style="margin-top:15px;">
+                            <a data-toggle="collapse" data-parent="#subseries" data-type="subseries_n1" href="#sub1" aria-expanded="true" aria-controls="chapter1" class="list-group-item FormAjax FormUpdate">
+                                <i class="fa fa-ellipsis-v move"></i>
+                                <input type="text" class="form-control" placeholder="<пусто>" id="1sub_input" name="external_url">
+                            </a>
+                        </div>
                     </div>
                 </form>
 
@@ -453,302 +480,84 @@
                     <div class="h4">Проекты</div>
                 </div>
                 <div class="actions banners">
-                    <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" height="73" width="220"></a>
-                    <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" height="73" width="220"></a>
-                    <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" height="73" width="220"></a>
-                    <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220"></a>
-                    <a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" height="73" width="220"></a>
-                    <a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" height="73" width="220"></a>
-                    <a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" height="73" width="220"></a>
-                    <a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" height="73" width="220"></a>
-                    <a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" height="73" width="220"></a>
-                    <a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" height="73" width="220"></a>
-                    <a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" height="73" width="220"></a>
-                    <a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" height="73" width="220"></a>
-                    <a href="/r/ssnts" title="Дуэлянт странствующей богини"><img alt="Дуэлянт странствующей богини" src="http://ruranobe.ru/w/images/1/12/sidebanner-ssnts.png" height="73" width="220"></a>
-                    <a href="/r/lh" title="Log Horizon"><img alt="Log Horizon" src="http://ruranobe.ru/w/images/f/f5/sidebanner-lh.png" height="73" width="220"></a>
-                    <a href="/r/mdn" title="Пусть твоя душа упокоится в Магдале"><img alt="Пусть твоя душа упокоится в Магдале" src="http://ruranobe.ru/w/images/3/30/sidebanner-mdn.png" height="73" width="220"></a>
-                    <a href="/r/tnynn" title="Становление Героя Щита"><img alt="Становление Героя Щита" src="http://ruranobe.ru/w/images/1/19/sidebanner-tnynn.png" height="73" width="220"></a>
-                    <a href="/r/snpnk" title="Кошечка из Сакурасо"><img alt="Кошечка из Сакурасо" src="http://ruranobe.ru/w/images/1/18/sidebanner-snpnk.png" height="73" width="220"></a>
-                    <a href="/r/ol" title="Overlord"><img alt="Overlord" src="http://ruranobe.ru/w/images/a/a6/sidebanner-ol.png" height="73" width="220"></a>
-                    <a href="/r/ngnl" title="No Game No Life"><img alt="No Game No Life" src="http://ruranobe.ru/w/images/4/42/sidebanner-ngnl.png" height="73" width="220"></a>
-                    <a href="/r/tr" title="Tokyo Ravens"><img alt="Tokyo Ravens" src="http://ruranobe.ru/w/images/f/fb/sidebanner-tr.png" height="73" width="220"></a>
-                    <a href="/r/tmni" title="Некий Магический Индекс"><img alt="Некий Магический Индекс" src="http://ruranobe.ru/w/images/8/88/sidebanner-tmni.png" height="73" width="220"></a>
-                    <a href="/r/haruhi" title="Серия Харухи Судзумии"><img alt="Серия Харухи Судзумии" src="http://ruranobe.ru/w/images/4/4f/sidebanner-haruhi.png" height="73" width="220"></a>
-                    <a href="/r/saw" title="Волчица и пряности"><img alt="Волчица и пряности" src="http://ruranobe.ru/w/images/9/9e/sidebanner-saw.png" height="73" width="220"></a>
-                    <a href="/r/ch2b" title="Чудачества любви не помеха!"><img alt="Чудачества любви не помеха!" src="http://ruranobe.ru/w/images/1/1a/sidebanner-ch2b.png" height="73" width="220"></a>
-                    <a href="/r/aynik" title="All You Need Is Kill"><img alt="All You Need Is Kill" src="http://ruranobe.ru/w/images/b/ba/sidebanner-aynik.png" height="73" width="220"></a>
-                    <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220"></a>
-                    <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220"></a>
-                    <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220"></a><a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220"></a>
+                    <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" height="73" width="220">
+                    </a>
+                    <a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" height="73" width="220">
+                    </a>
+                    <a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" height="73" width="220">
+                    </a>
+                    <a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" height="73" width="220">
+                    </a>
+                    <a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ssnts" title="Дуэлянт странствующей богини"><img alt="Дуэлянт странствующей богини" src="http://ruranobe.ru/w/images/1/12/sidebanner-ssnts.png" height="73" width="220">
+                    </a>
+                    <a href="/r/lh" title="Log Horizon"><img alt="Log Horizon" src="http://ruranobe.ru/w/images/f/f5/sidebanner-lh.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mdn" title="Пусть твоя душа упокоится в Магдале"><img alt="Пусть твоя душа упокоится в Магдале" src="http://ruranobe.ru/w/images/3/30/sidebanner-mdn.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tnynn" title="Становление Героя Щита"><img alt="Становление Героя Щита" src="http://ruranobe.ru/w/images/1/19/sidebanner-tnynn.png" height="73" width="220">
+                    </a>
+                    <a href="/r/snpnk" title="Кошечка из Сакурасо"><img alt="Кошечка из Сакурасо" src="http://ruranobe.ru/w/images/1/18/sidebanner-snpnk.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ol" title="Overlord"><img alt="Overlord" src="http://ruranobe.ru/w/images/a/a6/sidebanner-ol.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ngnl" title="No Game No Life"><img alt="No Game No Life" src="http://ruranobe.ru/w/images/4/42/sidebanner-ngnl.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tr" title="Tokyo Ravens"><img alt="Tokyo Ravens" src="http://ruranobe.ru/w/images/f/fb/sidebanner-tr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tmni" title="Некий Магический Индекс"><img alt="Некий Магический Индекс" src="http://ruranobe.ru/w/images/8/88/sidebanner-tmni.png" height="73" width="220">
+                    </a>
+                    <a href="/r/haruhi" title="Серия Харухи Судзумии"><img alt="Серия Харухи Судзумии" src="http://ruranobe.ru/w/images/4/4f/sidebanner-haruhi.png" height="73" width="220">
+                    </a>
+                    <a href="/r/saw" title="Волчица и пряности"><img alt="Волчица и пряности" src="http://ruranobe.ru/w/images/9/9e/sidebanner-saw.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ch2b" title="Чудачества любви не помеха!"><img alt="Чудачества любви не помеха!" src="http://ruranobe.ru/w/images/1/1a/sidebanner-ch2b.png" height="73" width="220">
+                    </a>
+                    <a href="/r/aynik" title="All You Need Is Kill"><img alt="All You Need Is Kill" src="http://ruranobe.ru/w/images/b/ba/sidebanner-aynik.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220">
+                    </a>
+                    <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220">
+                    </a>
+                    <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220">
+                    </a>
                 </div>
             </div>
         </aside>
-</div><div class="container">
-    <footer>
-        <div class="footer">
-            <a href="#">Обновления</a>
-            <a href="#">Проекты</a>
-            <a href="#">Набор в команду</a>
-            <a href="#">FAQ</a>
-            <a href="#">О нас</a>
-            <a href="#">Помощь</a>
-            <a href="#">Связь</a>
-        </div>
-        <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
-    </footer>
-</div>
+    </div>
+    <div class="container">
+        <footer>
+            <div class="footer">
+                <a href="#">Обновления</a>
+                <a href="#">Проекты</a>
+                <a href="#">Набор в команду</a>
+                <a href="#">FAQ</a>
+                <a href="#">О нас</a>
+                <a href="#">Помощь</a>
+                <a href="#">Связь</a>
+            </div>
+            <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
+        </footer>
+    </div>
 
 </body>
-<script type="text/javascript">
-
-$(function(){
-    $("table.table").colResizable({
-        fixed:false,
-        liveDrag:true,
-        liveDrag:true,
-        postbackSafe:true,
-        headerOnly:true,
-        overflow:true
-    });
-});
-
-    $('.list-group.select.sortable').sortable({ // включаем jquery-ui sortable
-        items: "a:not(:first-child.heading)", // запрещаем передвигать что либо выше первого heading (не может быть картинок вне глав)
-        handle:'.move' // задаем маркер перетягивания
-    });
-    var volumelength = $('.volumetable tr').length-1;
-    var sublength = $('.subseriestable a.list-group-item').length;
-    $(function(){
-        checkCheck()
-    });
-    function checkCheck(){
-        for(var i=0;i<volumelength;i++){
-            ($('[name="LABEL"]').not('[name="LABEL"]:checked')).each(function(indx){
-                $('.volumetable table tr:eq('+(i+1)+') > td:eq('+$(this).val()+')').hide();$('.volumetable table tr > th:eq('+$(this).val()+')').hide();
-            });
-            $('[name="LABEL"]:checked').each(function(indx){
-                $('.volumetable table tr:eq('+(i+1)+') > td:eq('+$(this).val()+')').show();$('.volumetable table tr > th:eq('+$(this).val()+')').show();
-            });
-        }
-    }
-    $('#btn-sub-add').click(function(){
-        sublength++;
-        var newSub = '<a data-toggle="collapse" data-parent="#subseries" data-type="subseries_n'+sublength+'" href="#sub'+sublength+'" aria-expanded="true" aria-controls="sub'+sublength+'" class="list-group-item FormAjax FormUpdate" >';
-        newSub +=  '<i class="fa fa-ellipsis-v move"></i>'
-        newSub +=  '<input type="text" class="form-control" placeholder="<пусто>" id="'+sublength+'sub_input" name="external_url">'
-        newSub +=  '</a>';
-        if($('.subseriestable a.list-group-item').hasClass('active')){
-            $(newSub).insertAfter($(".subseriestable a.list-group-item.active"));
-        } else {
-            $(newSub).appendTo($("#subseries"));
-        }
-            $('[href="#sub'+sublength+'"]').click();
-            $('#'+sublength+'sub_input').focus();
-    });
-    $('#btn-sub-delete').click(function(){
-        if($('.subseriestable a.list-group-item').hasClass('active')){
-                    var type = $(this).data('type');
-                    var Needdelete = $('[data-parent="#'+type+'"].info')
-                    AdminOnDelete(Needdelete.data('type'));
-            $thissub = $('.subseriestable a.list-group-item.active');
-            if($thissub.index() == $('.subseriestable a.list-group-item:last').index()){
-                $nextsub = $thissub.prev('a.list-group-item');
-            } else {
-                $nextsub = $thissub.next('a.list-group-item');
-            }
-            $thissub.remove();
-            $nextsub.addClass('active');
-            $nextsub.children('input').focus();
-            sublength--
-        }
-        else {
-            alert('Сначала выделите подсерию!')
-        }
-    });
-
-    $('.subseriestable').on('click','a.list-group-item',function(){
-        $('.subseriestable a.list-group-item').removeClass('info');
-        $(this).addClass('info');
-    });
-    $('.dropdown-menu.noclose li').click(function(){checkCheck()});
-    $('.volumetable').on('click','tr',function(){
-        $('.volumetable tr').removeClass('info');
-        $(this).addClass('info');
-    });
-    $('#btn-update-clone').click(function(){
-        if($('.volumetable tr').hasClass('info')){
-            volumelength++
-            $('.volumetable tr').removeClass('clonned');
-            $('.volumetable tr.info')
-                .clone()
-                .addClass('clonned')
-                .appendTo('.volumetable table')
-                .click();
-            $('.volumetable tr.clonned .form-control:first').val(volumelength);
-            $('.volumetable tr.clonned .form-control').each(function(){
-                $(this).attr('id',volumelength+$(this).attr('id').substr(1));
-            });
-            $("#"+volumelength+"url").focus().val('');
-            checkCheck()
-
-        }
-        else {
-            alert('Сначала выделите главу!')
-        }
-    });
-    $('#btn-update-delete').click(function(){
-        if($('.volumetable tr').hasClass('info')){
-                    var type = $(this).data('type');
-                    var Needdelete = $('[data-parent="#'+type+'"].info')
-                    AdminOnDelete(Needdelete.data('type'));
-            $thisvol = $('.volumetable tr.info');
-            if($thisvol.index() == $('.volumetable tr:last').index()){
-                $nextvol = $thisvol.prev();
-            } else {
-                $nextvol = $thisvol.next();
-            }
-            volumelength--
-            $thisvol.remove();
-            $nextvol.addClass('info');
-        }
-        else {
-            alert('Сначала выделите главу!')
-        }
-    });
-
-
-    $('#btn-update-add').click(function(){
-        volumelength++;
-        var newVolume = '';
-        newVolume +=  '<tr class="FormAjax FormUpdate" data-parent="#volume" data-type="volume_n'+volumelength+'">';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'number" name="number" value="'+volumelength+'"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'url" name="url" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_file" name="name_file" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_title" name="name_title" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_jp" name="name_jp" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_en" name="name_en" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_ru" name="name_ru" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_romaji" name="name_romaji" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'name_short" name="name_short" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><select class="form-control" id="'+volumelength+'project_id" name="project_id" placeholder="<пусто>">';
-        newVolume +=  '<option>Sword Art Online</option>';
-        newVolume +=  '<option>2</option>';
-        newVolume +=  '<option>3</option>';
-        newVolume +=  '<option>4</option>';
-        newVolume +=  '<option>5</option>';
-        newVolume +=  '</select></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'sequence_number" name="sequence_number" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input class="form-control typeahead author-name" type="text" id="'+volumelength+'author" name="author"  placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input class="form-control typeahead illustrator-name" type="text" id="'+volumelength+'illustrator" name="illustrator"  placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'release_date" name="release_date" placeholder="<пусто>"></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'ISBN" name="ISBN"  placeholder="<пусто>"></td>';
-        newVolume +=  '<td><select class="form-control" id="'+volumelength+'volume_type" name="volume_type" >';
-        newVolume +=  '<option>Ранобэ</option>';
-        newVolume +=  '<option>Побочные истории</option>';
-        newVolume +=  '<option>Авторские додзинси</option>';
-        newVolume +=  '<option>Другое</option>';
-        newVolume +=  '</select>';
-        newVolume +=  '</td>';
-        newVolume +=  '<td><select class="form-control" id="'+volumelength+'volume_status" name="volume_status">';
-        newVolume +=  '<option value="1">Скрыт</option>';
-        newVolume +=  '<optgroup label="Сторонний перевод">';
-        newVolume +=  '<option value="3">Заброшенный сторонний перевод</option>';
-        newVolume +=  '<option value="4">Активный сторонний перевод</option>';
-        newVolume +=  '<option value="5">Завершенный сторонний перевод</option>';
-        newVolume +=  '</optgroup>';
-        newVolume +=  '<optgroup label="Не в работе">';
-        newVolume +=  '<option value="6">Отсутствует анлейт</option>';
-        newVolume +=  '<option value="7">Заморожен</option>';
-        newVolume +=  '<option value="8">Приостановлен</option>';
-        newVolume +=  '<option value="9">Очередь перевода</option>';
-        newVolume +=  '</optgroup>';
-        newVolume +=  '<optgroup label="В работе">';
-        newVolume +=  '<option value="10">Перевод в онгоинге</option>';
-        newVolume +=  '<option value="11">Перевод</option>';
-        newVolume +=  '<option value="12">Редактура</option>';
-        newVolume +=  '</optgroup>';
-        newVolume +=  '<optgroup label="Опубликован">';
-        newVolume +=  '<option value="13">Не оформлен</option>';
-        newVolume +=  '<option value="14">Завершен</option>';
-        newVolume +=  '</optgroup>';
-        newVolume +=  '</select></td>';
-        newVolume +=  '<td><input type="text" class="form-control" id="'+volumelength+'external_url" name="external_url"  placeholder="<пусто>"></td>';
-        newVolume +=  '<td><textarea class="form-control" id="'+volumelength+'annotation" name="annotation" rows="3" style="width: 100%;"  placeholder="<пусто>"></textarea></td>';
-        newVolume +=  '<td><input type="checkbox" class="form-control" id="'+volumelength+'adult" name="adult"  placeholder="<пусто>"></td>';
-        newVolume +=  '</tr>';
-        $(newVolume).appendTo($(".volumetable table"));
-        $("#"+volumelength+"url").focus();
-        $('.volumetable tr').removeClass('info');
-        $("#"+volumelength+"url").parent().parent().addClass('info');
-        checkCheck();
-    });
-
-
-
-
-
-
-	$('#banner').fileupload({
-		url: "/rura/loading_files.php",
-		dataType: 'json',
-		formData: {
-			id: $('#banner_id').val()
-		},
-		acceptFileTypes: /(\.|\/)(jpe?g|png|jpg)$/i,
-		previewMaxHeight: 73,
-		previewMaxWidth: 220,
-		maxNumberOfFiles: 1,
-	}).on('fileuploadadd', function (e, data) {
-		$('#imageform .progress').collapse('show');
-		$('#banner').attr('src','loading.gif');
-		data.submit();
-	}).on('fileuploadprocessalways', function (e, data) {
-        var index = data.index,
-            file = data.files[index];
-        if (file.error) // выводим сообщение об ошибке обработки на клиенте
-			$('.progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
-    }).on('fileuploadprogressall', function (e, data) { // обновляем прогресбар
-        var progress = parseInt(data.loaded / data.total * 100, 10);
-        $('.progress-bar').css('width', progress + '%');
-        $('.progress-bar').attr('aria-valuenow', progress);
-        $('.progress-bar span').text(progress + '% Complete');
-    }).on('fileuploaddone', function (e, data) { // при завершении загрузки заменяем превюшку на img тег с адресом уже загруженной ирасты
-		$('.progress').collapse('hide');
-		//console.log(data) // с сервера в json`е должны прийти поля url и id
-        $.each(data.result.files, function (index, file) {
-            if (file.url) {
-				$('#banner_id').val(file.id);
-				$('#banner').attr('src',file.url);
-            } else if (file.error) // выводим ошибку возвращенную с сервера
-				$('.progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
-        });
-    }).on('fileuploadfail', function (e, data) { // выводим ошибку аякса
-		$('.progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
-    });
-
-
-    /*     Старт редактирование подсерия       */
-var SubPositions = {};
-$('body').on('change','#subseries input',
-    function(){
-        $.map($('#subseries').find('a'), function(el) {
-            SubPositions[$(el).index()+1]= $(el).children('input').val();
-        });
-        alert(JSON.stringify(SubPositions));
-        return false;
-    }
-)
-$('#subseries').sortable({
-    stop: function(e, ui) {
-        $.map($(this).find('a'), function(el) {
-            SubPositions[$(el).index()+1]= $(el).children('input').val();
-        });
-        alert(JSON.stringify(SubPositions));
-    }
-});
-
-    /*     Старт редактирование подсерия       */
-</script>
+<script src="js/page.project_edit.js"></script>
 <script src="js/page.all.js"></script>
 </html>

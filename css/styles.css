@@ -25,6 +25,19 @@ body.night {
     color: rgb(211, 63, 84);
 }
 
+.divHeader{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.divHeader span{
+    margin-right: 10px;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
 /* --------------- header --------------*/
 header {
     width: 100%;
