@@ -2303,6 +2303,12 @@ body.night.red .leftColumn {
 .moduleIcon.type4 {
     background: url("../img/updIcons/icon4.png") no-repeat scroll 10px 8px;
 }
+body.night .modal-content {
+    background-color: #282828;
+}
+body.night .close {
+    color: #E0E0E0;
+}
 body.night .moduleIcon.list {
     background: #4E4E4E url("../img/list_active.png") no-repeat scroll 10px 20px;
 }
@@ -2387,6 +2393,11 @@ body.night center.project {
     text-align: center;
 }
 
+body.night .text p.show {
+    color: #000;
+    background: #F1F1F1;
+    cursor: pointer;
+}
 .text p.show {
     background: #F1F1F1;
     cursor: pointer;
