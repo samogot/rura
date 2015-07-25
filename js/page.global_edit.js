@@ -1,3 +1,75 @@
+
+/* SAVE */
+$('.save').click(function(){
+    var type = $(this).parent().data('type');
+    var returnInfo;
+    var info = [];
+    switch (type){
+        case 'series':
+            $.each($('#seriesform .panel > div'), function(indx, el)
+                {
+                    var elID = $(this).attr('id');
+                    info.push(
+                            {projectId:$(el).children('#'+elID+"_id").val(),
+                             orderNumber:$(el).children('#'+elID+"_order").val(),
+                             projectTitle:$(el).find('#'+elID+'_name_input').val(),
+                             projectUrl:$(el).find('#'+elID+'_url_input').val()}
+                    );
+                }
+            );
+            break;
+        case 'activities':
+            $.each($('#activitiesform .panel > div'), function(indx, el)
+                {
+                    var elID = $(this).attr('id');
+                    info.push(
+                            {activitiesId:$(el).children('#'+elID+"_id").val(),
+                             orderNumber:$(el).children('#'+elID+"_order").val(),
+                             activitiesTitle:$(el).find('#'+elID+'_name_input').val(),
+                             activitiesType:$(el).find('#'+elID+'_type_input').val()}
+                    );
+                }
+            );
+            break;
+        case 'teams':
+            $.each($('#teamsform .panel > div'), function(indx, el)
+                {
+                    var elID = $(this).attr('id');
+                    info.push(
+                            {teamsId:$(el).children('#'+elID+"_id").val(),
+                             orderNumber:$(el).children('#'+elID+"_order").val(),
+                             teamsTitle:$(el).find('#'+elID+'_name_input').val(),
+                             teamsUrl:$(el).find('#'+elID+'_url_input').val()}
+                    );
+                }
+            );
+            break;
+        case 'teammembers':
+            $.each($('#teammembersform .panel > div'), function(indx, el)
+                {
+                    var elID = $(this).attr('id');
+                    info.push(
+                            {teammemberId:$(el).children('#'+elID+"_id").val(),
+                             orderNumber:$(el).children('#'+elID+"_order").val(),
+                             teammemberName:$(el).find('#'+elID+'_name_input').val(),
+                             teammemberTeam:$(el).find('#'+elID+'_team_input').val(),
+                             teammemberActive:$(el).find('#'+elID+'_checkbox_input').attr('checked')}
+                    );
+                }
+            );
+            break;
+   }
+   returnInfo = {'type': type, 'info': info};
+   alert(JSON.stringify(returnInfo));
+})
+
+
+
+
+
+
+
+
 $('#seriesselect').sortable({ // включаем jquery-ui sortable
         items: "a:not(:first-child.heading)", // запрещаем передвигать что либо выше первого heading (не может быть картинок вне глав)
         handle:'.move' // задаем маркер перетягивания

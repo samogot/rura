@@ -1,6 +1,6 @@
-    $(document).ready(function() {
+ $(document).ready(function() {
         $(".fancybox").fancybox();
-    });
+ });
 
 /* AFFIX */
 function reinitAffix() {
