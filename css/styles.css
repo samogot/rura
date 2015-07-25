@@ -1990,7 +1990,9 @@ ul.ContentNav {
 .btn-white.OpenContent {
     display: none;
 }
-
+.text .popover {
+    text-indent: 0;
+}
 @media screen and (max-width: 767px) {
     .leftMobile, .rightMobile {
         width: 15px;
@@ -2303,11 +2305,21 @@ body.night.red .leftColumn {
 .moduleIcon.type4 {
     background: url("../img/updIcons/icon4.png") no-repeat scroll 10px 8px;
 }
+body.night .fancybox-skin {
+    background-color: #282828;
+}
 body.night .modal-content {
     background-color: #282828;
 }
 body.night .close {
     color: #E0E0E0;
+}
+body.night .popover, body.night .popover-title {
+    color: #E0E0E0;
+    background-color: #282828;
+}
+body.night .popover.right>.arrow:after, body.night .popover.bottom>.arrow:after, body.night .popover.top>.arrow:after, body.night .popover.left>.arrow:after {
+  border-right-color: #282828;
 }
 body.night .moduleIcon.list {
     background: #4E4E4E url("../img/list_active.png") no-repeat scroll 10px 20px;
@@ -2754,3 +2766,6 @@ table.rc-table-resizing thead > th > a {
 .form-group #banner{
 display: block;
 }
+
+
+

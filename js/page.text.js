@@ -1,8 +1,6 @@
-$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-});
-
+    $(document).ready(function() {
+        $(".fancybox").fancybox();
+    });
 
 /* AFFIX */
 function reinitAffix() {
@@ -447,5 +445,7 @@ function getOrphusParameters() {
 
 /* ПРИМЕЧАНИЯ */
 $(".reference").popover({
-    trigger: 'hover'
+    trigger: 'hover',
+    title: 'Примечание',
+    placement: 'bottom'
 });
