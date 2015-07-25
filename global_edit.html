@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -34,347 +35,371 @@
     <script src="js/ellipses-left.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
-    input[type="checkbox"] {
-        margin: -6px 0px 0px;
-        line-height: normal;
-        width: 13px;
-    }
+        input[type="checkbox"] {
+            margin: -6px 0px 0px;
+            line-height: normal;
+            width: 13px;
+        }
     </style>
 </head>
+
 <body>
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="loginModalLabel">Вход</h4>
-      </div>
-      <div class="modal-body">
-                <form class="form-horizontal">
-          <div class="form-group">
-            <label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="loginModalLabel">Вход</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Запомнить пароль
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">Вход</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+        </div>
+    </div>
+    <div class="modal-backdrop" style="display:none"></div>
+    <nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png">
+                </a>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Запомнить пароль
-                </label>
-              </div>
+            <div class="collapse navbar-collapse">
+                <div class="secondLogoContainer">
+                    <div class="secondLogo"></div>
+                </div>
+                <form class="navbar-form navbar-right">
+                    <button class="btn btn-white">Регистрация</button>
+                    <button class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</button>
+                </form>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary">Вход</button>
+        </div>
+        <!-- /.container -->
+    </nav>
+    <nav class="navbar navbar-default navbar-lower" role="navigation">
+        <div class="container">
+            <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form visible-xs-block">
+                    <button class="btn btn-default">Регистрация</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</button>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Обновления</a>
+                    </li>
+                    <li><a href="#">Проекты</a>
+                    </li>
+                    <li><a href="#">Набор в команду</a>
+                    </li>
+                    <li><a href="#">FAQ</a>
+                    </li>
+                    <li><a href="#">О нас</a>
+                    </li>
+                    <li><a href="#">Связь</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <a href="#" class="btn btn-danger">Трансляции</a>
+                    <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
+                </form>
             </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal-backdrop" style="display:none"></div>
-<nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png"></a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <div class="secondLogoContainer"><div class="secondLogo"></div></div>
-      <form class="navbar-form navbar-right">
-            <button class="btn btn-white">Регистрация</button>
-            <button class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</button>
-      </form>
-    </div>
-  </div><!-- /.container -->
-</nav>
-<nav class="navbar navbar-default navbar-lower" role="navigation">
-  <div class="container">
-    <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
-      <form class="navbar-form visible-xs-block">
-            <button class="btn btn-default">Регистрация</button>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</button>
-      </form>
-      <ul class="nav navbar-nav">
-            <li><a href="#">Обновления</a></li>
-            <li><a href="#">Проекты</a></li>
-            <li><a href="#">Набор в команду</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Связь</a></li>
-      </ul>
-      <form class="navbar-form navbar-right">
-            <a href="#" class="btn btn-danger">Трансляции</a>
-            <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
-            <a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
-      </form>
-    </div>
-  </div>
-</nav>
-<div class="container">
+        </div>
+    </nav>
+    <div class="container">
         <div class="leftColumn">
             <main class="content">
 
-                <div class="divHeader">
-                    <span>Серии</span>
-                    <div class="btn-group" role="group" aria-label="Панель глав">
-                        <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-series-add"><i class="fa fa-plus"></i></button>
-                        <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-series-delete" disabled><i class="fa fa-trash-o"></i></button>
-                    </div>
-                </div>
                 <form>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div class="list-group select sortable" id="seriesselect" style="margin-top:10px">
-                            <a data-toggle="collapse" data-parent="#seriesform" href="#series1" aria-expanded="true" aria-controls="series1" class="list-group-item" >
-                                <i class="fa fa-ellipsis-v move"></i>
-                                <span class="hidden-sm hidden-xs"  id="series1_name">Серия 1</span>
-                            </a>
-                            <a data-toggle="collapse" data-parent="#seriesform" href="#series2" aria-expanded="true" aria-controls="series2" class="list-group-item" >
-                                <i class="fa fa-ellipsis-v move"></i>
-                                <span class="hidden-sm hidden-xs"  id="series2_name">Серия 2</span>
-                            </a>
-                            <a data-toggle="collapse" data-parent="#seriesform" href="#series3" aria-expanded="true" aria-controls="series3" class="list-group-item" >
-                                <i class="fa fa-ellipsis-v move"></i>
-                                <span class="hidden-sm hidden-xs"  id="series3_name">Серия 3</span>
-                            </a>
-                            <a data-toggle="collapse" data-parent="#seriesform" href="#series4" aria-expanded="true" aria-controls="series4" class="list-group-item" >
-                                <i class="fa fa-ellipsis-v move"></i>
-                                <span class="hidden-sm hidden-xs"  id="series4_name">Серия 4</span>
-                            </a>
+                    <div class="divHeader">
+                        <span>Серии</span>
+                        <div class="btn-group" role="group" aria-label="Панель глав">
+                            <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-series-add"><i class="fa fa-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-series-delete" disabled><i class="fa fa-trash-o"></i>
+                            </button>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-xs-8 admin-affix" id="seriesform" role="tablist" aria-multiselectable="true">
-                        <div class="progress collapse">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                <span class="sr-only">0% Complete</span>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group select sortable" id="seriesselect" style="margin-top:10px">
+                                <a data-toggle="collapse" data-parent="#seriesform" href="#series1" aria-expanded="true" aria-controls="series1" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="series1_name">Серия 1</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#seriesform" href="#series2" aria-expanded="true" aria-controls="series2" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="series2_name">Серия 2</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#seriesform" href="#series3" aria-expanded="true" aria-controls="series3" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="series3_name">Серия 3</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#seriesform" href="#series4" aria-expanded="true" aria-controls="series4" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="series4_name">Серия 4</span>
+                                </a>
                             </div>
                         </div>
-                        <div  class="panel">
-                            <div class="row collapse series-data" role="tabpanel" id="series1">
-                                <input type="hidden" id="series1_id">
-                                <input type="hidden" id="series1_order">
-                                <input type="hidden" id="series1_delete">
-                                <div class="series-data-main">
-                                    <h3>Настройка серии</h3>
-                                    <div class="form-group">
-                                        <label for="series1_url">Ссылка</label>
-                                        <input class="form-control url-input" type="text" id="series1_url_input">
-                                        <label for="series1_name">Заголовок</label>
-                                        <input class="form-control name-input" type="text" id="series1_name_input" value="Начальные иллюстрации">
-                                    </div>
+                        <div class="col-xs-8 admin-affix" id="seriesform" role="tablist" aria-multiselectable="true">
+                            <div class="progress collapse">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span class="sr-only">0% Complete</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="panel">
-                            <div class="row collapse series-data" role="tabpanel" id="series2">
-                                <input type="hidden" id="series2_id">
-                                <input type="hidden" id="series2_order">
-                                <input type="hidden" id="series2_delete">
-                                <div class="series-data-main">
-                                    <h3>Настройка серии</h3>
-                                    <div class="form-group">
-                                        <label for="series2_url">Ссылка</label>
-                                        <input class="form-control url-input" type="text" id="series2_url_input">
-                                        <label for="series2_name">Заголовок</label>
-                                        <input class="form-control name-input" type="text" id="series2_name_input" value="Пролог">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="row collapse series-data" role="tabpanel" id="series3">
-                                <input type="hidden" id="series3_id">
-                                <input type="hidden" id="series3_order">
-                                <input type="hidden" id="series3_delete">
-                                <div class="series-data-main">
-                                    <h3>Настройка серии</h3>
-                                    <div class="form-group">
-                                        <label for="series3_url">Ссылка</label>
-                                        <input class="form-control url-input" type="text" id="series3_url_input">
-                                        <label for="series3_name">Заголовок</label>
-                                        <input class="form-control name-input" type="text" id="series3_name_input" value="Глава 1">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="row collapse series-data" role="tabpanel" id="series4">
-                                <input type="hidden" id="series4_id">
-                                <input type="hidden" id="series4_order">
-                                <input type="hidden" id="series4_delete">
-                                <div class="series-data-main">
-                                    <h3>Настройка серии</h3>
-                                    <div class="form-group">
-                                        <label for="series4_url">Ссылка</label>
-                                        <input class="form-control url-input" type="text" id="series4_url_input">
-                                        <label for="series4_name">Заголовок</label>
-                                        <input class="form-control name-input" type="text" id="series4_name_input" value="Глава 2">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                </form>
-
-
-                <div class="divHeader">
-                    <span>Виды работ</span>
-                    <div class="btn-group" role="group" aria-label="Виды работ" data-type="activities">
-                        <button type="button" class="btn btn-success btn_add" title="Добавить новый вид" id="btn-activities-add"><i class="fa fa-plus"></i></button>
-                        <button type="button" class="btn btn-danger btn_delete" title="Удалить главу" id="btn-activities-delete" disabled><i class="fa fa-trash-o"></i></button>
-                    </div>
-                </div>
-                <form>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div class="list-group select sortable" id="activitiesselect" style="margin-top:10px">
-                            <a data-toggle="collapse" data-parent="#activitiesform" href="#activities1" aria-expanded="true" aria-controls="activities1" class="list-group-item" >
-                                <span class="hidden-sm hidden-xs"  id="activities1_name">Название 1</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-8 admin-affix" id="activitiesform" role="tablist" aria-multiselectable="true">
-                        <div class="progress collapse">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                <span class="sr-only">0% Complete</span>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="row collapse activities-data" role="tabpanel" id="activities1">
-                                <input type="hidden" id="activities1_id">
-                                <input type="hidden" id="activities1_order">
-                                <input type="hidden" id="activities1_delete">
-                                <div class="activities-data-main">
-                                    <h3>Настройка вида</h3>
-                                    <div class="form-group">
-                                        <label for="activities1_name_input">Название</label>
-                                        <input class="form-control name-input" type="text" id="activities1_name_input" value="Название">
-                                        <label for="activities1_type_input">Тип</label>
-                                        <select class="form-control" id="activities1_type_input">
-                                            <option>Текст</option>
-                                            <option>Изображение</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                </form>
-
-
-
-                <div class="divHeader">
-                    <span>Команды</span>
-                    <div class="btn-group" role="group" aria-label="Виды работ" data-type="teams">
-                        <button type="button" class="btn btn-success btn_add" title="Добавить новый вид" id="btn-teams-add"><i class="fa fa-plus"></i></button>
-                        <button type="button" class="btn btn-danger btn_delete" title="Удалить главу" id="btn-teams-delete" disabled><i class="fa fa-trash-o"></i></button>
-                    </div>
-                </div>
-                <form>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div class="list-group select sortable" id="teamsselect" style="margin-top:10px">
-                            <a data-toggle="collapse" data-parent="#teamsform" href="#teams1" aria-expanded="true" aria-controls="teams1" class="list-group-item" >
-                                <span class="hidden-sm hidden-xs"  id="teams1_name">Название 1</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-8 admin-affix" id="teamsform" role="tablist" aria-multiselectable="true">
-                        <div class="progress collapse">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                <span class="sr-only">0% Complete</span>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="row collapse teams-data" role="tabpanel" id="teams1">
-                                <input type="hidden" id="teams1_id">
-                                <input type="hidden" id="teams1_order">
-                                <input type="hidden" id="teams1_delete">
-                                <div class="teams-data-main">
-                                    <h3>Настройка команды</h3>
-                                    <div class="form-group">
-                                        <label for="teams1_name_input">Название</label>
-                                        <input class="form-control name-input" type="text" id="teams1_name_input" value="Название">
-                                        <label for="teams1_url_input">Ссылка</label>
-                                        <input class="form-control url-input" type="text" id="teams1_url_input" value="Ссылка на сайт">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                </form>
-
-
-
-                <div class="divHeader">
-                    <span>Члены команды</span>
-                    <div class="btn-group" role="group" aria-label="Виды работ" data-type="teammembers">
-                        <button type="button" class="btn btn-success btn_add" title="Добавить новый вид" id="btn-teammembers-add"><i class="fa fa-plus"></i></button>
-                        <button type="button" class="btn btn-danger btn_delete" title="Удалить главу" id="btn-teammembers-delete" disabled><i class="fa fa-trash-o"></i></button>
-                    </div>
-                </div>
-                <form>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div class="list-group select sortable" id="teammembersselect" style="margin-top:10px">
-                            <a data-toggle="collapse" data-parent="#teammembersform" href="#teammembers1" aria-expanded="true" aria-controls="teammembers1" class="list-group-item" >
-                                <span class="hidden-sm hidden-xs"  id="teammembers1_name">Участник 1</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-8 admin-affix" id="teammembersform" role="tablist" aria-multiselectable="true">
-                        <div class="progress collapse">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                <span class="sr-only">0% Complete</span>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="row collapse teammembers-data" role="tabpanel" id="teammembers1">
-                                <input type="hidden" id="teammembers1_id">
-                                <input type="hidden" id="teammembers1_order">
-                                <input type="hidden" id="teammembers1_delete">
-                                <div class="teammembers-data-main">
-                                    <h3>Настройка участника</h3>
-                                    <div class="form-group">
-                                        <label for="teammembers1_name_input">Никнейм</label>
-                                        <div id="teammembers1_names_selector">
-                                            <input class="form-control name-input typeahead" type="text" id="teammembers1_name_input" value="Никнейм">
+                            <div class="panel">
+                                <div class="row collapse series-data" role="tabpanel" id="series1">
+                                    <input type="hidden" id="series1_id">
+                                    <input type="hidden" id="series1_order">
+                                    <input type="hidden" id="series1_delete">
+                                    <div class="series-data-main">
+                                        <h3>Настройка серии</h3>
+                                        <div class="form-group">
+                                            <label for="series1_url">Ссылка</label>
+                                            <input class="form-control url-input" type="text" id="series1_url_input">
+                                            <label for="series1_name">Заголовок</label>
+                                            <input class="form-control name-input" type="text" id="series1_name_input" value="Начальные иллюстрации">
                                         </div>
-                                        <label for="activities1_team_input">Название команды</label>
-                                        <select class="form-control all_teams" id="teammembers1_team_input">
-                                            <option name="teams1">Команда 1</option>
-                                        </select>
-                                        <input type="checkbox" id="teammembers1_checkbox_input">
-                                        <label for="teammembers1_checkbox_input">Активен</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse series-data" role="tabpanel" id="series2">
+                                    <input type="hidden" id="series2_id">
+                                    <input type="hidden" id="series2_order">
+                                    <input type="hidden" id="series2_delete">
+                                    <div class="series-data-main">
+                                        <h3>Настройка серии</h3>
+                                        <div class="form-group">
+                                            <label for="series2_url">Ссылка</label>
+                                            <input class="form-control url-input" type="text" id="series2_url_input">
+                                            <label for="series2_name">Заголовок</label>
+                                            <input class="form-control name-input" type="text" id="series2_name_input" value="Пролог">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse series-data" role="tabpanel" id="series3">
+                                    <input type="hidden" id="series3_id">
+                                    <input type="hidden" id="series3_order">
+                                    <input type="hidden" id="series3_delete">
+                                    <div class="series-data-main">
+                                        <h3>Настройка серии</h3>
+                                        <div class="form-group">
+                                            <label for="series3_url">Ссылка</label>
+                                            <input class="form-control url-input" type="text" id="series3_url_input">
+                                            <label for="series3_name">Заголовок</label>
+                                            <input class="form-control name-input" type="text" id="series3_name_input" value="Глава 1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse series-data" role="tabpanel" id="series4">
+                                    <input type="hidden" id="series4_id">
+                                    <input type="hidden" id="series4_order">
+                                    <input type="hidden" id="series4_delete">
+                                    <div class="series-data-main">
+                                        <h3>Настройка серии</h3>
+                                        <div class="form-group">
+                                            <label for="series4_url">Ссылка</label>
+                                            <input class="form-control url-input" type="text" id="series4_url_input">
+                                            <label for="series4_name">Заголовок</label>
+                                            <input class="form-control name-input" type="text" id="series4_name_input" value="Глава 2">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+
+
+                <form>
+                    <div class="divHeader">
+                        <span>Виды работ</span>
+                        <div class="btn-group" role="group" aria-label="Виды работ" data-type="activities">
+                            <button type="button" class="btn btn-success btn_add" title="Добавить новый вид" id="btn-activities-add"><i class="fa fa-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn_delete" title="Удалить главу" id="btn-activities-delete" disabled><i class="fa fa-trash-o"></i>
+                            </button>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group select sortable" id="activitiesselect" style="margin-top:10px">
+                                <a data-toggle="collapse" data-parent="#activitiesform" href="#activities1" aria-expanded="true" aria-controls="activities1" class="list-group-item">
+                                    <span class="hidden-sm hidden-xs" id="activities1_name">Название 1</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 admin-affix" id="activitiesform" role="tablist" aria-multiselectable="true">
+                            <div class="progress collapse">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span class="sr-only">0% Complete</span>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse activities-data" role="tabpanel" id="activities1">
+                                    <input type="hidden" id="activities1_id">
+                                    <input type="hidden" id="activities1_order">
+                                    <input type="hidden" id="activities1_delete">
+                                    <div class="activities-data-main">
+                                        <h3>Настройка вида</h3>
+                                        <div class="form-group">
+                                            <label for="activities1_name_input">Название</label>
+                                            <input class="form-control name-input" type="text" id="activities1_name_input" value="Название">
+                                            <label for="activities1_type_input">Тип</label>
+                                            <select class="form-control" id="activities1_type_input">
+                                                <option>Текст</option>
+                                                <option>Изображение</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <form>
+                    <div class="divHeader">
+                        <span>Команды</span>
+                        <div class="btn-group" role="group" aria-label="Виды работ" data-type="teams">
+                            <button type="button" class="btn btn-success btn_add" title="Добавить новый вид" id="btn-teams-add"><i class="fa fa-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn_delete" title="Удалить главу" id="btn-teams-delete" disabled><i class="fa fa-trash-o"></i>
+                            </button>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group select sortable" id="teamsselect" style="margin-top:10px">
+                                <a data-toggle="collapse" data-parent="#teamsform" href="#teams1" aria-expanded="true" aria-controls="teams1" class="list-group-item">
+                                    <span class="hidden-sm hidden-xs" id="teams1_name">Название 1</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 admin-affix" id="teamsform" role="tablist" aria-multiselectable="true">
+                            <div class="progress collapse">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span class="sr-only">0% Complete</span>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse teams-data" role="tabpanel" id="teams1">
+                                    <input type="hidden" id="teams1_id">
+                                    <input type="hidden" id="teams1_order">
+                                    <input type="hidden" id="teams1_delete">
+                                    <div class="teams-data-main">
+                                        <h3>Настройка команды</h3>
+                                        <div class="form-group">
+                                            <label for="teams1_name_input">Название</label>
+                                            <input class="form-control name-input" type="text" id="teams1_name_input" value="Название">
+                                            <label for="teams1_url_input">Ссылка</label>
+                                            <input class="form-control url-input" type="text" id="teams1_url_input" value="Ссылка на сайт">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <form>
+                    <div class="divHeader">
+                        <span>Члены команды</span>
+                        <div class="btn-group" role="group" aria-label="Виды работ" data-type="teammembers">
+                            <button type="button" class="btn btn-success btn_add" title="Добавить новый вид" id="btn-teammembers-add"><i class="fa fa-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn_delete" title="Удалить главу" id="btn-teammembers-delete" disabled><i class="fa fa-trash-o"></i>
+                            </button>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group select sortable" id="teammembersselect" style="margin-top:10px">
+                                <a data-toggle="collapse" data-parent="#teammembersform" href="#teammembers1" aria-expanded="true" aria-controls="teammembers1" class="list-group-item">
+                                    <span class="hidden-sm hidden-xs" id="teammembers1_name">Участник 1</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 admin-affix" id="teammembersform" role="tablist" aria-multiselectable="true">
+                            <div class="progress collapse">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span class="sr-only">0% Complete</span>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse teammembers-data" role="tabpanel" id="teammembers1">
+                                    <input type="hidden" id="teammembers1_id">
+                                    <input type="hidden" id="teammembers1_order">
+                                    <input type="hidden" id="teammembers1_delete">
+                                    <div class="teammembers-data-main">
+                                        <h3>Настройка участника</h3>
+                                        <div class="form-group">
+                                            <label for="teammembers1_name_input">Никнейм</label>
+                                            <div id="teammembers1_names_selector">
+                                                <input class="form-control name-input typeahead" type="text" id="teammembers1_name_input" value="Никнейм">
+                                            </div>
+                                            <label for="activities1_team_input">Название команды</label>
+                                            <select class="form-control all_teams" id="teammembers1_team_input">
+                                                <option name="teams1">Команда 1</option>
+                                            </select>
+                                            <input type="checkbox" id="teammembers1_checkbox_input">
+                                            <label for="teammembers1_checkbox_input">Активен</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </main>
         </div>
@@ -386,53 +411,85 @@
                     <div class="h4">Проекты</div>
                 </div>
                 <div class="actions banners">
-                    <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" height="73" width="220"></a>
-                    <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" height="73" width="220"></a>
-                    <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" height="73" width="220"></a>
-                    <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220"></a>
-                    <a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" height="73" width="220"></a>
-                    <a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" height="73" width="220"></a>
-                    <a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" height="73" width="220"></a>
-                    <a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" height="73" width="220"></a>
-                    <a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" height="73" width="220"></a>
-                    <a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" height="73" width="220"></a>
-                    <a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" height="73" width="220"></a>
-                    <a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" height="73" width="220"></a>
-                    <a href="/r/ssnts" title="Дуэлянт странствующей богини"><img alt="Дуэлянт странствующей богини" src="http://ruranobe.ru/w/images/1/12/sidebanner-ssnts.png" height="73" width="220"></a>
-                    <a href="/r/lh" title="Log Horizon"><img alt="Log Horizon" src="http://ruranobe.ru/w/images/f/f5/sidebanner-lh.png" height="73" width="220"></a>
-                    <a href="/r/mdn" title="Пусть твоя душа упокоится в Магдале"><img alt="Пусть твоя душа упокоится в Магдале" src="http://ruranobe.ru/w/images/3/30/sidebanner-mdn.png" height="73" width="220"></a>
-                    <a href="/r/tnynn" title="Становление Героя Щита"><img alt="Становление Героя Щита" src="http://ruranobe.ru/w/images/1/19/sidebanner-tnynn.png" height="73" width="220"></a>
-                    <a href="/r/snpnk" title="Кошечка из Сакурасо"><img alt="Кошечка из Сакурасо" src="http://ruranobe.ru/w/images/1/18/sidebanner-snpnk.png" height="73" width="220"></a>
-                    <a href="/r/ol" title="Overlord"><img alt="Overlord" src="http://ruranobe.ru/w/images/a/a6/sidebanner-ol.png" height="73" width="220"></a>
-                    <a href="/r/ngnl" title="No Game No Life"><img alt="No Game No Life" src="http://ruranobe.ru/w/images/4/42/sidebanner-ngnl.png" height="73" width="220"></a>
-                    <a href="/r/tr" title="Tokyo Ravens"><img alt="Tokyo Ravens" src="http://ruranobe.ru/w/images/f/fb/sidebanner-tr.png" height="73" width="220"></a>
-                    <a href="/r/tmni" title="Некий Магический Индекс"><img alt="Некий Магический Индекс" src="http://ruranobe.ru/w/images/8/88/sidebanner-tmni.png" height="73" width="220"></a>
-                    <a href="/r/haruhi" title="Серия Харухи Судзумии"><img alt="Серия Харухи Судзумии" src="http://ruranobe.ru/w/images/4/4f/sidebanner-haruhi.png" height="73" width="220"></a>
-                    <a href="/r/saw" title="Волчица и пряности"><img alt="Волчица и пряности" src="http://ruranobe.ru/w/images/9/9e/sidebanner-saw.png" height="73" width="220"></a>
-                    <a href="/r/ch2b" title="Чудачества любви не помеха!"><img alt="Чудачества любви не помеха!" src="http://ruranobe.ru/w/images/1/1a/sidebanner-ch2b.png" height="73" width="220"></a>
-                    <a href="/r/aynik" title="All You Need Is Kill"><img alt="All You Need Is Kill" src="http://ruranobe.ru/w/images/b/ba/sidebanner-aynik.png" height="73" width="220"></a>
-                    <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220"></a>
-                    <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220"></a>
-                    <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220"></a><a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220"></a>
+                    <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" height="73" width="220">
+                    </a>
+                    <a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" height="73" width="220">
+                    </a>
+                    <a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" height="73" width="220">
+                    </a>
+                    <a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" height="73" width="220">
+                    </a>
+                    <a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ssnts" title="Дуэлянт странствующей богини"><img alt="Дуэлянт странствующей богини" src="http://ruranobe.ru/w/images/1/12/sidebanner-ssnts.png" height="73" width="220">
+                    </a>
+                    <a href="/r/lh" title="Log Horizon"><img alt="Log Horizon" src="http://ruranobe.ru/w/images/f/f5/sidebanner-lh.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mdn" title="Пусть твоя душа упокоится в Магдале"><img alt="Пусть твоя душа упокоится в Магдале" src="http://ruranobe.ru/w/images/3/30/sidebanner-mdn.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tnynn" title="Становление Героя Щита"><img alt="Становление Героя Щита" src="http://ruranobe.ru/w/images/1/19/sidebanner-tnynn.png" height="73" width="220">
+                    </a>
+                    <a href="/r/snpnk" title="Кошечка из Сакурасо"><img alt="Кошечка из Сакурасо" src="http://ruranobe.ru/w/images/1/18/sidebanner-snpnk.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ol" title="Overlord"><img alt="Overlord" src="http://ruranobe.ru/w/images/a/a6/sidebanner-ol.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ngnl" title="No Game No Life"><img alt="No Game No Life" src="http://ruranobe.ru/w/images/4/42/sidebanner-ngnl.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tr" title="Tokyo Ravens"><img alt="Tokyo Ravens" src="http://ruranobe.ru/w/images/f/fb/sidebanner-tr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tmni" title="Некий Магический Индекс"><img alt="Некий Магический Индекс" src="http://ruranobe.ru/w/images/8/88/sidebanner-tmni.png" height="73" width="220">
+                    </a>
+                    <a href="/r/haruhi" title="Серия Харухи Судзумии"><img alt="Серия Харухи Судзумии" src="http://ruranobe.ru/w/images/4/4f/sidebanner-haruhi.png" height="73" width="220">
+                    </a>
+                    <a href="/r/saw" title="Волчица и пряности"><img alt="Волчица и пряности" src="http://ruranobe.ru/w/images/9/9e/sidebanner-saw.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ch2b" title="Чудачества любви не помеха!"><img alt="Чудачества любви не помеха!" src="http://ruranobe.ru/w/images/1/1a/sidebanner-ch2b.png" height="73" width="220">
+                    </a>
+                    <a href="/r/aynik" title="All You Need Is Kill"><img alt="All You Need Is Kill" src="http://ruranobe.ru/w/images/b/ba/sidebanner-aynik.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220">
+                    </a>
+                    <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220">
+                    </a>
+                    <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220">
+                    </a>
                 </div>
             </div>
         </aside>
-</div><div class="container">
-    <footer>
-        <div class="footer">
-            <a href="#">Обновления</a>
-            <a href="#">Проекты</a>
-            <a href="#">Набор в команду</a>
-            <a href="#">FAQ</a>
-            <a href="#">О нас</a>
-            <a href="#">Помощь</a>
-            <a href="#">Связь</a>
-        </div>
-        <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
-    </footer>
-</div>
+    </div>
+    <div class="container">
+        <footer>
+            <div class="footer">
+                <a href="#">Обновления</a>
+                <a href="#">Проекты</a>
+                <a href="#">Набор в команду</a>
+                <a href="#">FAQ</a>
+                <a href="#">О нас</a>
+                <a href="#">Помощь</a>
+                <a href="#">Связь</a>
+            </div>
+            <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
+        </footer>
+    </div>
 
 </body>
 <script src="js/page.global_edit.js"></script>
 <script src="js/page.all.js"></script>
+
 </html>

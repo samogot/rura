@@ -148,7 +148,13 @@
                 <form class="FormUpdate FormAjax" data-type="project">
                     <input type="hidden" id="volume_id" name="volume_id">
                     <h2>Редактирование проекта (серии)</h2>
-                    <h3>Информация</h3>
+                    <div class="divHeader">
+                        <span>Информация</span>
+                        <div class="btn-group" role="group" aria-label="Панель">
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="url">Ссылка</label>
                         <input type="text" class="form-control" id="url" name="url">
@@ -216,10 +222,9 @@
                         <label for="annotation">Аннотация</label>
                         <textarea class="form-control" id="annotation" name="annotation" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                 </form>
 
-
+                <form>
                 <div>
                     <div class="divHeader">
                         <span>Редактирование томов</span>
@@ -231,7 +236,7 @@
                             <button type="button" class="btn btn-danger" data-type="volume" title="Удалить главу" id="btn-update-delete"><i class="fa fa-trash-o"></i>
                             </button>
                             <div class="btn-group">
-                                <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Выбранные колонки <span class="caret"></span>
+                                <button data-toggle="dropdown" class="btn btn-info dropdown-toggle">Выбранные колонки <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu noclose bullet pull-top pull-right">
                                     <li>
@@ -317,6 +322,8 @@
                                     <!-- Other items -->
                                 </ul>
                             </div>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="volumetable">
@@ -448,6 +455,9 @@
                         </div>
                     </div>
                 </div>
+                </form>
+
+                <form>
                 <div>
                     <div class="divHeader">
                         <span>Редактирование подсерий</span>
@@ -456,10 +466,11 @@
                             </button>
                             <button type="button" class="btn btn-danger" data-type="subseries" title="Удалить подсерию" id="btn-sub-delete"><i class="fa fa-trash-o"></i>
                             </button>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <form>
                     <div class="subseriestable">
                         <div class="list-group select sortable" id="subseries" style="margin-top:15px;">
                             <a data-toggle="collapse" data-parent="#subseries" data-type="subseries_n1" href="#sub1" aria-expanded="true" aria-controls="chapter1" class="list-group-item FormAjax FormUpdate">
@@ -560,4 +571,5 @@
 </body>
 <script src="js/page.project_edit.js"></script>
 <script src="js/page.all.js"></script>
+
 </html>

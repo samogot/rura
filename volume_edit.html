@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -9,924 +10,952 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
     <!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-	<!--<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>-->
-	<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!--<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>-->
+    <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
     <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<!--<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="js/listgroup.js"></script>
-	<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-	<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-	<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-	<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-	<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-	<script src="js/jquery.iframe-transport.js"></script>
-	<!-- The basic File Upload plugin -->
-	<script src="js/jquery.fileupload.js"></script>
-	<!-- The File Upload processing plugin -->
-	<script src="js/jquery.fileupload-process.js"></script>
-	<!-- The File Upload image preview & resize plugin -->
-	<script src="js/jquery.fileupload-image.js"></script>
-	<!-- <script src="js/volume.edit.scripts.js"></script> -->
-	<script src="js/moment-with-locales.min.js"></script>
-	<script src="js/bootstrap-datetimepicker.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script src="js/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="js/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="js/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="js/jquery.fileupload-image.js"></script>
+    <!-- <script src="js/volume.edit.scripts.js"></script> -->
+    <script src="js/moment-with-locales.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<style>
-	input[type="checkbox"] {
-		margin: -6px 0px 0px;
-		line-height: normal;
-		width: 13px;
-	}
-	</style>
+    <style>
+        input[type="checkbox"] {
+            margin: -6px 0px 0px;
+            line-height: normal;
+            width: 13px;
+        }
+    </style>
 </head>
+
 <body>
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="loginModalLabel">Вход</h4>
-      </div>
-      <div class="modal-body">
-                <form class="form-horizontal">
-          <div class="form-group">
-            <label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="loginModalLabel">Вход</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Запомнить пароль
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">Вход</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+        </div>
+    </div>
+    <div class="modal-backdrop" style="display:none"></div>
+    <nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png">
+                </a>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Запомнить пароль
-                </label>
-              </div>
+            <div class="collapse navbar-collapse">
+                <div class="secondLogoContainer">
+                    <div class="secondLogo"></div>
+                </div>
+                <form class="navbar-form navbar-right">
+                    <button class="btn btn-white">Регистрация</button>
+                    <button class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</button>
+                </form>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary">Вход</button>
+        </div>
+        <!-- /.container -->
+    </nav>
+    <nav class="navbar navbar-default navbar-lower" role="navigation">
+        <div class="container">
+            <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form visible-xs-block">
+                    <button class="btn btn-default">Регистрация</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</button>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Обновления</a>
+                    </li>
+                    <li><a href="#">Проекты</a>
+                    </li>
+                    <li><a href="#">Набор в команду</a>
+                    </li>
+                    <li><a href="#">FAQ</a>
+                    </li>
+                    <li><a href="#">О нас</a>
+                    </li>
+                    <li><a href="#">Связь</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <a href="#" class="btn btn-danger">Трансляции</a>
+                    <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
+                </form>
             </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal-backdrop" style="display:none"></div>
-<nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png"></a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <div class="secondLogoContainer"><div class="secondLogo"></div></div>
-      <form class="navbar-form navbar-right">
-            <button class="btn btn-white">Регистрация</button>
-            <button class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</button>
-      </form>
-    </div>
-  </div><!-- /.container -->
-</nav>
-<nav class="navbar navbar-default navbar-lower" role="navigation">
-  <div class="container">
-    <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
-      <form class="navbar-form visible-xs-block">
-            <button class="btn btn-default">Регистрация</button>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</button>
-      </form>
-      <ul class="nav navbar-nav">
-            <li><a href="#">Обновления</a></li>
-            <li><a href="#">Проекты</a></li>
-            <li><a href="#">Набор в команду</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Связь</a></li>
-      </ul>
-      <form class="navbar-form navbar-right">
-            <a href="#" class="btn btn-danger">Трансляции</a>
-            <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
-            <a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
-      </form>
-    </div>
-  </div>
-</nav>
-<div class="container">
+        </div>
+    </nav>
+    <div class="container">
         <div class="leftColumn">
             <main class="content">
                 <form>
-				<input type="hidden" id="volume_id" name="volume_id">
-                <h2>Информация</h2>
-                <div class="form-group">
-                    <label for="url">Ссылка</label>
-                    <input type="text" class="form-control" id="url" name="url">
-                </div>
-                <div class="form-group">
-                    <label for="name_file">Имя для файлов (Основное имя)</label>
-                    <input type="text" class="form-control" id="name_file" name="name_file">
-                </div>
-                <div class="form-group">
-                    <label for="name_title">Имя для заголовков</label>
-                    <input type="text" class="form-control" id="name_title" name="name_title">
-                </div>
-				<div class="form-group">
-                    <label for="name_jp">Название (яп.)</label>
-                    <input type="text" class="form-control" id="name_jp" name="name_jp">
-                </div>
-				<div class="form-group">
-                    <label for="name_en">Название (англ.)</label>
-                    <input type="text" class="form-control" id="name_en" name="name_en">
-                </div>
-				<div class="form-group">
-                    <label for="name_ru">Название (рус.)</label>
-                    <input type="text" class="form-control" id="name_ru" name="name_ru">
-                </div>
-				<div class="form-group">
-                    <label for="name_romaji">Название (романдзи)</label>
-                    <input type="text" class="form-control" id="name_romaji" name="name_romaji">
-                </div>
-				<div class="form-group">
-                    <label for="name_short">Короткое название</label>
-                    <input type="text" class="form-control" id="name_short" name="name_short">
-                </div>
-				<div class="form-group">
-                    <label for="project_id">Серия</label>
-					<select class="form-control" id="project_id" name="project_id">
-						<option>Sword Art Online</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select>
-                </div>
-				<div class="form-group">
-                    <label for="sequence_number">Номер в серии</label>
-                    <input type="text" class="form-control" id="sequence_number" name="sequence_number">
-                </div>
-				<div class="form-group">
-                    <label for="author">Автор</label>
-					<div id="author-name-typeahead">
-						<input class="form-control typeahead author-name" type="text" id="author" name="author">
-					</div>
-                </div>
-				<div class="form-group">
-                    <label for="illustrator">Иллюстратор</label>
-					<div id="illustrator-name-typeahead">
-						<input class="form-control typeahead illustrator-name" type="text" id="illustrator" name="illustrator">
-					</div>
-                </div>
-				<div class="form-group">
-                    <label for="release_date ">Дата публикации</label>
-                    <input type="text" class="form-control" id="release_date " name="release_date ">
-                </div>
-				<div class="form-group">
-                    <label for="ISBN">ISBN</label>
-                    <input type="text" class="form-control" id="ISBN" name="ISBN">
-                </div>
-				<div class="form-group">
-                    <label for="volume_type">Тип релиза</label>
-                    <select class="form-control" id="volume_type" name="volume_type">
-						<option>Ранобэ</option>
-						<option>Побочные истории</option>
-						<option>Авторские додзинси</option>
-						<option>Другое</option>
-					</select>
-                </div>
-				<div class="form-group">
-                    <label for="volume_status">Статус релиза</label>
-                    <select class="form-control" id="volume_status" name="volume_status">
-						<option value="1">Скрыт</option>
-						<optgroup label="Сторонний перевод">
-							<option value="3">Заброшенный сторонний перевод</option>
-							<option value="4">Активный сторонний перевод</option>
-							<option value="5">Завершенный сторонний перевод</option>
-						</optgroup>
-						<optgroup label="Не в работе">
-							<option value="6">Отсутствует анлейт</option>
-							<option value="7">Заморожен</option>
-							<option value="8">Приостановлен</option>
-							<option value="9">Очередь перевода</option>
-						</optgroup>
-						<optgroup label="В работе">
-							<option value="10">Перевод в онгоинге</option>
-							<option value="11">Перевод</option>
-							<option value="12">Редактура</option>
-						</optgroup>
-						<optgroup label="Опубликован">
-							<option value="13">Не оформлен</option>
-							<option value="14">Завершен</option>
-						</optgroup>
-					</select>
-                </div>
-				<div class="form-group">
-                    <label for="external_url">Внешняя ссылка</label>
-                    <input type="text" class="form-control" id="external_url" name="external_url">
-                </div>
-				<div class="form-group">
-                    <label for="annotation">Аннотация</label>
-                    <textarea class="form-control" id="annotation" name="annotation" rows="3"></textarea>
-                </div>
-				<div class="form-group checkbox">
-					<label>
-						<input type="checkbox" class="form-control" id="adult" name="adult">
-						&emsp;18+ (Непотребное содержание)
-					</label>
-                </div>
-				<div id="testdibv"></div>
-				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
-				</form>
+                    <input type="hidden" id="volume_id" name="volume_id">
+                    <div class="divHeader">
+                        <span>Информация</span>
+                        <div class="btn-group" role="group" aria-label="Панель">
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Ссылка</label>
+                        <input type="text" class="form-control" id="url" name="url">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_file">Имя для файлов (Основное имя)</label>
+                        <input type="text" class="form-control" id="name_file" name="name_file">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_title">Имя для заголовков</label>
+                        <input type="text" class="form-control" id="name_title" name="name_title">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_jp">Название (яп.)</label>
+                        <input type="text" class="form-control" id="name_jp" name="name_jp">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_en">Название (англ.)</label>
+                        <input type="text" class="form-control" id="name_en" name="name_en">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_ru">Название (рус.)</label>
+                        <input type="text" class="form-control" id="name_ru" name="name_ru">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_romaji">Название (романдзи)</label>
+                        <input type="text" class="form-control" id="name_romaji" name="name_romaji">
+                    </div>
+                    <div class="form-group">
+                        <label for="name_short">Короткое название</label>
+                        <input type="text" class="form-control" id="name_short" name="name_short">
+                    </div>
+                    <div class="form-group">
+                        <label for="project_id">Серия</label>
+                        <select class="form-control" id="project_id" name="project_id">
+                            <option>Sword Art Online</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sequence_number">Номер в серии</label>
+                        <input type="text" class="form-control" id="sequence_number" name="sequence_number">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Автор</label>
+                        <div id="author-name-typeahead">
+                            <input class="form-control typeahead author-name" type="text" id="author" name="author">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="illustrator">Иллюстратор</label>
+                        <div id="illustrator-name-typeahead">
+                            <input class="form-control typeahead illustrator-name" type="text" id="illustrator" name="illustrator">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="release_date ">Дата публикации</label>
+                        <input type="text" class="form-control" id="release_date " name="release_date ">
+                    </div>
+                    <div class="form-group">
+                        <label for="ISBN">ISBN</label>
+                        <input type="text" class="form-control" id="ISBN" name="ISBN">
+                    </div>
+                    <div class="form-group">
+                        <label for="volume_type">Тип релиза</label>
+                        <select class="form-control" id="volume_type" name="volume_type">
+                            <option>Ранобэ</option>
+                            <option>Побочные истории</option>
+                            <option>Авторские додзинси</option>
+                            <option>Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="volume_status">Статус релиза</label>
+                        <select class="form-control" id="volume_status" name="volume_status">
+                            <option value="1">Скрыт</option>
+                            <optgroup label="Сторонний перевод">
+                                <option value="3">Заброшенный сторонний перевод</option>
+                                <option value="4">Активный сторонний перевод</option>
+                                <option value="5">Завершенный сторонний перевод</option>
+                            </optgroup>
+                            <optgroup label="Не в работе">
+                                <option value="6">Отсутствует анлейт</option>
+                                <option value="7">Заморожен</option>
+                                <option value="8">Приостановлен</option>
+                                <option value="9">Очередь перевода</option>
+                            </optgroup>
+                            <optgroup label="В работе">
+                                <option value="10">Перевод в онгоинге</option>
+                                <option value="11">Перевод</option>
+                                <option value="12">Редактура</option>
+                            </optgroup>
+                            <optgroup label="Опубликован">
+                                <option value="13">Не оформлен</option>
+                                <option value="14">Завершен</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="external_url">Внешняя ссылка</label>
+                        <input type="text" class="form-control" id="external_url" name="external_url">
+                    </div>
+                    <div class="form-group">
+                        <label for="annotation">Аннотация</label>
+                        <textarea class="form-control" id="annotation" name="annotation" rows="3"></textarea>
+                    </div>
+                    <div class="form-group checkbox">
+                        <label>
+                            <input type="checkbox" class="form-control" id="adult" name="adult"> &emsp;18+ (Непотребное содержание)
+                        </label>
+                    </div>
+                    <div id="testdibv"></div>
+                </form>
 
 
                 <div class="divHeader">
                     <span>Этапы/Стаф</span>
                     <div class="btn-group" role="group" aria-label="Панель участника">
-                        <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-participant-add"><i class="fa fa-plus"></i></button>
-                        <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-participant-delete" disabled><i class="fa fa-trash-o"></i></button>
+                        <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-participant-add"><i class="fa fa-plus"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-participant-delete" disabled><i class="fa fa-trash-o"></i>
+                        </button>
+                        <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                        </button>
                     </div>
                 </div>
-				<form>
-				<div class="row">
-					<div class="col-xs-4">
-						<div class="list-group select sortable" id="participantselect">
-							<a data-toggle="collapse" data-parent="#participantform" href="#participant1" aria-expanded="true" aria-controls="participant1" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="participant1_name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="participant1_role">Перевод с английского</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#participantform" href="#participant2" aria-expanded="true" aria-controls="participant2" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="participant2_name">Danholm</span> - <span class="hidden-sm hidden-xs" id="participant2_role">Эдит</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#participantform" href="#participant3" aria-expanded="true" aria-controls="participant3" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="participant3_name">Lady Astrel</span> - <span class="hidden-sm hidden-xs" id="participant3_role">Редактура</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#participantform" href="#participant4" aria-expanded="true" aria-controls="participant4" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="participant4_name">Test</span> - <span class="hidden-sm hidden-xs" id="participant4_role">Test</span>
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-8 admin-affix" id="participantform" role="tablist" aria-multiselectable="true">
-						<div class="progress collapse">
-							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-								<span class="sr-only">0% Complete</span>
-							</div>
-						</div>
-						<div  class="panel">
-							<div class="row collapse participant-data" role="tabpanel" id="participant1">
-								<input type="hidden" id="participant1_id">
-								<input type="hidden" id="participant1_order">
-								<input type="hidden" id="participant1_delete">
-								<div class="participant-data-main">
-									<h3>Настройка участника</h3>
-									<div class="form-group">
-										<label for="participant1_name">Участник</label>
-										<div id="participant1_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Ushwood">
-										</div>
-										<label for="participant1_role">Роль</label>
-										<select class="form-control role-input" id="participant_roles_selector">
-											<option selected>Перевод с английского</option>
-											<option>Эдит</option>
-											<option>Редактура</option>
-											<option>Test</option>
-										</select>
-										<div class="form-group checkbox">
-                                                                                    <label>
-                                                                                        <input type="checkbox" class="form-control" id="participant1_team_show" name="participant1_team_show">
-                                                                                        &emsp;Отображать команду
-                                                                                    </label>
-                                                                                </div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse participant-data" role="tabpanel" id="participant2">
-								<input type="hidden" id="participant2_id">
-								<input type="hidden" id="participant2_order">
-								<input type="hidden" id="participant2_delete">
-								<div class="participant-data-main">
-									<h3>Настройка участника</h3>
-									<div class="form-group">
-										<label for="participant1_name">Участник</label>
-										<div id="participant2_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant2_name_input" value="Danholm">
-										</div>
-										<label for="participant1_role">Роль</label>
-										<select class="form-control role-input" id="participant_roles_selector">
-											<option>Перевод с английского</option>
-											<option selected>Эдит</option>
-											<option>Редактура</option>
-											<option>Test</option>
-										</select>
-										<div class="form-group checkbox">
-                                                                                    <label>
-                                                                                        <input type="checkbox" class="form-control" id="participant2_team_show" name="participant2_team_show">
-                                                                                        &emsp;Отображать команду
-                                                                                    </label>
-                                                                                </div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse participant-data" role="tabpanel" id="participant3">
-								<input type="hidden" id="participant3_id" value="3">
-								<input type="hidden" id="participant3_order">
-								<input type="hidden" id="participant3_delete">
-								<div class="participant-data-main">
-									<h3>Настройка участника</h3>
-									<div class="form-group">
-										<label for="participant1_name">Участник</label>
-										<div id="participant3_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant3_name_input" value="Lady Astrel">
-										</div>
-										<label for="participant1_role">Роль</label>
-										<select class="form-control role-input" id="participant_roles_selector">
-											<option>Перевод с английского</option>
-											<option>Эдит</option>
-											<option selected>Редактура</option>
-											<option>Test</option>
-										</select>
-										<div class="form-group checkbox">
-                                                                                    <label>
-                                                                                        <input type="checkbox" class="form-control" id="participant3_team_show" name="participant3_team_show">
-                                                                                        &emsp;Отображать команду
-                                                                                    </label>
-                                                                                </div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse participant-data" role="tabpanel" id="participant4">
-								<input type="hidden" id="participant4_id">
-								<input type="hidden" id="participant4_order">
-								<input type="hidden" id="participant4_delete">
-								<div class="participant-data-main">
-									<h3>Настройка участника</h3>
-									<div class="form-group">
-										<label for="participant1_name">Участник</label>
-										<div id="participant4_names_selector">
-											<input class="form-control typeahead name-input" type="text" id="participant4_name_input" value="Test">
-										</div>
-										<label for="participant1_role">Роль</label>
-										<select class="form-control role-input" id="participant_roles_selector">
-											<option>Перевод с английского</option>
-											<option>Эдит</option>
-											<option>Редактура</option>
-											<option selected>Test</option>
-										</select>
-										<div class="form-group checkbox">
-                                                                                    <label>
-                                                                                        <input type="checkbox" class="form-control" id="participant4_team_show" name="participant4_team_show">
-                                                                                        &emsp;Отображать команду
-                                                                                    </label>
-                                                                                </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
-				</form>
+                <form>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group select sortable" id="participantselect">
+                                <a data-toggle="collapse" data-parent="#participantform" href="#participant1" aria-expanded="true" aria-controls="participant1" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="participant1_name">Ushwood</span> - <span class="hidden-sm hidden-xs" id="participant1_role">Перевод с английского</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#participantform" href="#participant2" aria-expanded="true" aria-controls="participant2" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="participant2_name">Danholm</span> - <span class="hidden-sm hidden-xs" id="participant2_role">Эдит</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#participantform" href="#participant3" aria-expanded="true" aria-controls="participant3" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="participant3_name">Lady Astrel</span> - <span class="hidden-sm hidden-xs" id="participant3_role">Редактура</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#participantform" href="#participant4" aria-expanded="true" aria-controls="participant4" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="participant4_name">Test</span> - <span class="hidden-sm hidden-xs" id="participant4_role">Test</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 admin-affix" id="participantform" role="tablist" aria-multiselectable="true">
+                            <div class="progress collapse">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span class="sr-only">0% Complete</span>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse participant-data" role="tabpanel" id="participant1">
+                                    <input type="hidden" id="participant1_id">
+                                    <input type="hidden" id="participant1_order">
+                                    <input type="hidden" id="participant1_delete">
+                                    <div class="participant-data-main">
+                                        <h3>Настройка участника</h3>
+                                        <div class="form-group">
+                                            <label for="participant1_name">Участник</label>
+                                            <div id="participant1_names_selector">
+                                                <input class="form-control typeahead name-input" type="text" id="participant1_name_input" value="Ushwood">
+                                            </div>
+                                            <label for="participant1_role">Роль</label>
+                                            <select class="form-control role-input" id="participant_roles_selector">
+                                                <option selected>Перевод с английского</option>
+                                                <option>Эдит</option>
+                                                <option>Редактура</option>
+                                                <option>Test</option>
+                                            </select>
+                                            <div class="form-group checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="form-control" id="participant1_team_show" name="participant1_team_show"> &emsp;Отображать команду
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse participant-data" role="tabpanel" id="participant2">
+                                    <input type="hidden" id="participant2_id">
+                                    <input type="hidden" id="participant2_order">
+                                    <input type="hidden" id="participant2_delete">
+                                    <div class="participant-data-main">
+                                        <h3>Настройка участника</h3>
+                                        <div class="form-group">
+                                            <label for="participant1_name">Участник</label>
+                                            <div id="participant2_names_selector">
+                                                <input class="form-control typeahead name-input" type="text" id="participant2_name_input" value="Danholm">
+                                            </div>
+                                            <label for="participant1_role">Роль</label>
+                                            <select class="form-control role-input" id="participant_roles_selector">
+                                                <option>Перевод с английского</option>
+                                                <option selected>Эдит</option>
+                                                <option>Редактура</option>
+                                                <option>Test</option>
+                                            </select>
+                                            <div class="form-group checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="form-control" id="participant2_team_show" name="participant2_team_show"> &emsp;Отображать команду
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse participant-data" role="tabpanel" id="participant3">
+                                    <input type="hidden" id="participant3_id" value="3">
+                                    <input type="hidden" id="participant3_order">
+                                    <input type="hidden" id="participant3_delete">
+                                    <div class="participant-data-main">
+                                        <h3>Настройка участника</h3>
+                                        <div class="form-group">
+                                            <label for="participant1_name">Участник</label>
+                                            <div id="participant3_names_selector">
+                                                <input class="form-control typeahead name-input" type="text" id="participant3_name_input" value="Lady Astrel">
+                                            </div>
+                                            <label for="participant1_role">Роль</label>
+                                            <select class="form-control role-input" id="participant_roles_selector">
+                                                <option>Перевод с английского</option>
+                                                <option>Эдит</option>
+                                                <option selected>Редактура</option>
+                                                <option>Test</option>
+                                            </select>
+                                            <div class="form-group checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="form-control" id="participant3_team_show" name="participant3_team_show"> &emsp;Отображать команду
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse participant-data" role="tabpanel" id="participant4">
+                                    <input type="hidden" id="participant4_id">
+                                    <input type="hidden" id="participant4_order">
+                                    <input type="hidden" id="participant4_delete">
+                                    <div class="participant-data-main">
+                                        <h3>Настройка участника</h3>
+                                        <div class="form-group">
+                                            <label for="participant1_name">Участник</label>
+                                            <div id="participant4_names_selector">
+                                                <input class="form-control typeahead name-input" type="text" id="participant4_name_input" value="Test">
+                                            </div>
+                                            <label for="participant1_role">Роль</label>
+                                            <select class="form-control role-input" id="participant_roles_selector">
+                                                <option>Перевод с английского</option>
+                                                <option>Эдит</option>
+                                                <option>Редактура</option>
+                                                <option selected>Test</option>
+                                            </select>
+                                            <div class="form-group checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="form-control" id="participant4_team_show" name="participant4_team_show"> &emsp;Отображать команду
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
 
                 <div class="divHeader">
                     <span>Главы</span>
                     <div class="btn-group" role="group" aria-label="Панель глав">
-                        <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-chapter-add"><i class="fa fa-plus"></i></button>
-                        <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i></button>
+                        <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-chapter-add"><i class="fa fa-plus"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i>
+                        </button>
+                        <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                        </button>
                     </div>
                 </div>
-				<form>
-				<div class="row">
-					<div class="col-xs-4">
-						<div class="list-group select sortable" id="chapterselect">
-							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter1" aria-expanded="true" aria-controls="chapter1" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter1_name">Начальные иллюстрации</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter2" aria-expanded="true" aria-controls="chapter2" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter2_name">Пролог</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter3" aria-expanded="true" aria-controls="chapter3" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter3_name">Глава 1</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#chapterform" href="#chapter4" aria-expanded="true" aria-controls="chapter4" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<span class="hidden-sm hidden-xs"  id="chapter4_name">Глава 2</span>
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-8 admin-affix" id="chapterform" role="tablist" aria-multiselectable="true">
-                        &nbsp;
-						<div class="progress collapse">
-							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-								<span class="sr-only">0% Complete</span>
-							</div>
-						</div>
-						<div  class="panel">
-							<div class="row collapse chapter-data" role="tabpanel" id="chapter1">
-								<input type="hidden" id="chapter1_id">
-								<input type="hidden" id="chapter1_order">
-								<input type="hidden" id="chapter1_delete">
-								<div class="chapter-data-main">
-									<h3>Настройка главы</h3>
-									<div class="form-group checkbox">
-										<label>
-											<input type="checkbox" class="form-control is-subchapter" id="chapter1_is_subchapter" name="chapter1_is_subchapter">
-											&emsp;Подглава
-										</label>
-									</div>
-									<div class="form-group">
-										<label for="chapter1_url">Ссылка</label>
-										<input class="form-control url-input" type="text" id="chapter1_url_input">
-										<label for="chapter1_name">Заголовок</label>
-										<input class="form-control name-input" type="text" id="chapter1_name_input" value="Начальные иллюстрации">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse chapter-data" role="tabpanel" id="chapter2">
-								<input type="hidden" id="chapter2_id">
-								<input type="hidden" id="chapter2_order">
-								<input type="hidden" id="chapter2_delete">
-								<div class="chapter-data-main">
-									<h3>Настройка главы</h3>
-									<div class="form-group checkbox">
-										<label>
-											<input type="checkbox" class="form-control is-subchapter" id="chapter2_is_subchapter" name="chapter2_is_subchapter">
-											&emsp;Подглава
-										</label>
-									</div>
-									<div class="form-group">
-										<label for="chapter2_url">Ссылка</label>
-										<input class="form-control url-input" type="text" id="chapter2_url_input">
-										<label for="chapter2_name">Заголовок</label>
-										<input class="form-control name-input" type="text" id="chapter2_name_input" value="Пролог">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse chapter-data" role="tabpanel" id="chapter3">
-								<input type="hidden" id="chapter3_id">
-								<input type="hidden" id="chapter3_order">
-								<input type="hidden" id="chapter3_delete">
-								<div class="chapter-data-main">
-									<h3>Настройка главы</h3>
-									<div class="form-group checkbox">
-										<label>
-											<input type="checkbox" class="form-control is-subchapter" id="chapter3_is_subchapter" name="chapter3_is_subchapter">
-											&emsp;Подглава
-										</label>
-									</div>
-									<div class="form-group">
-										<label for="chapter3_url">Ссылка</label>
-										<input class="form-control url-input" type="text" id="chapter3_url_input">
-										<label for="chapter3_name">Заголовок</label>
-										<input class="form-control name-input" type="text" id="chapter3_name_input" value="Глава 1">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse chapter-data" role="tabpanel" id="chapter4">
-								<input type="hidden" id="chapter4_id">
-								<input type="hidden" id="chapter4_order">
-								<input type="hidden" id="chapter4_delete">
-								<div class="chapter-data-main">
-									<h3>Настройка главы</h3>
-									<div class="form-group checkbox">
-										<label>
-											<input type="checkbox" class="form-control is-subchapter" id="chapter4_is_subchapter" name="chapter4_is_subchapter">
-											&emsp;Подглава
-										</label>
-									</div>
-									<div class="form-group">
-										<label for="chapter4_url">Ссылка</label>
-										<input class="form-control url-input" type="text" id="chapter4_url_input">
-										<label for="chapter4_name">Заголовок</label>
-										<input class="form-control name-input" type="text" id="chapter4_name_input" value="Глава 2">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
-				</form>
+                <form>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group select sortable" id="chapterselect">
+                                <a data-toggle="collapse" data-parent="#chapterform" href="#chapter1" aria-expanded="true" aria-controls="chapter1" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="chapter1_name">Начальные иллюстрации</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#chapterform" href="#chapter2" aria-expanded="true" aria-controls="chapter2" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="chapter2_name">Пролог</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#chapterform" href="#chapter3" aria-expanded="true" aria-controls="chapter3" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="chapter3_name">Глава 1</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#chapterform" href="#chapter4" aria-expanded="true" aria-controls="chapter4" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <span class="hidden-sm hidden-xs" id="chapter4_name">Глава 2</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 admin-affix" id="chapterform" role="tablist" aria-multiselectable="true">
+                            &nbsp;
+                            <div class="progress collapse">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span class="sr-only">0% Complete</span>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse chapter-data" role="tabpanel" id="chapter1">
+                                    <input type="hidden" id="chapter1_id">
+                                    <input type="hidden" id="chapter1_order">
+                                    <input type="hidden" id="chapter1_delete">
+                                    <div class="chapter-data-main">
+                                        <h3>Настройка главы</h3>
+                                        <div class="form-group checkbox">
+                                            <label>
+                                                <input type="checkbox" class="form-control is-subchapter" id="chapter1_is_subchapter" name="chapter1_is_subchapter"> &emsp;Подглава
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="chapter1_url">Ссылка</label>
+                                            <input class="form-control url-input" type="text" id="chapter1_url_input">
+                                            <label for="chapter1_name">Заголовок</label>
+                                            <input class="form-control name-input" type="text" id="chapter1_name_input" value="Начальные иллюстрации">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse chapter-data" role="tabpanel" id="chapter2">
+                                    <input type="hidden" id="chapter2_id">
+                                    <input type="hidden" id="chapter2_order">
+                                    <input type="hidden" id="chapter2_delete">
+                                    <div class="chapter-data-main">
+                                        <h3>Настройка главы</h3>
+                                        <div class="form-group checkbox">
+                                            <label>
+                                                <input type="checkbox" class="form-control is-subchapter" id="chapter2_is_subchapter" name="chapter2_is_subchapter"> &emsp;Подглава
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="chapter2_url">Ссылка</label>
+                                            <input class="form-control url-input" type="text" id="chapter2_url_input">
+                                            <label for="chapter2_name">Заголовок</label>
+                                            <input class="form-control name-input" type="text" id="chapter2_name_input" value="Пролог">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse chapter-data" role="tabpanel" id="chapter3">
+                                    <input type="hidden" id="chapter3_id">
+                                    <input type="hidden" id="chapter3_order">
+                                    <input type="hidden" id="chapter3_delete">
+                                    <div class="chapter-data-main">
+                                        <h3>Настройка главы</h3>
+                                        <div class="form-group checkbox">
+                                            <label>
+                                                <input type="checkbox" class="form-control is-subchapter" id="chapter3_is_subchapter" name="chapter3_is_subchapter"> &emsp;Подглава
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="chapter3_url">Ссылка</label>
+                                            <input class="form-control url-input" type="text" id="chapter3_url_input">
+                                            <label for="chapter3_name">Заголовок</label>
+                                            <input class="form-control name-input" type="text" id="chapter3_name_input" value="Глава 1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse chapter-data" role="tabpanel" id="chapter4">
+                                    <input type="hidden" id="chapter4_id">
+                                    <input type="hidden" id="chapter4_order">
+                                    <input type="hidden" id="chapter4_delete">
+                                    <div class="chapter-data-main">
+                                        <h3>Настройка главы</h3>
+                                        <div class="form-group checkbox">
+                                            <label>
+                                                <input type="checkbox" class="form-control is-subchapter" id="chapter4_is_subchapter" name="chapter4_is_subchapter"> &emsp;Подглава
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="chapter4_url">Ссылка</label>
+                                            <input class="form-control url-input" type="text" id="chapter4_url_input">
+                                            <label for="chapter4_name">Заголовок</label>
+                                            <input class="form-control name-input" type="text" id="chapter4_name_input" value="Глава 2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
 
                 <div class="divHeader">
                     <span>Обновления</span>
                     <div class="btn-group" role="group" aria-label="Панель глав">
-                        <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i></button>
-                        <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-update-delete" disabled><i class="fa fa-trash-o"></i></button>
+                        <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-update-delete" disabled><i class="fa fa-trash-o"></i>
+                        </button>
+                        <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                        </button>
                     </div>
                 </div>
-				<form>
-				<div class="row">
-					<div class="col-xs-4">
-						<div class="list-group select sortable" id="updateselect">
-							<a data-toggle="collapse" data-parent="#updateform" href="#update1" aria-expanded="true" aria-controls="update1" class="list-group-item" >
-								<span class="hidden-sm hidden-xs"  id="update1_date">2015-05-01 03-12</span>: <span class="hidden-sm hidden-xs"  id="update1_chapter">Весь том</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#updateform" href="#update2" aria-expanded="true" aria-controls="update2" class="list-group-item" >
-								<span class="hidden-sm hidden-xs"  id="update2_date">2013-01-01 05-02</span>: <span class="hidden-sm hidden-xs"  id="update2_chapter">Начальные иллюстрации (1)</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#updateform" href="#update3" aria-expanded="true" aria-controls="update3" class="list-group-item" >
-								<span class="hidden-sm hidden-xs"  id="update3_date">2074-12-13 15-35</span>: <span class="hidden-sm hidden-xs"  id="update3_chapter">Пролог (2)</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#updateform" href="#update4" aria-expanded="true" aria-controls="update4" class="list-group-item" >
-								<span class="hidden-sm hidden-xs"  id="update4_date">2015-05-01 23-25</span>: <span class="hidden-sm hidden-xs"  id="update4_chapter">Глава 1 (3)</span>
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-8 admin-affix" id="updateform" role="tablist" aria-multiselectable="true">
-                        &nbsp;
-						<div class="progress collapse update-insert">
-							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-								<span class="sr-only">0% Complete</span>
-							</div>
-						</div>
-						<div  class="panel">
-							<div class="row collapse update-data" role="tabpanel" id="update1">
-								<input type="hidden" id="update1_id">
-								<input type="hidden" id="update1_order">
-								<input type="hidden" id="update1_delete">
-								<div class="update-data-main">
-									<h3>Настройка обновления</h3>
-									<div class="form-group">
-										<label for="update1_type">Тип</label>
-										<select id="update1_type" class="form-control update_type">
-											<option>Перевод</option>
-											<option>Глобальная редактура</option>
-											<option>Обновление иллюстраций</option>
-											<option>Другое</option>
-										</select>
-										<label for="update1_chapter">Глава</label>
-										<select id="update1_chapter_select" class="form-control update_chapter">
-										</select>
-										<label for="update1_date_input">Дата</label>
-										<input class="form-control date-input" type="text" id="update1_date_input" value="2015-05-01 03-12">
-										<label for="update1_name">Описание (опционально)</label>
-										<input class="form-control" type="text" id="update1_description" placeholder="Перевод">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse update-data" role="tabpanel" id="update2">
-								<input type="hidden" id="update2_id">
-								<input type="hidden" id="update2_order">
-								<input type="hidden" id="update2_delete">
-								<div class="update-data-main">
-									<h3>Настройка обновления</h3>
-									<div class="form-group">
-										<label for="update2_type">Тип</label>
-										<select id="update2_type" class="form-control update_type">
-											<option>Перевод</option>
-											<option>Глобальная редактура</option>
-											<option>Обновление иллюстраций</option>
-											<option>Другое</option>
-										</select>
-										<label for="update2_chapter">Глава</label>
-										<select id="update2_chapter_select" class="form-control update_chapter">
-										</select>
-										<label for="update2_date_input">Дата</label>
-										<input class="form-control date-input" type="text" id="update2_date_input" value="2013-01-01 05-02">
-										<label for="update2_name">Описание (опционально)</label>
-										<input class="form-control" type="text" id="update2_description" placeholder="Перевод">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse update-data" role="tabpanel" id="update3">
-								<input type="hidden" id="update3_id">
-								<input type="hidden" id="update3_order">
-								<input type="hidden" id="update3_delete">
-								<div class="update-data-main">
-									<h3>Настройка обновления</h3>
-									<div class="form-group">
-										<label for="update3_type">Тип</label>
-										<select id="update3_type" class="form-control update_type">
-											<option>Перевод</option>
-											<option>Глобальная редактура</option>
-											<option>Обновление иллюстраций</option>
-											<option>Другое</option>
-										</select>
-										<label for="update3_chapter">Глава</label>
-										<select id="update3_chapter_select" class="form-control update_chapter">
-										</select>
-										<label for="update3_date_input">Дата</label>
-										<input class="form-control date-input" type="text" id="update3_date_input" value="2074-12-13 15-35">
-										<label for="update3_name">Описание (опционально)</label>
-										<input class="form-control" type="text" id="update3_description" placeholder="Перевод">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse update-data" role="tabpanel" id="update4">
-								<input type="hidden" id="update4_id">
-								<input type="hidden" id="update4_order">
-								<input type="hidden" id="update4_delete">
-								<div class="update-data-main">
-									<h3>Настройка обновления</h3>
-									<div class="form-group">
-										<label for="update4_type">Тип</label>
-										<select id="update4_type" class="form-control update_type">
-											<option>Перевод</option>
-											<option>Глобальная редактура</option>
-											<option>Обновление иллюстраций</option>
-											<option>Другое</option>
-										</select>
-										<label for="update4_chapter">Глава</label>
-										<select id="update4_chapter_select" class="form-control update_chapter">
-										</select>
-										<label for="update4_date_input">Дата</label>
-                                                                                    <div class="form-group">
-                                                                                        <input type="text" class="form-control date-input" id="update4_date_input" value="2015-5-1 23-25">
-                                                                                    </div>
-                                                                                </form>
-										<label for="update4_name">Описание (опционально)</label>
-										<input class="form-control" type="text" id="update4_description" placeholder="Перевод">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
-				</form>
-
-
-                <div class="divHeader">
-                    <span>Изображения</span>
-                    <div class="btn-group" role="group" aria-label="Панель изображений">
-                        <button type="button" class="btn btn-success" title="Добавить новые изображения" id="btn-image-add"><i class="fa fa-plus"></i><input type="file" class='fileupload' multiple></button>
-                        <button type="button" class="btn btn-default btn-border" title="Режим замены изображений" id="btn-image-replace-main"><i class="fa fa-retweet"></i></button>
-                        <button type="button" class="btn btn-default btn-border" title="Режим добавления/замены покрасов" id="btn-image-reset-color"><i class="fa fa-retweet" style="color: #60a9d4;"></i><i class="fa fa-paint-brush" style="font-size: 9px;margin-left: -9px;"></i></button>
-                        <button type="button" class="btn btn-danger" title="Удалить изображение" id="btn-image-delete" disabled><i class="fa fa-trash-o"></i></button>
-                    </div>
+                <form>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group select sortable" id="updateselect">
+                                <a data-toggle="collapse" data-parent="#updateform" href="#update1" aria-expanded="true" aria-controls="update1" class="list-group-item">
+                                    <span class="hidden-sm hidden-xs" id="update1_date">2015-05-01 03-12</span>: <span class="hidden-sm hidden-xs" id="update1_chapter">Весь том</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#updateform" href="#update2" aria-expanded="true" aria-controls="update2" class="list-group-item">
+                                    <span class="hidden-sm hidden-xs" id="update2_date">2013-01-01 05-02</span>: <span class="hidden-sm hidden-xs" id="update2_chapter">Начальные иллюстрации (1)</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#updateform" href="#update3" aria-expanded="true" aria-controls="update3" class="list-group-item">
+                                    <span class="hidden-sm hidden-xs" id="update3_date">2074-12-13 15-35</span>: <span class="hidden-sm hidden-xs" id="update3_chapter">Пролог (2)</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#updateform" href="#update4" aria-expanded="true" aria-controls="update4" class="list-group-item">
+                                    <span class="hidden-sm hidden-xs" id="update4_date">2015-05-01 23-25</span>: <span class="hidden-sm hidden-xs" id="update4_chapter">Глава 1 (3)</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 admin-affix" id="updateform" role="tablist" aria-multiselectable="true">
+                            &nbsp;
+                            <div class="progress collapse update-insert">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span class="sr-only">0% Complete</span>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse update-data" role="tabpanel" id="update1">
+                                    <input type="hidden" id="update1_id">
+                                    <input type="hidden" id="update1_order">
+                                    <input type="hidden" id="update1_delete">
+                                    <div class="update-data-main">
+                                        <h3>Настройка обновления</h3>
+                                        <div class="form-group">
+                                            <label for="update1_type">Тип</label>
+                                            <select id="update1_type" class="form-control update_type">
+                                                <option>Перевод</option>
+                                                <option>Глобальная редактура</option>
+                                                <option>Обновление иллюстраций</option>
+                                                <option>Другое</option>
+                                            </select>
+                                            <label for="update1_chapter">Глава</label>
+                                            <select id="update1_chapter_select" class="form-control update_chapter">
+                                            </select>
+                                            <label for="update1_date_input">Дата</label>
+                                            <input class="form-control date-input" type="text" id="update1_date_input" value="2015-05-01 03-12">
+                                            <label for="update1_name">Описание (опционально)</label>
+                                            <input class="form-control" type="text" id="update1_description" placeholder="Перевод">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse update-data" role="tabpanel" id="update2">
+                                    <input type="hidden" id="update2_id">
+                                    <input type="hidden" id="update2_order">
+                                    <input type="hidden" id="update2_delete">
+                                    <div class="update-data-main">
+                                        <h3>Настройка обновления</h3>
+                                        <div class="form-group">
+                                            <label for="update2_type">Тип</label>
+                                            <select id="update2_type" class="form-control update_type">
+                                                <option>Перевод</option>
+                                                <option>Глобальная редактура</option>
+                                                <option>Обновление иллюстраций</option>
+                                                <option>Другое</option>
+                                            </select>
+                                            <label for="update2_chapter">Глава</label>
+                                            <select id="update2_chapter_select" class="form-control update_chapter">
+                                            </select>
+                                            <label for="update2_date_input">Дата</label>
+                                            <input class="form-control date-input" type="text" id="update2_date_input" value="2013-01-01 05-02">
+                                            <label for="update2_name">Описание (опционально)</label>
+                                            <input class="form-control" type="text" id="update2_description" placeholder="Перевод">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse update-data" role="tabpanel" id="update3">
+                                    <input type="hidden" id="update3_id">
+                                    <input type="hidden" id="update3_order">
+                                    <input type="hidden" id="update3_delete">
+                                    <div class="update-data-main">
+                                        <h3>Настройка обновления</h3>
+                                        <div class="form-group">
+                                            <label for="update3_type">Тип</label>
+                                            <select id="update3_type" class="form-control update_type">
+                                                <option>Перевод</option>
+                                                <option>Глобальная редактура</option>
+                                                <option>Обновление иллюстраций</option>
+                                                <option>Другое</option>
+                                            </select>
+                                            <label for="update3_chapter">Глава</label>
+                                            <select id="update3_chapter_select" class="form-control update_chapter">
+                                            </select>
+                                            <label for="update3_date_input">Дата</label>
+                                            <input class="form-control date-input" type="text" id="update3_date_input" value="2074-12-13 15-35">
+                                            <label for="update3_name">Описание (опционально)</label>
+                                            <input class="form-control" type="text" id="update3_description" placeholder="Перевод">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse update-data" role="tabpanel" id="update4">
+                                    <input type="hidden" id="update4_id">
+                                    <input type="hidden" id="update4_order">
+                                    <input type="hidden" id="update4_delete">
+                                    <div class="update-data-main">
+                                        <h3>Настройка обновления</h3>
+                                        <div class="form-group">
+                                            <label for="update4_type">Тип</label>
+                                            <select id="update4_type" class="form-control update_type">
+                                                <option>Перевод</option>
+                                                <option>Глобальная редактура</option>
+                                                <option>Обновление иллюстраций</option>
+                                                <option>Другое</option>
+                                            </select>
+                                            <label for="update4_chapter">Глава</label>
+                                            <select id="update4_chapter_select" class="form-control update_chapter">
+                                            </select>
+                                            <label for="update4_date_input">Дата</label>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control date-input" id="update4_date_input" value="2015-5-1 23-25">
+                                            </div>
+                </form>
+                <label for="update4_name">Описание (опционально)</label>
+                <input class="form-control" type="text" id="update4_description" placeholder="Перевод">
                 </div>
-			<form>
-				<div class="row">
-					<div class="col-xs-4">
-						<div class="list-group select sortable" id="imageselect">
-							<a class="list-group-item heading" data-chapter-id="-1" value="1"><span class="move">Обложки</span></a>
-							<a class="list-group-item heading" data-chapter-id="1"><span class="move">Начальные иллюстрации</span></a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image1" aria-expanded="true" aria-controls="image1" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image2" aria-expanded="true" aria-controls="image2" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a class="list-group-item heading" data-chapter-id="2"><span class="move">Пролог</span></a>
-							<a class="list-group-item heading" data-chapter-id="3"><span class="move">Глава 1</span></a>
-							<a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item" >
-								<i class="fa fa-ellipsis-v move"></i>
-								<center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg"></center>
-								<span class="hidden-sm hidden-xs">20.02.2015</span>
-							</a>
-							<a class="list-group-item heading" data-chapter-id="4"><span class="move">Глава 2</span></a>
-						</div>
-					</div>
-					<div class="col-xs-8 admin-affix" id="imageform" role="tablist" aria-multiselectable="true">
-                        &nbsp;
-						<div class="progress collapse">
-							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-								<span class="sr-only">0% Complete</span>
-							</div>
-						</div>
-						<div  class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="image1">
-								<input type="hidden" id="image1_id">
-								<input type="hidden" id="image1_order">
-								<input type="hidden" id="image1_chapter_id">
-								<input type="hidden" id="image1_delete">
-								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
-									<center class="btn-image-replace">
-                                       <input type="file" class='fileupload'>
-                                       <img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive">
-                                    </center>
-                                    <div class="form-group">
-                                        <label for="image1_main_date">Дата загрузки</label>
-                                        <input type="text" class="form-control disable" disabled id="image1_main_date" value="20.02.2015 10:00:00">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image1_main_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image1_main_name" value="*имя*">
-                                    </div>
-								</div>
-								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
-								    <center class="btn-image-replace">
-                                       <input type="file" class='fileupload'>
-                                    </center>
-                                    <div class="form-group">
-                                        <label for="image1_color_date">Дата загрузки</label>
-                                        <input type="text" class="form-control disable" disabled id="image1_color_date" value="20.02.2015 10:00:00">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image1_color_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image1_color_name" value="*имя*">
-                                    </div>
-                                </div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="image2">
-								<input type="hidden" id="image2_id">
-								<input type="hidden" id="image2_order">
-								<input type="hidden" id="image2_chapter_id">
-								<input type="hidden" id="image2_delete">
-								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
-									<center class="btn-image-replace">
-                                       <input type="file" class='fileupload'>
-                                       <img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive">
-									</center>
-                                    <div class="form-group">
-										<label for="image2_main_date">Дата загрузки</label>
-										<input type="text" class="form-control disable" disabled id="image2_main_date" value="20.02.2015 10:00:00">
-									</div>
-                                    <div class="form-group">
-                                        <label for="image2_main_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image2_main_name" value="*имя*">
-                                    </div>
-								</div>
-								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
-								    <center class="btn-image-replace">
-                                       <input type="file" class='fileupload'>
-                                    </center>
-                                    <div class="form-group">
-                                        <label for="image2_color_date">Дата загрузки</label>
-                                        <input type="text" class="form-control disable" disabled id="image2_color_date" value="20.02.2015 10:00:00">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image2_color_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image2_color_name" value="*имя*">
-                                    </div>
-                                </div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="image3">
-								<input type="hidden" id="image3_id">
-								<input type="hidden" id="image3_order">
-								<input type="hidden" id="image3_chapter_id">
-								<input type="hidden" id="image3_delete">
-								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
-									<center class="btn-image-replace">
-                                       <input type="file" class='fileupload'>
-                                       <img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png" class="img-responsive">
-									</center>
-                                    <div class="form-group">
-										<label for="image3_main_date">Дата загрузки</label>
-										<input type="text" class="form-control disable" disabled id="image3_main_date" value="20.02.2015 10:00:00">
-									</div>
-                                    <div class="form-group">
-                                        <label for="image3_main_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image3_main_name" value="*имя*">
-                                    </div>
-								</div>
-								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
-								    <center class="btn-image-replace">
-                                       <input type="file" class='fileupload'>
-                                    </center>
-                                    <div class="form-group">
-                                        <label for="image3_color_date">Дата загрузки</label>
-                                        <input type="text" class="form-control disable" disabled id="image3_color_date" value="20.02.2015 10:00:00">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image3_color_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image3_color_name" value="*имя*">
-                                    </div>
-                                </div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="image4">
-								<input type="hidden" id="image4_id">
-								<input type="hidden" id="image4_order">
-								<input type="hidden" id="image4_chapter_id">
-								<input type="hidden" id="image4_delete">
-								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
-									<center class="btn-image-replace">
-                                      <input type="file" class='fileupload'>
-                                      <img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
-									</center>
-                                    <div class="form-group">
-										<label for="image4_main_date">Дата загрузки</label>
-										<input type="text" class="form-control disable" disabled id="image4_main_date" value="20.02.2015 10:00:00">
-									</div>
-                                    <div class="form-group">
-                                        <label for="image4_main_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image4_main_name" value="*имя*">
-                                    </div>
-								</div>
-								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
-								    <center class="btn-image-replace">
-                                       <input type="file" class='fileupload'>
-                                    </center>
-                                    <div class="form-group">
-                                        <label for="image4_color_date">Дата загрузки</label>
-                                        <input type="text" class="form-control disable" disabled id="image4_color_date" value="20.02.2015 10:00:00">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image4_color_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image4_color_name" value="*имя*">
-                                    </div>
-                                </div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="row collapse image-data" role="tabpanel" id="image5">
-								<input type="hidden" id="image5_id">
-								<input type="hidden" id="image5_order">
-								<input type="hidden" id="image5_chapter_id">
-								<input type="hidden" id="image5_delete">
-								<div class="col-xs-6 image-data-main">
-									<h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
-									<center class="btn-image-replace">
-                                        <input type="file" class='fileupload'>
-                                        <img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
-									</center>
-                                    <div class="form-group">
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </form>
 
-										<label for="image5_main_date">Дата загрузки</label>
-										<input type="text" class="form-control disable" disabled id="image5_main_date" value="20.02.2015 10:00:00">
-									</div>
-                                    <div class="form-group">
-                                        <label for="image5_main_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image5_main_name" value="*имя*">
+
+                <form>
+                    <div class="divHeader">
+                        <span>Изображения</span>
+                        <div class="btn-group" role="group" aria-label="Панель изображений">
+                            <button type="button" class="btn btn-success" title="Добавить новые изображения" id="btn-image-add"><i class="fa fa-plus"></i>
+                                <input type="file" class='fileupload' multiple>
+                            </button>
+                            <button type="button" class="btn btn-default btn-border" title="Режим замены изображений" id="btn-image-replace-main"><i class="fa fa-retweet"></i>
+                            </button>
+                            <button type="button" class="btn btn-default btn-border" title="Режим добавления/замены покрасов" id="btn-image-reset-color"><i class="fa fa-retweet" style="color: #60a9d4;"></i><i class="fa fa-paint-brush" style="font-size: 9px;margin-left: -9px;"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" title="Удалить изображение" id="btn-image-delete" disabled><i class="fa fa-trash-o"></i>
+                            </button>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group select sortable" id="imageselect">
+                                <a class="list-group-item heading" data-chapter-id="-1" value="1"><span class="move">Обложки</span></a>
+                                <a class="list-group-item heading" data-chapter-id="1"><span class="move">Начальные иллюстрации</span></a>
+                                <a data-toggle="collapse" data-parent="#imageform" href="#image1" aria-expanded="true" aria-controls="image1" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <center><img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png">
+                                    </center>
+                                    <span class="hidden-sm hidden-xs">20.02.2015</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#imageform" href="#image2" aria-expanded="true" aria-controls="image2" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <center><img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png">
+                                    </center>
+                                    <span class="hidden-sm hidden-xs">20.02.2015</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#imageform" href="#image3" aria-expanded="true" aria-controls="image3" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <center><img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png">
+                                    </center>
+                                    <span class="hidden-sm hidden-xs">20.02.2015</span>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#imageform" href="#image4" aria-expanded="true" aria-controls="image4" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg">
+                                    </center>
+                                    <span class="hidden-sm hidden-xs">20.02.2015</span>
+                                </a>
+                                <a class="list-group-item heading" data-chapter-id="2"><span class="move">Пролог</span></a>
+                                <a class="list-group-item heading" data-chapter-id="3"><span class="move">Глава 1</span></a>
+                                <a data-toggle="collapse" data-parent="#imageform" href="#image5" aria-expanded="true" aria-controls="image5" class="list-group-item">
+                                    <i class="fa fa-ellipsis-v move"></i>
+                                    <center><img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg">
+                                    </center>
+                                    <span class="hidden-sm hidden-xs">20.02.2015</span>
+                                </a>
+                                <a class="list-group-item heading" data-chapter-id="4"><span class="move">Глава 2</span></a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 admin-affix" id="imageform" role="tablist" aria-multiselectable="true">
+                            &nbsp;
+                            <div class="progress collapse">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span class="sr-only">0% Complete</span>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse image-data" role="tabpanel" id="image1">
+                                    <input type="hidden" id="image1_id">
+                                    <input type="hidden" id="image1_order">
+                                    <input type="hidden" id="image1_chapter_id">
+                                    <input type="hidden" id="image1_delete">
+                                    <div class="col-xs-6 image-data-main">
+                                        <h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                            <img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive">
+                                        </center>
+                                        <div class="form-group">
+                                            <label for="image1_main_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image1_main_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image1_main_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image1_main_name" value="*имя*">
+                                        </div>
                                     </div>
-								</div>
-								<div class="col-xs-6 image-data-color">
-									<h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
-									<center class="btn-image-replace">
-                                        <input type="file" class='fileupload'>
-                                        <img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
-									</center>
-                                    <div class="form-group">
-										<label for="image5_color_date">Дата загрузки</label>
-										<input type="text" class="form-control disable" disabled id="image5_color_date" value="20.02.2015 10:00:00">
-									</div>
-                                    <div class="form-group">
-                                        <label for="image5_color_name">Имя файла</label>
-                                        <input type="text" class="form-control disable" disabled id="image5_color_name" value="*имя*">
+                                    <div class="col-xs-6 image-data-color">
+                                        <h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                        </center>
+                                        <div class="form-group">
+                                            <label for="image1_color_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image1_color_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image1_color_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image1_color_name" value="*имя*">
+                                        </div>
                                     </div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-            </form>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse image-data" role="tabpanel" id="image2">
+                                    <input type="hidden" id="image2_id">
+                                    <input type="hidden" id="image2_order">
+                                    <input type="hidden" id="image2_chapter_id">
+                                    <input type="hidden" id="image2_delete">
+                                    <div class="col-xs-6 image-data-main">
+                                        <h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                            <img src="http://ruranobe.ru/w/images/d/d9/AW_v09_02.png" class="img-responsive">
+                                        </center>
+                                        <div class="form-group">
+                                            <label for="image2_main_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image2_main_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image2_main_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image2_main_name" value="*имя*">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 image-data-color">
+                                        <h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                        </center>
+                                        <div class="form-group">
+                                            <label for="image2_color_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image2_color_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image2_color_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image2_color_name" value="*имя*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse image-data" role="tabpanel" id="image3">
+                                    <input type="hidden" id="image3_id">
+                                    <input type="hidden" id="image3_order">
+                                    <input type="hidden" id="image3_chapter_id">
+                                    <input type="hidden" id="image3_delete">
+                                    <div class="col-xs-6 image-data-main">
+                                        <h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                            <img src="http://ruranobe.ru/w/images/4/45/AW_v09_06.png" class="img-responsive">
+                                        </center>
+                                        <div class="form-group">
+                                            <label for="image3_main_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image3_main_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image3_main_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image3_main_name" value="*имя*">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 image-data-color">
+                                        <h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                        </center>
+                                        <div class="form-group">
+                                            <label for="image3_color_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image3_color_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image3_color_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image3_color_name" value="*имя*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse image-data" role="tabpanel" id="image4">
+                                    <input type="hidden" id="image4_id">
+                                    <input type="hidden" id="image4_order">
+                                    <input type="hidden" id="image4_chapter_id">
+                                    <input type="hidden" id="image4_delete">
+                                    <div class="col-xs-6 image-data-main">
+                                        <h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                            <img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
+                                        </center>
+                                        <div class="form-group">
+                                            <label for="image4_main_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image4_main_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image4_main_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image4_main_name" value="*имя*">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 image-data-color">
+                                        <h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Добавить изображение"><i class="fa fa-plus"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                        </center>
+                                        <div class="form-group">
+                                            <label for="image4_color_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image4_color_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image4_color_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image4_color_name" value="*имя*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="row collapse image-data" role="tabpanel" id="image5">
+                                    <input type="hidden" id="image5_id">
+                                    <input type="hidden" id="image5_order">
+                                    <input type="hidden" id="image5_chapter_id">
+                                    <input type="hidden" id="image5_delete">
+                                    <div class="col-xs-6 image-data-main">
+                                        <h3>Основа <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                            <img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
+                                        </center>
+                                        <div class="form-group">
+
+                                            <label for="image5_main_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image5_main_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image5_main_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image5_main_name" value="*имя*">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 image-data-color">
+                                        <h3>Покрас <button type="button" class="btn btn-default btn-image-replace" title="Заменить изображение"><i class="fa fa-retweet"></i><input type="file" class='fileupload'></button></h3>
+                                        <center class="btn-image-replace">
+                                            <input type="file" class='fileupload'>
+                                            <img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
+                                        </center>
+                                        <div class="form-group">
+                                            <label for="image5_color_date">Дата загрузки</label>
+                                            <input type="text" class="form-control disable" disabled id="image5_color_date" value="20.02.2015 10:00:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image5_color_name">Имя файла</label>
+                                            <input type="text" class="form-control disable" disabled id="image5_color_name" value="*имя*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </main>
         </div>
 
@@ -937,26 +966,53 @@
             </div>
             <div class="projectBlock">
                 <div class="project width220">
-                <center><a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="220" height="73"></a><a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" width="220" height="73"></a><a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" width="220" height="73"></a><a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" width="220" height="73"></a><a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" width="220" height="73"></a><a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" width="220" height="73"></a><a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" width="220" height="73"></a><a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" width="220" height="73"></a><a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" width="220" height="73"></a><a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" width="220" height="73"></a><a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" width="220" height="73"></a><a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" width="220" height="73"></a></center>
+                    <center>
+                        <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="220" height="73">
+                        </a>
+                        <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" width="220" height="73">
+                        </a>
+                        <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" width="220" height="73">
+                        </a>
+                        <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" width="220" height="73">
+                        </a>
+                        <a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" width="220" height="73">
+                        </a>
+                        <a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" width="220" height="73">
+                        </a>
+                        <a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" width="220" height="73">
+                        </a>
+                        <a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" width="220" height="73">
+                        </a>
+                        <a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" width="220" height="73">
+                        </a>
+                        <a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" width="220" height="73">
+                        </a>
+                        <a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" width="220" height="73">
+                        </a>
+                        <a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" width="220" height="73">
+                        </a>
+                    </center>
                 </div>
             </div>
         </aside>
-</div><div class="container">
-    <footer>
-        <div class="footer">
-            <a href="#">Обновления</a>
-            <a href="#">Проекты</a>
-            <a href="#">Набор в команду</a>
-            <a href="#">FAQ</a>
-            <a href="#">О нас</a>
-            <a href="#">Помощь</a>
-            <a href="#">Связь</a>
-        </div>
-        <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
-    </footer>
-</div>
+    </div>
+    <div class="container">
+        <footer>
+            <div class="footer">
+                <a href="#">Обновления</a>
+                <a href="#">Проекты</a>
+                <a href="#">Набор в команду</a>
+                <a href="#">FAQ</a>
+                <a href="#">О нас</a>
+                <a href="#">Помощь</a>
+                <a href="#">Связь</a>
+            </div>
+            <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
+        </footer>
+    </div>
 
 </body>
 <script src="js/page.volume_edit.js"></script>
 <script src="js/page.all.js"></script>
+
 </html>
