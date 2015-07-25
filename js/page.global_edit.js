@@ -223,7 +223,9 @@ $('#seriesselect').sortable({ // включаем jquery-ui sortable
             });
         }
         $('[href="#'+type+num+'"').click();$('#'+type+num+' .name-input').focus();
-
+        if (type == 'teammembers'){
+            updateTeamsSelect()
+        }
     });
     $('[role="tablist"').on('keyup', '.name-input', function(){
         var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)

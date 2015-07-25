@@ -1,3 +1,9 @@
+$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+});
+
+
 /* AFFIX */
 function reinitAffix() {
     $(window).off('.affix')
@@ -436,3 +442,10 @@ function getOrphusParameters() {
         };
     }
     /* ОШИБКИ */
+
+
+
+/* ПРИМЕЧАНИЯ */
+$(".reference").popover({
+    trigger: 'hover'
+});
