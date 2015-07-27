@@ -25,17 +25,21 @@ body.night {
     color: rgb(211, 63, 84);
 }
 
-.divHeader{
-    margin-top: 20px;
+.admin-header{
+    margin-top: -64px;
     margin-bottom: 10px;
     border-top: 1px solid #e1e1e1;
     padding-top: 20px;
+    background: white;
+    position: absolute;
+    width: 100%;
+    z-index: 6;
 }
-main form:nth-child(1) .divHeader{
+main form:nth-child(1) .admin-header{
     padding-top: 0px !important;
     border: 0px solid white !important;
 }
-.divHeader span{
+.admin-header span{
     margin-right: 10px;
     font-size: 24px;
     font-family: inherit;
@@ -2769,3 +2773,78 @@ display: block;
 
 
 
+
+
+.volumetable table {
+    margin-bottom: 0;
+    
+    position: relative;
+}
+
+.admin-header.affix {
+    position: fixed;
+    top: 63px;
+    padding-bottom: 10px; */;
+}
+
+form.admin-block {
+    margin-top: 64px;
+    padding-top: 10px;
+    position: relative;
+}
+
+#scrollbar
+{
+    position:relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 5;
+    height:16px;
+}
+#innerScrollbar
+{
+  height: 1px;
+  line-height: 1px;
+  font-size: 1px;
+  visibility: hidden;
+}
+#scrollbar.affix{
+    position:fixed;
+    bottom:0;
+}
+#scrollbar.affix-bottom{
+    position:relative;
+    margin-bottom: -16px; 
+}
+
+table .header-copy {
+    position: absolute;
+    top: 1px;
+    background-color: white;
+    margin: -1px;
+    z-index: 2; 
+}
+
+
+@media (min-width: 768px) {
+thead.header-copy.affix,.admin-header.affix{
+    clip: rect(auto, 480px, 900px, auto);
+}
+}
+
+@media (min-width: 992px) {
+thead.header-copy.affix,.admin-header.affix {
+    clip: rect(auto, 700px, 900px, auto);
+}
+}
+
+@media (min-width: 1200px) {
+thead.header-copy.affix,.admin-header.affix {
+    clip: rect(auto, 900px, 900px, auto);
+}
+}
+
+thead.header-copy.affix {
+    position: fixed;
+    top: 64px;
+}

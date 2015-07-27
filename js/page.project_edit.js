@@ -11,11 +11,11 @@ $(function(){
 $(function(){
     $("table.table").colResizable({
         fixed:false,
-        liveDrag:true,
-        liveDrag:true,
+        liveDrag:false,
         postbackSafe:true,
-        headerOnly:true,
-        overflow:true
+        headerOnly:false,
+        overflow:true,
+        onResize:function(){ $(window).resize(); }
     });
 });
 
@@ -37,6 +37,7 @@ $(function(){
                 $('.volumetable table tr:eq('+(i+1)+') > td:eq('+$(this).val()+')').show();$('.volumetable table tr > th:eq('+$(this).val()+')').show();
             });
         }
+        $(window).resize();
     }
     $('#btn-sub-add').click(function(){
         sublength++;
@@ -255,3 +256,70 @@ $('#subseries').sortable({
 });
 
     /*     Старт редактирование подсерия       */
+
+
+//афикс заголовков блоков
+$(function(){
+    $('.admin-header').each(function() {
+        $(this).affix({ offset: {
+            top: $(this).closest('form').offset().top - $(this).outerHeight(), 
+            bottom: $(document).height() - $(this).closest('form').offset().top - $(this).closest('form').outerHeight() + $(this).outerHeight()
+        }});
+    });
+});
+
+
+//афикс скролбара
+function updateScrollbar()
+{
+    $('#scrollbar').width($('#scrollable').width());
+    $('#innerScrollbar').width($('#scrollable').children('table').width());
+    $('#scrollable').get(0).scrollLeft = $('#scrollbar').get(0).scrollLeft;
+}
+
+
+$(updateScrollbar);
+$('#scrollbar').scroll(updateScrollbar);
+$(window).resize(updateScrollbar);
+
+$(function(){
+    $('#scrollbar').affix({
+        offset: {
+            top: function(){
+                return $('#scrollable').offset().top-$(window).height()+$('#scrollbar').height()
+            },
+            bottom: function(){
+                return $(document).height() - $('#scrollable').offset().top-$('#scrollable').outerHeight()//+$(window).height()-$('#scrollbar').height()
+            }
+        }
+    });
+});
+
+
+
+//афикс шапки таблицы
+var resizeHead = function(o)
+{
+  var ww = [];
+  o.find('thead.header > tr:first > th').each(function (i, h){
+    o.find('thead.header-copy > tr > th:eq('+i+')').css({
+      width: $(h).outerWidth(), 
+      display: $(h).css('display')
+    });
+  });
+  o.find('thead.header-copy').css('width', o.outerWidth());
+}
+
+$(function(){
+    $('.volumetable .header').clone().removeClass('header').addClass('header-copy').insertAfter('.volumetable .header');
+    resizeHead($('.volumetable table'));
+    $(window).resize(function(){ resizeHead($('.volumetable table')); });
+    $('.header-copy').each(function() {
+        $(this).affix({ offset: {
+            top: $(this).closest('table').offset().top - $(this).outerHeight(), 
+            bottom: $(document).height() - $(this).closest('table').offset().top - $(this).closest('table').outerHeight() + $(this).outerHeight()
+        }});
+    });
+});
+
+$(function() { $(window).resize(); });
