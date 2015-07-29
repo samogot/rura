@@ -2790,7 +2790,9 @@ display: block;
 form.admin-block {
     margin-top: 64px;
     padding-top: 10px;
+    /* padding-top: 74px; */
     position: relative;
+    margin-bottom: 10px;
 }
 
 #scrollbar
@@ -2819,6 +2821,7 @@ form.admin-block {
 
 table .header-copy {
     position: absolute;
+    visibility: hidden;
     top: 1px;
     background-color: white;
     margin: -1px;
@@ -2847,4 +2850,9 @@ thead.header-copy.affix,.admin-header.affix {
 thead.header-copy.affix {
     position: fixed;
     top: 64px;
+    visibility: visible;
+}
+
+thead.header-copy.affix-bottom {
+    visibility: visible;
 }
