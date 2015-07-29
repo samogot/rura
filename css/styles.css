@@ -2505,7 +2505,6 @@ table.rc-table-resizing thead > th > a {
 }
 
 .volumetable td {
-    min-width: 150px;
     text-align: center;
 }
 
