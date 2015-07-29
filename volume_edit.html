@@ -33,6 +33,7 @@
     <!-- <script src="js/volume.edit.scripts.js"></script> -->
     <script src="js/moment-with-locales.min.js"></script>
     <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/ellipses-left.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         input[type="checkbox"] {
@@ -142,9 +143,10 @@
     <div class="container">
         <div class="leftColumn">
             <main class="content">
-                <form>
+                <h2>Редактирование тома</h2>
+                <form class="admin-block" id="infoHead">
                     <input type="hidden" id="volume_id" name="volume_id">
-                    <div class="divHeader">
+                    <div class="admin-header">
                         <span>Информация</span>
                         <div class="btn-group" role="group" aria-label="Панель">
                             <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
@@ -269,18 +271,18 @@
                 </form>
 
 
-                <div class="divHeader">
-                    <span>Этапы/Стаф</span>
-                    <div class="btn-group" role="group" aria-label="Панель участника">
-                        <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-participant-add"><i class="fa fa-plus"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-participant-delete" disabled><i class="fa fa-trash-o"></i>
-                        </button>
-                        <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
-                        </button>
+                <form class="admin-block" id="stuffHead">
+                    <div class="admin-header">
+                        <span>Этапы/Стаф</span>
+                        <div class="btn-group" role="group" aria-label="Панель участника">
+                            <button type="button" class="btn btn-success" title="Добавить нового участника" id="btn-participant-add"><i class="fa fa-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" title="Удалить участника" id="btn-participant-delete" disabled><i class="fa fa-trash-o"></i>
+                            </button>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <form>
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="list-group select sortable" id="participantselect">
@@ -425,18 +427,18 @@
                 </form>
 
 
-                <div class="divHeader">
-                    <span>Главы</span>
-                    <div class="btn-group" role="group" aria-label="Панель глав">
-                        <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-chapter-add"><i class="fa fa-plus"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i>
-                        </button>
-                        <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
-                        </button>
+                <form class="admin-block" id="volumeHead">
+                    <div class="admin-header">
+                        <span>Главы</span>
+                        <div class="btn-group" role="group" aria-label="Панель глав">
+                            <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-chapter-add"><i class="fa fa-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i>
+                            </button>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <form>
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="list-group select sortable" id="chapterselect">
@@ -554,18 +556,18 @@
                 </form>
 
 
-                <div class="divHeader">
-                    <span>Обновления</span>
-                    <div class="btn-group" role="group" aria-label="Панель глав">
-                        <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-update-delete" disabled><i class="fa fa-trash-o"></i>
-                        </button>
-                        <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
-                        </button>
+                <form class="admin-block" id="updateHead">
+                    <div class="admin-header">
+                        <span>Обновления</span>
+                        <div class="btn-group" role="group" aria-label="Панель глав">
+                            <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-update-add"><i class="fa fa-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-update-delete" disabled><i class="fa fa-trash-o"></i>
+                            </button>
+                            <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <form>
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="list-group select sortable" id="updateselect">
@@ -702,8 +704,8 @@
                 </form>
 
 
-                <form>
-                    <div class="divHeader">
+                <form class="admin-block" id="imagesHead">
+                    <div class="admin-header">
                         <span>Изображения</span>
                         <div class="btn-group" role="group" aria-label="Панель изображений">
                             <button type="button" class="btn btn-success" title="Добавить новые изображения" id="btn-image-add"><i class="fa fa-plus"></i>
@@ -960,38 +962,21 @@
         </div>
 
         <aside class="right-sidebar">
-            <div style="color:rgb(77,77,77);">
-                <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
-                <div class="h4">Проекты</div>
-            </div>
-            <div class="projectBlock">
-                <div class="project width220">
-                    <center>
-                        <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" width="220" height="73">
-                        </a>
-                        <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" width="220" height="73">
-                        </a>
-                        <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" width="220" height="73">
-                        </a>
-                        <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" width="220" height="73">
-                        </a>
-                        <a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" width="220" height="73">
-                        </a>
-                        <a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" width="220" height="73">
-                        </a>
-                        <a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" width="220" height="73">
-                        </a>
-                        <a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" width="220" height="73">
-                        </a>
-                        <a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" width="220" height="73">
-                        </a>
-                        <a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" width="220" height="73">
-                        </a>
-                        <a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" width="220" height="73">
-                        </a>
-                        <a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" width="220" height="73">
-                        </a>
-                    </center>
+            <div class="module scrollspy" id="contents-module">
+                <div data-spy="affix">
+                    <div class="module_name opened">
+                        <i class="fa fa-chevron-down pull-left"></i>
+                        <div class="h4">Меню</div>
+                    </div>
+                    <div class="actions">
+                        <ul id="nav" class="nav ContentNav">
+                            <li><a href="#infoHead">Информация</a></li>
+                            <li><a href="#stuffHead">Этапы/Стаф</a></li>
+                            <li><a href="#volumeHead">Главы</a></li>
+                            <li><a href="#updateHead">Обновления</a></li>
+                            <li><a href="#imagesHead">Изображения</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </aside>
@@ -1014,5 +999,5 @@
 </body>
 <script src="js/page.volume_edit.js"></script>
 <script src="js/page.all.js"></script>
-
+<script src="js/page.admin.js"></script>
 </html>
