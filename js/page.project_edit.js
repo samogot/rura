@@ -29,14 +29,9 @@ $(function(){
         checkCheck()
     });
     function checkCheck(){
-        for(var i=0;i<volumelength;i++){
-            ($('[name="LABEL"]').not('[name="LABEL"]:checked')).each(function(indx){
-                $('.volumetable table tr:eq('+(i+1)+') > td:eq('+$(this).val()+')').hide();$('.volumetable table tr > th:eq('+$(this).val()+')').hide();
-            });
-            $('[name="LABEL"]:checked').each(function(indx){
-                $('.volumetable table tr:eq('+(i+1)+') > td:eq('+$(this).val()+')').show();$('.volumetable table tr > th:eq('+$(this).val()+')').show();
-            });
-        }
+        $('[name="LABEL"]').each(function(i){
+            $('.volumetable table td:nth-child('+(i+2)+'),.volumetable table th:nth-child('+(i+1)+')').toggle($(this).prop('checked'));
+        });
         $(window).resize();
     }
     $('#btn-sub-add').click(function(){
