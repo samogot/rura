@@ -250,61 +250,78 @@ $('#subseries').sortable({
     }
 });
 
-    /*     Старт редактирование подсерия       */
+
+ //афикс заголовков блоков
+ $(function(){
+     $('.admin-header').each(function() {
+         $(this).affix({ offset: {
+             top: $(this).offset().top,
+             bottom: $(document).height() - $(this).closest('form').offset().top - $(this).closest('form').outerHeight() + $(this).outerHeight() + 75
+         }});
+     });
+ });
 
 
-//афикс скролбара
-function updateScrollbar()
-{
-    $('#scrollbar').width($('#scrollable').width());
-    $('#innerScrollbar').width($('#scrollable').children('table').width());
-    var x = $('#scrollbar').get(0).scrollLeft
-    $('#scrollable').get(0).scrollLeft = x;
-    $('.volumetable .header-copy').css({
-        'margin-left': -x-1,
-        clip: 'rect(0, ' + ($('#scrollable').width() + x) + 'px, auto, ' + x + 'px)'
-    });
-}
+ //афикс скролбара
+ function updateScrollbar()
+ {
+     $('#scrollbar').width($('#scrollable').width());
+     $('#innerScrollbar').width($('#scrollable').children('table').width());
+     var x = $('#scrollbar').get(0).scrollLeft
+     $('#scrollable').get(0).scrollLeft = x;
+     $('.volumetable .header-copy').css({
+         'margin-left': -x-1,
+         clip: 'rect(0, ' + ($('#scrollable').width() + x) + 'px, auto, ' + x + 'px)'
+     });
+ }
 
 
-$(updateScrollbar);
-$('#scrollbar').scroll(updateScrollbar);
-$(window).resize(updateScrollbar);
+ $(updateScrollbar);
+ $('#scrollbar').scroll(updateScrollbar);
+ $(window).resize(updateScrollbar);
 
-$(function(){
-    $('#scrollbar').affix({
-        offset: {
-            top: function(){
-                return $('#scrollable').offset().top-$(window).height()+$('#scrollbar').height()
-            },
-            bottom: function(){
-                return $(document).height() - $('#scrollable').offset().top-$('#scrollable').outerHeight()//+$(window).height()-$('#scrollbar').height()
+ $(function(){
+     $('#scrollbar').affix({
+         offset: {
+             top: function(){
+                 return $('#scrollable').offset().top-$(window).height()+$('#scrollbar').height()
+             },
+             bottom: function(){
+                 return $(document).height() - $('#scrollable').offset().top-$('#scrollable').outerHeight()//+$(window).height()-$('#scrollbar').height()
+             }
+         }
+     });
+ });
+
+
+
+ //афикс шапки таблицы
+ var resizeHead = function(o)
+ {
+   var ww = [];
+   o.find('thead.header > tr:first > th').each(function (i, h){
+     o.find('thead.header-copy > tr > th:eq('+i+')').css({
+       width: $(h).outerWidth(),
+       display: $(h).css('display')
+     });
+   });
+   o.find('thead.header-copy').css('width', o.outerWidth());
+ }
+
+ $(function(){
+     $('.volumetable .header').clone().removeClass('header').addClass('header-copy').insertAfter('.volumetable .header');
+     resizeHead($('.volumetable table'));
+     $(window).resize(function(){ resizeHead($('.volumetable table')); });
+     $('.volumetable .header-copy').affix({ offset: {
+         top: $('.admin-header:eq(1)').offset().top,
+         bottom: $(document).height() - $('.admin-block:eq(1)').offset().top - $('.admin-block:eq(1)').outerHeight() + $('.admin-header:eq(1)').outerHeight() + 50
+     }});
+    $('#contents-module>div').affix({
+            offset: {
+                top: $('#contents-module > div').offset().top - 20,
+                bottom: $('footer').outerHeight(true)
             }
-        }
-    });
-});
+        })
+ });
 
-
-
-//афикс шапки таблицы
-var resizeHead = function(o)
-{
-  var ww = [];
-  o.find('thead.header > tr:first > th').each(function (i, h){
-    o.find('thead.header-copy > tr > th:eq('+i+')').css({
-      width: $(h).outerWidth(),
-      display: $(h).css('display')
-    });
-  });
-  o.find('thead.header-copy').css('width', o.outerWidth());
-}
-
-$(function(){
-    $('.volumetable .header').clone().removeClass('header').addClass('header-copy').insertAfter('.volumetable .header');
-    resizeHead($('.volumetable table'));
-    $(window).resize(function(){ resizeHead($('.volumetable table')); });
-    $('.volumetable .header-copy').affix({ offset: {
-        top: $('.admin-header:eq(1)').offset().top,
-        bottom: $(document).height() - $('.admin-block:eq(1)').offset().top - $('.admin-block:eq(1)').outerHeight() + $('.admin-header:eq(1)').outerHeight() + 50
-    }});
-});
+ $(function() { $(window).resize(); });
