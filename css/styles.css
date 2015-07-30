@@ -2521,6 +2521,7 @@ table.rc-table-resizing thead > th > a {
 .volumetable .form-control, .subseriestable .form-control {
     padding: 6px 6px;
     margin: 2px;
+    width: calc(100% - 4px);
     background: transparent;
     border: none;
     box-shadow: none;
