@@ -2214,10 +2214,10 @@ ul.ContentNav {
 }
 
 body.night .leftbg, body.night .rightbg {
-    -moz-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#000000%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
-    -webkit-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#000000%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
-    -o-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#000000%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
-    border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#000000%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    -moz-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#282828%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#4E4E4E%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    -webkit-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#282828%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#4E4E4E%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    -o-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#282828%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#4E4E4E%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#282828%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#4E4E4E%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
 }
 
 @media screen and (max-width: 767px) {
@@ -2356,7 +2356,7 @@ body.blue .rightbg {
 
 body.black .leftbg,
 body.black .rightbg {
-    background: #000;
+    background: #282828;
 }
 
 body.white .leftbg,
