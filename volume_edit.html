@@ -8,32 +8,9 @@
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
-    <!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <!--<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>-->
-    <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
-    <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <!--<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <script src="js/listgroup.js"></script>
-    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-    <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-    <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-    <script src="js/jquery.iframe-transport.js"></script>
-    <!-- The basic File Upload plugin -->
-    <script src="js/jquery.fileupload.js"></script>
-    <!-- The File Upload processing plugin -->
-    <script src="js/jquery.fileupload-process.js"></script>
-    <!-- The File Upload image preview & resize plugin -->
-    <script src="js/jquery.fileupload-image.js"></script>
-    <!-- <script src="js/volume.edit.scripts.js"></script> -->
-    <script src="js/moment-with-locales.min.js"></script>
-    <script src="js/bootstrap-datetimepicker.js"></script>
-    <script src="js/ellipses-left.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         input[type="checkbox"] {
@@ -692,15 +669,14 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control date-input" id="update4_date_input" value="2015-5-1 23-25">
                                             </div>
-                </form>
-                <label for="update4_name">Описание (опционально)</label>
-                <input class="form-control" type="text" id="update4_description" placeholder="Перевод">
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
+                                            <label for="update4_name">Описание (опционально)</label>
+                                            <input class="form-control" type="text" id="update4_description" placeholder="Перевод">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
 
 
@@ -970,11 +946,16 @@
                     </div>
                     <div class="actions">
                         <ul id="nav" class="nav ContentNav">
-                            <li><a href="#infoHead">Информация</a></li>
-                            <li><a href="#stuffHead">Этапы/Стаф</a></li>
-                            <li><a href="#volumeHead">Главы</a></li>
-                            <li><a href="#updateHead">Обновления</a></li>
-                            <li><a href="#imagesHead">Изображения</a></li>
+                            <li><a href="#infoHead">Информация</a>
+                            </li>
+                            <li><a href="#stuffHead">Этапы/Стаф</a>
+                            </li>
+                            <li><a href="#volumeHead">Главы</a>
+                            </li>
+                            <li><a href="#updateHead">Обновления</a>
+                            </li>
+                            <li><a href="#imagesHead">Изображения</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -996,8 +977,28 @@
         </footer>
     </div>
 
+    <script src="js/listgroup.js"></script>
+    <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <!-- Скрипт загрузки -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload-process.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload-image.min.js"></script>
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>
+    <!-- DateTimePicker -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css">
+    <script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- три точки в начале строки, когда не влазит имя тома -->
+    <script src="js/ellipses-left.js"></script>
+    <script src="js/page.volume_edit.js"></script>
+    <script src="js/page.all.js"></script>
+    <script src="js/page.admin.js"></script>
 </body>
-<script src="js/page.volume_edit.js"></script>
-<script src="js/page.all.js"></script>
-<script src="js/page.admin.js"></script>
+
 </html>

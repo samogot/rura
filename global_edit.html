@@ -7,32 +7,10 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/dropdowns-enhancement.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <!--<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>-->
-    <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
-    <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <!--<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <script src="js/listgroup.js"></script>
-    <script src="js/dropdowns-enhancement.js"></script>
-    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-    <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-    <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-    <script src="js/jquery.iframe-transport.js"></script>
-    <!-- The basic File Upload plugin -->
-    <script src="js/jquery.fileupload.js"></script>
-    <!-- The File Upload processing plugin -->
-    <script src="js/jquery.fileupload-process.js"></script>
-    <!-- The File Upload image preview & resize plugin -->
-    <script src="js/jquery.fileupload-image.js"></script>
-    <script src="js/jquery.resizableColumns.min.js"></script>
-    <script src="js/ellipses-left.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         input[type="checkbox"] {
@@ -413,10 +391,14 @@
                     </div>
                     <div class="actions">
                         <ul id="nav" class="nav ContentNav">
-                            <li><a href="#seriesHead">Серии</a></li>
-                            <li><a href="#typesHead">Виды работ</a></li>
-                            <li><a href="#teamsHead">Команды</a></li>
-                            <li><a href="#membersHead">Члены команды</a></li>
+                            <li><a href="#seriesHead">Серии</a>
+                            </li>
+                            <li><a href="#typesHead">Виды работ</a>
+                            </li>
+                            <li><a href="#teamsHead">Команды</a>
+                            </li>
+                            <li><a href="#membersHead">Члены команды</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -439,7 +421,24 @@
     </div>
 
 </body>
+<script src="js/listgroup.js"></script>
+<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+<!-- Выпадающее окно (dropdown) bootstrap -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/behigh/bootstrap_dropdowns_enhancement/master/dist/css/dropdowns-enhancement.min.css">
+<script src="https://cdn.rawgit.com/behigh/bootstrap_dropdowns_enhancement/master/js/dropdowns-enhancement.js"></script>
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+<!-- Скрипт загрузки -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload-process.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload-image.min.js"></script>
+<!-- три точки в начале строки, когда не влазит имя тома -->
+<script src="js/ellipses-left.js"></script>
 <script src="js/page.all.js"></script>
 <script src="js/page.admin.js"></script>
 <script src="js/page.global_edit.js"></script>
+
 </html>

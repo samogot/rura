@@ -7,8 +7,8 @@
 	<!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -100,7 +100,7 @@
 		<div class="leftColumn">
         	<main class="content">
               <div class="h3" style="margin-top: 15px !important;">Проекты</div>
-              <p><span class="color110">Ниже перечислены наши проекты.</span></p>        
+              <p><span class="color110">Ниже перечислены наши проекты.</span></p>
               <div class="displayNone991">
                   <div class="view pull-left">Вид:</div>
                   <button class="view1 active"></button>
@@ -240,7 +240,7 @@
             <script>
             VK.Widgets.Group("vk_groups", {mode: 2, width: "220", height: "660", color1: 'FFFFFF', color2: '5290b5', color3: '60a7d2'}, 43340456);
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-            </script>   
+            </script>
             <div style="color:rgb(77,77,77);">
                 <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
                 <div class="h4">Друзья</div>
@@ -265,26 +265,8 @@
 	</footer>
 </div>
 </body>
-<script type="text/javascript">
-$('.view1').click(function(){
-  if ( $('.view1').hasClass('active') ) {
 
-  } else {
-    $(".view1").addClass("active");
-    $(".viewType1").show();
-    $(".view2").removeClass("active");
-    $(".viewTypeBlock2").hide();
-  }
-});
-$('.view2').click(function(){
-  if ( $('.view2').hasClass('active') ) {
-
-  } else {
-    $(".view2").addClass("active");
-    $(".viewTypeBlock2").show();
-    $(".view1").removeClass("active");
-    $(".viewType1").hide();
-  }
-});
-</script>
+<script src="js/ellipses-left.js"></script>
+<script src="js/page.full_projects.js"></script>
+<script src="js/page.all.js"></script>
 </html>

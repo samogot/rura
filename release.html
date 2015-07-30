@@ -1,119 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
+
 <body>
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="loginModalLabel">Вход</h4>
-      </div>
-      <div class="modal-body">
-				<form class="form-horizontal">
-		  <div class="form-group">
-			<label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
-			<div class="col-sm-10">
-			  <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
-			</div>
-		  </div>
-		  <div class="form-group">
-			<label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
-			<div class="col-sm-10">
-			  <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
-			</div>
-		  </div>
-		  <div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-			  <div class="checkbox">
-				<label>
-				  <input type="checkbox"> Запомнить пароль
-				</label>
-			  </div>
-			</div>
-		  </div>
-		  <div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-			  <button type="submit" class="btn btn-primary">Вход</button>
-			</div>
-		  </div>
-		</form>
-      </div>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="loginModalLabel">Вход</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Запомнить пароль
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">Вход</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<div class="modal-backdrop" style="display:none"></div>
-<nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png"></a>
-    </div>
-    <div class="collapse navbar-collapse">
-	  <div class="secondLogoContainer"><div class="secondLogo"></div></div>
-      <form class="navbar-form navbar-right">
-            <button class="btn btn-white">Регистрация</button>
-            <a class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</a>
-      </form>
-    </div>
-  </div><!-- /.container -->
-</nav>
-<nav class="navbar navbar-default navbar-lower" role="navigation">
-  <div class="container">
-    <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
-      <form class="navbar-form visible-xs-block">
-            <button class="btn btn-default">Регистрация</button>
-            <a class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</a>
-      </form>
-      <ul class="nav navbar-nav">
-            <li><a href="#">Обновления</a></li>
-            <li><a href="#">Проекты</a></li>
-            <li><a href="#">Набор в команду</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">О нас</a></li>
-        	<li><a href="#">Связь</a></li>
-      </ul>
-      <form class="navbar-form navbar-right">
-            <a href="#" class="btn btn-danger">Трансляции</a>
-            <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
-        	<a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
-      </form>
-    </div>
-  </div>
-</nav>
-<div class="container">
-		<div class="leftColumn">
-			<main class="content">
+    <div class="modal-backdrop" style="display:none"></div>
+    <nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <div class="secondLogoContainer">
+                    <div class="secondLogo"></div>
+                </div>
+                <form class="navbar-form navbar-right">
+                    <button class="btn btn-white">Регистрация</button>
+                    <a class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</a>
+                </form>
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+    <nav class="navbar navbar-default navbar-lower" role="navigation">
+        <div class="container">
+            <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form visible-xs-block">
+                    <button class="btn btn-default">Регистрация</button>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</a>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Обновления</a>
+                    </li>
+                    <li><a href="#">Проекты</a>
+                    </li>
+                    <li><a href="#">Набор в команду</a>
+                    </li>
+                    <li><a href="#">FAQ</a>
+                    </li>
+                    <li><a href="#">О нас</a>
+                    </li>
+                    <li><a href="#">Связь</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <a href="#" class="btn btn-danger">Трансляции</a>
+                    <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="leftColumn">
+            <main class="content">
                 <div class="h3">Sword Art Online - том 1</div>
                 <div class="releaseImg pull-left">
                     <img src="img/sao.png">
                     <div class="nextVolume">
-                        <div class="previous text-center"><a href="#"><i class="fa fa-chevron-left"></i>&nbsp;Том 1</a></div>
-                        <div class="text-center next"><a href="#">Том 2&nbsp;<i class="fa fa-chevron-right"></i></a></div>
+                        <div class="previous text-center"><a href="#"><i class="fa fa-chevron-left"></i>&nbsp;Том 1</a>
+                        </div>
+                        <div class="text-center next"><a href="#">Том 2&nbsp;<i class="fa fa-chevron-right"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="aboutRelease">
                     <div class="h4">Информация</div>
-                    <div><span class="bold">Серия: </span><a href="#">Sword Art Online</a></div>
+                    <div><span class="bold">Серия: </span><a href="#">Sword Art Online</a>
+                    </div>
                     <div><span class="bold">Название: </span>Sword Art Online 1: Айнкрад</div>
                     <div><span class="bold">Автор: </span>Кавахара Реки</div>
                     <div><span class="bold">Иллюстратор: </span>Abec</div>
-                    <div><span class="bold">ISBN: </span><a href="#">978-4048677608</a></div>
+                    <div><span class="bold">ISBN: </span><a href="#">978-4048677608</a>
+                    </div>
                     <div><span class="bold">Статус перевода: </span>Закончен</div>
                     <div class="h4">Перевод</div>
                     <div><span class="bold">Перевод с английского: </span>Ushwood</div>
@@ -121,39 +138,70 @@
                     <div><span class="bold">Редактура: </span>Lady Astrel</div>
                     <div class="h4">Аннотация</div>
                     <div class="annotation">
-Айнкрад - величественная крепость в небесах. Под своды этой крепости пришло множество людей, чтобы найти друзей, покой или боевую славу, кому-то требовались дорогие трофеи, а кому-то просто хотелось повеселиться. Эта крепость - замкнутый виртуальный мир, дающий полную свободу действий, а также являющийся...смертельным "колизеем". Ровно десять тысяч человек, в прямом смысле "хардкорных" геймеров, оказались в ловушке VRMMORPG , созданной Акихикой Каябой на основе технологии "Полного погружения". Все эти игроки оказались в весьма недвусмысленном положении - если умираешь в игре, то умираешь и в реальном мире. Единственный способ выжить - это рискнуть своей жизнью и победить 100 игровых Боссов, поражающих своей свирепостью и силой, и пройти игру. Надежды на спасение извне нету. Шансы выжить почти нулевые. Но наш герой Кирито, с тяжким осознанием своих грехов, продирается сквозь каждый уровень, постоянно гранича между жизнью и "красной зоной" хит-поинтов. Чем же закончится эта пляска со смертью?
+                        Айнкрад - величественная крепость в небесах. Под своды этой крепости пришло множество людей, чтобы найти друзей, покой или боевую славу, кому-то требовались дорогие трофеи, а кому-то просто хотелось повеселиться. Эта крепость - замкнутый виртуальный мир, дающий полную свободу действий, а также являющийся...смертельным "колизеем". Ровно десять тысяч человек, в прямом смысле "хардкорных" геймеров, оказались в ловушке VRMMORPG , созданной Акихикой Каябой на основе технологии "Полного погружения". Все эти игроки оказались в весьма недвусмысленном положении - если умираешь в игре, то умираешь и в реальном мире. Единственный способ выжить - это рискнуть своей жизнью и победить 100 игровых Боссов, поражающих своей свирепостью и силой, и пройти игру. Надежды на спасение извне нету. Шансы выжить почти нулевые. Но наш герой Кирито, с тяжким осознанием своих грехов, продирается сквозь каждый уровень, постоянно гранича между жизнью и "красной зоной" хит-поинтов. Чем же закончится эта пляска со смертью?
                     </div>
                 </div>
                 <div class="h3">Читать</div>
                 <div class="read">
-                    <a href="#"><div class="bold">Читать весь текст</div></a>
-                    <a href="#"><div>Начальные иллюстрации</div></a>
-                    <a href="#"><div>Пролог</div></a>
-                    <a href="#"><div class="italic bold">Часть 1. Чёрный мечник</div></a>
-                    <a href="#"><div>Глава 1</div></a>
-                    <a href="#"><div>Глава 2</div></a>
-                    <a href="#"><div>Глава 3</div></a>
-                    <a href="#"><div class="italic bold">Часть 2. Тепло сердца</div></a>
-                    <a href="#"><div>Глава 1</div></a>
-                    <a href="#"><div class="red">Глава 2</div></a>
-                    <a href="#"><div class="red">Глава 3</div></a>
-                    <a href="#"><div class="red">Глава 4</div></a>
-                    <a href="#"><div class="italic bold">Часть 3. Девочка утренней росы</div></a>
-                    <a href="#"><div class="red">Глава 1</div></a>
+                    <a href="#">
+                        <div class="bold">Читать весь текст</div>
+                    </a>
+                    <a href="#">
+                        <div>Начальные иллюстрации</div>
+                    </a>
+                    <a href="#">
+                        <div>Пролог</div>
+                    </a>
+                    <a href="#">
+                        <div class="italic bold">Часть 1. Чёрный мечник</div>
+                    </a>
+                    <a href="#">
+                        <div>Глава 1</div>
+                    </a>
+                    <a href="#">
+                        <div>Глава 2</div>
+                    </a>
+                    <a href="#">
+                        <div>Глава 3</div>
+                    </a>
+                    <a href="#">
+                        <div class="italic bold">Часть 2. Тепло сердца</div>
+                    </a>
+                    <a href="#">
+                        <div>Глава 1</div>
+                    </a>
+                    <a href="#">
+                        <div class="red">Глава 2</div>
+                    </a>
+                    <a href="#">
+                        <div class="red">Глава 3</div>
+                    </a>
+                    <a href="#">
+                        <div class="red">Глава 4</div>
+                    </a>
+                    <a href="#">
+                        <div class="italic bold">Часть 3. Девочка утренней росы</div>
+                    </a>
+                    <a href="#">
+                        <div class="red">Глава 1</div>
+                    </a>
                 </div>
                 <h3 class="h3">Комментарии</h3>
                 <p>
-                  <span class="color110">На сайте РуРанобэ приветствуются <span class="bold">все комментарий</span>. Если вы не хотите быть анонимным, <a href="#">зарегистрируйтесь</a> или <a href="#">войдите</a>. 
+                    <span class="color110">На сайте РуРанобэ приветствуются <span class="bold">все комментарий</span>. Если вы не хотите быть анонимным, <a href="#">зарегистрируйтесь</a> или <a href="#">войдите</a>.
                 </p>
                 <div class="input-group input-group-lg sharp" style="margin-bottom:40px;">
                     <textarea type="text" class="form-control" placeholder="Введите комментарии" rows="3"></textarea>
                     <span class="input-group-btn">
                         <button class="btn btn-primary" type="button" style="height:85px; ">Отправить</button>
                     </span>
-                </div>   
+                </div>
                 <div class="comments">
                     <div class="comment">
-                        <div class="avatar"><div class=""><img src="#" width="80" height="80"></div></div>
+                        <div class="avatar">
+                            <div class=""><img src="#" width="80" height="80">
+                            </div>
+                        </div>
                         <div style="margin-left: 90px;">
                             <div class="name pull-left bold">Анонимный участник №1</div>
                             <div class="timeAgo">2 дня назад</div>
@@ -163,7 +211,10 @@
                             </div>
                             <a href="#" class="commentAnswer bold">Ответить</a>
                             <div class="comment">
-                                <div class="avatar"><div class=""><img src="#" width="80" height="80"></div></div>
+                                <div class="avatar">
+                                    <div class=""><img src="#" width="80" height="80">
+                                    </div>
+                                </div>
                                 <div style="margin-left: 90px;">
                                     <div class="name pull-left bold">Анонимный участник №1</div>
                                     <div class="timeAgo">2 дня назад</div>
@@ -173,11 +224,16 @@
                                     </div>
                                     <a href="#" class="commentAnswer bold">Ответить</a>
                                 </div>
-                            </div><!-- Конец ответа на комментарий -->
+                            </div>
+                            <!-- Конец ответа на комментарий -->
                         </div>
-                    </div><!-- Конец комментария -->
+                    </div>
+                    <!-- Конец комментария -->
                     <div class="comment">
-                        <div class="avatar"><div class=""><img src="#" width="80" height="80"></div></div>
+                        <div class="avatar">
+                            <div class=""><img src="#" width="80" height="80">
+                            </div>
+                        </div>
                         <div style="margin-left: 90px;">
                             <div class="name pull-left bold">Анонимный участник №1</div>
                             <div class="timeAgo">2 дня назад</div>
@@ -187,7 +243,10 @@
                             </div>
                             <a href="#" class="commentAnswer bold">Ответить</a>
                             <div class="comment">
-                                <div class="avatar"><div class=""><img src="#" width="80" height="80"></div></div>
+                                <div class="avatar">
+                                    <div class=""><img src="#" width="80" height="80">
+                                    </div>
+                                </div>
                                 <div style="margin-left: 90px;">
                                     <div class="name pull-left bold">Анонимный участник №1</div>
                                     <div class="timeAgo">2 дня назад</div>
@@ -197,28 +256,39 @@
                                     </div>
                                     <a href="#" class="commentAnswer bold">Ответить</a>
                                 </div>
-                            </div><!-- Конец ответа на комментарий -->
+                            </div>
+                            <!-- Конец ответа на комментарий -->
                         </div>
-                    </div><!-- Конец комментария -->
+                    </div>
+                    <!-- Конец комментария -->
                 </div>
             </main>
-		</div>
-		<aside class="right-sidebar">
+        </div>
+        <aside class="right-sidebar">
             <div class="miniSearch">
-                <input type="text" placeholder="Поиск..."><button><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Поиск...">
+                <button><i class="fa fa-search"></i>
+                </button>
             </div>
             <div style="color:rgb(77,77,77);">
                 <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
                 <div class="h4">Действия</div>
             </div>
             <div class="actions">
-                <div style="background-image:url(img/actions/edit.png)"><a href="#">Править</a></div>
-                <div style="background-image:url(img/actions/history.png)"><a href="#">История</a></div>
-                <div style="background-image:url(img/actions/remove.png)"><a href="#">Удалить</a></div>
-                <div style="background-image:url(img/actions/rename.png)"><a href="#">Переименовать</a></div>
-                <div style="background-image:url(img/actions/protect.png)"><a href="#">Защитить</a></div>
-                <div style="background-image:url(img/actions/track.png)"><a href="#">Следить</a></div>
-                <div style="background-image:url(img/actions/edit_base.png)"><a href="#">Править базу</a></div>
+                <div style="background-image:url(img/actions/edit.png)"><a href="#">Править</a>
+                </div>
+                <div style="background-image:url(img/actions/history.png)"><a href="#">История</a>
+                </div>
+                <div style="background-image:url(img/actions/remove.png)"><a href="#">Удалить</a>
+                </div>
+                <div style="background-image:url(img/actions/rename.png)"><a href="#">Переименовать</a>
+                </div>
+                <div style="background-image:url(img/actions/protect.png)"><a href="#">Защитить</a>
+                </div>
+                <div style="background-image:url(img/actions/track.png)"><a href="#">Следить</a>
+                </div>
+                <div style="background-image:url(img/actions/edit_base.png)"><a href="#">Править базу</a>
+                </div>
             </div>
             <div style="color:rgb(77,77,77);">
                 <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
@@ -227,11 +297,11 @@
             <div class="actions">
                 <div style="background-image:url(img/list.png);padding: 10px 0px 10px 35px;">
                     <a href="#" class="download bold">Скачать fb2 </a><span class="bold">(4.4 мб)</span>
-                    <div class="italic">С иллюстрациями</div>                    
+                    <div class="italic">С иллюстрациями</div>
                 </div>
                 <div style="background-image:url(img/list.png);padding: 10px 0px 10px 35px;">
                     <a href="#" class="download bold">Скачать fb2 </a><span class="bold">(543 кб)</span>
-                    <div class="italic">Без иллюстраций</div>                    
+                    <div class="italic">Без иллюстраций</div>
                 </div>
             </div>
             <div style="color:rgb(77,77,77);">
@@ -239,47 +309,85 @@
                 <div class="h4">Обновления</div>
             </div>
             <div class="actions">
-                <div style="background-image:url(img/actions/edit.png)"><a href="#">Рондо - Глава 24</a></div>
-                <div style="background-image:url(img/actions/history.png)"><a href="#">Том 15 - Ч/б иллюстрации</a></div>
-                <div style="background-image:url(img/actions/remove.png)"><a href="#">Удалить</a></div>
-                <div style="background-image:url(img/actions/rename.png)"><a href="#">Переименовать</a></div>
-                <div style="background-image:url(img/actions/protect.png)"><a href="#">Защитить</a></div>
-                <div style="background-image:url(img/actions/track.png)"><a href="#">Следить</a></div>
-                <div style="background-image:url(img/actions/edit_base.png)"><a href="#">Править базу</a></div>
+                <div style="background-image:url(img/actions/edit.png)"><a href="#">Рондо - Глава 24</a>
+                </div>
+                <div style="background-image:url(img/actions/history.png)"><a href="#">Том 15 - Ч/б иллюстрации</a>
+                </div>
+                <div style="background-image:url(img/actions/remove.png)"><a href="#">Удалить</a>
+                </div>
+                <div style="background-image:url(img/actions/rename.png)"><a href="#">Переименовать</a>
+                </div>
+                <div style="background-image:url(img/actions/protect.png)"><a href="#">Защитить</a>
+                </div>
+                <div style="background-image:url(img/actions/track.png)"><a href="#">Следить</a>
+                </div>
+                <div style="background-image:url(img/actions/edit_base.png)"><a href="#">Править базу</a>
+                </div>
             </div>
             <div style="color:rgb(77,77,77);">
                 <i class="fa fa-chevron-down pull-left" style='margin-top: 2px;'></i>
                 <div class="h4">Проекты</div>
             </div>
-            <center class="project">       
-                <p><a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" height="73" width="220"></a>
-                <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" height="73" width="220"></a>
-                <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" height="73" width="220"></a>
-                <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220"></a>
-                <a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" height="73" width="220"></a>
-                <a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" height="73" width="220"></a>
-                <a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" height="73" width="220"></a>
-                <a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" height="73" width="220"></a>
-                <a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" height="73" width="220"></a>
-                <a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" height="73" width="220"></a>
-                <a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" height="73" width="220"></a>
-                <a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" height="73" width="220"></a>
-                <a href="/r/ssnts" title="Дуэлянт странствующей богини"><img alt="Дуэлянт странствующей богини" src="http://ruranobe.ru/w/images/1/12/sidebanner-ssnts.png" height="73" width="220"></a>
-                <a href="/r/lh" title="Log Horizon"><img alt="Log Horizon" src="http://ruranobe.ru/w/images/f/f5/sidebanner-lh.png" height="73" width="220"></a>
-                <a href="/r/mdn" title="Пусть твоя душа упокоится в Магдале"><img alt="Пусть твоя душа упокоится в Магдале" src="http://ruranobe.ru/w/images/3/30/sidebanner-mdn.png" height="73" width="220"></a>
-                <a href="/r/tnynn" title="Становление Героя Щита"><img alt="Становление Героя Щита" src="http://ruranobe.ru/w/images/1/19/sidebanner-tnynn.png" height="73" width="220"></a>
-                <a href="/r/snpnk" title="Кошечка из Сакурасо"><img alt="Кошечка из Сакурасо" src="http://ruranobe.ru/w/images/1/18/sidebanner-snpnk.png" height="73" width="220"></a>
-                <a href="/r/ol" title="Overlord"><img alt="Overlord" src="http://ruranobe.ru/w/images/a/a6/sidebanner-ol.png" height="73" width="220"></a>
-                <a href="/r/ngnl" title="No Game No Life"><img alt="No Game No Life" src="http://ruranobe.ru/w/images/4/42/sidebanner-ngnl.png" height="73" width="220"></a>
-                <a href="/r/tr" title="Tokyo Ravens"><img alt="Tokyo Ravens" src="http://ruranobe.ru/w/images/f/fb/sidebanner-tr.png" height="73" width="220"></a>
-                <a href="/r/tmni" title="Некий Магический Индекс"><img alt="Некий Магический Индекс" src="http://ruranobe.ru/w/images/8/88/sidebanner-tmni.png" height="73" width="220"></a>
-                <a href="/r/haruhi" title="Серия Харухи Судзумии"><img alt="Серия Харухи Судзумии" src="http://ruranobe.ru/w/images/4/4f/sidebanner-haruhi.png" height="73" width="220"></a>
-                <a href="/r/saw" title="Волчица и пряности"><img alt="Волчица и пряности" src="http://ruranobe.ru/w/images/9/9e/sidebanner-saw.png" height="73" width="220"></a>
-                <a href="/r/ch2b" title="Чудачества любви не помеха!"><img alt="Чудачества любви не помеха!" src="http://ruranobe.ru/w/images/1/1a/sidebanner-ch2b.png" height="73" width="220"></a>
-                <a href="/r/aynik" title="All You Need Is Kill"><img alt="All You Need Is Kill" src="http://ruranobe.ru/w/images/b/ba/sidebanner-aynik.png" height="73" width="220"></a>
-                <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220"></a>
-                <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220"></a>
-                <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220"></a><a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220"></a> 
+            <center class="project">
+                <p>
+                    <a href="/r/sao" title="Sword Art Online"><img alt="Sword Art Online" src="http://ruranobe.ru/w/images/5/5a/sidebanner-sao.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mknr" title="Непутевый ученик в школе магии"><img alt="Непутевый ученик в школе магии" src="http://ruranobe.ru/w/images/2/2b/sidebanner-mknr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/drrr" title="Durarara!!"><img alt="Durarara!!" src="http://ruranobe.ru/w/images/6/6b/sidebanner-drrr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/aw" title="Accel World"><img alt="Accel World" src="http://ruranobe.ru/w/images/6/6b/sidebanner-aw.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ho" title="Heavy Object"><img alt="Heavy Object" src="http://ruranobe.ru/w/images/1/12/sidebanner-ho.png" height="73" width="220">
+                    </a>
+                    <a href="/r/onc" title="Owari no Chronicle"><img alt="Owari no Chronicle" src="http://ruranobe.ru/w/images/2/22/sidebanner-onc.png" height="73" width="220">
+                    </a>
+                    <a href="/r/hnc" title="Чайка − принцесса с гробом"><img alt="Чайка − принцесса с гробом" src="http://ruranobe.ru/w/images/e/e0/sidebanner-hnc.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mtikk" title="Проблемные дети приходят из другого мира, верно?"><img alt="Проблемные дети приходят из другого мира, верно?" src="http://ruranobe.ru/w/images/7/7d/sidebanner-mtikk.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ems" title="Эроманга-сэнсэй"><img alt="Эроманга-сэнсэй" src="http://ruranobe.ru/w/images/0/07/sidebanner-ems.png" height="73" width="220">
+                    </a>
+                    <a href="/r/oregairu" title="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал"><img alt="Моя юношеская романтическая комедия оказалась неправильной, как я и предполагал" src="http://ruranobe.ru/w/images/6/64/sidebanner-oregairu.png" height="73" width="220">
+                    </a>
+                    <a href="/r/trdr" title="ToraDora!"><img alt="ToraDora!" src="http://ruranobe.ru/w/images/1/15/sidebanner-trdr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mnotv" title="Madan no Ou to Vanadis"><img alt="Madan no Ou to Vanadis" src="http://ruranobe.ru/w/images/b/b9/sidebanner-mnotv.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ssnts" title="Дуэлянт странствующей богини"><img alt="Дуэлянт странствующей богини" src="http://ruranobe.ru/w/images/1/12/sidebanner-ssnts.png" height="73" width="220">
+                    </a>
+                    <a href="/r/lh" title="Log Horizon"><img alt="Log Horizon" src="http://ruranobe.ru/w/images/f/f5/sidebanner-lh.png" height="73" width="220">
+                    </a>
+                    <a href="/r/mdn" title="Пусть твоя душа упокоится в Магдале"><img alt="Пусть твоя душа упокоится в Магдале" src="http://ruranobe.ru/w/images/3/30/sidebanner-mdn.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tnynn" title="Становление Героя Щита"><img alt="Становление Героя Щита" src="http://ruranobe.ru/w/images/1/19/sidebanner-tnynn.png" height="73" width="220">
+                    </a>
+                    <a href="/r/snpnk" title="Кошечка из Сакурасо"><img alt="Кошечка из Сакурасо" src="http://ruranobe.ru/w/images/1/18/sidebanner-snpnk.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ol" title="Overlord"><img alt="Overlord" src="http://ruranobe.ru/w/images/a/a6/sidebanner-ol.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ngnl" title="No Game No Life"><img alt="No Game No Life" src="http://ruranobe.ru/w/images/4/42/sidebanner-ngnl.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tr" title="Tokyo Ravens"><img alt="Tokyo Ravens" src="http://ruranobe.ru/w/images/f/fb/sidebanner-tr.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tmni" title="Некий Магический Индекс"><img alt="Некий Магический Индекс" src="http://ruranobe.ru/w/images/8/88/sidebanner-tmni.png" height="73" width="220">
+                    </a>
+                    <a href="/r/haruhi" title="Серия Харухи Судзумии"><img alt="Серия Харухи Судзумии" src="http://ruranobe.ru/w/images/4/4f/sidebanner-haruhi.png" height="73" width="220">
+                    </a>
+                    <a href="/r/saw" title="Волчица и пряности"><img alt="Волчица и пряности" src="http://ruranobe.ru/w/images/9/9e/sidebanner-saw.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ch2b" title="Чудачества любви не помеха!"><img alt="Чудачества любви не помеха!" src="http://ruranobe.ru/w/images/1/1a/sidebanner-ch2b.png" height="73" width="220">
+                    </a>
+                    <a href="/r/aynik" title="All You Need Is Kill"><img alt="All You Need Is Kill" src="http://ruranobe.ru/w/images/b/ba/sidebanner-aynik.png" height="73" width="220">
+                    </a>
+                    <a href="/r/tnd" title="Наше путешествие на край исчезающего мира"><img alt="Наше путешествие на край исчезающего мира" src="http://ruranobe.ru/w/images/2/26/sidebanner-tnd.png" height="73" width="220">
+                    </a>
+                    <a href="/r/sd" title="Sugar Dark"><img alt="Sugar Dark" src="http://ruranobe.ru/w/images/3/33/sidebanner-sd.png" height="73" width="220">
+                    </a>
+                    <a href="/r/inkid" title="Безжизненный мир"><img alt="Безжизненный мир" src="http://ruranobe.ru/w/images/7/74/sidebanner-inkid.png" height="73" width="220">
+                    </a>
+                    <a href="/r/ff7" title="Final Fantasy VII"><img alt="Final Fantasy VII" src="http://ruranobe.ru/w/images/4/42/sidebanner-ff7.png" height="73" width="220">
+                    </a>
                 </p>
             </center>
             <div style="color:rgb(77,77,77);">
@@ -287,24 +395,30 @@
                 <div class="h4">Друзья</div>
             </div>
             <div class="poster" style="margin-right:0px !important;">
-                <a href="#"><div class="projectBlock type2"><img src="img/friend.png"></div></a>
+                <a href="#">
+                    <div class="projectBlock type2"><img src="img/friend.png">
+                    </div>
+                </a>
             </div>
         </aside>
-</div>
-<div class="container">
-	<footer>
-	    <div class="footer">
-	        <a href="#">Обновления</a>
-	        <a href="#">Проекты</a>
-	        <a href="#">Набор в команду</a>
-	        <a href="#">FAQ</a>
-	        <a href="#">О нас</a>
-	        <a href="#">Помощь</a>
-	        <a href="#">Связь</a>
-	    </div>
-	    <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
-	</footer>
-</div>
+    </div>
+    <div class="container">
+        <footer>
+            <div class="footer">
+                <a href="#">Обновления</a>
+                <a href="#">Проекты</a>
+                <a href="#">Набор в команду</a>
+                <a href="#">FAQ</a>
+                <a href="#">О нас</a>
+                <a href="#">Помощь</a>
+                <a href="#">Связь</a>
+            </div>
+            <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
+        </footer>
+    </div>
+    <script src="js/page.all.js"></script>
+    <script src="js/ellipses-left.js"></script>
 
 </body>
+
 </html>
