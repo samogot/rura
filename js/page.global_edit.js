@@ -395,3 +395,70 @@ $('#seriesselect').sortable({ // включаем jquery-ui sortable
         });
     });
     // ---------- typeahead end --------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*  СЕРИИ БАННЕРЫ */
+    $('.banner-upload').fileupload({
+        url: "/rura/loading_files.php",
+        dataType: 'json',
+        formData: {
+            id: $('.banner-upload').parent().find('input[type=hidden]').val()
+        },
+        acceptFileTypes: /(\.|\/)(jpe?g|png|jpg)$/i,
+        previewMaxHeight: 73,
+        previewMaxWidth: 220,
+        maxNumberOfFiles: 1,
+    }).on('fileuploadadd', function (e, data) {
+        var $self = $(this);
+        var $progress = $self.closest('.progress');
+        $progress.collapse('show');
+        $self.attr('src','loading.gif');
+        data.submit();
+    }).on('fileuploadprocessalways', function (e, data) {
+        var $self = $(this);
+        var $progress = $self.closest('.progress');
+        var index = data.index,
+            file = data.files[index];
+        if (file.error) // выводим сообщение об ошибке обработки на клиенте
+            $progress.after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
+    }).on('fileuploadprogressall', function (e, data) { // обновляем прогресбар
+        var $self = $(this);
+        var $progressbar = $self.closest('.progress-bar');
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $progressbar.css('width', progress + '%');
+        $progressbar.attr('aria-valuenow', progress);
+        $progressbar.find('span').text(progress + '% Complete');
+    }).on('fileuploaddone', function (e, data) { // при завершении загрузки заменяем превюшку на img тег с адресом уже загруженной ирасты
+        var $self = $(this);
+        var $progress = $self.closest('.progress');
+        $progress.collapse('hide');
+        //console.log(data) // с сервера в json`е должны прийти поля url и id
+        $.each(data.result.files, function (index, file) {
+            if (file.url) {
+                console.log(file);
+                var SeriesId = $self.closest('[role="tabpanel"').attr('id');
+                console.log(SeriesId);
+                $('#'+SeriesId+'_banner_url').val(file.url);
+                $('#'+SeriesId+'_banner_img').attr('src',file.url);
+            } else if (file.error) // выводим ошибку возвращенную с сервера
+                $progress.after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
+        });
+    }).on('fileuploadfail', function (e, data) { // выводим ошибку аякса
+        var $self = $(this);
+        var $progress = $self.closest('.progress');
+        $progress.after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
+    });
