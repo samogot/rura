@@ -1,13 +1,3 @@
-
-/*
-$(function(){
-    $('.divHeader').each(function(indx){
-        var self = $(this);
-        self.affix();
-    });
-});
-*/
-
 $(function(){
     $("table.table").colResizable({
         fixed:false,

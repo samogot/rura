@@ -1521,6 +1521,10 @@ div > button.view2.active {
     box-shadow: none;
 }
 
+.admin-affix.affix {
+    top: 30px;
+}
+
 #updateselect {
     min-height: 340px;
 }

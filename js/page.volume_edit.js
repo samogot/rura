@@ -10,16 +10,7 @@
         handle:'.move' // задаем маркер перетягивания
     });
 
-    //admin-affix - мой класс для обозначения общего елемента, который аффиксируется справа от списка .list-group.select
-    $('.admin-affix').each(function() { // используется bootstrap affix
-        var parent = $(this).parent();
-        $(this).affix({
-            offset: {
-                top: function() { return parent.offset().top - 10; }, // в открепленнойм стиле у меня стоит отступ 10 пикселов от верхнего края экрана, знасит откреплять мы начинаем за 10 пикселей от позиции родительского елемента
-                bottom: function() { return $(document).height() - parent.outerHeight(true) - parent.offset().top; } // нижняя граница, конда плагину нужно снова закрепить admin-affix считается по разнице нижней граници родительского елемента и нижнего края экрана
-            } // то есть мы аффиксируем admin-affix в пределах его родительского елемента. предпологается что размер родительского елемента растягивается за счет наполнения list-group.select, но нужно где то явно указать min-height что бы в случае если елементов в list-group.select меньше чем высота самого admin-affix, родительский елемень не схлопнулся при откреплении admin-affix
-        });
-    });
+
 
         $(".date-input").datetimepicker({format:"YYYY-MM-DD HH-mm", locale: 'ru', useCurrent: 'hour'}); // инициализация дейтпикера
 
