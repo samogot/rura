@@ -1632,7 +1632,7 @@ body.night .controlText div .hint .miniicon {
 
 
 .controlText div.options-button .hint .miniicon {
-    background: url('../img/actions/textControl2.png') left no-repeat;
+    background: url('../img/actions/textControl3.png') left no-repeat;
     margin-top: 180px;
 }
 
@@ -2863,13 +2863,13 @@ thead.header-copy.affix-bottom {
     visibility: visible;
 }
 
-.banner-upload .fileupload {   
-    top: 25px;  
+.banner-upload .fileupload {
+    top: 25px;
     bottom: 0;
 }
 
 .form-group.banner-upload {
-    position: relative;   
-    overflow: hidden;   
+    position: relative;
+    overflow: hidden;
     width: 220px;
 }
