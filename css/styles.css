@@ -2862,3 +2862,14 @@ thead.header-copy.affix {
 thead.header-copy.affix-bottom {
     visibility: visible;
 }
+
+.banner-upload .fileupload {   
+    top: 25px;  
+    bottom: 0;
+}
+
+.form-group.banner-upload {
+    position: relative;   
+    overflow: hidden;   
+    width: 220px;
+}
