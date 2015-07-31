@@ -2877,3 +2877,19 @@ thead.header-copy.affix-bottom {
     overflow: hidden;
     width: 220px;
 }
+
+
+/* fancybox */
+.fancybox-nav {
+    position: fixed !important;
+}
+.fancybox-next span {
+    right: 40px !important;
+}
+.fancybox-prev span {
+    left: 40px !important;
+}
+.fancybox-close {
+    top: -10px !important;
+    right: -10px !important;
+}
