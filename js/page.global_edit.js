@@ -13,7 +13,9 @@ $('.save').click(function(){
                             {projectId:$(el).children('#'+elID+"_id").val(),
                              orderNumber:$(el).children('#'+elID+"_order").val(),
                              projectTitle:$(el).find('#'+elID+'_name_input').val(),
-                             projectUrl:$(el).find('#'+elID+'_url_input').val()}
+                             projectUrl:$(el).find('#'+elID+'_url_input').val(),
+                             projectHideBanner:$(el).find('#'+elID+'_hidebanner').prop('checked'),
+                             projectHideProject:$(el).find('#'+elID+'_hideproject').prop('checked')}
                     );
                 }
             );
@@ -53,7 +55,7 @@ $('.save').click(function(){
                              orderNumber:$(el).children('#'+elID+"_order").val(),
                              teammemberName:$(el).find('#'+elID+'_name_input').val(),
                              teammemberTeam:$(el).find('#'+elID+'_team_input').val(),
-                             teammemberActive:$(el).find('#'+elID+'_checkbox_input').attr('checked')}
+                             teammemberActive:$(el).find('#'+elID+'_checkbox_input').prop('checked')}
                     );
                 }
             );
@@ -96,6 +98,16 @@ $('#seriesselect').sortable({ // включаем jquery-ui sortable
         '<input class="form-control url-input" type="text" id="series' + j + '_url_input">'+
         '<label for="series' + j + '_name">Заголовок</label>'+
         '<input class="form-control name-input" type="text" id="series' + j + '_name_input" value="Серия ' + j + '">'+
+        '<div class="checkbox">'+
+        '<label>'+
+        '<input type="checkbox" class="form-control" id="series' + j + '_hideproject"> Проект скрыт'+
+        '</label>'+
+        '</div>'+
+        '<div class="checkbox">'+
+        '<label>'+
+        '<input type="checkbox" class="form-control" id="series' + j + '_hidebanner"> Баннер скрыт'+
+        '</label>'+
+        '</div>'+
         '</div>'+
         '</div>'+
         '</div>'+
