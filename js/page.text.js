@@ -30,12 +30,14 @@ $(document).ready(function() {
 $('.daynight-button').on('click', function(e) {
     if ($(this).children('.fa').hasClass('fa-sun-o')){
         $('body').addClass("night");
+        $('a.navbar-brand img').attr('src','img/logo1_night.png');
         saveSettings({
             key: 'night',
             item: true
         });
     } else {
         $('body').removeClass("night");
+        $('a.navbar-brand img').attr('src','img/logo1.png');
         saveSettings({
             key: 'night',
             item: false
@@ -244,9 +246,11 @@ function loadSettings() {
     }
     if (localStorage.getItem("night") == "true") {
         $('body').addClass("night");
+        $('a.navbar-brand img').attr('src','img/logo1_night.png');
         $('.daynight-button .fa').toggleClass('fa-sun-o fa-moon-o');
     } else {
         $('body').removeClass("night");
+        $('a.navbar-brand img').attr('src','img/logo1.png');
     }
     if (localStorage.getItem("fontsize")) {
         var font = '';
