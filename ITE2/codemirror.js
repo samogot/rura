@@ -64,6 +64,23 @@ var CMvol1_window = CodeMirror(document.getElementById("volume0"), {
 var CMwindows = [CMoriginalJap, CMoriginalEng, CMoriginalPrev, CMoriginalOrph, CMvol1_window];
 var CMscroll, leftX, topY;
 
+$.each(CMwindows, function() {
+    this.setOption("extraKeys", {
+        "Ctrl-H": function(cm) {
+            cm.execCommand("replace");
+        },
+        "F3": function(cm) {
+            cm.execCommand("findNext");
+        },
+        "Shift-F3": function(cm) {
+            cm.execCommand("findPrev");
+        },
+        "Shift-Ctrl-H": function(cm) {
+            cm.execCommand("replaceAll");
+        }
+    });
+});
+
 var scrollLockTileout;
 function onScroll(cm){
 	if(scrollLockTileout) clearTimeout(scrollLockTileout);
