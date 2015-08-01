@@ -2880,8 +2880,12 @@ thead.header-copy.affix-bottom {
 
 
 /* fancybox */
+.fancybox-inner .fancybox-image {
+    cursor: move !important;
+}
 .fancybox-nav {
     position: fixed !important;
+    width: 20% !important;
 }
 .fancybox-next span {
     right: 40px !important;
