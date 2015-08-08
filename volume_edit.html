@@ -410,6 +410,8 @@
                         <div class="btn-group" role="group" aria-label="Панель глав">
                             <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-chapter-add"><i class="fa fa-plus"></i>
                             </button>
+                            <button type="button" class="btn btn-warning" title="Добавить несколько глав" id="btn-multi-chapter-add" data-toggle="modal" data-target="#chapterModal"><i class="fa fa-plus-circle"></i>
+                            </button>
                             <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i>
                             </button>
                             <button type="button" type="submit" class="btn btn-primary" title="Сохранить"><i class="fa fa-floppy-o"></i>
@@ -531,6 +533,59 @@
                         </div>
                     </div>
                 </form>
+                <!-- Modal -->
+                <div class="modal fade" id="chapterModal" tabindex="-1" role="dialog" aria-labelledby="chapterModal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Добавить несколько глав</h4>
+                      </div>
+                      <div class="modal-body">
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input class="form-control" type="checkbox" value="" id="chapterModal_podglava">&emsp;Подглавы?
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="chapterModal_col">Количество</label>
+                                <input class="form-control" type="number" id="chapterModal_col">
+                                <label for="chapterModal_name">Заголовок</label>
+                                <input class="form-control" type="text" id="chapterModal_name" value="Глава">
+                            </div>
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input class="form-control" type="checkbox" value="" id="chapterModal_i">&emsp;Начальные иллюстрации
+                                </label>
+                            </div>
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input class="form-control" type="checkbox" value="" id="chapterModal_p">&emsp;Пролог
+                                </label>
+                            </div>
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input class="form-control" type="checkbox" value="" id="chapterModal_e">&emsp;Эпилог
+                                </label>
+                            </div>
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input class="form-control" type="checkbox" value="" id="chapterModal_a">&emsp;Послесловие
+                                </label>
+                            </div>
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input class="form-control" type="checkbox" value="" id="chapterModal_at">&emsp;Послесловие команды
+                                </label>
+                            </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                        <button type="button" class="btn btn-primary" id="chapterModalSave">Сохранить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
 
                 <form class="admin-block" id="updateHead">

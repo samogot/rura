@@ -229,101 +229,128 @@
     var j=0; // id каждого элемента в пункте "Главы"
     var k=0; // нужна, чтобы считать непосредственно сами главы (красивости)
 
-    $('#btn-chapter-add').click(function(){ // обработка кнопки добавления новой главы
-        j++;
-        var number = 0;
-                var chapterTen = false;
-                $('#chapterselect').children().each(function(){ // обрабатываем количество "Глав"
-                    var str1 = $(this).children('span').text();
-                    if (str1.substring(0,8) == "Глава 10") chapterTen = true;
-                });
-        $('#chapterselect').children().each(function(){ // обрабатываем количество "Глав"
-                        var str1 = $(this).children('span').text();
-            var str2 = str1.substring(0,5); // вычленяем первые 5 букв
-//              if (str1.substring(0,8) == "Глава 10") chapterTen = true;
-            if ((str2 == "Глава") && (str1.substring(6,7)*1 > number) && (!chapterTen)) { // если они совпадают с "главой", и глава меньше 10,
-                            number = str1.substring(6,7)*1; // то присваеваем наибольшее число переменной
-            }
-            if ((str2 == "Глава") && (str1.substring(6,8)*1 > number) && (chapterTen)) { // если они совпадают с "главой", и глава больше 10,
-                            number = str1.substring(6,8)*1; // то присваеваем наибольшее число переменной
-            }
-        });
-        k = number;
-        k++;
-        var newChapter = '<a data-toggle="collapse" data-parent="#chapterform" href="#chapter' + j + '" aria-expanded="true" aria-controls="chapter' + j + '" class="list-group-item" >'+
-        '<i class="fa fa-ellipsis-v move"></i>'+
-        '<span class="hidden-sm hidden-xs"  id="chapter' + j + '_name">Глава ' + k + '</span>'+
-        '</a>';
-        var newPanel = '<div class="panel">'+
-        '<div class="row collapse chapter-data" role="tabpanel" id="chapter' + j + '">'+
-        '<input type="hidden" id="chapter' + j + '_id">'+
-        '<input type="hidden" id="chapter' + j + '_order">'+
-        '<input type="hidden" id="chapter' + j + '_delete">'+
-        '<div class="chapter-data-main">'+
-        '<h3>Настройка главы</h3>'+
-        '<div class="form-group checkbox">'+
-        '<label>'+
-        '<input type="checkbox" class="form-control is-subchapter" id="chapter' + j + '_is_subchapter" name="chapter' + j + '_is_subchapter">'+
-        '&emsp;Подглава'+
-        '</label>'+
-        '</div>'+
-        '<div class="form-group">'+
-        '<label for="chapter' + j + '_url">Ссылка</label>'+
-        '<input class="form-control url-input" type="text" id="chapter' + j + '_url_input">'+
-        '<label for="chapter' + j + '_name">Заголовок</label>'+
-        '<input class="form-control name-input" type="text" id="chapter' + j + '_name_input" value="Глава ' + k + '">'+
-        '</div>'+
-        '</div>'+
-        '</div>'+
-        '</div>';
-        var newChapterHeading = '<a class="list-group-item heading" data-chapter-id="' + j + '"><span class="move">Глава ' + k + '</span></a>';
-        if (!($('#chapterselect').children('.active').attr('href'))) { // если не выбранно ни одного элемента
-                    $('#chapterselect').append(newChapter);
-                    $('#chapterform').append(newPanel);
-                    $('#imageselect').append(newChapterHeading); // то вставляем новые главы, панели для глав, heading'и в конец
-        } else {                                         // иначе
-                    $('#chapterselect').children('.active').after(newChapter);
-                    $('#chapterform').children('.panel').each(function(){
-                        if ($(this).children().hasClass('in')) $(this).after(newPanel); // вставляем после выбранного элемента
-                    });
-                    var isRightChapter = false; // переменная поиска
-                    var imageAfterChapter; // переменная для картинки
-                    var id = $('.chapter-data.in').attr('id'); // id выбранного элемента
-                    id = id.substring(7); // берем оттуда только цифру
-                    $('#imageselect').children().each(function(){ // в случае с heading мы будеми проверять его на наличие картинок под ним
-                        if(($(this).is('.heading[data-chapter-id]')) && ($(this).attr('data-chapter-id') == id*1)) {
-                            isRightChapter = true; // если это нужный нам heading, то начинаем искать
-                        } else if (($(this).attr('data-parent') == '#imageform') && (isRightChapter)) {
-                            imageAfterChapter = $(this); // пихаем последнюю картинку что нашли в переменную
-                        } else {
-                            isRightChapter = false; // перестаем искать, как только натыкаемся на другой heading
-                        }
-                    });
-                    if (imageAfterChapter) { // если мы отыскали какую-либо картинку под выбранной главой
-                        imageAfterChapter.after(newChapterHeading); // то вставляем после нее
-                    } else {
-                        $('.heading[data-chapter-id="' + id + '"]').after(newChapterHeading); // иначе втавляем после выбранного heading
-                    }
+$('#chapterModalSave').click(function(){
+    var col = $('#chapterModal_col').val();
+    var name = $('#chapterModal_name').val();
+    var podglava = $('#chapterModal_podglava').prop('checked');
+    if ($('#chapterModal_i').prop('checked')) { addChapter('Начальные иллюстрации'); }
+    if ($('#chapterModal_p').prop('checked')) { addChapter('Пролог'); }
+    if ($('#chapterModal_e').prop('checked')) { addChapter('Эпилог'); }
+    if ($('#chapterModal_a').prop('checked')) { addChapter('Послесловие'); }
+    if ($('#chapterModal_at').prop('checked')) { addChapter('Послесловие команды'); }
+    if (col >= 1) {
+        for (var i = 1; i <= col; i++) {
+            if (podglava) { addChapter(name, true); } else { addChapter(name, false); }
         }
-        $('#chapter' + j + '_name').css({'margin': '0px 0px 0px 3px'}); // отступ для вновь созданого элемента, дабы он выглядел как все
-        var p_order = 0; // поставим для каждой главы порядковый номер
-        $(this).children().each(function(){ // проверяем каждый элемент
-            $($(this).attr('href')+'_order').val(++p_order); // обновляем порядок
-                console.log($(this).attr('href')); // на всякий случай пока оставлю
-                console.log(p_order);
-        });
-        OptionsForSelect = '<option>Весь том</option>'; // Начинаем строить селект
-        u = 0;
-        $('#chapterselect').children('a').each(function(){
-                    u++;
-                    OptionsForSelect = OptionsForSelect + '<option id="select_chapter' + u + '">' + $(this).children('span').text() + ' (' + u + ')</option>';
-                });
-                $('#updateform').children('.panel').find('.update_chapter').html(OptionsForSelect);
-    });
+    }
+    reinitAffix()
+    $('#chapterModal').modal('hide');
+    return false;
+});
 
-    $('#chapterform').children('.panel').each(function(){
-        j++; // считаем кажую панель
+
+$('#btn-chapter-add').click(function(){addChapter();reinitAffix()}) // обработка кнопки добавления новой главы
+function addChapter(name, podglava) {
+    var name = name ? name : "Глава";
+    var podglava = podglava ? 'checked=""' : '';
+    j++;
+    var number = 0;
+    var chapterTen = false;
+    $('#chapterselect').children().each(function() { // обрабатываем количество "Глав"
+        var str1 = $(this).children('span').text();
+        if (str1.substring(0, 8) == "Глава 10" || str1.substring(0, 8) == "Часть 10") chapterTen = true;
     });
+    $('#chapterselect').children().each(function() { // обрабатываем количество "Глав"
+        var str1 = $(this).children('span').text();
+        var str2 = str1.substring(0, 5); // вычленяем первые 5 букв
+        //              if (str1.substring(0,8) == "Глава 10") chapterTen = true;
+        if (((str2 == "Глава") || (str2 == "Часть")) && (str1.substring(6, 7) * 1 > number) && (!chapterTen)) { // если они совпадают с "главой", и глава меньше 10,
+            number = str1.substring(6, 7) * 1; // то присваеваем наибольшее число переменной
+        }
+        if (((str2 == "Глава") || (str2 == "Часть"))&& (str1.substring(6, 8) * 1 > number) && (chapterTen)) { // если они совпадают с "главой", и глава больше 10,
+            number = str1.substring(6, 8) * 1; // то присваеваем наибольшее число переменной
+        }
+    });
+    k = number;
+    k++;
+    var chapterName = (name == "Глава" || name == "Часть") ? name + ' ' + k : name
+    var newChapter = '<a data-toggle="collapse" data-parent="#chapterform" href="#chapter' + j + '" aria-expanded="true" aria-controls="chapter' + j + '" class="list-group-item" >' +
+        '<i class="fa fa-ellipsis-v move"></i>' +
+        '<span class="hidden-sm hidden-xs"  id="chapter' + j + '_name">'+ chapterName + '</span>' +
+        '</a>';
+    var newPanel = '<div class="panel">' +
+        '<div class="row collapse chapter-data" role="tabpanel" id="chapter' + j + '">' +
+        '<input type="hidden" id="chapter' + j + '_id">' +
+        '<input type="hidden" id="chapter' + j + '_order">' +
+        '<input type="hidden" id="chapter' + j + '_delete">' +
+        '<div class="chapter-data-main">' +
+        '<h3>Настройка главы</h3>' +
+        '<div class="form-group checkbox">' +
+        '<label>' +
+        '<input type="checkbox" class="form-control is-subchapter"' + podglava + '" id="chapter' + j + '_is_subchapter" name="chapter' + j + '_is_subchapter">' +
+        '&emsp;Подглава' +
+        '</label>' +
+        '</div>' +
+        '<div class="form-group">' +
+        '<label for="chapter' + j + '_url">Ссылка</label>' +
+        '<input class="form-control url-input" type="text" id="chapter' + j + '_url_input">' +
+        '<label for="chapter' + j + '_name">Заголовок</label>' +
+        '<input class="form-control name-input" type="text" id="chapter' + j + '_name_input" value="'+ chapterName +'">' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+    var newChapterHeading = '<a class="list-group-item heading" data-chapter-id="' + j + '"><span class="move">' + chapterName + '</span></a>';
+    if (!($('#chapterselect').children('.active').attr('href'))) { // если не выбранно ни одного элемента
+        $('#chapterselect').append(newChapter);
+        $('#chapterform').append(newPanel);
+        $('#imageselect').append(newChapterHeading); // то вставляем новые главы, панели для глав, heading'и в конец
+    } else { // иначе
+        $('#chapterselect').children('.active').after(newChapter);
+        $('#chapterform').children('.panel').each(function() {
+            if ($(this).children().hasClass('in')) $(this).after(newPanel); // вставляем после выбранного элемента
+        });
+        var isRightChapter = false; // переменная поиска
+        var imageAfterChapter; // переменная для картинки
+        var id = $('.chapter-data.in').attr('id'); // id выбранного элемента
+        id = id.substring(7); // берем оттуда только цифру
+        $('#imageselect').children().each(function() { // в случае с heading мы будеми проверять его на наличие картинок под ним
+            if (($(this).is('.heading[data-chapter-id]')) && ($(this).attr('data-chapter-id') == id * 1)) {
+                isRightChapter = true; // если это нужный нам heading, то начинаем искать
+            } else if (($(this).attr('data-parent') == '#imageform') && (isRightChapter)) {
+                imageAfterChapter = $(this); // пихаем последнюю картинку что нашли в переменную
+            } else {
+                isRightChapter = false; // перестаем искать, как только натыкаемся на другой heading
+            }
+        });
+        if (imageAfterChapter) { // если мы отыскали какую-либо картинку под выбранной главой
+            imageAfterChapter.after(newChapterHeading); // то вставляем после нее
+        } else {
+            $('.heading[data-chapter-id="' + id + '"]').after(newChapterHeading); // иначе втавляем после выбранного heading
+        }
+    }
+    $('#chapter' + j + '_name').css({
+        'margin': '0px 0px 0px 3px'
+    }); // отступ для вновь созданого элемента, дабы он выглядел как все
+    var p_order = 0; // поставим для каждой главы порядковый номер
+    $(this).children().each(function() { // проверяем каждый элемент
+        $($(this).attr('href') + '_order').val(++p_order); // обновляем порядок
+        console.log($(this).attr('href')); // на всякий случай пока оставлю
+        console.log(p_order);
+    });
+    OptionsForSelect = '<option>Весь том</option>'; // Начинаем строить селект
+    u = 0;
+    $('#chapterselect').children('a').each(function() {
+        u++;
+        OptionsForSelect = OptionsForSelect + '<option id="select_chapter' + u + '">' + $(this).children('span').text() + ' (' + u + ')</option>';
+    });
+    $('#updateform').children('.panel').find('.update_chapter').html(OptionsForSelect);
+    if (podglava) { $('#chapter' + j + '_name').css('margin','0px 0px 0px 28px') }
+};
+
+$('#chapterform').children('.panel').each(function() {
+    j++; // считаем кажую панель
+});
 
     $('#chapterform').on('keyup', '.name-input', function(){
         var elem = $(this);  // засовываем этот объект в переменную (на всякий случай)
