@@ -634,6 +634,7 @@ $('#chapterform').children('.panel').each(function() {
             } else if (file.error) // выводим ошибку возвращенную с сервера
                 $('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
         });
+        $('#imageform .progress').collapse('hide');
     }).on('fileuploadfail', function (e, data) { // выводим ошибку аякса
         $('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
     });
@@ -683,3 +684,83 @@ $('#chapterform').children('.panel').each(function() {
     });
 
     /* ------------------------------------------ IMAGES END ------------------------------------------ */
+
+
+    /* -------------------------------------- IMAGES REPLACEMENT -------------------------------------- */
+    function isInteger(num) {
+        return (num ^ 0) === num;
+    }
+
+    $('#imageModal').on('show.bs.modal', function (e) {
+        $('.image-data-main').each(function(indx){
+            if (isInteger(indx/6)){ $('#imageModal').find('.modal-body .container-fluid').append('<div class="row"></div>'); }
+            var parentId = $(this).parent().attr('id');
+            var image = '<img width="100%" src="' + $(this).find('.btn-image-replace').children('img').attr('src') + '"' +
+            ' data-id="' + $(this).parent().children('#' + parentId + '_id').val() + '"' +
+            ' data-order="' + $(this).parent().children('#' + parentId + '_order').val() + '"' +
+            ' data-chapter_id="' + $(this).parent().children('#' + parentId + '_chapter_id').val() + '"' +
+            ' data-parent_id="' + parentId + '"' +
+            '>';
+            var imageBlock = $('<div class="col-md-2" style="border: 1px solid #eee;padding: 15px;"><p class="text-center">' + parentId.slice(5) + '</p>' + image + '</div>').appendTo($('#imageModal').find('.modal-body .container-fluid .row:last'))
+        });
+
+    })
+    $('#imageModal').on('hide.bs.modal', function (e) {
+        $('#imageModal').find('.modal-body .container-fluid').empty();
+        $('#imageModal').find('#imageModalUploaded').empty();
+    })
+    var imagesReplacement = [];
+    var imgIndx = 0;
+    $('#imageModalUpload #fileupload').fileupload({
+        url: "/rura/loading_files.php",
+        dataType: 'json',
+        autoUpload: false,
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png|jpg)$/i,
+    }).on('fileuploadadd', function (e, data) {
+        data.context = $('<div/>').appendTo('#imageModalUploaded').css('display', 'inline-block').css('width','16.66666667%').css('border', '1px solid #eee').css('padding', '15px').attr('class','imageDraggable');
+        var selection = $('<select  class="form-control uploadedModalSelect"></select>').appendTo(data.context);
+        selection.append('<option value="undefined"></option>')
+        $('#imageModal .modal-body .container-fluid .col-md-2').each(function(indx){
+            selection.append('<option value="' + (indx+1) + '">' + (indx+1) + '</option>')
+        })
+    }).on('fileuploadprocessalways', function (e, data) {
+        $.each(data.files, function (index, file) {
+            imagesReplacement.push({'name':file.name, 'order': parseInt(index,10), 'size': file.size});
+            var added = $(file.preview).prependTo(data.context).css('width','100%');
+        });
+        $('body').on('change', '.imageDraggable select', function(){imagesReplacement[$(this).index('.imageDraggable select')]['order'] = $(this).val();console.log(imagesReplacement);});
+        $('#imageModalSend').click(function(){imgIndx = imagesReplacement.length;data.submit();})
+    }).on('fileuploaddone', function (e, data) { // при завершении загрузки заменяем превюшку на img тег с адресом уже загруженной ирасты
+        console.log(data);
+        $.each(data.result.files, function (index, file) {
+            imgIndx--;
+            if (file.url) {
+                var $imgBlock = $('#image' + imagesReplacement[imgIndx]['order']);
+                $('#imageselect a[href="#image' + imagesReplacement[imgIndx]['order'] + '"] center').empty().append($('<img>').attr('src', file.url));
+                $imgBlock.find('.image-data-main').find('center').empty().append($('<img>').attr('src', file.url).addClass('img-responsive')).append($('<input type="file" class="fileupload">'));
+                $imgBlock.find('.image-data-main').find('input:eq(2)').val(moment(data._time).format('DD.MM.YYYY HH:mm:ss'));
+                $imgBlock.find('.image-data-main').find('input:eq(3)').val(file.name);
+            } else if (file.error) // выводим ошибку возвращенную с сервера
+                $('#imageModalUpload').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
+
+        });
+        $('#imageModal').modal('hide');
+        /*
+        console.log(data) // с сервера в json`е должны прийти поля url и id
+        var $button = $(this);
+        $.each(data.result.files, function (index, file) {
+            if (file.url) {
+                $button.closest('.image-data-main,.image-data-color').find('input:eq(1)').val(moment(data._time).format('DD.MM.YYYY HH:mm:ss'));
+                $button.closest('.image-data-main,.image-data-color').find('input:eq(2)').val(file.name);
+                $button.closest('.image-data-main,.image-data-color').find('center').empty().append($('<img>').attr('src', file.url).addClass('img-responsive'));
+                $('#image'+data.files[index].num).find('.image-data-'+data.files[index].ctype).find('center').empty().append($('<img>').attr('src', file.url).addClass('img-responsive')).append($('<input type="file" class="fileupload">'));
+                $('#image'+data.files[index].num+'_id').val(file.id);
+                $('#imageselect a[href="#image'+data.files[index].num+'"] center').empty().append($('<img>').attr('src', file.url));
+            } else if (file.error) // выводим ошибку возвращенную с сервера
+                $('#imageform .progress').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> '+file.error+'</div>');
+        });
+*/
+    }).on('fileuploadfail', function (e, data) { // выводим ошибку аякса
+        $('#imageModalUpload').after('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Ошибка!</strong> Загрузка не удалась</div>');
+    });
+    /* -------------------------------------- IMAGES REPLACEMENT -------------------------------------- */

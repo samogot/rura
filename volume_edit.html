@@ -8,9 +8,11 @@
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdn.rawgit.com/blueimp/jQuery-File-Upload/master/js/vendor/jquery.ui.widget.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         input[type="checkbox"] {
@@ -18,6 +20,26 @@
             line-height: normal;
             width: 13px;
         }
+    #imageModalUpload {
+        height: 150px;
+    }
+    .dragover #imageModalUpload::before {
+        content: 'Добавить файлы';
+        position: absolute;
+        bottom: 5px;
+        left: 15px;
+        right: 15px;
+        opacity: 0.9;
+        height: 170px;
+        padding-top: 50px;
+        background: white;
+        border: 5px dashed #777;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+        color: #777;
+        z-index: 3;
+    }
     </style>
 </head>
 
@@ -744,7 +766,11 @@
                             </button>
                             <button type="button" class="btn btn-default btn-border" title="Режим замены изображений" id="btn-image-replace-main"><i class="fa fa-retweet"></i>
                             </button>
+                            <button type="button" class="btn btn-warning btn-border" title="Режим пакетной замены изображений" data-toggle="modal" data-target="#imageModal"><i class="fa fa-retweet"></i>
+                            </button>
                             <button type="button" class="btn btn-default btn-border" title="Режим добавления/замены покрасов" id="btn-image-reset-color"><i class="fa fa-retweet" style="color: #60a9d4;"></i><i class="fa fa-paint-brush" style="font-size: 9px;margin-left: -9px;"></i>
+                            </button>
+                            <button type="button" class="btn btn-warning btn-border" title="Режим пакетного добавления/замены покрасов" data-toggle="modal" data-target="#colorModal"><i class="fa fa-retweet" style="color: #60a9d4;"></i><i class="fa fa-paint-brush" style="font-size: 9px;margin-left: -9px;"></i>
                             </button>
                             <button type="button" class="btn btn-danger" title="Удалить изображение" id="btn-image-delete" disabled><i class="fa fa-trash-o"></i>
                             </button>
@@ -960,7 +986,6 @@
                                             <img src="http://ruranobe.ru/w/images/d/d7/AW_v09_07.jpg" class="img-responsive">
                                         </center>
                                         <div class="form-group">
-
                                             <label for="image5_main_date">Дата загрузки</label>
                                             <input type="text" class="form-control disable" disabled id="image5_main_date" value="20.02.2015 10:00:00">
                                         </div>
@@ -989,6 +1014,54 @@
                         </div>
                     </div>
                 </form>
+                <!-- Modal -->
+                <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="imageModalLabel">Пакетная замена иллюстраций</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p class="text-center">Имеющиеся ллюстрации.</p>
+                        <div class="container-fluid" style="">
+
+                        </div>
+                        <hr>
+                        <div id="imageModalUploaded" class="files">
+                            <p class="text-center">Загруженные иллюстрации. Выберите число, на какую именно иллюстрацию в верхней части хотите заменить.</p>
+                        </div>
+                        <hr>
+                        <div id="imageModalUpload">
+                            <p class="text-center">Загрузка иллюстраций. Перетащите иллюстрации с вашего компьютера сюда, или выберите их, нажав на кнопку ниже</p>
+                            <center><input id="fileupload" type="file" multiple></center>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                        <button type="button" class="btn btn-primary" id="imageModalSend">Сохранить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="colorModal" tabindex="-1" role="dialog" aria-labelledby="colorModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="colorModalLabel">Пакетная замена иллюстраций</h4>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                        <button type="button" class="btn btn-primary">Сохранить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </main>
         </div>
 
@@ -1034,16 +1107,13 @@
 
     <script src="js/listgroup.js"></script>
     <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
-    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-    <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-    <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
     <!-- Скрипт загрузки -->
+    <script src="https://cdn.rawgit.com/blueimp/JavaScript-Load-Image/master/js/load-image.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload-process.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload-image.min.js"></script>
+    <script src="https://cdn.rawgit.com/blueimp/JavaScript-Canvas-to-Blob/master/js/canvas-to-blob.min.js"></script>
     <!-- moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>
     <!-- DateTimePicker -->
