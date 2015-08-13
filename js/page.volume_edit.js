@@ -708,6 +708,9 @@ $('#chapterform').children('.panel').each(function() {
     $('#imageModal').on('hide.bs.modal', function (e) {
         $('#imageModal').find('.modal-body .container-fluid').empty();
         $('#imageModal').find('#imageModalUploaded').empty();
+        var imgIndx = 0;
+        var imagesReplacement = [];
+        imagesReplacement.length = 0;
     })
     var imagesReplacement = [];
     imagesReplacement.length = 0;
