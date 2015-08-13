@@ -649,6 +649,7 @@ $('#chapterform').children('.panel').each(function() {
         acceptFileTypes: /(\.|\/)(jpe?g|png|jpg)$/i,
         previewMaxHeight: 180,
         previewMaxWidth: 260,
+        imageQuality: 100,
         dropZone: $('#imageselect')
     }).on('fileuploadadd', function (e, data) { // при добавлении файла сразу создаем елемент в #imageselect
         $.each(data.files, function (index, file) {
@@ -693,15 +694,14 @@ $('#chapterform').children('.panel').each(function() {
 
     $('#imageModal').on('show.bs.modal', function (e) {
         $('.image-data-main').each(function(indx){
-            if (isInteger(indx/6)){ $('#imageModal').find('.modal-body .container-fluid').append('<div class="row"></div>'); }
             var parentId = $(this).parent().attr('id');
-            var image = '<img width="100%" src="' + $(this).find('.btn-image-replace').children('img').attr('src') + '"' +
+            var image = '<img height="150px" src="' + $(this).find('.btn-image-replace').children('img').attr('src') + '"' +
             ' data-id="' + $(this).parent().children('#' + parentId + '_id').val() + '"' +
             ' data-order="' + $(this).parent().children('#' + parentId + '_order').val() + '"' +
             ' data-chapter_id="' + $(this).parent().children('#' + parentId + '_chapter_id').val() + '"' +
             ' data-parent_id="' + parentId + '"' +
             '>';
-            var imageBlock = $('<div class="col-md-2" style="border: 1px solid #eee;padding: 15px;"><p class="text-center">' + parentId.slice(5) + '</p>' + image + '</div>').appendTo($('#imageModal').find('.modal-body .container-fluid .row:last'))
+            var imageBlock = $('<div class="row" style="border: 1px solid #eee;padding: 15px;text-align:center;">' + '<p>' + parentId.slice(5) + '</p>' + image + '</div>').appendTo($('#imageModal').find('.modal-body .container-fluid'))
         });
 
     })
@@ -710,25 +710,51 @@ $('#chapterform').children('.panel').each(function() {
         $('#imageModal').find('#imageModalUploaded').empty();
     })
     var imagesReplacement = [];
+    imagesReplacement.length = 0;
     var imgIndx = 0;
+    function swap ($object, to, sort){
+        imagesReplacement[$object.data('pos')-1]['order'] = to;
+        if (!sort) $object.insertBefore($('#imageModalUploaded .imageDraggable:eq(' + (to-1) + ')'));
+        $object.find('select, input').val(to);
+        $(".imageDraggable:gt(" + (to-1) + ")").each(function(indx){
+            imagesReplacement[$(this).data('pos')-1]['order'] = $(this).index();
+            $(this).find('select, input').val($(this).index());
+        });
+    }
+    $('#imageModalUploaded').sortable({ // включаем jquery-ui sortable
+        handle:'', // задаем маркер перетягивания,
+        items: '.imageDraggable',
+        stop: function(event, ui) {
+            swap(ui.item, ui.item.index(), true);
+        }
+    });
     $('#imageModalUpload #fileupload').fileupload({
         url: "/rura/loading_files.php",
         dataType: 'json',
         autoUpload: false,
+        previewMaxWidth: 500,
+        previewMinWidth: 500,
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png|jpg)$/i,
     }).on('fileuploadadd', function (e, data) {
-        data.context = $('<div/>').appendTo('#imageModalUploaded').css('display', 'inline-block').css('width','16.66666667%').css('border', '1px solid #eee').css('padding', '15px').attr('class','imageDraggable');
-        var selection = $('<select  class="form-control uploadedModalSelect"></select>').appendTo(data.context);
+        imgIndx++;
+        data.context = $('<div/>').appendTo('#imageModalUploaded').attr('class','imageDraggable').attr('data-pos',imgIndx);
+        $('#imageModalUploaded').sortable('refresh');
+        var controlBlock = $('<div class="form-inline row"></div>').appendTo(data.context);
+        var selectionBlock = $('<div class="form-group col-xs-6"><label>Выберите</label> </div>').appendTo(controlBlock);
+        var selection = $('<select  class="form-control uploadedModalSelect"></select>').appendTo(selectionBlock);
         selection.append('<option value="undefined"></option>')
-        $('#imageModal .modal-body .container-fluid .col-md-2').each(function(indx){
+        $('#imageModal .modal-body .container-fluid .row').each(function(indx){
             selection.append('<option value="' + (indx+1) + '">' + (indx+1) + '</option>')
         })
+        var input = $('<div class="form-group col-xs-6"><label>или введите</label><input type="number" style="width:80px !important" class="form-control"></div>').appendTo(data.context);
+        input.appendTo(controlBlock);
     }).on('fileuploadprocessalways', function (e, data) {
         $.each(data.files, function (index, file) {
-            imagesReplacement.push({'name':file.name, 'order': parseInt(index,10), 'size': file.size});
-            var added = $(file.preview).prependTo(data.context).css('width','100%');
+            imagesReplacement.push({'name':file.name, 'order': (data.context).data('pos'), 'size': file.size});
+            (data.context).find('select, input').val((data.context).data('pos'));
+            var added = $(file.preview).prependTo(data.context).css('height','141px');
         });
-        $('body').on('change', '.imageDraggable select', function(){imagesReplacement[$(this).index('.imageDraggable select')]['order'] = $(this).val();console.log(imagesReplacement);});
+        $('body').on('change', '.imageDraggable select, .imageDraggable input', function(){swap($(this).closest('.imageDraggable'),$(this).val());console.log(imagesReplacement);});
         $('#imageModalSend').click(function(){imgIndx = imagesReplacement.length;data.submit();})
     }).on('fileuploaddone', function (e, data) { // при завершении загрузки заменяем превюшку на img тег с адресом уже загруженной ирасты
         console.log(data);

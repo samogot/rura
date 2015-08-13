@@ -40,6 +40,12 @@
         color: #777;
         z-index: 3;
     }
+    .imageDraggable {
+        border: 1px solid #eee;
+        text-align: center;
+        padding: 15px;
+        background: #fff;
+    }
     </style>
 </head>
 
@@ -1023,18 +1029,20 @@
                         <h4 class="modal-title" id="imageModalLabel">Пакетная замена иллюстраций</h4>
                       </div>
                       <div class="modal-body">
-                        <p class="text-center">Имеющиеся ллюстрации.</p>
-                        <div class="container-fluid" style="">
-
-                        </div>
-                        <hr>
-                        <div id="imageModalUploaded" class="files">
-                            <p class="text-center">Загруженные иллюстрации. Выберите число, на какую именно иллюстрацию в верхней части хотите заменить.</p>
-                        </div>
-                        <hr>
                         <div id="imageModalUpload">
                             <p class="text-center">Загрузка иллюстраций. Перетащите иллюстрации с вашего компьютера сюда, или выберите их, нажав на кнопку ниже</p>
                             <center><input id="fileupload" type="file" multiple></center>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6" style="border-right: 1px solid #eee;">
+                                <p class="text-center">Имеющиеся иллюстрации.</p>
+                                <div class="container-fluid" style="">
+                                </div>
+                            </div>
+                            <div id="imageModalUploaded" class="files col-md-6">
+                                <p class="text-center">Загруженные иллюстрации. Выберите число - замену.</p>
+                            </div>
                         </div>
                       </div>
                       <div class="modal-footer">
