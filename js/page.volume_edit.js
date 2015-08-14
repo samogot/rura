@@ -692,7 +692,13 @@ $('#chapterform').children('.panel').each(function() {
         return (num ^ 0) === num;
     }
 
+    var imagesReplacement = [];
+    imagesReplacement.length = 0;
+    var imgIndx = 0;
     $('#imageModal').on('show.bs.modal', function (e) {
+        imagesReplacement = [];
+        imagesReplacement.length = 0;
+        imgIndx = 0;
         $('.image-data-main').each(function(indx){
             var parentId = $(this).parent().attr('id');
             var image = '<img height="150px" src="' + $(this).find('.btn-image-replace').children('img').attr('src') + '"' +
@@ -702,24 +708,22 @@ $('#chapterform').children('.panel').each(function() {
             ' data-parent_id="' + parentId + '"' +
             '>';
             var imageBlock = $('<div class="row" style="border: 1px solid #eee;padding: 15px;text-align:center;">' + '<p>' + parentId.slice(5) + '</p>' + image + '</div>').appendTo($('#imageModal').find('.modal-body .container-fluid'))
+            $('<div></div>').appendTo('#imageModalUploaded').attr('class','imageDraggable NoImageModal').attr('data-pos',(indx+1));
+            $('#imageModalUploaded').sortable('refresh');
+            imagesReplacement.push({'name':'', 'order': (indx+1), 'size': 0});
         });
 
     })
     $('#imageModal').on('hide.bs.modal', function (e) {
         $('#imageModal').find('.modal-body .container-fluid').empty();
         $('#imageModal').find('#imageModalUploaded').empty();
-        var imgIndx = 0;
-        var imagesReplacement = [];
-        imagesReplacement.length = 0;
     })
-    var imagesReplacement = [];
-    imagesReplacement.length = 0;
-    var imgIndx = 0;
-    function swap ($object, to, sort){
+    function swap ($object, to, sort, top){
+        var before = imagesReplacement[$object.data('pos')-1]['order'];
         imagesReplacement[$object.data('pos')-1]['order'] = to;
-        if (!sort) $object.insertBefore($('#imageModalUploaded .imageDraggable:eq(' + (to-1) + ')'));
+        if (!sort) $object.insertAfter($('#imageModalUploaded .imageDraggable:eq(' + (to-1) + ')'));
         $object.find('select, input').val(to);
-        $(".imageDraggable:gt(" + (to-1) + ")").each(function(indx){
+        $(".imageDraggable").each(function(indx){
             imagesReplacement[$(this).data('pos')-1]['order'] = $(this).index();
             $(this).find('select, input').val($(this).index());
         });
@@ -740,7 +744,8 @@ $('#chapterform').children('.panel').each(function() {
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png|jpg)$/i,
     }).on('fileuploadadd', function (e, data) {
         imgIndx++;
-        data.context = $('<div/>').appendTo('#imageModalUploaded').attr('class','imageDraggable').attr('data-pos',imgIndx);
+        $('.imageDraggable.NoImageModal:first').remove();
+        data.context = $('<div/>').insertBefore('#imageModalUploaded .imageDraggable.NoImageModal:first').attr('class','imageDraggable').attr('data-pos',imgIndx);
         $('#imageModalUploaded').sortable('refresh');
         var controlBlock = $('<div class="form-inline row"></div>').appendTo(data.context);
         var selectionBlock = $('<div class="form-group col-xs-6"><label>Выберите</label> </div>').appendTo(controlBlock);
@@ -752,17 +757,28 @@ $('#chapterform').children('.panel').each(function() {
         var input = $('<div class="form-group col-xs-6"><label>или введите</label><input type="number" style="width:80px !important" class="form-control"></div>').appendTo(data.context);
         input.appendTo(controlBlock);
     }).on('fileuploadprocessalways', function (e, data) {
+        var currentPosition = (data.context).data('pos');
+        console.log(imagesReplacement[currentPosition-1]);
         $.each(data.files, function (index, file) {
-            imagesReplacement.push({'name':file.name, 'order': (data.context).data('pos'), 'size': file.size});
-            (data.context).find('select, input').val((data.context).data('pos'));
+            if(imagesReplacement[currentPosition-1]) {
+                imagesReplacement[currentPosition-1]['name'] = file.name;
+                imagesReplacement[currentPosition-1]['order'] = currentPosition;
+                imagesReplacement[currentPosition-1]['size'] = file.size;
+            } else {
+                imagesReplacement.push({'name':file.name, 'order': currentPosition, 'size': file.size});
+            }
+            (data.context).find('select, input').val(currentPosition);
             var added = $(file.preview).prependTo(data.context).css('height','141px');
         });
+        console.log(imagesReplacement[currentPosition-1]);
         $('body').on('change', '.imageDraggable select, .imageDraggable input', function(){swap($(this).closest('.imageDraggable'),$(this).val());console.log(imagesReplacement);});
         $('#imageModalSend').click(function(){imgIndx = imagesReplacement.length;data.submit();})
     }).on('fileuploaddone', function (e, data) { // при завершении загрузки заменяем превюшку на img тег с адресом уже загруженной ирасты
         console.log(data);
         $.each(data.result.files, function (index, file) {
-            imgIndx--;
+            imgIndx = (data.context).data('pos') - 1;
+            console.log(imgIndx);
+            console.log(imagesReplacement[imgIndx])
             if (file.url) {
                 var $imgBlock = $('#image' + imagesReplacement[imgIndx]['order']);
                 $('#imageselect a[href="#image' + imagesReplacement[imgIndx]['order'] + '"] center').empty().append($('<img>').attr('src', file.url));
