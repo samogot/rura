@@ -695,11 +695,14 @@ $('#chapterform').children('.panel').each(function() {
     var imagesReplacement = [];
     imagesReplacement.length = 0;
     var imgIndx = 0;
+    var needReplaceImg = 0;
     $('#imageModal').on('show.bs.modal', function (e) {
         imagesReplacement = [];
         imagesReplacement.length = 0;
+        needReplaceImg = 0;
         imgIndx = 0;
         $('.image-data-main').each(function(indx){
+            needReplaceImg++;
             var parentId = $(this).parent().attr('id');
             var image = '<img height="150px" src="' + $(this).find('.btn-image-replace').children('img').attr('src') + '"' +
             ' data-id="' + $(this).parent().children('#' + parentId + '_id').val() + '"' +
@@ -716,7 +719,7 @@ $('#chapterform').children('.panel').each(function() {
     })
     $('#imageModal').on('hide.bs.modal', function (e) {
         $('#imageModal').find('.modal-body .container-fluid').empty();
-        $('#imageModal').find('#imageModalUploaded').empty();
+        $('#imageModal').find('#imageModalUploaded').html('<p class="text-center">Загруженные иллюстрации. Выберите число - замену.</p>');
     })
     function swap ($object, to, sort, top){
         var before = imagesReplacement[$object.data('pos')-1]['order'];
@@ -724,8 +727,14 @@ $('#chapterform').children('.panel').each(function() {
         if (!sort) $object.insertAfter($('#imageModalUploaded .imageDraggable:eq(' + (to-1) + ')'));
         $object.find('select, input').val(to);
         $(".imageDraggable").each(function(indx){
-            imagesReplacement[$(this).data('pos')-1]['order'] = $(this).index();
-            $(this).find('select, input').val($(this).index());
+            if($(this).index() <= needReplaceImg) {
+                imagesReplacement[$(this).data('pos')-1]['order'] = $(this).index();
+                $(this).find('select, input').val($(this).index());
+            }
+            else {
+                imagesReplacement[$(this).data('pos')-1]['order'] = 0
+                $(this).find('select, input').val(0);
+            }
         });
     }
     $('#imageModalUploaded').sortable({ // включаем jquery-ui sortable
@@ -744,8 +753,13 @@ $('#chapterform').children('.panel').each(function() {
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png|jpg)$/i,
     }).on('fileuploadadd', function (e, data) {
         imgIndx++;
-        $('.imageDraggable.NoImageModal:first').remove();
-        data.context = $('<div/>').insertBefore('#imageModalUploaded .imageDraggable.NoImageModal:first').attr('class','imageDraggable').attr('data-pos',imgIndx);
+        data.context = $('<div/>').attr('class','imageDraggable').attr('data-pos',imgIndx);
+        if($('.imageDraggable.NoImageModal:first').length > 0) {
+            $('.imageDraggable.NoImageModal:first').remove();
+            (data.context).insertBefore('#imageModalUploaded .imageDraggable.NoImageModal:first');
+        } else {
+            (data.context).appendTo('#imageModalUploaded').attr('data-pos',imgIndx-1);
+        }
         $('#imageModalUploaded').sortable('refresh');
         var controlBlock = $('<div class="form-inline row"></div>').appendTo(data.context);
         var selectionBlock = $('<div class="form-group col-xs-6"><label>Выберите</label> </div>').appendTo(controlBlock);
@@ -765,14 +779,14 @@ $('#chapterform').children('.panel').each(function() {
                 imagesReplacement[currentPosition-1]['order'] = currentPosition;
                 imagesReplacement[currentPosition-1]['size'] = file.size;
             } else {
-                imagesReplacement.push({'name':file.name, 'order': currentPosition, 'size': file.size});
+                imagesReplacement.push({'name':file.name, 'order': 0, 'size': file.size});
             }
-            (data.context).find('select, input').val(currentPosition);
+            if (currentPosition <= needReplaceImg) (data.context).find('select, input').val(currentPosition);
             var added = $(file.preview).prependTo(data.context).css('height','141px');
         });
         console.log(imagesReplacement[currentPosition-1]);
         $('body').on('change', '.imageDraggable select, .imageDraggable input', function(){swap($(this).closest('.imageDraggable'),$(this).val());console.log(imagesReplacement);});
-        $('#imageModalSend').click(function(){imgIndx = imagesReplacement.length;data.submit();})
+        $('#imageModalSend').click(function(){imgIndx = imagesReplacement.length;if(imagesReplacement[currentPosition-1]['order'] != 0) data.submit();})
     }).on('fileuploaddone', function (e, data) { // при завершении загрузки заменяем превюшку на img тег с адресом уже загруженной ирасты
         console.log(data);
         $.each(data.result.files, function (index, file) {
