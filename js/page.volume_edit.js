@@ -833,7 +833,8 @@ $('#imageModal').on('hide.bs.modal', function(e) {
 function swap($object, to, sort, top) {
     var before = imagesReplacement[$object.data('pos') - 1]['order'];
     imagesReplacement[$object.data('pos') - 1]['order'] = to;
-    if (!sort) $object.insertAfter($('#imageModalUploaded .imageDraggable:eq(' + (to - 1) + ')'));
+    if (!sort & to != needReplaceImg-1) {$object.insertBefore($('#imageModalUploaded .imageDraggable:eq(' + (to) + ')'))}
+        else if(!sort & to == needReplaceImg-1){$object.insertAfter($('#imageModalUploaded .imageDraggable:eq(' + (to) + ')'))}
     $object.find('select, input').val(to);
     $(".imageDraggable").each(function(indx) {
         if ($(this).index() <= needReplaceImg) {
@@ -862,9 +863,9 @@ $('#imageModalUpload #fileupload').fileupload({
 }).on('fileuploadadd', function(e, data) {
     imgIndx++;
     data.context = $('<div/>').attr('class', 'imageDraggable').attr('data-pos', imgIndx);
-    if ($('.imageDraggable.NoImageModal:first').length > 0) {
-        $('.imageDraggable.NoImageModal:first').remove();
+    if ($('.imageDraggable.NoImageModal').length > 0) {
         (data.context).insertBefore('#imageModalUploaded .imageDraggable.NoImageModal:first');
+        $('.imageDraggable.NoImageModal:first').remove();
     } else {
         (data.context).appendTo('#imageModalUploaded').attr('data-pos', imgIndx - 1);
     }
@@ -898,7 +899,7 @@ $('#imageModalUpload #fileupload').fileupload({
     });
     console.log(imagesReplacement[currentPosition - 1]);
     $('body').on('change', '.imageDraggable select, .imageDraggable input', function() {
-        swap($(this).closest('.imageDraggable'), $(this).val());
+        swap($(this).closest('.imageDraggable'), $(this).val()-1);
         console.log(imagesReplacement);
     });
     $('#imageModalSend').click(function() {
