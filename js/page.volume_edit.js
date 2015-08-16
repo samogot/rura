@@ -774,6 +774,7 @@ $('#btn-image-delete').click(function() { // обработка кнопки у�
     $('.image-data.in').collapse('hide');
     $('#' + id + '_detele').val(true);
     $('#imageselect [href="#' + id + '"]').detach();
+    $('#imageform #' + id).detach();
     if (nextImage.attr('class') && nextPanel.attr('class')) {
         nextImage.addClass('active');
         nextPanel.collapse('show');
