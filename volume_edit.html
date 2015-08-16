@@ -448,6 +448,7 @@
                             <button type="button" class="btn btn-success" title="Добавить новую главу" id="btn-chapter-add"><i class="fa fa-plus"></i>
                             </button>
                             <button type="button" class="btn btn-warning" title="Добавить несколько глав" id="btn-multi-chapter-add" data-toggle="modal" data-target="#chapterModal"><i class="fa fa-plus-circle"></i>
+                            <button type="button" class="btn btn-info" title="Добавить несколько подглав" id="btn-multi-podglava-add" data-toggle="modal" data-target="#podglavaModal"><i class="fa fa-plus-square"></i>
                             </button>
                             <button type="button" class="btn btn-danger" title="Удалить главу" id="btn-chapter-delete" disabled><i class="fa fa-trash-o"></i>
                             </button>
@@ -497,7 +498,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="chapter1_url">Ссылка</label>
-                                            <input class="form-control url-input" type="text" id="chapter1_url_input">
+                                            <input class="form-control url-input" type="text" id="chapter1_url_input" value="i">
                                             <label for="chapter1_name">Заголовок</label>
                                             <input class="form-control name-input" type="text" id="chapter1_name_input" value="Начальные иллюстрации">
                                         </div>
@@ -518,7 +519,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="chapter2_url">Ссылка</label>
-                                            <input class="form-control url-input" type="text" id="chapter2_url_input">
+                                            <input class="form-control url-input" type="text" id="chapter2_url_input" value="p">
                                             <label for="chapter2_name">Заголовок</label>
                                             <input class="form-control name-input" type="text" id="chapter2_name_input" value="Пролог">
                                         </div>
@@ -539,7 +540,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="chapter3_url">Ссылка</label>
-                                            <input class="form-control url-input" type="text" id="chapter3_url_input">
+                                            <input class="form-control url-input" type="text" id="chapter3_url_input" value="ch1">
                                             <label for="chapter3_name">Заголовок</label>
                                             <input class="form-control name-input" type="text" id="chapter3_name_input" value="Глава 1">
                                         </div>
@@ -560,7 +561,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="chapter4_url">Ссылка</label>
-                                            <input class="form-control url-input" type="text" id="chapter4_url_input">
+                                            <input class="form-control url-input" type="text" id="chapter4_url_input" value="ch2">
                                             <label for="chapter4_name">Заголовок</label>
                                             <input class="form-control name-input" type="text" id="chapter4_name_input" value="Глава 2">
                                         </div>
@@ -579,11 +580,6 @@
                         <h4 class="modal-title" id="myModalLabel">Добавить несколько глав</h4>
                       </div>
                       <div class="modal-body">
-                            <div class="form-group checkbox">
-                                <label>
-                                    <input class="form-control" type="checkbox" value="" id="chapterModal_podglava">&emsp;Подглавы?
-                                </label>
-                            </div>
                             <div class="form-group">
                                 <label for="chapterModal_col">Количество</label>
                                 <input class="form-control" type="number" id="chapterModal_col">
@@ -619,6 +615,28 @@
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
                         <button type="button" class="btn btn-primary" id="chapterModalSave">Сохранить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="podglavaModal" tabindex="-1" role="dialog" aria-labelledby="podglavaModal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Добавить несколько подглав</h4>
+                      </div>
+                      <div class="modal-body">
+                            <div class="form-group">
+                                <label for="podglavaModal_col">Количество</label>
+                                <input class="form-control" type="number" id="podglavaModal_col">
+                                <label for="podglavaModal_name">Заголовок</label>
+                                <input class="form-control" type="text" id="podglavaModal_name" value="Часть">
+                            </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                        <button type="button" class="btn btn-primary" id="podglavaModalSave">Сохранить</button>
                       </div>
                     </div>
                   </div>
