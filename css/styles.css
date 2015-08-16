@@ -2920,3 +2920,7 @@ thead.header-copy.affix-bottom {
         margin-left: 390px;
     }
 }
+.footer,.copyright {
+z-index: 1;
+position: relative;
+}
