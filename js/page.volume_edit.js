@@ -255,6 +255,11 @@ $('#chapterModalSave').click(function() {
     if ($('#chapterModal_at').prop('checked')) {
         addChapter('Послесловие команды');
     }
+    if (col >= 1) {
+        for (var i = 1; i <= col; i++) {
+            addChapter(name, false, i);
+        }
+    }
     reinitAffix();
     $('#chapterModal').modal('hide');
     return false;
@@ -330,7 +335,6 @@ function addChapter(name, podglava, num) {
     } else {
         link = 'ch' + k;
     }
-    console.log(link);
     var newChapter = '<a data-toggle="collapse" data-parent="#chapterform" href="#chapter' + j + '" aria-expanded="true" aria-controls="chapter' + j + '" class="list-group-item" data-podglava="' + podglava + '">' +
         '<i class="fa fa-ellipsis-v move"></i>' +
         '<span class="hidden-sm hidden-xs"  id="chapter' + j + '_name">' + chapterName + '</span>' +
