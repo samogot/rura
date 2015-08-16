@@ -472,8 +472,10 @@ $('#chapterselect').on('click', 'a.list-group-item', function() { // баг фи
 
 $('#chapterform').on('hidden.bs.collapse', '.chapter-data', function() { // обработка активности кнопки удаления
     $('#btn-chapter-delete').attr('disabled', true);
+    $('#btn-multi-podglava-add').attr('disabled', true);
 }).on('shown.bs.collapse', '.chapter-data', function() {
     $('#btn-chapter-delete').attr('disabled', false);
+    $('#btn-multi-podglava-add').attr('disabled', false);
 });
 
 $('#btn-chapter-delete').on('click', function() { // обработка кнопки удаления для глав
