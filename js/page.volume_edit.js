@@ -278,7 +278,7 @@ $('#podglavaModalSave').click(function() {
         return false;
     }
     if (col >= 1) {
-        for (var i = 1; i <= col; i++) {
+        for (var i = col; i >= 1; i--) {
             addChapter(name, true, i);
         }
     }
