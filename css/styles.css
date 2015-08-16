@@ -2896,3 +2896,27 @@ thead.header-copy.affix-bottom {
     top: -10px !important;
     right: -10px !important;
 }
+
+
+
+@media (min-width: 768px) {
+    img.rura404 {
+        position: fixed;
+    }
+}
+
+@media (min-width: 992px) {
+    img.rura404 {
+        position: fixed;
+        top: 230px;
+        margin-left: 180px;
+    }
+}
+
+@media (min-width: 1200px) {
+    img.rura404 {
+        position: fixed;
+        top: 190px;
+        margin-left: 390px;
+    }
+}
