@@ -1,0 +1,100 @@
+/*                  CABINET                  */
+
+.leftcabinet,
+.infocabinet {
+    display: inline-block;
+    position: relative;
+}
+.leftcabinet {
+    width: 150px;
+    float: left;
+}
+.avatarcabinet,
+.placeholderavatar,
+.avatarcabinet img {
+    width: 150px;
+    height: 150px;
+}
+.avatarcabinet {
+    margin-bottom: 5px;
+    border: 1px dashed #68add6;
+    position: relative;
+    background: #f2f2f2 url("../img/no_avatar.png") no-repeat;
+}
+.avatarcabinet img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.placeholderavatar {
+    position: absolute;
+    width: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 100px;
+    text-align: center;
+    z-index: 20;
+}
+.placeholderavatar p {
+    font-size: 20px;
+}
+.leftcabinet button {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.infocabinet {
+    width: calc(100% - 175px);
+    margin-left: 20px;
+}
+.infocabinet button {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+.infocabinet span.grey {
+    color: #C6C6C6;
+    font-size: 12px;
+}
+.userbookmarks {
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+}
+.userbookmarks li {
+    margin-bottom: 40px;
+}
+.userbookmarks li .fa-bookmark {
+    float: left;
+}
+.userbookmark {
+    margin-left: 15px;
+    display: inline-block;
+    width: calc(100% - 70px);
+}
+.bookmarktext {
+    padding: 15px;
+    background: #f2f2f2;
+    margin-bottom: 10px;
+}
+.bookmarkbuttons {
+    height: 30px;
+}
+.bookmarkbuttons button {
+    background: #f2f2f2;
+    float: right;
+}
+.bookmarkbuttons button:nth-child(1) {
+    float: left;
+}
+.bookmarkcomments {
+    margin-top: 5px;
+}
+.bookmarkcomment {
+    border: 1px solid #f8c928;
+    background: #ffedb1;
+    padding: 5px;
+}
+/*                  CABINET                  */

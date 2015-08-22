@@ -1,0 +1,501 @@
+/* body.night START */
+body.night .text p.show {
+    background: #424242;
+    cursor: pointer;
+}
+body.night .text p.show:hover {
+    border: 1px dashed #E0E0E0;
+}
+body.night center.project {
+    opacity: 0.5;
+}
+body.night .fancybox-skin {
+    background-color: #282828;
+}
+body.night .modal-content {
+    background-color: #282828;
+}
+body.night .close {
+    color: #E0E0E0;
+}
+body.night .popover,
+body.night .popover-title {
+    color: #E0E0E0;
+    background-color: #282828;
+}
+body.night .popover.right>.arrow:after,
+body.night .popover.bottom>.arrow:after,
+body.night .popover.top>.arrow:after,
+body.night .popover.left>.arrow:after {
+    border-right-color: #282828;
+}
+body.night .moduleIcon.list {
+    background: #4E4E4E url("../img/list_active.png") no-repeat scroll 10px 20px;
+}
+body.night .moduleIcon.type1 {
+    background: #4E4E4E url("../img/updIcons/icon1_active.png") no-repeat scroll 10px 8px;
+}
+body.night .moduleIcon.type2 {
+    background: #4E4E4E url("../img/updIcons/icon2_active.png") no-repeat scroll 10px 8px;
+}
+body.night .moduleIcon.type3 {
+    background: #4E4E4E url("../img/updIcons/icon3_active.png") no-repeat scroll 10px 8px;
+}
+body.night .moduleIcon.type4 {
+    background: #4E4E4E url("../img/updIcons/icon4_active.png") no-repeat scroll 10px 8px;
+}
+body.night .ContentNav > li > a {
+    color: #FFF;
+}
+body.red .leftbg,
+body.red .rightbg {
+    background: #CF4256;
+}
+body.blue .leftbg,
+body.blue .rightbg {
+    background: #3793C8;
+}
+body.black .leftbg,
+body.black .rightbg {
+    background: #282828;
+}
+body.white .leftbg,
+body.white .rightbg {
+    background: #FFF;
+}
+.leftbg,
+.rightbg {
+    width: 1140px;
+    bottom: 20px;
+    position: absolute;
+    top: -20px;
+    -moz-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    -webkit-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    -o-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#F2F2F2%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+}
+body.night .leftbg,
+body.night .rightbg {
+    -moz-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#282828%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#4E4E4E%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    -webkit-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#282828%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#4E4E4E%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    -o-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#282828%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#4E4E4E%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#282828%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#4E4E4E%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+}
+@media screen and (max-width: 767px) {
+    .leftbg,
+    .rightbg {
+        width: 1140px;
+        bottom: 20px;
+        position: absolute;
+        top: -20px;
+        -moz-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#60A9D4%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+        -webkit-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#60A9D4%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+        -o-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#60A9D4%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+        border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#FFFFFF%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#60A9D4%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    }
+    body.night .leftbg,
+    body.night .rightbg {
+        -moz-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#000000%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#60A9D4%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+        -webkit-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#000000%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#60A9D4%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+        -o-border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#000000%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#60A9D4%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+        border-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216px%22%20height=%2220px%22%3E%3Cpolygon%20points=%2212,4%2016,8%2012,12%2016,16%2012,20%208,16%204,20%200,16%204,12%200,8%204,4%200,0%200,20%2016,20%2016,0%22%20fill=%22#000000%22/%3E%3Cpolygon%20points=%220,0%208,8%2016,0%22%20fill=%22#60A9D4%22/%3E%3C/svg%3E") 8 4 4 4 / 8px 4px 4px round;
+    }
+}
+body.night .navbar-top {
+    background-color: #282828;
+}
+body.night .banners img {
+    opacity: 0.5;
+}
+body.night .btn,
+body.night .navbar-lower,
+body.night .module .actions div,
+body.night .footer,
+body.night .miniSearch > input {
+    background-color: #4E4E4E;
+    color: #E0E0E0;
+}
+body.night .module_name,
+body.night .module .actions div a,
+body.night .navbar-lower a {
+    color: #E0E0E0;
+}
+body.night .actions > div > a:hover,
+body.night .navbar-lower a:hover {
+    border-bottom-color: #E0E0E0;
+    color: #E0E0E0;
+}
+body.night .navbar-right .btn-danger {
+    background-color: #b52a3d;
+}
+body.night .navbar-right .btn-primary {
+    background-color: #282828;
+}
+body.night .navbar-right a.btn-outline {
+    background: #65A4D2;
+    border: 0;
+}
+body.night .controlText div .hint {
+    background: #282828;
+    border-top-color: #4E4E4E;
+    border-bottom-color: #4E4E4E;
+    color: #E0E0E0;
+}
+body.night .secondLogoContainer {
+    opacity: .7;
+}
+body.night .comments div,
+body.night .footer a {
+    color: #E0E0E0;
+}
+body.night .comments div a,
+body.night .copyright {
+    color: #4D4D4D;
+}
+body.red .leftColumn {
+    color: #000;
+}
+body.night .right-sidebar {
+    color: #000;
+}
+body.night.red .leftColumn {
+    color: #FFF;
+}
+body.night {
+    background: #282828;
+    color: #DFDFDF;
+}
+body.night .controlText div .hint .miniicon {
+    background: url('../img/actions/textControl2.png') left no-repeat;
+}
+/* body.night END */
+
+/* mobile START */
+@media screen and (max-width: 767px) {
+    .leftMobile,
+    .rightMobile {
+        width: 15px;
+        bottom: 20px;
+        position: absolute;
+        top: -40px;
+        cursor: pointer;
+        z-index: 17;
+    }
+    .leftMobile {
+        right: 100%;
+    }
+    .rightMobile {
+        left: 100%;
+    }
+    .leftColumn.activeLeft .leftMobile,
+    .leftColumn.activeLeft .rightMobile,
+    .leftColumn.activeRight .leftMobile,
+    .leftColumn.activeRight .rightMobile {
+        display: none;
+    }
+    .leftMobile:hover,
+    .rightMobile:hover {
+        background: rgba(96, 169, 212, 0.3);
+    }    
+    .leftColumn.activeRight {
+        right: 230px;
+        position: relative;
+    }
+    .leftColumn.activeLeft {
+        left: 40px;
+        position: relative;
+    }
+    .controlText {
+        position: absolute;
+        width: 40px;
+        background: transparent;
+        height: initial;
+        z-index: 15;
+    }
+    .controlText div.affix {
+        left: -36px;
+    }
+    .controlText > div {
+        width: 40px !important;
+    }
+    .controlText div {
+        width: initial;
+        left: 14px;
+    }
+    .controlText div.active {
+        left: 20px;
+        display: block !important;
+    }
+    .controlText div.active.affix {
+        left: 10px;
+    }
+    .controlText .btn {
+        width: 38px;
+        height: 35px;
+        border-right: 2px solid rgb(96, 169, 212);
+        border-radius: 0;
+        margin-left: -14px;
+        margin-top: 1px;
+        line-height: 23px;
+    }
+    .controlText .btn:hover,
+    .controlText .btn:active {
+        color: rgb(96, 169, 212);
+        box-shadow: none;
+    }
+    .controlText div .hint {
+        display: none !important;
+    }
+    .controlText div.options-button.activated .hint {
+        display: block !important;
+        left: 50px;
+        margin-top: -8px;
+    }
+    body.white #contents-module.active .module_name,
+    body.white #contents-module.active .ContentNav a {
+        color: #000;
+    }
+    .controlText div.options-button.active .hint .miniicon {
+        top: calc(100% - 35px);
+    }
+    .controlText div.options-button .hint .type,
+    .controlText div.options-button .hint .fontname,
+    .controlText div.options-button .hint .pagecolors > div div {
+        display: inline-block !important;
+    }
+}
+/* Mobile END */
+
+/* Tools START */
+.text p.show {
+    background: #F1F1F1;
+    cursor: pointer;
+}
+.text p.show:hover {
+    border: 1px dashed #92D1FD;
+    margin: -1px -1px 4px -1px;
+}
+.text .popover {
+    text-indent: 0;
+}
+div.overlayT {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: transparent;
+}
+div.mistake {
+    margin-top: 105px;
+}
+div.mistake h4 {
+    color: rgb(96, 169, 212);
+}
+div.mistake .MistakeText {
+    color: rgb(96, 169, 212);
+    text-decoration: underline;
+}
+div.mistake textarea {
+    width: 100%;
+    height: 40px;
+    max-height: 40px;
+    background-color: rgb(242, 242, 242);
+    border: none;
+}
+div.mistake .grey {
+    color: #C6C6C6;
+    font-size: 12px;
+}
+div.mistake .sendText {
+    display: inline-block;
+    white-space: pre-line;
+    width: 270px;
+}
+.controlText {
+    width: 50px;
+    height: 350px;
+    display: inline-block;
+    position: absolute;
+    left: -65px;
+    top: 0;
+}
+.controlText > div {
+    width: 50px;
+    position: relative;
+}
+.controlText div.affix {
+    top: 40px;
+    position: fixed;
+}
+.controlText .btn {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background: #F1F1F1;
+    margin-bottom: 1px;
+    color: #4E4E4E;
+    border-radius: 0;
+    line-height: 38px;
+}
+.controlText div .hint {
+    background: #8FD5FE;
+    border-top: 5px solid #F1F1F1;
+    border-bottom: 5px solid #F1F1F1;
+    position: absolute;
+    padding: 10px;
+    left: calc(100% + 6px);
+    color: #FFF;
+    font-weight: bold;
+    display: none;
+    width: initial;
+    height: 49px;
+    vertical-align: top;
+    text-align: left;
+    top: 0;
+    line-height: 20px;
+}
+.controlText .btn.disable {
+    color: #A8A8A8;
+    opacity: 1;
+}
+.controlText .btn.options-button:active,
+.controlText .btn.options-button.active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.controlText div .hint .miniicon {
+    background: url('../img/actions/textControl.png') left no-repeat;
+    width: 9px;
+    height: 40px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: -10px;
+    position: absolute;
+    left: -7px;
+}
+.controlText div.options-button .hint {
+    width: 200px;
+    height: 240px;
+    background: #F1F1F1;
+    border-top: 5px solid #8FD5FE;
+    border-bottom: 5px solid #8FD5FE;
+    color: #4E4E4E;
+    top: -190px;
+}
+.controlText div.options-button .hint .miniicon {
+    background: url('../img/actions/textControl3.png') left no-repeat;
+    margin-top: 180px;
+}
+.controlText div.options-button .hint .type,
+.controlText div.options-button .hint .fontname {
+    border: 1px solid #92D1FD;
+    height: 32px;
+    display: inline-block;
+    text-align: center;
+    line-height: 32px;
+}
+.controlText div.options-button .hint .font {
+    margin-bottom: 5px;
+}
+.controlText div.options-button .hint .font.active .fontname {
+    background: #92D1FD;
+}
+.controlText div.options-button .hint .type {
+    width: 32px;
+}
+.controlText div.options-button .hint .fontname {
+    margin-left: -5px;
+    width: calc(100% - 32px);
+}
+.controlText div.options-button .hint .georgia {
+    font-family: "Georgia", serif;
+}
+.controlText div.option-buttons .hint .helvetica {
+    font-family: "Helvetica", sans-serif;
+}
+.controlText div.options-button .hint .pagecolors > div div {
+    margin-left: -5px;
+    display: inline-block;
+    border: 1px solid #92D1FD;
+    height: 32px;
+    text-align: center;
+    line-height: 2;
+    vertical-align: top;
+}
+.controlText div.options-button .hint .pagecolors > div {
+    height: 36px;
+    border: 0;
+}
+.controlText div.options-button .hint .pagecolor {
+    width: 32px;
+}
+.controlText div.options-button .hint .pagecolors > div div.name {
+    margin-bottom: 5px;
+    margin-right: 0;
+    width: calc(100% - 124px);
+}
+.controlText div.options-button .hint .pagecolor.active {
+    border: 5px solid red;
+}
+.controlText div.options-button .hint .pagecolor.white {
+    background: white;
+}
+.controlText div.options-button .hint .pagecolor.red {
+    background: #CF4256;
+}
+.controlText div.options-button .hint .pagecolor.black {
+    background: black;
+}
+.controlText div.options-button .hint .pagecolor.blue {
+    background: #3793C8;
+}
+/* tools END */
+
+/* text START */
+.text > .h3 {
+    color: rgb(96, 169, 212);
+}
+.text .annotation {
+    white-space: pre-line;
+}
+.text > .h4 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+.text h2.project {
+    color: rgb(96, 169, 212);
+}
+.text .h4.project {
+    color: rgb(96, 169, 212);
+}
+.text p {
+    margin: 0 0 5px;
+    text-indent: 25px;
+}
+.text {
+    text-align: justify;
+}
+/* text END */
+
+/* fancybox START */
+.fancybox-inner .fancybox-image {
+    cursor: move !important;
+}
+.fancybox-nav {
+    position: fixed !important;
+    width: 20% !important;
+}
+.fancybox-next span {
+    right: 40px !important;
+}
+.fancybox-prev span {
+    left: 40px !important;
+}
+.fancybox-close {
+    top: -10px !important;
+    right: -10px !important;
+}
+/* fancybox END */
