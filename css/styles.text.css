@@ -220,7 +220,7 @@ body.night .controlText div .hint .miniicon {
     }
     .controlText div {
         width: initial;
-        left: 14px;
+        left: 4px;
     }
     .controlText div.active {
         left: 20px;
