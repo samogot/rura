@@ -337,45 +337,43 @@ function find(array, value) {
     }
     return -1;
 }
-
-function clearText(text,type){
+function clearReg(text,type){
     var status = []; // 0 - ничего, 1 - курсив, 2 - жирный, 3 - заголовок2, 4 - заголовок 3, 5 - подзаголовок
     var statusL = 0;
     var statuses = [];
-    var array = ["\'\'\'", "\'\'", "\=\=\=", "\=\=", "\{\{Подзаголовок\|"];
-    var extra = (type=="head") ? true : false;
+    if (type == 'head'){
+        var array = ["\'\'\'", "\'\'", "\=\=\=", "\=\=", "\{\{Подзаголовок\|"];
+        var podHead = 4;
+    } else {
+        var array = ["\=\=\=", "\=\=", "\{\{Подзаголовок\|"];
+        var podHead = 2;
+    }
     var start,end,prev,next;
     for (var i = 0; i < array.length; i++) {
-        if (i != 4) {
-            found = text.match(array[i] + "[0-9a-zA-Zа-яА-Я].+" + array[i]);
+        if (i != podHead) {
+            found = text.match(array[i] + "[0-9a-zA-Zа-яА-Я .,-;=]+" + array[i]);
+            console.log(found);
         } else {
-            found = text.match("\{\{Подзаголовок\|" + "[0-9a-zA-Zа-яА-Я]+" + "\}\}");
+            found = /(\{\{Подзаголовок\|[0-9a-zA-Zа-яА-Я .,-;=]+\}\})/g.exec(text);
+            console.log(found);
         }
         if (found != null) {
-            status.push(i);
-            statusL++;
-            statuses.push(array[i]);
-        }
-    }
-    console.log(status);
-    if (status.length != 0) {
-        for (var i = 0; i < statuses.length; i++) {
-            start = text.indexOf(statuses[i])+statuses[i].length
-            prev = text.slice(0, start-statuses[i].length);
-            if (find(status, 4) == -1) {
-                end = text.indexOf(statuses[i],start);
-                next = text.slice(end+statuses[i].length, text.length);
+            start = text.indexOf(array[i])+array[i].length;
+            prev = text.slice(0, start-array[i].length);
+            if (i != podHead) {
+                end = text.indexOf(array[i],start);
+                next = text.slice(end+array[i].length, text.length);
             } else {
                 end = text.indexOf("}}",start);
                 next = text.slice(end+2, text.length);
             }
             text = text.slice(start, end);
-            return prev+text+next;
+            text = prev+text+next;
         }
-    } else {
-        return text
     }
+    return text;
 }
+
 
 $('button[data-type=head]').on('click', function(e){
     var selText = CMvol1_window.getSelection();
@@ -388,7 +386,11 @@ $('button[data-type=head]').on('click', function(e){
     }
     CMvol1_window.setSelection({"line":startLine, "ch":0},{"line":startLine,"ch":(CMvol1_window.getLine(startLine)).length});
     selText = CMvol1_window.getSelection();
-    selText = clearText(selText);
+    if(insert[1]=='}}') {
+        selText = clearReg(selText,'boldIt');
+    } else {
+        selText = clearReg(selText,'head');
+    }
     CMvol1_window.replaceSelection(insert[0]+selText+insert[1]+head);
     CMvol1_window.focus();
 })
@@ -401,11 +403,14 @@ $('button[data-type=BoldIt], button[data-type=another]').on('click', function(e)
         console.log(startLine);
         CMvol1_window.setSelection({"line":startLine, "ch":0},{"line":startLine,"ch":(CMvol1_window.getLine(startLine)).length});
         selText = CMvol1_window.getSelection();
+        selText = clearReg(selText,'boldIt');
         CMvol1_window.replaceSelection(insert[0]+selText+insert[1]);
     } else if (selText.length == 0) {
         CMvol1_window.replaceSelection(insert[0]+insert[1]);
         CMvol1_window.setCursor(startLine, (sel.start.ch+insert[0].length));
     } else {
+        console.log('selected = '+selText)
+        selText = clearReg(selText,'boldIt');
         CMvol1_window.replaceSelection(insert[0]+selText+insert[1]);
     }
     CMvol1_window.focus();
