@@ -391,7 +391,7 @@ $('button[data-type=head]').on('click', function(e){
     } else {
         selText = clearReg(selText,'head');
     }
-    CMvol1_window.replaceSelection(insert[0]+selText+insert[1]+head);
+    CMvol1_window.replaceSelection(insert[0]+selText+insert[1]);
     CMvol1_window.focus();
 })
 $('button[data-type=BoldIt], button[data-type=another]').on('click', function(e){
