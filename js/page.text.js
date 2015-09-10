@@ -362,15 +362,13 @@ $('.btn.mistake-button').click(function() {
     } else {
         var Parameters = getOrphusParameters();
         var chapterId = $('.chapter').data('chapter');
-        console.log(Parameters);
-        console.log(chapterId);
         var callbackUrl = '';
-        showOrphusDialog(Parameters.originalText, callbackUrl, Parameters.startOffset, Parameters.paragraph, chapterId);
+        showOrphusDialog(chapterId, Parameters.paragraph, Parameters.startOffset, Parameters.originalText, callbackUrl);
     }
 });
 /* MODAL */
 /* ОШИБКИ */
-function showOrphusDialog(originalText, callbackUrl, startOffset, paragraph, chapterId) {
+function showOrphusDialog(chapterId, paragraph, startOffset, originalText, callbackUrl) {
     bootbox.dialog({
         title: "Предложить правку",
         message: '<form id="orphusForm">' +
@@ -396,6 +394,7 @@ function showOrphusDialog(originalText, callbackUrl, startOffset, paragraph, cha
                 callback: function() {
                     /* TODO: text size check */
                     var replacement = $('#orphusReplacement').val();
+                    var optionalComment = $('#orphusComment').val();
                     if (!replacement) {
                         $('#orphusReplacement').next('.help-block').text('Введите текст для замены.').show();
                         $('#orphusReplacement').parent('.form-group').addClass('has-error');
@@ -407,9 +406,22 @@ function showOrphusDialog(originalText, callbackUrl, startOffset, paragraph, cha
                         return false;
                     }
                     var data = $('#orphusForm').serialize();
+                    $.ajax({
+                        type: "POST",
+                        url: '/orphus/insert',
+                        data: '{' +
+                        'chapterId:' + chapterId +
+                        ',paragraph:' + paragraph +
+                        ',startOffset:' + startOffset +
+                        ',originalText:\"' + originalText +
+                        ',replacementText:\"' + replacement +
+                        ',optionalComment:\"' + optionalComment +
+                        '\"}'
+                    });
+                    /*
                     var wcall = Wicket.Ajax.get({
                         'u': callbackUrl + '&' + data + '&startOffset=' + startOffset + '&paragraph=' + paragraph + '&chapterId=' + chapterId + '&originalText=' + originalText
-                    });
+                    });*/
                 }
             }
         }
@@ -462,9 +474,9 @@ function getOrphusParameters() {
         }
         /* TODO: add chapterId parameter. Maybe in wicket code */
         return {
-            originalText: range.toString(),
+            paragraph: p.id,
             startOffset: offset - range.toString().length,
-            paragraph: p.id
+            originalText: range.toString()
         };
     }
     /* ОШИБКИ */
