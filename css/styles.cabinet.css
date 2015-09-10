@@ -1,5 +1,7 @@
 /*                  CABINET                  */
-
+.modal-backdrop.in {
+    z-index: 1001;  
+}
 .leftcabinet,
 .infocabinet {
     display: inline-block;
@@ -49,9 +51,17 @@
     width: calc(100% - 175px);
     margin-left: 20px;
 }
+.infocabinet button:nth-child(1) {
+    top: 0px;
+}
+.infocabinet button:nth-child(2) {
+    top: 30px;
+}
+.infocabinet button:nth-child(3) {
+    top: 60px;
+}
 .infocabinet button {
     position: absolute;
-    top: 0px;
     right: 15px;
 }
 .infocabinet span.grey {
