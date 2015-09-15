@@ -1,17 +1,20 @@
 .orphusTable {
 	text-align: center;
 }
-.orphusTable tr:first-child{
+.orphusTable thead tr{
 	background-color: #F2F2F2;
 }
-.orphusTable tr:not(:first-child):hover {
+.orphusTable thead td{
+	cursor: pointer;
+}
+.orphusTable tbody tr:hover {
 	background-color: rgba(96, 169, 212, 0.3);
 }
-.orphusTable tr:not(:first-child):hover td{
+.orphusTable tbody tr:hover td{
 	background-color: rgba(96, 169, 212, 0.3);
 	border: 1px solid #fff;
 }
-.orphusTable tr:not(:first-child):hover a{
+.orphusTable tbody tr:hover a{
 	color: #000;
 }
 .orphusTable td {
@@ -21,4 +24,14 @@
 .orphusMark {
 	background-color: rgba(211, 63, 84, 0.5);
 	color: #000;
+}
+.orphusTable thead tr .headerSortUp {
+	background-image: url(https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.23.3/css/images/black-asc.gif) !important;
+    background-repeat: no-repeat;
+    background-position: center 95%;
+}
+.orphusTable thead tr .headerSortDown {
+	background-image: url(https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.23.3/css/images/black-desc.gif) !important;
+    background-repeat: no-repeat;
+    background-position: center 95%;
 }

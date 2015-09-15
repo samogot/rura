@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/styles.orphus.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.23.3/css/jquery.tablesorter.pager.min.css">
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -111,8 +112,24 @@
         </div>
     </nav>
     <div class="container">
-        <h2>Орфус комментарии</h2>
+        <h2>Орфус комментарии </h2>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Сортировать
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="dateSortAsc"><a href="#">По Дате ↓</a></li>
+            <li class="dateSortDesc"><a href="#">По Дате ↑</a></li>
+            <li class="nickSortAsc"><a href="#">По Никнейму ↓</a></li>
+            <li class="nickSortDesc"><a href="#">По Никнейму ↑</a></li>
+            <li class="urlSortAsc"><a href="#">По URL'у ↓</a></li>
+            <li class="urlSortDesc"><a href="#">По URL'у ↑</a></li>
+          </ul>
+        </div>  
+        <br>
         <table class="orphusTable" border='1' cellpadding="0" cellspacing="0" width="100%">
+          <thead>
             <tr>
                 <td>Дата</td>
                 <td>Никнейм</td>
@@ -120,6 +137,24 @@
                 <td>Исправленый абзац</td>
                 <td>Комментарий к правке</td>
                 <td>Страница/глава с правкой</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>12:30 17.09.2015</td>
+                <td>Keepo</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 19.09.2015</td>
+                <td>Kappa</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
             </tr>
             <tr>
                 <td>12:30 15.09.2015</td>
@@ -129,7 +164,143 @@
                 <td>Коты тащат</td>
                 <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
             </tr>
+            <tr>
+                <td>12:30 17.09.2015</td>
+                <td>Keepo</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 19.09.2015</td>
+                <td>Kappa</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 15.09.2015</td>
+                <td>Antosik</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 17.09.2015</td>
+                <td>Keepo</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 19.09.2015</td>
+                <td>Kappa</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 15.09.2015</td>
+                <td>Antosik</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 17.09.2015</td>
+                <td>Keepo</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 19.09.2015</td>
+                <td>Kappa</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 15.09.2015</td>
+                <td>Antosik</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 17.09.2015</td>
+                <td>Keepo</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 19.09.2015</td>
+                <td>Kappa</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 15.09.2015</td>
+                <td>Antosik</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 17.09.2015</td>
+                <td>Keepo</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 19.09.2015</td>
+                <td>Kappa</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+            <tr>
+                <td>12:30 15.09.2015</td>
+                <td>Antosik</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+          </tbody>
         </table>
+        <div id="pager" class="pager">
+            <form>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.23.3/css/images/first.png" class="first">
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.23.3/css/images/prev.png" class="prev">
+                <input type="text" class="pagedisplay">
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.23.3/css/images/next.png" class="next">
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.23.3/css/images/last.png" class="last">
+                <select class="pagesize">
+                    <option selected="selected" value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                </select>
+            </form>
+        </div>
     </div>
     <div class="container">
         <footer>
@@ -145,7 +316,9 @@
             <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
         </footer>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.23.3/js/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.23.3/js/extras/jquery.tablesorter.pager.min.js"></script>
+    <script src="js/page.orphus.js"></script>
 </body>
-
+    
 </html>
