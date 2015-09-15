@@ -1,0 +1,24 @@
+.orphusTable {
+	text-align: center;
+}
+.orphusTable tr:first-child{
+	background-color: #F2F2F2;
+}
+.orphusTable tr:not(:first-child):hover {
+	background-color: rgba(96, 169, 212, 0.3);
+}
+.orphusTable tr:not(:first-child):hover td{
+	background-color: rgba(96, 169, 212, 0.3);
+	border: 1px solid #fff;
+}
+.orphusTable tr:not(:first-child):hover a{
+	color: #000;
+}
+.orphusTable td {
+	padding: 7px;
+	border: 1px solid #e1e1e1;
+}
+.orphusMark {
+	background-color: rgba(211, 63, 84, 0.5);
+	color: #000;
+}

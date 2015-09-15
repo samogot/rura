@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.orphus.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="loginModalLabel">Вход</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputLoginModal" class="col-sm-2 control-label">Логин</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputLoginModal" placeholder="Логин">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPasswordModal" class="col-sm-2 control-label">Пароль</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPasswordModal" placeholder="Пароль">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Запомнить пароль
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">Вход</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop" style="display:none"></div>
+    <nav class="navbar navbar-default navbar-top navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img alt="RuRanobe" src="img/logo1.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <div class="secondLogoContainer">
+                    <div class="secondLogo"></div>
+                </div>
+                <form class="navbar-form navbar-right">
+                    <button class="btn btn-white">Регистрация</button>
+                    <a class="btn btn-outline" data-toggle="modal" data-target="#loginModal">Вход</a>
+                </form>
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+    <nav class="navbar navbar-default navbar-lower" role="navigation">
+        <div class="container">
+            <div class="collapse navbar-collapse collapse-buttons" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form visible-xs-block">
+                    <button class="btn btn-default">Регистрация</button>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Вход</a>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Обновления</a>
+                    </li>
+                    <li><a href="#">Проекты</a>
+                    </li>
+                    <li><a href="#">Набор в команду</a>
+                    </li>
+                    <li><a href="#">FAQ</a>
+                    </li>
+                    <li><a href="#">О нас</a>
+                    </li>
+                    <li><a href="#">Связь</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <a href="#" class="btn btn-danger">Трансляции</a>
+                    <a href="https://vk.com/ru.ranobe" class="btn btn-primary"><i class="fa fa-vk"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-rss"></i></a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Орфус комментарии</h2>
+        <table class="orphusTable" border='1' cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>Дата</td>
+                <td>Никнейм</td>
+                <td>Абзац оригинального текста</td>
+                <td>Исправленый абзац</td>
+                <td>Комментарий к правке</td>
+                <td>Страница/глава с правкой</td>
+            </tr>
+            <tr>
+                <td>12:30 15.09.2015</td>
+                <td>Antosik</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">меча на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на катану</span>, направленную на её шею.</td>
+                <td>Тооно Хифуми направил острый кончик своего <span class="orphusMark">кота на горло молодой девушки. Её тонкая шея дрожала от страха. Девушка не могла издать ни звука, глядя заплаканными глазами на котану</span>, направленную на её шею.</td>
+                <td>Коты тащат</td>
+                <td><a href="http://paveliarch.freeddns.org/r/ys/v1/p#p-5458-16107-138">ys/v1/p</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="container">
+        <footer>
+            <div class="footer">
+                <a href="#">Обновления</a>
+                <a href="#">Проекты</a>
+                <a href="#">Набор в команду</a>
+                <a href="#">FAQ</a>
+                <a href="#">О нас</a>
+                <a href="#">Помощь</a>
+                <a href="#">Связь</a>
+            </div>
+            <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
