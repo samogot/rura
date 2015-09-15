@@ -124,7 +124,7 @@
                         <button type="button" class="btn btn-primary">ЛС (0)</button>
                     </div>
                     <div class="infocabinet">
-                        <button type="button" class="btn btn-default btn-sm settings"><i class="fa fa-cog"></i> Настройки</button>
+                        <button type="button" class="btn btn-default btn-sm settings" data-toggle="modal" data-target="#settingsModal"><i class="fa fa-cog"></i> Настройки</button>
                         <p>
                             <b>Логин:</b> Kagge
                         </p>
@@ -283,6 +283,129 @@
             <div class="copyright text-center">&copy; Проект <span class="bold">&laquo;РуРанобэ&raquo; </span>2015</div>
         </footer>
     </div>
+
+    <!-- MODALS -->
+    <div class="modal fade" id="settingsPassModal" tabindex="-1" role="dialog" aria-labelledby="settingsPassLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidtimes;</span></button>
+            <h4 class="modal-title" id="settingsPassLabel">Сменить пароль</h4>
+          </div>
+          <div class="modal-body">
+            <form id="settingsPass" class="form-inline" align="center"> 
+              <div class="form-group"> 
+                <label for="passNow">Введите текущий пароль&nbsp;&nbsp;</label> 
+                <input type="password" class="form-control" name="passNow" id="passNow" value=""> 
+              </div> 
+              <div class="form-group"> 
+                <label for="passNew">Введите новый пароль&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+                <input type="password" class="form-control" name="passNew" id="passNew" value=""> 
+              </div> 
+              <div class="form-group"> 
+                <label for="passNewRepeat">Повторите новый пароль&nbsp;</label> 
+                <input type="password" class="form-control" name="passNewRepeat" id="passNewRepeat" value=""> 
+              </div> 
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button>
+            <button type="button" class="btn btn-primary">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="settingsEmailModal" tabindex="-1" role="dialog" aria-labelledby="settingsEmailLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidtimes;</span></button>
+            <h4 class="modal-title" id="settingsEmailLabel">Сменить Email</h4>
+          </div>
+          <div class="modal-body">
+            <form id="settingsEmail" class="form-inline" align="center"> 
+              <div class="form-group"> 
+                <label for="passNow">Введите текущий пароль&nbsp;&nbsp;</label> 
+                <input type="password" class="form-control" name="passNow" id="passNow" value=""> 
+              </div> 
+              <div class="form-group"> 
+                <label for="passNew">Введите новый Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+                <input type="password" class="form-control" name="passNew" id="passNew" value=""> 
+              </div> 
+              <div class="form-group"> 
+                <label for="passNewRepeat">Повторите новый Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+                <input type="password" class="form-control" name="passNewRepeat" id="passNewRepeat" value=""> 
+              </div> 
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button>
+            <button type="button" class="btn btn-primary">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidtimes;</span></button>
+            <h4 class="modal-title" id="settingsLabel">Настройки сайта</h4>
+          </div>
+          <div class="modal-body">
+            <form id="settingsForm" class="form-inline"> 
+              <div class="form-group"> 
+                <label for="downloadType">Предпочитаемый формат скачивания</label> 
+                <select class="form-control" name="downloadType" id="downloadType"> 
+                   <option value="fb2">fb2</option> 
+                   <option value="docx">docx</option> 
+                   <option value="epub">epub</option> 
+                </select> 
+              </div> 
+              <div class="form-group"> 
+                <label for="downloadType">Приемущественно навигация по</label> 
+                <select class="form-control" name="downloadType" id="downloadType"> 
+                   <option value="chapter">Главам</option> 
+                   <option value="subchapter">Подлавам</option> 
+                </select> 
+              </div> 
+              <hr/> 
+              <div class="form-group"> 
+                 <input type="checkbox" checked name="downloadImage" id="downloadImage" value="yes"> 
+                 <label for="downloadImage">Скачивать с иллюстрациями</label> 
+              </div> 
+              <br/> 
+              <div class="form-group"> 
+                 <input type="checkbox" name="adult18" id="adult18" value="yes"> 
+                 <label for="adult18">Отображать материалы для взрослых (18)</label> 
+              </div> 
+              <br/> 
+              <div class="form-group"> 
+                 <input type="checkbox" checked name="blackImage" id="blackImage" value="yes">   
+                 <label for="downloadImage">Отображать цветные иллюстрации вместо чернобелых при наличии</label> 
+              </div> 
+              <hr/> 
+              <div class="form-group"> 
+                <label for="irastSize">Размер ираст в конвентере</label> 
+                <input type="text" class="form-control" name="irastSize" id="irastSize" value="1080" size="4"> px 
+              </div> 
+            </form>   
+            <hr/>  
+            <center>    
+            <button type="button" class="btn btn-default btn-sm settingsPass" data-toggle="modal" data-target="#settingsPassModal"><i class="fa fa-cog"></i> Сменить пароль</button> 
+            <button type="button" class="btn btn-default btn-sm settingsEmail" data-toggle="modal" data-target="#settingsEmailModal"><i class="fa fa-cog"></i> Сменить Email</button> 
+            </center>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button>
+            <button type="button" class="btn btn-primary">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODALS -->
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
