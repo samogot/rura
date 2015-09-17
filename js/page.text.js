@@ -312,7 +312,23 @@ $('.controlText .btn.bookmark-button').click(function() {
     $('.text p')
         .addClass('show')
         .on('click', function() {
-            alert($(this).attr('id'));
+            $.ajax({
+                type: "POST",
+                url: '/bookmarks/insert',
+                data: '{' +
+                'chapterId:' + $(this).attr('chapter-id') +
+                ',paragraphId:\"' + $(this).attr('id') +
+                ',fullText:\"' + $(this).text() +
+                ',textId:\"' + $(this).attr('text-id') +
+                '\"}',
+                contentType: 'text/plain',
+                success: function (data, textStatus, jqXHR) {
+                    //data - response from server
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+                }
+            });
             saveSettings({
                 key: 'bookmark',
                 item: $(this).attr('id')
@@ -363,12 +379,12 @@ $('.btn.mistake-button').click(function() {
         var Parameters = getOrphusParameters();
         var chapterId = $('.chapter').data('chapter');
         var callbackUrl = '';
-        showOrphusDialog(chapterId, Parameters.paragraph, Parameters.startOffset, Parameters.originalText, callbackUrl);
+        showOrphusDialog(chapterId, Parameters.paragraph, Parameters.startOffset, Parameters.originalText, Parameters.fullText, Parameters.textId, callbackUrl);
     }
 });
 /* MODAL */
 /* ОШИБКИ */
-function showOrphusDialog(chapterId, paragraph, startOffset, originalText, callbackUrl) {
+function showOrphusDialog(chapterId, paragraph, startOffset, originalText, fullText, textId, callbackUrl) {
     bootbox.dialog({
         title: "Предложить правку",
         message: '<form id="orphusForm">' +
@@ -416,6 +432,8 @@ function showOrphusDialog(chapterId, paragraph, startOffset, originalText, callb
                         ',originalText:\"' + originalText +
                         ',replacementText:\"' + replacement +
                         ',optionalComment:\"' + optionalComment +
+                        ',fullText:\"' + fullText +
+                        ',textId:\"' + textId +
                         '\"}'
                     });
                     /*
@@ -475,6 +493,8 @@ function getOrphusParameters() {
         /* TODO: add chapterId parameter. Maybe in wicket code */
         return {
             paragraph: p.id,
+            fullText: $(p).text(),
+            textId: $(p).attr('text-id'),
             startOffset: offset - range.toString().length,
             originalText: range.toString()
         };
