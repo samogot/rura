@@ -293,25 +293,20 @@
             <h4 class="modal-title" id="settingsPassLabel">Сменить пароль</h4>
           </div>
           <div class="modal-body">
-            <form id="settingsPass" class="form-inline" align="center"> 
-              <div class="form-group"> 
-                <label for="passNow">Введите текущий пароль&nbsp;&nbsp;</label> 
-                <input type="password" class="form-control" name="passNow" id="passNow" value=""> 
-              </div> 
-              <div class="form-group"> 
-                <label for="passNew">Введите новый пароль&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
-                <input type="password" class="form-control" name="passNew" id="passNew" value=""> 
-              </div> 
-              <div class="form-group"> 
-                <label for="passNewRepeat">Повторите новый пароль&nbsp;</label> 
-                <input type="password" class="form-control" name="passNewRepeat" id="passNewRepeat" value=""> 
-              </div> 
+            <form wicket:id="emailPasswordRecoveryForm" class="form-inline" align="center">
+                <div class="form-group">
+                    Для смены пароля на ваш электронный адрес будет отослано письмо.<br> Следуйте инструкциям из письма.
+                    <hr>
+                    <label wicket:for="email">Введите свой email&nbsp;&nbsp;</label>
+                    <input wicket:id="email" type="text" class="form-control" name="passNow">
+                </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button>
-            <button type="button" class="btn btn-primary">Сохранить</button>
+            <button type="button" class="btn btn-primary">Отправить письмо</button>
           </div>
+          <div wicket:id="feedback"></div>
         </div>
       </div>
     </div>
